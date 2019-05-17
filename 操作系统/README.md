@@ -40,9 +40,14 @@
 
 # 在线教学环境
 
-讨论区：[**pizza**](http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240243X_2015_T2+2015_T2/xblock/block-v1:TsinghuaX+30240243X_2015_T2+2015_T2+type@lti+block@7d025ede0dfe484da35b09a863a50507/handler/preview_handler)。
+MOOC：[**操作系统**](https://www.xuetangx.com/courses/course-v1:TsinghuaX+30240243X+sp/courseware/be5b8d4fec0c4c329d19845020bc67b2/)
 
-> [Piazza](https://piazza.com/)是一家专门面向学生和老师的问答平台， 集wiki 和论坛模式为一体，是当前较为流行的用于课堂交流的工具。要求所有选操作系统课的同学必须注册piazza，本课程只使用piazza作为课程交流的平台，不使用学堂在线的“讨论区”进行答疑。
+讨论区：[**pizza**](http://www.xuetangx.com/courses/course-v1:TsinghuaX+30240243X_2015_T2+2015_T2/xblock/block-v1:TsinghuaX+30240243X_2015_T2+2015_T2+type@lti+block@7d025ede0dfe484da35b09a863a50507/handler/preview_handler)
 
-在线实验平台：
+实验平台：[**操作系统实验 - 实验楼**](https://www.shiyanlou.com/courses/221)
 
+练习：**[习题集](https://chyyuu.gitbooks.io/os_course_exercises/content/)**
+
+> [课程信息](http://os.cs.tsinghua.edu.cn/oscourse/OS2018spring/)，[课程资源](https://chyyuu.gitbooks.io/os_course_info/)，[实验版指导手册](https://chyyuu.gitbooks.io/simple_os_book/content/)
+>
+> [最具影响力的OS论文](https://www.sigops.org/awards/hof/)
