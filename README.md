@@ -1,9 +1,9 @@
-# 912项目
+# 912_project
 
-[![](https://img.shields.io/badge/作者-@73fc-green.svg)](https://github.com/73fc)
-[![](https://img.shields.io/badge/作者-@stellarkey-blue.svg)](https://github.com/stellarkey)
-![](https://img.shields.io/badge/许可证-MIT-000000.svg)
-![Progress](http://progressed.io/bar/2?title=   项目进度)
+[![](https://img.shields.io/badge/Author-@73fc-green.svg)](https://github.com/73fc)
+[![](https://img.shields.io/badge/Author-@stellarkey-blue.svg)](https://github.com/stellarkey)
+![](https://img.shields.io/badge/License-MIT-000000.svg)
+![Progress](http://progressed.io/bar/2?title=Progress)
 
 ---
 
