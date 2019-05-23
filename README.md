@@ -3,6 +3,7 @@
 [![](https://img.shields.io/badge/Author-@73fc-green.svg)](https://github.com/73fc)
 [![](https://img.shields.io/badge/Author-@stellarkey-blue.svg)](https://github.com/stellarkey)
 ![](https://img.shields.io/badge/License-MIT-000000.svg)
+![](https://img.shields.io/badge/License-CC BY NC SA 4.0-000000.svg)
 ![Progress](http://progressed.io/bar/2?title=Progress)
 
 ---
