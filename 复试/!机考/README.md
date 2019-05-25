@@ -2,6 +2,8 @@
 
 一般分为：模拟题，数学题，算法题。
 
+可用语言：c++、java、python3。
+
 # OJ列表
 
 >  [**洛谷**](https://www.luogu.org/) 训练
@@ -77,6 +79,8 @@
 # 真题
 
 > [Code+程序设计大赛习题讲解](http://www.xuetangx.com/courses/course-v1:xuetangx+codeplus+2019_T1/courseware/5cf3b2b837eb4e3f90641d2a208ab922/c67c968eb5914aabb36257ea30068158/) 含2017年机试
+>
+> [清华机试2017-2019真题](https://xuanxuanblingbling.github.io/life/study/2019/03/11/TUOJ/) 作者已被录取，[C++机试STL、树、图](https://xuanxuanblingbling.github.io/life/study/2019/03/20/STL/)，[C++机试技巧](https://xuanxuanblingbling.github.io/life/study/2019/03/20/oj/)
 
 # 2019
 

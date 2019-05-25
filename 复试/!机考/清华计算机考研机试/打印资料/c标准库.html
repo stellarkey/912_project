@@ -1,0 +1,591 @@
+<div class="blog-content-box">
+  <div class="article-header-box">
+    <div class="article-header">
+      <div class="article-title-box">
+               <h1 class="title-article">C库函数总结</h1>
+      </div>
+      <div class="article-info-box">
+        <div class="article-bar-top">
+                                        <span class="time"></span>
+           
+            
+                                                              </div>
+        <div class="operating">
+                  </div>
+      </div>
+    </div>
+  </div>
+  <article class="baidu_pl">
+    <div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog" data-mod="popu_307" data-dsm="post">
+                <div class="article-copyright">
+                            <svg class="icon" title="CSDN认证原创" aria-hidden="true" style="width:53px; height: 18px; vertical-align: -4px;">
+              <use xlink:href="#CSDN_Cert"></use>
+          </svg>
+                            
+                  </div>
+                            <div id="content_views" class="markdown_views prism-atom-one-dark">
+              <!-- flowchart 箭头图标 勿删 -->
+              <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path></svg>
+              <p>C 库函数主要指那些由<a href="https://www.baidu.com/s?wd=%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%AE%B6%E6%A0%87%E5%87%86%E5%8D%8F%E4%BC%9A&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank">美国国家标准协会</a>（ANSI）或<a href="https://www.baidu.com/s?wd=%E5%9B%BD%E9%99%85%E6%A0%87%E5%87%86%E5%8C%96%E7%BB%84%E7%BB%87&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank">国际标准化组织</a>(ISO)发布的标准中规定的库函数，按照标准 C 的要求来进行 C 语言编程是很重要的，因为这样你的代码才有可能跨平台使用。 <br>
+<!--more--> <br>
+
+<h3 id="ctypeh"><a name="t2"></a>ctype.h</h3>
+
+<p>ctype.h 这个头文件主要定义了一批 C 语言字符分类函数，所有的函数都只有一个参数，且参数和返回值均为 <code>int</code> 类型。下面是简单的函数介绍：</p>
+
+<div class="table-box"><table>
+<thead>
+<tr>
+  <th>函数名</th>
+  <th>说明</th>
+  <th>函数名</th>
+  <th>说明</th>
+  <th>函数名</th>
+  <th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>isalpha</td>
+  <td>是否为字母</td>
+  <td>isdigit</td>
+  <td>是否为数字</td>
+  <td>isalnum</td>
+  <td>是否为数字或字母</td>
+</tr>
+<tr>
+  <td>iscntrl</td>
+  <td>是否为控制字符</td>
+  <td>isgraph</td>
+  <td>是否为图形文字</td>
+  <td>isupper</td>
+  <td>是否为大写字母</td>
+</tr>
+<tr>
+  <td>islower</td>
+  <td>是否为小写字母</td>
+  <td>tolower</td>
+  <td>转换为小写字母</td>
+  <td>toupper</td>
+  <td>转换为大写字母</td>
+</tr>
+<tr>
+  <td>isprintf</td>
+  <td>是否为可打印字符</td>
+  <td>ispunct</td>
+  <td>是否为标点符号</td>
+  <td>isspace</td>
+  <td>是否为空白</td>
+</tr>
+<tr>
+  <td>isxdigit</td>
+  <td>是否为十六进制的数字</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+</tbody></table></div>
+
+
+
+
+<h3 id="stdioh"><a name="t3"></a>stdio.h</h3>
+
+<p>stdio.h 这个头文件应该是大多数人接触 C 语言的时候第一个认识的 C 库函数。这个函数最常用，但是也很复杂。它定义了三种类型，一些宏和很多的输入输出函数。</p>
+
+<ol>
+<li>定义的三种类型： <br>
+<ul><li><code>size_t</code> 是由 <code>sizeof</code> 关键字产生的无符号整类型。</li>
+<li><code>FILE</code> 是一个结构体类型，记录了控制流需要的所有信息，包括它的文件定位符、指向相关缓冲的指针、记录是否发生了读/写错误的错误提示符和记录文件是否结束的文件结束符。 </li>
+<li><code>fpos_t</code>包含可以唯一指定文件中的每一个位置所需的所有信息。</li></ul></li>
+<li>定义了一些常量： <br>
+<ul><li><code>NULL</code> 空值 </li>
+<li><code>_IOFBF</code> 表示完全缓冲 <code>_IOLBF</code> 表示线缓冲 <code>_IONBF</code> 表示无缓存</li>
+<li><code>BUFSIZ</code> 是<code>setbuf</code>函数所使用的缓冲区的大小</li>
+<li><code>EOF</code> 是负整数,该表达式由几个函数返回来说明文件的结束，即一个流输入结束了(END OF FILE)</li>
+<li><code>FOPEN_MAX</code> (20)同时打开的文件的最大数量</li>
+<li><code>FILENAME_MAX</code> 文件名的最大长度</li>
+<li><code>L_tmpnam</code>整数，最大长度的临时文件名</li>
+<li><code>SEEK_CUR</code>取得目前文件位置 <code>SEEK_END</code> 将读写位置移到文件尾时 <code>SEEK_SET</code> 将读写位置移到文件开头</li>
+<li><code>TMP_MAX</code> 表示<code>tmpnam</code>函数可以生成的单独文件名的最大数目</li>
+<li><code>`stderr</code>标准错误流，默认为屏幕, 可输出到文件 <code>stdin</code>标准输入流，默认为键盘 <code>stdout</code>标准输出流，默认为屏幕 </li></ul></li>
+<li>一些相关的函数 <br>
+<ul><li>文件操作函数 （4个） <br>
+<code>int remove(const char *filename);</code>  删除文件 <br>
+<code>int rename(const char *old, const char *new);</code>  重命名文件 <br>
+<code>FILE *tmpfile(void);</code> 创建一个临时的二进制文件，并通过模式“wb+”打开。 <br>
+<code>char *tmpname（char *s）;</code> 生成一个字符串，这个字符串是一个有效的文件名。  </li>
+<li>文件访问函数 (6个) <br>
+<code>FILE* fopen(const char *filename, const char *mode);</code>打开名字为 <code>filename</code> 指向的文件，并且把这个文件和一个流相关联。 <br>
+<code>FILE* freopen(const char *filename, const char *mode, FILE *stream);</code>打开名字为 <code>filename</code> 指向的文件，并且把它和 <code>stream</code> 指向的流关联在一起。 <br>
+<code>int fclose(FILE *stream);</code>使 <code>stream</code> 指向的流被清空，并且和流相关联的文件被关闭。 <br>
+<code>int fflush(FILE *stream);</code>对 <code>stream</code> 指向的流执行清空行为。 <br>
+<code>void setbuf(FILE *stream, char *buf);</code>除了没有返回值，等价于函数 <code>setvbuf</code>。 <br>
+<code>void setvbuf(FILE *stream, char *buf, int mode, size_t size);</code>设定 <code>stream</code> 缓冲的方式。   </li>
+<li>格式化的输入输出函数 （9个） <br>
+<code>int fprintf(FILE *stream, const char *format, ...);</code> <br>
+<code>int printf(const char *format, ...);</code> <br>
+<code>int sprintf(char *s, const char *format, ...);</code> <br>
+返回传送的字符的数目。 <br>
+<code>int fscanf(FILE *stream, const char *format, ...);</code> <br>
+<code>int scanf(const char *format, ...);</code> <br>
+<code>int sscanf(char *s, const char *format, ...);</code> <br>
+如果在任何转换之前发生了输入失败，返回 <code>EOF</code>；否则返回赋值的输入项的数目。 <br>
+<code>int vfprintf(FILE *stream, const char *format, va_list arg);</code> <br>
+<code>int vprintf(const char *format, va_list arg);</code> <br>
+<code>int vsprintf(char *s, const char *format, va_list arg);</code> <br>
+等价于对应的 <code>printf</code> 函数，不过可变参数表用 <code>arg</code> 代替。   </li>
+<li>字符输入/输出函数 （11个） <br>
+<code>int fgetc(FILE *stream);</code>从 <code>stream</code> 指向的输入流中读取下一个字符。 <br>
+<code>int getc(FILE *stream);</code>等价于函数 <code>fgetc</code>。 <br>
+<code>int getchar(void);</code>等价于用参数 <code>stdin</code> 调用函数 <code>getc</code>。 <br>
+<code>int fputc(int c, FILE *stream);</code>把字符写到指向的输出流中指定的位置处。 <br>
+<code>int putc(int c, FILE *stream);</code>等价于 <code>fputc。</code> <br>
+<code>int putchar(int c);</code> 等价于把stdout作为第二个参数调用的 <code>putc。</code> <br>
+<code>char *fgets(char *s, int n, FILE *stream);</code>从 <code>stream</code>指向的流中读取字符。 <br>
+<code>int fputs(const char *s, FILE *stream);</code>把 <code>s</code> 指向的串写入 <code>stream</code> 指向的流中。 <br>
+<code>char *gets(char *s);</code>从 <code>stdin</code> 指向的输入流中读取若干个字符，并将其保留到 <code>s</code> 指向的数组中，直到遇到文件结束符或者读取一个换行符。 <br>
+<code>int puts(const char *s);</code>把 <code>s</code> 指向的串写到 <code>stdout</code> 指向的流中，并且在输出最后添加一个换行符。 <br>
+<code>int ungetc(int c, FILE *stream);</code> 把 <code>c</code> 指定的字符（转换为 <code>unsigned char</code> 类型）退回到 <code>stream</code> 指向的输入流中。  </li>
+<li>直接输入/输出函数 （2个） <br>
+<code>size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);</code> <br>
+从 <code>stream</code> 指向的流中读取最多 <code>nmemb</code> 个元素到 <code>ptr</code> 指向的数组中 。 <br>
+<code>size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);</code> <br>
+从 <code>ptr</code> 指向的数组中读取最多 <code>nmemb</code> 个元素并将其写到 <code>stream</code> 指向的流中。  </li>
+<li>文件定位函数 (5个) <br>
+<code>int fgetpos(FILE *stream, fpos_t *pos);</code> <br>
+把 <code>stream</code> 指向的流的文件定位符的当前值存储到 <code>pos</code> 指向的对象中。 <br>
+<code>int fsetpos(FILE *stream, const fpos_t *pos);</code> <br>
+根据 <code>pos</code> 指向的对象的值来设置 <code>stream</code> 指向的流的文件定位符， <br>
+<code>long int ftell(FILE *stream);</code> <br>
+获得 <code>stream</code> 指向的流的文件定位符的当前值。 <br>
+<code>int fseek(FILE *stream, long int offset, int whence);</code> <br>
+为 <code>stream</code> 指向的流设置文件定位符。 <br>
+<code>void rewind(FILE *stream);</code> <br>
+把 <code>stream</code> 指向的流的文件定位符设置在文件的开始位置，等价于 <code>(void)fseek(stream, 0L, SEEK_SET);</code>，只不过流的错误指示符也被清零。</li>
+<li>错误处理函数 (4个) <br>
+<code>void clearerr(FILE *stream);</code> <br>
+清空 <code>stream</code> 指向的流的文件结束符和错误指示符。 <br>
+<code>int feof(FILE *stream);</code> <br>
+测试 <code>stream</code> 指向的流的文件结束符。当且仅当 <code>stream</code> 流设置了文件结束符时函数返回一个非0值。 <br>
+<code>int ferror(FILE *stream);</code> <br>
+测试 <code>stream</code> 指向的流的错误指示符。当且仅当 <code>stream</code> 流设置了错误指示符时函数返回一个非0值。 <br>
+<code>void perror(const char *s);</code> <br>
+把整数表达式 <code>errno</code> 中的错误编号转换为一条错误消息。</li></ul></li>
+</ol>
+
+
+
+<h3 id="stdlibh"><a name="t4"></a>stdlib.h</h3>
+
+<p>是标准工具库。包含了C语言的中最常用的系统函数</p>
+
+<ol>
+<li>定义了五个宏 <br>
+<ul><li><code>NULL</code> 空</li>
+<li><code>EXIT_FAILURE</code> 失败状态码</li>
+<li><code>EXIT_SUCCESS</code> 成功状态码</li>
+<li><code>RAND_MAX rand</code> 的最大返回值</li>
+<li><code>MB_CUR_MAX</code> 多字节字符中的最大字节数</li></ul></li>
+<li>定义了四个类型： <br>
+<ul><li><code>size_t</code> 是由 <code>sizeof</code> 关键字产生的无符号整类型。</li>
+<li><code>wchar_t</code> 是一个整型，标识一个宽字节字符，例如 <code>L’x’</code> 的类型就是 <code>wchar_t</code>。</li>
+<li><code>div_t</code> 是结构体类型 作为 <code>div</code> 函数的返回类型</li>
+<li><code>ldiv_t</code> 是一个结构类型，是函数 <code>ldiv</code> 的返回值类型。</li></ul></li>
+<li>定义了六类函数： <br>
+<ul><li>字符串函数 <br>
+<code>double atof(const char *nptr);</code> 将字符串转换成浮点型数 <br>
+<code>int atoi(const char *nptr);</code> 将字符串转换成整型数 <br>
+<code>long int atol(const char *nptr);</code>将字符串转换成长整型数 <br>
+<code>double strtod(const char *nptr, char **endptr);</code>将字符串转换成浮点数 <br>
+<code>long int strtol(const char *nptr, char **endptr, int base);</code>将字符串转换成长整型数 <br>
+<code>unsigned long int strtoul(const char *nptr, char **endptr, int base);</code> 将字符串转换成无符号长整型数 </li>
+<li>内存控制函数 <br>
+<code>void *calloc(size_t nmemb, size_t size);</code> 配置内存空间 <br>
+<code>void free(void *ptr);</code> 释放原先配置的内存 <br>
+<code>void *malloc(size_t size);</code> 配置内存空间 <br>
+<code>void *realloc(void *ptr, size_t size);</code>重新分配主存</li>
+<li>环境函数 <br>
+<code>int atexit(void (*func)(void));</code> <br>
+注册func指向的函数，该函数在程序正常终止的时候被调用。 <br>
+<code>void exit(int status);</code> <br>
+使程序正常终止。  <br>
+<code>void abort(void);</code>  <br>
+使程序异常终止，除非捕获了信号SIGABRT且信号处理程序没有返回。 <br>
+<code>char *getenv(const char *name);</code>  <br>
+搜索宿主环境提供的环境表，来查找一个能和name指向的串匹配的串。 <br>
+<code>int system(const char *string);</code> <br>
+把sring指向的串传递给宿主环境，然后命令处理程序按照实现定义的方式执行它。</li>
+<li>搜索和排序函数 <br>
+<code>void bsearch(const void *key, const void *base, size_t nmemb, size_t size, int (*compare)(const void , const void *));</code> <br>
+搜索一个拥有 <code>nmemb</code> 个元素的数组，来查找与 <code>key</code> 指向的对象匹配的元素， <br>
+<code>void qsort(void base, size_t nmemb, size_t size, int (*compare)(const void , const void *));</code>  <br>
+根据 <code>compare</code> 所指向的比较函数将数组内容排列成升序。</li>
+<li>数学函数 <br>
+<code>int abs(int j);</code>计算整型数的绝对值 <br>
+<code>long int labs(long int j);</code>将两个整数相除, 返回商和余数 <br>
+<code>div_t div(int number, int denom);</code>取长整型绝对值 <br>
+<code>ldiv_t ldiv(long int number, long int denom);</code>两个长整型数相除, 返回商和余数 <br>
+<code>int rand(void);</code> 随机数发生器 <br>
+<code>void srand(unsigned int seed);</code> 设置随机数种子</li>
+<li>多字节函数 <br>
+<code>int mblen(const char *s, size_t n);</code>根据locale的设置确定字符的字节数 <br>
+<code>int mbtowc(wchar_t *pwc, const char *s, size_t n);</code>把多字节字符转换为宽字符 <br>
+<code>int wctomb(char *s, wchar_t wchar);</code>把宽字符转换为多字节字符 <br>
+<code>size_t mbstowcs(wchar_t *pwcs, const char *s, size_t n);</code>把多字节字符串转换为宽字符串 <br>
+<code>size_t wcstombs(char *s, const wchar_t *pwcs, size_t n);</code>把宽字符串转换为多字节字符串</li></ul></li>
+</ol>
+
+
+
+<h3 id="string"><a name="t5"></a>string</h3>
+
+<p>包含了C语言的最常用的字符串操作函数</p>
+
+<ol>
+<li>定义了一个宏： <code>NULL</code> 空</li>
+<li>定义了一个变量： <code>size_t</code></li>
+<li>定义了五类函数： <br>
+<ul><li>名字以mem开头的函数对任意的字符序列进行操作。其中一个参数指向字符串的起始位置，另一个参数对元素的个数尽行计数。  <br>
+<code>void *memmove(void *s1, const void *s2, size_t n);</code> <br>
+<code>void *memcpy(void *s1, const void *s2, size_t n);</code> <br>
+memmove和memcpy均从s2指向的对象中复制n个字符到s1指向的对象中，返回s1的值。不同之处在于，当复制发生在两个重叠的对象中，memcpy对这种行为未定义，memmove则可以正确执行。 <br>
+<code>int memcmp(const void *s1, const void *s2, size_t n);</code> <br>
+比较s1和s2指向的对象中前n个字符。 <br>
+<code>void *memchr(const void *s, int c, size_t n);</code> <br>
+返回指向定位的字符的指针，如果没有返回空指针。 <br>
+<code>void *memset(void *s, int c, size_t n);</code> <br>
+把c的值复制到s指向的对象的前n个字符的每个字符中，返回s的值。</li>
+<li>名字以strn开头的函数对非空字符序列进行操作。  <br>
+<code>char *strcpy(char *s1, const char *s2);</code> <br>
+包括终止的空字符，返回s1的值 <br>
+<code>char *strcat(char *s1, const char *s2);</code> <br>
+包括终止的空字符，返回s1的值。 <br>
+<code>int strcmp(const char *s1, const char *s2);</code> <br>
+比较s1和s2指向的串。 <br>
+<code>char *strchr(const char *s, int c);</code> <br>
+终止的空字符被认为串的一部分。 <br>
+<code>char *strrchr(cosnt char *s, int c);</code> <br>
+确定c在s指向的串中最后一次出现的位置。r意为right一侧。 <br>
+<code>char *strstr(const char *s1, const char *s2);</code> <br>
+s2指向的串的字符序列在s1指向的串中第一次出现的位置。 <br>
+<code>size_t strspn(const char *s1, const char *s2);</code> <br>
+计算s1指向的字符串中完全由s2指向的字符串中的字符组成的最大初始段的长度。也就是说，它从s1的开头搜索一个和s2中的任意元素都不匹配的字符，返回此字符的下标。 <br>
+<code>size_t strcspn(const char *s1, const char *s2);</code> <br>
+查找两个字符串第一个相同的字符在s1中的位置，也就是The first char both in s1 and s2，如果没有则返回终止的空字符的索引。 <br>
+strcspn和strchr很相似，但它匹配的是任意一个字符集而不是一个字符。 <br>
+<code>char *strpbrk(const char *s1, const char *s2);</code> <br>
+确定s2指向的串中的任意的字符在s1中第一次出现的位置。 <br>
+<code>char *strtok(char *s1, const char *s2);</code> <br>
+分解字符串为一组字符串。s1为要分解的字符串，s2为分隔符字符串。</li>
+<li>名字以str开头的函数对空字符结尾的字符序列进行操作。 <br>
+<code>char *strncpy(char *s1, const char *s2, size_t n);</code> <br>
+从s2指向的数组中复制最多n个字符（包括空字符），不会在s1的末尾自动添加空字符；如果达到n个字符之前遇到了空字符，则复制完空字符后停止，并在s1指向的数组后面添加空字符，直到写入了n个字符。 <br>
+简单来说，复制，直到遇到空字符或达到n个字符，如果此时复制的字符数未达到n，就填充空字符，直到字符数达到n。 <br>
+<code>char *strncat(char *s1, const char *s2, size_t n);</code> <br>
+从s2指向的数组中将最多n个字符（空字符及其后面的字符不添加）添加到s1指向的串的结尾。在最后的结果后面加上一个空字符。 <br>
+简单来说，cat，直到遇到空字符或达到n个字符，最后的结果一定以空字符结尾。 <br>
+<code>int strncmp(const char *s1, const char *s2, size_t n);</code> <br>
+对s1和s2指向的数组中的最多n个字符进行比较（空字符后面的字符不参加比较）。</li>
+<li>其他类 <br>
+<code>size_t strlen(const char *s);</code> <br>
+计算s指向的串的长度，不包括结尾的空字符。 <br>
+<code>char *strerror(int errnum);</code> <br>
+将errnum中的错误编号对应到一个错误信息串。</li>
+<li>与<a href="https://www.baidu.com/s?wd=%E5%8C%BA%E5%9F%9F%E8%AE%BE%E7%BD%AE&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank">区域设置</a>有关 <br>
+<code>int strcoll(const char *s1, const char *s2);</code> <br>
+功能同strcmp，只是比较时串都被解释为适合当前区域设置的类别LC_COLLATE的形式。 <br>
+<code>size_t strxfrm(char *s1, const char *s2, size_t n);</code> <br>
+如果区域选项是”POSIX”或者”C”，那么strxfrm()同用strncpy()来拷贝字符串是等价的。</li></ul></li>
+</ol>
+
+
+
+<h2 id="熟练程序员的层次"><a name="t6"></a>熟练程序员的层次：</h2>
+
+
+
+<h3 id="asserth"><a name="t7"></a>assert.h</h3>
+
+<p>这个头文件只定义了一个宏：<code>assert</code> <br>
+如果条件为假，assert将输出一些信息并调用abort函数退出程序。  <br>
+一个可能的实现： <br>
+    <code>C++ <br>
+    #define NDEBUG <br>
+    #include &lt;assert.h&gt;  <br>
+    int main(int argc, char* argv[]) { <br>
+      int a = 12; <br>
+      int b = 24; <br>
+      assert( a &gt; b ); <br>
+      printf("a is larger than b!"); <br>
+      return 0; <br>
+    }</code></p>
+
+<p>上面的程序会发现程序中止，<code>printf</code> 并未执行，且有这样的输出：<code>main: Assertion 'a &gt; b' failed.</code>原因就是因为 <code>a</code> 其实小于 <code>b</code>，导致断言失败，<code>assert</code> 输出错误信息，并调用 <code>abort()</code>中止了程序执行。</p>
+
+<h3 id="limitsh"><a name="t8"></a>limits.h</h3>
+
+<p>头文件定义了整型变量的一些极限值和设置。</p>
+
+<p><code>CHAR_BIT</code> 一个ASCII字符长度  <code>SCHAR_MIN</code> 字符型最小值 <br>
+<code>SCHAR_MAX</code> 字符型最大值  <code>UCHAR_MAX</code> 无符号字符型最大值 <br>
+<code>CHAR_MIN</code>/<code>CHAR_MAX</code> char字符的最大最小值，如果char字符正被表示有符号整数。它们的值就跟有符号整数一样。否则char字符的最小值就是0，最大值就是无符号char字符的最大值。 <br>
+<code>MB_LEN_MAX</code> 一个字符所占最大字节数<code>SHRT_MIN</code> 最小短整型 <br>
+<code>SHRT_MAX</code> 最大短整形 <code>USHRT_MAX</code> 最大无符号短整型 <br>
+<code>INT_MIN</code> 最小整型 <code>INT_MAX</code> 最大整形 <br>
+<code>UINT_MAX</code> 最大无符号整型 <code>LONG_MIN</code> 最小长整型 <br>
+<code>LONG_MAX</code> 最大长整型 <code>ULONG_MAX</code> 无符号长整型</p>
+
+
+
+<h3 id="stddefh"><a name="t9"></a>stddef.h</h3>
+
+<p>此头文件定义了3个类型和2个宏，其中一些在其他头文件中也有定义。</p>
+
+<ul>
+<li>定义了三个类型  <br>
+<code>ptrdiff_t</code>两个指针相减的结果的类型，有符号整型，一般来说是int或long的typedef。  <br>
+<code>size_t</code>是sizeof操作符的结果的类型，无符号整型。  <br>
+<code>wchar_t</code>是一个整型，标识一个宽字节字符，例如L’x’的类型就是wchar_t。</li>
+<li>定义了两个宏 <br>
+<code>NULL</code> 空指针常量。  <br>
+<code>offsetof(type, member-designator)</code> 展开为一个size_t类型的整值常量表达式。</li>
+</ul>
+
+
+
+<h3 id="timeh"><a name="t10"></a>time.h</h3>
+
+<p>作时间的函数。 </p>
+
+<ol>
+<li><p>定义了两个宏</p>
+
+<ul><li><code>NULL</code></li>
+<li><code>CLOCKS_PER_SEC</code> 使 <code>clock</code> 函数的返回值 <code>CLOCKS_PER_SEC</code> 的单位是秒</li></ul></li>
+<li><p>定义了四个类型 <br>
+声明的类型有size_t、clock_t、time_t和struct tm。 </p>
+
+<ul><li><code>size_t</code> 在 <code>stddef.h</code> 中已介绍过。 </li>
+<li><code>clock_t</code> 是 <code>clock</code> 函数的返回值类型</li>
+<li><code>time_t</code> 是 <code>time</code> 函数的返回值类型，</li>
+<li><code>struct tm</code> 保存了一个日历时间的各组成部分，比如年月日时分秒等。</li></ul></li>
+<li><p>定义了两类函数</p>
+
+<ul><li>时间获取函数 <br>
+<code>time_t time(time_t *timer);</code> <br>
+取得目前的时间 <br>
+<code>clock_t clock(void);</code> <br>
+确定处理器使用的时间。</li>
+<li>时间转换函数 <br>
+<code>struct tm *gmtime(const time_t *timer);</code>把日期和时间转换为(GMT)时间 <br>
+<code>struct tm *localtime(const time_t *timer);</code>取得当地目前时间和日期 <br>
+<code>char *ctime(const time_t *timer);</code> 把日期和时间转换为字符串 <br>
+<code>time_t mktime(struct tm *timeptr);</code>将时间结构数据转换成经过的秒数 <br>
+<code>char *asctime(const struct tm *timeptr);</code>将时间和日期以字符串格式表示 <br>
+<code>size_t strftime(char *s, size_t maxsize, const char *format, const struct tm *timeptr);</code>将时间格式化</li>
+<li>其他函数  <br>
+<code>double difftime(time_t time1, time_t time0);</code> <br>
+计算两个日历时间之差：<code>time1-time0，</code>返回以秒为单位的差值。这个函数似乎简单到没有存在的必要，直接执行减法不就得了。</li></ul></li>
+</ol>
+
+
+
+<h2 id="优秀程序员的层次"><a name="t11"></a>优秀程序员的层次：</h2>
+
+
+
+<h3 id="floath"><a name="t12"></a>float.h</h3>
+
+<p>float 头文件类似 limit 头文件，主要是浮点型数值的相关定义。</p>
+
+<p>在所有实例里<code>FLT</code>指的是<code>float</code>，<code>DBL</code>是<code>double</code>，<code>LDBL</code>指的是<code>long double</code>.</p>
+
+<div class="table-box"><table>
+<thead>
+<tr>
+  <th>变量</th>
+  <th>定义</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>FLT_ROUNDS</td>
+  <td>定义浮点型数值四舍五入的方式，-1是不确定，0是向0，1是向最近，2是向正无穷大，3是负无穷大</td>
+</tr>
+<tr>
+  <td>FLT_RADIX 2</td>
+  <td>定义指数的基本表示（比如base-2是二进制，base-10是十进制表示法，16是十六进制）</td>
+</tr>
+<tr>
+  <td>FLT_MANT_DIG，DBL_MANT_DIG，LDBL_MANT_DIG</td>
+  <td>定义数值里数字的个数</td>
+</tr>
+<tr>
+  <td>FLT_DIG 6，DBL_DIG 10，LDBL_DIG 10</td>
+  <td>在四舍五入之后能不更改表示的最大小数位</td>
+</tr>
+<tr>
+  <td>FLT_MIN_EXP，DBL_MIN_EXP，LDBL_MIN_EXP</td>
+  <td>FLT_RADIX 的指数的最小负整数值</td>
+</tr>
+<tr>
+  <td>FLT_MIN_10_EXP -37，DBL_MIN_10_EXP -37，LDBL_MIN_10_EXP -37</td>
+  <td>10进制表示法的的指数的最小负整数值</td>
+</tr>
+<tr>
+  <td>FLT_MAX_EXP ,DBL_MAX_EXP ,LDBL_MAX_EXP</td>
+  <td>FLT_RADIX 的指数的最大整数值</td>
+</tr>
+<tr>
+  <td>FLT_MAX_10_EXP +37 ,DBL_MAX_10_EXP ,LDBL_MAX_10_EXP +37 +37</td>
+  <td>10进制表示法的的指数的最大整数值</td>
+</tr>
+<tr>
+  <td>FLT_MAX 1E+37，DBL_MAX 1E+37，LDBL_MAX 1E+37</td>
+  <td>浮点型的最大限</td>
+</tr>
+<tr>
+  <td>FLT_EPSILON 1E-5，DBL_EPSILON 1E-9，LDBL_EPSILON 1E-9</td>
+  <td>能表示的最小有符号数</td>
+</tr>
+</tbody></table></div>
+
+
+
+
+<h3 id="mathh"><a name="t13"></a>math.h</h3>
+
+<p>math.h是 C 语言内的数学函数库。</p>
+
+<div class="table-box"><table>
+<thead>
+<tr>
+  <th>函数</th>
+  <th>含义</th>
+  <th>函数</th>
+  <th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td><strong>三角函数</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double sin(double x);</td>
+  <td>正弦</td>
+  <td>double cos(double x);</td>
+  <td>余弦</td>
+</tr>
+<tr>
+  <td>double tan(double x);</td>
+  <td>正切</td>
+  <td>*cot三角函数，可以使用tan(PI/2-x)来实现。</td>
+  <td></td>
+</tr>
+<tr>
+  <td><strong>反三角函数</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double asin(double x);</td>
+  <td>结果介于[-PI/2, PI/2]</td>
+  <td>double acos(double x);</td>
+  <td>结果介于[0, PI]</td>
+</tr>
+<tr>
+  <td>double atan(double x);</td>
+  <td>反正切(主值), <br>结果介于[-PI/2, PI/2]</td>
+  <td>double atan2(double y,double);</td>
+  <td>反正切(整圆值),<br> 结果介于[-PI, PI]</td>
+</tr>
+<tr>
+  <td><strong>双曲三角函数</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double sinh(double x);</td>
+  <td>计算双曲正弦</td>
+  <td>double cosh(double x);</td>
+  <td>计算双曲余弦</td>
+</tr>
+<tr>
+  <td>double tanh(double x);</td>
+  <td>计算双曲正切</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td><strong>指数与对数</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double exp(double x);</td>
+  <td>求取自然数e的幂</td>
+  <td>double sqrt(double x);</td>
+  <td>开平方</td>
+</tr>
+<tr>
+  <td>double log(double x);</td>
+  <td>以e为底的对数</td>
+  <td>double log10(double x);</td>
+  <td>以10为底的对数</td>
+</tr>
+<tr>
+  <td>double pow(double x, double y);</td>
+  <td>计算以x为底数的y次幂</td>
+  <td>float powf(float x, float y);</td>
+  <td>与pow一致，输入与输出皆为浮点数</td>
+</tr>
+<tr>
+  <td><strong>取整</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double ceil(double);</td>
+  <td>取上整</td>
+  <td>double floor(double);</td>
+  <td>取下整</td>
+</tr>
+<tr>
+  <td><strong>标准化浮点数</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double frexp(double f, int *p);</td>
+  <td>标准化浮点数,<br> f = x * 2^p, <br>已知f求x, p <br>( x介于[0.5, 1] )</td>
+  <td>double ldexp(double x, int p);</td>
+  <td>与frexp相反, 已知x, p求f</td>
+</tr>
+<tr>
+  <td><strong>取整与取余</strong></td>
+  <td></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>double modf(double, double*);</td>
+  <td>将参数的整数部分通过指针回传, 返回小数部分</td>
+  <td>double fmod(double, double);</td>
+  <td>返回两参数相除的余数</td>
+</tr>
+</tbody></table></div>
+
+
+
+     </div>
+            <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-7b4cdcb592.css" rel="stylesheet">
+                </div>
+  </article>
+</div>
