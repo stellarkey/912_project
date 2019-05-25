@@ -14,3 +14,4 @@
 
 [2020清华大学计算机考研群](https://github.com/thu-cs/qq) 看看呗
 
+[清华大学计算机考研论坛（王道）](http://www.cskaoyan.com/forum-84-1.html) 逛逛会有意外收获
