@@ -30,6 +30,8 @@
 >
 >  [LeetCode](https://leetcode.com/) 
 >
+>  [LintCode 领扣](https://www.lintcode.com/)
+>
 >  [hihoCoder](https://hihocoder.com/hiho) 
 >
 >  [HackerRank](https://www.hackerrank.com/) 
