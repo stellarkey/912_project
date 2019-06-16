@@ -15,3 +15,7 @@
 [2020清华大学计算机考研群](https://github.com/thu-cs/qq) 看看呗
 
 [清华大学计算机考研论坛（王道）](http://www.cskaoyan.com/forum-84-1.html) 逛逛会有意外收获
+
+[张奥的知乎Live](https://www.zhihu.com/lives/895615716198330368) 可能开个知乎会员，有17年真题讲解
+
+[【2019 版】清华大学计算机考研信息、资料汇总](https://mp.weixin.qq.com/s/ZmdA2EX5xrYAyY4cP_tpMQ) 这个在本文件夹下做了备份（`王道在线.htm`）
