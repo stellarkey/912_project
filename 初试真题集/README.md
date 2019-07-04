@@ -1,14 +1,6 @@
----
-title: 912
-mathjax: true
-date: 2019-03-02 00:24:59
-tags:
-categories: Notes
----
-
-912.<!--more-->
-
 # References
+
+[考研英语真题词汇的统计分析](https://github.com/YSMull/words-statistics)
 
 [关于清华计算机专业基础综合（912）的复习](https://xuanxuanblingbling.github.io/life/study/2018/12/29/)
 
