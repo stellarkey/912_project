@@ -4,6 +4,8 @@
 
 可用语言：c++、java、python3。
 
+> PS，学堂在线开了新课：[算法设计与分析](https://www.xuetangx.com/courses/course-v1:TsinghuaX+2018122106X+2018_T2/about)。
+
 # OJ列表
 
 >  [**洛谷**](https://www.luogu.org/) 训练
