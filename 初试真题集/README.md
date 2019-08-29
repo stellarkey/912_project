@@ -426,6 +426,39 @@ BinNode *rank(BinNode* t, int k){
 >
 > 似乎没有在课上提到。
 
+##### 信号量
+
+(4)
+
+```
+class Semaphore {
+int sem;
+WaitQueue q;
+}
+Semaphore::P() {
+[9] ;
+if ( [10] ) {
+Add this thread t to q;
+block(t);
+}
+}
+Semaphore::V() {
+[11] ;
+if ( [12] ) {
+Remove a thread t from q;
+wakeup(t);
+}
+}
+```
+
+##### x86硬件
+
+(5) x86-32CPU的硬件组成，CR3寄存器⽤于存储页⽬录表起始 [13] 。
+
+##### 文件系统（硬链接、软链接）
+
+(6)A是计数为1的⽂件，创建A的硬链接B，再创建A的软连接C，再创建B的硬链D，B计数 [14] , D计数 [15] 。
+
 #### 判断题
 
 ##### *x86 页表细节
@@ -496,6 +529,8 @@ C.单总线速度⼤于双总线
 D.以上说法均错误
 
 > A。同步总线的特点有高速，单总线的特点是慢。见PPT。
+>
+> **可能是D**？之前408考试不是说还跟频率有关吗？并行不支持太高频。
 
 ##### MIPS流水
 
@@ -548,7 +583,7 @@ MIPS 处理器内存延迟 10ns， ALU 延迟 6ns，寄存器 3ns，输⼊延迟
 
 ```
 addn vd rs rt
-suburd rs rt
+subu rd rs rt
 ori rt rs rimm
 lw rt rs imm
 sw rt rs imm
