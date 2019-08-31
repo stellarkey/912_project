@@ -19,3 +19,5 @@
 [张奥的知乎Live](https://www.zhihu.com/lives/895615716198330368) 可能开个知乎会员，有17年真题讲解
 
 [【2019 版】清华大学计算机考研信息、资料汇总](https://mp.weixin.qq.com/s/ZmdA2EX5xrYAyY4cP_tpMQ) 这个在本文件夹下做了备份（`王道在线.htm`）
+
+[THU_CS 历年考研信息汇总](http://www.cskaoyan.com/forum.php?mod=viewthread&tid=43303&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost) 初、复试及后期资料
