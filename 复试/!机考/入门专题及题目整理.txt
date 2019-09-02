@@ -1,0 +1,193 @@
+基础训练10题
+下面是10个基础的编程题, 说是基础, 也有些简单计算方法在里面, 比如二分, 简单贪心, 简单搜索等.
+每个题都有解题报告, 想不出来可以看看解题报告, 关键是积累一些基础方法.
+POJ1753
+http://www.cnblogs.com/shuaiwhu/archive/2012/04/27/2474041.html
+
+POJ2965
+http://blog.csdn.net/w343051232/article/details/8189451
+
+POJ1328
+http://blog.csdn.net/lyy289065406/article/details/6642599
+
+POJ2109
+http://blog.csdn.net/lyy289065406/article/details/6642602
+
+POJ2586
+http://blog.csdn.net/lyy289065406/article/details/6642603
+
+POJ3295
+http://blog.csdn.net/lyy289065406/article/details/6642766
+
+POJ1068
+http://blog.csdn.net/lyy289065406/article/details/6645420
+
+POJ2632
+http://blog.csdn.net/lyy289065406/article/details/6645428
+
+POJ1573
+http://blog.csdn.net/lyy289065406/article/details/6645434
+
+POJ2993
+http://blog.csdn.net/lyy289065406/article/details/6645434
+
+
+==============================================================================================
+
+
+DP专题10题
+下面是10个DP题, 同样每个都有解题报告, 不过在做这些题之前, 
+DP入门资料, 背包9讲:http://wenku.baidu.com/link?url=0i75y3UHv-Ol5beS7oXwoDgSpjmG890b8rNNmIhj-6Fnprduu3epIH2ulGj7QanjQb-m26yPU2NvwvwvceLSpBKliJMHY6CX43Lq-TEi3Im
+
+POJ 1837
+http://blog.csdn.net/lyy289065406/article/details/6648094/
+
+POJ 1276
+http://blog.csdn.net/lyy289065406/article/details/6648102
+
+POJ 3267
+http://blog.csdn.net/lyy289065406/article/details/6648121
+
+POJ 1836
+http://blog.csdn.net/lyy289065406/article/details/6648129
+
+POJ 1260
+http://blog.csdn.net/lyy289065406/article/details/6648131
+
+POJ 2533
+http://blog.csdn.net/lyy289065406/article/details/6648136
+
+POJ 3176
+http://blog.csdn.net/lyy289065406/article/details/6648150
+
+POJ 1080
+http://blog.csdn.net/lyy289065406/article/details/6648156
+
+POJ 1159
+http://blog.csdn.net/lyy289065406/article/details/6648163       
+			  
+POJ 3252
+http://blog.csdn.net/xuezhongfenfei/article/details/8628602
+
+=================================================================================================
+
+图论专题
+图论的内容其实比较多, 下面的各个分类依次从简单到复杂, 各个题目解题报告百度可以搜到
+一些资料:http://pan.baidu.com/s/1o64xyOy
+1.拓扑排序, 最简单的图论
+	SOJ 1075
+	POJ 3687
+	POJ 1094
+	POJ 2367
+2.最小生成树, 主要理解最经典的两个最小生成树的算法(Prim和Kruskal)
+	SOJ 1169: Networking
+	SOJ 2198: Highways
+	POJ 1789: Truck History
+	最小生成树的题很多, 上面只列出三个.
+3.最短路, 最短路算法比较多, 建议重点学习SPFA和Dijkstra
+	SOJ 2427: Daizi's path system
+	SOJ 4243: Saving Girl
+	SOJ 1084: 滑雪比赛
+	POJ 3463: Sightseeing（较难）
+	POJ 3662: Telephone Lines（较难）
+	SOJ 2751: Wormholes（较难，SPFA判负圈)
+4.LCA(树上最近公共祖先问题), 主要掌握两个经典算法, 
+	离线方式的tarjan算法, 和在线方式的倍增算法.
+	POJ1330, POJ1470
+5.二分图匹配的匈牙利算法
+	http://blog.csdn.net/dark_scope/article/details/8880547
+	POJ1469
+6.差分约数(有点难), 可以先大致百度几个博客看看, 然后根据情况决定是否学习
+	SOJ 1687: Intervals
+	SOJ 1697: Cashier Employment
+
+
+==========================================================================================================
+
+数据结构专题
+数据结构的内容也比较多, 下面主要列出一些基础的. 另外在学习数据结构的时候,
+除了明白数据结构的原理之外, 熟练的使用STL也是挺重要的.
+
+0.链表, 比较基础, 就不多说了
+
+1.栈
+即STL里的stack（http://www.cplusplus.com/reference/stack/stack/），可用数组自己模拟
+SOJ 2511: Moooo
+SOJ 3085: windy's cake V(经典 栈与单调性的结合)
+SOJ 3279: hm 与 zx 的故事系列2
+POJ 1363: Rails
+SOJ 3329: Maximum Submatrix II(较难)
+
+2.队列和双段队列
+即STL里的queue(http://www.cplusplus.com/reference/queue/queue/)和deque(http://www.cplusplus.com/reference/deque/deque)，可用数组自己模拟
+SOJ 2978: Tasks
+SOJ 3139: Sliding Window(双端队列最经典的应用)
+SOJ 3636: 理想的正方形
+
+3.优先队列(说是队列, 实质上普遍是一个堆, 建议百度看下"堆排序", "大根堆"就知道优先队列的原理了)
+STL里的priority_queue（http://www.cplusplus.com/reference/queue/priority_queue/）
+HDOJ 1873: 看病要排队
+HDOJ 4006: The kth great number
+
+4.并查集, STL中没有现成的, 需要自己写. 主要理解其思想和路径压缩.
+HDOJ 1232: 畅通工程
+SOJ 1824: The Suspects  
+SOJ 4368: Frog's problem（较难）
+
+5.进阶, 数据结构还有很多, 上面只是最最基础的, 剩下的比较常用的还有
+后缀数组, 线段树, 平衡树(STL中的map和set就是用其实现)等.
+
+＊ STL：
+STL是ACM中需要用到的重要工具，学会使用STL可以节省很多代码量。
+STL的使用见：http://wenku.baidu.com/view/9140798a84868762caaed539.html
+还应掌握STL中map（http://www.cplusplus.com/reference/map/map/）, set（http://www.cplusplus.com/reference/set/set/）的使用
+
+
+==========================================================================================================
+
+搜索专题
+搜索专题没有什么特别的算法, 主要是剪枝, 只能在题目中学习.
+1.深度优先搜索 (poj2488,poj3083,poj3009,poj1321,poj2251)
+2.广度优先搜索(poj3278,poj1426,poj3126,poj3087.poj3414)
+3.简单搜索技巧和剪枝(poj2531,poj1416,poj2676,1129)
+
+==========================================================================================================
+
+
+数学专题
+ACM中的数学知识非常多, 下面列出了一些基础东西
+1.数论
+	最大公约数(GCD): POJ1241, POJ3002, POJ2115
+		欧几里得算法:http://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95
+		扩展欧几里得算法:http://zh.wikipedia.org/wiki/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95
+	快速幂(POJ3233, POJ3070)
+		普通快速幂(http://blog.sina.com.cn/s/blog_3f2fa9610100soxb.html) 
+		矩阵快速幂(http://www.cnblogs.com/yan-boy/archive/2012/11/29/2795294.html)
+	素数相关(POJ2262)
+		素数检测(用的比较少):Miller–Rabin算法
+		素数筛选:http://zh.wikipedia.org/wiki/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC%E7%AD%9B%E6%B3%95
+	同余模问题(孙子定理) (POJ1006)
+
+2.组合数学和概率
+	这部分的题目其实和高中的考试题一样, 只不过改成了程序求值.
+	poj3071,poj3440,poj1942
+
+3.线性代数
+	矩阵的运算(和矩阵快速幂结合)(POJ3070)
+	高斯消元法(poj1166,poj1222)
+	
+4.计算几何	
+
+5.博弈论:主要理解SG函数和几个经典的博弈游戏模型
+	资料推荐看:http://blog.csdn.net/acm_cxlove/article/details/7854530
+
+
+==========================================================================================================
+
+字符串处理专题
+这个专题主要是学习几个经典的算法和数据结构
+1.字典树
+	资料http://zh.wikipedia.org/wiki/Trie (POJ2001, POJ1056)
+
+2.KMP算法(http://zh.wikipedia.org/wiki/%E5%85%8B%E5%8A%AA%E6%96%AF-%E8%8E%AB%E9%87%8C%E6%96%AF-%E6%99%AE%E6%8B%89%E7%89%B9%E7%AE%97%E6%B3%95)
+	POJ3461, POJ2752, POJ3080

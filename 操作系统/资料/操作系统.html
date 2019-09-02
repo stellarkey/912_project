@@ -1,0 +1,1356 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="text/css" http-equiv="Content-Style-Type">
+<title>操作系统</title>
+</head>
+<body>
+<h1 align="center" class="root">
+<a name="7brr19fklbf7u83282t5h5ufnc">操作系统</a>
+</h1>
+<div align="center" class="globalOverview">
+<img src="%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_files/images/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.jpg"></div>
+<h2 class="topic">
+<a name="7qu2ut23g25061l39cs6091s74">内存管理</a>
+</h2>
+<h3 class="topic">
+<a name="769pm513ii98t8fff3rgudrb09">&nbsp;内存管理基础</a>
+</h3>
+<h3 class="topic">
+<a name="3jggbf5sg23quqh90jtrc03gg2">&nbsp;&nbsp;内存管理概念</a>
+</h3>
+<h3 class="topic">
+<a name="1lcmco9oh8mabfkmh67jrmspi8">&nbsp;&nbsp;&nbsp;程序装入与链接</a>
+</h3>
+<h3 class="topic">
+<a name="641c7kk1pael9dhqbb5pdqv2op">&nbsp;&nbsp;&nbsp;&nbsp;编译</a>
+</h3>
+<h3 class="topic">
+<a name="2tcbhf8jdfatv5uii1334mo2bd">&nbsp;&nbsp;&nbsp;&nbsp;链接</a>
+</h3>
+<h3 class="topic">
+<a name="4qve9ap8hlhsk8nadmsitdbh45">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;静态链接，装入时动态链接，运行时动态链接</a>
+</h3>
+<h3 class="topic">
+<a name="15s8k2m8ftehsbqs6j39636rd6">&nbsp;&nbsp;&nbsp;&nbsp;装入</a>
+</h3>
+<h3 class="topic">
+<a name="12o0h627dmrtr7t9fbsb4hvkhc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;静态装入（绝对装入）：编程阶段就把物理地址计算好，适用于单道环境，程序中使用绝对地址</a>
+</h3>
+<h3 class="topic">
+<a name="7r9anslhpjo1ldckai8o4l9egq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可重定位装入：装入时把逻辑地址转换成物理地址，装入后不改变，必须分配其要求的全部连续内存空间</a>
+</h3>
+<h3 class="topic">
+<a name="3omvhb2h9o2u7c59l2kh5ch8ts">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;动态重定位装入：在执行时再决定装入的地址，要分配到不连续空间中</a>
+</h3>
+<h3 class="topic">
+<a name="37ajc6jmn8vq1d3qctspi2phv1">&nbsp;&nbsp;&nbsp;逻辑地址与物理地址空间</a>
+</h3>
+<h3 class="topic">
+<a name="4tis6ellg5sp4il225gh84jh99">&nbsp;&nbsp;&nbsp;内存保护</a>
+</h3>
+<h3 class="topic">
+<a name="42d3n2e51oo9mr2dpfan8q1hjt">&nbsp;&nbsp;&nbsp;&nbsp;使用重定位（基地址）寄存器和界地址（限长）寄存器来实现保护</a>
+</h3>
+<h3 class="topic">
+<a name="1duhp3r4t00a3gi059udjirj98">&nbsp;&nbsp;交换与覆盖</a>
+</h3>
+<h3 class="topic">
+<a name="5lu4hin6urpks3dd1k3pr9b23q">&nbsp;&nbsp;&nbsp;交换技术用在不同进程或作业之间，覆盖用于同一个程序或进程中 </a>
+</h3>
+<h3 class="topic">
+<a name="0ljs075qkuuchhit0afkv5gd85">&nbsp;&nbsp;&nbsp;引入目的是为了提高内存利用率</a>
+</h3>
+<h3 class="topic">
+<a name="6k3fbs8oikngv792pbhrtop5lb">&nbsp;&nbsp;&nbsp;对换空间的管理</a>
+</h3>
+<h3 class="topic">
+<a name="19psnlomprnlomogjetl20mjal">&nbsp;&nbsp;&nbsp;&nbsp;对外存文件区管理的目的：提高文件存储空间的利用率</a>
+</h3>
+<h3 class="topic">
+<a name="5f9r1mej3gmj8q2l22fg496e59">&nbsp;&nbsp;&nbsp;&nbsp;对外存对换区管理的目的：提高进程换入和换出的速度</a>
+</h3>
+<h3 class="topic">
+<a name="0k0r569m06b2ep0ttlcmct2o76">&nbsp;&nbsp;连续分配管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="4mv1b5j2v7q9u4l0nnckdhi8u3">&nbsp;&nbsp;&nbsp;单一连续分配</a>
+</h3>
+<h3 class="topic">
+<a name="72nd45ea7fkp00oevlt9ir1oak">&nbsp;&nbsp;&nbsp;&nbsp;内存分系统区（低地址）和用户区</a>
+</h3>
+<h3 class="topic">
+<a name="0bq55hioi8fte7c753m0f772f8">&nbsp;&nbsp;&nbsp;&nbsp;简单、无外部碎片，可用覆盖技术，只能用于单用户，单任务的操作系统中，有内部碎片，存储器利用率低</a>
+</h3>
+<h3 class="topic">
+<a name="2bq9mr6lp2gpg8kdujb1dn1o4p">&nbsp;&nbsp;&nbsp;固定分区分配</a>
+</h3>
+<h3 class="topic">
+<a name="7rb52tm700phpcnjc1njfr011o">&nbsp;&nbsp;&nbsp;&nbsp;内存分为若干个固定大小的区域，每个分区只装入一道作业</a>
+</h3>
+<h3 class="topic">
+<a name="14rt9jbfcrhvfet48m8f0nmhma">&nbsp;&nbsp;&nbsp;&nbsp;无外部碎片，有内部碎片</a>
+</h3>
+<h3 class="topic">
+<a name="2m8v87t0blu8it3ftclt6s2jra">&nbsp;&nbsp;&nbsp;动态分区分配</a>
+</h3>
+<h3 class="topic">
+<a name="743jrsp4rvar3uid8jtqvg4sgp">&nbsp;&nbsp;&nbsp;&nbsp;在进程装入内存时，根据进程的大小动态地建立适合进程的分区</a>
+</h3>
+<h3 class="topic">
+<a name="5o86k1oskjq1lqoftg1kkd175s">&nbsp;&nbsp;&nbsp;&nbsp;有外部碎片，无内部碎片，可以通过紧凑技术来解决</a>
+</h3>
+<h3 class="topic">
+<a name="30nv9gs6plqr8oai2du2rbhq4p">&nbsp;&nbsp;&nbsp;&nbsp;动态分区分配策略</a>
+</h3>
+<h3 class="topic">
+<a name="1hq42gpej529edh102ld89i8hj">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首次适应，最好最快，每次从头开始找</a>
+</h3>
+<h3 class="topic">
+<a name="4qmlgdbgig9sbg0b29jbfh1s6r">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最佳适应，产生最多外部碎片，递增</a>
+</h3>
+<h3 class="topic">
+<a name="1j7c4fpsaci7titgrf2mpamtrc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最坏适应（最大适应），性能差，递减</a>
+</h3>
+<h3 class="topic">
+<a name="3044mbr95u8il02bndbe0c0ask">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邻近适应（循环首次适应），比首次差</a>
+</h3>
+<h3 class="topic">
+<a name="5fudgk4t7gjnjrs06rn9okqalk">&nbsp;&nbsp;非连续分配管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="1738p5v3olf3esinnsand3paa3">&nbsp;&nbsp;&nbsp;分页管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="58g7jun5n3ruqe1f9tbdc6f7ho">&nbsp;&nbsp;&nbsp;&nbsp;有内部碎片，无外部碎片</a>
+</h3>
+<h3 class="topic">
+<a name="6e8i8jaol4oh12rvvlpv0p1jti">&nbsp;&nbsp;&nbsp;&nbsp;页（页面）、页框（块、物理块）、页表、快表（TLB）</a>
+</h3>
+<h3 class="topic">
+<a name="0k49a44abd1147oj3q1ti3k15o">&nbsp;&nbsp;&nbsp;&nbsp;存取控制保护和越界地址保护</a>
+</h3>
+<h3 class="topic">
+<a name="321d136lut2lbbo5aivb7sc7e2">&nbsp;&nbsp;&nbsp;&nbsp;4K置换成十六进制是1000H，在程序中十六进制要加0x，0-10是11位</a>
+</h3>
+<h3 class="topic">
+<a name="3ofto1tnnfp3karkvi026fueb4">&nbsp;&nbsp;&nbsp;分段管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="12anrf2hjqlt0bl98oschem8ki">&nbsp;&nbsp;&nbsp;&nbsp;段表寄存器、段表</a>
+</h3>
+<h3 class="topic">
+<a name="5tlkm916gvq5pdsvnd2c611b2n">&nbsp;&nbsp;&nbsp;&nbsp;存取控制保护和越界地址保护</a>
+</h3>
+<h3 class="topic">
+<a name="40chcfd21qoode8pp4qav1qvhs">&nbsp;&nbsp;&nbsp;&nbsp;引入目的主要是：方便编程、分段共享、分段保护、动态链接和动态增长</a>
+</h3>
+<h3 class="topic">
+<a name="3qjefd833u02i8o4gi7nathoap">&nbsp;&nbsp;&nbsp;段页式管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="4kaenvpa3m6ir77bpldutl1g94">&nbsp;虚拟内存管理</a>
+</h3>
+<h3 class="topic">
+<a name="6b1ih2asjbnamgab62ipd4tsnc">&nbsp;&nbsp;非虚拟存储器中，作业必须全部装入内存且在运行过程也一直驻留内存</a>
+</h3>
+<h3 class="topic">
+<a name="04c9k49bea3ft72n4vm9hkoh3n">&nbsp;&nbsp;虚拟存储器的大小</a>
+</h3>
+<h3 class="topic">
+<a name="435li5ifb39qtp42l0e23o9nfc">&nbsp;&nbsp;&nbsp;=&lt;内存容量和外存容量之和</a>
+</h3>
+<h3 class="topic">
+<a name="3etim6875oqn1lug5nbihimihk">&nbsp;&nbsp;&nbsp;=&lt;计算机的地址位数能容纳的最大容量</a>
+</h3>
+<h3 class="topic">
+<a name="6d2bm60scdm360kpsqim7efp26">&nbsp;&nbsp;虚拟内存基本概念</a>
+</h3>
+<h3 class="topic">
+<a name="19re0db6pva9prqqlpkknuca48">&nbsp;&nbsp;&nbsp;传统存储管理方式的特征</a>
+</h3>
+<h3 class="topic">
+<a name="4hkb23lbthase92q5o88tdmuta">&nbsp;&nbsp;&nbsp;&nbsp;一次性</a>
+</h3>
+<h3 class="topic">
+<a name="4etcqbvpfbljo8bihqrahlp9gv">&nbsp;&nbsp;&nbsp;&nbsp;驻留性</a>
+</h3>
+<h3 class="topic">
+<a name="7qofasd1hoemj40mp4720ivgmd">&nbsp;&nbsp;&nbsp;局部性原理</a>
+</h3>
+<h3 class="topic">
+<a name="549btlu4mo19ttmh2h3tv4gago">&nbsp;&nbsp;&nbsp;&nbsp;时间、空间局部性</a>
+</h3>
+<h3 class="topic">
+<a name="6nnrgsfn74lfl58mrv83mh16oi">&nbsp;&nbsp;&nbsp;虚拟存储器的定义和特征</a>
+</h3>
+<h3 class="topic">
+<a name="340ms6rlvkug87igf3mr9e9ob4">&nbsp;&nbsp;&nbsp;&nbsp;多次性：作业可分多次装入</a>
+</h3>
+<h3 class="topic">
+<a name="12iq7dtvt40113dst2af1kgj3m">&nbsp;&nbsp;&nbsp;&nbsp;对换性：允许在作业运行过程中进行换进换出</a>
+</h3>
+<h3 class="topic">
+<a name="01q67gvqlmva0j3a6ucugfe9du">&nbsp;&nbsp;&nbsp;&nbsp;虚拟性：指从逻辑上扩充内存的容量</a>
+</h3>
+<h3 class="topic">
+<a name="07rfvgujtrhdve7petu7qspcq6">&nbsp;&nbsp;请求分页管理方式</a>
+</h3>
+<h3 class="topic">
+<a name="4ogjl9df0pslkfn5qivjqvsshn">&nbsp;&nbsp;&nbsp;页表机制</a>
+</h3>
+<h3 class="topic">
+<a name="40ks0d7saadpuoah9u8pdhe98s">&nbsp;&nbsp;&nbsp;&nbsp;增加四个字段：状态位P，访问字段A，修改位M，外存地址</a>
+</h3>
+<h3 class="topic">
+<a name="6vqars2mjvoq4d53dg4cf9v8uc">&nbsp;&nbsp;&nbsp;&nbsp;缺页中断机构</a>
+</h3>
+<h3 class="topic">
+<a name="5grho538990pr1td4ttvu63uvk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在指令执行区间产生和处理中断信号，而非一条指令执行后，是内中断</a>
+</h3>
+<h3 class="topic">
+<a name="7r98t1r00ins35g41o0hmtalam">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一条指令在执行期间，可产生多次缺页中断</a>
+</h3>
+<h3 class="topic">
+<a name="22aav0epeolslesrfpp0g1m1nm">&nbsp;&nbsp;&nbsp;&nbsp;地址变换机构</a>
+</h3>
+<h3 class="topic">
+<a name="669hfmamgvuq81v7tr1rac8qhm">&nbsp;&nbsp;页面置换算法</a>
+</h3>
+<h3 class="topic">
+<a name="0ggutej1r66v428t5uv5sas3s7">&nbsp;&nbsp;&nbsp;最佳转换算法（OPT）</a>
+</h3>
+<h3 class="topic">
+<a name="1r31hfhodbmqda45m2hu1seehp">&nbsp;&nbsp;&nbsp;&nbsp;无Belady异常，向后看，最长时间内不再被访问的页面</a>
+</h3>
+<h3 class="topic">
+<a name="7q1ap2fq61ca2rma4mjuqn2582">&nbsp;&nbsp;&nbsp;先进先出置换算法（FIFO）</a>
+</h3>
+<h3 class="topic">
+<a name="1iu80h7g3c9ufq840orqkpon8g">&nbsp;&nbsp;&nbsp;&nbsp;Belady异常：物理块数增大，而页故障数不减反增</a>
+</h3>
+<h3 class="topic">
+<a name="67nli3sg89egvuoq908nbrsrj1">&nbsp;&nbsp;&nbsp;最近最少使用置换算法（LRU）</a>
+</h3>
+<h3 class="topic">
+<a name="2b6ek150a1kui26s4317eb2htc">&nbsp;&nbsp;&nbsp;&nbsp;无Belady异常，向前看</a>
+</h3>
+<h3 class="topic">
+<a name="47b0gmdhlgkch7qff13hgd95k4">&nbsp;&nbsp;&nbsp;时钟置换算法（CLOCK，NRU）</a>
+</h3>
+<h3 class="topic">
+<a name="06lj2dmd8st715lp450cfa5sho">&nbsp;&nbsp;&nbsp;FIFO与LRU替换页面和缺页情况一样，要求不连续的页面号均不相同</a>
+</h3>
+<h3 class="topic">
+<a name="08odli4ucqisjo8fqv2jh9mpoh">&nbsp;&nbsp;页面分配策略</a>
+</h3>
+<h3 class="topic">
+<a name="2sos34e1dsbn32ikkhrjm637gr">&nbsp;&nbsp;&nbsp;驻留集的大小考虑</a>
+</h3>
+<h3 class="topic">
+<a name="4l173465m00r6qna8ctl51uqnv">&nbsp;&nbsp;&nbsp;&nbsp;分配给一个进程存储量越小，驻留主存进程数多，CPU时间利用率高</a>
+</h3>
+<h3 class="topic">
+<a name="03ged8jmohoh1mhcjbaqokpht1">&nbsp;&nbsp;&nbsp;&nbsp;页数过少，页错误率会相对较高</a>
+</h3>
+<h3 class="topic">
+<a name="5klupnuvgc1eki2o48hf0926ee">&nbsp;&nbsp;&nbsp;&nbsp;页数过多，对进程错误率没有明显影响</a>
+</h3>
+<h3 class="topic">
+<a name="3sbqslqojbhg3q65h4uf0rcovn">&nbsp;&nbsp;&nbsp;分配策略</a>
+</h3>
+<h3 class="topic">
+<a name="4ekm7p8up22kq944rkm7e1tcoq">&nbsp;&nbsp;&nbsp;&nbsp;固定分配局部置换</a>
+</h3>
+<h3 class="topic">
+<a name="2sqhgiu6kuk5ca0aktnlacmkc6">&nbsp;&nbsp;&nbsp;&nbsp;可变分配全局置换</a>
+</h3>
+<h3 class="topic">
+<a name="6hdphugjubek5fab6n92vis9bu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;操作系统空闲物理块队列</a>
+</h3>
+<h3 class="topic">
+<a name="196eeigeb6ujfstnu0bf2n3ja5">&nbsp;&nbsp;&nbsp;&nbsp;可变分配局部置换</a>
+</h3>
+<h3 class="topic">
+<a name="0uig7puav8hgiu8hmplcsl9i8r">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;缺页高再分配物理块，低减少分配给该进程的物理块</a>
+</h3>
+<h3 class="topic">
+<a name="10gjd46dathu8r35pju72psa5d">&nbsp;&nbsp;&nbsp;调入页面时机</a>
+</h3>
+<h3 class="topic">
+<a name="03b1qathu2hehrjhi8e997306a">&nbsp;&nbsp;&nbsp;&nbsp;预调页策略</a>
+</h3>
+<h3 class="topic">
+<a name="34ci2uhf8ud6r7uss5qnh816qd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以预测为基础的预调页策略</a>
+</h3>
+<h3 class="topic">
+<a name="3vj3rogdc62eola2gt84535n9s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;运行前的调入，预调页成功率不高</a>
+</h3>
+<h3 class="topic">
+<a name="3slkknoarm4lmm8urtclhni9ev">&nbsp;&nbsp;&nbsp;&nbsp;请求调页策略</a>
+</h3>
+<h3 class="topic">
+<a name="03m7347umvvgtsnf00dk03tdun">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;进程在运行中需要访问的页面不在内存而提出请求，由系统将所需页调入</a>
+</h3>
+<h3 class="topic">
+<a name="68cq1c007t8pgrvfmut8b567rh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;易实现，运行期间调入，缺点：每次只调入一页花费过多I/0开销</a>
+</h3>
+<h3 class="topic">
+<a name="6b1lvavq74mdgkn1g45r0eji6g">&nbsp;&nbsp;&nbsp;从何处调入页面</a>
+</h3>
+<h3 class="topic">
+<a name="5om1t4kh9dkb9ckg08gd3oi5q0">&nbsp;&nbsp;&nbsp;&nbsp;外存文件区用离散分配方式，对换区用连续分配方式</a>
+</h3>
+<h3 class="topic">
+<a name="6cub3j25a7lku3jn3sn6m2gohb">&nbsp;&nbsp;&nbsp;&nbsp;系统有足够对换区空间</a>
+</h3>
+<h3 class="topic">
+<a name="091k796soi36tgf6gj5ed8l5vv">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件区复制到对换区，再从对换区调入所需页面</a>
+</h3>
+<h3 class="topic">
+<a name="27vqbtkuo7e9670rejp4gqmrpb">&nbsp;&nbsp;&nbsp;&nbsp;系统没有足够对换区空间</a>
+</h3>
+<h3 class="topic">
+<a name="5prmvt2ueq4evaf1lk7qfne7o9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;不会被修改的文件直接从文件区调入，换出时则不必再将它们换出</a>
+</h3>
+<h3 class="topic">
+<a name="54svsvvn698lqatcqnufr7s52q">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;会被修改的文件，换到对换区，以后需要再从对换区换入</a>
+</h3>
+<h3 class="topic">
+<a name="5pbf54jjmdvku4pleka1k2hnki">&nbsp;&nbsp;工作集（驻留集）</a>
+</h3>
+<h3 class="topic">
+<a name="2fqg89essaer6blociel73g39a">&nbsp;&nbsp;&nbsp;在某段时间间隔内，进程要访问的页面集合</a>
+</h3>
+<h3 class="topic">
+<a name="4dlknbvt7tmt11hb67tgjija81">&nbsp;&nbsp;抖动（颠簸）</a>
+</h3>
+<h3 class="topic">
+<a name="64j2bcfrrl1qvjepf9lrp931uc">&nbsp;&nbsp;&nbsp;刚刚换出的页面马上又要换入主存，刚刚换入的页面马上就要换出主存</a>
+</h3>
+<h2 class="topic">
+<a name="6e4mi93n5umb47vcku1kvkjdou">文件管理</a>
+</h2>
+<h3 class="topic">
+<a name="59bgtvbv2apkbtg81reb3ms06v">&nbsp;文件系统基础</a>
+</h3>
+<h3 class="topic">
+<a name="5d52mq9rgi22i8osajue1bm1pq">&nbsp;&nbsp;文件概念</a>
+</h3>
+<h3 class="topic">
+<a name="693l7ubvae13sml0vol8nmuoav">&nbsp;&nbsp;文件的逻辑结构</a>
+</h3>
+<h3 class="topic">
+<a name="02oril3euc2k1pakna4cdjnapb">&nbsp;&nbsp;&nbsp;用户观点看到的文件组织形式</a>
+</h3>
+<h3 class="topic">
+<a name="6q07i7qh974mog19npan6e56bg">&nbsp;&nbsp;&nbsp;无结构文件（流式文件）</a>
+</h3>
+<h3 class="topic">
+<a name="30jdpt6bl673f3nva7psh4uqgk">&nbsp;&nbsp;&nbsp;有结构文件</a>
+</h3>
+<h3 class="topic">
+<a name="6jcjc22s8i2gtf1aeh4bsoa0kj">&nbsp;&nbsp;&nbsp;&nbsp;顺序文件</a>
+</h3>
+<h3 class="topic">
+<a name="57rkku4u5avl5qqq9h2rt3altl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;串结构：记录之间的顺序与关键字无关，通常的办法是由时间决定</a>
+</h3>
+<h3 class="topic">
+<a name="5eoal5p75e9agjvcicvcainul7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;顺序结构：文件中所有记录按关键字排序</a>
+</h3>
+<h3 class="topic">
+<a name="724j8c5lc522q836kelsbrin0d">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;分定长和变长</a>
+</h3>
+<h3 class="topic">
+<a name="58o8cuoggk8a0kl5qun7676cfe">&nbsp;&nbsp;&nbsp;&nbsp;索引文件</a>
+</h3>
+<h3 class="topic">
+<a name="5qm1umgliaaes3e1cg8hp6670c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定长记录文件</a>
+</h3>
+<h3 class="topic">
+<a name="01n23de009t1mar4kh8gag193s">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可变长记录文件</a>
+</h3>
+<h3 class="topic">
+<a name="4ttl4b78gb0ug1b32gt6lhev1k">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只能顺序查找，可以建立一张索引表，索引表本身定长</a>
+</h3>
+<h3 class="topic">
+<a name="58ge1862ded78kr8d9h6ic1tbp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由索引表和逻辑文件组成</a>
+</h3>
+<h3 class="topic">
+<a name="4p7jmffcjl97rv643jo36m5csm">&nbsp;&nbsp;&nbsp;&nbsp;索引顺序文件</a>
+</h3>
+<h3 class="topic">
+<a name="29ri1769spf0ag147elp91197n">&nbsp;&nbsp;目录结构</a>
+</h3>
+<h3 class="topic">
+<a name="1tagd7oqor2nei7fdcqfft0rmn">&nbsp;&nbsp;&nbsp;目录管理基本要求</a>
+</h3>
+<h3 class="topic">
+<a name="0o9ijkssuvujp2v0rcv52c1jkb">&nbsp;&nbsp;&nbsp;&nbsp;实现按名存取：文件系统向用户提供的最基本的服务</a>
+</h3>
+<h3 class="topic">
+<a name="7umktej0di5gcuklaik35bsh0m">&nbsp;&nbsp;&nbsp;&nbsp;提高对目录的检索速度</a>
+</h3>
+<h3 class="topic">
+<a name="5ungnr36f59vlh46ifiohct25b">&nbsp;&nbsp;&nbsp;&nbsp;文件共享</a>
+</h3>
+<h3 class="topic">
+<a name="0frslbo51nk9lqstk7cd6e1jk8">&nbsp;&nbsp;&nbsp;&nbsp;文件保护</a>
+</h3>
+<h3 class="topic">
+<a name="2u35stlf3umgst3m37gi1j2oa2">&nbsp;&nbsp;&nbsp;文件控制块和索引节点</a>
+</h3>
+<h3 class="topic">
+<a name="544paf7fhe1uo1v7ejdrqv9liq">&nbsp;&nbsp;&nbsp;&nbsp;FCB定义</a>
+</h3>
+<h3 class="topic">
+<a name="4jep9hbrjfl34md9p8ut8kcloe">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用于描述和控制文件的数据结构</a>
+</h3>
+<h3 class="topic">
+<a name="7qobunn8v17i1t6hi0tem2ard1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件目录：文件控制块的有序集合</a>
+</h3>
+<h3 class="topic">
+<a name="28h9ijveg8f1vqnukm6n59n8k0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一个FCB是一个文件目录项</a>
+</h3>
+<h3 class="topic">
+<a name="37vc4tk6nnt3sqrn3dnh280p2o">&nbsp;&nbsp;&nbsp;&nbsp;FCB信息</a>
+</h3>
+<h3 class="topic">
+<a name="1298ls84t4eplnme83gsl1hj2e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基本信息类</a>
+</h3>
+<h3 class="topic">
+<a name="635spc1gceh128jp2tisfv3rao">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件名</a>
+</h3>
+<h3 class="topic">
+<a name="4108rdrfs47khh9t83ckkpsghd">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;标识一个文件的符号名，用户利用该名字进行存取</a>
+</h3>
+<h3 class="topic">
+<a name="4a20qg8912uknb4fjefqas036v">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件物理位置</a>
+</h3>
+<h3 class="topic">
+<a name="26bvrcse96gogm68r613reqc48">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;指文件在外存上的存储位置</a>
+</h3>
+<h3 class="topic">
+<a name="7ajo8fq766vvha6p7qcqherein">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件逻辑结构</a>
+</h3>
+<h3 class="topic">
+<a name="69rncgs29e8kfrqnp97ntd8l30">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;指示文件是流式文件还是 记录式文件</a>
+</h3>
+<h3 class="topic">
+<a name="42tn5327195usul6nbq1cg16n6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件物理结构</a>
+</h3>
+<h3 class="topic">
+<a name="1p5m6bd3r1igbdt3fgdmscrloh">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;指示文件是顺序文件、链接式文件还是索引文件</a>
+</h3>
+<h3 class="topic">
+<a name="69t22qkrir9nefh19barg5nmmc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存取控制信息类</a>
+</h3>
+<h3 class="topic">
+<a name="0033oid1b0g2rnoheuqs0l9afp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件存取权限等</a>
+</h3>
+<h3 class="topic">
+<a name="7e9io1j1qi86td1uo9b4ghousf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;使用信息类</a>
+</h3>
+<h3 class="topic">
+<a name="5irorjkjphoge1q1o3kjv4773f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件的建立，修改时间等</a>
+</h3>
+<h3 class="topic">
+<a name="7an9qqsk7nsr8r2d2jvanhvcdc">&nbsp;&nbsp;&nbsp;&nbsp;索引结点</a>
+</h3>
+<h3 class="topic">
+<a name="40ev8973nlecm2eh1uailnaqh6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件名与文件描述信息分开</a>
+</h3>
+<h3 class="topic">
+<a name="1nb5n196hcil0f7v1sbmk6sqb9">&nbsp;&nbsp;&nbsp;单级目录结构</a>
+</h3>
+<h3 class="topic">
+<a name="6m2ohn7f5jir8v8k8ibjqtiqte">&nbsp;&nbsp;&nbsp;&nbsp;优点：简单能实现目录管理的基本功能&mdash;&mdash;按名存取</a>
+</h3>
+<h3 class="topic">
+<a name="2qrkjr9dvktj9t08a112015ovu">&nbsp;&nbsp;&nbsp;&nbsp;缺点：查找速度慢、不允许重名、不便文件共享</a>
+</h3>
+<h3 class="topic">
+<a name="4fiadl9idi047lp50rst9qqd93">&nbsp;&nbsp;&nbsp;两级目录结构</a>
+</h3>
+<h3 class="topic">
+<a name="60aj0sl5laou7di4mb4k4s3bj8">&nbsp;&nbsp;&nbsp;&nbsp;提高检索速度、不同用户目录可以重名</a>
+</h3>
+<h3 class="topic">
+<a name="7qo34psgn1bh5rsamgidans8jp">&nbsp;&nbsp;&nbsp;树形目录结构</a>
+</h3>
+<h3 class="topic">
+<a name="6oks8irpsfecn898omsmj5lhpg">&nbsp;&nbsp;&nbsp;&nbsp;也称多级目录结构，路径名、当前目录</a>
+</h3>
+<h3 class="topic">
+<a name="3f0bgt0co704m6p0a87he6rtqd">&nbsp;&nbsp;&nbsp;图形目录结构</a>
+</h3>
+<h3 class="topic">
+<a name="41dfecd6d7hjo1jmdugfgkgsuj">&nbsp;&nbsp;&nbsp;&nbsp;在树形目录结构的基础上增加了一些指向同一结点的有向边</a>
+</h3>
+<h3 class="topic">
+<a name="6lqccbimdk03k6ms8ftbh5dfcc">&nbsp;&nbsp;文件共享</a>
+</h3>
+<h3 class="topic">
+<a name="2gp4n9krs63fhchk6gdiefk73k">&nbsp;&nbsp;&nbsp;基于索引结点的共享方式（硬链接）</a>
+</h3>
+<h3 class="topic">
+<a name="0af655np9ldmi59jc81dm5gdna">&nbsp;&nbsp;&nbsp;&nbsp;count会改变</a>
+</h3>
+<h3 class="topic">
+<a name="50f5aoheja35dcp2psrgct3d04">&nbsp;&nbsp;&nbsp;符号链接（软链接）</a>
+</h3>
+<h3 class="topic">
+<a name="79l1q3n2743acha94fvsu9avcs">&nbsp;&nbsp;&nbsp;&nbsp;LINK文件，只包含被链接文件的路径名</a>
+</h3>
+<h3 class="topic">
+<a name="1u4qued4aeur4jdcal6820evor">&nbsp;&nbsp;文件保护</a>
+</h3>
+<h3 class="topic">
+<a name="6q31483j2vgeht1a2epudo06qq">&nbsp;&nbsp;&nbsp;访问类型</a>
+</h3>
+<h3 class="topic">
+<a name="6060h9rllmepmh5dmqpfau5vcu">&nbsp;&nbsp;&nbsp;&nbsp;读、写、执行、添加、删除等</a>
+</h3>
+<h3 class="topic">
+<a name="3h8ogf2q5vilb9c75mfks90fds">&nbsp;&nbsp;&nbsp;访问控制</a>
+</h3>
+<h3 class="topic">
+<a name="3bqha3g68fmlje5hajeeml5pqr">&nbsp;&nbsp;&nbsp;&nbsp;用于控制用户对文件的访问方式</a>
+</h3>
+<h3 class="topic">
+<a name="143nc7tfj02pc2capkui31ejme">&nbsp;&nbsp;&nbsp;口令、密码是为了防止用户文件被他人存取或窃取</a>
+</h3>
+<h3 class="topic">
+<a name="4lsb208brult5kprnrrdldqt6r">&nbsp;&nbsp;&nbsp;对一个文件的访问，常由用户访问权限和文件属性共同限制</a>
+</h3>
+<h3 class="topic">
+<a name="14throva90f8hng00ma2l7jtkk">&nbsp;&nbsp;&nbsp;存取控制矩阵用于多用户之间的存取权限保护</a>
+</h3>
+<h3 class="topic">
+<a name="4o2vfpnp0lh1upu91bc7fudafr">&nbsp;文件系统实现</a>
+</h3>
+<h3 class="topic">
+<a name="6j3291b85ph5gseipfrlk62pit">&nbsp;&nbsp;文件系统层次结构</a>
+</h3>
+<h3 class="topic">
+<a name="4v548m4uvav2t0cou3vlt6kccu">&nbsp;&nbsp;&nbsp;文件系统接口</a>
+</h3>
+<h3 class="topic">
+<a name="42mqto40j79p9hjdrqjcs1v2gp">&nbsp;&nbsp;&nbsp;&nbsp;命令接口、程序接口</a>
+</h3>
+<h3 class="topic">
+<a name="73qqqojohgni1hhf1fnr012kt1">&nbsp;&nbsp;&nbsp;对对象操纵和管理的软件集合</a>
+</h3>
+<h3 class="topic">
+<a name="175f19bepd0pdugp4g3ertsosb">&nbsp;&nbsp;&nbsp;&nbsp;文件管理系统的核心</a>
+</h3>
+<h3 class="topic">
+<a name="7if23npqeeade6kegfmn26ji72">&nbsp;&nbsp;&nbsp;&nbsp;对文件存储空间的管理、文件目录的管理、文件逻辑地址转换为物理地址，文件读写、文件共享和保护功能</a>
+</h3>
+<h3 class="topic">
+<a name="079un945dpuq38v8kv0ffmk6b6">&nbsp;&nbsp;&nbsp;对象及其属性</a>
+</h3>
+<h3 class="topic">
+<a name="5e2p45k5h2ihdn2mvuekk38cl6">&nbsp;&nbsp;&nbsp;&nbsp;文件管理系统的对象有：文件、目录、磁盘存储空间</a>
+</h3>
+<h3 class="topic">
+<a name="7iop738cfceoi1ndrkqfpbbfru">&nbsp;&nbsp;目录实现</a>
+</h3>
+<h3 class="topic">
+<a name="71t54v228fquura81tceevp7eq">&nbsp;&nbsp;文件实现</a>
+</h3>
+<h3 class="topic">
+<a name="47rv58580tr5i23no7atrdufae">&nbsp;&nbsp;&nbsp;文件分配方式</a>
+</h3>
+<h3 class="topic">
+<a name="6ghk29jc4eprkcp47lhv8fs86v">&nbsp;&nbsp;&nbsp;&nbsp;连续分配方式</a>
+</h3>
+<h3 class="topic">
+<a name="6q3fsi0r5dtq35bkkpqus9bsrn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要求为每个文件分配一组相邻接的盘块</a>
+</h3>
+<h3 class="topic">
+<a name="5e7sspnumb0mi5b2gee0iq5qvb">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在目录项的文件物理地址字段中，记录该文件第一个记录所在盘块号和文件长度</a>
+</h3>
+<h3 class="topic">
+<a name="0l7fngksc17il4boc3maodc83v">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;优点：实现简单，存取速度快</a>
+</h3>
+<h3 class="topic">
+<a name="3d0in1pbg1aha8srgc7tsv2u3a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;缺点：只适用于长度固定的文件，会产生外部碎片</a>
+</h3>
+<h3 class="topic">
+<a name="5fq5u0bm9jcd3a14g21uiqknve">&nbsp;&nbsp;&nbsp;&nbsp;链接分配方式</a>
+</h3>
+<h3 class="topic">
+<a name="6qv65p72dh044omj0vrbk652p6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;离散分配方式，消除了外部碎片，提高外存空间利用率，可动态增加</a>
+</h3>
+<h3 class="topic">
+<a name="0dtfpb753buprbonji5djjkelk">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;隐式链接</a>
+</h3>
+<h3 class="topic">
+<a name="0mo4fddsphin5d5kdlti9urve3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只适合顺序访问，可靠性差，随机访问速度低</a>
+</h3>
+<h3 class="topic">
+<a name="1v3mi3kiu1icuoboqpknpmh3s7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目录项中含有指向链接文件第一个盘块和最后一个盘块的指针，每个盘块含指向下一盘块的指针，会占一个大小空间</a>
+</h3>
+<h3 class="topic">
+<a name="5sm2r3rpl40ch02v90lvqfspjp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显式链接</a>
+</h3>
+<h3 class="topic">
+<a name="630olne85c71ojrfmfnj7bkfsl">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把用于链接文件各物理块的指针，显式存放在内存的一张链接表中，整个磁盘仅一张。每个表项存放链接指针，即下一盘块号</a>
+</h3>
+<h3 class="topic">
+<a name="20rg5htnfv7p3ral9u2ic23m4f">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCB中的物理地址字段填入第一个盘块号</a>
+</h3>
+<h3 class="topic">
+<a name="3nd3i5kei2nrng6glr7go64j85">&nbsp;&nbsp;&nbsp;&nbsp;索引分配</a>
+</h3>
+<h3 class="topic">
+<a name="7pmjh7ap3710mktdot7hobv20b">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为每个文件分配一个索引块</a>
+</h3>
+<h3 class="topic">
+<a name="1hhvm31jfaig9qgfeqovjlkocs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;建立一个文件时，要在目录项中填上指向该索引块的指针</a>
+</h3>
+<h3 class="topic">
+<a name="24ktqbf6v6r0g6neljie1gblq4">&nbsp;&nbsp;&nbsp;文件存储空间管理</a>
+</h3>
+<h3 class="topic">
+<a name="5tnjj3p7o5vi409t10nqkqpjil">&nbsp;&nbsp;&nbsp;&nbsp;空闲表法</a>
+</h3>
+<h3 class="topic">
+<a name="0vbj118pvcbq0uj77hoje69srt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为每个文件分配一块连续的存储空间，系统为外存上所有空闲区建立一张空闲表，每个空闲区对应于一个空闲表项，包括：表项序号、该空闲区的第一个盘块号、该区的空闲盘块数。空闲区按盘块号递增顺序排列</a>
+</h3>
+<h3 class="topic">
+<a name="6aotctm25mnbphbu1edfo65fpp">&nbsp;&nbsp;&nbsp;&nbsp;空闲链表法（盘块链、盘区链）</a>
+</h3>
+<h3 class="topic">
+<a name="3rebn9g6l8on36ftup6d6srvt6">&nbsp;&nbsp;&nbsp;&nbsp;位示图</a>
+</h3>
+<h3 class="topic">
+<a name="0igsr5pdac165mdsotj3r8mfln">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;放在内存中。主要优点：容易找到一个或一组相邻的空闲盘块</a>
+</h3>
+<h3 class="topic">
+<a name="29c6jepn5ei5opde0cml1tkebv">&nbsp;&nbsp;&nbsp;&nbsp;成组链接法</a>
+</h3>
+<h3 class="topic">
+<a name="32fcrnr64oekgnvuq5thc5f84t">&nbsp;磁盘组织与管理</a>
+</h3>
+<h3 class="topic">
+<a name="6up5ru13oq4tsd65n40ee9ge4r">&nbsp;&nbsp;磁盘的结构</a>
+</h3>
+<h3 class="topic">
+<a name="5d82uscsg7fr89i2cr29pu1i1e">&nbsp;&nbsp;&nbsp;磁道（柱面）：每条磁道上存储相同数目的二进制位，内层磁道密度高于外层</a>
+</h3>
+<h3 class="topic">
+<a name="0373epa46el74n027ffb0990uq">&nbsp;&nbsp;&nbsp;盘面、扇区</a>
+</h3>
+<h3 class="topic">
+<a name="70dq358bu1mvsibt2ahpl56fbc">&nbsp;&nbsp;磁盘访问时间</a>
+</h3>
+<h3 class="topic">
+<a name="20qq3llr8ah5jn60brq44vo651">&nbsp;&nbsp;&nbsp;寻道时间</a>
+</h3>
+<h3 class="topic">
+<a name="1clksf0juulfnj94tai8qe9vm7">&nbsp;&nbsp;&nbsp;&nbsp;磁头移动到指定磁道上所用时间（与调度算法有关）</a>
+</h3>
+<h3 class="topic">
+<a name="75qf7k0suumolh5t2pg3srrhu9">&nbsp;&nbsp;&nbsp;旋转延迟时间</a>
+</h3>
+<h3 class="topic">
+<a name="49lksebmut2nb2775soqmh2nsf">&nbsp;&nbsp;&nbsp;&nbsp;指定扇区移动到磁头下面所用时间（与磁盘转速有关）</a>
+</h3>
+<h3 class="topic">
+<a name="2nc8pqnclhpou5oq1tt4lcnv8s">&nbsp;&nbsp;&nbsp;传输时间</a>
+</h3>
+<h3 class="topic">
+<a name="78h9fighslh72c7tcj1av1s1f7">&nbsp;&nbsp;&nbsp;&nbsp;把数据从磁盘读出或向磁盘写入数据所用时间（与磁盘转速有关）</a>
+</h3>
+<h3 class="topic">
+<a name="3kljbhr3q8rgle6414mn0qjfrh">&nbsp;&nbsp;磁盘调度算法</a>
+</h3>
+<h3 class="topic">
+<a name="46sr9vq0c7hhltkmi9nplteihq">&nbsp;&nbsp;&nbsp;先来先服务（FCFS）</a>
+</h3>
+<h3 class="topic">
+<a name="0i2f19gtoq9b6mqj1j3oeuqdas">&nbsp;&nbsp;&nbsp;&nbsp;平均寻道距离较大，适合请求磁盘I/O进程数目较少的场合</a>
+</h3>
+<h3 class="topic">
+<a name="6jr2pl2kigrrpopai2ovj07uvk">&nbsp;&nbsp;&nbsp;最短时间优先（SSTF）</a>
+</h3>
+<h3 class="topic">
+<a name="3t888d64jfbfb01b0ne40bq8mc">&nbsp;&nbsp;&nbsp;&nbsp;选择与当前磁头最近，可能导致饥饿</a>
+</h3>
+<h3 class="topic">
+<a name="1hvuge2ubdv56l3bnvq8tnqmfl">&nbsp;&nbsp;&nbsp;扫描算法（SCAN，又称电梯算法）</a>
+</h3>
+<h3 class="topic">
+<a name="3nsc2knfe7dj4fksotf3bjqlgr">&nbsp;&nbsp;&nbsp;循环扫描算法（CSCAN）</a>
+</h3>
+<h3 class="topic">
+<a name="0fagl18eiu4v0jb2rch0h91m8e">&nbsp;&nbsp;磁盘的管理</a>
+</h3>
+<h2 class="topic">
+<a name="5ucja923ostkt4rlb85t5cg1lk">输入输出管理</a>
+</h2>
+<h3 class="topic">
+<a name="70mu593gllue67c7t8rubplf99">&nbsp;I/O管理概述</a>
+</h3>
+<h3 class="topic">
+<a name="1rn2r4q838a9kqt7mttc9t04m0">&nbsp;&nbsp;I/O设备分类</a>
+</h3>
+<h3 class="topic">
+<a name="16mgkjmvgr8ittt1c3i07n8hqf">&nbsp;&nbsp;&nbsp;使用特性分：交互设备、存储设备、网络通信设备</a>
+</h3>
+<h3 class="topic">
+<a name="3qk1hu00nbbjriessfll5navf0">&nbsp;&nbsp;&nbsp;传输速率分：低速设备：键盘鼠标  中速设备：打印机  高速设备：磁盘</a>
+</h3>
+<h3 class="topic">
+<a name="4k8cgkkqpp5go5j2ln22l6tqea">&nbsp;&nbsp;&nbsp;信息交换的单位分：块设备、字符设备</a>
+</h3>
+<h3 class="topic">
+<a name="1qjf473s0l0pc0uujlmocnhbge">&nbsp;&nbsp;I/O控制方式</a>
+</h3>
+<h3 class="topic">
+<a name="27v8c3t2j0c524su6re6u6epbu">&nbsp;&nbsp;&nbsp;设备控制器</a>
+</h3>
+<h3 class="topic">
+<a name="7kjl8mbausbhqc2j5uus5s4h3k">&nbsp;&nbsp;&nbsp;&nbsp;职责：控制一个或多个I/O设备，以实现I/O设备和计算机之间的数据交换</a>
+</h3>
+<h3 class="topic">
+<a name="7qlpglbdf4ku3hphsj0jn09rh4">&nbsp;&nbsp;&nbsp;&nbsp;组成</a>
+</h3>
+<h3 class="topic">
+<a name="34qi9iavd014h26625vivjt88e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设备控制器与处理机的接口</a>
+</h3>
+<h3 class="topic">
+<a name="6ajql4aur0avg4niqg5g1p7fk9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设备控制器与设备的接口</a>
+</h3>
+<h3 class="topic">
+<a name="3debruuuhcprtvuqtt34dq39pf">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I/O逻辑：用于实现对设备的控制</a>
+</h3>
+<h3 class="topic">
+<a name="004l56vn10cnvgrj0u47f5nnp1">&nbsp;&nbsp;&nbsp;程序直接控制方式</a>
+</h3>
+<h3 class="topic">
+<a name="6rjqrtbv3f74br6bnvrndmm6q4">&nbsp;&nbsp;&nbsp;&nbsp;程序直接对设备循环测试</a>
+</h3>
+<h3 class="topic">
+<a name="44ug128s327phlkoudheogl6pc">&nbsp;&nbsp;&nbsp;中断驱动方式</a>
+</h3>
+<h3 class="topic">
+<a name="52hk1s2onpuo77tvtafqtn5utn">&nbsp;&nbsp;&nbsp;&nbsp;引入中断机制，当设备准备完成时发生中断</a>
+</h3>
+<h3 class="topic">
+<a name="0bqfi3ivgsj2vrn3gg00tm3393">&nbsp;&nbsp;&nbsp;DMA方式</a>
+</h3>
+<h3 class="topic">
+<a name="1rn7g7m3j2lp339mrj986bkng8">&nbsp;&nbsp;&nbsp;&nbsp;在I/O设备与主存之间开辟直接数据通路</a>
+</h3>
+<h3 class="topic">
+<a name="20ag3ilp1ul3b1pi8e85itn6a8">&nbsp;&nbsp;&nbsp;&nbsp;传输的是数据块，在开始和结束需要CPU干预</a>
+</h3>
+<h3 class="topic">
+<a name="51483t7dof0l66t3lqo19f0hcf">&nbsp;&nbsp;&nbsp;&nbsp;DMA控制器中有四类寄存器：命令/状态寄存器CR，内存地址寄存器MAR，数据寄存器DR，数据计数器DC</a>
+</h3>
+<h3 class="topic">
+<a name="068g9s5u023cimebdpuj01kvos">&nbsp;&nbsp;&nbsp;通道控制方式</a>
+</h3>
+<h3 class="topic">
+<a name="35hk5s0407920u1kipfn39thgd">&nbsp;&nbsp;&nbsp;&nbsp;引入专门的I/O处理机进行管理</a>
+</h3>
+<h3 class="topic">
+<a name="3v1f89gic2b85fga17jijsbc5k">&nbsp;&nbsp;I/O软件层次结构</a>
+</h3>
+<h3 class="topic">
+<a name="49p9q1pt7l38lrr2e1bn7spfsm">&nbsp;&nbsp;&nbsp;用户层软件</a>
+</h3>
+<h3 class="topic">
+<a name="6d1j0ca7v7c471hs0hkeqovrf2">&nbsp;&nbsp;&nbsp;&nbsp;产生I/O请求，格式化I/O，Spooling</a>
+</h3>
+<h3 class="topic">
+<a name="78nl50ue79jii6kju3apamcess">&nbsp;&nbsp;&nbsp;设备独立性软件</a>
+</h3>
+<h3 class="topic">
+<a name="1gg972fv8f4upkirhii5lhr4od">&nbsp;&nbsp;&nbsp;&nbsp;映射、保护、分块、缓冲、分配</a>
+</h3>
+<h3 class="topic">
+<a name="43q11emtv882gbmolugeo9l3d5">&nbsp;&nbsp;&nbsp;&nbsp;逻辑设备名到物理设备名的映射</a>
+</h3>
+<h3 class="topic">
+<a name="5oa1ni8duf349cf805gk40b6ao">&nbsp;&nbsp;&nbsp;&nbsp;为了实现设备的独立性，系统必须设置一张逻辑设备表LUT</a>
+</h3>
+<h3 class="topic">
+<a name="2gp2a59esqjao78dgfu3kfoqck">&nbsp;&nbsp;&nbsp;设备驱动程序</a>
+</h3>
+<h3 class="topic">
+<a name="63ljhr1r6e5c6amu7ckfbmcg51">&nbsp;&nbsp;&nbsp;&nbsp;设置设备寄存器，检查寄存器状态</a>
+</h3>
+<h3 class="topic">
+<a name="718tsmm2v6fkvjsu4jdu5lqg5p">&nbsp;&nbsp;&nbsp;&nbsp;计算数据所在磁盘的柱面号、磁头号、扇区号</a>
+</h3>
+<h3 class="topic">
+<a name="7l8lf9mg68g3jdp7nlfl77e3mc">&nbsp;&nbsp;&nbsp;中断处理程序</a>
+</h3>
+<h3 class="topic">
+<a name="1i1vk9ekb9ps0t2kn805e4p228">&nbsp;&nbsp;&nbsp;硬件</a>
+</h3>
+<h3 class="topic">
+<a name="2e3smq3llbgvhl322rd63t3tuk">&nbsp;&nbsp;&nbsp;&nbsp;执行I/O操作</a>
+</h3>
+<h3 class="topic">
+<a name="7d4vetedb7n5ptud1f6c6v88pp">&nbsp;I/O核心子系统</a>
+</h3>
+<h3 class="topic">
+<a name="091bpjfadhmqto2g2ert6lr3nu">&nbsp;&nbsp;I/O调度概念</a>
+</h3>
+<h3 class="topic">
+<a name="220b54run704vaaitl74nqgmt2">&nbsp;&nbsp;&nbsp;确定一个好的顺序来执行I/O请求</a>
+</h3>
+<h3 class="topic">
+<a name="1d48q7pa6g1tt0vfhtjlsmedad">&nbsp;&nbsp;高速缓存与缓冲区</a>
+</h3>
+<h3 class="topic">
+<a name="0l1vidu8uf6k425b74a3u617up">&nbsp;&nbsp;&nbsp;磁盘高速缓存</a>
+</h3>
+<h3 class="topic">
+<a name="378k2ku96ck4tj4pf1i03rd03a">&nbsp;&nbsp;&nbsp;&nbsp;利用内存中的存储空间来暂存从磁盘中读出的一系列盘块中的信息</a>
+</h3>
+<h3 class="topic">
+<a name="4ubqoe15ppm911fl7sla05qpoo">&nbsp;&nbsp;&nbsp;缓冲区</a>
+</h3>
+<h3 class="topic">
+<a name="51obpu7bbj6nlf6fn31o4dvki5">&nbsp;&nbsp;&nbsp;&nbsp;单缓冲</a>
+</h3>
+<h3 class="topic">
+<a name="7t1bvdeqtg6cfvlsa533i8co4f">&nbsp;&nbsp;&nbsp;&nbsp;双缓冲</a>
+</h3>
+<h3 class="topic">
+<a name="1dutfe7lkaa727otdbhqfqjga0">&nbsp;&nbsp;&nbsp;&nbsp;循环缓冲</a>
+</h3>
+<h3 class="topic">
+<a name="550dds8fu6d516roa5s4437l1c">&nbsp;&nbsp;&nbsp;&nbsp;缓冲迟</a>
+</h3>
+<h3 class="topic">
+<a name="41q3p310uvuk8pi2p3sc0e1btg">&nbsp;&nbsp;设备分配与回收</a>
+</h3>
+<h3 class="topic">
+<a name="7uahmemvcmaev31ck6gfdp2rn0">&nbsp;&nbsp;&nbsp;设备特性分类</a>
+</h3>
+<h3 class="topic">
+<a name="378besqlqbagcu9se0o3ms5etd">&nbsp;&nbsp;&nbsp;&nbsp;独占设备</a>
+</h3>
+<h3 class="topic">
+<a name="62mk5onbb9b70eltb1ifn8crrb">&nbsp;&nbsp;&nbsp;&nbsp;共享设备</a>
+</h3>
+<h3 class="topic">
+<a name="6dv0j81j2r8tnqfqidsnevorui">&nbsp;&nbsp;&nbsp;&nbsp;以SPOOLing方式使用的外部设备</a>
+</h3>
+<h3 class="topic">
+<a name="47m0d8a0qj2aroflsi9uveum8u">&nbsp;&nbsp;&nbsp;设备分配的数据结构</a>
+</h3>
+<h3 class="topic">
+<a name="6clahtothehep48nrpq25cm3um">&nbsp;&nbsp;&nbsp;&nbsp;设备控制表（DTC）</a>
+</h3>
+<h3 class="topic">
+<a name="22c8on4cbr2d56fg5ao5jmq3lg">&nbsp;&nbsp;&nbsp;&nbsp;控制器控制表（COCT）</a>
+</h3>
+<h3 class="topic">
+<a name="3obg0kr0711370tmknnkck6gha">&nbsp;&nbsp;&nbsp;&nbsp;通道控制表（CHCT）</a>
+</h3>
+<h3 class="topic">
+<a name="2boo7kevcjt7lv0e650ermrig9">&nbsp;&nbsp;&nbsp;&nbsp;系统设备表（SDT）</a>
+</h3>
+<h3 class="topic">
+<a name="4cu95dlqcg7149ss2seegtnfn3">&nbsp;&nbsp;&nbsp;设备分配时考虑因素</a>
+</h3>
+<h3 class="topic">
+<a name="6vjomtqfuk86g0mhd32aoorqcn">&nbsp;&nbsp;&nbsp;&nbsp;设备固有属性：独占、共享、可虚拟</a>
+</h3>
+<h3 class="topic">
+<a name="0avgvc3t3qf6530b7p5inomfc0">&nbsp;&nbsp;&nbsp;&nbsp;设备分配算法：先来先服务、优先级高者优先</a>
+</h3>
+<h3 class="topic">
+<a name="0dui9l6vi7qnp1v6c3f0umccht">&nbsp;&nbsp;&nbsp;&nbsp;设备分配时安全性：安全分配、不安全分配</a>
+</h3>
+<h3 class="topic">
+<a name="6u4u6ssghq44qqgllcgf69u4gg">&nbsp;&nbsp;&nbsp;&nbsp;设备独立性</a>
+</h3>
+<h3 class="topic">
+<a name="2bdl4bddd5nf7ot08ob7amtfuh">&nbsp;&nbsp;假脱机技术（SPOOLing）</a>
+</h3>
+<h3 class="topic">
+<a name="3j12er7b9mo626rpj8cq4csuti">&nbsp;&nbsp;&nbsp;为了缓和CPU的高速性与I/O设备低速性之间的矛盾</a>
+</h3>
+<h3 class="topic">
+<a name="2dihrq905m6agjegcrtk1v0ddd">&nbsp;&nbsp;&nbsp;组成</a>
+</h3>
+<h3 class="topic">
+<a name="3c5men5fvt7ushe79li4ao7pn8">&nbsp;&nbsp;&nbsp;&nbsp;输入井和输出井</a>
+</h3>
+<h3 class="topic">
+<a name="6bgecu2q2tim2oa1otdmaq8huq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在磁盘上</a>
+</h3>
+<h3 class="topic">
+<a name="7jl9vnt0flq6ral4csrb5p0bop">&nbsp;&nbsp;&nbsp;&nbsp;输入缓冲区和输出缓冲区</a>
+</h3>
+<h3 class="topic">
+<a name="098di043lq81pn7ahafnklms7u">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在内存中</a>
+</h3>
+<h3 class="topic">
+<a name="0cc6q0s1j0gh89qf00caft00ak">&nbsp;&nbsp;&nbsp;&nbsp;输入进程SPi和输出进程SPo</a>
+</h3>
+<h3 class="topic">
+<a name="05o631tndgr7jthnp40id6uh7i">&nbsp;&nbsp;&nbsp;意义：提高I/O速度、将独占设备改造为共享设备、实现虚拟设备功能</a>
+</h3>
+<h2 class="topic">
+<a name="4tb2061sifk8bgh9s4kg3l8osp">操作系统概述</a>
+</h2>
+<h3 class="topic">
+<a name="3p6up7rs3fenf9ee3jb074bku6">&nbsp;操作系统的概念、特征、功能和提供的服务</a>
+</h3>
+<h3 class="topic">
+<a name="7miioa1c7uno042hijdokod1dn">&nbsp;&nbsp;概念</a>
+</h3>
+<h3 class="topic">
+<a name="6dtkichljfocm5tqb2ucbc7gag">&nbsp;&nbsp;&nbsp;管理计算机硬件与软件资源</a>
+</h3>
+<h3 class="topic">
+<a name="0uli2cv9pprq78ivmuj877ih4l">&nbsp;&nbsp;特征</a>
+</h3>
+<h3 class="topic">
+<a name="58m6kiqqkn3svgm4bhr46kcb2g">&nbsp;&nbsp;&nbsp;并发、共享、虚拟、异步</a>
+</h3>
+<h3 class="topic">
+<a name="6e4dcv82n8a64g6kn5rjskqfcj">&nbsp;&nbsp;功能</a>
+</h3>
+<h3 class="topic">
+<a name="1jau5ggjnaea9l8dgqjvntj5dc">&nbsp;&nbsp;&nbsp;处理机管理、存储器管理、文件管理、设备管理</a>
+</h3>
+<h3 class="topic">
+<a name="0lu7l9emi9r4pjuau9se4cjb8r">&nbsp;&nbsp;接口</a>
+</h3>
+<h3 class="topic">
+<a name="410n4vvb824m3muveee44u8e4j">&nbsp;&nbsp;&nbsp;命令接口</a>
+</h3>
+<h3 class="topic">
+<a name="09f2qn6f2os0hqgnskt343o0af">&nbsp;&nbsp;&nbsp;&nbsp;联机命令接口</a>
+</h3>
+<h3 class="topic">
+<a name="7bn5nguctudm0eu8sat1qp2ujg">&nbsp;&nbsp;&nbsp;&nbsp;脱机命令接口</a>
+</h3>
+<h3 class="topic">
+<a name="7egmvkr2rrb2q9qmegccnsot3v">&nbsp;&nbsp;&nbsp;系统调用（程序接口、广义指令）</a>
+</h3>
+<h3 class="topic">
+<a name="74kf2587r6ku5otshuinsss72j">&nbsp;操作系统的发展与分类</a>
+</h3>
+<h3 class="topic">
+<a name="3t2tohqav67t8tf8sg5c8eoi4k">&nbsp;&nbsp;手工阶段、单道批处理、多道批处理、分时、实时、网络与分布式操作系统</a>
+</h3>
+<h3 class="topic">
+<a name="15qgf96nkk1a4et6b6fshcbv71">&nbsp;操作系统的运行环境</a>
+</h3>
+<h3 class="topic">
+<a name="1rfdo1is9gs0rt23h4vue71kfc">&nbsp;&nbsp;内核态与用户态</a>
+</h3>
+<h3 class="topic">
+<a name="51107kk6jce3um0k20vaf3l1mm">&nbsp;&nbsp;中断（外中断）</a>
+</h3>
+<h3 class="topic">
+<a name="7atoeu59jlduedk3pktkjsorn4">&nbsp;&nbsp;&nbsp;外设请求、人为干预</a>
+</h3>
+<h3 class="topic">
+<a name="6abg0nramb0b2hj972or5mes71">&nbsp;&nbsp;异常（内中断）</a>
+</h3>
+<h3 class="topic">
+<a name="4rrfof7am395ugdeuod9sm7k2s">&nbsp;&nbsp;&nbsp;自愿中断&mdash;&mdash;指令中断</a>
+</h3>
+<h3 class="topic">
+<a name="6c48ulramqm7gbjlvs65pv9cev">&nbsp;&nbsp;&nbsp;强迫中断</a>
+</h3>
+<h3 class="topic">
+<a name="58af7fm3670hg0lj4eqrse7k9a">&nbsp;&nbsp;&nbsp;&nbsp;硬件故障</a>
+</h3>
+<h3 class="topic">
+<a name="2pmj2aoqcr92dttmi8sr1q7je1">&nbsp;&nbsp;&nbsp;&nbsp;软件故障</a>
+</h3>
+<h3 class="topic">
+<a name="615gp18tgins9m4m4ih23i4jg3">&nbsp;&nbsp;系统调用</a>
+</h3>
+<h3 class="topic">
+<a name="54vnn77pp6vhuok6481ijhbdfj">&nbsp;&nbsp;&nbsp;进程控制、进程通信、内存管理、文件管理、设备管理</a>
+</h3>
+<h3 class="topic">
+<a name="56m07th98n4ai1b72n1kgh10e2">&nbsp;操作系统的体系结构</a>
+</h3>
+<h3 class="topic">
+<a name="6ld36jq2us4o5rkrtkpp3vbn36">&nbsp;&nbsp;大内核</a>
+</h3>
+<h3 class="topic">
+<a name="4sqkrp1oovcv7riolerq9i9bf8">&nbsp;&nbsp;&nbsp;高效、不稳定、不可靠</a>
+</h3>
+<h3 class="topic">
+<a name="5ediki58js4s5o9aeud6a41mhq">&nbsp;&nbsp;微内核</a>
+</h3>
+<h3 class="topic">
+<a name="1cll3ojlfmmdl7r0l981hn49v1">&nbsp;&nbsp;&nbsp;低效、稳定、可靠</a>
+</h3>
+<h2 class="topic">
+<a name="66pl1q8obc1a0vvn1kku614l05">进程管理</a>
+</h2>
+<h3 class="topic">
+<a name="6f39vngmurc5ic44ounv2cam3n">&nbsp;进程与线程</a>
+</h3>
+<h3 class="topic">
+<a name="1a0p71v9v0ol5igoi8eb3rcmli">&nbsp;&nbsp;进程概念</a>
+</h3>
+<h3 class="topic">
+<a name="79v9lsgrg5r2nmnitp16ha9ndk">&nbsp;&nbsp;&nbsp;目的：为了更好地描述和控制程序并发执行</a>
+</h3>
+<h3 class="topic">
+<a name="3edpj0qjodbr64jn97uc5o3nvc">&nbsp;&nbsp;进程的状态与转换</a>
+</h3>
+<h3 class="topic">
+<a name="4g20dmnuur5e8p838885ppctdo">&nbsp;&nbsp;&nbsp;运行、就绪、阻塞、创建、结束</a>
+</h3>
+<h3 class="topic">
+<a name="08ucoavp6acdhld10lrqtd3pij">&nbsp;&nbsp;进程控制</a>
+</h3>
+<h3 class="topic">
+<a name="7mqlhkqb398be9o40fo0hbhnnv">&nbsp;&nbsp;&nbsp;创建</a>
+</h3>
+<h3 class="topic">
+<a name="3rc1igt0mign5stoifm45eknh2">&nbsp;&nbsp;&nbsp;终止</a>
+</h3>
+<h3 class="topic">
+<a name="0s0oqo45hrsjaa88gav961e7un">&nbsp;&nbsp;&nbsp;阻塞与唤醒</a>
+</h3>
+<h3 class="topic">
+<a name="750elmg0erdpjljj1c5r8rbl87">&nbsp;&nbsp;&nbsp;切换</a>
+</h3>
+<h3 class="topic">
+<a name="1olur70v3i4djb34vpjflp5sc5">&nbsp;&nbsp;进程组织</a>
+</h3>
+<h3 class="topic">
+<a name="54iun0lvl8p06rrj0d868c4ihg">&nbsp;&nbsp;&nbsp;PCB</a>
+</h3>
+<h3 class="topic">
+<a name="6vg2ug0jjqkcm4erc7546bsq58">&nbsp;&nbsp;&nbsp;程序段、数据段</a>
+</h3>
+<h3 class="topic">
+<a name="34ljdnfbrd2dcasl0deih8kfjr">&nbsp;&nbsp;进程通信</a>
+</h3>
+<h3 class="topic">
+<a name="073mr41mts2i7n1rbni8g6rgkv">&nbsp;&nbsp;&nbsp;共享存储</a>
+</h3>
+<h3 class="topic">
+<a name="47sksqi4utumrvc9kt55onhrnt">&nbsp;&nbsp;&nbsp;&nbsp;低级方式：基于数据结构的共享</a>
+</h3>
+<h3 class="topic">
+<a name="2d5do7800u43lnmh7ocb49biij">&nbsp;&nbsp;&nbsp;&nbsp;高级方式：基于存储区的共享</a>
+</h3>
+<h3 class="topic">
+<a name="7cial0r81ff7hjtncgafv63bdh">&nbsp;&nbsp;&nbsp;消息传递</a>
+</h3>
+<h3 class="topic">
+<a name="5a5o7jops0ru10qsqd3ucg0jtn">&nbsp;&nbsp;&nbsp;&nbsp;直接通信方式：直接把消息挂到接收进程的消息队列</a>
+</h3>
+<h3 class="topic">
+<a name="09n4av8gnq9ehfgm2vk69kgc90">&nbsp;&nbsp;&nbsp;&nbsp;间接通信方式：类似邮箱</a>
+</h3>
+<h3 class="topic">
+<a name="3ko7raahpt66qhs399otq933fs">&nbsp;&nbsp;&nbsp;管道通信</a>
+</h3>
+<h3 class="topic">
+<a name="07r4tp2vckn25qtrt1ft9cb7vk">&nbsp;&nbsp;线程概念与多线程模型</a>
+</h3>
+<h3 class="topic">
+<a name="6k9ut5c124vikr3haru4mbqqbn">&nbsp;&nbsp;&nbsp;目的：减小程序在并发执行时所付出的时空开销，提高操作系统的并发性能</a>
+</h3>
+<h3 class="topic">
+<a name="165unbqad9c6hpjq68d3kabu4p">&nbsp;&nbsp;&nbsp;用户级线程、内核级线程</a>
+</h3>
+<h3 class="topic">
+<a name="6b2lufu017mpd1f3dm443n1ud3">&nbsp;&nbsp;&nbsp;多对一：效率高（线程管理在用户空间进行），阻塞，并发度不高</a>
+</h3>
+<h3 class="topic">
+<a name="1quknnt2sfcs8qljf4245ecs5j">&nbsp;&nbsp;&nbsp;一对一：并发能力强，开销大</a>
+</h3>
+<h3 class="topic">
+<a name="615iqg9abmasa42p1q91rdmi25">&nbsp;&nbsp;&nbsp;多对多：折中</a>
+</h3>
+<h3 class="topic">
+<a name="4lo018mnkcegquqhl4fauadecl">&nbsp;处理机调度</a>
+</h3>
+<h3 class="topic">
+<a name="6b2bq3oomejtplh27heila21tc">&nbsp;&nbsp;进程调度的基本概念</a>
+</h3>
+<h3 class="topic">
+<a name="05ldckjhd6qj3qj87geaa2u7nc">&nbsp;&nbsp;&nbsp;产生原因：进程争用处理器</a>
+</h3>
+<h3 class="topic">
+<a name="3osvek4622qmb8uu44vf4ur97c">&nbsp;&nbsp;&nbsp;调度层次：作业调度、中级调度（提高内存利用率和系统吞吐量）、进程调度</a>
+</h3>
+<h3 class="topic">
+<a name="71af5tf4n66q0nnn93dev3jqg1">&nbsp;&nbsp;调度的时机、切换与过程</a>
+</h3>
+<h3 class="topic">
+<a name="508v79q87d7fcv6kupqhef1kol">&nbsp;&nbsp;调度的基本准则</a>
+</h3>
+<h3 class="topic">
+<a name="083jf1vo6uppn4s5vj7osqr944">&nbsp;&nbsp;&nbsp;CPU利用率、系统吞吐量、周转时间、等待时间、响应时间</a>
+</h3>
+<h3 class="topic">
+<a name="2vva5bscrolg3hbm10st8927jh">&nbsp;&nbsp;调度方式</a>
+</h3>
+<h3 class="topic">
+<a name="7rcua45oo6jkv6n8eq65uvqagt">&nbsp;&nbsp;&nbsp;非剥夺调度</a>
+</h3>
+<h3 class="topic">
+<a name="05f40dcdcrv33g1ctu9e07a1eu">&nbsp;&nbsp;&nbsp;剥夺调度</a>
+</h3>
+<h3 class="topic">
+<a name="7ldrvgfrsi895fmtipi8rohldh">&nbsp;&nbsp;典型调度算法</a>
+</h3>
+<h3 class="topic">
+<a name="3fealf2uo5ldae8lij0av0cjkp">&nbsp;&nbsp;&nbsp;FCFS</a>
+</h3>
+<h3 class="topic">
+<a name="4lnoj3nrbqhkc845h4qo5d08lg">&nbsp;&nbsp;&nbsp;&nbsp;不可被抢占、不利短作业，有利于CPU繁忙（相当于长作业）</a>
+</h3>
+<h3 class="topic">
+<a name="27o3giub3nl7k9164ehlk6rjnp">&nbsp;&nbsp;&nbsp;SJF</a>
+</h3>
+<h3 class="topic">
+<a name="2i1q035uqjc4nqf5pisvtboj8n">&nbsp;&nbsp;&nbsp;&nbsp;抢占不抢占均可，平均等待时间、平均周转时间最少，不利长作业</a>
+</h3>
+<h3 class="topic">
+<a name="6mmnkthogebbpssubmmi7fof5s">&nbsp;&nbsp;&nbsp;时间片轮转算法</a>
+</h3>
+<h3 class="topic">
+<a name="6e1q1qq0p89v3s1bmn3fv0pc2v">&nbsp;&nbsp;&nbsp;&nbsp;绝对可以被抢占，顾长短作业</a>
+</h3>
+<h3 class="topic">
+<a name="069486nchl8bj553cjoejh26it">&nbsp;&nbsp;&nbsp;优先级调度算法</a>
+</h3>
+<h3 class="topic">
+<a name="5lbvodadmletde408jbuq5hlg8">&nbsp;&nbsp;&nbsp;&nbsp;抢占不抢占均可</a>
+</h3>
+<h3 class="topic">
+<a name="2b6rq4hhavr24so6o9c34n92hp">&nbsp;&nbsp;&nbsp;高响应比优先调度算法</a>
+</h3>
+<h3 class="topic">
+<a name="2jfbijqmdtdre534b232j2jn56">&nbsp;&nbsp;&nbsp;&nbsp;抢不抢均可，顾长短，满足短作业优先无饥饿，计算响应比的开销大</a>
+</h3>
+<h3 class="topic">
+<a name="6jj4ubcvvv8jfja0ivbpo7kuhe">&nbsp;&nbsp;&nbsp;多级反馈队列调度算法</a>
+</h3>
+<h3 class="topic">
+<a name="4c345j2pq24ifi2donjnqicr5n">&nbsp;&nbsp;&nbsp;&nbsp;顾长短作业，有较好的响应时间，可行性强</a>
+</h3>
+<h3 class="topic">
+<a name="59ckeoi6916k1lg10nbv9qnsdm">&nbsp;同步与互斥</a>
+</h3>
+<h3 class="topic">
+<a name="4aftbf51mg5u5iuf8hsulklcj5">&nbsp;&nbsp;进程同步的基本概念</a>
+</h3>
+<h3 class="topic">
+<a name="3dbaonga1kg2obdjo2c1ht0q70">&nbsp;&nbsp;&nbsp;临界资源</a>
+</h3>
+<h3 class="topic">
+<a name="7o80ofvh9hc3dcm30pqou6ctlv">&nbsp;&nbsp;&nbsp;&nbsp;一次仅允许一个进程使用的资源</a>
+</h3>
+<h3 class="topic">
+<a name="6ovp7opjcn4dfqsadtct5u7fjq">&nbsp;&nbsp;&nbsp;&nbsp;与共享资源的区别：一段时间内能否允许被多个进程访问（并发使用）</a>
+</h3>
+<h3 class="topic">
+<a name="6v93jthavtnhlf52a8q5u53gfo">&nbsp;&nbsp;&nbsp;临界区</a>
+</h3>
+<h3 class="topic">
+<a name="5qibvrth89csaop63ca32kl0uj">&nbsp;&nbsp;&nbsp;&nbsp;访问临界资源的那段代码</a>
+</h3>
+<h3 class="topic">
+<a name="6tpp31nrohm3q7q464967743b8">&nbsp;&nbsp;&nbsp;同步</a>
+</h3>
+<h3 class="topic">
+<a name="13vabg862tg52fs8m896qcag6e">&nbsp;&nbsp;&nbsp;&nbsp;直接制约关系，源于多进程间的合作</a>
+</h3>
+<h3 class="topic">
+<a name="53u07sacpfeucisrd7nnbodcip">&nbsp;&nbsp;&nbsp;互斥</a>
+</h3>
+<h3 class="topic">
+<a name="2d3rb7l8mklk22lfvk8fc727n8">&nbsp;&nbsp;&nbsp;&nbsp;间接制约关系，互斥进入临界区</a>
+</h3>
+<h3 class="topic">
+<a name="7njp799cs8homfdpbuikhff9j2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;空间让进，忙则等待，有限等待，让权等待</a>
+</h3>
+<h3 class="topic">
+<a name="4bog6hdqfsbj8rtnb5ilbd3upb">&nbsp;&nbsp;实现临界区互斥的基本方法</a>
+</h3>
+<h3 class="topic">
+<a name="0pomkn1aadueiokt79r8fi48q2">&nbsp;&nbsp;&nbsp;软件实现方法、硬件实现方法</a>
+</h3>
+<h3 class="topic">
+<a name="0uhn00b4rkregoo6o4ooep04v1">&nbsp;&nbsp;信号量</a>
+</h3>
+<h3 class="topic">
+<a name="3scisv10laf0s97q89psle31pk">&nbsp;&nbsp;&nbsp;P操作</a>
+</h3>
+<h3 class="topic">
+<a name="717nki7b0di6ski7a5dppor3hb">&nbsp;&nbsp;&nbsp;&nbsp;低级进程通信原语，非系统调用</a>
+</h3>
+<h3 class="topic">
+<a name="5iu7unmmqcflbmfl10pafc87e8">&nbsp;&nbsp;&nbsp;V操作</a>
+</h3>
+<h3 class="topic">
+<a name="60jufo2s42bm69mcroosms267p">&nbsp;&nbsp;&nbsp;&nbsp;低级进程通信原语，非系统调用</a>
+</h3>
+<h3 class="topic">
+<a name="6suct365j9rdbp0p44tp11arv9">&nbsp;&nbsp;管程</a>
+</h3>
+<h3 class="topic">
+<a name="49i86i5ga0r6lckjddp9s371sq">&nbsp;&nbsp;&nbsp;引入是为了解决临界区分散所带来的管理和控制问题，管程一次允许一个进程进入管程内</a>
+</h3>
+<h3 class="topic">
+<a name="2lc30ukm3qbu97a60rvj4pp7ji">&nbsp;&nbsp;&nbsp;组成</a>
+</h3>
+<h3 class="topic">
+<a name="0vfd1bmjjb3dvl4upcklgj1qtb">&nbsp;&nbsp;&nbsp;&nbsp;局部于管程的共享变量说明</a>
+</h3>
+<h3 class="topic">
+<a name="6vntukgejjpqmachb3ppuo6t3o">&nbsp;&nbsp;&nbsp;&nbsp;该数据结构进行操作的一组过程</a>
+</h3>
+<h3 class="topic">
+<a name="64fjfos9dgi2nkpq8aq0hcivgt">&nbsp;&nbsp;&nbsp;&nbsp;对局部于管程的数据设置初始值的语句</a>
+</h3>
+<h3 class="topic">
+<a name="4vrfj6tp0tk8kj02ms6jvk36n2">&nbsp;&nbsp;经典同步问题</a>
+</h3>
+<h3 class="topic">
+<a name="25kf0uq59g20ppe0aahe91sl7p">&nbsp;&nbsp;&nbsp;生产者-消费者问题</a>
+</h3>
+<h3 class="topic">
+<a name="1g8qe68ak97f3ut3mbgfcpmqre">&nbsp;&nbsp;&nbsp;读者-写者问题</a>
+</h3>
+<h3 class="topic">
+<a name="7lffkmnj9656s5clm1kjit79ip">&nbsp;&nbsp;&nbsp;哲学家进餐问题</a>
+</h3>
+<h3 class="topic">
+<a name="7cuapsth6jv79pr3cubovbu4u2">&nbsp;死锁</a>
+</h3>
+<h3 class="topic">
+<a name="3fcvkqd8na1cothbvlqev3q7gd">&nbsp;&nbsp;死锁的概念</a>
+</h3>
+<h3 class="topic">
+<a name="72c06e8botu4g4dtea5poimb0j">&nbsp;&nbsp;&nbsp;定义</a>
+</h3>
+<h3 class="topic">
+<a name="3t3bokrc00b5m7etp1mgk3dl8n">&nbsp;&nbsp;&nbsp;&nbsp;多进程竞争资源造成一种僵局（互相等待），若无外力作用，这些进程都将无法向前推进</a>
+</h3>
+<h3 class="topic">
+<a name="69qa4cl4h96st7vrrou5qjtrkj">&nbsp;&nbsp;&nbsp;产生原因</a>
+</h3>
+<h3 class="topic">
+<a name="5d4kkis0laurn7pml62kcehmkm">&nbsp;&nbsp;&nbsp;&nbsp;系统资源的竞争</a>
+</h3>
+<h3 class="topic">
+<a name="16e3j0dp792edlapau9one0ae5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;只有对不可剥夺资源的竞争才可能产生死锁，可剥夺资源竞争不会引起死锁</a>
+</h3>
+<h3 class="topic">
+<a name="460u1uqa5f1bhbj1o4hs1u45u8">&nbsp;&nbsp;&nbsp;&nbsp;进程推进顺序非法</a>
+</h3>
+<h3 class="topic">
+<a name="0u6bjtpeae4tn25srodqjtt8c9">&nbsp;&nbsp;&nbsp;死锁产生的必要条件</a>
+</h3>
+<h3 class="topic">
+<a name="20gbgo42b1li3ssvpncnm03elv">&nbsp;&nbsp;&nbsp;&nbsp;互斥条件</a>
+</h3>
+<h3 class="topic">
+<a name="2vuf0ad0jtv164g54fsluagrvc">&nbsp;&nbsp;&nbsp;&nbsp;不可剥夺条件</a>
+</h3>
+<h3 class="topic">
+<a name="2ot9a51m6n5sfloc9iuulo2d6r">&nbsp;&nbsp;&nbsp;&nbsp;请求和保持条件</a>
+</h3>
+<h3 class="topic">
+<a name="2gf67arqo0mgtp7sad7cbant8l">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已有至少一资源，又提出新的资源请求</a>
+</h3>
+<h3 class="topic">
+<a name="2mpqkrjd0v9g8q0gs832rbr6fk">&nbsp;&nbsp;&nbsp;&nbsp;循环等待条件</a>
+</h3>
+<h3 class="topic">
+<a name="6ivnqgnjblr20phdjpm63ttt3s">&nbsp;&nbsp;死锁处理策略</a>
+</h3>
+<h3 class="topic">
+<a name="009d30vdlo7ickn5v7e7fuhvta">&nbsp;&nbsp;&nbsp;死锁预防</a>
+</h3>
+<h3 class="topic">
+<a name="6mljggbsvipmr05a3968c5adbf">&nbsp;&nbsp;&nbsp;&nbsp;破坏互斥条件</a>
+</h3>
+<h3 class="topic">
+<a name="1kka1giuh12fdber3rttdl2ebv">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有些资源必须互斥使用，无法破坏互斥条件</a>
+</h3>
+<h3 class="topic">
+<a name="0dhutvl4gblh6qq22ifamve40l">&nbsp;&nbsp;&nbsp;&nbsp;破坏不剥夺条件</a>
+</h3>
+<h3 class="topic">
+<a name="2h30nknc3qic5guda3hk7859ja">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实现复杂，增加系统开销，降低吞吐量</a>
+</h3>
+<h3 class="topic">
+<a name="7oed1i5lu8ik0ik7oqpdv5pst1">&nbsp;&nbsp;&nbsp;&nbsp;破坏请求和保持条件</a>
+</h3>
+<h3 class="topic">
+<a name="6b8psh7sorelqq8np2if1v2pg3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;实现简单，严重浪费系统资源，还可能导致饥饿现象</a>
+</h3>
+<h3 class="topic">
+<a name="7oep1fejg62050l00hcp1nak8c">&nbsp;&nbsp;&nbsp;&nbsp;破坏循环等待条件</a>
+</h3>
+<h3 class="topic">
+<a name="53vk2782cs6h8t3d49ig2cg0qu">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;浪费系统资源，并造成编程不便</a>
+</h3>
+<h3 class="topic">
+<a name="0r4uork41r3b7edkembu4msfn2">&nbsp;&nbsp;&nbsp;死锁避免</a>
+</h3>
+<h3 class="topic">
+<a name="104hang5pbgiuvg1cc20gphopq">&nbsp;&nbsp;&nbsp;&nbsp;系统安全状态</a>
+</h3>
+<h3 class="topic">
+<a name="6e4e3ihe1lrhnj7ch1mcf2qkh5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能找到一个分配资源的序列能让所有进程都顺利完成</a>
+</h3>
+<h3 class="topic">
+<a name="4ll23usrkha8d3jdh4ntasec7n">&nbsp;&nbsp;&nbsp;&nbsp;银行家算法</a>
+</h3>
+<h3 class="topic">
+<a name="3uqgt0ilgh3o8al8gcpq0nos1m">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;采用预分配策略检查分配完成时系统是否处在安全状态</a>
+</h3>
+<h3 class="topic">
+<a name="2r65mo85j01rf9eon6ht70hq6o">&nbsp;&nbsp;&nbsp;死锁检测</a>
+</h3>
+<h3 class="topic">
+<a name="14678nja8grd7v6k61i6pnfass">&nbsp;&nbsp;&nbsp;&nbsp;利用死锁定理化简资源分配图以检测死锁的存在</a>
+</h3>
+<h3 class="topic">
+<a name="4gni9od9hrp6nupranfp99nok5">&nbsp;&nbsp;&nbsp;&nbsp;死锁定理：S为死锁的条件是当且仅当S状态的资源分配图是不可完全简化的</a>
+</h3>
+<h3 class="topic">
+<a name="45qtnqsai26pr7ua08vfnrf14h">&nbsp;&nbsp;&nbsp;解除死锁</a>
+</h3>
+<h3 class="topic">
+<a name="71k8er8b319k96k9vakfom4fmn">&nbsp;&nbsp;&nbsp;&nbsp;资源剥夺法</a>
+</h3>
+<h3 class="topic">
+<a name="6qbs8cctj3hajrj3ittdn1bk0d">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;挂起某些死锁进程并抢夺它的资源，以便让其它进程继续推进</a>
+</h3>
+<h3 class="topic">
+<a name="3r19vp0ht51s7s3doiiaas5lr8">&nbsp;&nbsp;&nbsp;&nbsp;撤销进程法</a>
+</h3>
+<h3 class="topic">
+<a name="1hdfd26ks2tgeiv57ffqjj2k6p">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;强制撤销部分，甚至全部死锁进程并剥夺这些进程的资源</a>
+</h3>
+<h3 class="topic">
+<a name="1lfgk6r9nm56melqtevpfrj563">&nbsp;&nbsp;&nbsp;&nbsp;进程回退法</a>
+</h3>
+<h3 class="topic">
+<a name="13b1o2oo0b30a6hele0njn3n09">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;让进程回退到足以回避死锁的地步</a>
+</h3>
+</body>
+</html>
