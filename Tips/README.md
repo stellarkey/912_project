@@ -10,6 +10,8 @@
 
 ---
 
+[关于清华计算机专业基础综合（912）的复习](https://xuanxuanblingbling.github.io/life/study/2018/12/29/912/)
+
 [清华大学计算机系课程攻略](https://github.com/PKUanonym/REKCARC-TSC-UHT) **好东西**，~~入宝山不能空返（滑稽~~
 
 [2020清华大学计算机考研群](https://github.com/thu-cs/qq) 看看呗
@@ -21,3 +23,5 @@
 [【2019 版】清华大学计算机考研信息、资料汇总](https://mp.weixin.qq.com/s/ZmdA2EX5xrYAyY4cP_tpMQ) 这个在本文件夹下做了备份（`王道在线.htm`）
 
 [THU_CS 历年考研信息汇总](http://www.cskaoyan.com/forum.php?mod=viewthread&tid=43303&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost) 初、复试及后期资料
+
+[2017年清华大学计算机科学与技术系考研小结](https://blog.csdn.net/chr1991/article/details/64971113) 参考书目

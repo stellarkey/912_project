@@ -4,6 +4,11 @@
 
 可用语言：c++、java、python3。
 
+> 2019年，编译选项有g++、javac、python3。（ubuntu和windows双系统）
+>
+> - windows：vs2008、codeblocks、dev c++
+> - ubuntu：codeblocks、vscode
+>
 > PS，学堂在线开了新课：[算法设计与分析](https://www.xuetangx.com/courses/course-v1:TsinghuaX+2018122106X+2018_T2/about)。
 
 # OJ列表
