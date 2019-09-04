@@ -1,0 +1,122 @@
+2019-06-13 22:31:01 [INFO] pandownload version: 2.1.0
+2019-06-13 22:31:12 [INFO] aria2 websocket connection opened (127.0.0.1:6808)
+2019-06-13 22:31:12 [INFO] aria2 version: 1.34.0
+2019-06-13 22:31:12 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:6808/jsonrpc
+2019-06-13 22:31:12 [INFO] create main window
+2019-06-13 22:31:12 [INFO] verify cookie (384)
+2019-06-13 22:31:13 [INFO] user login success (3145349758): 无名倒人
+2019-06-13 22:33:37 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》超清.zip" SIZE="84352196"
+2019-06-13 22:33:38 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》超清.zip" SIZE="84352196"
+2019-06-13 22:33:38 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》超清.zip" SIZE="84352196"
+2019-06-13 22:33:41 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》超清.zip" SIZE="84352196"
+2019-06-13 22:33:41 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》超清.zip" SIZE="84352196"
+2019-06-13 22:33:58 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》.zip" SIZE="130378447"
+2019-06-13 22:33:58 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》.zip" SIZE="130378447"
+2019-06-13 22:33:59 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/《疯狂Python讲义》.zip" SIZE="130378447"
+2019-06-13 22:36:11 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂python讲义.zip" SIZE="130503737"
+2019-06-13 22:36:12 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂python讲义.zip" SIZE="130503737"
+2019-06-13 22:36:13 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂python讲义.zip" SIZE="130503737"
+2019-06-13 22:37:14 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂Python讲义_李刚_2019.pdf" SIZE="97912453"
+2019-06-13 22:37:18 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂Python讲义_李刚_2019.pdf" SIZE="97912453"
+2019-06-13 22:37:18 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/疯狂Python讲义_李刚_2019.pdf" SIZE="97912453"
+2019-06-14 00:58:47 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3804569582963140255}
+2019-06-14 07:50:51 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3811206602052130261}
+2019-06-14 16:17:02 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-06-14 16:17:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:17:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:18:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:18:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:18:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:19:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:19:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:19:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:20:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:20:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:20:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:21:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:21:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:21:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:22:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:22:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:22:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:23:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:23:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:23:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:24:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:24:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:24:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:25:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:25:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:25:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:26:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:26:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:26:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:27:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:27:22 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:27:42 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:28:02 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-14 16:38:18 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3819701231631784595}
+2019-06-14 18:20:50 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:20:50 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:20:50 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:20:50 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:20:51 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:20:51 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:20:51 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:20:51 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:20:52 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:20:52 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:20:52 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:20:52 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363131338145464}
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363131369580487}
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363131417192342}
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363131387791116}
+2019-06-14 18:21:27 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:27 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:27 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:27 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399846099271}
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399779517328}
+2019-06-14 18:21:27 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399759048412}
+2019-06-14 18:21:28 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399785240901}
+2019-06-14 18:21:28 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:28 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:28 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:28 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:21:28 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399819324206}
+2019-06-14 18:21:28 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399835629293}
+2019-06-14 18:21:28 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399875951047}
+2019-06-14 18:21:28 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821363399830735855}
+2019-06-14 18:21:28 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:28 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:28 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:28 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367157922597758}
+2019-06-14 18:21:42 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367157903332505}
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367157984281773}
+2019-06-14 18:21:42 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:42 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367157978777139}
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367157878626533}
+2019-06-14 18:21:42 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:42 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426368670668}
+2019-06-14 18:21:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426310594455}
+2019-06-14 18:21:43 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:43 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:21:43 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426392487633}
+2019-06-14 18:21:43 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426397641989}
+2019-06-14 18:21:43 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:43 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:21:43 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426300028414}
+2019-06-14 18:21:43 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426308990331}
+2019-06-14 18:21:43 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821367426378857431}
+2019-06-14 18:21:43 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:21:43 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:21:43 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:22:09 [INFO] close main window
+2019-06-14 18:22:09 [WARN] aria2 websocket connection closed (127.0.0.1:6808), code: 1000 (Normal close), reason: aria2 shutdown
+2019-06-14 18:22:10 [INFO] websocket client stop
+2019-06-14 18:22:10 [INFO] exit

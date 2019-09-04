@@ -1,0 +1,119 @@
+2019-08-30 10:09:21 [INFO] pandownload version: 2.1.3
+2019-08-30 10:09:23 [INFO] aria2 websocket connection opened (127.0.0.1:36899)
+2019-08-30 10:09:23 [INFO] aria2 version: 1.34.0
+2019-08-30 10:09:23 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:36899/jsonrpc
+2019-08-30 10:09:23 [INFO] create main window
+2019-08-30 10:09:23 [INFO] verify cookie (615)
+2019-08-30 10:09:25 [INFO] user login success (3145349758): 无名倒人
+2019-08-30 10:16:08 [WARN] ID#10 - Timeout.(2) FILE="D:/下载/03.第三讲/05.第三讲 03定积分的计算01.mp4" SIZE="387499859"
+2019-08-30 10:19:32 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 10:21:42 [WARN] ID#10 - Timeout.(2) FILE="D:/下载/03.第三讲/05.第三讲 03定积分的计算01.mp4" SIZE="387499859"
+2019-08-30 10:23:07 [WARN] request error (0x200000070): https://pan.baidu.com/api/sharedownload {"errno":112,"request_id":5599506979111573561,"server_time":1567131789}
+2019-08-30 10:29:01 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 10:45:17 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":5599863001511849410}
+2019-08-30 11:02:03 [WARN] rpc error (0): timeout
+2019-08-30 11:02:09 [WARN] rpc error (0): timeout
+2019-08-30 11:02:22 [WARN] rpc error (0): timeout
+2019-08-30 11:05:45 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:08:35 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:09:14 [WARN] ID#16 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/06.第六讲 05差分方程（仅数三）.mp4" SIZE="196735399"
+2019-08-30 11:10:54 [WARN] ID#15 - Failed to receive data, cause: Error: 指定的句柄无效
+(80090301)(1) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/01.第七讲 01数项级数01（仅数一数三）.mp4" SIZE="458784487"
+2019-08-30 11:11:26 [WARN] ID#14 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/02.第七讲&01数项级数02（仅数一数三）.mp4" SIZE="273185162"
+2019-08-30 11:11:56 [WARN] ID#13 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/03.第七讲&01数项级数03（仅数一数三）.mp4" SIZE="323716008"
+2019-08-30 11:12:00 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:15:07 [WARN] ID#21 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/01.第六讲 01一阶微分方程求解01.mp4" SIZE="314705019"
+2019-08-30 11:15:20 [WARN] ID#20 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/02.第六讲 01一阶微分方程求解02.mp4" SIZE="295718713"
+2019-08-30 11:16:56 [WARN] ID#17 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/05.第六讲 04微分方程的应用.mp4" SIZE="391903461"
+2019-08-30 11:17:24 [WARN] ID#14 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/02.第七讲&01数项级数02（仅数一数三）.mp4" SIZE="273185162"
+2019-08-30 11:17:40 [WARN] ID#18 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/04.第六讲 03高阶常系数线性微分方程求解.mp4" SIZE="469196915"
+2019-08-30 11:18:41 [WARN] ID#19 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/03.第六讲 02二阶可降阶微分方程求解.mp4" SIZE="335824557"
+2019-08-30 11:19:27 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:22:54 [WARN] ID#17 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/05.第六讲 04微分方程的应用.mp4" SIZE="391903461"
+2019-08-30 11:23:25 [WARN] request error (0x10000001c): https://pan.baidu.com/rest/2.0/membership/speeds/freqctrl?method=get 
+2019-08-30 11:23:48 [WARN] ID#19 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/03.第六讲 02二阶可降阶微分方程求解.mp4" SIZE="335824557"
+2019-08-30 11:24:22 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:24:40 [WARN] ID#15 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/01.第七讲 01数项级数01（仅数一数三）.mp4" SIZE="458784487"
+2019-08-30 11:25:34 [WARN] ID#14 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/02.第七讲&01数项级数02（仅数一数三）.mp4" SIZE="273185162"
+2019-08-30 11:25:43 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:27:33 [WARN] ID#19 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/03.第六讲 02二阶可降阶微分方程求解.mp4" SIZE="335824557"
+2019-08-30 11:28:07 [WARN] ID#15 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/01.第七讲 01数项级数01（仅数一数三）.mp4" SIZE="458784487"
+2019-08-30 11:28:08 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":5600553200360979689}
+2019-08-30 11:28:58 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:29:10 [WARN] ID#21 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/01.第六讲 01一阶微分方程求解01.mp4" SIZE="314705019"
+2019-08-30 11:29:37 [WARN] ID#14 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/02.第七讲&01数项级数02（仅数一数三）.mp4" SIZE="273185162"
+2019-08-30 11:29:40 [WARN] request error (0x10000001c): https://pan.baidu.com/rest/2.0/membership/speeds/freqctrl?method=get 
+2019-08-30 11:30:15 [WARN] ID#15 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/07.第七讲/01.第七讲 01数项级数01（仅数一数三）.mp4" SIZE="458784487"
+2019-08-30 11:32:33 [WARN] ID#21 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/01.第六讲 01一阶微分方程求解01.mp4" SIZE="314705019"
+2019-08-30 11:32:38 [WARN] ID#20 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/02.第六讲 01一阶微分方程求解02.mp4" SIZE="295718713"
+2019-08-30 11:34:37 [WARN] ID#18 - No URI available.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/06.第六讲/04.第六讲 03高阶常系数线性微分方程求解.mp4" SIZE="469196915"
+2019-08-30 11:42:20 [WARN] ID#28 - Timeout.(2) FILE="D:/下载/01.2020高数强化班-张宇（完）/04.第四讲/04.第四讲 03隐函数求导法.mp4" SIZE="439354739"
+2019-08-30 11:42:51 [WARN] request error (0x10000001c): https://pan.baidu.com/rest/2.0/membership/speeds/freqctrl?method=get 
+2019-08-30 11:42:56 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:45:30 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 11:46:20 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 12:00:49 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-08-30 12:00:57 [WARN] ID#25 - No URI available.(19) FILE="D:/下载/01.2020高数强化班-张宇（完）/04.第四讲/07.第四讲 05偏微分方程.mp4" SIZE="332486000"
+2019-08-30 12:00:57 [WARN] ID#26 - No URI available.(19) FILE="D:/下载/01.2020高数强化班-张宇（完）/04.第四讲/06.第四讲 04多元函数的极、最值02.mp4" SIZE="249997637"
+2019-08-30 12:12:03 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":5601260394288884190}
+2019-08-30 14:11:18 [WARN] ID#60 - No URI available.(24) FILE="D:/下载/01.2020高数强化班-张宇（完）/01.第一讲/09.第一讲 06 数列极限的存在性与计算01.mp4" SIZE="686792286"
+2019-08-30 15:23:23 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":5604342196843668419}
+2019-08-30 19:33:57 [WARN] request error (0x200000070): https://pan.baidu.com/api/sharedownload {"errno":112,"request_id":5608378958311552412,"server_time":1567164839}
+2019-08-30 19:42:44 [WARN] ID#1 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/06.第六讲/第六讲 04正定二次型.mp4" SIZE="144371031"
+2019-08-30 19:43:37 [WARN] ID#2 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/06.第六讲/第六讲 03实对称矩阵的合同.mp4" SIZE="211757777"
+2019-08-30 19:43:37 [WARN] ID#5 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 04实对称矩阵与正交矩阵.mp4" SIZE="332329468"
+2019-08-30 19:43:44 [WARN] ID#3 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/06.第六讲/第六讲 02正交变换法.mp4" SIZE="444496528"
+2019-08-30 19:43:47 [WARN] ID#6 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 03 A相似于B.mp4" SIZE="404683908"
+2019-08-30 19:44:04 [WARN] ID#4 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/06.第六讲/第六讲 01配方法.mp4" SIZE="317806333"
+2019-08-30 19:44:51 [WARN] ID#7 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 02 A的相似对角化.mp4" SIZE="400405723"
+2019-08-30 19:44:51 [WARN] ID#8 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 01 A的特征值与特征向量02.mp4" SIZE="396489219"
+2019-08-30 19:45:12 [WARN] ID#10 - Authorization failed.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/04.第四讲/第四讲02抽象型向量关系.mp4" SIZE="143005499"
+2019-08-30 19:45:35 [WARN] ID#9 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 01 A的特征值与特征向量01.mp4" SIZE="479360368"
+2019-08-30 19:51:07 [WARN] ID#5 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/05.第五讲/第五讲 04实对称矩阵与正交矩阵.mp4" SIZE="332329468"
+2019-08-30 19:51:29 [WARN] ID#2 - No URI available.(24) FILE="D:/下载/02.2020线代强化班-张宇（完）/06.第六讲/第六讲 03实对称矩阵的合同.mp4" SIZE="211757777"
+2019-08-30 20:20:42 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":5609130818846522592}
+2019-08-30 20:35:05 [WARN] rpc error (0): timeout
+2019-08-30 20:35:10 [WARN] rpc error (0): timeout
+2019-08-30 20:35:21 [WARN] rpc error (0): timeout
+2019-08-30 20:35:29 [WARN] rpc error (0): timeout
+2019-08-30 20:35:34 [WARN] rpc error (0): timeout
+2019-08-30 20:35:52 [WARN] rpc error (0): timeout
+2019-08-30 20:36:19 [WARN] rpc error (0): timeout
+2019-08-30 20:36:26 [WARN] rpc error (0): timeout
+2019-08-30 20:36:52 [WARN] rpc error (0): timeout
+2019-08-30 20:37:03 [WARN] rpc error (0): timeout
+2019-08-30 20:42:09 [WARN] ID#24 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 02 初等矩阵03.mp4" SIZE="389070094"
+2019-08-30 20:42:52 [WARN] ID#21 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 03 矩阵方程.mp4" SIZE="223240368"
+2019-08-30 20:48:09 [WARN] ID#22 - No URI available.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 02 求矩阵A的逆02.mp4" SIZE="470565138"
+2019-08-30 20:49:02 [WARN] ID#16 - No URI available.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/03.第三讲/第三讲 01具体型方程组03.mp4" SIZE="527046414"
+2019-08-30 20:49:03 [WARN] ID#20 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 04 矩阵的秩01.mp4" SIZE="354938548"
+2019-08-30 20:49:07 [WARN] ID#17 - No URI available.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/03.第三讲/第三讲 01具体型方程组02.mp4" SIZE="478766199"
+2019-08-30 20:49:08 [WARN] ID#19 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 04 矩阵的秩02.mp4" SIZE="308963860"
+2019-08-30 20:50:29 [WARN] ID#18 - No URI available.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/03.第三讲/第三讲 01具体型方程组01.mp4" SIZE="382598860"
+2019-08-30 20:53:20 [WARN] ID#22 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/02.第二讲/第二讲 02 求矩阵A的逆02.mp4" SIZE="470565138"
+2019-08-30 20:54:31 [WARN] ID#16 - Timeout.(2) FILE="D:/下载/02.2020线代强化班-张宇（完）/03.第三讲/第三讲 01具体型方程组03.mp4" SIZE="527046414"
+2019-08-30 21:43:17 [WARN] request error (0x200000070): https://pan.baidu.com/api/sharedownload {"errno":112,"request_id":5610461914370597120,"server_time":1567172599}
+2019-08-30 21:52:15 [WARN] ID#9 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/04.第四讲/四、数字特征01.mp4" SIZE="551582231"
+2019-08-30 21:56:38 [WARN] ID#5 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、01数字特征及分布01.mp4" SIZE="353782491"
+2019-08-30 21:56:55 [WARN] ID#8 - No URI available.(2) FILE="D:/下载/03.2020概率强化班-张宇/04.第四讲/四、数字特征02.mp4" SIZE="473881183"
+2019-08-30 21:57:10 [WARN] ID#11 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/03.第三讲/三、04求函数分布04 （多维随机变量）.mp4" SIZE="295907053"
+2019-08-30 21:57:23 [WARN] ID#9 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/04.第四讲/四、数字特征01.mp4" SIZE="551582231"
+2019-08-30 21:58:07 [WARN] ID#1 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、03区间估计与假设检验（仅数一）.mp4" SIZE="353311608"
+2019-08-30 22:01:21 [WARN] ID#2 - No URI available.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、02点估计和评价标准 02.mp4" SIZE="343915748"
+2019-08-30 22:05:19 [WARN] ID#16 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/03.第三讲/三、02求分布（多维随机变量）.mp4" SIZE="476850779"
+2019-08-30 22:06:35 [WARN] ID#2 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、02点估计和评价标准 02.mp4" SIZE="343915748"
+2019-08-30 22:07:49 [WARN] ID#1 - No URI available.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、03区间估计与假设检验（仅数一）.mp4" SIZE="353311608"
+2019-08-30 22:11:30 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-08-30 22:12:23 [WARN] ID#2 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、02点估计和评价标准 02.mp4" SIZE="343915748"
+2019-08-30 22:12:53 [WARN] ID#21 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/02.第二讲/二、02求分布05（一维随机变量）.mp4" SIZE="391748206"
+2019-08-30 22:13:23 [WARN] ID#1 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、03区间估计与假设检验（仅数一）.mp4" SIZE="353311608"
+2019-08-30 22:16:01 [WARN] ID#26 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/02.第二讲/二、01判分布（一维随机变量）.mp4" SIZE="518502200"
+2019-08-30 22:16:16 [WARN] ID#7 - No URI available.(2) FILE="D:/下载/03.2020概率强化班-张宇/04.第四讲/四、数字特征03.mp4" SIZE="505596923"
+2019-08-30 22:17:36 [WARN] ID#2 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、02点估计和评价标准 02.mp4" SIZE="343915748"
+2019-08-30 22:18:03 [WARN] ID#21 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/02.第二讲/二、02求分布05（一维随机变量）.mp4" SIZE="391748206"
+2019-08-30 22:18:32 [WARN] ID#1 - Timeout.(2) FILE="D:/下载/03.2020概率强化班-张宇/06.第六讲/六、03区间估计与假设检验（仅数一）.mp4" SIZE="353311608"
+2019-08-30 22:24:14 [WARN] ID#24 - No URI available.(2) FILE="D:/下载/03.2020概率强化班-张宇/02.第二讲/二、02求分布02（一维随机变量）.mp4" SIZE="441538184"
+2019-08-30 22:49:01 [INFO] close main window
+2019-08-30 22:49:01 [WARN] aria2 websocket connection closed (127.0.0.1:36899), code: 1000 (Normal close), reason: aria2 shutdown
+2019-08-30 22:49:02 [INFO] websocket client stop
+2019-08-30 22:49:02 [INFO] exit

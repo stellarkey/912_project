@@ -1,0 +1,180 @@
+2019-06-09 21:30:54 [INFO] pandownload version: 2.1.0
+2019-06-09 21:30:56 [INFO] aria2 websocket connection opened (127.0.0.1:6808)
+2019-06-09 21:30:56 [INFO] aria2 version: 1.34.0
+2019-06-09 21:30:56 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:6808/jsonrpc
+2019-06-09 21:30:56 [INFO] create main window
+2019-06-09 21:30:56 [INFO] verify cookie (384)
+2019-06-09 21:30:58 [INFO] user login success (3145349758): 无名倒人
+2019-06-09 22:19:20 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-06-09 22:19:45 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:20:07 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:20:27 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:20:47 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:21:07 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:21:27 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:21:47 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:22:07 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:22:27 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:30:50 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-06-09 22:31:10 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 22:31:53 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-09 23:42:02 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3710561611546217211}
+2019-06-10 02:51:17 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3713609761673356626}
+2019-06-10 17:18:03 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3727570381863826785}
+2019-06-10 21:09:58 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3731305765854770609}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915025235618}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915133229469}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915067733803}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915119800086}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915099065721}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915067837471}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915078993714}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915108967926}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915124056578}
+2019-06-11 02:14:33 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:33 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:14:33 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:14:33 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:14:33 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:14:33 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:14:33 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:14:33 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:14:33 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736211915043362982}
+2019-06-11 02:14:33 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183576679923}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183583705811}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183577079014}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183461310748}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183450779443}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183463552520}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183458661356}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183470815146}
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183473141669}
+2019-06-11 02:14:33 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:33 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:14:33 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:14:33 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:14:33 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:14:33 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:14:33 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:14:33 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:14:33 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:14:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212183546694784}
+2019-06-11 02:14:34 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451947425775}
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451964202431}
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451919944398}
+2019-06-11 02:14:34 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451990223652}
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451886295778}
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451950091075}
+2019-06-11 02:14:34 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451898818825}
+2019-06-11 02:14:34 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451943045200}
+2019-06-11 02:14:34 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:14:34 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:14:34 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:14:34 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:14:34 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451902154669}
+2019-06-11 02:14:34 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:14:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736212451940204309}
+2019-06-11 02:14:35 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:14:38 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736213257229824593}
+2019-06-11 02:14:38 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:39 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736213525759457926}
+2019-06-11 02:14:39 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:39 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736213794196038280}
+2019-06-11 02:14:39 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:40 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736214062518657142}
+2019-06-11 02:14:41 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:41 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736214330960771845}
+2019-06-11 02:14:41 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:14:42 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736214331052822543}
+2019-06-11 02:14:42 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431251138497}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431329628949}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431280812076}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431316295175}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431230149810}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431208410014}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431312290172}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431253119380}
+2019-06-11 02:15:00 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431243997212}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219431211223364}
+2019-06-11 02:15:01 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:15:01 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:15:01 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:15:01 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:15:01 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:15:01 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:15:01 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:15:01 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:15:01 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:15:01 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699714190665}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699678592336}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699654339900}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699755011847}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699759513059}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699748989295}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699685877058}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699676834960}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699696119751}
+2019-06-11 02:15:01 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699756136775}
+2019-06-11 02:15:01 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:15:01 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:15:01 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:15:01 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:15:01 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:15:01 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:15:01 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:15:01 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:15:01 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:15:01 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699743812283}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699771290473}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699667250423}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699644082568}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699655170316}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699760323782}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699707259426}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699716812994}
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699642588912}
+2019-06-11 02:15:02 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-01.mp4" SIZE="152663729"
+2019-06-11 02:15:02 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-02.mp4" SIZE="149137900"
+2019-06-11 02:15:02 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-03.mp4" SIZE="93279168"
+2019-06-11 02:15:02 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-04.mp4" SIZE="158783312"
+2019-06-11 02:15:02 [WARN] ID#5 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:15:02 [WARN] ID#6 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-06.mp4" SIZE="195523611"
+2019-06-11 02:15:02 [WARN] ID#7 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-07.mp4" SIZE="184025767"
+2019-06-11 02:15:02 [WARN] ID#9 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-09.mp4" SIZE="145052660"
+2019-06-11 02:15:02 [WARN] ID#10 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-10 临时.mp4" SIZE="102647560"
+2019-06-11 02:15:02 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736219699677953428}
+2019-06-11 02:15:02 [WARN] ID#8 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/无法学习/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-08.mp4" SIZE="133141266"
+2019-06-11 02:15:11 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736222384099511424}
+2019-06-11 02:15:11 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:15:12 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736222652450650657}
+2019-06-11 02:15:12 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 02:15:12 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3736222652564029821}
+2019-06-11 02:15:13 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/【会动的极】Midara na Ao chan wa Benkyou ga Dekinai-05.mp4" SIZE="164160075"
+2019-06-11 12:07:19 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3745758683277843888}
+2019-06-11 14:25:57 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3747991114707768841}
+2019-06-11 18:13:24 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3751654456527490820}
+2019-06-11 21:06:55 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3754449059482697086}
+2019-06-11 21:42:32 [WARN] request error (0x100000023): https://pan.baidu.com/api/quota 
+2019-06-11 21:49:51 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-06-11 23:18:37 [WARN] request error (0x10000001c): https://pan.baidu.com/api/quota 
+2019-06-11 23:18:57 [WARN] request error (0x100000006): https://pan.baidu.com/api/quota 
+2019-06-12 01:40:25 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3758854188638954700}
+2019-06-12 12:22:17 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3769192416010565482}
+2019-06-12 13:31:46 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3770311228663651946}
+2019-06-12 13:34:53 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3770361633247782825}
+2019-06-12 13:53:59 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3770669442362146985}
+2019-06-12 21:40:59 [WARN] request error (0x200000001): https://pan.baidu.com/api/quota {"errno":1,"request_id":3778191094798150876}
+2019-06-13 00:47:58 [INFO] close main window
+2019-06-13 00:47:58 [WARN] aria2 websocket connection closed (127.0.0.1:6808), code: 1000 (Normal close), reason: aria2 shutdown
+2019-06-13 00:47:59 [INFO] websocket client stop
+2019-06-13 00:47:59 [INFO] exit

@@ -21,3 +21,12 @@
 > - 按[实验环境（5种）](https://github.com/kiukotsu/ucore)一键安装相应软件
 > - 开始做实验
 
+---
+
+关于understand：
+
+- 到[此处](http://scitools.com/download/all-builds/)下载4.0版本
+- 安装教程：[Here](http://scitools.com/documents/unix_install.php)
+- registery code: D59E41A3360B
+  E-mail: a123@163.com
+

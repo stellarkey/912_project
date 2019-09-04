@@ -1,0 +1,12 @@
+2019-07-01 20:35:33 [INFO] pandownload version: 2.1.2
+2019-07-01 20:35:35 [INFO] aria2 websocket connection opened (127.0.0.1:36811)
+2019-07-01 20:35:35 [INFO] aria2 version: 1.34.0
+2019-07-01 20:35:35 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:36811/jsonrpc
+2019-07-01 20:35:35 [INFO] create main window
+2019-07-01 20:35:35 [INFO] verify cookie (615)
+2019-07-01 20:35:38 [INFO] user login success (3145349758): 无名倒人
+2019-07-01 20:42:24 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/C Primer Plus 第六版 [带书签].pdf" SIZE="226486974"
+2019-07-01 20:42:24 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/C Primer Plus 第六版 [带书签].pdf" SIZE="226486974"
+2019-07-01 20:42:25 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/C Primer Plus 第六版 [带书签].pdf" SIZE="226486974"
+2019-07-01 21:18:04 [WARN] request error (0x100000023): https://pan.baidu.com/api/quota 
+2019-07-01 21:26:07 [WARN] request error (0x100000023): https://pan.baidu.com/api/quota 

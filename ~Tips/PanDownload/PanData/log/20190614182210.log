@@ -1,0 +1,66 @@
+2019-06-14 18:22:10 [INFO] pandownload version: 2.1.0
+2019-06-14 18:22:21 [INFO] aria2 websocket connection opened (127.0.0.1:6808)
+2019-06-14 18:22:21 [INFO] aria2 version: 1.34.0
+2019-06-14 18:22:21 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:6808/jsonrpc
+2019-06-14 18:22:21 [INFO] create main window
+2019-06-14 18:22:21 [INFO] verify cookie (384)
+2019-06-14 18:22:22 [INFO] user login success (3145349758): 无名倒人
+2019-06-14 18:22:29 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:22:29 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:22:29 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:22:29 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:22:29 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:22:29 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:22:29 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:22:29 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:22:30 [WARN] ID#4 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:22:30 [WARN] ID#2 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:22:30 [WARN] ID#3 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:22:30 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:22:38 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:22:39 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:37:29 [WARN] request error (0x200000070): https://pan.baidu.com/api/sharedownload {"errno":112,"request_id":3821621595869912154,"server_time":1560508649}
+2019-06-14 18:37:46 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:37:47 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:37:47 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:38:35 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821639083067020945}
+2019-06-14 18:38:35 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/大学生数学竞赛习题精讲 陈兆斗等编.pdf" SIZE="22627693"
+2019-06-14 18:38:36 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821639083076452144}
+2019-06-14 18:38:36 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/大学生数学竞赛习题精讲 陈兆斗等编.pdf" SIZE="22627693"
+2019-06-14 18:38:36 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821639351519141073}
+2019-06-14 18:38:36 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/大学生数学竞赛习题精讲 陈兆斗等编.pdf" SIZE="22627693"
+2019-06-14 18:40:19 [INFO] verify cookie (615)
+2019-06-14 18:40:29 [INFO] user login success (3145349758): 无名倒人
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528182361979}
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528257334260}
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528175157126}
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528227517413}
+2019-06-14 18:42:09 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:42:09 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:42:09 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:42:09 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528157127045}
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528249195168}
+2019-06-14 18:42:09 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528235056046}
+2019-06-14 18:42:10 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696528210742150}
+2019-06-14 18:42:10 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:42:10 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:42:10 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:42:10 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:42:10 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696796597269662}
+2019-06-14 18:42:10 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696796698370278}
+2019-06-14 18:42:10 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696796624492893}
+2019-06-14 18:42:10 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821696796654350727}
+2019-06-14 18:42:10 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道操作系统.pdf" SIZE="734149927"
+2019-06-14 18:42:10 [WARN] ID#2 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:42:10 [WARN] ID#3 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道计算机组成原理.pdf" SIZE="726470769"
+2019-06-14 18:42:10 [WARN] ID#4 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道408书籍pdf/20王道数据结构.pdf" SIZE="823181569"
+2019-06-14 18:42:29 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821701896939172829}
+2019-06-14 18:42:29 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:42:32 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821702702224384523}
+2019-06-14 18:42:32 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:42:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3821702970718600818}
+2019-06-14 18:42:33 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/20王道计算机网络.pdf" SIZE="676570484"
+2019-06-14 18:43:39 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道操作系统_removed.pdf" SIZE="9273344"
+2019-06-14 18:43:39 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道操作系统_removed.pdf" SIZE="9273344"
+2019-06-14 18:43:40 [WARN] ID#1 - 获取下载链接失败(-6) FILE="C:/Users/Administrator/Downloads/20王道操作系统_removed.pdf" SIZE="9273344"

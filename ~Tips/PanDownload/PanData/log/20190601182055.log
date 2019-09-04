@@ -1,0 +1,40 @@
+2019-06-01 18:20:55 [INFO] pandownload version: 2.1.0
+2019-06-01 18:21:08 [INFO] aria2 websocket connection opened (127.0.0.1:6808)
+2019-06-01 18:21:08 [INFO] aria2 version: 1.34.0
+2019-06-01 18:21:08 [INFO] aria2 json-rpc path: http://token:pandownload@127.0.0.1:6808/jsonrpc
+2019-06-01 18:21:14 [INFO] create main window
+2019-06-01 18:22:06 [INFO] verify cookie (45)
+2019-06-01 18:28:22 [INFO] verify cookie (516)
+2019-06-01 18:28:39 [INFO] verify cookie (518)
+2019-06-01 18:32:58 [INFO] verify cookie (384)
+2019-06-01 18:32:59 [INFO] user login success (3145349758): 无名倒人
+2019-06-01 18:34:39 [WARN] request error (0x200000002): https://pan.baidu.com/share/transfer {"errno":2,"error":"Param error","request_id":1151267469102630373}
+2019-06-01 18:35:04 [WARN] request error (0x200000002): https://pan.baidu.com/share/transfer {"errno":2,"error":"Param error","request_id":1153394820229731867}
+2019-06-01 18:36:57 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520106340562590425}
+2019-06-01 18:36:57 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:36:57 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520106340621462194}
+2019-06-01 18:36:57 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:36:58 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520106609074133855}
+2019-06-01 18:36:58 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:04 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520108219671386072}
+2019-06-01 18:37:04 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:04 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520108219693022788}
+2019-06-01 18:37:04 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:05 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520108488088230473}
+2019-06-01 18:37:05 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520116004358063975}
+2019-06-01 18:37:33 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:33 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520116004258196216}
+2019-06-01 18:37:33 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:34 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520116272708833775}
+2019-06-01 18:37:34 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/汇编语言程序设计(美)布鲁姆 着,马朝晖 等译.pdf" SIZE="34039000"
+2019-06-01 18:37:44 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520118957077092937}
+2019-06-01 18:37:44 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/幸运破解器.apk" SIZE="2508493"
+2019-06-01 18:37:44 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520118957100140618}
+2019-06-01 18:37:44 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/幸运破解器.apk" SIZE="2508493"
+2019-06-01 18:37:45 [WARN] script log (默认): {"error_code":31526,"error_msg":"user is not authorized, hitcode:118","request_id":3520119225474783719}
+2019-06-01 18:37:45 [WARN] ID#1 - user is not authorized, hitcode:118(-3) FILE="C:/Users/Administrator/Downloads/幸运破解器.apk" SIZE="2508493"
+2019-06-01 19:00:43 [INFO] close main window
+2019-06-01 19:00:43 [WARN] aria2 websocket connection closed (127.0.0.1:6808), code: 1000 (Normal close), reason: aria2 shutdown
+2019-06-01 19:00:44 [INFO] websocket client stop
+2019-06-01 19:00:44 [INFO] exit
