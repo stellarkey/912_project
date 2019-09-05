@@ -6,3 +6,5 @@
 - 或者学堂在线的[汇编语言程序设计](https://www.xuetangx.com/courses/TsinghuaX/20240103X/2015_T2/about)第5章（推荐全看，对OS实验很有好处）
 
 > 光看以上的，~~可能并不足以~~阅读MIPS代码。可以看《See MIPS Run》第9章。
+>
+> 更新了[**MIPS ref. card**](./!!MIPS ref. card.pdf)。
