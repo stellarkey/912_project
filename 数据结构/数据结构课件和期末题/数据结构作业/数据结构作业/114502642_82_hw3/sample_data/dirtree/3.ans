@@ -1,0 +1,232 @@
+account
+cache
+  alchemist
+  coolkey
+  cups
+  fontconfig
+  foomatic
+  logwatch
+  man
+    X11R6
+      cat1
+      cat2
+      cat3
+      cat4
+      cat5
+      cat6
+      cat7
+      cat8
+      cat9
+      catn
+    cat1
+    cat2
+    cat3
+    cat4
+    cat5
+    cat6
+    cat7
+    cat8
+    cat9
+    catn
+    local
+      cat1
+      cat2
+      cat3
+      cat4
+      cat5
+      cat6
+      cat7
+      cat8
+      cat9
+      catn
+  mod_proxy
+  samba
+    winbindd_privileged
+  yum
+    addons
+      packages
+    base
+      packages
+    extras
+      packages
+    updates
+      packages
+crash
+cvs
+db
+  nscd
+empty
+  sshd
+ftp
+  pub
+games
+gdm
+lib
+  Pegasus
+  alternatives
+  bluetooth
+  cs
+  dav
+  dbus
+  dhclient
+  dhcpv6
+  games
+  hal
+  libvirt
+  misc
+  mlocate
+  multipath
+  mysql
+  nfs
+    rpc_pipefs
+      lockd
+      mount
+      nfs
+      portmap
+      statd
+    statd
+    v4recovery
+  ntp
+  php
+    session
+  rpm
+  scrollkeeper
+    C
+    TOC
+    am
+    az
+    be
+    ca
+    cs
+    da
+    de
+    el
+    es
+    fr
+    hu
+    index
+    it
+    ja
+    kn
+    ko
+    nl
+    no
+    pl
+    pt_BR
+    ro
+    ru
+    sk
+    sl
+    sr
+    sr@Latn
+    sv
+    tr
+    uk
+    vi
+    zh_CN
+    zh_TW
+  sepolgen
+  setroubleshoot
+  stateless
+    writable
+  texmf
+    pk
+      ljfour
+        jknappen
+          ec
+    source
+      jknappen
+        ec
+    tfm
+      jknappen
+        ec
+  up2date
+  xen
+    dump
+    images
+    xend-db
+      domain
+      migrate
+      vnet
+  xend
+  xenstored
+  xkb
+  yum
+local
+lock
+  dmraid
+  lvm
+  subsys
+log
+  audit
+  conman
+  conman.old
+  cups
+  gdm
+  httpd
+  libvirt
+    qemu
+  mail
+  pm
+  ppp
+  prelink
+  samba
+  setroubleshoot
+  vbox
+  xen
+nis
+opt
+preserve
+racoon
+run
+  NetworkManager
+  avahi-daemon
+  console
+  cups
+    certs
+  dbus
+  libvirt
+  mdadm
+  mdmpd
+  mysqld
+  netreport
+  nscd
+  pm
+  ppp
+  saslauthd
+  screen
+  setrans
+  setroubleshoot
+  snmpd
+  sudo
+  tog-pegasus
+  winbindd
+  wpa_supplicant
+  xend
+  xenstored
+spool
+  anacron
+  at
+  clientmqueue
+  cron
+  cups
+  lpd
+  mail
+  mqueue
+  repackage
+  samba
+  vbox
+tmp
+www
+  cgi-bin
+  error
+    include
+  html
+  icons
+    small
+  manual
+    mod
+      mod_python
+        icons
+yp
+  binding

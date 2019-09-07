@@ -1,0 +1,25 @@
+A卷
+1. 简述xv6系统调用如何实现
+2. 给出xv6中进程的状态转换图。问这些状态转换分别由哪些函数直接执行？如 running -> sleeping : sleep
+3. xv6的spinlock代码填空（initlock, acquire, release 的 lock->locked 部分的操作）
+4. 32位计算机，每个页表项8 byte，问共几级页表？每级页表分别占几个页面？分别代表地址的多少位
+5. 给一段C代码，大致如下（语法不理）：其中getpid()为获得当前pid，getppid()为获得父进程pid，且程序开始运行时pid=100
+main()
+{
+  scanf("%d",count);
+  for(i=0;i<count;i++)
+  {
+    pid = fork();
+    if(pid>=0) //代表fork成功
+    {
+      if(pid==0)//子进程返回0
+      {
+        prinf("Loop %d: My PID: %d, parent's PID: %d\n",i,getpid(), getppid());
+      }
+    }
+  }
+}
+问输出结果为何？
+6. 一个理发师，3张椅子的理发师问题
+7. UNIX的多级存储结构，每个节点有8个直接连接，1个一级间接，1个2级间接，1个3级间接，给若干个地址（其中一个是 0x A6 06 A6 06 A6），给出存储结构
+8. 叙述C-SCAN和SSTF。然后给出一个请求序列，问FCFS, SCAN, C-SCAN, SSTF的响应序列
