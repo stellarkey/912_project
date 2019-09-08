@@ -10,6 +10,10 @@ MOOC：[**操作系统**](https://www.xuetangx.com/courses/course-v1:TsinghuaX+3
 >
 > [最具影响力的OS论文](https://www.sigops.org/awards/hof/)
 
+# 前人经验
+
+[RLHALL](http://www.cskaoyan.com/space-uid-406840.html)：Ucore考得不难，只要能**读懂代码**即可。（必须完整地阅读过源码！）
+
 # 学习进度表
 
 > 始于2019.5.17

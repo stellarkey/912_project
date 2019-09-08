@@ -10,6 +10,8 @@
 
 ---
 
+[【汇总】2019清华大学计算机/软件工程考研经验及资料汇总帖（更新中）](http://www.cskaoyan.com/thread-653910-1-3.html)
+
 [关于清华计算机专业基础综合（912）的复习](https://xuanxuanblingbling.github.io/life/study/2018/12/29/912/)
 
 [清华大学计算机系课程攻略](https://github.com/PKUanonym/REKCARC-TSC-UHT) **好东西**，~~入宝山不能空返（滑稽~~
