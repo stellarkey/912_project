@@ -726,15 +726,37 @@ D. 源和目的之间距离很近，速度慢
 
 ##### URL
 
-(1) 解释以下URL各部分的意义 `http://info.tsinghua. edu.cn:80/index.jsp`
+(1) 解释以下URL各部分的意义 `http://info.tsinghua.edu.cn:80/index.jsp`
+
+> `http`：协议
+>
+> `info.tsinghua.edu.cn`：主机的DNS域名
+>
+> `80`：主机的HTTP端口号
+>
+> `index.jsp`：路径名
+>
+> > 本题的原型在《计算机网络》黑书的P502。
 
 ##### DNS
 
 (2) 如域名info.tsinghua. edu.cn对应的ip为166.111.4.98，解释为何会发⽣如下现象：
 
-- ①访问`http://info.tsinghua. edu.cn/index.jsp` 正常，⽽访问`http://166.111.4.98/index.jsp` 异常
+- ①访问`http://info.tsinghua.edu.cn/index.jsp` 正常，⽽访问`http://166.111.4.98/index.jsp` 异常
 
 - ②访问`http://166.111.4.98/index.jsp` 正常，⽽访问`http://info.tsinghua. edu.cn/index.jsp` 异常
+
+> ①：IP地址被多个站点共享；站点禁止IP直接访问
+>
+> ②：DNS服务器异常
+>
+> > https://blog.csdn.net/wwwdc1012/article/details/51745912
+> >
+> > https://blog.csdn.net/weixin_30919919/article/details/96226716
+> >
+> > https://blog.csdn.net/Luoyeshs/article/details/83212655
+> >
+> > https://blog.csdn.net/gui951753/article/details/83070180
 
 #### 子网划分
 
