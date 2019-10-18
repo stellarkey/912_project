@@ -27,3 +27,7 @@
 [THU_CS 历年考研信息汇总](http://www.cskaoyan.com/forum.php?mod=viewthread&tid=43303&extra=page%3D1%26filter%3Dlastpost%26orderby%3Dlastpost) 初、复试及后期资料
 
 [2017年清华大学计算机科学与技术系考研小结](https://blog.csdn.net/chr1991/article/details/64971113) 参考书目
+
+[提供计算机考研和软件工程考研专业的各个学校 考研真题](https://github.com/csseky/cskaoyan)
+
+ [复习考研的那些事儿～～](https://github.com/AngelKitty/review_the_national_post-graduate_entrance_examination) Angel_Kitty的912学习之旅

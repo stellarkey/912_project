@@ -1,0 +1,1 @@
+Enter License Code -> Options -> Use Legacy Licensing -> Add Eval or SDL (RegCode) -> use keygen AMPED and any e-mail
