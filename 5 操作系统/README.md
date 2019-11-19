@@ -9,6 +9,8 @@ MOOC：[**操作系统**](https://www.xuetangx.com/courses/course-v1:TsinghuaX+3
 > [**课程信息Wiki**](http://os.cs.tsinghua.edu.cn/oscourse/)，[课程资源](https://chyyuu.gitbooks.io/os_course_info/)，[实验版指导手册](https://chyyuu.gitbooks.io/simple_os_book/content/)
 >
 > [最具影响力的OS论文](https://www.sigops.org/awards/hof/)
+>
+> https://github.com/libinyl/lcore
 
 # 前人经验
 
