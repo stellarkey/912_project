@@ -442,7 +442,7 @@ BinNode *rank(BinNode* t, int k){
 BinNode *rank(BinNode* t, int k){
     if(t->size == k) return t;
     int num = 0;
-    if(t->lchild != NULL) num = t->child->size;
+    if(t->lchild != NULL) num = t->lchild->size;
     if(num < k)
         return rank(t->rchild, k - num);
     else
@@ -456,7 +456,7 @@ BinNode *rank(BinNode* t, int k){
 BinNode *rank(BinNode* t, int k){
     while(t->size != k){
         int num = 0;
-        if(t->lchild != NULL) num = t->child->size;
+        if(t->lchild != NULL) num = t->lchild->size;
         if(num < k){
             k -= num;
             t = t->rchild;
