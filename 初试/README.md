@@ -441,8 +441,10 @@ BinNode *rank(BinNode* t, int k){
 ```c++
 BinNode *rank(BinNode* t, int k){
     if(t->size == k) return t;
-    if(t->lchild->size < k)
-        return rank(t->rchild, k - t->lchild->size);
+    int num = 0;
+    if(t->lchild != NULL) num = t->child->size;
+    if(num < k)
+        return rank(t->rchild, k - num);
     else
         return rank(t->lchild, k);
 }
@@ -453,9 +455,11 @@ BinNode *rank(BinNode* t, int k){
 ```c++
 BinNode *rank(BinNode* t, int k){
     while(t->size != k){
-        if(t->lchild->size < k){
+        int num = 0;
+        if(t->lchild != NULL) num = t->child->size;
+        if(num < k){
+            k -= num;
             t = t->rchild;
-            k -= t->lchild->size;
         } else{
             t = t->lchild;
         }
