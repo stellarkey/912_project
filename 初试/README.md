@@ -1,12 +1,12 @@
 # References
 
-[考研英语真题词汇的统计分析](https://github.com/YSMull/words-statistics)
-
 [关于清华计算机专业基础综合（912）的复习](https://xuanxuanblingbling.github.io/life/study/2018/12/29/)
 
 [2017年清华大学计算机科学与技术系考研小结](https://blog.csdn.net/chr1991/article/details/64971113)
 
 [T大在线编程题汇总](https://www.nowcoder.com/kaoyan/retest/1001)
+
+> *本文档推荐采用 [Typora](https://typora.io/) 进行编写 / 阅读。*
 
 # 考点整理
 
