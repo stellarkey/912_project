@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　获得增广权向量的方法不少，其中感知准则函数方法是一种利用错分类对现决策权向量进行修正直至收敛的方法。这种方法只对线性可分情况适用。<br>
+            　　<span class="spe">线性可分是指两类训练样本在特征空间各自分布的区域，可用一线性函数隔开。</span><br>
+            　　在给定一个规范化增广样本集<img src="../../images/image_content/3/3_2_44_077.gif" width="56" height="28" align="middle"> 
+            的条件下，对于任何一个增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">，可以计算<img src="../../images/image_content/3/3_2_44_078.gif" width="36" height="30" align="middle"> 
+            ，显然如果该向量是一个能将此样本集正确分类的增广权向量，则应有 <br>
+            　　<img src="../../images/image_content/3/3_2_44_079.gif" width="161" height="37" align="middle"> 
+            <br>
+            　　而对可导致错分类的增广权向量，则必有若干个y<sub>i</sub> ,使<img src="../../images/image_content/3/3_2_44_080.gif" width="59" height="32" align="middle"> 
+            ，我们令被错分类的规范化增广样本组成的集用y<sup>k</sup>表示，并定义一准则函数<img src="../../images/image_content/3/3_2_44_081.gif" width="39" height="27" align="middle"> 
+            ，<br>
+            　　<img src="../../images/image_content/3/3_2_44_082.gif" width="138" height="56" align="middle">　　　　　(3-40)<br>
+            　　则能将该样本集正确分类的增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">，使 
+            <img src="../../images/image_content/3/3_2_44_083.gif" width="67" height="39" align="middle">，即达到<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">极小值。因此确定向量的问题变为对 
+            求极小值的问题，这个准则函数<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">就是感知准则函数。<br>
+            　　求<img src="../../images/image_content/3/3_2_44_081.gif" width="39" height="27" align="absmiddle">准则函数的极小值问题，可以采用迭代法进行。一个常用的方法是梯度下降算法，即对第k次迭代值，求其梯度向量，并令迭代向量沿此负梯度向量方向修正，可以较快速度到达其极小值。<br>
+            　　将(3-40)式，对<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">求偏导数，得<br>
+            　　<img src="../../images/image_content/3/3_2_44_085.gif" width="208" height="55" align="middle">　　　　　(3-41)<br>
+            　　可见感知准则函数的梯度向量是所有被错分类的规范化增广样本向量之和，如果将迭代公式写成<br>
+            　　<img src="../../images/image_content/3/3_2_44_086.gif" width="159" height="41" align="middle"><br>
+            　　其中 <img src="../../images/image_content/3/3_2_44_087.gif" width="21" height="23" align="middle">为一步长系数，将(3-41)代入可得<br>
+            　　<img src="../../images/image_content/3/3_2_44_088.gif" width="200" height="44" align="middle">　　　　　(3-43)<br>
+            　　<span class="spe">综上所述，感知准则函数利用梯度下降算法求增广权向量的做法，可简单叙述为： 任意给定一向量初始值<img src="../../images/image_content/3/3_2_44_089.gif" width="31" height="34" align="absmiddle">，第k+1次迭代时的权向量<img src="../../images/image_content/3/3_2_44_090.gif" width="44" height="28" align="absmiddle">等于第k次的权向量<img src="../../images/image_content/3/3_2_44_091.gif" width="29" height="30" align="absmiddle">加上被错分类的所有样本之和与<img src="../../images/image_content/3/3_2_44_087.gif" width="21" height="23" align="absmiddle">的乘积。可以证明，对于线性可分的样本集，经过有限次修正，一定可以找到一个解向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="absmiddle">，即算法能在有限步内收敛。其收敛速度的快慢取决于初始权向量<img src="../../images/image_content/3/3_2_44_089.gif" width="31" height="34" align="absmiddle">和系数<img src="../../images/image_content/3/3_2_44_087.gif" width="21" height="23" align="absmiddle"> 
+            。</span><br>
+            　　下面就一个只有三个样本的样本集为例，说明该算法。该三个样本y<sub>1</sub>,y<sub>2</sub>及y<sub>3</sub>如图3.6所示。而其解区则由两个分别与y<sub>1</sub>,y<sub>3</sub>正交的向量所包围的区域组成。为了简便起见，我们设a(1)为y<sub>1</sub>，并令<img src="../../images/image_content/3/3_2_44_087.gif" width="21" height="23" align="absmiddle">=1。如果我们反复地将y<sub>1</sub>到y<sub>3</sub>依次送到分类器检验，并在发生错分类时对向量a(k)作出修正，则y<sub>3</sub>将在a(1)＝y<sub>1</sub>时被错分类，故<img src="../../images/image_content/3/3_2_44_094.gif" width="96" height="30" align="absmiddle">；然而紧接着的y<sub>1</sub>又被a(2)错分类，故权向量值又一次修正，迭代下去直至该解向量进入解区内，如图3.6中的点“8”所示。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><p><img src="../../images/image_temp/add8.GIF" width="206" height="311"><br>
+              <span class="FCcontent">图3.6<br>
+              <img src="../../images/image_content/3/3_2_44_096.gif" width="238" height="219"> 
+              <br>
+              图3.7 </span></p>
+            </td>
+        </tr>
+        <tr>
+          <td class="FCcontent"> 　　实际上(3-43)所示迭代修正过程是很容易理解的，这可用图3.7表示。由于所有被a(k)错分类的样本必然都在以a(k)为法线的超平面的负侧，因而它们的总和也必然处于该侧，则a(k+1)按(3-43)修正，就会使a(k+1)向错分类向量和趋近，有可能使这些错分类向量之和穿过超平面，或至少朝有利方向变动。<br>
+            感知准则函数方法只是对线性可分样本集有效，而对线性不可分的样本集，该算法不能收敛。因此又研究出其它方法，如最小错分样本数准则等，我们不再讨论，读者可参考有关书籍。<br>
+            　　<span class="spe">这一节对感知准则函数的讨论，只是很初步的，并且只讨论了线性可分的情况。但这种利用错误提供的信息，进行自修正的思想意义是十分深远的。这种只解决线性分类的感知器称为单层感知器，由它基础上发展起来的多层感知器在原理上能解决非线性分类、多类划分，以及非线性拟和非线性映射等多种功能，这些将在人工神经元网络这一章中进一步讨论。<br>
+            </span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

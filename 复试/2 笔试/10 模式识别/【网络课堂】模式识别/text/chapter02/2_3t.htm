@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent"><strong>课前指导<a name="01"></a>：<br>
+        　　</strong><span class="spe">到学习2.3节之前我们应该对前面学习的内容进行阶段性的总结。因为前面几节讲的是一些基本概念，而从2.3节开始则将这些概念具体化，在正态分布条件下具体化。前面几节主要应该掌握的是：<br>
+        　　(1)分类器设计时使用什么原则是关键，他会影响到分类器的效果。同学们应该掌握的是两种最基本的原则。一种是要求错分率最小即完全以减少分类错误为原则。这是一个通用原则，同学们也应该知道基于最小风险的贝叶斯决策的原理。弄清后验概率等几个概念，为什么用后验概率大小来判断就能实现错误率最小？<br>
+        　　(2)“风险”与“损失”的概念也很重要，通过它们把错分类造成的影响考虑进来了。应该通过下面这几个问题思考一下自己是否掌握基本内容。<br>
+        　　a.风险系数<img src="../../images/image_content/2/2_1_2p.gif" width="25" height="30" align="absmiddle">是怎么定义的？(样本本属于第j类，但如果错分到第i类，会造成的损失<img src="../../images/image_content/2/2_1_2p.gif" width="25" height="30" align="absmiddle">)<br>
+        　　b.为什么对某个样本作第i个决策的风险要按(2-13)或(2-14)等式计算？答案是，一个样本X被错分类时会造成损失 ,但实际造成的损失还要看后验概率<img src="../../images/image_content/2/2_1_2w.gif" width="64" height="26" align="absmiddle">，与<img src="../../images/image_content/2/2_1_2w.gif" width="64" height="26" align="absmiddle"> 
+        的数值成正比。如果X属于 的可能性不大，那么它造成的损失所占的比例就小了。<br>
+        　　c.如果<img src="../../images/image_content/2/2_1_2p.gif" width="25" height="30" align="absmiddle">比<img src="../../images/image_content/2/2_5F3a.gif" width="23" height="27" align="absmiddle">大得多，那么分类器设计希望避免哪一类错分类？<img src="../../images/image_content/2/2_5F3a.gif" width="23" height="27" align="absmiddle">大则表示这种错误造成的损失大，希望这一类错误尽可能减少。<br>
+        　　(3)分类所用的计算式都有一个特点，是比较所计算数值谁大谁小。这种函数就称为判别函数，函数的自变量是样本X，故一般表示成g<sub>i</sub>(X)，如果<img src="../../images/image_content/2/2_3b.gif" width="121" height="34" align="absmiddle">则称特征空间的这一点X是第i类的决策域。由g<sub>i</sub>(X)占主导地位的区域称为第i类的决策域，我们将它表示成Ri，如果第i类决策域Ri与第j类决策域相邻，则它们之间有边界。在边界上有g<sub>i</sub>(X)=g<sub>j</sub>(X),该式是一个方程式，称为决策面方程。<br>
+        　　第2.3节主要是结合一种比较典型的概率分布来进一步基于最小错误贝叶斯决策分类器的种种情况。这一节的学习中要抓住哪些重点呢？<br>
+        　　(1)什么叫正态分布，或高斯分布，它是哪一种概率定义说的？是先验概率P(ωi)，还是分布P(X|ωi),还是后验概率P(ωi|X)？<br>
+        　　(2)高斯分布的表达式，不要死记，但要明白它的两个关键，一是均值，另一是协方差矩阵，均值(向量)还比较好懂，协方差矩阵的含义一定要弄明白。<br>
+        　　(3)要懂得如何将正态分布与基于最小错误率的贝叶斯决策结合起来。关键还是要弄清楚正态分布是指对哪一种概率。明白这点就会弄清楚用基于最小错误率决策中的哪个方程式了。<br>
+        　　(4)由于高斯分布是指数函数，因此计算时常用对数使计算简化，这是一个具体技巧，因为如原式<img src="../../images/image_content/2/2_3d.gif" width="125" height="31" align="absmiddle">，则<img src="../../images/image_content/2/2_5F3e.gif" width="59" height="27" align="absmiddle">就会变成<img src="../../images/image_content/2/2_5F3c.gif" width="181" height="30" align="absmiddle">，许多重要性质都包含在B(X)中，因此这样进行计算就会简单些。<br>
+        　　(5)在讨论过程中会引进一些不同分类器的定义，如最小距离分类器、线性分类器等，这些定义也是比较重要的。<br>
+        <strong><br>
+        即时思考题<a name="02"></a>：</strong><br>
+        　　以前有没有听说过正态分布？正态分布是以哪一位科学家的名字命名的？正态分布又称什么？所谓正态分布是先验概率、类条件概率密度函数、还是后验概率而言的？如你能回答上来，请将答案与课文讲的核对，如答不上来，请在课文中找答案。</span><br>
+        　　2.2节中讨论了在一般的概率统计分布情况下的统计决策理论，这一节我们要讨论最常用的正态分布情况。在模式识别及其它信息处理应用系统中，正态分布假设是对各种随机变量使用得最普遍的假设。<br>
+        　<span class="spe">　这主要有两方面的原因：<br>
+        　　一个最重要的原因是正态分布在数学上比较简便。除了一些极其简单与不甚实用的统计分布模型外，正态分布可说是数学上最简便的一种。数学的简便性便于人们对统计识别方法进行数学分析。正态分布的一些特殊情况还会揭示统计判别方法中许多有趣的性质，有助于我们对统计判别方法加深理解。在模式识别技术的研究中，需要用设计样本集来设计分类器，还需用测试样本集来检验分类器的分类效果，并对不同的分类器设计的性能进行比较，用正态分布模型抽取设计样本集与考试样本集在数学上实现起来也比较方便。<br>
+        　　另一个很重要的原因是物理上的合理性，缺少这一条，正态分布模型也不可能得到如此广泛的应用。在许多实际应用场合，如果同一类样本在特征空间内的确较集中地分布在其类均值的附近，远离均值处分布较少，那么一般情况下以正态分布模型近似往往是比较合理的。人们也往往因数学分析复杂程度考虑而不得不采用这种模型，当然使用时应注意结果是否合理或关注其可接受的程度。</span><br>
+        　　下面我们先简略叙述正态模型的一些基本概念与有关的重要特性，以便后续分析。然后讨论正态分布时统计决策问题。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

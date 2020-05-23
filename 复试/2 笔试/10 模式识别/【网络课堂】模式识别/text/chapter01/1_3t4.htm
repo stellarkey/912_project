@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td class="FCcontent"><strong>一、信息获取</strong><br>
+            　　在现阶段计算机都只能处理某种形式的电信号，而待识别的样本大都是非电信息，例如癌细胞病理切片，语音信号，待识别文本，图像等，这就需要将这些以各种不同形式表现的信息通过传感器转换成电信号。如用话筒将声音信号转换成电信号，表现出电压(电流)随时间变化的复杂波形。景物信息在摄像机靶面成像并转换成二维的象素矩阵，每个像素(矩阵元素)的电信号与物体表面反射的光强或颜色信息呈现函数关系。因此信号获取环节主要是由不同形式的传感器构成，它实现信息获取与信息在不同媒体之间的转换。<br>
+            <strong>二、预处理</strong><br>
+            　　预处理主要是指去除所获取信息中的噪声，增强有用的信息，及一切必要的使信息纯化的处理过程。<br>
+            　　<span class="spe">预处理这个环节内容很广泛，与要解决的具体问题有关，例如，从图象中将汽车车牌的号码识别出来，就需要先将车牌从图像中找出来，再对车牌进行划分，将每个数字分别划分开。做到这一步以后，才能对每个数字进行识别。以上工作都应该在预处理阶段完成。</span><br>
+            <strong>三、特征选择和提取</strong><br>
+            　　这个环节包含着丰富的内容，在不同场合有不同的含义。一般说来它包括将所获取的原始量测数据转换成能反映事物本质，并将其最有效分类的特征表示。这个环节的输入是原始的量测数据(经过必要的预处理)，例如由声波变换 
+            成的电信号，表现为电压电流幅度随时间的变化，二维图像每个像素所具有的灰度值等。这些数据包含着所需信息的原始形式，但它往往不适合于分类器直接使用。特征提取模块将原始量测数据转换成有效方式表示的信息，从而使分类器能根据这些信息决定样本的类别。前面说过待识别的样本及模式都是用特征进行描述的，识别与训练都是在特征空间中进行的。而原始数据是由所使用的量测仪器或传感器获取的，这些数据组成的空间叫测量空间。因此特征的选择与提取模块的功能是：对所获取的信息实现从测量空间到特征空间的转换。第四章将对此作进一步讨论。<br>
+            　　<span class="spe">特征选择和提取就是说选择什么样的方法来描述事物，从而可以有效、牢靠地把事物正确地区分开。我们先举一个数字识别的例子来说明特征选择的重要性。<br>
+            　　印刷体数字大多通过扫描仪输入，或从图像中获取。这样一来，一个数字往往用一个N×M的数组表示。如果N＝5，M＝7，则一个数字就用5×7共35个网格是黑是白来表示。如令是黑为“1”，是白为“0”，那么一个数字就可用35维的二进制向量表示。这就是典型的特征向量表示法。</span><br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/1/1_3_6.gif" width="151" height="205"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">另一种方法则是将数字用笔划表示，也就是将它分成一横加上一斜杠表示。这种表示方法属于结构表示法范畴。这两种方法各有什么优缺点呢？前种方法表示很简单，但它有些缺点：这种表示与网格的尺寸有关，与字的笔划粗细有关，更主要的是字在网格中的不同位置与转向有关。这个字在网格中略为偏一点，其特征向量表示就会有很大的不一样。这就说明了这种表示的稳定性差。另一种表示是对数字的结构表示，如能将一横一斜杠可靠方便地分析出来，这种方法没有前一种方法的缺点，但提取这种结构信息也不是一件容易方便的事。由此可见，找到合适的特征描述对识别的可靠性，计算复杂度、有效性都是十分重要的。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

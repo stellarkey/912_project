@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent"><font color="#800040">二、线性分类器</font><br>
+            　　</span><span class="spe">决策面为超平面的分类器称为线性分类器。</span><span class="FCcontent"><br>
+            　　有不止一种正态分布概率模型，可使最小错误率贝叶斯决策的决策面具有超平面形式。这里我们讨论两种情况。<br>
+            　　(1)Σi=σ<sup>2</sup>I i=1,…，c<br>
+            　　这种情况与上一种情况不同之处在于并不要求各类的先验概率相等这个条件。在这种情况下，判别函数可从(2-48)简化为<br>
+            　　<img src="../../images/image_content/2/2_3_2t.gif" width="269" height="52" align="absmiddle">　　　(2-42)<br>
+            　　(2-42)是X的二次函数，但是由于二项X<sup>T</sup>X与类别号i无关，因此判别函数可进一步简化成<br>
+            　　<img src="../../images/image_content/2/2_3_2v.gif" width="362" height="42" align="absmiddle">　　　　　(2-43)　<br>
+            　　其中<br>
+            　　<img src="../../images/image_content/2/2_3_2u.gif" width="80" height="24" align="absmiddle"> 
+            　　　　　　　　(2-44)<br>
+            　　<img src="../../images/image_content/2/2_3_2x.gif" width="204" height="23" align="absmiddle">　　　　(2-45)　<br>
+            　　可见判别函数为一线性函数。根据决策面方程g<sub>i</sub>(X)－g<sub>i</sub>(X)＝0可有<br>
+            　　<img src="../../images/image_content/2/2_3_2s.gif" width="342" height="58" align="absmiddle">　　　　(2-46)<br>
+            　　利用<img src="../../images/image_content/2/2_3_2r.gif" width="261" height="39" align="absmiddle">及<img src="../../images/image_content/2/2_3_2q.gif" width="213" height="37" align="absmiddle"><br>
+            　　代入(2-46)并整理，可得<br>
+            　　W<sup>T</sup>(X－X<sub>0</sub>)＝0 (2-47)<br>
+            　　其中<br>
+            　　W＝μ<sub>i</sub>-μ<sub>j</sub><br>
+            　　<img src="../../images/image_content/2/2_3_2p.gif" width="308" height="60" align="absmiddle">　　　　(2-48)<br>
+            　　由(2-47)与(2-48)式可以看出，决策面为一超平面，其法线方向为(μ<sub>i</sub>－μ<sub>j</sub>)，当P(ω<sub>i</sub>)＝P(ω<sub>j</sub>)时该超平面过(μ<sub>i</sub>+μ<sub>j</sub>)/2点，在二维情况下，就是过μ<sub>i</sub>与μ<sub>j</sub>连线的垂直平分线，如图2.8(a)所示。当P(ω<sub>i</sub>)≠P(ω<sub>j</sub>)时，该超平面的位置要向远离先验概率大的方向偏，但超平面方向不变。<br>
+            　　</span><span class="spe">从上面讨论的最小距离分类器与线性分类器中可以看出，这两者都是线性分类器，最小距离分类器是线性分类器的一个特例。另一点是最小距离分类器在正态分布情况下，是按超球体分布以及先验概率相等的前提下，才体现最小错误率的。最小距离分类器的思想在分类器设计中是一种较常用的方法。以上分析表明，只有在一定条件下，最小距离分类器同时又是最小错误率分类器。<br>
+            　　实际上，最小距离分类器的概念是分类器中是最常用的，因为它体现了基于最相似性的原则，即被分类事物与哪一种作为标准的事物相像，就判为该类这一原则。在这一节的分析则说明了什么条件下最小距离分类器同时实现了最小错误率。在正态分布条件下，一是正态分布的协方差矩阵为单位矩阵，因此等概率密度点轨迹对应于欧氏距离为常数；另一是先验概率要相等，这一点在解实际问题中往往加以忽略，因为先验概率难以得到。 
+            </span> <br>
+            　　<span class="spe">(2)Σi=Σ</span></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/2/2_3_2o.gif" width="353" height="330"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　能采用线性分类器的另一种简单情况是Σi＝Σ，即各类的协方差矩阵都相同。从几何上看，这相当于各类样本具有同样概率密度函数的点的轨迹是同样大小和形状的超椭球面。但不同类样本的超椭球面的中心由类均值μ<sub>i</sub>决定。图2.9表示在二维特征空间的情况，此时超椭球面是二维空间的椭圆。<br>
+            　　在Σi＝Σ，i=1,…，c的条件下，由于Σ与类别号i无关，因此判别函数可从(2-37)简化成<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ab.gif" width="348" height="22" align="absbottom">(2-49)<br>
+            　　如果c类先验概率都相等，则(2-49)可进一步简化为<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ae.gif" width="242" height="33" align="absmiddle">(2-50)<br>
+            　　(2-50)的右边正是前面提到的Mahalanobis距离的平方。因此这时的决策规则为：计算X到每类均值μ<sub>i</sub>的Mahalanobis距离平方r<sup>2</sup>，把它归于r<sup>２</sup>最小的类别。为了确定先验概率不等条件下的决策面方程，可以展开(2-57)并忽略与i无关的X<sup>Ｔ</sup>Σ<sup>－１</sup>X项，经整理可得<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ad.gif" width="134" height="24" align="absmiddle"> 
+            (2-51)<br>
+            　　其中<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ac.gif" width="76" height="26" align="absmiddle">(2-52)<br>
+            　　<img src="../../images/image_content/2/2_3_5F2af.gif" width="188" height="41" align="absmiddle">(2-53)<br>
+            　　由(2-51)可以看出决策面方程也是线性方程，决策面是超平面。如果第i类与第j类的决策域在特征空间中相邻，则这两者之间的决策面方程为<br>
+            　　g<sub>i</sub>(X)－g<sub>j</sub>(X)＝0<br>
+            　　即<img src="../../images/image_content/2/2_3_5F2aa.gif" width="131" height="23" align="absmiddle">(2-54)<br>
+            　　其中<img src="../../images/image_content/2/2_3_2z.gif" width="124" height="25" align="absmiddle">(2-55)<br>
+            　　<img src="../../images/image_content/2/2_3_2y.gif" width="342" height="79" align="absmiddle">　　　(2-56)<br>
+            　　<span class="spe">如果将(2-55)、(2-56)与(2-48)的两个式子相比较，可以发现这两对式子很相近，只是(2-48)中的欧氏距离‖μ<sub>i</sub>-μ<sub>j</sub>‖<sup>２</sup>在(2-56)中由Mahalanobis距离的平方所取代。另一点是W在式(2-55)中多了一个Σ<sup>－１</sup>因子。因此可以作出相应结论：当P(ω<sub>i</sub>)＝P(ω<sub>j</sub>)时，其相应的决策面超平面过均值向量连线的中点；但当先验概率不等时，超平面朝远离先验概率大的方向移动。与上一小节不同的是，一般情况下该超平面不与两均值向量的连线正交。</span><br>
+            　　图2.9画出在二维特征空间先验概率相等的情况。<br>
+            　　<span class="spe">到此为止将上面讨论的情况总结一下, 以有利于加深理解。以上几种情况都是线形分类器的情况，也就是用线形函数作为判别函数，或分界面方程是线性。在正态分布条件下，基于最小错误率贝叶斯决策只要能做到两类协方差矩阵是一样的，那么无论先验概率相等不相等，都可以用线性分界面实现。而最小欧氏距离分类器则要求正态分布协方差矩阵为单位阵，先验概率相等。反过来说，如果希望用线性分类器实现错分类少的分类，则两类用正态分布近似时，应要求其协方差矩阵相似，先验概率相近才行。当然如果两类分布分得很开，没有什么重叠，也可做到错分率很小。与下一节讨论的情况相比，可以看到为了实现错分率小，分界面类型就要比线性函数类型复杂了，在正态分布条件下，一般是超二次曲面。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

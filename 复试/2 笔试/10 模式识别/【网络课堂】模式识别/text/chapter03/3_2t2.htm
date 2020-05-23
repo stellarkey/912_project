@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　线性判别函数是形式最为简单的判别函数，但是它不能用于稍复杂一些的情况，例如,<br>
+            欲设计这样一个一维样本的分类器，使其性能为：</td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_2_2b.gif" width="333" height="371"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　则用线性判别函数显然就无能为力了。<br>
+            　　针对这种情况，如果设计这样一个判别函数<br>
+            　　g(x)＝(x-a)(x-b)　　　　　(3-6)<br>
+            　　及其相应的决策规则<br>
+            　　<img src="../../images/image_content/3/3_2_5F2a.gif" width="185" height="56" align="absmiddle">　　　　　(3-7)<br> 
+            <br>
+            　　就能达到(3-5)所要求的分类效果。此时g(x)不再是x的线性函数，而是一个二次函数，如图3.1所示。由于线性判别函数具有形式简单，计算方便的优点，并且已被充分研究，因此人们希望能将其用适当方式扩展至原本适宜非线性判别函数的领域。一种方法是选择一种映射X→Y，即将原样本特征向量X映射成另一向量Y，从而可以采用线性判别函数的方法。例如对于图3.1的二次函数情况，其一般式可表示成</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"><span class="FCcontent">　　<img src="../../images/image_content/3/3_2_2e.gif" width="143" height="35" align="absmiddle">　　　　　(3-8)<br>
+            　　如果我们采用映射x→Y，使<br>
+            　　<img src="../../images/image_content/3/3_2_2d.gif" width="117" height="85"><br>
+            　　则判别函数g(x)又可表示成<br>
+            　　<img src="../../images/image_content/3/3_2_2c.gif" width="152" height="139" align="absmiddle">　　　　　(3-9)</span><br>
+            　　此时g(x)被称为广义线性判别函数，<img src="../../images/image_content/3/3_2_2_f.gif" width="15" height="27" align="absmiddle">称为广义权向量。因此一个原属二次函数的分类问题就可转化为一个线性判别函数问题。按照这种原理，任何形式的高次判别函数都可转化成线性判别函数来处理。譬如将非线性函数g(x)用级数展开，并截取其有限项，使之成为高次多项式，然后转化成广义线性判别函数。这种处理非线性分类器的方法，在支持向量机中得到充分的研究。我们将在本章后面讲述支持向量机。<br>
+            　　<span class="spe">将非线性函数用映射的方法变成线性函数的形式，如(3-8)，(3-9)式所示，但一个重要问题是维数会增加很多。用传统方法处理模式识别问题是希望降低维数，而不希望增加维数，因此不提倡使用，但支持向量机却注重它能将非线性分类问题转化为线性分类问题，因而主张采用(见3.5.3节)。这将在后面学习过程中进一步说明。在目前，先把(3-10)至(3-14)将样本向量增加一维的做法搞清楚，它的用处及好处在下面很快会看到。</span><br>
+            　　这里我们要讨论一种特殊的映射方法，这种映射将X增广至</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"> 　　<img src="../../images/image_content/3/3_2_2_g.gif" width="113" height="132" align="absmiddle">　　　　　(3-10)<br>
+            　　并将g(x)中的W向量与w<sub>0</sub>统一表示成<br>
+            　　<img src="../../images/image_content/3/3_2_2_h.gif" width="122" height="135" align="absmiddle">　　　　　(3-11)<br>
+            　　其中w<SUB>1</SUB>，w<SUB>2</SUB>，w<SUB>3</SUB>....w<SUB>d</SUB>为向量w各分量，则线性判别函数g(X)可以表示成 
+            <br>
+            　　<img src="../../images/image_content/3/3_2_2_i.gif" width="195" height="56" align="absmiddle">　　　　　(3-12)</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　这是广义线性判别函数的一个特例。<img src="../../images/image_content/3/3_2_2_n.gif" width="65" height="32" align="absmiddle">被称为增广样本向量，称为增广权向量。(3-1)式称为线性判别函数的齐次简化。它使特征空间增加了一维，但保持了样本间的欧氏距离不变，对于分类效果也与原决策面相同，只是在Y空间中决策面是通过坐标原点的，这在分析某些问题时具有优点，因此经常用到。例如一个一维特征空间的分类器，其决策面方程为：<br>
+            　　x-c=0　　　　　(3-13)<br>
+            　　在一维空间中为一个点。经齐次简化后可得：<br>
+            　　<img src="../../images/image_content/3/3_2_2_k.gif" width="124" height="108" align="absmiddle">　　　　　(3-14)<br>
+            　　此时在二维空间中决策面为一过原点的直线，如图3.2所示。直线以<img src="../../images/image_content/3/3_2_2_f.gif" width="15" height="27" align="absmiddle">为法线向量，它对1维子空间(y<sub>2</sub>空间)的划分与原决策面完全相同。 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_2_2_l.gif" width="300" height="343"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">(3-10)至(3-14)式的例子表示了这样一点，由于样本向量在增加一位后变成了一个二维向量，因此原一维空间讨论的问题，转变成在二维空间讨论的问题，而原方程(3-13)也变成了一个(3-14)表示的直线，它过二维空间的原点。现在请同学们思考一下，如果在两维空间存在一条不过原点的直线，ax<SUB>1</SUB>+bx<SUB>2</SUB>+c=0(A)，采用增广向量形式：<br>
+            　　<img src="../../images/image_content/3/3_2_2_m.gif" width="203" height="83" align="absmiddle"> 
+            <br>
+            　　那么，它在增加一维的三维空间中，a<sup>T</sup>Y=0表示的是什么呢？<br>
+            　　答：一个过原点的平面，方程为ay<SUB>1</SUB>+by<SUB>2</SUB>+cy<SUB>3</SUB>=0 (B)。<br>
+            　　(A)式与(B)式形式上略有不同，但当y<SUB>3</SUB>=1时两者就一样了。也就是说(B)式表示的平面与y<SUB>3</SUB>=1子空间(一平面)的交线就是(A)式中表示的直线，这样的方法在后面感知准则函数中用到。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

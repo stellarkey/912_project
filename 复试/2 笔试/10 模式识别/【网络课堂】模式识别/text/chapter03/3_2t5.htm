@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent"><span class="spe"><br>
+            　　前面曾提到过用感知准则函数设计线性分类器是一种十分重要的方法，是学习的重点。为了讨论原理方便，讲义上使用了3.2.2中提到的增广样本向量及增广权向量方法。请大家先复习3.2.2节，再回过来看(3-31)到(3-32)式就容易看懂了。<br>
+            　　实际上从(3-37)到(3-39)式的作用是将前面常用的线性决策面方程，<img src="../../images/image_content/3/3_2_44_058.gif" width="78" height="26" align="absmiddle">改成<img src="../../images/image_content/3/3_2_44_059.gif" width="40" height="22" align="absmiddle">,其中<br>
+            　　<img src="../../images/image_content/3/3_2_44_060.gif" width="157" height="109"><br>
+            　　为了讨论原理方便，这一节在线性可分条件下讨论问题，并且只谈两类识别问题。线性可分是说该训练样本集中的两类样本可以用一个线性分界面正确无误的分开。在线性可分条件下，广义权向量a合适的话应有：<br>
+            　　<img src="../../images/image_content/3/3_2_44_061.gif" width="147" height="43" align="absmiddle"><br>
+            　　为了使问题说得更简洁，讲义又对问题的表达作进一步的改变。为了方便起见，如果我们令 <br>
+            　　<img src="../../images/image_content/3/3_2_44_062.gif" width="163" height="56" align="middle"><br>
+            　　则合适的a能使所有的Y'满足a<sup>T</sup>Y&gt;0.<br>
+            　　讨论完了问题的提法后，下一步要解决如何找到这样一个合适的<img src="../../images/image_content/3/3_2_44_063.gif" width="16" height="28" align="middle"> 
+            。感知准则函数方法的思路是：先随意找一个初始向量<img src="../../images/image_content/3/3_2_44_063.gif" width="16" height="28" align="middle">，写作<img src="../../images/image_content/3/3_2_44_064.gif" width="35" height="27" align="middle"> 
+            ，然后用训练样本集中的每个样本来计算。一旦发现有的Y'使a<sup>T</sup>Y&lt;0，则说明当前的广义权向量a不适合还需要进一步修正。修正的原理也很简单，设当前经k次叠代修正的广义权向量使a(k)，若有发现一个Y'出现a<sup>T</sup>Y&gt;0，则只要<img src="../../images/image_content/3/3_2_44_065.gif" width="132" height="23" align="middle">为正，(步长系数)则必有<img src="../../images/image_content/3/3_2_44_066.gif" width="218" height="28" align="middle">,就有趋势做到使a(k+1)<sup>T</sup>Y'&gt;0。<br>
+            当然，修改后的a(k+1)还可以使某些Y'出现a(k+1)<sup>T</sup>Y'&lt;0的情况，理论证明，只要训练样本集线性可分，无论a(0)的初值是什么，经过有限次叠代，都可使(3-39)式得到满足。<br>
+            　　教材正文中这段说明知识从另一角度说明此问题而已。大家可以结合以上思路再看讲义，把问题搞得更清楚。结合图3.6的例子学习会更有帮助。</span><br>
+            　　感知准则函数是五十年代由Rosenblatt提出的一种自学习判别函数生成方法，由于Rosenblatt企图将其用于脑模型感知器，因此被称为感知准则函数。其特点是随意确定的判别函数初始值，在对样本分类训练过程中逐步修正直至最终确定。<br>
+            感知准则函数使用增广样本向量与增广权向量，即用(3-10)中的d+1维向量表示样本的齐次化向量，用(3-11)将判别函数中的权向量W与阈值权 
+            组合成增广权向量。而判别函数则表示成(3-12)，即<br>
+            　　<img src="../../images/image_content/3/3_2_44_067.gif" width="203" height="52" align="middle"> 
+            　　　　　(3-37)<br>
+            　　在两类别情况下，判别准则是：<br>
+            　　<img src="../../images/image_content/3/3_2_44_068.gif" width="293" height="82" align="middle">　　　　　(3-38)<br>
+            　　为简单起见，我们不考虑g(X)＝0的情况。由于采用增广样本向量，特征空间为d＋1维，而决策面是经过坐标原点的超平面。图3.5(a)表示了在一个二维增广特征空间两类样本分布及其决策面的情况。为了计算方便起见，我们可将第二类样本都取其反向向量，即令<br>
+            　　<img src="../../images/image_content/3/3_2_44_069.gif" width="178" height="61" align="middle">　　　　　(3-38)<br>
+            　　则对于那些能将所有样本正确分类的决策面来说，应有<br>
+            　　<img src="../../images/image_content/3/3_2_44_070.gif" width="170" height="40" align="middle">　　　　　(3-39)<br>
+            　　反之，若发现出现<img src="../../images/image_content/3/3_2_44_071.gif" width="61" height="31" align="middle"> 
+            的情况，则意味着这些样本<img src="../../images/image_content/3/3_2_44_072.gif" width="18" height="25" align="middle"> 
+            被该决策面错误分类。(3-38)式的增广样本向量又称为规范化增广样本向量。图3.5(b)表示用规范化增广样本向量时正确分类的情况。如果对一个样本集N，总能找到一个增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle"> 
+            ，对该样本集所有样本实现正确分类，则这种情况称为具有线性可分性。以下我们只讨论线性可分性的情况。</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/3/3_2_44_074.gif" width="263" height="246"><br>
+            <img src="../../images/image_content/3/3_2_44_075.gif" width="266" height="247"> 
+          </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">(3-39)实际上是一组联立不等式，N个样本共有N个不等式，而每个不等式都决定了一个相应的增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">所应在的区域，而N个样本所对应的增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">所在区域之交迭空间被称为解区，在解区内的任一向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">能使所有样本得到正确划分。图3.5(a)及(b)表明了由四个样本得到的解区子空间。设计分类器只需在此解区内选择一合适的向量，作为增广权向量<img src="../../images/image_content/3/3_2_44_073.gif" width="13" height="29" align="middle">。为了使权向量不致选在解区的边界上，一般设有一余量b，使<img src="../../images/image_content/3/3_2_44_076.gif" width="86" height="34" align="middle"> 
+            ，以确保增广权向量处在解区空间的内部。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

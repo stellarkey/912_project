@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　　设样本d维特征空间中描述，则两类别问题中线性判别函数的一般形式可表示成<br>
+            　　<img src="../../images/image_content/3/3_2_1g.gif" width="130" height="30" align="absmiddle">　　(3-1) 
+            </span> 
+            <p class="FCcontent">　　其中<br>
+              　　<img src="../../images/image_content/3/3_2_1m.gif" width="164" height="108" align="absmiddle"> 
+            </p>
+            <p class="FCcontent">　　而ω<sub>0</sub>是一个常数，称为阈值权。相应的决策规则可表示成，<br>
+              　　<img src="../../images/image_content/3/3_2_1q.gif" width="297" height="113" align="middle"></p>
+            <p><span class="FCcontent">　　g(X)＝0就是相应的决策面方程，在线性判别函数条件下它对应d维空间的一个超平面，<br>
+              　　<img src="../../images/image_content/3/3_2_1k.gif" width="107" height="31" align="absmiddle"> 
+              　　　　　　　　　　(3-3)<br>
+              　　为了说明向量W的意义，我们假设在该决策平面上有两个特征向量X<sub>1</sub>与X<sub>2</sub>，则应有<br>
+              <br>
+              　　<img src="../../images/image_content/3/3_2_1j.gif" width="184" height="33" align="absmiddle">　　<br>
+              　　<img src="../../images/image_content/3/3_2_1i.gif" width="125" height="31" align="absmiddle"> 
+              　　　　(3-4)<br>
+              　　其中(X<SUB>1</SUB>-X<SUB>2</SUB>)也是一个向量，(3-4)式表明向量W与该平面上任两点组成的向量(X<SUB>1</SUB>-X<SUB>2</SUB>)正交，因此W就是该超平面的法线向量。这就是向量W的几何意义。而g(X)也就是d维空间中任一点X到该决策面距离的代数度量，该决策平面将这两类样本按其到该面距离的正负号确定其类别。至于w<SUB>0</SUB>则体现该决策面在特征空间中的位置，当w<sub>0</sub>=0时，该决策面过特征空间坐标系原点，而<img src="../../images/image_content/3/3_2_1h.gif" width="45" height="17" align="absmiddle">时，则<img src="../../images/image_content/3/3_2_1c2.gif" width="31" height="41" align="absmiddle">表示了坐标原点到该决策面的距离。<br>
+              　　</span><span class="spe">有的同学可能对(3-1)公式表示线性判别函数不太理解，这可从线性方程的表示法说起，设二维空间<img src="../../images/image_content/3/3_2_1h.gif" width="45" height="17" align="absmiddle">一直线方程表示为：<br>
+              　　w<SUB>2</SUB>X<SUB>2</SUB>+w<SUB>1</SUB>X<SUB>1</SUB>+w<SUB>0</SUB>=0<br>
+              <br>
+              　　其中w<SUB>1</SUB>和w<SUB>2</SUB>分别是X<SUB>1</SUB>和X<SUB>2</SUB>的系数。w<SUB>0</SUB>是直线方程的参数项，由于X<SUB>1</SUB>和X<SUB>2</SUB>是一个向量的两个分量W=( 
+              w<SUB>1</SUB>, w<SUB>2</SUB>)T.则w<SUB>2</SUB>X<SUB>2</SUB>+ w<SUB>1</SUB>X<SUB>1</SUB>就是这两个向量的点积，表示成(3-3)式。另外我们也知道一个线性方程在二维空间唯一确定了一条直线，但一条直线却可以对应无穷多个直线方程。w<SUB>2</SUB>、w<SUB>1</SUB>和w<SUB>0</SUB>是该直线的方程参数，kw<SUB>2</SUB>、kw<SUB>1</SUB>和kw<SUB>0</SUB>也是这条直线方程的参数。如果我们定义<img src="../../images/image_content/3/3_2_1f.gif" width="115" height="36" align="absmiddle">，则<br>
+              　　<img src="../../images/image_content/3/3_2_1e.gif" width="181" height="51" align="absmiddle"> 
+              <br>
+              　　也是该直线的方程，但<img src="../../images/image_content/3/3_2_1d.gif" width="123" height="65" align="absmiddle">却是模为1的向量，而W<sup>'T</sup>X就是直线上任一点到W'向量的投影，它的数值等于<img src="../../images/image_content/3/3_2_1c.gif" width="45" height="48" align="absmiddle">，因此<img src="../../images/image_content/3/3_2_1c.gif" width="45" height="48" align="absmiddle">则表示了这条直线到坐标原点的法向距离。线性函数及线性方程的向量表示形式是今后常用的形式。</span><span class="FCcontent"><br>
+              </span> </p></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/3/3_2_1a.gif" width="345" height="188" align="absmiddle"></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

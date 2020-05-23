@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/main.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>模式识别</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('../../images/images/main_2_04.gif','../../images/images/main_2_05.gif','../../images/images/main_2_06.gif','../../images/images/main_2_07.gif','../../images/images/main_2_08.gif','../../images/images/main_2_14.gif')">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="35%" height="368"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr background="../../images/images/left_up.gif"> 
+          <td width="230" height="64" background="../../images/images/left_up.gif"><IMG SRC="../../images/images/main__01.gif" WIDTH=229 HEIGHT=64 ALT=""></td>
+        </tr>
+        <tr> 
+          <td height="100%"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td height="40" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="FFFED2">
+                    <tr> 
+                      <td align="right" valign="top"><img src="../../images/images/title_left.gif" width="6" height="39"></td>
+                      <td align="center" background="../../images/images/title_v.gif"><!-- InstanceBeginEditable name="title" --> 
+                        <p class="chapterName">第二章 贝叶斯决策理论与统计判别方法</p>
+                        <!-- InstanceEndEditable --></td>
+                      <td align="left"><img src="../../images/images/title_right.gif" width="7" height="39"></td>
+                    </tr>
+                  </table></td>
+                <td width="1" rowspan="2" align="center" bgcolor="#979B51"></td>
+              </tr>
+              <tr> 
+                <td height="100%" valign="top"><!-- InstanceBeginEditable name="colume" --><iframe src="2_3_2c.htm" width="100%" height="100%" frameborder="0"></iframe><!-- InstanceEndEditable --></td>
+              </tr>
+              <tr> 
+                <td height="100%" colspan="2" align="right" valign="top" background="../../images/images/right_bottom.gif"><table border="0" align="left" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td width="79"><!-- InstanceBeginEditable name="pre" --><a href="2_3_1.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image19','','../../images/image_temp/main_2_12.gif',1)"><img src="../../images/image_temp/main__12.gif" alt="上一页" name="Image19" width="79" height="23" border="0"></a><!-- InstanceEndEditable --></td>
+                      <td width="75"><!-- InstanceBeginEditable name="next" --><a href="chief.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image20','','../../images/image_temp/main_2_13.gif',1)"><img src="../../images/image_temp/main__13.gif" alt="下一页" name="Image20" width="75" height="23" border="0"></a><!-- InstanceEndEditable --></td>
+                      <td width="73"><a href="../colume.htm" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image2','','../../images/images/main_2_14.gif',1)"><img src="../../images/images/main__14.gif" alt="返回" name="Image2" width="73" height="23" border="0"></a></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+    <td><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td align="right" background="../../images/images/right_v.gif"><IMG SRC="../../images/images/main__02.gif" WIDTH=551 HEIGHT=37 ALT=""></td>
+        </tr>
+        <tr>
+          <td align="right" background="../../images/images/right_v2.gif"><table width="551" height="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr background="../../images/images/right_v2.gif"> 
+                <td width="52"><IMG SRC="../../images/images/main__03.gif" WIDTH=52 HEIGHT=27 ALT=""></td>
+                <td width="81"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image6','','../../images/images/main_2_04.gif',1)"><img src="../../images/images/main__04.gif" name="Image6" width="89" height="27" border="0" onClick="MM_openBrWindow('../describe/structure.htm','','width=471,height=384')" ></a></td>
+                <td width="91"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image7','','../../images/images/main_2_05.gif',1)"><img src="../../images/images/main__05.gif" name="Image7" width="91" height="27" border="0" onClick="MM_openBrWindow('../describe/key.htm','','width=471,height=384')"></a></td>
+                <td width="98"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image8','','../../images/images/main_2_06.gif',1)"><img src="../../images/images/main__06.gif" name="Image8" width="98" height="27" border="0" onClick="MM_openBrWindow('../describe/help.htm','','width=471,height=384')"></a></td>
+                <td width="83"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image9','','../../images/images/main_2_07.gif',1)"><img src="../../images/images/main__07.gif" name="Image9" width="83" height="27" border="0" onClick="MM_openBrWindow('../describe/vocabulary.htm','','width=471,height=384')"></a></td>
+                <td width="82"><a href="#" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image10','','../../images/images/main_2_08.gif',1)"><img src="../../images/images/main__08.gif" name="Image10" width="82" height="27" border="0" onClick="MM_openBrWindow('../describe/answer.htm','','width=471,height=384')"></a></td>
+                <td width="56"><IMG SRC="../../images/images/main__09.gif" WIDTH=56 HEIGHT=27 ALT=""></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="100%" ><!-- InstanceBeginEditable name="content" --><iframe name="iframe" src="2_3_2t.htm" width="100%" height="100%" frameborder="0"></iframe><!-- InstanceEndEditable --></td>
+        </tr>
+        <tr>
+          <td align="center" background="../../images/images/right_bottom.gif"><IMG SRC="../../images/images/main__15.gif" WIDTH=517 HEIGHT=23 ALT=""></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

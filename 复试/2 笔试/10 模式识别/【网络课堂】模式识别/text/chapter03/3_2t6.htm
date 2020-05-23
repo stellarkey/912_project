@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　以上讨论的都是两类别问题，但是实际问题中常遇到的是多类别问题。在两类别问题中使用的线性判别函数方法可以推广到多类别问题中，但可有不同做法。一种最简单作法是将C类别问题化为(C-1)个两类问题，即将第i类与所有非i类样本，按两类问题确定其判别函数与决策面方程。因此对于C类，则总共有(C-1)个两类别问题，如图3.8(a)所示。这种做法存在两个问题，一是可能会出现一些不定区域，如图中阴影所示，在这些区域中的样本无法确定其类别。另一方面用线性判别函数对i类及所有非i类进行划分并不能保证获得性能良好的划分，硬性使用线性分类器可能会产生很不好的效果。另一种相对麻烦些的做法是将C类中的每两类别单独设计其线性判别函数，因此总共有C(C-1)/2个线性判别函数。这种方法如图3.8(b)所示。这种方法由于每个判别函数针对每两类别样本设计，预期可有好效果，但仍有不定区域，在该区域内样本类别无法确定。<br>
+            　　因此一个比较合适的作法是将特征空间确实划分为C个决策域，共有C个判别函数<br>
+            　　<img src="../../images/image_content/3/3_2_44_097.gif" width="243" height="25" align="middle">　　　　　(3-44)<br>
+            　　每个决策域Ri按以下规则划分<br>
+            　　如果 <img src="../../images/image_content/3/3_2_44_098.gif" width="291" height="26" align="middle"><br>
+            　　因此落在R<sub>i</sub>区域内的样本被划分成ωi类，如果发生g<sub>i</sub>(X)＝g<sub>j</sub>(X)，即处于决策域的边界上，则作出拒绝决策。这种分类器被称为线性机器。线性机器中决策域的边界由相邻决策域的判别函数共同决定，此时应有<br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/3/3_2_44_101.gif" width="269" height="233"><br>
+            <img src="../../images/image_content/3/3_2_44_102.gif" width="267" height="231"> 
+            <br>
+            <span class="FCcontent">图3.8 </span><br>
+            <img src="../../images/image_content/3/3_2_44_103.gif" width="233" height="226"> 
+            <br>
+            <img src="../../images/image_content/3/3_2_44_104.gif" width="261" height="215"> 
+            <br>
+            <span class="FCcontent">图3.9 </span></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<img src="../../images/image_content/3/3_2_44_105.gif" width="85" height="28"><br>
+            　　或写成<br>
+            　　<img src="../../images/image_content/3/3_2_44_106.gif" width="149" height="26" align="middle">　　　　　　(3-46)<br>
+            　　<span class="spe">(W<sub>i</sub>-W<sub>j</sub>)是该边界超平面的法线向量。在线性机器中最多有C(C-1)/2个超平面，但实际的超平面数目往往要少很多。图3.9(a)是一个二维特征空间三类别线性机器的示意图，(b)则是一个五类别情况，但其分界面的数量远比C(C-1)/2要小得多。<br>
+            </span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <p class="spe">　　回顾这一章的学习，我们主要学到了一些什么主要的知识呢？<br>
+        　　第一 使用什么样的决策原则我们可以做到错误率最小呢？这个条件是要知道一个样本X分属不同类别的可能性，表示成P(ω<sub>i</sub>|X)，然后根据后验概率最大的类来分类。后验概率要通过Bayes公式从先验概率与类分布函数来计算。但是Bayes决策太原则了，使用的前提是知道特征空间中样本各个值的后验概率。但是我们在实际设计分类器算法只能依据一个训练样本集提供的数据。<br>
+        　　第二 错分类最小并不一定是一个识别系统最重要的指标，对语音识别、文字识别来说可能这是最重要的指标，但对医疗诊断、地震、天气预报等还要考虑错分类的不同后果，因此引入了风险，损失这些概念，以便在决策时兼顾不同后果的影响。在实际问题中计算损失与风险是复杂的，在使用数学式子计算时，往往用赋于不同权值来表示，这大概是一种常用的方法。<br>
+        　　第三 当各类样本近似于正态分布时，可以算出使错误率最小或风险最小的分界面，及相应的分界面方程。因此如能从训练样本估计近似的正态分布，可以按贝叶斯决策方法对分类器进行设计。因此一种利用训练样本的方法是通过它的概率分布进行估计，然后用它进行分类器设计。<br>
+        　　利用贝叶斯决策理论来实现对样本的分类，是在样本各类别的先验概率与类条件概率密度函数已知的前提下才能进行的，因此在这些参数未知的情况下使用贝叶斯决策方法，就得有一个学习阶段。在这个阶段，设法获得一定数量的样本，然后从这些样本数据获得对样本概率分布的估计。有了概率分布的估计后，才能对未知的新样本按贝叶斯决策方法实行分类。<br>
+        　　由于估计本身很不容易，在样本数量有限时也不准确、可靠。因此常常采用其它方法，这是后续章节的任务，如要进行参数估计请参阅其它有关书籍。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>二、多元正态分布</strong><br>
+            <font color="#800040">1.多元正态分布的概率密度函数</font><br>
+            　　多元是指样本以多个变量来描述，或具有多个属性，在此一般用d维特征向量表示，X＝[x<sub>1</sub>，…，x<sub>d</sub>]<sup>T</sup>。d维特征向量的正态分布用下式表示<br>
+            　　<img src="../../images/image_content/2/2_3l.gif" width="280" height="60" align="absmiddle">(2-32)<br>
+            　　其中μ是X的均值向量，也是d维，<br>
+            　　μ＝E{X}＝[μ<sub>1</sub>，μ<sub>2</sub>，…，μ<sub>d</sub>]<sup>T</sup> 
+            (2-33)<br>
+            　　Σ是d×d维协方差矩阵，而Σ－1是Σ的逆矩阵，|Σ|是Σ的行列式<br>
+            　　Σ＝E{(X－μ)(X－μ)<sup>T</sup>} (2-34)<br>
+            　　Σ是非负矩阵，在此我们只考虑正定阵，即|Σ|＞0。<br>
+            　　<span class="spe">多元正态分布与单态量正态分布在形式上尽管不同，但有很多相似之处，实际上单变量正态分布只是维数为1的多元分布。当d=1时，Σ只是一个1×1的矩阵，也就是只有1个元素的矩阵，退化成一个数，|Σ|<sup>1/2</sup>也就是标准差σ，Σ－1也就是σ-2，而(X－μ)<sup>T</sup>(X－μ)也变成(X-μ)<sup>2</sup>，因此(2-32)也就演变成(2-29)。但是多元正态分布要比单变量时复杂得多，具有许多重要的特性，下面只就有关的特性加以简单叙述。<br>
+            　　多元正态分布的概率密度函数中的元就是我们前面说得特征向量的分量数，也就是维数。为了方便我们着重讨论二维向量，是一个随机向量，其中每一个分量都是随机变量，服从正态分布。但是一个二维随机向量不仅要求考虑每个分量单独的分布，还要考虑两个随机变量之间的关系。下图的例子中的两个二元正态分布的各个分量是相同的，即它们的期望(μ1和μ2)方差σ1和σ2都相同，但这两个特征向量在空间的分布却不相同。从下图：</span><br> </td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_3o.gif" width="371" height="194"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">对右图来说，x<sub>1</sub>和x<sub>2</sub>有很大的相关性，而对左图来说，随机变量x<sub>1</sub>与x<sub>2</sub>之间的相关性很小。这可以从两者的区别看出来。对于右图可以看出一个随机变量的x<sub>1</sub>分量较小时，另一分量x<sub>2</sub>也必然较小。而当随机变量的x<sub>1</sub>较大时，则其相应的x<sub>2</sub>分量也较大。换句话说，如果x<sub>1</sub>分量小于其均值μ<sub>1</sub>,则其相应的分量x<sub>2</sub>也很可能小于它的均值μ<sub>2</sub>。因此当x<sub>1</sub>-μ<sub>1</sub>&lt;0时，也常伴有x<sub>2</sub>-μ<sub>2</sub>&lt;0 
+            ，这说明它们之间有联系，或称相关性，用<img src="../../images/image_content/2/2_3s.gif" width="117" height="27" align="absmiddle">这两项相乘来看就有倾向化。对整个随机变量样本集取期望值，就会使<img src="../../images/image_content/2/2_3t.gif" width="132" height="37" align="absmiddle">有非零值。反过来看左图中的随机变量分布，就没有这种规律，一个随机变量x<sub>1</sub>分量小于其均值 
+            ,并不对其相应分量x<sub>2</sub>与 之间的关系有什么限制。在此时一个随机变量(x<sub>1</sub>-μ<sub>1</sub>)与(x<sub>2</sub>-μ<sub>2</sub>)的乘积的符号就可正可负，则<img src="../../images/image_content/2/2_3t.gif" width="132" height="37" align="absmiddle">就可能接近于零，或等于零。因此我们可以用<img src="../../images/image_content/2/2_3t.gif" width="132" height="37" align="absmiddle">来衡量这种相关性，称为协方差。则后者的协方差是个正数，而后者很可能为零，协方差越大，说明两个变量的相关度越高。为了将各个分量的方差、协方差都用一个统一的方式表示，则可使用式(2-34)，用符号Σ表示。你如果将(2-42)表示一个二维向量，你就会发现该矩阵的非对角元素正表示了两个分量之间的相关性，而主对角元素则是各分量本身的方差。<br>
+            　　<img src="../../images/image_content/2/2_3n.gif" width="443" height="65" align="middle"><br>
+            　　Σ称为协方差矩阵。<br>
+            　　那么以下是上两图特征向量分布的协方差矩阵：<br>
+            　　<img src="../../images/image_content/2/2_3m.gif" width="72" height="62" align="absmiddle">和<img src="../../images/image_content/2/2_3p.gif" width="74" height="58" align="absmiddle">，请问哪个是左图，哪个是右图？(前一个是左图)<br>
+            　　如果是一个三维向量，它的协方差矩阵是几乘几的矩阵？每个元素又对应什么含义？<br>
+            　　(是个3×3矩阵，<img src="../../images/image_content/2/2_3k.gif" width="228" height="35" align="absmiddle"> 
+            )<br>
+            　　还需要指出的是，协方差矩阵并不只对正态分布有用，它是多元随机变量中一个重要的数学统计表示方法，它描述了一个随机变量样本集中各个分量之间的相关性。<br>
+            协方差矩阵还有一些很重要的属性，是经常用到的。其中一个特性是：它是一个对称矩阵，如果它的第i行第j列元素表示成<img src="../../images/image_content/2/2_3r.gif" width="21" height="27" align="absmiddle">，则应有<img src="../../images/image_content/2/2_3q.gif" width="56" height="30" align="absmiddle">。这就是说与第j行第i列的元素是相同的，这就是对称性。另一个特性是：由于它的主对角元素都是各分量的方差，因此一般情况下都是大于零的值。因此协方差矩是正定的，这一点也是十分有用的。</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <p class="FCcontent">&nbsp; </p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
