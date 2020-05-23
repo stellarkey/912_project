@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>라이브리 UUID</title>
+</head>
+<body>
+  <script>
+// https://github.com/kelektiv/node-uuid
+// https://github.com/heikomat/uuid-browser
+// https://wzrd.in/standalone/uuid%2Fv4@latest
+// 2018-03-05
+
+!function(r){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=r();else if("function"==typeof define&&define.amd)define([],r);else{var e;e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,e.uuidv4=r()}}(function(){return function r(e,n,t){function o(f,u){if(!n[f]){if(!e[f]){var a="function"==typeof require&&require;if(!u&&a)return a(f,!0);if(i)return i(f,!0);var d=new Error("Cannot find module '"+f+"'");throw d.code="MODULE_NOT_FOUND",d}var p=n[f]={exports:{}};e[f][0].call(p.exports,function(r){var n=e[f][1][r];return o(n?n:r)},p,p.exports,r,e,n,t)}return n[f].exports}for(var i="function"==typeof require&&require,f=0;f<t.length;f++)o(t[f]);return o}({1:[function(r,e,n){function t(r,e){var n=e||0,t=o;return t[r[n++]]+t[r[n++]]+t[r[n++]]+t[r[n++]]+"-"+t[r[n++]]+t[r[n++]]+"-"+t[r[n++]]+t[r[n++]]+"-"+t[r[n++]]+t[r[n++]]+"-"+t[r[n++]]+t[r[n++]]+t[r[n++]]+t[r[n++]]+t[r[n++]]+t[r[n++]]}for(var o=[],i=0;i<256;++i)o[i]=(i+256).toString(16).substr(1);e.exports=t},{}],2:[function(r,e,n){var t="undefined"!=typeof crypto&&crypto.getRandomValues.bind(crypto)||"undefined"!=typeof msCrypto&&msCrypto.getRandomValues.bind(msCrypto);if(t){var o=new Uint8Array(16);e.exports=function(){return t(o),o}}else{var i=new Array(16);e.exports=function(){for(var r,e=0;e<16;e++)0===(3&e)&&(r=4294967296*Math.random()),i[e]=r>>>((3&e)<<3)&255;return i}}},{}],3:[function(r,e,n){function t(r,e,n){var t=e&&n||0;"string"==typeof r&&(e="binary"===r?new Array(16):null,r=null),r=r||{};var f=r.random||(r.rng||o)();if(f[6]=15&f[6]|64,f[8]=63&f[8]|128,e)for(var u=0;u<16;++u)e[t+u]=f[u];return e||i(f)}var o=r("./lib/rng"),i=r("./lib/bytesToUuid");e.exports=t},{"./lib/bytesToUuid":1,"./lib/rng":2}]},{},[3])(3)});
+
+(function () {
+
+var localStorage;
+
+checkFeature();
+
+function checkFeature() {
+  // Check localstorage
+  if (window.localStorage && isLocalStorageSupported()) {
+    localStorage = window.localStorage;
+  } else {
+    localStorage = new (function () {
+      var storage = {};
+      this.setItem = function (key, value) {
+        storage[key] = String(value);
+      }
+      this.getItem = function (key) {
+        return storage[key];
+      }
+      this.removeItem = function (key) {
+        delete storage[key];
+      }
+    });
+  }
+}
+
+function isLocalStorageSupported() {
+  var testKey = 'test', storage = window.localStorage;
+  try {
+    storage.setItem(testKey, '1');
+    storage.removeItem(testKey);
+    return true;
+  } catch (error) {
+    return false;
+  }
+}
+
+function getUUID() {
+  const uuidKey = 'livereUUID';
+  let uuid;
+
+  if (uuid = localStorage.getItem(uuidKey)) {
+    return uuid;
+  }
+
+  try {
+    uuid = uuidv4();
+  } catch (e) {
+    return undefined;
+  }
+
+  localStorage.setItem(uuidKey, uuid);
+  return uuid;
+  // expired?
+}
+
+window.addEventListener('message', function (event) {
+  var data = event.data;
+  if (data.type === 'get uuid') {
+    var uuid = getUUID();
+    if (window.parent) {
+      window.parent.postMessage({
+        type: 'send uuid',
+        uuid: uuid
+      }, '*');
+    }
+  }
+});
+
+})();
+  </script>
+
+<div id="simple-translate"><div><div style="background-image: url(&quot;moz-extension://e506797e-c205-4736-9a56-eda9adf3ae5e/icons/512.png&quot;); height: 22px; width: 22px; top: 10px; left: 10px;" class="simple-translate-button "></div><div class="simple-translate-panel " style="width: 300px; height: 200px; top: 0px; left: 0px; font-size: 13px; background-color: rgb(255, 255, 255);"><div class="simple-translate-result-wrapper" style="overflow: hidden;"><p class="simple-translate-result" style="color: rgb(0, 0, 0);"></p><p class="simple-translate-candidate" style="color: rgb(115, 115, 115);"></p></div></div></div></div></body></html>

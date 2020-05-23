@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html class="theme-next muse use-motion" lang="zh-Hans"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/jquery.css" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/css.css" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/font-awesome.css" rel="stylesheet" type="text/css">
+
+<link href="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/main.css" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="计算机考研,C++,">
+
+
+
+
+
+  <link rel="alternate" href="https://xuanxuanblingbling.github.io/atom.xml" title="Clang裁缝店" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://xuanxuanblingbling.github.io/assets/favicon.ico?v=5.1.1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="机试资料: https://pan.baidu.com/s/1QKfvbN-sV-3l89kUI-dxgQ 密码:1f65">
+<meta name="keywords" content="计算机考研, C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清华机试2017-2019真题">
+<meta property="og:url" content="https://xuanxuanblingbling.github.io/life/study/2019/03/11/TUOJ/">
+<meta property="og:site_name" content="Clang裁缝店">
+<meta property="og:description" content="机试资料: https://pan.baidu.com/s/1QKfvbN-sV-3l89kUI-dxgQ 密码:1f65">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="清华机试2017-2019真题">
+<meta name="twitter:description" content="机试资料: https://pan.baidu.com/s/1QKfvbN-sV-3l89kUI-dxgQ 密码:1f65">
+
+
+<script src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/embed.js" async=""></script><script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xuanxuanblingbling.github.io/">
+
+
+
+
+
+  <title>清华机试2017-2019真题 | Clang裁缝店</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="" style="padding-right: 320px;" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="https://xuanxuanblingbling.github.io/" class="brand" rel="start" style="opacity: 1;">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title" style="opacity: 1; top: 0px;">Clang裁缝店</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle" style="opacity: 1; top: 0px;">缝纫机的使用与维修</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home" style="opacity: 1; transform: translateY(0px);">
+          <a href="https://xuanxuanblingbling.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories" style="opacity: 1; transform: translateY(0px);">
+          <a href="https://xuanxuanblingbling.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about" style="opacity: 1; transform: translateY(0px);">
+          <a href="https://xuanxuanblingbling.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives" style="opacity: 1; transform: translateY(0px);">
+          <a href="https://xuanxuanblingbling.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags" style="opacity: 1; transform: translateY(0px);">
+          <a href="https://xuanxuanblingbling.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search" style="opacity: 1; transform: translateY(0px);">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-" itemscope="" itemtype="http://schema.org/Article" style="opacity: 1; display: block; transform: translateY(0px);">
+    <link itemprop="mainEntityOfPage" href="https://xuanxuanblingbling.github.io/life/study/2019/03/11/TUOJ/">
+
+    <span itemprop="author" itemscope="" itemtype="http://schema.org/Person" hidden="">
+      <meta itemprop="name" content="老板娘">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/images/image.jpg">
+    </span>
+
+    <span itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization" hidden="">
+      <meta itemprop="name" content="Clang裁缝店">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+          
+          
+            清华机试2017-2019真题
+          
+        </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T00:00:00+00:00">
+                2019-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="https://xuanxuanblingbling.github.io/category/#/Life%2FStudy" itemprop="url" rel="index">
+                    <span itemprop="name">Life/Study</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            
+                <div class="post-description">
+                    
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>机试资料:  <a href="https://pan.baidu.com/s/1QKfvbN-sV-3l89kUI-dxgQ">https://pan.baidu.com/s/1QKfvbN-sV-3l89kUI-dxgQ</a>    密码:1f65</p>
+
+<blockquote>
+  <p>从来没打过ACM，人都是逼出来的…</p>
+</blockquote>
+
+<h2 id="2017-interview">2017 interview</h2>
+
+<p>生活在在外星球X上的小Z想要找一些小朋友组成一个舞蹈团，于是他在网上发布了信息，一共有 $n$ 个人报名面试。<strong>面试必须按照报名的顺序</strong>依次进行。小Z可以选择在面试完若干小朋友以后，在所有<strong>已经面试过</strong>的小朋友中进行任意顺序的挑选，以组合成一个舞蹈团。虽然说是小朋友，但是外星球X上的生态环境和地球上的不太一样，这些小朋友的身高可能相差很大。小Z希望组建的这个舞蹈团要求<strong>至少</strong>有 $m$ 个小朋友，并且这些小朋友的最高身高和最低身高之差不能超过 $k$ 个长度单位。现在知道了这些小朋友的身高信息，问小Z至少要面试多少小朋友才能在已经面试过的小朋友中选出不少于 $m​$ 个组成舞蹈团。</p>
+
+<p>过了14个测试点！！！</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include&lt;algorithm&gt;
+# include&lt;vector&gt;
+# include&lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span><span class="kt">int</span> <span class="n">id</span><span class="p">;</span><span class="kt">int</span> <span class="n">h</span><span class="p">;}</span> <span class="n">student</span><span class="p">;</span>
+<span class="kt">bool</span> <span class="k">operator</span> <span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">student</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">,</span><span class="k">const</span> <span class="n">student</span> <span class="o">&amp;</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">h</span><span class="p">)</span><span class="o">&lt;</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">h</span><span class="p">);}</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">tall</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">student</span><span class="o">&gt;</span> <span class="n">stu</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">highid</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">student</span> <span class="n">temp</span><span class="p">;</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span> <span class="o">&gt;&gt;</span> <span class="n">k</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">temp</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">temp</span><span class="p">.</span><span class="n">h</span><span class="p">;</span>
+		<span class="n">stu</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">pick</span><span class="p">(){</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">-</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span> <span class="c1">//排序
+</span>		<span class="n">sort</span><span class="p">(</span><span class="n">stu</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">stu</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span><span class="c1">//检查个头
+</span>			<span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">h</span><span class="o">-</span><span class="n">stu</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">h</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">){</span>
+				<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">y</span><span class="o">=</span><span class="n">j</span><span class="p">;</span><span class="n">y</span><span class="o">&lt;</span><span class="n">j</span><span class="o">+</span><span class="n">m</span><span class="p">;</span><span class="n">y</span><span class="o">++</span><span class="p">){</span><span class="c1">//找最大id
+</span>					<span class="k">if</span><span class="p">(</span><span class="n">stu</span><span class="p">[</span><span class="n">y</span><span class="p">].</span><span class="n">id</span><span class="o">&gt;</span><span class="n">tall</span><span class="p">)</span> <span class="n">tall</span> <span class="o">=</span> <span class="n">stu</span><span class="p">[</span><span class="n">y</span><span class="p">].</span><span class="n">id</span><span class="p">;</span>
+				<span class="p">}</span>
+				<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">tall</span><span class="o">+</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+				<span class="k">return</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"impossible"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="n">pick</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2017多项式求和">2017多项式求和</h2>
+
+<p>小K最近刚刚习得了一种非常酷炫的多项式求和技巧，可以对某几类特殊的多项式进行运算。非常不幸的是，小K发现老师在布置作业时抄错了数据，导致一道题并不能用刚学的方法来解，于是希望你能帮忙写一个程序跑一跑。给出一个 $m$ 阶多项式<script type="math/tex">f(x)=\sum_{i=0}^mb_ix^i</script>对给定的正整数 $a$ ，求<script type="math/tex">S(n)=\sum_{k=0}^na^kf(k)</script>由于这个数可能比较大，所以你只需计算 $S(n)$ 对 $10^9+7$ 取模后的值（即计算除以 $10^9+7$ 后的余数）。</p>
+
+<p>只能过两个测试点！！！</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include &lt;stdio.h&gt;
+# include &lt;iostream&gt;
+# define  MAX 1000000007
+# define ll long long
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">ll</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">mul</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">b</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span> <span class="p">(</span><span class="n">b</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1">// 二进制最低位是1 --&gt; 加上 a的 2^i 倍, 快速幂是乘上a的2^i ）
+</span>            <span class="n">res</span>  <span class="o">=</span> <span class="p">(</span> <span class="n">res</span> <span class="o">+</span> <span class="n">a</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>    <span class="c1">// a = a * 2    a随着b中二进制位数而扩大 每次 扩大两倍。
+</span>        <span class="n">b</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>               <span class="c1">// b -&gt; b/2     右移  去掉最后一位 因为当前最后一位我们用完了，
+</span>    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">pow</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span><span class="p">,</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">mod</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">mod</span><span class="p">);</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">mod</span><span class="p">);</span>
+        <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">;</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ll</span><span class="p">[</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">ll</span> <span class="n">f</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">){</span>
+	<span class="n">ll</span> <span class="n">result</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">result</span><span class="o">+=</span><span class="n">mul</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">MAX</span><span class="p">),</span><span class="n">MAX</span><span class="p">);</span>
+		<span class="n">result</span><span class="o">%=</span><span class="n">MAX</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">ll</span> <span class="n">s</span><span class="p">(){</span>
+	<span class="n">ll</span> <span class="n">result</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">result</span><span class="o">+=</span><span class="n">mul</span><span class="p">(</span><span class="n">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">MAX</span><span class="p">),</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">MAX</span><span class="p">);</span>
+		<span class="n">result</span><span class="o">%=</span><span class="n">MAX</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+    <span class="n">init</span><span class="p">();</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="2018葱的战争">2018葱的战争</h2>
+
+<p>一个n乘m的棋盘，上面有k根葱，每根葱面朝方向为d（0123分别表示上下左右），没跟葱一个战斗力f。每隔时间葱会向面朝方向走一格，如果遇到
+棋盘边界，那么他将把面朝方向转180度（此回合葱不会走动），如果某个时刻有两个或以上的葱在同一位置，那么他们将发生战争，只有战斗力最高的葱存活，
+其他的葱全部原地枯萎，不在走动，求经过t时间后所有葱的位置</p>
+
+<p>输入：第一行n m k，然后接下来k行每根葱的信息x y d f（坐标，方向，战斗力），最后一行输入时间t
+输出：k行，分别表示每个葱的位置。
+数据范围：n和m在100内，k在1000内，t在1000内，f在1000内，保证初始每颗葱位置不同，战斗力不同。</p>
+
+<p>以下代码测试点通过</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include&lt;iostream&gt;
+# include&lt;map&gt;
+# include&lt;vector&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">;}</span> <span class="n">position</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span><span class="n">f</span><span class="p">;}</span> <span class="n">idfight</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span><span class="kt">int</span> <span class="n">id</span><span class="p">;</span><span class="n">position</span> <span class="n">p</span><span class="p">;</span><span class="kt">int</span> <span class="n">d</span><span class="p">;</span><span class="kt">int</span> <span class="n">f</span><span class="p">;</span><span class="kt">bool</span> <span class="n">live</span><span class="p">;}</span> <span class="n">cong</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">cong</span><span class="o">&gt;</span> <span class="n">conglist</span><span class="p">;</span>
+<span class="n">conglist</span> <span class="n">all_cong</span><span class="p">;</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">idfight</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="n">war_map</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">times</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="o">&gt;&gt;</span><span class="n">k</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">f</span><span class="p">;</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span> <span class="o">&gt;&gt;</span><span class="n">y</span><span class="o">&gt;&gt;</span><span class="n">d</span><span class="o">&gt;&gt;</span><span class="n">f</span><span class="p">;</span>
+		<span class="n">cong</span> <span class="n">c1</span> <span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">,{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">},</span><span class="n">d</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
+		<span class="n">all_cong</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">c1</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">times</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">action</span><span class="p">(</span><span class="n">cong</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">live</span><span class="p">){</span>
+	<span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">d</span><span class="p">){</span>
+	<span class="k">case</span> <span class="mi">0</span><span class="p">:</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">==</span><span class="n">m</span><span class="p">)</span> <span class="n">c</span><span class="p">.</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">++</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">c</span><span class="p">.</span><span class="n">d</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">--</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">c</span><span class="p">.</span><span class="n">d</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">--</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+	<span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">==</span><span class="n">n</span><span class="p">)</span> <span class="n">c</span><span class="p">.</span><span class="n">d</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+	<span class="k">default</span><span class="o">:</span><span class="p">;</span><span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">pi</span> <span class="o">=</span> <span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">*</span><span class="mi">1000</span><span class="o">+</span><span class="n">c</span><span class="p">.</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+	<span class="n">idfight</span> <span class="n">idf</span> <span class="o">=</span> <span class="p">{</span><span class="n">c</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="n">c</span><span class="p">.</span><span class="n">f</span><span class="p">};</span>
+	<span class="n">war_map</span><span class="p">[</span><span class="n">pi</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">idf</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">printans</span><span class="p">(){</span>
+		<span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cong</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">all_cong</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">i</span><span class="o">!=</span><span class="n">all_cong</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>	
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="o">&lt;&lt;</span><span class="s">" "</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">fight</span><span class="p">(){</span>
+	<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">idfight</span><span class="o">&gt;</span> <span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+	<span class="n">it</span> <span class="o">=</span> <span class="n">war_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="o">!=</span><span class="n">war_map</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+		<span class="k">if</span><span class="p">((</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">){</span>
+			<span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+			<span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">idfight</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">i</span><span class="o">!=</span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>		
+				<span class="k">if</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">f</span><span class="o">&gt;</span><span class="n">max</span><span class="p">)</span><span class="n">max</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">f</span><span class="p">;</span>
+			<span class="p">}</span>
+			<span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">idfight</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">i</span><span class="o">!=</span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">).</span><span class="n">second</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>		
+				<span class="k">if</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">f</span><span class="o">&lt;</span><span class="n">max</span><span class="p">)</span> <span class="n">all_cong</span><span class="p">[(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">id</span><span class="p">].</span><span class="n">live</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="n">it</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">times</span><span class="o">--</span><span class="p">){</span>
+	<span class="k">for</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">cong</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">all_cong</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="n">i</span><span class="o">!=</span><span class="n">all_cong</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>		
+		<span class="n">action</span><span class="p">(</span><span class="o">*</span><span class="n">i</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">fight</span><span class="p">();</span>
+	<span class="n">war_map</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="n">printans</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2018路径">2018路径</h2>
+
+<p>有n个点，每个点有一个权值，每两点间的不同边的个数为他们权值相与得到的值的二进制数字中的1的个数（边为有向边，有第i指向第j，i小于j）求第1个点到第n个点的路径个数（当且仅当不止一条边不同才被称为两条不同的路径），由于数据很大，对991247取模。</p>
+
+<p>输入：第1行n，第二行分别试每个点权值
+输出：路径个数
+数据范围:n在2e5内，权值大小在1e9内</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include&lt;iostream&gt;
+# include&lt;bitset&gt;
+# include&lt;vector&gt;
+# define MAX_BIT 32
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">power</span><span class="p">;</span> 
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">temp</span><span class="p">;</span>
+		<span class="n">power</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">countones</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">){</span>
+	<span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+	<span class="n">bitset</span><span class="o">&lt;</span><span class="n">MAX_BIT</span><span class="o">&gt;</span> <span class="n">bt</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">bt</span><span class="p">.</span><span class="n">count</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">calc</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+	<span class="k">return</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="o">?</span>
+	<span class="n">countones</span><span class="p">(</span><span class="n">power</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">power</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">:</span>
+	<span class="n">countones</span><span class="p">(</span><span class="n">power</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">power</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="o">+</span>
+	<span class="n">calc</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">countones</span><span class="p">(</span><span class="n">power</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">power</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">%</span><span class="mi">991127</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">calc</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">991127</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="2018四种操作">2018四种操作</h2>
+
+<p>有一个n个元素的数列,元素的值只能是0 1 2三个数中的一个，定义四种操作，(1 i x)表示为把第i位替换成x，x也只能是0 1 
+2三个数中的一个，(2 i j)表示把第i个数到第j个数所有的元素值加1，并对3取模，(3 i 
+j)表示把第i个数到第j个数之间的序列的颠倒顺序，(4 i 
+j)表示查询第i个数到第j个数之间的序列是否存在三个或以上相同数，如果有，输出yes，否则输出no</p>
+
+<p>输入：第一行输入n，接下来一行输入n个数，保证是0 1 2中的一个，第三行输入一个数q，表示操作个数，接下来q行输入q种操作
+输出：每次第四次操作时，输出yes或者no
+数据范围：不记得了</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include&lt;iostream&gt;
+# include&lt;vector&gt;
+# include&lt;algorithm&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">;}</span> <span class="n">comm</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">numlist</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">comm</span><span class="o">&gt;</span> <span class="n">commlist</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">q</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">--</span><span class="p">){</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">temp</span><span class="p">;</span>
+		<span class="n">numlist</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">q</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="o">--</span><span class="p">){</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">x</span><span class="o">&gt;&gt;</span><span class="n">y</span><span class="o">&gt;&gt;</span><span class="n">z</span><span class="p">;</span>
+		<span class="n">comm</span> <span class="n">command</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">};</span>
+		<span class="n">commlist</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">printdata</span><span class="p">(){</span>
+	<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+	<span class="n">it</span> <span class="o">=</span> <span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="o">!=</span><span class="n">numlist</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="o">*</span><span class="n">it</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="s">" "</span><span class="p">;</span>
+	<span class="n">it</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">action_1</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">x</span><span class="p">){</span>
+	<span class="n">numlist</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">action_2</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">){</span>
+	<span class="n">i</span><span class="o">--</span><span class="p">;</span><span class="n">j</span><span class="o">--</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">j</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">numlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">numlist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="mi">3</span><span class="p">;</span>
+	<span class="p">}</span>
+
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">action_3</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">){</span>
+	<span class="n">i</span><span class="o">--</span><span class="p">;</span>
+	<span class="n">reverse</span><span class="p">(</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">);</span>
+
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">action_4</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">){</span>
+	<span class="n">i</span><span class="o">--</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
+	<span class="n">a</span> <span class="o">=</span>  <span class="n">count</span><span class="p">(</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+	<span class="n">b</span> <span class="o">=</span>  <span class="n">count</span><span class="p">(</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+	<span class="n">c</span> <span class="o">=</span>  <span class="n">count</span><span class="p">(</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="p">,</span><span class="n">numlist</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">j</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">b</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">)</span><span class="o">||</span><span class="p">(</span><span class="n">c</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">))</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"yes"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"no"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="n">vector</span><span class="o">&lt;</span><span class="n">comm</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">i</span><span class="p">;</span>
+	<span class="n">i</span> <span class="o">=</span> <span class="n">commlist</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">!=</span><span class="n">commlist</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+		<span class="k">switch</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">x</span><span class="p">){</span>
+		<span class="k">case</span> <span class="mi">1</span><span class="p">:</span><span class="n">action_1</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">y</span><span class="p">,(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">z</span><span class="p">);</span><span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="mi">2</span><span class="p">:</span><span class="n">action_2</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">y</span><span class="p">,(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">z</span><span class="p">);</span><span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="mi">3</span><span class="p">:</span><span class="n">action_3</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">y</span><span class="p">,(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">z</span><span class="p">);</span><span class="k">break</span><span class="p">;</span>
+		<span class="k">case</span> <span class="mi">4</span><span class="p">:</span><span class="n">action_4</span><span class="p">((</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">y</span><span class="p">,(</span><span class="o">*</span><span class="n">i</span><span class="p">).</span><span class="n">z</span><span class="p">);</span><span class="k">break</span><span class="p">;</span>
+		<span class="k">default</span><span class="o">:</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="n">i</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">printdata</span><span class="p">();</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="2019判形状推研">2019判形状（推研）</h2>
+
+<p>输入第一行n和m，给n个节点m条边的有向图。判断是单链/树/有环/无环？输出最细致的定义。注意合法数据要求后面有m行，每一行是一个空格隔开的正整数。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+#define MAX(a, b) ((a) &gt; (b) ? (a) : (b) )
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">inDegreelist</span><span class="p">,</span><span class="n">outDegreelist</span><span class="p">;</span>
+ 
+<span class="c1">//定义图的定点
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Vertex</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">,</span><span class="n">inDegree</span><span class="p">,</span><span class="n">outDegree</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">connectors</span><span class="p">;</span>    <span class="c1">//存储节点的后续连接顶点编号
+</span>    <span class="n">Vertex</span><span class="p">()</span> <span class="o">:</span> <span class="n">id</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">inDegree</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">outDegree</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">Vertex</span><span class="p">(</span><span class="kt">int</span> <span class="n">nid</span><span class="p">)</span> <span class="o">:</span> <span class="n">id</span><span class="p">(</span><span class="n">nid</span><span class="p">),</span><span class="n">inDegree</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="n">outDegree</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span> <span class="n">Vertex</span><span class="p">;</span>
+ 
+<span class="c1">//定义Graph的邻接表表示
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">Graph</span> <span class="p">{</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;</span> <span class="n">vertexs</span><span class="p">;</span>   <span class="c1">//存储定点信息
+</span>    <span class="kt">int</span> <span class="n">nVertexs</span><span class="p">;</span>		      <span class="c1">//计数：邻接数
+</span>    <span class="kt">bool</span> <span class="n">isDAG</span><span class="p">;</span>               <span class="c1">//标志：是有向图吗
+</span> 
+    <span class="n">Graph</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">isDAG</span><span class="p">)</span> <span class="o">:</span> <span class="n">nVertexs</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">isDAG</span><span class="p">(</span><span class="n">isDAG</span><span class="p">)</span> <span class="p">{</span> <span class="n">vertexs</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="p">}</span>
+	<span class="n">Graph</span><span class="p">()</span> <span class="o">:</span> <span class="n">nVertexs</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">isDAG</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">vertexs</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="p">}</span>
+	<span class="c1">//向图中添加边
+</span>    <span class="kt">bool</span> <span class="n">addEdge</span><span class="p">(</span><span class="kt">int</span> <span class="n">id1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">MAX</span><span class="p">(</span><span class="n">id1</span><span class="p">,</span> <span class="n">id2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">vertexs</span><span class="p">.</span><span class="n">size</span><span class="p">()))</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+ 
+        <span class="k">if</span> <span class="p">(</span><span class="n">isDAG</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id1</span><span class="p">].</span><span class="n">connectors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">id2</span><span class="p">);</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id1</span><span class="p">].</span><span class="n">outDegree</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id2</span><span class="p">].</span><span class="n">inDegree</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id1</span><span class="p">].</span><span class="n">connectors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">id2</span><span class="p">);</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id2</span><span class="p">].</span><span class="n">connectors</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">id1</span><span class="p">);</span>
+
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id1</span><span class="p">].</span><span class="n">outDegree</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id1</span><span class="p">].</span><span class="n">inDegree</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id2</span><span class="p">].</span><span class="n">outDegree</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">vertexs</span><span class="p">[</span><span class="n">id2</span><span class="p">].</span><span class="n">inDegree</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="n">Graph</span><span class="p">;</span>
+
+<span class="n">Graph</span> <span class="n">g</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+	<span class="n">g</span><span class="o">=</span><span class="n">Graph</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">src</span><span class="p">,</span><span class="n">dst</span><span class="p">;</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">){</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">src</span><span class="o">&gt;&gt;</span><span class="n">dst</span><span class="p">;</span>
+		<span class="n">g</span><span class="p">.</span><span class="n">addEdge</span><span class="p">(</span><span class="n">src</span><span class="p">,</span><span class="n">dst</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">vector</span><span class="o">&lt;</span><span class="n">Vertex</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">g</span><span class="p">.</span><span class="n">vertexs</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+	<span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="o">!=</span><span class="n">g</span><span class="p">.</span><span class="n">vertexs</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+		<span class="n">inDegreelist</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">inDegree</span><span class="p">);</span>
+		<span class="n">outDegreelist</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">outDegree</span><span class="p">);</span>
+		<span class="n">it</span><span class="o">++</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">countin</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+	<span class="k">return</span> <span class="n">count</span><span class="p">(</span><span class="n">inDegreelist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">inDegreelist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">countout</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+	<span class="k">return</span> <span class="n">count</span><span class="p">(</span><span class="n">outDegreelist</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">outDegreelist</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">n</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">Is_List</span><span class="p">(){</span>
+	<span class="c1">//有一个inDegree为0的头和一个outDegree为0的尾，且其余节点入度与出度都为1;
+</span>	<span class="k">return</span> <span class="p">(</span><span class="n">countin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">countout</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">countin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">countout</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">Is_Tree</span><span class="p">(){</span>
+	<span class="c1">//有一个inDegree为0的头且其余节点inDegree均为1，且不是链表;
+</span>	<span class="k">return</span> <span class="p">(</span><span class="n">countin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="n">countin</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+
+
+<span class="kt">bool</span> <span class="n">topologicalSort</span><span class="p">(){</span><span class="c1">//拓扑排序判断有环无环
+</span>	<span class="kt">int</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="c1">//记录加入拓扑排序的顶点数
+</span>	<span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">inDegreelist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+			<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="c1">//将所有入度为0的顶点入队
+</span>		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+		<span class="kt">int</span> <span class="n">u</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">();</span><span class="c1">//取队首顶点u
+</span>		<span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">g</span><span class="p">.</span><span class="n">vertexs</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">connectors</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+			<span class="kt">int</span> <span class="n">v</span><span class="o">=</span><span class="n">g</span><span class="p">.</span><span class="n">vertexs</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">connectors</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="c1">//u的后继节点v
+</span>			<span class="n">inDegreelist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">--</span><span class="p">;</span><span class="c1">//v的入度减1
+</span>			<span class="k">if</span><span class="p">(</span><span class="n">inDegreelist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span><span class="c1">//顶点v的入度减为0则入队
+</span>				<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+		<span class="n">g</span><span class="p">.</span><span class="n">vertexs</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">connectors</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span><span class="c1">//清空u的所有出边
+</span>		<span class="n">num</span><span class="o">++</span><span class="p">;</span><span class="c1">//加入拓扑排序的顶点数加1
+</span>	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">num</span><span class="o">==</span><span class="n">n</span><span class="p">)</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span><span class="c1">//加入拓扑排序的顶点为n，则拓扑排序成功，图无环
+</span>	<span class="k">else</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span><span class="c1">//否则拓扑排序失败，图有环
+</span><span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">0</span><span class="o">||</span><span class="n">m</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"error"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">Is_List</span><span class="p">()){</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"list"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">Is_Tree</span><span class="p">()){</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"tree"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">topologicalSort</span><span class="p">()){</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"no ring"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span><span class="p">{</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"have ring"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="2019统计众数">2019统计众数</h2>
+
+<p>某个序列有n个正整数，每个正整数都是m位数。某科研人员想统计该序列各个位的“众数”。第i位的众数是指，n个正整数的第i位出现次数最多的最小数字，最低位（个位）是第1位，最高是第m位。</p>
+
+<p>输入：<br>
+第一行两个正整数n,m<br>
+第二行包含n个正整数，用一个空格隔开</p>
+
+<p>输出：<br>
+共m行，每行一个整数，第i行表示第i位的众数</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp"># include &lt;iostream&gt;
+# include &lt;vector&gt;
+# include &lt;cmath&gt;
+# include &lt;algorithm&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">datain</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">datalist</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+<span class="kt">void</span> <span class="n">init</span><span class="p">(){</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">m</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">int</span> <span class="n">temp</span><span class="p">;</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span> <span class="n">temp</span><span class="p">;</span>
+		<span class="n">datain</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">datalist</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">countnum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vc</span><span class="p">){</span>
+	<span class="kt">int</span> <span class="n">max</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">id</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="n">vc</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vc</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">i</span><span class="p">);</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">&gt;</span><span class="n">max</span><span class="p">){</span>
+			<span class="n">max</span><span class="o">=</span><span class="n">t</span><span class="p">;</span>
+			<span class="n">id</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">id</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">check</span><span class="p">(){</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+			<span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="n">datain</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">%</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">pow</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="n">j</span><span class="p">))</span><span class="o">/</span><span class="n">pow</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+			<span class="n">datalist</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+	<span class="n">init</span><span class="p">();</span>
+	<span class="n">check</span><span class="p">();</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">m</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">countnum</span><span class="p">(</span><span class="n">datalist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="https://xuanxuanblingbling.github.io/tag/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%80%83%E7%A0%94" rel="tag"># 计算机考研</a>
+          
+            
+            <a href="https://xuanxuanblingbling.github.io/tag/#/C%2B%2B" rel="tag"># C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="https://xuanxuanblingbling.github.io/life/study/2019/03/20/oj/" rel="next" title="C++机试技巧">
+                <i class="fa fa-chevron-left"></i> C++机试技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="https://xuanxuanblingbling.github.io/wireless/nfc/2019/02/28/nfchacker/" rel="prev" title="NFChacker">
+                NFChacker <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80Mjg0Ni8xOTM5Mw=="><iframe src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/get-uuid.htm" title="livere-uuid" id="livere-uuid" style="display: none;"></iframe></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first" style="top: 5px; transform: rotateZ(-45deg); width: 100%;"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="opacity: 0;"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last" style="top: -5px; transform: rotateZ(45deg); width: 100%;"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar sidebar-active" style="display: block; width: 320px;">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person" style="opacity: 1; display: block; transform: translateX(0px);">
+          <img class="site-author-image" itemprop="image" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/image.jpg" alt="老板娘">
+          <p class="site-author-name" itemprop="name">老板娘</p>
+           
+              <p class="site-description motion-element" itemprop="description" style="opacity: 1; display: block; transform: translateX(0px);">I love blingbling.</p>
+          
+        </div>
+        <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="https://xuanxuanblingbling.github.io/archives/">
+                <span class="site-state-item-count">92</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="https://xuanxuanblingbling.github.io/categories/">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="https://xuanxuanblingbling.github.io/tags/">
+                <span class="site-state-item-count">142</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+        
+        
+          <div class="feed-link motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+            <a href="https://xuanxuanblingbling.github.io/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/xuanxuanblingbling" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/5143351412" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xuan-pla/answers" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://space.bilibili.com/29361517" target="_blank" title="b站">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  b站
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-" style="opacity: 1; display: block; transform: translateX(0px);">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                
+                
+                <li class="links-of-blogroll-item">
+                  <a href="https://blingblingxuanxuan.github.io/" title="媳妇" target="_blank">媳妇</a>
+                </li>
+              
+                
+                
+                <li class="links-of-blogroll-item">
+                  <a href="https://s3cunda.github.io/" title="s3cunda" target="_blank">s3cunda</a>
+                </li>
+              
+                
+                
+                <li class="links-of-blogroll-item">
+                  <a href="https://qiutianshu.wordpress.com/" title="极目楚天舒" target="_blank">极目楚天舒</a>
+                </li>
+              
+                
+                
+                <li class="links-of-blogroll-item">
+                  <a href="https://0lddriv3r.github.io/blog/index.html" title="卓教授" target="_blank">卓教授</a>
+                </li>
+              
+                
+                
+                <li class="links-of-blogroll-item">
+                  <a href="https://wrlus.com/" title="小路小站" target="_blank">小路小站</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active" style="opacity: 1; display: block; transform: translateX(0px);">
+          <div class="post-toc" style="max-height: 498px; width: calc(100% + 17px);">
+
+            
+            
+            
+            
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class="nav">
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#2017-interview"> <span class="nav-number">1</span> <span class="nav-text">2017 interview</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2017多项式求和"> <span class="nav-number">2</span> <span class="nav-text">2017多项式求和</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2018葱的战争"> <span class="nav-number">3</span> <span class="nav-text">2018葱的战争</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2018路径"> <span class="nav-number">4</span> <span class="nav-text">2018路径</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2018四种操作"> <span class="nav-number">5</span> <span class="nav-text">2018四种操作</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2019判形状推研"> <span class="nav-number">6</span> <span class="nav-text">2019判形状（推研）</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> </ol> </ol> </ol> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#2019统计众数"> <span class="nav-number">7</span> <span class="nav-text">2019统计众数</span> </a> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child"> <ol class="nav-child">
+    </ol>
+  </ol></ol></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  
+  © 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">老板娘</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://jekyllrb.com/">Jekyll</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/simpleyyt/jekyll-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/index.js"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/fastclick.js"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/jquery.js"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/velocity_002.js"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/velocity.js"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/jquery_002.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/utils.js"></script>
+
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/motion.js"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/scrollspy.js"></script>
+<script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/post-details.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="%E6%B8%85%E5%8D%8E%E6%9C%BA%E8%AF%952017-2019%E7%9C%9F%E9%A2%98%20%20%20Clang%E8%A3%81%E7%BC%9D%E5%BA%97_files/bootstrap.js"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+
+
+
+
+<div id="simple-translate"><div><div style="background-image: url(&quot;moz-extension://e506797e-c205-4736-9a56-eda9adf3ae5e/icons/512.png&quot;); height: 22px; width: 22px; top: 10px; left: 10px;" class="simple-translate-button "></div><div class="simple-translate-panel " style="width: 300px; height: 200px; top: 0px; left: 0px; font-size: 13px; background-color: rgb(255, 255, 255);"><div class="simple-translate-result-wrapper" style="overflow: hidden;"><p class="simple-translate-result" style="color: rgb(0, 0, 0);"></p><p class="simple-translate-candidate" style="color: rgb(115, 115, 115);"></p></div></div></div></div></body></html>
