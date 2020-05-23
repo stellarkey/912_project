@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　<span class="spe">人工神经元网络为什么会实现复杂计算——以二维空间的折线划分为例。我们知道，通常把用感知准则函数方法设计的分类器称为感知器(perceptron)，它只能实现对两类样本的线性分类。或者说他只能将特征空间用线性函数划分成两个区域。对一个二维特征空间可用下图表示，</span></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_1010.gif" width="305" height="232"><br>
+            补图1 <br>
+            <img src="../../images/image_content/6/6_1011.gif" width="249" height="268"> 
+            <br>
+            <img src="../../images/image_content/6/6_1012.gif" width="290" height="259"> 
+            <br>
+            <img src="../../images/image_content/6/6_1013.gif" width="385" height="290"> 
+            <br>
+            补图2</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">其中f(x)是x的一个线性函数，可以具体表示成<br>
+            　　<img src="../../images/image_content/6/6_1014.gif" width="173" height="32" align="absmiddle"><br>
+            　　而McCulloch-Pitts模型中的阈值函数，可以写成<br>
+            　　<img src="../../images/image_content/6/6_1015.gif" width="92" height="25" align="absmiddle"><br>
+            　　其中sgn函数是常用的符号函数，他可以定义成<br>
+            　　<img src="../../images/image_content/6/6_1016.gif" width="170" height="52" align="middle"> 
+            <br>
+            　　或 <img src="../../images/image_content/6/6_1017.gif" width="167" height="54" align="absmiddle"><br>
+            　　按照前一种定义，则y与x之间的关系就如该图显示。</span><br>
+            　　<span class="spe">如果我们希望用一个复杂一些的判别函数将特征空间划分成两个区域，例如用图(a)中由两条射线组成的折线来划分。在折线的一边为y=1，在折线的另一边y=0，显然用一个神经元是不行的。对于这种情况我们可以通过图(b)作进一步分析。如果我们将该折线的两个直线各用一线性函数<img src="../../images/image_content/6/6_1018.gif" width="60" height="24" align="absmiddle">和<img src="../../images/image_content/6/6_1019.gif" width="60" height="26" align="absmiddle">表示，则整个空间将因这两个函数值的极性不同分成四个区域。图(a)中y=0这个区域所具有的特点是<img src="../../images/image_content/6/6_1020.gif" width="34" height="26" align="absmiddle">与<img src="../../images/image_content/6/6_1021.gif" width="36" height="27" align="absmiddle">都小于零。显然这需要在<img src="../../images/image_content/6/6_1020.gif" width="34" height="26" align="absmiddle">与<img src="../../images/image_content/6/6_1021.gif" width="36" height="27" align="absmiddle">计算的基础上增加一个逻辑运算才能解决问题。实际上这三个运算可以通过三个神经元结点组成如图(c)所示的结构，选择出适当的参数就能实现。这个例子说明了人工神经元网络的最基本工作原理与特点：<br>
+            　　(1) 人工神经元网络由数量较多的结点(每个结点是一个神经元)以适当的方式相互连接组成，每个结点的输入可以是输入数据的某一个分量，也可以是其他结点的输出。<br>
+            　　(2) 每个结点都执行简单的两步运算：对输入信号实现加权和；对加权和执行非线性映射。<br>
+            　　(3) 由于结点之间的相互连接，可实现对简单运算的组合，而实现复杂的运算。<br>
+            　　(4) 人工神经元网络实现各种功能取决于所采用的结点间连接方式以及每个结点的参数值的选择。网络结点数量的确定及它们之间的连接方式称为网络的结构设计问题，目前主要由设计者确定。而网络中各个结点的参数，则往往是通过用训练数据集以某种训练方法来确定。感知准则函数就是一种典型的学习方法。</span><br>
+            　　人工神经元网络研究曾有过曲折的历史。它的提出实际上与传统的Von Neumann计算机以及人工智能的兴起都是同时代的。但是由于早期的神经元网络学习机制的缺陷，以致于只能构造单层感知器那样的简单网络，这种网络又不能解决诸如“异或”、“奇偶校验”等十分简单的运算。<br>
+            　　<span class="spe">将神经元结点以某种方式连接起来，成为一种网络结构，可以实现复杂的功能。下一个需要解决的问题是确定这个网络中的所有待定参数，对于一个很简单的网络可以通过解析的方式来确定这些参数。从求解“异或”计算这个例子看，所需的待定参数可通过分析确定，但对于由多个结点组成的复杂网络，实现模式识别以及其它复杂运算时，如何确定所有参数的方法在当时没有研究出来，这导致了人工神经元网络研究的一度冷落。八十年代初对这些参数的学习方法有了突破，人工神经元网络的研究与应用才掀开了崭新的一页。</span><br>
+            　　因此人工神经网络的研究被冷落了相当长的时期。人工神经元网络的复兴出现在1980年左右，1982年Hopfield发表的一篇文章对重新引起人们对这方面的研究兴趣起了十分主要的作用。在下一节以及后续节的讨论，也会在一定程度上反映了人工神经元网络发展的历程。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

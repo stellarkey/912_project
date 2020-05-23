@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent">　　以上我们讨论了在正态分布按概率分布定义的距离判据表达式，可以看出它们都是正态分布的参数均值与协方差矩阵的函数。在讨论如何按概率距离判据进行特征提取时，与上面讨论欧氏距离为基础的判据的基本方法是一样的。设原始特征为Y，而经变换后的特征为X，两者之间有映射关系<br>
+      　　<img src="../../images/image_content/4/4_5F4031.gif" width="74" height="32" align="absmiddle">　　　　　(4-37)<br>
+      　　利用这种关系，可以将有关判据的表达式表示成映射关系W的函数，例如J<sub>D</sub>(W)然后求这表达式对W各分量的偏导数，并令其为零，得到所需的方程式组，并用相应方法求解。有兴趣的可参阅有关书籍。下面我们仅讨论两类别问题以及在协方差矩阵相等的条件下，用J<sub>D</sub>方法提取特征的算法。<br>
+      　　按(4-34)，在此条件下的判据为：<br>
+      　　<img src="../../images/image_content/4/4_5F4032.gif" width="205" height="40"> 
+      <br>
+      　　如写成矩阵的迹的形式，则有<br>
+      　　<img src="../../images/image_content/4/4_5F4033.gif" width="225" height="58">(4-38)<br>
+      　　其中<img src="../../images/image_content/4/4_5F4034.gif" width="164" height="32" align="absmiddle"> 
+      。将(4-37)代入(4-38)可得：<br>
+      　　<img src="../../images/image_content/4/4_5F4035.gif" width="360" height="59" align="absmiddle">(4-39)<br>
+      　　显然J<sub>D</sub>在降维后的最大值应是<img src="../../images/image_content/4/4_5F4036.gif" width="46" height="28" align="absmiddle">矩阵的特征向量矩阵，令<img src="../../images/image_content/4/4_5F4036.gif" width="46" height="28" align="absmiddle">的特征值矩阵为∧，则有<br>
+      　　<img src="../../images/image_content/4/4_5F4038.gif" width="114" height="35"><br>
+      　　由于该例只讨论两类别问题，因此<img src="../../images/image_content/4/4_5F4036.gif" width="46" height="28" align="absmiddle">的秩为1，故有<br>
+      　　<img src="../../images/image_content/4/4_5F4040.gif" width="97" height="23" align="absmiddle">　　　　　(4-40)<br>
+      　　其中λ为其特征值，此处W表示一个D×1向量。(4-40)可写成：<br>
+      　　<img src="../../images/image_content/4/4_5F4041.gif" width="190" height="23" align="absmiddle"><br>
+      　　其中<img src="../../images/image_content/4/4_5F4042.gif" width="75" height="24" align="absmiddle">是一标量，因而<br>
+      　　<img src="../../images/image_content/4/4_5F4043.gif" width="113" height="27" align="absmiddle"> 
+      (4-41)<br>
+      　　利用该式，可使原D维特空间变换成一维的特征空间。与任何其它一维空间相比，散度J<sub>D</sub>达到极值(最佳)。当∑<sub>1</sub>≠∑<sub>2</sub>时计算会复杂得多，可能会遇到非线性方程及需要使用数值求解的方法。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　如果对于各类别的类条件概率分布一无所知，我们只按待分类样本在特征空间的自然聚集进行划分。如图5.2所示的一维特征空间中，样本在整个特征空间中呈现出两个分布高峰，如果从分布的谷点将此特征空间划分为两个区，则对应每个区域，样本分布就只有一个峰值，这些区域被称为单峰区域，而每个单峰区域则被看作不同的决策域。落在同一单峰区域的待分类样本就被划分成同一类，称为单峰子类。下面讨论一些单峰子类的划分算法。</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_1003.gif" width="239" height="181"><br>
+            图 5.2 </td>
+        </tr>
+        <tr> 
+          <td><span class="FCtitle2"><strong><br>
+            </strong>5.2.1 投影法</span><br> <span class="FCcontent">　　投影法的原理很简单，拿图5.3显示的一个二维空间为例。在该分类问题中，两个类别分别在其特征空间中形成两个聚类，图中用两个区域的轮廓勾出这两类样本聚类的区域。对人来说一旦画出这两类的空间分布，可以很容易地判断出这两类在特征空间聚集的区域，但是对计算机来说，要识别出这两类的分布情况，直接从二维的图形来说是很困难的，更不用说在高维特征空间直接对样本的分布作出判断了。一个办法是如果将样本对某个方向的轴作投影，或换句话说只取这些样本的某一分量的统计值来看，样本的分布往往显现出高峰与低谷，找到低谷，将峰值分别划分在不同的区域中，每个区域只有一个高峰，并把聚在同一高峰下的样本划分为一类，这是计算机容易做到的。对于样本在某一种度量中的分布统计，一般称为直方图统计，在样本数量很大时，又可作为概率统计的估计。由于这种方法基于将样本投影到某个坐标轴上，因而称为投影方法。</span></td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_1004.gif" width="243" height="221"><br>
+            图 5.3 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　使用投影方法有两个组成部分，一个是如何设计合适的坐标系统，另一是如何设计直方图。在样本属性完全不知的情况下，如何选择坐标系统，是比较困难的，因为这时还没有一个准则函数来表征这样一个坐标系统的性质。一种启发式的办法是使待分类的样本在某个坐标轴方向具有最大的分散性，这可以采用上一章讨论过的K-L变换方法。具体说来是用混合样本协方差矩阵作为K-L变换的产生矩阵，找到其特征值，并按大小排序，对应最大特征值的特征向量对此混合样本来说，离散程度最大，预期能发现明显的峰值，但是这种方法并不能保证分出各个聚类，例如图5.4所示情况，其两个特征向量 
+            都只呈现单峰状态，无法用此法将他们分开。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_1005.gif" width="177" height="342"><br>
+            <img src="../../images/image_content/5/5_1006.gif" width="300" height="342"> 
+            <br>
+            图 5.4 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　投影法的具体算法分以下几个步骤：<br>
+            　　步骤1： 计算样本协方差矩阵具有最大特征值的特征向量U<sub>j</sub>，把数据投影到U<sub>j</sub>轴上。<br>
+            　　步骤2： 用直方图方法求数据的边缘概率密度函数。<br>
+            　　步骤3： 在直方图的峰值间求最小值，在这些最小点作垂直于U<sub>j</sub>的各个超平面把数据划分为若干个聚类。<br>
+            　　步骤4： 如果在这个轴上没有这样的最小值，则用下一个最大特征值对应的特征向量重复以上过程。<br>
+            　　步骤5： 对每个得到的子集(聚类)重复上述过程，直到每个集不能再分(为单峰)为止。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

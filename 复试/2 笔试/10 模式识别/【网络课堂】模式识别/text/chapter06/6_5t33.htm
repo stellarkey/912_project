@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>6.5.3.3 自组织特征映射</strong><br>
+            　　在对高维的数据进行分析时，人们常常希望以直观的方法了解数据的分布。由于高维数据很难直观地表示出来，人们希望能够在降维的空间，如二维或三维的空间中观察这些数据，因此这就需要找到一个从高维空间向低维空间的映射，并能在拓扑关系上保留原数据分布的情况，以便我们从低维的数据空间数据的分布了解它们在原数据空间中的关系。这种映射在神经元网络中被称为特征映射(feature 
+            mapping)，它要求在几何上相近的输出层结点对相近的输入量作出响应。这种称为保留拓扑关系的映射。实现这种映射的一种方法就是非监督竞争学习方法。<br>
+            　　特征映射在生物的细胞组织中也是一种普遍现象。例如从眼睛、耳朵、皮肤等感官到皮层之间的连接，在皮层不同的区域之间都有这种映射。高等脊椎动物从视网膜到大脑视觉皮层之间是一种两维的映射。从耳朵到听觉皮层之间的映射则是一种一维的映射。不同频率声音在皮层中呈现有序的响应。因此研究特征映射在人工神经元网络中的实现，对研究人类自身也是很有意义的。另一方面人工神经元网络实现特征映射也是一种仿生学研究。<br>
+            　　实现特征映射的人工神经元网络在结构上一般并不复杂，例如图6-20表示一个具有两个输入端子与一个输出结点组成的矩阵。该网络的作用是将输入端输入的两维连续值信号，映射成输出矩阵中的(x，y)坐标，即对输入值作出响应的输出结点的坐标取决于输入向量<img src="../../images/image_content/6/6_5072.gif" width="46" height="26" align="absmiddle">的值。由于特征映射的需要，特征映射网络的输出结点数目较大，且布成有规则的形状。</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5073.gif" width="228" height="183"><br>
+            <img src="../../images/image_content/6/6_5074.gif" width="216" height="186"> 
+            <br>
+            图6-20 特征映射网络 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　实现特征映射的方案有多种，但最有影响的是Kohonen的算法。<br>
+            　　Kohonen算法所采用的典型结构如图6-20所示。输入一般可由N个连续值<img src="../../images/image_content/6/6_5018.gif" width="17" height="25" align="absmiddle">到<img src="../../images/image_content/6/nn.gif" width="20" height="26" align="absmiddle">。这些输入定义了N维实数空间的一个点<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">。输出结点<img src="../../images/image_content/6/6_5048.gif" width="18" height="23" align="absmiddle">则布局成数组状，有一维的，也有两维的。每个输出结点与每个输入端都有连接，加权系数表示成<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">。所谓特征映射的训练过程，就是要训练这些加权系数<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">，使对输入信号作出响应的输出结点的位置体现对输入值的映射。<br>
+            　　Kohonen算法的训练过程采用竞争机制。其基本做法是：一旦某一输出结点在响应某一输入信号中获胜，即其响应值最大，则除了将该结点有关的权值<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">作出有利于增强对当前输入值响应的修正之外，对该结点的邻域结点也程度不同的沿同一方向修正。为了说明这一点，设在当前输入值<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">时获胜的输出结点标号为<img src="../../images/image_content/6/6_5043.gif" width="14" height="25" align="absmiddle">，则应有如下关系<br>
+            　　<img src="../../images/image_content/6/6_5075.gif" width="122" height="39" align="absmiddle">　　对所有i 
+            (6-75)<br>
+            　　而对各输出结点连接权值的修改则可写成<br>
+            　　<img src="../../images/image_content/6/6_5076.gif" width="164" height="30" align="absmiddle"> 
+            　　　　对所有i与j (6-76)<br>
+            　　其中i是输出结点的标号，j是输入端的标号，<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">是一个修正函数。而其中最主要的是<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">，当<img src="../../images/image_content/6/6_5078.gif" width="46" height="25" align="absmiddle">时该函数值为1，而随着i结点与<img src="../../images/image_content/6/6_5043.gif" width="14" height="25" align="absmiddle">结点之间距离的增大，该函数值逐渐减少。因此训练过程中，获胜的结点的权值 
+            有明显的变化，与其相邻的结点的权值也会发生明显的变化。而哪些远离胜者的结点则几乎不受什么影响。显然由于修改权值的过程包含了结点几何关系的因素。因此特征映射得以体现。<br>
+            　　在具体的算法中<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值与<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">是动态变化的。在训练开始时，一般使用较大的<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值以及波及范围较宽的<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">函数。因此在开始时，涉及修正权值的输出结点数目较多，权值修正量也较大。随着训练过程的深入， 
+            涉及范围以及η值都逐渐减小。这样做既可较快将映射关系建立起来，然后利用涉及范围小的邻域函数减少每次修改权值的输出结点个数，又提高了输出结点间的分辨率，实现细致调整过程。<br>
+            典型的邻域函数<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">是<br>
+            　　<img src="../../images/image_content/6/6_5080.gif" width="219" height="33" align="absmiddle">　　(6-77)<br>
+            　　其中<img src="../../images/image_content/6/6_5081.gif" width="50" height="26" align="absmiddle">表示i与<img src="../../images/image_content/6/6_5043.gif" width="14" height="25" align="absmiddle">结点之间的距离，<img src="../../images/image_content/6/6_5082.gif" width="14" height="22" align="absmiddle">则是控制<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">宽度的参数，随着<img src="../../images/image_content/6/6_5082.gif" width="14" height="22" align="absmiddle">值减小，<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">的衰减加快。<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">与<img src="../../images/image_content/6/6_5082.gif" width="14" height="22" align="absmiddle">随时间的变化可用<img src="../../images/image_content/6/6_5083.gif" width="32" height="24" align="absmiddle">与<img src="../../images/image_content/6/6_5084.gif" width="29" height="25" align="absmiddle">表示，它可以采用多种形式，如1/t或a-bt等。从理论上讲，采用<img src="../../images/image_content/6/6_5085.gif" width="46" height="31" align="absmiddle">形式，较为合适，其中0≤α≤1。<br>
+            　　邻域函数<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">也可采用有限邻域方式。以下是一种典型的自组织特征映射算法。<br>
+            　　1) 权值初始化，即对每个结点的权值赋以随机数W<sub>ij</sub>(0)，其中i为输入端标号，j是输出结点标号。<br>
+            　　2) 在样本集中随机地选择样本<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">输入。<br>
+            　　3) 在输出结点集中找到最佳匹配的点，如和欧氏距离，则有<br>
+            　　<img src="../../images/image_content/6/6_5086.gif" width="196" height="35" align="absmiddle"><br>
+            　　4) 权值学习<br>
+            　　<img src="../../images/image_content/6/6_5087.gif" width="207" height="33" align="absmiddle"><br>
+            　　5) 转2)<br>
+            　　在迭代过程中<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">与<img src="../../images/image_content/6/6_5082.gif" width="14" height="22" align="absmiddle">逐渐变化，<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">在初始时稍大，如有的算法在头1000次内，<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">取大于0.1，而后再减至0.1以下，如0.01等。<br>
+            　　图6-21是一个特征映射的例子，输入为两维向量<img src="../../images/image_content/6/6_5088.gif" width="172" height="29" align="absmiddle">。它被映射到一个10×10的平面数组上去。权值训练过程表现在网络线交点的变化上。权值的初始值被置于(0.5，0.5)附近的随机值(图6-21(a))。训练过程展示在(b)到(d)。</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5089.gif" width="390" height="384"><br>
+            图6-21 Kohonen特征映射示例 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　另一个从一维映射到一维的例子如图6-22所示，它由一个40点组成的线性数组。图中(a)显示权值的初始状态，(b)是训练中的状态，而(c)是训练最后的状态。显然它就是一个线性关系。实际上训练结果可能出现两种结果，即下降直线或上升直线。图(b)反映了出现这两种趋势的可能性，但最终只有一种倾向占上风。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5090.gif" width="182" height="152"><br>
+            <img src="../../images/image_content/6/6_5091.gif" width="370" height="155"><br>
+            图6-22 Kohonen一维映射 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　特征映射在许多方面得到应用，如马达控制、语音识别、向量量化与从多种组合解中求优化解等。例如Kohonen在1984年曾使用由十五个频道组成的滤波器组作为特征映能网络的输入，而输出则是两维的数组。在使用芬兰语音采样作为输入信号进行训练后，所得到的映射的确形成一种语音的映射图。“相似的”语音在输出结点层中处于相近的位置上。这的确是一个从高维空间向一个二维空间的投影，这种方法对高维空间数据的相似性与结构的可视化是很有用的。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
