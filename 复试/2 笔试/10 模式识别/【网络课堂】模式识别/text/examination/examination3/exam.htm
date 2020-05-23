@@ -1,0 +1,250 @@
+<html>
+<head>
+<title>模式识别试题三</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../examination1/css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000">
+
+<center>
+  <span class="icon"><br>
+  </span><span class="part">模式识别　试卷三</span><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b> 问答题</b><br>
+            <br>
+            　　一、由McCulloch-Pitts模型组成的神经元网络的结构与参数如图所示。<br>
+            　　已知X<sub>0</sub>, X<sub>1</sub>与X<sub>2</sub>都属于{0,1}，试求<img src="../../../images/image_content/chormeless/exa30001.gif" width="101" height="21" align="absmiddle">的真值表。<br>
+            　　（McCulloch-Pitts）使用的模型参数为：<img src="../../../images/image_content/chormeless/exa30002.gif" width="96" height="52" align="absmiddle"><br>
+            　　<img src="../../../images/image_content/chormeless/exa30003.gif" width="331" height="189" align="absmiddle"> 
+            <br>
+            <br>
+            <textarea name=textarea cols=50 rows=5></textarea>
+          </p>
+          <p><br>
+            　　二、如标准数字1在5×7的方格中表示成如图所示的黑白图像，黑为1，白为0，现若有一数字1在5×7网格中向左错了一列。试用分别计算要与标准模板之间的欧氏距离、绝对值偏差、偏差的夹角表示，以及用“异或”计算两者差异。<br>
+            　　<img src="../../../images/image_content/chormeless/exa30005.gif" width="147" height="203"> 
+            <br>
+            <textarea name=textarea2 cols=50 rows=5></textarea>
+          </p>
+          <p><br>
+            　　三、证明在Σ正定或半正定时，mahalanobis距离r符合距离定义的三个条件，即<br>
+            　　（1） r(a,b)=r(b,a)<br>
+            　　（2） 当且仅当a=b时，有r(a,b)=0<br>
+            　　（3） r(a,c)≤r(a,b)+r(b,c)<br>
+            <textarea name=textarea3 cols=50 rows=5></textarea>
+            <br>
+          </p>
+          <p>　　四、设在三维空间中一个类别分类问题拟采用二次曲面。如欲采用广义线性方程求解。试向其广义样本向量与广义权向量的表达式，其维数是多少？<br>
+            <textarea name=textarea4 cols=50 rows=5></textarea>
+          </p>
+          <p>　　五、设两类样本的类内离散矩阵分别为<img src="../../../images/image_content/chormeless/exa30014.gif" width="110" height="59" align="absmiddle">，<img src="../../../images/image_content/chormeless/exa30015.gif" width="136" height="55" align="absmiddle"><br>
+            <img src="../../../images/image_content/chormeless/exa30016.gif" width="130" height="21" align="absmiddle"><br>
+            　　试用fisher准则求其决策面方程。<br>
+            <br>
+            <textarea name=textarea5 cols=50 rows=5></textarea>
+          </p>
+          <p> <br>
+            　　六、已知有两类数据,分别为<br>
+            　　<img src="../../../images/image_content/chormeless/exa30021.gif" width="217" height="44"> 
+            <br>
+            　　试求：该组数据的类内及类间离散矩阵<img src="../../../images/image_content/chormeless/exa30022.gif" width="21" height="22" align="absmiddle">及<img src="../../../images/image_content/chormeless/exa30023.gif" width="18" height="21" align="absmiddle">。<br>
+            <textarea name=textarea6 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            　　七、已知有两个数据集，分别为<br>
+            　　<img src="../../../images/image_content/chormeless/exa30028.gif" width="235" height="43" align="absmiddle"><br>
+            　　试求：将该8个数据作为一个数据集对其进行K-L变换。<br>
+            <textarea name=textarea7 cols=50 rows=5></textarea>
+            <br>
+            　　八、设一个二维空间中的两类样本服从正态分布，其参数分别为<br>
+            <img src="../../../images/image_content/chormeless/exa30031.gif" width="159" height="56" align="absmiddle">，<img src="../../../images/image_content/chormeless/exa30032.gif" width="176" height="57" align="absmiddle">，先验概率<img src="../../../images/image_content/chormeless/exa30033.gif" width="90" height="25" align="absmiddle"><br>
+            　　试证明其基于最小错误率的贝叶斯决策分界面方程为一圆，并求其方程。<br>
+            <textarea name=textarea8 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            　　九、将上题推广到一般情况<br>
+            　　（1）若<img src="../../../images/image_content/chormeless/exa30037.gif" width="138" height="28" align="absmiddle">，试说明先验概率相等条件下，基于最小错误率的贝叶斯决策面是否是超球面；<br>
+            　　（2）它能否用mahalanobis距离平方为常数的轨迹表示。<br>
+            　　（3）用mahalanobis距离表示的轨迹，分析其<img src="../../../images/image_content/chormeless/exa30046.gif" width="13" height="18" align="absmiddle">与<img src="../../../images/image_content/chormeless/exa30038.gif" width="40" height="23" align="absmiddle">的关系。<br>
+            <textarea name=textarea9 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('examination_a3.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+          </p>
+          </form>
+        </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

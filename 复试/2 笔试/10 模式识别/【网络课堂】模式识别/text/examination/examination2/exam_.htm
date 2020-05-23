@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>模式识别试题二　答案</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../examination1/css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" background="../../../images/image_temp/des_t_square.gif" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="8">
+  <tr>
+      <td class=text> <p><b>模式识别试题二　答案</b></p>
+        <p><span class="explaination">问答第1题</span><br>
+          　　答：在模式识别学科中，就“模式”与“模式类”而言，模式类是一类事物的代表，概念或典型，而“模式”则是某一事物的具体体现，如“老头”是模式类，而王先生则是“模式”，是“老头”的具体化。<br>
+          <br>
+          <span class="explaination"><br>
+          问答第2题</span><br>
+          　　答：Mahalanobis距离的平方定义为：<br>
+          　　<img src="../../../images/image_content/chormeless/exa20001.gif" width="209" height="28" align="absmiddle"><br>
+          　　其中x，u为两个数据，<img src="../../../images/image_content/chormeless/exa20002.gif" width="24" height="21" align="absmiddle">是一个正定对称矩阵（一般为协方差矩阵）。根据定义，距某一点的Mahalanobis距离相等点的轨迹是超椭球，如果是单位矩阵Σ，则Mahalanobis距离就是通常的欧氏距离。<br>
+          <br>
+          <br>
+          <span class="explaination">问答第3题</span><br>
+          　　答：监督学习方法用来对数据实现分类，分类规则通过训练获得。该训练集由带分类号的数据集组成，因此监督学习方法的训练过程是离线的。<br>
+          　　非监督学习方法不需要单独的离线训练过程，也没有带分类号（标号）的训练数据集，一般用来对数据集进行分析，如聚类，确定其分布的主分量等。<br>
+          　　就道路图像的分割而言，监督学习方法则先在训练用图像中获取道路象素与非道路象素集，进行分类器设计，然后用所设计的分类器对道路图像进行分割。<br>
+          　　使用非监督学习方法，则依据道路路面象素与非道路象素之间的聚类分析进行聚类运算，以实现道路图像的分割。<br>
+          <br>
+          <span class="chap"><br>
+          </span><span class="explaination">问答第4题</span><br>
+          　答：动态聚类是指对当前聚类通过迭代运算改善聚类；<br>
+          　　分级聚类则是将样本个体，按相似度标准合并，随着相似度要求的降低实现合并。<br>
+          <br>
+          <br>
+          <span class="explaination">问答第5题</span><br>
+          　　答：在给定观察序列<img src="../../../images/image_content/chormeless/exa20003.gif" width="103" height="24" align="absmiddle">条件下分析它由某个状态序列S产生的概率似后验概率，写成P(S|O)，而通过O求对状态序列的最大似然估计,与贝叶斯决策的最小错误率决策相当。<br>
+          <br>
+          <br>
+          <span class="explaination">问答第6题</span><br>
+          　　答：协方差矩阵为<img src="../../../images/image_content/chormeless/exa20005.gif" width="77" height="54" align="absmiddle">，则<br>
+          　　1） 对角元素是各分量的方差，非对角元素是各分量之间的协方差。<br>
+          　　2） 主分量，通过求协方差矩阵的特征值，用<img src="../../../images/image_content/chormeless/exa20006.gif" width="102" height="52" align="absmiddle">得<img src="../../../images/image_content/chormeless/exa20007.gif" width="77" height="39" align="absmiddle">，则<img src="../../../images/image_content/chormeless/exa20008.gif" width="45" height="56" align="absmiddle">，相应的特征向量为：<img src="../../../images/image_content/chormeless/exa20009.gif" width="38" height="39" align="absmiddle">，对应特征向量为<img src="../../../images/image_content/chormeless/exa20010.gif" width="76" height="53" align="absmiddle">，对应<img src="../../../images/image_content/chormeless/exa20011.gif" width="34" height="54" align="absmiddle">。<br>
+          这两个特征向量即为主分量。<br>
+          　　3） K-L变换的最佳准则为：<br>
+          　　对一组数据进行按一组正交基分解，在只取相同数量分量的条件下，以均方误差计算截尾误差最小。<br>
+          　　4） 在经主分量分解后，协方差矩阵成为对角矩阵，因而各主分量间相关消除。<br>
+          <br>
+          <br>
+          <span class="explaination">问答第7题</span><br>
+          　　答：<br>
+          　　1、求数据集的主分量是非监督学习方法；<br>
+          　　2、汉字识别对待识别字符加上相应类别号——有监督学习方法；<br>
+          　　3、自组织特征映射——将高维数组按保留近似度向低维映射——非监督学习；<br>
+          　　4、CT图像分割——按数据自然分布聚类——非监督学习方法；<br>
+          <br>
+          <span class="explaination">问答第8题</span><br>
+          　　答：线性分类器三种最优准则：<br>
+          　　<strong>Fisher准则</strong>：根据两类样本一般类内密集, 类间分离的特点，寻找线性分类器最佳的法线向量方向，使两类样本在该方向上的投影满足类内尽可能密集，类间尽可能分开。<br>
+          　　该种度量通过类内离散矩阵Sw和类间离散矩阵Sb实现。<br>
+          　　<strong>感知准则函数</strong>：准则函数以使错分类样本到分界面距离之和最小为原则。<br>
+          　　其优点是通过错分类样本提供的信息对分类器函数进行修正，这种准则是人工神经元网络多层感知器的基础。<br>
+          　　<strong>支持向量机</strong>：基本思想是在两类线性可分条件下，所设计的分类器界面使两类之间的间隔为最大, 它的基本出发点是使期望泛化风险尽可能小。<br>
+          <br>
+          <span class="explaination">问答第9题<br>
+          　　</span><span class="text">答：按题意要求<br>
+          　　1） H1与H2将空间划分成四个部分，按使H1与H2大于零与小于零表示成四个区域，而第一类属于(－＋)区域，为方便起见，令<img src="../../../images/image_content/chormeless/exa20014.gif" width="145" height="26" align="absmiddle">则第一类在(＋＋)区域。用双层感知器，神经元用<img src="../../../images/image_content/chormeless/exa20015.gif" width="21" height="18" align="absmiddle">域值，则在第一类样本输入时，两隐层结点的输出均为＋1，其余则分别为(＋－)，(――)，(－＋), 
+          故可按图设置域值。<br>
+          　　<img src="../../../images/image_content/chormeless/exa20016.gif" width="275" height="347" align="absmiddle"><br>
+          　　2） 用凹函数的并表示：<img src="../../../images/image_content/chormeless/exa20017.gif" width="71" height="25" align="absmiddle">或表示成<img src="../../../images/image_content/chormeless/exa20018.gif" width="139" height="26" align="absmiddle">，如<img src="../../../images/image_content/chormeless/exa20019.gif" width="50" height="24" align="absmiddle">，则<img src="../../../images/image_content/chormeless/exa20020.gif" width="42" height="21" align="absmiddle">，否则<img src="../../../images/image_content/chormeless/exa20021.gif" width="46" height="21" align="absmiddle"><br>
+          </span><span class="explaination"><br>
+          问答第10题<br>
+          　　</span><span class="text">答：设待求<img src="../../../images/image_content/chormeless/exa20027.gif" width="81" height="52" align="absmiddle">，待求<img src="../../../images/image_content/chormeless/exa20028.gif" width="72" height="51" align="absmiddle"><br>
+          　　由于<img src="../../../images/image_content/chormeless/exa20022.gif" width="65" height="18" align="absmiddle">，先验概率相等。<br>
+          　　则基于最小错误率的Bayes决策规则，在两类决策面分界面上的样本X应满足<br>
+          　　<img src="../../../images/image_content/chormeless/exa20029.gif" width="288" height="27" align="absmiddle">（1）<br>
+          　　其中按题意<img src="../../../images/image_content/chormeless/exa20030.gif" width="66" height="53" align="absmiddle">，<img src="../../../images/image_content/chormeless/exa20031.gif" width="109" height="81" align="absmiddle">（注：为方便起见，在下面计算中先去掉系数4/3）。<br>
+          　　按题意分界面由x1=3及x2=0两条直线构成，则分界面方程为<br>
+          　　<img src="../../../images/image_content/chormeless/exa20032.gif" width="205" height="27" align="absmiddle"> 
+          (2)<br>
+          　　对（1）式进行分解有<br>
+          　　<img src="../../../images/image_content/chormeless/exa20033.gif" width="243" height="61" align="absmiddle"><br>
+          　　 <br>
+          　　得<img src="../../../images/image_content/chormeless/exa20034.gif" width="264" height="50" align="absmiddle"> 
+          （3）<br>
+          　　由（3）式第一项得<br>
+          　　<img src="../../../images/image_content/chormeless/exa20035.gif" width="299" height="76" align="absmiddle">（4）<br>
+          　　将（4）式与（2）式对比可知<br>
+          　　a=1,c=1<br>
+          　　又由c=1与<img src="../../../images/image_content/chormeless/exa20022.gif" width="65" height="18" align="absmiddle">，得b2=1/4，b有两种可能，即b=1/2或b=-1/2，</span><br>
+          　　如果b=1/2，则表明<span class="text"><img src="../../../images/image_content/chormeless/exa20022.gif" width="65" height="18" align="absmiddle"></span>，此时分界面方程应为线性，与题意不符，只有b=-1/2<br>
+          　　则（4）式为：2X<sub>1</sub>X<sub>2</sub>　　（5）<br>
+          　　将相应结果带入（3）式第二项有<br>
+          　　<img src="../../../images/image_content/chormeless/exa20037.gif" width="296" height="189" align="absmiddle">（6）<br>
+          　　则结合（5）（2）应有<br>
+          　　<img src="../../../images/image_content/chormeless/exa20038.gif" width="109" height="37" align="absmiddle">，则 
+          <img src="../../../images/image_content/chormeless/exa20039.gif" width="74" height="30" align="absmiddle">（7）<br>
+          　　<img src="../../../images/image_content/chormeless/exa20040.gif" width="124" height="44" align="absmiddle"> 
+          <br>
+          　　解得<img src="../../../images/image_content/chormeless/exa20041.gif" width="130" height="29" align="absmiddle">， 
+          <br>
+          　　由<img src="../../../images/image_content/chormeless/exa20042.gif" width="150" height="60" align="absmiddle">得<img src="../../../images/image_content/chormeless/exa20043.gif" width="113" height="51" align="absmiddle"><span class="explaination"><br>
+          <br>
+          </span><br>
+          <br>
+        </p>
+        </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

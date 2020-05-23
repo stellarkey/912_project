@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>模式识别试题二</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../examination1/css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000">
+
+<center>
+  <span class="icon"><br>
+  </span><span class="part">模式识别　试卷二</span><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b> 问答题</b><br>
+            <br>
+            　　一、 试问“模式”与“模式类”的含义。如果一位姓王的先生是位老年人，试问“王先生”和“老头”谁是模式，谁是模式类？<br>
+            <textarea name=textarea cols=50 rows=5></textarea>
+          </p>
+          <p>　　二、试说明Mahalanobis距离平方的定义，到某点的Mahalanobis距离平方为常数的轨迹的几何意义，它与欧氏距离的区别与联系。<br>
+            <textarea name=textarea2 cols=50 rows=5></textarea>
+          </p>
+          <p>　　三、试说明用监督学习与非监督学习两种方法对道路图像中道路区域的划分的基本做法，以说明这两种学习方法的定义与它们间的区别。<br>
+            <textarea name=textarea3 cols=50 rows=5></textarea>
+          </p>
+          <p>　　四、试述动态聚类与分级聚类这两种方法的原理与不同。<br>
+            <textarea name=textarea4 cols=50 rows=5></textarea>
+          </p>
+          <p>　　五、如果观察一个时序信号时在离散时刻序列得到的观察量序列表示为<img src="../../../images/image_content/chormeless/exa20003.gif" width="103" height="24" align="absmiddle">，而该时序信号的内在状态序列表示成<img src="../../../images/image_content/chormeless/exa20004.gif" width="93" height="20" align="absmiddle">。如果计算在给定O条件下出现S的概率，试问此概率是何种概率。如果从观察序列来估计状态序列的最大似然估计，这与Bayes决策中基于最小错误率的决策有什么关系。<br>
+            <textarea name=textarea5 cols=50 rows=5></textarea>
+          </p>
+          <p>　　六、已知一组数据的协方差矩阵为<img src="../../../images/image_content/chormeless/exa20005.gif" width="77" height="54" align="absmiddle">，试问<br>
+            　　1． 协方差矩阵中各元素的含义。<br>
+            　　2． 求该数组的两个主分量。<br>
+            　　3． 主分量分析或称K-L变换，它的最佳准则是什么？<br>
+            　　4． 为什么说经主分量分析后，消除了各分量之间的相关性。<br>
+            <textarea name=textarea6 cols=50 rows=5></textarea>
+          </p>
+          <p>　　七、试说明以下问题求解是基于监督学习或是非监督学习：<br>
+            　　1. 求数据集的主分量<br>
+            　　2. 汉字识别<br>
+            　　3. 自组织特征映射<br>
+            　　4. CT图像的分割<br>
+            <textarea name=textarea7 cols=50 rows=5></textarea>
+          </p>
+          <p>　　八、试列举线性分类器中最著名的三种最佳准则以及它们各自的原理。<br>
+            <textarea name=textarea8 cols=50 rows=5></textarea>
+          </p>
+          <p>　　九、在一两维特征空间，两类决策域由两条直线H1和H2分界，<br>
+            　　其中<img src="../../../images/image_content/chormeless/exa20012.gif" width="274" height="22" align="absmiddle"> 
+            <br>
+            　　而包含H1与H2的锐角部分为第一类，其余为第二类。<br>
+            　　试求： <br>
+            　　1．用一双层感知器构造该分类器<br>
+            　　2．用凹函数的并构造该分类器<br>
+            　　<img src="../../../images/image_content/chormeless/exa20013.gif" width="316" height="261"> 
+            <br>
+            <textarea name=textarea9 cols=50 rows=5></textarea>
+          </p>
+          <p>　　十、设有两类正态分布的样本基于最小错误率的贝叶斯决策分界面，分别为X<sub>2</sub>=0，以及X<sub>1</sub>=3，其中两类的协方差矩阵<img src="../../../images/image_content/chormeless/exa20022.gif" width="65" height="18" align="absmiddle">，先验概率相等，并且有<img src="../../../images/image_content/chormeless/exa20023.gif" width="110" height="88" align="absmiddle">，<img src="../../../images/image_content/chormeless/exa20024.gif" width="66" height="60" align="absmiddle"> 
+            。<br>
+            　　试求：<img src="../../../images/image_content/chormeless/exa20025.gif" width="20" height="25" align="absmiddle">以及<img src="../../../images/image_content/chormeless/exa20026.gif" width="19" height="22" align="absmiddle">。<br>
+            <textarea name=textarea10 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('examination_a2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+          </p>
+          </form>
+        </td>
+  </tr>
+</table></center>
+
+</body>
+</html>
