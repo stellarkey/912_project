@@ -1,0 +1,55 @@
+时间：2003年6月26日下午2：30－4：30
+
+一、简答题：
+1.（10分）描述双挂起进程模块和进程状态转换，以及它与UNIX系统的状态转换的区别
+2.（15分）通过算法实例说明，在虚拟存储管理系统中如何调整系统中的进程总数，每
+个进程的占用物理内存大小和每个进程逻辑地址空间中哪些逻辑页放在内存中。
+3.（15分）描述UNIX文件系统管理空闲空间的成组链接法，即如何组织空闲空间块，及
+它的空闲空间块分配和回收过程。
+4.（10分）描述磁盘I/O调度中的循环扫描算法和双队列扫描算法。
+二、问答题：
+5.（25分）
+假设操作系统只提供了信号量机制，并没有提供管程机制。1）试基于操作系统提供的
+信号量类来实现管程类。要求用C++语言并给出必要注释。操作系统提供的信号量类为
+SemaphoreClass，要求实现的管理类为MonitorClass。
+class SemaphoreClass
+{
+public:
+    SemaphoreClass(LONG cInitialValue);
+    void P(void);
+    void V(void);
+};
+class MonitorClass
+{
+  public:
+    MonitorClass(void);
+    void MonitorEnter(void);
+    void MonitorLeave(void);
+    void MonitorWait(SemaphoreClass hsemCondition, int *lpConditionCount);
+    void MonitorSignal(SemaphoreClass hsemCondition, int *lpConditionCount);
+};
+
+2)
+所谓"生产者――消费者"问题是指，若干进程通过有限的共享缓冲区交换数据，其中"生
+产者"进程不断写入，而"消费者"进程不断读出，共享缓冲区共有N个，任何时刻只能有一
+个进程可对共享缓冲区进行操作，试用管程机制来解决"生产者--消费者"问题。给出
+ProducerConsumerClass类的实现。
+class ProducerConsumerClass
+{
+  public:
+    void BufferWrite(void);   //"生产者"进程的写操作
+    void BufferRead(void);   //"消费者"进程的读操作
+};  
+
+6.（25分）
+1）为了提高处理机的存储访问速度和存储容量，通常在计算机系统中都包括了由高速缓
+存、内存和磁盘等多种存储介质。试说明在一个由上述三级存储介质组成的虚拟存储系统
+中处理机访问进程逻辑地址空间中存储单元的过程。
+2) Windows Server 2003 操作系统在Intel x86系列处理机上的虚拟存储系统中，使用32
+位地址，物理页面大小为4KB，每个页表项占4B，采用两级页表进行地址映射，约定两级
+页表在逻辑地址空间中占用从0XC000 0000到0XC03F FFFF的区域。试问：
+A）它的页目录项（PDE）有多少个？
+B）它的页表项（PTE）有多少个？
+C）页目录在逻辑地址空间中起始地址是多少？
+D）如果在访问逻辑地址时出现缺页，系统会分配一个物理页面，并需要修改相应的页表项。逻辑地址0X77F61016对应的页
+目录项和页表项在逻辑地址空间中的起始地址分别是多少？（建议给出计算过程）
