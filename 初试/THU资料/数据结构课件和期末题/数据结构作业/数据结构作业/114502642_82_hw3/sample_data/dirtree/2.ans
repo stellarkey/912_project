@@ -1,0 +1,39 @@
+.udev
+  db
+  failed
+bus
+  usb
+    001
+    002
+    003
+    004
+    005
+    006
+cpu
+  0
+  1
+  10
+  11
+  12
+  13
+  14
+  15
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+disk
+  by-id
+  by-label
+  by-path
+  by-uuid
+input
+mapper
+net
+pts
+shm
+xen
