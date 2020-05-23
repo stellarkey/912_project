@@ -1,0 +1,29 @@
+A:link
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: #0033CC;
+    TEXT-DECORATION: underline
+}
+.menu {  font-family: "宋体", "隶书", "楷体_GB2312"; font-size: 9pt; text-decoration: none; color: #FFFFFF}
+.chap {  font-family: "宋体", "隶书", "楷体_GB2312"; font-size: 10px; color: #000000; text-decoration: none; font-weight: bold; line-height: 20px}
+.text {  font-family: "宋体"; font-size: 9pt; line-height: 22px; color: #000000;}
+.explaination {  font-family: "宋体"; font-size: 9pt; line-height: 22px; color: #003399; text-decoration: none}
+.section {  font-family: "宋体"; font-size: 9.5pt; text-decoration: none; font-weight: bold; color: #000000; line-height: 20px}
+.part {  font-family: "宋体"; font-size: 9pt; color: #000000; text-decoration: none; line-height: 20px; font-weight: bold}
+
+.icon {  font-size: 10pt}
+.pbox {BORDER-RIGHT: 1px solid; BORDER-TOP: 1px solid; BORDER-LEFT: 1px solid; BORDER-BOTTOM: 1px solid; font-family:Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; BACKGROUND-COLOR: #E1F0FF;}
