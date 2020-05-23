@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　不难发现，在项目集I<sub><font size="-2">2</font></sub>中存在移进项目[S→L·＝R]和归约项目[R→L·]。因此该文法不是LR(0)文法。再考察是否能用SLR(1)方法解决，这就要看R的后跟符集合中是否包含'='，由文法的产生式规则可求出FOLLOW(R)={#，＝}，所以FOLLOW(R)∩{=} 
+      = {=，#}∩{=} ≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，因而在I<sub><font size="-2">2</font></sub>中存在的移进-归约冲突不能用SLR(1)方法解决，说明该文法不是SLR(1)文法，因此，进一步构造它的LR(1)项目集规范族，以判定是否是LR(1)文法或LALR(1)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

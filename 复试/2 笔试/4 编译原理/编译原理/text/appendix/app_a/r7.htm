@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> procedure block(lev,tx:integer;fsys:symset);<br>
+      　var dx:integer; (*data allocation index*)<br>
+      　　　tx0:integer;(*initial table index*)<br>
+      　　　cx0:integer;(*initial code index*) 
+      <p>procedure enter(k:object);<br>
+        　begin (*enter object into table*)<br>
+        　　tx∶=tx+1;<br>
+        　　with table[tx] do<br>
+        　　　begin<br>
+        　　　　name∶=id;<br>
+        　　　　kind∶=k;<br>
+        　　　　case k of<br>
+        　　　　　constant: begin<br>
+        　　　　　　　　　　　if num&gt;amax<br>
+        　　　　　　　　　　　　then<br>
+        　　　　　　　　　　　　　begin <br>
+        　　　　　　　　　　　　　　error(31);<br>
+        　　　　　　　　　　　　　　num∶=0;<br>
+        　　　　　　　　　　　　　end;<br>
+        　　　　　　　　　　　val∶=num<br>
+        　　　　　　　　　　end;<br>
+        　　　　　variable: begin<br>
+        　　　　　　　　　　　level∶=lev;<br>
+        　　　　　　　　　　　adr∶=dx;<br>
+        　　　　　　　　　　　dx∶=dx+1;<br>
+        　　　　　　　　　　end;<br>
+        　　　　　procedur: level∶=lev<br>
+        　　　　end<br>
+        　　　end<br>
+        　end(*enter*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

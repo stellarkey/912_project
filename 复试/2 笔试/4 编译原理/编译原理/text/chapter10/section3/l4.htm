@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 
+      <p><b>10.3.3 过程参数</b><br>
+        　　一个过程(函数)可以作为参数传递，比如图10.22的PASCAL程序中，过程c把f作为参数传递给b，而b通过引用形参h调用f。我们要注意的是：函数f有一非局部量m，图中特地将m圈起来。但m的作用域并不包括b的过程体。b中的语句writeln（h（2））激活f，是因为形参h引用f，writeln打印的是调用f（2）的结果。那么b激活f时，怎样设置f活动记录的存取链（display）呢？答案是，当一个嵌套过程作为参数传递时，必须连同它的存取链（display）一同传递过去。图10.23说明了这点，当过程c传递f时，c可以决定f的存取链，或者说f的存取链或display可以根据c的存取链或display来建立。c必须把f连同f的存取链一起传给b，那么在b中激活f时，b活动记录的存取链就可以正确设置了。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>小结</b><br>
+      　　- LR分析需要构造识别活前缀的有穷自动机<br>
+      　　- 我们可以把文法的终结符和非终结符都看成有穷自动机的输入符号，每次把一个符号进栈看成已识别过了该符号，同时状态进行转换，当识别到可归前缀时，相当于在栈中形成句柄，认为达到了识别句柄的终态。<br>
+      　　- 已经有了活前缀如何构造有限自动机？<br>
+      　　- 对每个可归前缀都构造有限自动机，然后用ε弧连接加上开始状态X，再确定化，就得到识别活前缀的有穷自动机。<br>
+      　　- 活前缀及其可归前缀如何计算？<br>
+      　　　·由文法的产生式直接构造识别活前缀和可归前缀的有限自动机。<br>
+      　　　·可归前缀在理论上很严格的计算方法（感兴趣的学员可参看书面教材7.2.3节）。 </td>
+  </tr>
+</table>
+</body>
+</html>

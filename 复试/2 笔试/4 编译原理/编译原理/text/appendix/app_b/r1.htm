@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.1 LEX概述</b><br>
+        　　程序设计语言从机器语言发展到今天的像PASCAL、C等这样的高级语言，使人们可以摆脱与机器有关的细节进行程序设计。但是用高级语言写程序时程序员必须在程序中详尽地告诉计算机系统怎样去解决某个问题，这在某种程度上说也是一件很复杂的工作。人们希望有新的语言--非常高级的语言，用这种语言，程序员仅仅需要告诉计算机系统要解决什么问题，计算机系统能自动地从这个问题的描述去寻求解决问题的途径，或者说将这个问题的描述自动地转换成用某种高级语言如C?FORTRAN表示的程序?这个程序就可以解决给定的问题。这种希望虽然还没有能够完全变成现实，但是在某些具体的问题领域里已经部分地实现了。这里要介绍的LEX和下一章要介绍的YACC就是在编译程序设计这个领域里的两种非常高级的语言，用它们可以很方便的描述词法分析器和语法分析器，并自动地产生出相应的高级语言(C)的程序。<br>
+     
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图B.1 LEX示意图</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/index/app_1.gif" width="285" height="77"></td>
+        </tr>
+      </table>
+       　　LEX是一个词法分析器(扫描器)的自动产生系统，它的示意图如图B.1。<br>
+        　　LEX源程序是用一种面向问题的语言写成的?这个语言的核心是正规表达式(正规式)，用它描述输入串的词法结构。在这个语言中用户还可以描述当某一个词形被识别出来时要完成的动作，例如在高级语言的词法分析器中，当识 
+        别出一个关键字时，它应该向语法分析器返回该关键字的内部编码。LEX并不是一个完整的语言，它只是某种高级语言(称为LEX的宿主语言)的扩充，因此LEX没有为描述动作设计新的语言，而是借助其宿主语言来描述动作。我们只介绍C作为LEX的宿主语言时的使用方法，在UNIX系统中，FORTRAN语言的一种改进形式RATFOR也可以做LEX的宿主语言。<br>
+        　　LEX自动地把表示输入串词法结构的正规式及相应的动作转换成一个宿主语言的程序，即词法分析程序，它有一个固定的名字yylex，在这里yylex是一个C语言的程序。<br>
+        　　yylex将识别出输入串中的词形，并且在识别出某词形时完成指定的动作。<br>
+        　　看一个简单的例子:写一个LEX源程序，将输入串中的小写字母转换成相应的大写字母。<br>
+        　　程序如下:<br>
+        　　%%<br>
+        　　[a-z] Printf(&quot;%c&quot;，yytext[0]+′A′-′a′);<br>
+        　　上述程序中的第一行%%是一个分界符，表示识别规则的开始?第二行就是识别规则。左边是识别小写字母的正规式，右边就是识别出小写字母时采取的动作，将小写字母转换成相应的大写字母。<br>
+        　　LEX的工作原理是将源程序中的正规式转换成相应的确定有限自动机，而相应的动作则插入到yylex中适当的地方，控制流由该确定有限自动机的解释器掌握，对不同的源程序这个解释器是相同的?关于LEX工作原理的详细介绍请参阅本书第4章。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

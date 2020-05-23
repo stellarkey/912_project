@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① 对各基本块的符号表中的&quot;待用信息&quot;栏和&quot;活跃信息&quot;栏置初值，即把&quot;待用信息&quot;栏置&quot;非待用&quot;，对&quot;活跃信息&quot;栏按在基本块出口处是否为活跃而置成&quot;活跃&quot;或&quot;非活跃&quot;。<br>
+      　　现假定变量都是活跃的，临时变量都是非活跃的。<br>
+      　　② 从基本块出口到基本块入口由后向前依次处理每个四元式。对每个四元式i：A:=B op C，依次执行下述步骤：<br>
+      　　a) 把符号表中变量A的待用信息和活跃信息附加到四元式i上。<br>
+      　　b) 把符号表中变量A的待用信息栏和活跃信息栏分别置为 &quot;非待用&quot; 和 &quot;非 活跃&quot;。<br>
+      　　由于在i中对A的定值只能在i以后的四元式才能引用，因而对i以前的四元式来说A是不活跃也不可能是待用的。<br>
+      　　c) 把符号表中B和C的待用信息和活跃信息附加到四元式i上。<br>
+      　　d) 把符号表中B和C的待用信息栏置为&quot;i&quot;，活跃信息栏置为&quot;活跃&quot;。<br>
+      　　注意，以上a)和b)，c)和d)的次序不能颠倒。<br>
+      　　<font color="#0000FF">例</font> 若用A，B，C，D表示变量，用T，U，V表示中间变量，有四元式如下：<br>
+      　　(1) T∶=A-B<br>
+      　　(2) U∶=A-C<br>
+      　　(3) V∶=T+U<br>
+      　　(4) D∶=V+U<br>
+      　　其名字表中的待用信息和活跃信息如表12.2，用'F'表示 &quot;非待用&quot; 和&quot;非活跃&quot;，用'L'表示活跃,用(1)、(2)、(3)、(4)表示四元式序号。</td>
+  </tr>
+</table>
+</body>
+</html>

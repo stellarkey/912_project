@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td><b>3.3.4 确定有穷自动机的化简</b><br>
+      　　我们说一个有穷自动机是化简了的，即是说，它没有多余状态并且它的状态中没有两个是互相等价的。一个有穷自动机可以通过消除多余状态和合并等价状态而转换成一个最小的与之等价的有穷自动机。<br>
+      　　所谓有穷自动机的多余状态，是指这样的状态：从该自动机的开始状态出发，任何输入串也不能到达的那个状态。例如图4.7(a)的有穷自动机M中的状态s<sub><font size="-2">4</font></sub>便是多余状态。<br>
+      　　在有穷自动机中，两个状态s和t等价的条件是：<br>
+      　　① 一致性条件 状态s和t必须同时为可接受状态或不可接受状态。<br>
+      　　② 蔓延性条件 对于所有输入符号，状态s和状态t必须转换到等价的状态里。<br>
+      　　如果有穷自动机的状态s和t不等价，则称这两个状态是可区别的。显然在图4.6的DFA M中，状态0和4是可区别的，因为状态4是可接受态(终态)，而0是不可接受态。又如状态2和3是可区别的，因为状态2读出b后到达2，状态3读出b后到达4，而2和4是不等价的。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

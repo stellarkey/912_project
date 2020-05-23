@@ -1,0 +1,151 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          　　PL/0语言允许过程嵌套定义和递归调用，它的编译程序在运行时采用了栈式动态存储管理。（数组CODE存放的只读目标程序，它在运行时不改变。）运行时的数据区S是由解释程序定义的一维整型数组，解释执行时对数据空间S的管理遵循后进先出规则，当每个过程(包括主程序)被调用时，才分配数据空间，退出过程时，则所分配的数据空间被释放。应用动态链和静态链的方式分别解决递归调用和非局部变量的引用问题。<br>
+          <b>问答第2题</b><br>
+          　　程序执行到赋值语句b∶=10时运行栈的布局示意图为：<br>
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td align="center"><img src="../../img/img1.gif" width="241" height="389"></td>
+          </tr>
+        </table>
+         <b>问答第3题</b><br>
+        　　题2中当程序编译到r的过程体时的名字表table的内容为：<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">name</td>
+            <td align="center">kind</td>
+            <td align="center">level/val</td>
+            <td align="center">adr</td>
+            <td align="center">size</td>
+          </tr>
+          <tr> 
+            <td align="center">x</td>
+            <td align="center">variable</td>
+            <td align="center">0</td>
+            <td align="center">dx</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center" height="20">y</td>
+            <td align="center" height="20">variable</td>
+            <td align="center" height="20">0</td>
+            <td align="center" height="20">dx+1</td>
+            <td align="center" height="20">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">p</td>
+            <td align="center">procedure</td>
+            <td align="center">0</td>
+            <td align="center">过程p的入口（待填）</td>
+            <td align="center">5</td>
+          </tr>
+          <tr> 
+            <td align="center">a</td>
+            <td align="center">variable</td>
+            <td align="center">1</td>
+            <td align="center">dx</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">q</td>
+            <td align="center">procedure</td>
+            <td align="center">1</td>
+            <td align="center">过程q的入口</td>
+            <td align="center">4</td>
+          </tr>
+          <tr> 
+            <td align="center">s</td>
+            <td align="center">procedure</td>
+            <td align="center">1</td>
+            <td align="center">过程s的入口（待填）</td>
+            <td align="center">5</td>
+          </tr>
+          <tr> 
+            <td align="center">c</td>
+            <td align="center">variable</td>
+            <td align="center">2</td>
+            <td align="center">dx</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">d</td>
+            <td align="center">variable</td>
+            <td align="center">2</td>
+            <td align="center">dx</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">r</td>
+            <td align="center">procedure</td>
+            <td align="center">2</td>
+            <td align="center">过程r的入口</td>
+            <td align="center">5</td>
+          </tr>
+          <tr> 
+            <td align="center">e</td>
+            <td align="center">variable</td>
+            <td align="center">3</td>
+            <td align="center">dx</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center">f</td>
+            <td align="center">variable</td>
+            <td align="center">3</td>
+            <td align="center">dx+1</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+        </table>
+        <b>注意：</b>q和s是并列的过程，所以q定义的变量b被覆盖。<br>
+        <b>问答第4题</b><br>
+        　　栈顶指针T，最新活动记录基地址指针B，动态链指针DL，静态链指针SL与返回地址RA的用途说明如下： <br>
+        　　T： 栈顶寄存器T指出了当前栈中最新分配的单元(T也是数组S的下标)。<br>
+        　　B：基址寄存器，指向每个过程被调用时，在数据区S中给它分配的数据段起 始 地址，也称基地址。<br>
+        　　SL： 静态链，指向定义该过程的直接外过程（或主程序）运行时最新数据段的基地址，用以引用非局部（包围它的过程）变量时，寻找该变量的地址。<br>
+        　　DL： 动态链，指向调用该过程前正在运行过程的数据段基地址，用以过程执行结束释放数据空间时，恢复调用该过程前运行栈的状态。 <br>
+        　　RA： 返回地址，记录调用该过程时目标程序的断点，即调用过程指令的下一条指令的地址，用以过程执行结束后返回调用过程时的下一条指令继续执行。<br>
+        　　在每个过程被调用时在栈顶分配3个联系单元，用以存放SL，DL， RA。 <br>
+        <b>问答第5题</b><br>
+        　　PL/0编译程序所产生的目标代码中有3条非常重要的特殊指令，这3条指令在code中的位置和功能以及所完成的操作说明如下：<br>
+        　　INT 0 A<br>
+        　　在过程目标程序的入口处，开辟A个单元的数据段。A为局部变量的个数+3。 <br>
+        　　OPR 0 0<br>
+        　　在过程目标程序的出口处，释放数据段（退栈），恢复调用该过程前正在运行的过程的数据段基址寄存器B和栈顶寄存器T的值，并将返回地址送到指令地址寄存器P中，以使调用前的程序从断点开始继续执行。<br>
+        　　CAL L A<br>
+        　　调用过程，完成填写静态链、动态链、返回地址，给出被调用过程的基地址值，送入基址寄存器B中，目标程序的入口地址A的值送指令地址寄存器P中，使指令从A开始执行。<br>
+        <b>问答第6题</b><br>
+        　　对PL/0语言作如下功能扩充时的语法图和EBNF的语法描述如下： <br>
+        　　(1) 扩充条件语句的语法图为：<br>
+        <img src="../../img/img3.gif" width="363" height="53"> <br>
+        　　EBNF的语法描述为： 〈条件语句〉::= if〈条件〉then〈语句〉[else〈语句〉] <br>
+        　　(2) 扩充repeat语句的语法图为： <br>
+        <img src="../../img/img4.gif" width="352" height="69"> <br>
+        　　EBNF的语法描述为： 〈 重复语句〉::= repeat〈语句〉{；〈语句〉}until〈条件〉 <br>
+        <!--czp-wenda-daan-->
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

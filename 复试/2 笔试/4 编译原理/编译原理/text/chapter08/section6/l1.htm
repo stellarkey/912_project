@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>8.6 控制语句的翻译<br>
+      8.6.1条件转移</b><br>
+      　　考虑if then，if then else和while do语句，在图8.12中已给出了它们的代码结构。这里我们使用下面文法G[S]定义这些语句：<br>
+      　　G[S]<br>
+      　　（1）　S→if E then S<br>
+      　　（2）　|　if E then S else S<br>
+      　　（3）　|　while E do S<br>
+      　　（4）　|　begin L end<br>
+      　　（5）　|　A<br>
+      　　（6）　L→L；　S<br>
+      　　（7）　|S<br>
+      　　其中各非终结符号的意义是：<br>
+      　　S--语句<br>
+      　　L--语句串<br>
+      　　A--赋值句<br>
+      　　E--布尔表达式</td>
+  </tr>
+</table>
+</body>
+</html>

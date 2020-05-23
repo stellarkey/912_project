@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>2.3 PL/0编译程序的词法分析</b> <br>
+      　　PL/0的词法分析程序GETSYM(图2.5)是一个独立的过程，其功能是为语法分析提供单词用的，是语法分析的基础，它把输入的字符串形式的源程序分割成一个个单词符号。为此PL/0编译程序设置了<b>三个全程量的公用单元</b>如下：<br>
+      　　SYM：存放每个单词的类别，用内部编码形式表示。<br>
+      　　ID：存放用户所定义的标识符的值。即标识符字符串的机内表示。<br>
+      　　NUM：存放用户定义的数。<br>
+      　　<b>单词的种类有五种</b>。<br>
+      　　基本字：也可称为保留字或关键字，如BEGIN，END，IF，THEN等。<br>
+      　　运算符：如：+、-、*、／、∶=、#、＞=、＜=等。<br>
+      　　标识符：用户定义的变量名、常数名、过程名。<br>
+      　　常数：如：10，25，100等整数。<br>
+      　　界符：如：'，'、'.'、'；'、'('、')'等。<br>
+      　　如果我们把基本字、运算符、界符称为语言固有的单词，而对标识符、常数称为用户定义的单词。那么经词法分析程序分出的单词，对语言固有的单词只给出类别存放在SYM中，而对用户定义的单词(标识符或常数)既给类别又给值，其类别放在SYM中，值放在ID或NUM中，全部单词种类由编译程序定义的纯量类型SYMBOL给出，也可称为语法的词汇表。如下面提到的IFSYM，THENSYM，IDENT，NUMBER均属SYMBOL中的元素。</td>
+  </tr>
+</table>
+</body>
+</html>

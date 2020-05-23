@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>var fa:text;<br>
+      　　fa1,fa2:text;<br>
+      　　listswitch:boolean;　(*true set list object code*)<br>
+      　　ch:char;　　　　　　 (*last char read*) <br>
+      　　sym:symbol;　　　　　(*last symbol read*)<br>
+      　　id:alfa;　　　　　 　(*last identifier read*)<br>
+      　　num:integer;　　　　 (*last number read*)<br>
+      　　cc:integer;　　　　　(*character count*)<br>
+      　　ll:integer;　　　　　(*line length*)<br>
+      　　kk:integer;<br>
+      　　cx:integer;　　　　　(*code allocation index*)<br>
+      　　line:array[1..81] of char; <br>
+      　　a:alfa;<br>
+      　　code:array[0..cxmax] of instruction;<br>
+      　　word:array[1..norw] of alfa;<br>
+      　　wsym:array[1..norw] of symbol;<br>
+      　　ssym:array[′ ′..′^′] of symbol;<br>
+      　　　(*wirth uses &quot;arrar[char]&quot; here*)<br>
+      　　mnemonic:array[fct] of packed array[1..5] of char;<br>
+      　　declbegsys, statbegsys, facbegsys:symset;<br>
+      　　table:array[0..txmax] of record<br>
+      　　　　name:alfa;<br>
+      　　　　case kind:object of<br>
+      　　　　　constant:(val:integer);<br>
+      　　　　　variable,procedur:(level,adr,size:integer)<br>
+      (*&quot;size&quot; lacking in original. I think it belongs here*)<br>
+      end;<br>
+      fin,fout:text;<br>
+      fname:alfa;<br>
+      err:integer; </td>
+  </tr>
+</table>
+</body>
+</html>

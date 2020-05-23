@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在程序流图中，对任意两个结点m和n，如果从流图的首结点出发，到达n的任一通路都要经过m，则称m是n的必经结点，记为m DOM n。流图中结点n的所有必经结点的集合，称为结点n的必经结点集，记为D（n）。<br>
+      　　显然，循环的入口结点是循环中所有结点的必经结点。<br>
+      　　把DOM可以看作流图结点集上定义的一个关系，则由定义容易看出，它具有以下性质：<br>
+      　　1. 自反性：<br>
+      　　对流图中任意结点a，有a DOM a。<br>
+      　　2. 传递性：<br>
+      　　对流图中任意结点a、b和c。若a DOM b，b DOM c，则有a DOM c。<br>
+      　　3. 反对称性：<br>
+      　　若a DOM b且b DOM a，则必有a＝b。 <br>
+      　　因此，关系DOM是一个偏序关系。任何结点n的必经结点集是一个有序集。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　求图11.12中各结点的D（n）。<br>
+            　　直接由定义和DOM的性质，可以求得：<br>
+            　　D(1)={1}<br>
+            　　D(2)={1,2}<br>
+            　　D(3)={1,2,3}<br>
+            　　D(4)={1,2,4}<br>
+            　　D(5)={1,2,4,5}<br>
+            　　D(6)={1,2,4,6}<br>
+            　　D(7)={1,2,4,7}</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="151"> <b>五种单词符号：</b><br>
+      　- 保留字，关键字<br>
+      　- 标识符<br>
+      　- 常数（量）<br>
+      　- 运算符<br>
+      　- 界符 <br>
+      你能举出一些例子吗?<br>
+      　　词法分析程序所输出的单词符号常常采用以下二元式表示：(单词种别，单词自身的值)。单词的种别是语法分析需要的信息，而单词自身的值则是编译其它阶段需要的信息。比如在PASCAL的语句const 
+      i=25, yes=1；中的单词 25和1的种别都是常数，常数的值25和1对于代码生成来说，是必不可少的。有时，对某些单词来说，不仅仅需要它的值，还需要其它一些信息以便编译的进行。比如，对于标识符来说，还需要记载它的类别、层次还有其它属性，如果这些属性统统收集在符号表中，那么可以将单词的二元式表示设计成如下形式(标识符，指向该标识符所在符号表中位置的指针)，如上述语句中的单词i和yes的表示为：<br>
+      　　<font color="#0000FF">(标识符，指向i的表项的指针)<br>
+      　　(标识符，指向yes的表项的指针)</font><br>
+      　　单词的种别可以用整数编码表示，假如标识符编码为1，常数为2，保留字为3，运算符为4，界符为5，程序段 if i=5 then x∶=y；在经词法分析器扫描后输出的单词符号和它们的表示如下：<br>
+      　- 保留字if(3，'if')<br>
+      　- 标识符i(1，指向i的符号表入口)<br>
+      　- 等号=(4，'=')<br>
+      　- 常数5(2，'5')<br>
+      　- 保留字then(3，'then')<br>
+      　- 标识符x(1，指向x的符号表入口)<br>
+      　- 赋值号∶=(4，'∶=') <br>
+      　- 标识符 y(1，指向y的符号表入口)<br>
+      　- 分号；(5，'；') 　</td>
+  </tr>
+</table>
+</body>
+</html>

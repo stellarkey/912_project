@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　读者可能会提出为什么在PL/0语言编译程序中，每个过程的入口和出口并没做信息保留和恢复的处理，其原因是PL/0语言的编译程序是用PASCAL语言编写的。而PASCAL语言允许过程递归调用，因而每个过程的入口和出口由PASCAL语言编译程序的编译和运行机制进行了处理(PASCAL语言运行时存贮分配的结构类似PL/0，因此当一个过程退出运行之前它的局部信息都在运行栈中)。若PL/0编译程序采用FORTARN语言书写，则每个递归过程的入口和出口都要自己处理，因为FORTARN语言不允许递归调用。<br>
+      　　递归子程序法的缺点是：对文法要求高，必须满足LL(1)文法，当然在某些语言中个别产生式的推导当不满足LL(1)而满足LL(2)时，也可以采用多向前扫描一个符号的办法；它的另一个缺点是由于递归调用多，所以速度慢占用空间多，尽管这样，它还是许多高级语言，例如PASCAL，C等编译系统常常采用的语法分析方法。</td>
+  </tr>
+</table>
+</body>
+</html>

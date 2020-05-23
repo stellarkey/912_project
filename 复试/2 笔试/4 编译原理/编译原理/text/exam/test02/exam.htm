@@ -1,0 +1,220 @@
+<html>
+<head>
+<title>编译原理第二章习题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  <b>编译原理第二章习题</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+
+        <form>
+          <p><b>一、 问答题</b><br>
+            <br>
+            <b>问答第1题</b><br>
+            　　PL/0语言允许过程嵌套定义和递归调用，试问它的编译程序如何解决运行时的存储管理。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <b>问答第2题</b><br>
+            　　若PL/0编译程序运行时的存储分配策略采用栈式动态分配，并用动态链和静态链的方式分别解决递归调用和非局部变量的引用问题，试写出下列程序执行到赋值语句b∶=10时运行栈的布局示意图。 
+            <br>
+            　　var x,y;<br>
+            　　procedure p;<br>
+            　　　var a;<br>
+            　　　procedure q;<br>
+            　　　　var b; <br>
+            　　　　begin (q) <br>
+            　　　　　b∶=10; <br>
+            　　　　end (q); <br>
+            　　　procedure s; <br>
+            　　　　var c,d; <br>
+            　　　　procedure r; <br>
+            　　　　　var e,f;<br>
+            　　　　　begin (r) <br>
+            　　　　　　call q; <br>
+            　　　　　end (r); <br>
+            　　　　begin (s) <br>
+            　　　　　call r; <br>
+            　　　　end (s); <br>
+            　　　begin (p)<br>
+            　　　　call s; <br>
+            　　　end (p); <br>
+            　　begin (main) <br>
+            　　　call p; <br>
+            　　end (main).<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <b>问答第3题</b><br>
+            　　写出题2中当程序编译到r的过程体时的名字表table的内容。<br>
+          <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+            <tr> 
+              <td align="center">name</td>
+              <td align="center">kind</td>
+              <td align="center">level/val</td>
+              <td align="center">adr</td>
+              <td align="center">size</td>
+            </tr>
+            <tr> 
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+          </table>
+           
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+          <b>问答第4题</b><br>
+            　　指出栈顶指针T，最新活动记录基地址指针B，动态链指针DL，静态链指针SL与返回地址RA的用途。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+          <b>问答第5题</b><br>
+          　　PL/0编译程序所产生的目标代码是一种假想栈式计算机的汇编语言，请说明该汇编语言中下列指令各自的功能和所完成的操作。<br>
+          　　· INT 0 A <br>
+          　　· OPR 0 0 <br>
+          　　· CAL L A<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+          <b>问答第6题</b><br>
+          　　给出对PL/0语言作如下功能扩充时的语法图和EBNF的语法描述。<br>
+          　　(1) 扩充条件语句的功能使其为： <br>
+          　　if〈条件〉then〈语句〉[else〈语句〉]<br>
+          　　(2) 扩充repeat语句为：<br>
+          　　repeat〈语句〉{；〈语句〉}until〈条件〉<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <!--czp-wenda-timu-->
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+        </form>     
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

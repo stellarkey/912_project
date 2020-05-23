@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>(5) LR(0)分析器的工作过程</b><br>
+      　　对一个文法构造了它的LR(0)分析表后就可以在LR分析器的总控程序(驱动程序)控制下对输入串进行分析，即根据输入串的当前符号和分析栈的栈顶状态查找分析表应采取的动作，对状态栈和符号栈进行相应的操作即移进、归约、接受或报错。具体说明如下：<br>
+      　　1) 若ACTION[S,a]= S<sub><font size="-2">j</font></sub>，a为终结符，则把a移入符号栈，j移入状态栈。<br>
+      　　2) 若ACTION[S,a]= r<sub><font size="-2">j</font></sub>，a为终结符或#号，则用第j个产生式归约，并将两个栈的指针减去k，其中k为第j个产生式右部的符号串长度，这时当前面临符号为第j个产生式左部的非终结符。<br>
+      　　3) 若ACTION[S,a]=acc，a应为'#'号，则为接受，表示分析成功。<br>
+      　　4) 若GOTO[S,A]=j，A为非终结符，表明前一动作是用关于A的产生式归约的，当前面临非终结符A应移入符号栈，j移入状态栈。对于终结符的GOTO[S,a]已和ACTION[S,a]重合。<br>
+      　　5) 若ACTION[S,a]=空白，则转向出错处理。</td>
+  </tr>
+</table>
+</body>
+</html>

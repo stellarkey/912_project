@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　首先由DAG构造优化的四元式序列。<br>
+      　　回顾一下DAG构造算法中几个步骤的作用。<br>
+      　　对于步骤2，如果参与运算的对象都是编译时的已知量，则它并不生成计算该结点值的内部结点，而是执行该运算，将计算结果生成一个叶结点。显然，步骤2起到了合并已知量的作用。<br>
+      　　步骤3的作用是检查公共子表达式，对具有公共子表达式的所有四元式，它只产生一个计算该表达式值的内部结点，而把那些被赋值的变量标识符附加到该结点上。这样可删除多余运算。<br>
+      　　步骤4具有删除无用赋值的作用。如果某变量被赋值后，在它被引用前又被重新赋值，则步骤4把该变量从具有前一个值的结点上删除。<br>
+      　　这样，在一个基本块被构造成相应的DAG的过程中已经进行了一些基本的优化工作。而后，我们可由DAG重新生成原基本块的一个优化的代码序列。<br>
+      　　我们将图11.10（j）的基本块G的DAG按原来构造其结点的顺序，重新写成四元式，得到以下的四元式序列G′<br>
+      　　(1) T<sub><font size="-2">0</font></sub>∶=3.14<br>
+      　　(2) T<sub><font size="-2">1</font></sub>∶=6.28<br>
+      　　(3) T<sub><font size="-2">3</font></sub>∶=6.28<br>
+      　　(4) T<sub><font size="-2">2</font></sub>∶=R+r<br>
+      　　(5) T<sub><font size="-2">4</font></sub>∶=T<sub><font size="-2">2</font></sub><br>
+      　　(6) A∶=6.28*T<sub><font size="-2">2</font></sub><br>
+      　　(7) T<sub><font size="-2">5</font></sub>∶=A<br>
+      　　(8) T<sub><font size="-2">6</font></sub>∶=R-r<br>
+      　　(9) B∶=A*T<sub><font size="-2">6</font></sub><br>
+      　　把G′和原基本块G相比，可以看出：<br>
+      　　1． G中的代码（2）和（6）的已知量都已合并。<br>
+      　　2． G中（5）的无用赋值已被删除。<br>
+      　　3． G中（3）和（7）的公共子表达式R+r只被计算一次，删除了多余运算。<br>
+      　　所以G′是G的优化结果。</td>
+  </tr>
+</table>
+</body>
+</html>

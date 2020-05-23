@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>      　　前面介绍过，编译程序的基本任务是将源语言程序翻译成等价的目标语言程序。我们知道，源语言的种类成千上万，从常用的诸如FORTRAN，PASCAL和C语言，到各种各样的计算机应用领域的专用语言，而目标语言也是成千上万的，加上编译程序根据它们的构造不同，所执行的具体功能的差异又分成了各种类型，比如：一趟编译、多趟编译的、具有调试或优化功能的等等。尽管存在这些明显的复杂因素，但是任何编译程序所必须执行的主要任务基本是一样的，通过理解这些任务，使用同样的基本技术，我们可以为各种各样的源语言和目标语言设计和构造编译程序。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"> <font color="#0000FF">图1.2 高级语言程序的处理过程</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/chap01/1_1_17.gif" width="271" height="323"></td>
+        </tr>
+      </table>
+      　　一个源程序有时可能分成几个模块存放在不同的文件里，将这些源程序汇集在一起的任务由一个叫做预处理程序的程序来完成，有些预处理程序也负责宏展开，像C语言的预处理程序要完成文件合并、宏展开等任务。如果编译程序生成的目标程序是汇编代码形式，需要经由汇编程序翻译成可再装配的机器代码，再经由装配/连接编辑程序与某些库程序连接成真正能在机器上运行的代码。也就是说，一个编译程序的输入可能要由一个或多个预处理程序来产生，另外，为得到能运行的机器代码，编译程序的输出可能仍需要进一步地处理。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

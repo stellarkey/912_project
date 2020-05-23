@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表5.2 文法的FIRST集和FOLLOW集表</font></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr bgcolor="#DAE1BB"> 
+                <td align="center">非终结符名</td>
+                <td align="center">是否T*ε</td>
+                <td align="center">FIRST集</td>
+                <td align="center">FOLLOW集</td>
+              </tr>
+              <tr> 
+                <td align="center">S</td>
+                <td align="center">是</td>
+                <td align="center">{b,a,ε}</td>
+                <td align="center">{#}</td>
+              </tr>
+              <tr> 
+                <td align="center">A</td>
+                <td align="center">是</td>
+                <td align="center">{b,ε}</td>
+                <td align="center">{a,c,#}</td>
+              </tr>
+              <tr> 
+                <td align="center">B</td>
+                <td align="center">是</td>
+                <td align="center">{a,ε}</td>
+                <td align="center">{#}</td>
+              </tr>
+              <tr> 
+                <td align="center">C</td>
+                <td align="center">否</td>
+                <td align="center">{a,b,c}</td>
+                <td align="center">{#}</td>
+              </tr>
+              <tr> 
+                <td align="center">D</td>
+                <td align="center">否</td>
+                <td align="center">{a,c}</td>
+                <td align="center">{#}</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　每个产生式的SELECT集合计算为：<br>
+      　　SELECT(S→AB)=FIRST(AB)∪ FOLLOW(S)={b,a,#}<br>
+      　　SELECT(S→bC)=FIRST(bC)={b}<br>
+      　　SELECT(A→ε)=FIRST(ε)∪FOLLOW(A)={a,c,#}<br>
+      　　SELECT(A→b)=FIRST(b)={b}<br>
+      　　SELECT(B→ε)=FIRST(ε)∪FOLLOW(B)={#}<br>
+      　　SELECT(B→aD)=FIRST(aD)={a}<br>
+      　　SELECT(C→AD)=FIRST(AD)={a,b,c}<br>
+      　　SELECT(C→b)=FIRST(b)={b}<br>
+      　　SELECT(D→aS)=FIRST(aS)={a}<br>
+      　　SELECT(D→c)=FIRST(c)={c}<br>
+      　　由以上计算结果可得相同左部产生式的SELECT交集为：<br>
+      　　SELECT(S→AB)∩SELECT(S→bC)={b,a,#}∩{b}={b}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　SELECT(A→ε)∩SELECT(A→b)={a,c,#}∩{b}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　SELECT(B→ε)∩SELECT(B→aD)={#}∩{a}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　SELECT(C→AD)∩SELECT(C→b)＝{b,a,c}∩{b}＝{b}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　SELECT(D→aS)∩SELECT(D→c)={a}∩{c}＝<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　由LL(1)文法定义知该文法不是LL(1)文法，因为关于S和C的相同左部其产生式的SELECT集的交集不为空。</td>
+  </tr>
+</table>
+</body>
+</html>

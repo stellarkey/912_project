@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 总结上面LR分析算法为： <b><br>
+      </b>　　置ip指向输入串w的第一个符号<br>
+      　　令S<sub><font size="-1">i</font></sub>为栈顶状态 <br>
+      　　a是ip指向的符号（当前输入符号）<br>
+      　　begin (重复开始)<br>
+      　　if ACTION[S<sub><font size="-1">i</font></sub>,a]=S<sub><font size="-1">j</font></sub><br>
+      　　　then begin PUSH j,a (进栈)<br>
+      　　　　ip 前进(指向下一输入符号)<br>
+      　　　end<br>
+      　　else <br>
+      　　if ACTION[S<sub><font size="-1">i</font></sub>,a]=r<sub><font size="-1">j</font></sub>(若第j条产生式 
+      为A→β) <br>
+      　　then begin<br>
+      　　　　pop |β| 项<br>
+      　　　　若当前栈顶状态为S<sub><font size="-1">k</font></sub><br>
+      　　　　push GOTO[S<sub><font size="-1">k</font></sub>,A] 和A(进栈)<br>
+      　　　　end<br>
+      　　else if ACTION[S<sub><font size="-1">i</font></sub>,a]=acc<br>
+      　　　　then return (成功）<br>
+      　　　　else error<br>
+      　　end . (重复结束)<br>
+      　　对于上面的分析过程我们可以知道LR分析器的关键部分是分析表的构造,那么可提出以下问题：<br>
+      　　一个文法的LR分析表是如何得到的？<br>
+      　　对于一个文法，状态集是如何确定的？<br>
+      　　为了解决这些问题引入可归前缀与活前缀概念</td>
+  </tr>
+</table>
+</body>
+</html>

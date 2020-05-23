@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　下面按照运算符的功能分别介绍上述正规式运算符。<br>
+        　　1) 字符的集合<br>
+        　　用方括号对可以表示字符的集合。正规式<br>
+        　　[a b c]<br>
+        与单个字符a或b或c匹配<br>
+        　　在方括号中大多数的运算符都不起作用，只有\-和∧例外。<br>
+        　　运算符-表示字符的范围，例如<br>
+        　　[a-z0-9&lt;&gt;-]<br>
+        表示由所有小写字母，所有数字。尖括号及下划线组成的字符集合。<br>
+        　　如果某字符集合中包括-在内，则必须把它写在第一个或最后一个位置上，如<br>
+        　　[-+0-9]<br>
+        与所有数字和正负号匹配。<br>
+        　　在字符集合中，运算符∧必须写在第一个位置即紧接在左方括号之后，它的作用是求方括号中除∧之外的字符组成的字符集合相对于计算机的字符集的补集，例如<br>
+        　　[∧abc]<br>
+        与除去a。b和c以外的任何符号匹配。<br>
+        　　运算符\在方括号中同样发挥解除运算符作用的功能。<br>
+        　　2) 与任意字符匹配的正规式<br>
+        　　运算符。形成的正规式与除回车换行符以外的任意字符匹配。<br>
+        　　在LEX的正规式中，也可以用八进制数字与\一起表示字符，如<br>
+        　　[\40-\176]<br>
+        　　与ASCII字符集中所有在八进制40(空格)到八进制176(~)之间的可打印字符匹配。 <br>
+        　　3) 可有可无的表达式<br>
+        　　运算符。指出正规式中可有可无的子式，例如：<br>
+        　　ab。 c<br>
+        与ac或abc匹配，即b是可有可无的。<br>
+        　　4) 闭包运算<br>
+        　　运算符和+是LEX正规式中的闭包运算符，它们表示正规式中某子式的重复，例如：<br>
+        　　a<br>
+        表示由0个或多个a组成的字符串的集合，而<br>
+        　　a+<br>
+        表示由1个或多个a组成的字符串的集合，下面两个正规式是常用的：<br>
+        　　[a-z]+<br>
+        　　[A-Za-z][A-Za-z0-9]<br>
+        第一个是所有由小写字母组成的字符串的集合，第二个是由字母开头的字母数字串组成的集合。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

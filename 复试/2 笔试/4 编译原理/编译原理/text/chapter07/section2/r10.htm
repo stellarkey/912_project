@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　LR(0)分析表的构造算法如下：<br>
+      　　假设已构造出LR(0)项目集规范族为：<br>
+      　　C={I<sub><font size="-2">0</font></sub>,I<sub><font size="-2">1</font></sub>, 
+      … , I<sub><font size="-2">n</font></sub>}<br>
+      　　其中I<sub><font size="-2">k</font></sub>为项目集的名字，k为状态名，令包含S′→·S项目的集合I<sub><font size="-2">k</font></sub>的下标k为分析器的初始状态。那么分析表的ACTION表和GOTO表构造步骤为：<br>
+      　　a) 若项目A→α·aβ属于I<sub><font size="-2">k</font></sub>且转换函数GO(I<sub><font size="-2">k</font></sub>,a)= 
+      I<sub><font size="-2">j</font></sub>，当a为终结符时则置ACTION[k,a]为S<sub><font size="-2">j</font></sub>，其动作含意为将终结符a移进符号栈，状态j进入状态栈，(相当状态k时遇a转向状态j)。<br>
+      　　b) 若项目A→α· 属于I<sub><font size="-2">k</font></sub>，则对任何终结符a 和'#'号置ACTION[k,a]和ACTION[k,#]为&quot;r<sub><font size="-2">j</font></sub>&quot;，j为在文法G′中某产生式A→α的序号。r<sub><font size="-2">j</font></sub>动作的含义是把当前文法符号栈顶的符号串α归约为A，并状态栈指针从栈顶向下移动|α|的长度 
+      , 文法符号栈从栈顶弹出|α|个符号，非终结符A变为当前面临的符号。<br>
+      　　c) 若GO(I<sub><font size="-2">k</font></sub>,A)＝I<sub><font size="-2">j</font></sub>，则置GOTO[k,A]为&quot;j&quot;，其中A为非终结符，表示当前状态为&quot;k&quot;时，遇文法符号A时状态应转向j，因此A移入文法符号栈，j移入状态栈。<br>
+      　　d) 若项目S′→S·属于I<sub><font size="-2">k</font></sub>，则置ACTION[k,#]为&quot;acc&quot;，表示接受。<br>
+      　　e) 凡不能用上述方法填入的分析表的元素，均应填上&quot;报错标志&quot;。为了表的清晰我们仅用空白表示错误标志。<br>
+      根据这种方法构造的LR(0)分析表不含多重定义时，称这样的分析表为LR(0)分析表，能用LR(0)分析表的分析器称为LR(0)分析器，能构造LR(0)分析表的文法称为LR(0)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　例如，对于例4.11的文法G，句型i*i+i就有两个不同的最左推导一和二，它们所对应的语法树分别如图4.4和图4.5所示。 <br>
+      　　<b>推导一</b>：E <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E*E+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*E+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*i+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*i+i<br>
+      　　<b>推导二</b>：E <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E*E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*E+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*i+E 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i*i+i<br>
+      　　i*i+i是例4.11文法G的一个句子，这个句子可以用完全不同的两种办法生成，在生成过程的第一步，一种办法使用产生式E→E+E进行推导，另一种办法是使用产生式 
+      E→E*E。因而i*i+i对应了两棵不同的语法树图4.4和图4.5。<br>
+      　　如果一个文法存在某个句子对应两棵不同的语法树，则说这个文法是二义的。或者说，若一个文法中存在某个句子，它有两个不同的最左(最右)推导，则这个文法是二义的。</td>
+  </tr>
+</table>
+</body>
+</html>

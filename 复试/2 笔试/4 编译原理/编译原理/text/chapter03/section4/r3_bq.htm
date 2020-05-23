@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr align="center"> 
+          <td valign="top"><font color="#0000FF">图 4.15 LEX程序例子--识别PL/0单词的LEX程序</font></td>
+        </tr>
+        <tr> 
+          <td class="text">　　IDENT[a-zA-Z] [a-zA-Z0-9]*<br>
+            　　NUMBER[0-9] [0-9]*<br>
+            　　%(<br>
+            　　#include 〈stdio.h〉<br>
+            　　#include &quot;code.h&quot;<br>
+            　　#include &quot;symbol.h&quot;<br>
+            　　#include &quot;y.tab.h&quot;<br>
+            　　extern int level;<br>
+            　　int cc=0;<br>
+            　　%)<br>
+            　　%%<br>
+            　　&quot;&quot; { cc++;}<br>
+            　　&quot;＼t&quot; { tablize(); } /*adjustcc to tabposition*/<br>
+            　　&quot;＼n&quot; { cc=0; line-copy(); } /*copy a line of input file*/<br>
+            　　&quot;&lt;&quot; { cc++; return LT;}<br>
+            　　&quot;&gt;&quot; { cc++; return GT;}<br>
+            　　&quot;=&quot; { cc++; return EQ;}<br>
+            　　&quot;#&quot; { cc++; return NE;}<br>
+            　　&quot;,&quot; { cc++; return colon; }<br>
+            　　&quot;.&quot; { cc++; return Period;}<br>
+            　　&quot;(&quot; { cc++; return Lparen;}<br>
+            　　&quot;)&quot; { cc++; return Rparen;}<br>
+            　　&quot;&lt;=&quot; { cc++;cc++;return LE;}<br>
+            　　&quot;&gt;=&quot; { cc++;cc++;return GE;}<br>
+            　　&quot;∶=&quot; { cc++; cc++;return ASGN;}<br>
+            　　&quot;;&quot; { cc++; return Semicolon;}<br>
+            　　{NUMBER} {<br>
+            　　　　　　　intn;<br>
+            　　　　　　　cc += yyleng;<br>
+            　　　　　　　sscanf(yytext,&quot;%d&quot;, &amp;n);<br>
+            　　　　　　　yylval.number=n;<br>
+            　　　　　　　return NUMBER;<br>
+            　　　　　　 }<br>
+            　　{IDENT} {<br>
+            　　　　　　　Symbol *s;<br>
+            　　　　　　　cc += yyleng;<br>
+            　　　　　　　if((s=lookup(yytext))==0) /*new identifier*/<br>
+            　　　　　　　　s=install(yytext,VARIABLE,level,0); /* install symbol*/<br>
+            　　　　　　　if (s→type==C)<br>
+            　　　　　　　　yylval.number=s-〉adr;<br>
+            　　　　　　　else /*it's a VARIABLE or PROC*/<br>
+            　　　　　　　　yylval.sym=s;<br>
+            　　　　　　　return s-〉type;<br>
+            　　　　　　}<br>
+            　　%%<br>
+            　　yywrap( ) {<br>
+            　　};</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　function position(id:alfa):integer;<br>
+      　　var i:integer;<br>
+      　　　begin (*find identifier in table*)<br>
+      　　　　table[0].name∶=id;<br>
+      　　　　i∶=tx;<br>
+      　　　　while table[i].name&lt;&gt;id do i∶=i-1;<br>
+      　　　　position∶=i<br>
+      　　　end(*position*); 
+      <p> 　procedure constdeclaration;<br>
+        　　begin<br>
+        　　　if sym=ident<br>
+        　　　　then<br>
+        　　　　　begin <br>
+        　　　　　　getsym;<br>
+        　　　　　　if sym in [eql,becomes]<br>
+        　　　　　　　then<br>
+        　　　　　　　　begin<br>
+        　　　　　　　　　if sym= becomes<br>
+        　　　　　　　　　　then error(1);<br>
+        　　　　　　　　　getsym;<br>
+        　　　　　　　　　if sym = number<br>
+        　　　　　　　　　　then<br>
+        　　　　　　　　　　　begin<br>
+        　　　　　　　　　　　　enter(constant);<br>
+        　　　　　　　　　　　　getsym<br>
+        　　　　　　　　　　　end<br>
+        　　　　　　　　　　else error(2)<br>
+        　　　　　　　　end<br>
+        　　　　　　　else error(3)<br>
+        　　　　　end<br>
+        　　　　else error(4)<br>
+        　　end;(* constdeclaration *)</p>
+      <p> 　procedure vardeclaration;<br>
+        　　begin<br>
+        　　　if sym=ident<br>
+        　　　　then<br>
+        　　　　　begin<br>
+        　　　　　　enter(variable);<br>
+        　　　　　　getsym<br>
+        　　　　　end<br>
+        　　　　else error(4)<br>
+        　　end(*vardeclaration*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

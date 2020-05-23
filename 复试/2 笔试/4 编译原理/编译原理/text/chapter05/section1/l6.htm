@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例 5.1~5.3都是确定的自上而下语法分析 ，由当前的输入符号能唯一确定选择哪个产生式进行推导。但并非任意一个文法都能用确定的自顶向下分析法。引起自顶向下分析不确定的原因有以下三种情况<br>
+      　　⒈ 由于相同左部的产生式的右部开始符号集合交集不为空而引起回溯。<br>
+      <font color="#0000FF">例5.4</font><b>文法的特点是：<br>
+      　　</b>关于A的产生式的不同右部开始符号集合都含有a，因此要替换非终结符A时，对当前输入符为a的情况，不能确定用产生式A→ab 的右部还是用A→a的右部去替换。所以导致必须用带回溯的自顶向下分析，而带回溯的自顶向下分析是一个试探过程，当分析不成功时则推翻分析退回到适当位置再重新试探其余候选可能的推导，这样需要记录已选过的产生式，直到把所有可能的推导序列都试完仍不成功才能确认输入串不是该文法的句子而报错。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　以文法G′[S′]为例：<br>
+      　　S′→E<br>
+      　　E→aA|bB<br>
+      　　A→cA|d<br>
+      　　B→cB|d<br>
+      　　该文法的项目有：<br>
+      　　1． S′→·E 　　　　10. A→d·<br>
+      　　2． S′→E· 　　　　11. E→·bB<br>
+      　　3． E→·aA 　　　　 12. E→b·B<br>
+      　　4． E→a·A 　　　　 13. E→bB·<br>
+      　　5． E→aA· 　 　　　14. B→·cB<br>
+      　　6． A→·cA　　　　　15. B→c·B<br>
+      　　7． A→c·A 　 　　　16. B→cB·<br>
+      　　8． A→cA· 　　　　 17. B→·d<br>
+      　　9． A→·d　　 　　　18. B→d·<br>
+      　　由于S′仅在第一个产生式的左部出现，因此规定项目1为初态，其余每个状态都为活前缀的识别态，圆点在最后的项目为句柄识别态，第一个产生式的句柄识别态为句子识别态。状态之间的转换关系确定方法如下： 
+      <br>
+      　　若i项目为：X→X<sub><font size="-2">1</font></sub>X<sub><font size="-2">2</font></sub>…X<sub><font size="-2">i-1</font></sub>·X<sub><font size="-2">i</font></sub>…X<sub><font size="-2">n</font></sub><br>
+      　　j项目为：X→X<sub><font size="-2">1</font></sub>X<sub><font size="-2">2</font></sub>…X<sub><font size="-2">i-1</font></sub> 
+      X<sub><font size="-2">i</font></sub>·X<sub><font size="-2">i+1</font></sub>…X<sub><font size="-2">n</font></sub><br>
+      　　i项目和j项目出于同一个产生式，对应于NFA为状态j的圆点只落后于状态i的圆点一个符号的位置，那么从状态i到状态j连一条标记为Xi的箭弧。如果Xi为非终结符，则也会有以它为左部的有关项目及其相应的状态，例如有项目形如：<br>
+      　　i. X→γ·Aδ<br>
+      　　k. A→·β<br>
+      　　则从状态i画标记为ε的箭弧到状态k，对于A的所有产生式圆点在最左边的状态都做一条从i状态到该状态的箭弧，箭弧上标记为ε。 <br>
+      　　按上面的规则我们可对文法G′的所有项目对应的状态构造出识别活前缀的有限自动机NFA如图7.7。<br>
+      　　图中双圈表示句柄识别态，双圈外有&quot;*&quot;号者为句子&quot;接受&quot;态。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p> #define BSZ 50<br>
+        /* buffer size for floating point numbers */
+      <p>　　/* lexcial analysis */</p>
+      <p>yylex() {<br>
+        　　　　register c;</p>
+      <p>　　　　while((c=getchar())==′ ′)<br>
+        　　　　{/* skip over blanks */}<br>
+        　　　　if (isupper(c)) {<br>
+        　　　　　　　　yylval.ival= c-′A′;<br>
+        　　　　　　　　return(VREG);<br>
+        　　　　}<br>
+        if (islower(c)) {<br>
+        　　　　　　yylval.ival= c-′a′;<br>
+        　　　　　　return(DREG);<br>
+        　　　　　　}</p>
+      <p>if (isdigit(c) || c==′.′) {<br>
+        　　/* gobble up digits, points, exponents */</p>
+      <p>　　char buf[BSZ+1], *cp=buf;<br>
+        　　int dot= 0, exp= 0;</p>
+      <p>　　for (; (cp-buf)&lt;BSZ; ++cp,c=get char() ){</p>
+      <p>　　　　*cp= c;<br>
+        　　　　　if (isdigit(c)) continue;<br>
+        　　　if (c==′.′){<br>
+        　　　　　if (dot++ || exp) return(′.′);<br>
+        　　　　　/* will cause syntax error */<br>
+        　　　　　continue;<br>
+        　　　　　}<br>
+        　　　if (c==′e′){<br>
+        　　　　　if (exp++) return(′e′);<br>
+        　　　　　/* will cause syntax error */<br>
+        　　　　　continue;<br>
+        　　　　　}</p>
+      <p> 　　　/* end of number */<br>
+        　　　break;<br>
+        　　}</p>
+      <p>　　　　　*cp= ′\0′;<br>
+        　　　　　if ((cp-buf) &gt;= BSZ)<br>
+        　　　　　printf(&quot;constant too long: truncated\n&quot;);<br>
+        　　　　　else ungetc(c,stdin);<br>
+        　　　　　/* push back last char read */<br>
+        　　　　　yylval.dval= atof(buf);<br>
+        　　　　　return(CONST);<br>
+        　　　　　}<br>
+        　　return(c);<br>
+        　　}</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

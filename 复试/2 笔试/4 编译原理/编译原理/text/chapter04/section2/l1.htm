@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>4.2 文法和语言的形式定义</b><br>
+      　　我们现在讨论如何形式地描述一种语言？显然，如果语言是有穷的（只含有有穷多个句子），可以将句子逐一列出来表示；但是如果语言是无穷的，我们不可能将语言的句子逐一列出来，而是希望寻求语言的有穷表示。语言的有穷表示有两个途经：一种是生成方式，就是利用文法，利用文法的规则和推导手段，可以将语言中的每个句子用严格定义的规则来构造。另一种方法是识别方式，是使用自动机的行为描述语言：它的行为相当於一个过程，当输入的一个符号串属于某语言时，该过程经有限次计算后就会停止并回答&quot;是&quot;，若这个符号串不属于此语言，该过程要麽能停止并回答&quot;不是&quot;，要麽永远继续下去。 
+      我们要介绍的文法即是生成方式描术语言的：语言中的每个句子可以用严格定义的规则来构造。下面给出文法的定义。进而在文法的定义的基础上，给出推导的概念，句型、句子和语言的定义。<br>
+      <b>定义4.1</b><br>
+      　　<b>文法</b>G定义为四元组(V<sub><font size="-2">n</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)。其中V<sub><font size="-2">n</font></sub>为<b>非终结符号</b>(或语法实体，或变量)集；V<sub><font size="-2">T</font></sub>为<b>终结符号</b>集；P为<b>产生式</b>(也称<b>规则</b>)的集合；V<sub><font size="-2">n</font></sub>，V<sub><font size="-2">T</font></sub>和 
+      P是非空有穷集。称作<b>识别符号</b>或<b>开始符号</b>，它是一个非终结符，至少要在一条产生式中作为左部出现。<br>
+      　　V<sub><font size="-2">n</font></sub>和V<sub><font size="-2">T</font></sub>不含公共的元素，即V<sub><font size="-2">n</font></sub>∩V<sub><font size="-2">T</font></sub>=φ 
+      <br>
+      　　通常用V表示V<sub><font size="-2">n</font></sub>∪V<sub><font size="-2">T</font></sub>，V称为文法G的字母表或字汇表。<br>
+      　　其中规则，也称重写规则、产生式或生成式，是形如α→β或α∷=β的(α，β)有序对，其中α是字母表V的正闭包V+中的一个符号，β是V<sup><font size="-2">*</font></sup>中的一个符号。α称为规则的左部，β称为规则的右部。</td>
+  </tr>
+</table>
+</body>
+</html>

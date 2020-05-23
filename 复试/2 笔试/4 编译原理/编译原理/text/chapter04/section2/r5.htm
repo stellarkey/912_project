@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　设G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)，如果它的每个产生式α→β是这样一种结构：α∈( 
+      V<sub><font size="-2">N</font></sub>∪V<sub><font size="-2">T</font></sub> 
+      )<sup><font size="-2">*</font></sup>且至少含有一个非终结符，而β∈( V<sub><font size="-2">N</font></sub>∪V<sub><font size="-2">T</font></sub> 
+      )<sup><font size="-2">*</font></sup>，则G是一个<b>0型文法</b>。<br>
+      　　0型文法也称短语文法。一个非常重要的理论结果是，0型文法的能力相当于图灵机(Turing)。或者说，任何0型语言都是递归可枚举的；反之，递归可枚举集必定是一个0型语言。<br>
+      　　对0型文法产生式的形式作某些限制，以给出1，2和3型文法的定义。<br>
+      　　设G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)为一文法，若P中的每一个产生式α→β均满足|β|≥|α| 
+      ，仅仅S→ε除外，则文法G是<b>1型或上下文有关的</b>。<br>
+      　　例4.3的文法是上下文有关的。同样例4.1，例4.2的文法也都是上下文有关的。 <br>
+      　　在有些文献给的定义中，将上下文有关文法的产生式的形式描述为α<sub><font size="-2">1</font></sub>Aα<sub><font size="-2">2</font></sub>→α<sub><font size="-2">1</font></sub>βα<sub><font size="-2">2</font></sub>，其中α<sub><font size="-2">1</font></sub>、α<sub><font size="-2">2</font></sub>和β都在( 
+      V<sub><font size="-2">N</font></sub>∪V<sub><font size="-2">T</font></sub> 
+      )<sup><font size="-2">*</font></sup>中(即在V<sup><font size="-2">*</font></sup>中)，β≠ε，A在V<sub><font size="-2">N</font></sub>中。这种定义与前边的定义等价。但它更能体现&quot;上下文有关&quot;这一术语，因为只有A出现在α<sub><font size="-2">1</font></sub>和α<sub><font size="-2">2</font></sub>的上下文中，才允许用β取代A。<br>
+      　　设G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)，若P中的每一个产生式α→β满足：α是一非终结符，β∈( 
+      V<sub><font size="-2">N</font></sub>∪V<sub><font size="-2">T</font></sub> 
+      )<sup><font size="-2">*</font></sup>则此文法称为<b>2型的或上下文无关的</b>。有时将2型文法的产生式表示为形如：A→β其中A∈V<sub><font size="-2">N</font></sub>，也就是说用β取代非终结符A时，与A所在的上下文无关，因此取名为上下文无关文法。<br>
+      　　例4.1和例4.2中的文法都是上下文无关的，下面我们再给出一个例子(例4.4)，例中的文法G是上下文无关文法，G的语言是由相同个数的a和b所组成的｛a，b｝<sup><font size="-2">*</font></sup>上的串。 
+      <br>
+      　　设G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)，若P中的每一个产生式的形式都是A→aB或A→a，其中A和B都是非终结符，a是终结符，则G是<b>3型文法或正规文法</b>。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<title>词法分析</title>
+<style><!--
+.Normal
+	{text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Times New Roman";}
+.MsoCommentText
+	{font-size:10.5pt;
+	font-family:"Times New Roman";}
+-->
+</style>
+</head>
+<body lang=ZH-CN class="Normal" bgcolor="#FFFFFF">
+<div style='layout-grid:15.6pt'> <b>1</b><b>．词法分析（Lexical analysis</b><b>或Scanning</b><b>）和词法分析程序（Lexical 
+  analyzer</b><b>或Scanner</b><b>）</b> 
+  <p align=left style='text-align:left;text-autospace:none'> 　　词法分析阶段是编译过程的第一个阶段。这个阶段的任务是从左到右一个字符一个字符地读入源程序，即对构成源程序的字符流进行扫描然后根据构词规则识别单词(也称单词符号或符号)。词法分析程序实现这个任务。词法分析程序可以使用lex等工具自动生成。 
+  <p><b>2．语法分析（Syntax analysis或Parsing）和语法分析程序（Parser）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　语法分析是编译过程的一个逻辑阶段。语法分析的任务是在词法分析的基础上将单词序列组合成各类语法短语，如“程序”，“语句”，“表达式”等等.语法分析程序判断源程序在结构上是否正确.源程序的结构由上下文无关文法描述. 
+  <p><b>3．语义分析（Syntax analysis）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　语义分析是编译过程的一个逻辑阶段. 
+    语义分析的任务是对结构上正确的源程序进行上下文有关性质的审查, 进行类型审查.例如一个C程序片断:<br>
+    <br>
+    　　int arr[2],b;<br>
+    　　b = arr * 10; 
+  <p align=left style='text-align:left;text-autospace:none'>　　源程序的结构是正确的. 　　语义分析将审查类型并报告错误:不能在表达式中使用一个数组变量,赋值语句的右端和左端的类型不匹配. 
+  <p align=left style='text-align:left;text-autospace:none'><b>4.Lex</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一个词法分析程序的自动生成工具。它输入描述构词规则的一系列正规式,然后构建有穷自动机和这个有穷自动机的一个驱动程序,进而生成一个词法分析程序. 
+  <p align=left style='text-align:left;text-autospace:none'><b>5.Yacc</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一个语法分析程序的自动生成工具。它接受语言的文法,构造一个LALR(1)分析程序.因为它采用语法制导翻译的思想,还可以接受用C语言描述的语义动作,从而构造一个编译程序.&nbsp; 
+    Yacc 是 Yet another compiler compiler的缩写. 
+  <p align=left style='text-align:left;text-autospace:none'><b>6．源语言（Source language）和源程序（Source program）</b>
+  <p class=MsoCommentText style='text-autospace:none'>　　被编译程序翻译的程序称为源程序,书写该程序的语言称为源语言. 
+  <p align=left style='text-align:left;text-autospace:none'><b>7．目标语言（Object language or Target language）和目标程序（Object 
+    program or Target program）</b>
+  <p class=MsoCommentText style='text-autospace:none'>　　编译程序翻译源程序而得到的结果程序称为目标程序, 
+    书写该程序的语言称为目标语言. 
+  <p align=left style='text-align:left;text-autospace:none'><b>8．中间语言（中间表示）（Intermediate language(representation)）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　在进行了语法分析和语义分析阶段的工作之后，有的编译程序将源程序变成一种内部表示形式，这种内部表示形式叫做中间语言或中间表示或中间代码。所谓“中间代码”是一种结构简单、含义明确的记号系统，这种记号系统复杂性介于源程序语言和机器语言之间，容易将它翻译成目标代码。另外，还可以在中间代码一级进行与机器无关的优化。 
+  <p><b>9．文法（Grammars）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　文法是用于描述语言的语法结构的形式规则。文法G定义为四元组(<sub><img align="absmiddle" 
+src="chb.files/image002.gif" v:shapes="_x0000_i1025"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image004.gif" v:shapes="_x0000_i1026"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image006.gif" v:shapes="_x0000_i1027"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image008.gif" v:shapes="_x0000_i1028"></sub>)。其中<sub><img align="absmiddle" 
+src="chb.files/image009.gif" v:shapes="_x0000_i1029"></sub>为非终结符号(或语法实体，或变量)集；<sub><img align="absmiddle" 
+src="chb.files/image010.gif" v:shapes="_x0000_i1030"></sub>为终结符号集；<sub><img align="absmiddle" 
+src="chb.files/image011.gif" v:shapes="_x0000_i1031"></sub>为产生式(也称规则)的集合；产生式(规则)是形如<sub><img align="absmiddle" 
+src="chb.files/image013.gif" v:shapes="_x0000_i1032"></sub>或 a ::=b 的(a , b)有序对,其中<sub><img align="absmiddle" 
+src="chb.files/image015.gif" v:shapes="_x0000_i1033"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image016.gif" v:shapes="_x0000_i1034"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image017.gif" v:shapes="_x0000_i1035"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image019.gif" v:shapes="_x0000_i1036"></sub>且至少含有一个非终结符，而<sub><img align="absmiddle" 
+src="chb.files/image021.gif" v:shapes="_x0000_i1037"></sub><sub><img align="absmiddle" 
+src="chb.files/image023.gif" v:shapes="_x0000_i1038"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image024.gif" v:shapes="_x0000_i1039"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image025.gif" v:shapes="_x0000_i1040"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image026.gif" v:shapes="_x0000_i1041"></sub>。<sub><img align="absmiddle" 
+src="chb.files/image027.gif" v:shapes="_x0000_i1042"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image028.gif" v:shapes="_x0000_i1043"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image029.gif" v:shapes="_x0000_i1044"></sub>是非空有穷集。<sub><img align="absmiddle" 
+src="chb.files/image030.gif" v:shapes="_x0000_i1045"></sub>称作识别符号或开始符号，它是一个非终结符，至少要在一条规则中作为左部出现。 
+  <p align=left style='text-align:left;text-autospace:none'>　　一个文法的例子: G=(<sub><img align="absmiddle"
+src="chb.files/image031.gif" v:shapes="_x0000_i1046"></sub>={A，R},<sub><img align="absmiddle" 
+src="chb.files/image032.gif" v:shapes="_x0000_i1047"></sub>={0,1} ，<sub><img align="absmiddle" 
+src="chb.files/image033.gif" v:shapes="_x0000_i1048"></sub>={A&reg;0R，A&reg;01,R&reg;A1},<sub><img align="absmiddle" 
+src="chb.files/image034.gif" v:shapes="_x0000_i1049"></sub>=A) 
+  <p align=left style='text-align:left;text-autospace:none'><b>10．文法分类（A hierarchy of Grammars）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　著名语言学家Noam 　　Chomsky定义了四类文法和四种形式语言类，文法的四种类型分别是0型、1型、2型和3型。几类文法的差别在于对产生式施加不同的限制，分别是： 
+  <p>　　0型文法(短语结构文法)(phrase structure grammars)： 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image035.gif" v:shapes="_x0000_i1050"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image036.gif" v:shapes="_x0000_i1051"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image037.gif" v:shapes="_x0000_i1052"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image038.gif" v:shapes="_x0000_i1053"></sub>)，如果它的每个产生式<sub><img align="absmiddle" 
+src="chb.files/image039.gif" v:shapes="_x0000_i1054"></sub>是这样一种结构<sub><img align="absmiddle" 
+src="chb.files/image040.gif" v:shapes="_x0000_i1055"></sub>： (<sub><img align="absmiddle" 
+src="chb.files/image041.gif" v:shapes="_x0000_i1056"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image042.gif" v:shapes="_x0000_i1057"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image043.gif" v:shapes="_x0000_i1058"></sub>　　且至少含有一个非终结符，而<sub><img align="absmiddle" 
+src="chb.files/image044.gif" v:shapes="_x0000_i1059"></sub><sub><img align="absmiddle" 
+src="chb.files/image045.gif" v:shapes="_x0000_i1060"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image046.gif" v:shapes="_x0000_i1061"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image047.gif" v:shapes="_x0000_i1062"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image048.gif" v:shapes="_x0000_i1063"></sub>，则G是一个0型文法。 
+  <p>　　1型文法（上下文有关文法）(context-sensitive grammars)： 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image049.gif" v:shapes="_x0000_i1064"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image050.gif" v:shapes="_x0000_i1065"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image051.gif" v:shapes="_x0000_i1066"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image052.gif" v:shapes="_x0000_i1067"></sub>)为一文法，若<sub><img align="absmiddle" 
+src="chb.files/image053.gif" v:shapes="_x0000_i1068"></sub>中的每一个产生式<sub><img align="absmiddle" 
+src="chb.files/image054.gif" v:shapes="_x0000_i1069"></sub>均满足|<sub><img align="absmiddle" 
+src="chb.files/image056.gif" v:shapes="_x0000_i1070"></sub>，仅仅<sub><img align="absmiddle" 
+src="chb.files/image058.gif" v:shapes="_x0000_i1071"></sub>　　除外，则文法G是1型或上下文有关的。 
+  <p>　　2型文法（上下文无关文法）(context-free grammars)： 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image059.gif" v:shapes="_x0000_i1072"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image060.gif" v:shapes="_x0000_i1073"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image061.gif" v:shapes="_x0000_i1074"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image062.gif" v:shapes="_x0000_i1075"></sub>)，若P中的每一个产生式<sub><img align="absmiddle" 
+src="chb.files/image063.gif" v:shapes="_x0000_i1076"></sub>满足：<sub><img align="absmiddle" 
+src="chb.files/image065.gif" v:shapes="_x0000_i1077"></sub>是一非终结符，<sub><img align="absmiddle" 
+src="chb.files/image066.gif" v:shapes="_x0000_i1078"></sub><sub><img align="absmiddle" 
+src="chb.files/image067.gif" v:shapes="_x0000_i1079"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image068.gif" v:shapes="_x0000_i1080"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image069.gif" v:shapes="_x0000_i1081"></sub>)<sub><img align="absmiddle"
+src="chb.files/image070.gif" v:shapes="_x0000_i1082"></sub>　　则此文法称为2型的或上下文无关的。 
+  <p>　　3型文法（正规文法）(<b>regular grammars</b>)： 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image071.gif" v:shapes="_x0000_i1083"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image072.gif" v:shapes="_x0000_i1084"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image073.gif" v:shapes="_x0000_i1085"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image074.gif" v:shapes="_x0000_i1086"></sub>)，若<sub><img align="absmiddle" 
+src="chb.files/image075.gif" v:shapes="_x0000_i1087"></sub>　　中的每一个产生式的形式都是A→aB或A→a，其中A和B都是非终结符，a是终结符，则G是3型文法或正规文法。 
+  <p>　　0型文法产生的语言称为0型语言。 
+  <p align=left style='text-align:left;text-autospace:none'>　　1型文法产生的语言称为1型语言，也称作上下文有关语言。 
+  <p>　　2型文法产生的语言称为2型语言，也称作上下文无关语言。 
+  <p>　　3型文法产生的语言称为3型语言，也称作正规语言。 
+  <p><b>11．句型（Sentential form），句子（Sentence）和语言（Language）</b> 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G［S］是一文法，如果符号串x是从识别符号推导出来的，即有S<sub><img align="absmiddle" 
+src="chb.files/image077.gif" v:shapes="_x0000_i1088"></sub>　x，则称x是文法G［S］的句型。若x仅由终结符号组成，即S<sub><img align="absmiddle" 
+src="chb.files/image078.gif" v:shapes="_x0000_i1089"></sub>x，x∈<sub><img align="absmiddle" 
+src="chb.files/image080.gif" v:shapes="_x0000_i1090"></sub>，则称x为G［S］的句子。 
+  <p align=left style='text-align:left;text-autospace:none'>　　文法G所产生的语言定义为集合｛x｜S<sub><img align="absmiddle" 
+src="chb.files/image081.gif" v:shapes="_x0000_i1091"></sub>x，其中S为文法识别符号，且x∈<sub><img align="absmiddle" 
+src="chb.files/image082.gif" v:shapes="_x0000_i1092"></sub>｝。可用L(G) 或L(G[S])表示该集合。 
+  <p><b>12.</b><b>推导（Derive</b><b>）和语法树（Parse tree</b><b>）</b>
+  <p>　　推导的概念：分别定义V*中的符号之间的关系<b>直接推导</b><b><sub><img align="absmiddle" 
+src="chb.files/image084.gif" v:shapes="_x0000_i1094"></sub></b>、<b>长度为</b><b>n</b><b>（n<sub><img align="absmiddle" 
+src="chb.files/image086.gif" v:shapes="_x0000_i1095"></sub>1</b><b>）的推导<sub><img align="absmiddle" 
+src="chb.files/image088.gif" v:shapes="_x0000_i1096"></sub></b>和<b>长度为</b><b>n</b><b>（n<sub><img align="absmiddle" 
+src="chb.files/image089.gif" v:shapes="_x0000_i1097"></sub>0</b><b>）的推导<sub><img align="absmiddle" 
+src="chb.files/image091.gif" v:shapes="_x0000_i1098"></sub></b>： 
+  <p>　（1）如<sub><img align="absmiddle" 
+src="chb.files/image092.gif" v:shapes="_x0000_i1099"></sub>是文法G=(<sub><img align="absmiddle" 
+src="chb.files/image093.gif" v:shapes="_x0000_i1100"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image094.gif" v:shapes="_x0000_i1101"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image095.gif" v:shapes="_x0000_i1102"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image096.gif" v:shapes="_x0000_i1103"></sub>)的规则（或说是P中的一个产生式），<sub><img align="absmiddle"
+src="chb.files/image098.gif" v:shapes="_x0000_i1104"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image100.gif" v:shapes="_x0000_i1105"></sub>是V<sup>*</sup>中的任意符号，若有符号串v，w满足： 
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    　　v＝<sub><img align="absmiddle" 
+src="chb.files/image101.gif" v:shapes="_x0000_i1106"></sub><sub><img align="absmiddle" 
+src="chb.files/image102.gif" v:shapes="_x0000_i1107"></sub><sub><img align="absmiddle" 
+src="chb.files/image103.gif" v:shapes="_x0000_i1108"></sub>，w＝<sub><img align="absmiddle" 
+src="chb.files/image104.gif" v:shapes="_x0000_i1109"></sub><sub><img align="absmiddle" 
+src="chb.files/image105.gif" v:shapes="_x0000_i1110"></sub><sub><img align="absmiddle" 
+src="chb.files/image106.gif" v:shapes="_x0000_i1111"></sub> 
+  <p>　　则说v（应用规则<sub><img align="absmiddle" 
+src="chb.files/image107.gif" v:shapes="_x0000_i1112"></sub>）直接产生w，或说，w是v的<b>直接推导，</b>或说，w直接<b>归约</b>到v，记做v<sub><img align="absmiddle"
+src="chb.files/image108.gif" v:shapes="_x0000_i1113"></sub>w。 
+  <p>　（2）如果存在直接推导的序列： 
+  <p>　　v<sub><img align="absmiddle" 
+src="chb.files/image109.gif" v:shapes="_x0000_i1114"></sub>w<sub>0</sub><sub><img align="absmiddle" 
+src="chb.files/image110.gif" v:shapes="_x0000_i1115"></sub> w<sub>1</sub><sub><img align="absmiddle" 
+src="chb.files/image111.gif" v:shapes="_x0000_i1116"></sub> w<sub>2</sub>…<sub><img align="absmiddle" 
+src="chb.files/image112.gif" v:shapes="_x0000_i1117"></sub> w<sub>n</sub><sub><img align="absmiddle"
+src="chb.files/image113.gif" v:shapes="_x0000_i1118"></sub>w，（n&gt;0） 
+  <p>　　则称v推导出（产生）w（推导长度为n），或称w归约到v。记作v<sub><img align="absmiddle" 
+src="chb.files/image114.gif" v:shapes="_x0000_i1119"></sub>w。 
+  <p>　（3）若有v<sub><img align="absmiddle" 
+src="chb.files/image115.gif" v:shapes="_x0000_i1120"></sub>w，或v＝w，则记作<sub><img align="absmiddle" 
+src="chb.files/image116.gif" v:shapes="_x0000_i1121"></sub>。 
+  <p>　　语法树（推导树）的概念：给定文法G=(<sub><img align="absmiddle" 
+src="chb.files/image117.gif" v:shapes="_x0000_i1122"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image118.gif" v:shapes="_x0000_i1123"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image119.gif" v:shapes="_x0000_i1124"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image120.gif" v:shapes="_x0000_i1125"></sub>)，对于G的任何句型都能构造与之关联的语法树（推导树）。这棵树满足下列4个条件： 
+  <p>　　①每个结点都有一个标记，此标记是V的一个符号。 
+  <p>　　②根的标记是S。 
+  <p>　　③若一个结点n至少有一个它自己除外的子孙，并且有标记A，则A肯定在<sub><img align="absmiddle" 
+src="chb.files/image121.gif" v:shapes="_x0000_i1126"></sub>中。 
+  <p>　　④如果结点n的直接子孙，从左到右的次序是结点n<sub>1</sub>，n<sub>2</sub>，… ，n<sub>k</sub>，其标记分别为A<sub>1</sub>，A<sub>2</sub>，…，A<sub>k</sub>，那么A<sub><img align="absmiddle" 
+src="chb.files/image123.gif" v:shapes="_x0000_i1127"></sub>A<sub>1</sub>A<sub>2</sub>，…，A<sub>k</sub>一定是P中的一个产生式。 
+  <p><b>13</b><b>．二义文法（Ambiguous grammer</b><b>）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　如果一个文法存在某个句子对应两棵不同的语法树，则说这个文法是二义的。或者说，若一个文法中存在某个句子，它有两个不同的最左(最右)推导，则这个文法是二义的。 
+  <p><b>14</b><b>．短语，句柄 (phrase , sentence handle)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　令G是一文法，S是文法的开始符号，<sub><img align="absmiddle"
+src="chb.files/image125.gif" v:shapes="_x0000_i1128"></sub>是文法G的一个句型。如果有： 
+  <p align=left style='text-align:left;text-autospace:none'><sub>　　<img align="absmiddle"
+src="chb.files/image127.gif" v:shapes="_x0000_i1129"></sub>且<sub><img align="absmiddle"
+src="chb.files/image129.gif" v:shapes="_x0000_i1130"></sub>则称<sub><img align="absmiddle" 
+src="chb.files/image130.gif" v:shapes="_x0000_i1131"></sub>是句型<sub><img align="absmiddle"
+src="chb.files/image131.gif" v:shapes="_x0000_i1132"></sub>相对与非终结符 A的短语。特别，如有<sub><img align="absmiddle" 
+src="chb.files/image133.gif" v:shapes="_x0000_i1133"></sub>则称<sub><img align="absmiddle" 
+src="chb.files/image134.gif" v:shapes="_x0000_i1134"></sub>是句型<sub><img align="absmiddle" 
+src="chb.files/image135.gif" v:shapes="_x0000_i1135"></sub>相对于规则<sub><img align="absmiddle" 
+src="chb.files/image137.gif" v:shapes="_x0000_i1136"></sub>的直接短语 (也称简单短语)。一个句型的最左直接短语称为该句型的句柄。 
+  <p><b>15．正规式（regular expression）和它所表示的正规集（regular set）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　设字母表为<sub><img align="absmiddle" 
+src="chb.files/image139.gif" v:shapes="_x0000_i1137"></sub>,辅助字母表<sub><img align="absmiddle" 
+src="chb.files/image141.gif" v:shapes="_x0000_i1138"></sub>=｛<sub><img align="absmiddle" 
+src="chb.files/image143.gif" v:shapes="_x0000_i1139"></sub>,<sub><img align="absmiddle" 
+src="chb.files/image145.gif" v:shapes="_x0000_i1140"></sub>，｜，.，*,(,)｝。 
+  <p align=left style='text-align:left;text-autospace:none'>　　1. <sub><img align="absmiddle" 
+src="chb.files/image146.gif" v:shapes="_x0000_i1141"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image147.gif" v:shapes="_x0000_i1142"></sub>都是<sub><img align="absmiddle" 
+src="chb.files/image148.gif" v:shapes="_x0000_i1143"></sub>上的正规式，它们所表示的正规集分别为{<sub><img align="absmiddle"
+src="chb.files/image149.gif" v:shapes="_x0000_i1144"></sub>}和<sub><img align="absmiddle" 
+src="chb.files/image150.gif" v:shapes="_x0000_i1145"></sub>； 
+  <p align=left style='text-align:left;text-autospace:none'>　　2. 任何a∈<sub><img align="absmiddle" 
+src="chb.files/image151.gif" v:shapes="_x0000_i1146"></sub>，a是<sub><img align="absmiddle" 
+src="chb.files/image152.gif" v:shapes="_x0000_i1147"></sub>上的一个正规式，它所表示的正规集为{a}； 
+  <p align=left style='text-align:left;text-autospace:none'>　　3. 假定<sub><img align="absmiddle" 
+src="chb.files/image154.gif" v:shapes="_x0000_i1148"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image156.gif" v:shapes="_x0000_i1149"></sub>都是<sub><img align="absmiddle" 
+src="chb.files/image157.gif" v:shapes="_x0000_i1150"></sub>上的正规式，它们所表示的正规集分别为L(<sub><img align="absmiddle" 
+src="chb.files/image158.gif" v:shapes="_x0000_i1151"></sub>)和L(<sub><img align="absmiddle" 
+src="chb.files/image159.gif" v:shapes="_x0000_i1152"></sub>)，那么，(<sub><img align="absmiddle" 
+src="chb.files/image160.gif" v:shapes="_x0000_i1153"></sub>)，<sub><img align="absmiddle" 
+src="chb.files/image161.gif" v:shapes="_x0000_i1154"></sub>｜<sub><img align="absmiddle" 
+src="chb.files/image162.gif" v:shapes="_x0000_i1155"></sub>，<sub><img align="absmiddle"
+src="chb.files/image163.gif" v:shapes="_x0000_i1156"></sub>·<sub><img align="absmiddle" 
+src="chb.files/image164.gif" v:shapes="_x0000_i1157"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image166.gif" v:shapes="_x0000_i1158"></sub>也都是正规式，它们所表示的正规集分别为L(<sub><img align="absmiddle" 
+src="chb.files/image167.gif" v:shapes="_x0000_i1159"></sub>)，L(<sub><img align="absmiddle" 
+src="chb.files/image168.gif" v:shapes="_x0000_i1160"></sub>)∪L(<sub><img align="absmiddle" 
+src="chb.files/image169.gif" v:shapes="_x0000_i1161"></sub>)，L(<sub><img align="absmiddle" 
+src="chb.files/image170.gif" v:shapes="_x0000_i1162"></sub>)L(<sub><img align="absmiddle"
+src="chb.files/image171.gif" v:shapes="_x0000_i1163"></sub>)和(L(<sub><img align="absmiddle" 
+src="chb.files/image172.gif" v:shapes="_x0000_i1164"></sub>))<sub><img align="absmiddle" 
+src="chb.files/image174.gif" v:shapes="_x0000_i1165"></sub>。 
+  <p align=left style='text-align:left;text-autospace:none'>　　4. 仅由有限次使用上述三步骤而定义的表达式才是<sub><img align="absmiddle" 
+src="chb.files/image175.gif" v:shapes="_x0000_i1166"></sub>上的正规式，仅由这些正规式所表示的字集才是<sub><img align="absmiddle" 
+src="chb.files/image176.gif" v:shapes="_x0000_i1167"></sub>上的正规集。 
+  <p><b>16</b><b>．确定的有穷状态自动机DFA(deterministic finite automaton)</b><b>和不确定的有穷状态自动机NFA(nondeterministic 
+    finite automaton)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　我们这里是把DFA和NFA作为正规集的识别工具而介绍的。 
+  <p align=left style='text-align:left;text-autospace:none'>　　DFA定义如下： 
+  <p align=left style='text-align:left;text-autospace:none'>　　一个确定的有穷自动机(DFA)M是一个五元组：M=(K, 
+    <sub><img align="absmiddle" 
+src="chb.files/image177.gif" v:shapes="_x0000_i1168"></sub>，f，S，Z)其中 
+  <p align=left style='text-align:left;text-autospace:none'>　　1. K是一个有穷集，它的每个元素称为一个状态； 
+  <p align=left style='text-align:left;text-autospace:none'>　　2. <sub><img align="absmiddle"
+src="chb.files/image178.gif" v:shapes="_x0000_i1169"></sub>是一个有穷字母表，它的每个元素称为一个输入字符,所以也称<sub><img align="absmiddle"
+src="chb.files/image179.gif" v:shapes="_x0000_i1170"></sub>为输入符号字母表； 
+  <p align=left style='text-align:left;text-autospace:none'>　　3. f是转换函数，是在K×<sub><img align="absmiddle" 
+src="chb.files/image180.gif" v:shapes="_x0000_i1171"></sub><sub><img align="absmiddle"
+src="chb.files/image181.gif" v:shapes="_x0000_i1172"></sub>K上的映像，即，如f(<sub><img align="absmiddle" 
+src="chb.files/image183.gif" v:shapes="_x0000_i1173"></sub>,a)=<sub><img align="absmiddle"
+src="chb.files/image185.gif" v:shapes="_x0000_i1174"></sub>(<sub><img align="absmiddle"
+src="chb.files/image186.gif" v:shapes="_x0000_i1175"></sub>∈K, <sub><img align="absmiddle" 
+src="chb.files/image187.gif" v:shapes="_x0000_i1176"></sub>∈K)就意味着，当前状态为<sub><img align="absmiddle"
+src="chb.files/image188.gif" v:shapes="_x0000_i1177"></sub>，输入字符为a时，将转换到下一状态<sub><img align="absmiddle" 
+src="chb.files/image189.gif" v:shapes="_x0000_i1178"></sub>，我们把<sub><img align="absmiddle" 
+src="chb.files/image190.gif" v:shapes="_x0000_i1179"></sub>称作<sub><img align="absmiddle" 
+src="chb.files/image191.gif" v:shapes="_x0000_i1180"></sub>的一个后继状态； 
+  <p align=left style='text-align:left;text-autospace:none'>　　4. S∈K是唯一的一个初态； 
+  <p align=left style='text-align:left;text-autospace:none'>　　5. Z<sub><img align="absmiddle" 
+src="chb.files/image193.gif" v:shapes="_x0000_i1181"></sub>K，是一个终态集，终态也称可接受状态或结束状态。 
+  <p align=left style='text-align:left;text-autospace:none'>　　NFA定义如下： 
+  <p align=left style='text-align:left;text-autospace:none'>　　一个不确定的有穷自动机(NFA)M是一个五元组，M=( 
+    K, <sub><img align="absmiddle" 
+src="chb.files/image194.gif" v:shapes="_x0000_i1182"></sub>，f，S，Z)其中 
+  <p align=left style='text-align:left;text-autospace:none'>　　1. K是一个有穷集，它的每个元素称为一个状态； 
+  <p align=left style='text-align:left;text-autospace:none'>　　2. <sub><img align="absmiddle" 
+src="chb.files/image195.gif" v:shapes="_x0000_i1183"></sub>是一个有穷字母表，它的每个元素称为一个输入字符； 
+  <p align=left style='text-align:left;text-autospace:none'>　　3. f是一个从K×<sub><img align="absmiddle"
+src="chb.files/image197.gif" v:shapes="_x0000_i1184"></sub>到K的子集的映像。 
+  <p align=left style='text-align:left;text-autospace:none'>　　4. S<sub><img align="absmiddle" 
+src="chb.files/image198.gif" v:shapes="_x0000_i1185"></sub>K，是一个非空初态集； 
+  <p align=left style='text-align:left;text-autospace:none'>　　5. Z<sub><img align="absmiddle" 
+src="chb.files/image199.gif" v:shapes="_x0000_i1186"></sub>K，是一个终态集。 
+  <p>　　DFA和NFA的等价定理：对于每个NFA M，存在一个DFA M’，使得L（M）＝L（M’），即M和M’是等价的。 
+  <p><b>17</b><b>．最小状态DFA(reduced DFA or minimum DFA)</b>
+  <p>　　我们说一个确定的有穷自动机是化简了的，即是说，它没有多余状态并且它的状态中没有两个是互相等价的，这种DFA也叫做最小状态DFA。一个DFA可以通过消除多余状态和合并等价状态而转换成一个与之等价的最小状态DFA。 
+  <p><b>18</b><b>．FIRST</b><b>集</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image216.gif" v:shapes="_x0000_i1200"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image201.gif" v:shapes="_x0000_i1188"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image202.gif" v:shapes="_x0000_i1189"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image203.gif" v:shapes="_x0000_i1190"></sub>)是上下文无关文法 
+  <p align=left style='text-align:left;text-autospace:none'>　　FIRST(<sub><img align="absmiddle" 
+src="chb.files/image204.gif" v:shapes="_x0000_i1191"></sub>)=｛a｜<sub><img align="absmiddle" 
+src="chb.files/image206.gif" v:shapes="_x0000_i1192"></sub>，a∈<sub><img align="absmiddle" 
+src="chb.files/image207.gif" v:shapes="_x0000_i1193"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image208.gif" v:shapes="_x0000_i1194"></sub>, <sub><img align="absmiddle"
+src="chb.files/image209.gif" v:shapes="_x0000_i1195"></sub>∈<sub><img align="absmiddle" 
+src="chb.files/image211.gif" v:shapes="_x0000_i1196"></sub>｝ 
+  <p align=left style='text-align:left;text-autospace:none'>　　若<sub><img align="absmiddle"
+src="chb.files/image213.gif" v:shapes="_x0000_i1197"></sub>，则规定<sub><img align="absmiddle" 
+src="chb.files/image214.gif" v:shapes="_x0000_i1198"></sub>∈FIRST(<sub><img align="absmiddle" 
+src="chb.files/image215.gif" v:shapes="_x0000_i1199"></sub>)。 
+  <p><b>19．FOLLOW集</b> 
+  <p align=left style='text-align:left;text-autospace:none'>　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image216.gif" v:shapes="_x0000_i1200"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image217.gif" v:shapes="_x0000_i1201"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image218.gif" v:shapes="_x0000_i1202"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image219.gif" v:shapes="_x0000_i1203"></sub>)是上下文无关文法，A∈<sub><img align="absmiddle" 
+src="chb.files/image220.gif" v:shapes="_x0000_i1204"></sub>，Ｓ是开始符号 
+  <p align=left style='text-align:left;text-autospace:none'>　　FOLLOW(A)=｛a｜<sub><img align="absmiddle" 
+src="chb.files/image222.gif" v:shapes="_x0000_i1205"></sub>且a∈<sub><img align="absmiddle" 
+src="chb.files/image223.gif" v:shapes="_x0000_i1206"></sub>，a∈FIRST(<sub><img align="absmiddle" 
+src="chb.files/image224.gif" v:shapes="_x0000_i1207"></sub>)，<sub><img align="absmiddle" 
+src="chb.files/image226.gif" v:shapes="_x0000_i1208"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image228.gif" v:shapes="_x0000_i1209"></sub>｝ 
+  <p align=left style='text-align:left;text-autospace:none'>　　若<sub><img align="absmiddle" 
+src="chb.files/image229.gif" v:shapes="_x0000_i1210"></sub>，且<sub><img align="absmiddle" 
+src="chb.files/image231.gif" v:shapes="_x0000_i1211"></sub>，则#∈FOLLOW(A)。 
+  <p align=left style='text-align:left;text-autospace:none'>　　也可定义为：FOLLOW(A)={a|<sub><img align="absmiddle"
+src="chb.files/image233.gif" v:shapes="_x0000_i1212"></sub>…Aa…,a∈<sub><img align="absmiddle" 
+src="chb.files/image234.gif" v:shapes="_x0000_i1213"></sub>} 
+  <p align=left style='text-align:left;text-autospace:none'>　　若有<sub><img align="absmiddle" 
+src="chb.files/image235.gif" v:shapes="_x0000_i1214"></sub>…A，则规定#∈FOLLOW(A) 
+  <p align=left style='text-align:left;text-autospace:none'>　　这里我们用‘＃’作为输入串的结束符，或称为句子括号，如：＃输入串＃。 
+  <p><b>20</b><b>．SELECT</b><b>集</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　给定上下文无关文法的产生式A→<sub><img align="absmiddle" 
+src="chb.files/image236.gif" v:shapes="_x0000_i1215"></sub>&nbsp; A∈<sub><img align="absmiddle"
+src="chb.files/image237.gif" v:shapes="_x0000_i1216"></sub>，<sub><img align="absmiddle"
+src="chb.files/image238.gif" v:shapes="_x0000_i1217"></sub>∈<sub><img align="absmiddle"
+src="chb.files/image240.gif" v:shapes="_x0000_i1218"></sub>，若<sub><img align="absmiddle" 
+src="chb.files/image242.gif" v:shapes="_x0000_i1219"></sub>，则SELECT(A→<sub><img align="absmiddle"
+src="chb.files/image243.gif" v:shapes="_x0000_i1220"></sub>)= FIRST(<sub><img align="absmiddle" 
+src="chb.files/image244.gif" v:shapes="_x0000_i1221"></sub>) 
+  <p align=left style='text-align:left;text-autospace:none'>　　如果<sub><img align="absmiddle" 
+src="chb.files/image246.gif" v:shapes="_x0000_i1222"></sub><sub><img align="absmiddle" 
+src="chb.files/image248.gif" v:shapes="_x0000_i1223"></sub>，则SELECT(A→<sub><img align="absmiddle" 
+src="chb.files/image249.gif" v:shapes="_x0000_i1224"></sub>)=FIRST(<sub><img align="absmiddle" 
+src="chb.files/image249.gif" v:shapes="_x0000_i1224"></sub>)∪FOLLOW(A)。 
+  <p><b>21．左递归文法（Left recursive grammar）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一个文法含有下列形式的产生式时。 
+  <p align=left style='text-align:left;text-autospace:none'>　　a)A→A<sub><img align="absmiddle" 
+src="chb.files/image251.gif" v:shapes="_x0000_i1226"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    A∈<sub><img align="absmiddle" 
+src="chb.files/image252.gif" v:shapes="_x0000_i1227"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image253.gif" v:shapes="_x0000_i1228"></sub>∈<sub><img align="absmiddle" 
+src="chb.files/image254.gif" v:shapes="_x0000_i1229"></sub> 
+  <p align=left style='text-align:left;text-autospace:none'>　　b)A→B<sub><img align="absmiddle" 
+src="chb.files/image255.gif" v:shapes="_x0000_i1230"></sub> 
+  <p align=left style='text-align:left;
+text-autospace:none'>　　B→Ａ<sub><img align="absmiddle" 
+src="chb.files/image256.gif" v:shapes="_x0000_i1231"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    A,B∈<sub><img align="absmiddle" 
+src="chb.files/image257.gif" v:shapes="_x0000_i1232"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image258.gif" v:shapes="_x0000_i1233"></sub>、<sub><img align="absmiddle"
+src="chb.files/image259.gif" v:shapes="_x0000_i1234"></sub>∈<sub><img align="absmiddle"
+src="chb.files/image260.gif" v:shapes="_x0000_i1235"></sub> 
+  <p align=left style='text-align:left;text-autospace:none'>　　在a)中也可称为含有左递归的规则或称直接左递归，在b)中为A<sub><img align="absmiddle" 
+src="chb.files/image261.gif" v:shapes="_x0000_i1236"></sub>Ａ…称文法中含有左递归或间接左递归，文法中只要含有a)或含有b)或二者皆有均认为文法是左递归的。 
+  <p align=left style='text-align:left;text-autospace:none'><b>22．LL（1）文法</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　满足如下条件的上下文无关文法称为LL（1）文法：对每个非终结符A的两个不同产生式， 
+  <p align=left style='text-align:left;text-autospace:none'>　　A→<sub><img align="absmiddle" 
+src="chb.files/image262.gif" v:shapes="_x0000_i1237"></sub>，A→<sub><img align="absmiddle" 
+src="chb.files/image263.gif" v:shapes="_x0000_i1238"></sub>，满足 
+  <p align=left style='text-align:left;
+text-autospace:none'>　　SELECT（A→<sub><img align="absmiddle" 
+src="chb.files/image264.gif" v:shapes="_x0000_i1239"></sub>）<sub><img align="absmiddle" 
+src="chb.files/image266.gif" v:shapes="_x0000_i1240"></sub>SELECT（A→<sub><img align="absmiddle"
+src="chb.files/image267.gif" v:shapes="_x0000_i1241"></sub>）＝<sub><img align="absmiddle" 
+src="chb.files/image268.gif" v:shapes="_x0000_i1242"></sub> 
+  <p align=left style='text-align:left;
+text-autospace:none'>　　其中<sub><img align="absmiddle" 
+src="chb.files/image269.gif" v:shapes="_x0000_i1243"></sub>、<sub><img align="absmiddle" 
+src="chb.files/image270.gif" v:shapes="_x0000_i1244"></sub>不同时能<sub><img align="absmiddle" 
+src="chb.files/image272.gif" v:shapes="_x0000_i1245"></sub>。 
+  <p align=left style='text-align:left;text-autospace:none'>　　LL（1）文法的含义是：第一个L表明自顶向下分析是从左向右扫描输入串，第二个L表明分析过程中将用最左推导，1表明只需向右看一个符号便可决定如何推导即选择哪个产生式（规则）进行推导，类似也可以有LL（K）文法，也就是需向前查看K个符号才可确定选用哪个产生式。通常采用K＝1，个别情况采用K＝2。 
+  <p align=left style='text-align:left;text-autospace:none'><b>23．递归子程序法（Recursive-descent）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　递归子程序法是LL（1）文法的分析程序的一种实现方法。它对应文法中每个非终结符编写一个递归过程，这种分析程序由这一系列递归过程的相互调用来完成语法分析工作。 
+  <p><b>24</b><b>．移进－归约分析（shift</b><b>－reduce analysis</b><b>）</b>
+  <p>　　自底向上分析方法，也称移进－归约分析法，它的实现思想是对输入符号串自左向右进行扫描，并将输入符逐个移入一个后进先出栈中，边移入边分析，一旦栈顶符号串形成某个句型的句柄时，（该句柄对应某产生式的右部），就用该产生式的左部非终结符代替相应右部的文法符号串，这称为一步归约。重复这一过程直到归约栈中只剩文法的开始符号时则为分析成功，也就确认输入串是文法的句子。 
+  <p><b>25</b><b>．算法优先文法</b><b>(Operator Precedence Grammar)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　设有一不含<sub><img align="absmiddle" 
+src="chb.files/image273.gif" v:shapes="_x0000_i1246"></sub>产生式的算法文法G，如果对任意两个终结符对a，b之间至多只有＜·、·＞和<sub><img align="absmiddle" 
+src="chb.files/image275.gif" v:shapes="_x0000_i1247"></sub>三种关系的一种成立，则称G是一个算符优先文法(Operator 
+    Precedence Grammar)，即OPG文法。 
+  <p><b>26</b><b>．最左素短语（Most left prime phrase</b><b>）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　设有文法G［S］，其句型的素短语是一个短语 
+    ，它至少包含一个终结符，并除自身外不包含其它素短语，句型的最左边的素短语称最左素短语。 
+  <p><b>27</b><b>．LR</b><b>分析</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　是一种自底向上的语法分析技术,通常称为LR(K).L是说从左至右扫描输入串,R是说分析过程所形成的推导是最右推导,K是指在做分析决策时向前察看K个输入符号.LR分析可用于一大类上下文无关文法,是一种最常用的无回朔的移进归约分析, 
+  <p><b>28</b><b>．属性文法（Attribute grammar</b><b>）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　形式上讲，一个属性文法是一个三元组，Ａ＝（Ｇ，Ｖ，Ｆ），一个上下文无关文法Ｇ；一个属性的有穷集Ｖ和关于属性的断言或谓词的有穷集Ｆ。每个属性与文法的某个非终结符或终结符相联。每个断言与文法的某产生式相联。如果对Ｇ中的某一输入串而言（句子），Ａ中的所有断言对该输入串的语法树结点的属性全为真，则该串也是Ａ语言中的句子。编译程序的静态语义审查工作就是验证关于所编译的程序的断言是否全部为真。 
+  <p><b>29</b><b>．语法制导翻译（Syntax-directed translation</b><b>）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　在语法分析过程中，随着分析的步步进展，根据每个产生式所对应的语义子程序（或语义规则描述的语义动作）进行翻译的办法称作语法制导翻译。 
+  <p><b>30</b><b>．</b><b>数组</b><b>内情向量（array dope vector</b><b>）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一般编译程序对数组说明的处理是把数组的有关信息汇集在一个叫做“内情向量”或“信息向量”的表格中，以便以后计算数组元素的地址时引用这些信息。每个数组有一个内情向量。其中的信息包括，数组的类型，维数，各维的上、下界，以及数组的首地址。编译程序处理数组说明的主要工作是把内情向量登录在符号表中，这些属性信息是确定存储分配时数组所占空间的大小和数组元素位置的依据。 
+  <p><b>31．符号表（symbol table）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　在编译程序中符号表用来存放源程序中出现的有关标识符的属性信息，这些信息集中反映了标识符的语义特征属性,为进行上下文语义审查和进一步的翻译使用。 
+  <p><b>32．静态存储分配（Static storage allocation）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　如果在编译时能确定目标程序运行中所需的全部数据空间的大小，编译时安排好目标程序运行时的全部数据空间，确定每个数据对象的存储位置，称这种分配策略为静态存储分配。 
+  <p align=left style='text-align:left;text-autospace:none'><b>33．动态存储分配（Dynamic storage allocation）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　如果一个程序设计语言允许递归过程、可变数组或允许用户自由申请和释放空间，那么，就需要采用动态存储管理技术。因为对于这种程序在编译时无法知道它在运行时需要多大的存储空间，它所需要的数据空间的大小需待程序运行时动态地确定。有两种动态存储分配方式：栈式（stack）和堆式（heap）。 
+  <p align=left style='text-align:left;text-autospace:none'><b>34．过程的活动记录AR(Activation Record)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　过程的活动记录是一段连续的存储区，用以存放过程的一次执行所需要的信息， 
+  <p align=left style='text-align:left;text-autospace:none'>　　一般有如下信息： 
+  <p align=left style='text-align:left;text-autospace:none'>　　１． 临时工作单元，比如计算表达式过程中需存放中间结果用的临时值单元。 
+  <p align=left style='text-align:left;text-autospace:none'>　　２． 局部变量，一个过程的局部变量。 
+  <p align=left style='text-align:left;text-autospace:none'>　　３． 保存机器状态，容纳该过程执行前关于机器状态的信息，诸如程序计数器、寄存器的值，这些值都需要在控制从该过程返回时给予恢复。 
+  <p align=left style='text-align:left;text-autospace:none'>　　４． 存取链，用以存取非局部变量，这些变量存放于其它过程活动记录中。并不是所有语言需要该信息。 
+  <p align=left style='text-align:left;text-autospace:none'>　　５． 控制链，指向调用该过程的那个过程的活动记录，这也不是所有语言都需要的。 
+  <p align=left style='text-align:left;text-autospace:none'>　　６． 实参，也称形式单元，由调用过程向该被调过程提供实参的值（或地址）。当然在实际编译程序中，也常常使用机器寄存器传递实参。 
+  <p align=left style='text-align:left;text-autospace:none'>　　７． 返回地址，保存该被调过程返回后的地址。 
+  <p><b>35．Display表</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　为能存取非局部变量而纪录外包过程的活动记录地址的数组。即每进入一个过程后，在建立它的活动记录的同时建立一张嵌套层次显示表display。这里所提到的“嵌套层次”，是指过程定义的层数，始终假定主程序的层数为０，因此主程序称为０层过程。如某过程ｐ是在层次为ｉ的过程ｑ内定义的，并且ｑ是包围ｐ的直接外层，那么ｐ的过程层数为ｉ＋１。display是一个指针数组ｄ，也可看做是一个小栈，自顶向下每个单元依次存放着现行层，直接外层，……直至最外层（０层，主程序层）等每一层过程的最新活动记录的地址。 
+  <p><b>36．</b><b>活前缀(viable prefixes)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　若<sub><img align="absmiddle" 
+src="chb.files/image277.gif" v:shapes="_x0000_i1474"></sub>是文法G中的一个规范推导。 
+  <p align=left style='text-align:left;text-autospace:none'>　　如果符号串<sub><img align="absmiddle" 
+src="chb.files/image278.gif" v:shapes="_x0000_i1475"></sub>是<sub><img align="absmiddle" 
+src="chb.files/image280.gif" v:shapes="_x0000_i1476"></sub>的前缀，则称<sub><img align="absmiddle" 
+src="chb.files/image281.gif" v:shapes="_x0000_i1477"></sub>是G的一个活前缀。也就是说<sub><img align="absmiddle" 
+src="chb.files/image282.gif" v:shapes="_x0000_i1478"></sub>是规范句型<sub><img align="absmiddle" 
+src="chb.files/image284.gif" v:shapes="_x0000_i1479"></sub>的前缀，但它的右端不超过该句型句柄的末端。这里S为对原文法G加了产生式S′→Ｓ，S为原文法G的开始符号，S′为拓广后文法G′的开始符号。 
+  <p><b>37．代码优化（Code Optimization）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　所谓代码优化，实质上是对代码进行等价变换，使得变换后的代码运行结果与变换前代码运行结果相同，而运行速度加大或占用存储空间少，或两者都有。 
+  <p><b>38．基本块（Basic block）和DAG</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　所谓基本块，是指程序中一顺序执行的语句序列，其中只有一个入口语句和一个出口语句。执行时只能从其入口语句进入，从其出口语句退出。如果有向图中任一通路都不是环路，则称该有向图为无环路有向图，简称ＤＡＧ。基本块的DAG表示可用于代码优化。 
+  <p><b>39．控制流程图（流图）（Control flow graph）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一个控制流程图就是具有唯一首结点的有向图。所谓首结点，就是从它开始到控制流程图中任何结点都有一条通路的结点。 
+  <p align=left style='text-align:left;text-autospace:none'>我们可以把一个控制流程图表示成一个三元组Ｇ＝（Ｎ，Ｅ，<sub><img align="absmiddle" 
+src="chb.files/image286.gif" v:shapes="_x0000_i1480"></sub>），其中，Ｎ代表图中所有结点集，Ｅ代表图中所有有向边集，<sub><img align="absmiddle" 
+src="chb.files/image287.gif" v:shapes="_x0000_i1481"></sub>代表首结点。控制流程图简称为流图。
+  <p><b>40．循环（Loop）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　在程序流图中，称具有下列性质的结点序列为一个循环： 
+  <p align=left style='text-align:left;text-autospace:none'>　　１． 它们是强连通的。也即，其中任意两个结点之间，必有一条通路，而且该通路上各结 
+  <p align=left style='text-align:left;text-autospace:none'>点都属于该结点序列。如果序列只包含一个结点，则必有一有向边从该结点引到其自身。 
+  <p align=left style='text-align:left;text-autospace:none'>　　２． 它们中间有且只有一个是入口结点。 
+  <p align=left style='text-align:left;text-autospace:none'>　　因此，我们定义的循环就是程序流图中具有唯一入口结点的强连通子图，从循环外要进入循 
+  <p align=left style='text-align:left;text-autospace:none'>环，必须首先经过循环的入口结点。
+  <p align=left style='text-align:left;text-autospace:none'>　　所谓入口结点，是指序列中具有下述性质的结点：从序列外某结点，有一有向边引到它，或者它就是程序流图的首结点。 
+  <p align=left style='text-align:left;text-autospace:none'><b>41．必经结点（dominators）和必经结点集（dominators set）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　在程序流图中，对任意两个结点ｍ和ｎ，如果从流图的首结点出发，到达ｎ的任一通路都要经过ｍ，则称ｍ是ｎ的必经结点，记为ｍ　ＤＯＭ　ｎ。流图中结点ｎ的所有必经结点的集合，称为结点ｎ的必经结点集，记为Ｄ（ｎ）。 
+  <p align=left style='text-align:left;text-autospace:none'><b>42．回边（back edge）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　假设ａ→ｂ是流图中的一条有向边，如果ｂ　ＤＯＭ　ａ，则称ａ→ｂ是流图中的一条回边。 
+  <p align=left style='text-align:left;text-autospace:none'><b>43．T型图（T diagram）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　一个编译程序涉及到三个方面的语言，即源语言、目标语言和编译程序的书写语言。为了描述方便通常用T型图来表示一个编译程序所涉及到的这三个方面的语言。T型图的左上角表示源语言，右上角表示目标语言，底部表示书写语言(实现语言)。 
+  <p align=left style='text-align:left;text-autospace:none'><b>44．自展（bootstrap）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　自展的思想是先用目标机的汇编语言或机器语言书写源语言的一个子集的编译程序，然后再用这个子集作为书写语言，实现源语言的编译程序，如果把这个过程根据情况分成若干步，像滚雪球一样直到生成预计源语言的编译程序为止，我们把这样的实现方式称为自展技术。 
+  <p align=left style='text-align:left;text-autospace:none'><b>45．Token</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　具有集合意义的字符序列.是词法分析的输出<b>. 
+    Token </b>一般分为标识符,常数(常量),关键字,运算符及界符. 
+  <p align=left style='text-align:left;text-autospace:none'><b>46．交叉编译（Cross compile）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　所谓交叉编译是指把一个源语言在一个机器(称为宿主机)上编译产生另一个机器(称为目标机)的汇编语言或机器语言。 
+  <p align=left style='text-align:left;text-autospace:none'><b>47.前端（Front－end）和后端（Back end）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　有时，常常把编译的过程分为前端(front 
+    end)和后端(back end)，前端由那样一些阶段组成：这些阶段的工作主要依赖于源语言而与目标机无关。通常这些阶段包括词法分析、语法分析、语义分析和中间代码生成，某些优化工作也可在前端做，也包括与前端每个阶段相关的出错处理工作和符号表管理工作。 
+  <p align=left style='text-align:left;text-autospace:none'>后端工作指那些依赖于目标机而一般不依赖源语言，只与中间代码有关的那些阶段，即目标代码生成，以及相关出错处理和符号表操作。
+  <p><b>48</b><b>．</b><b>LR(0)</b><b>项目和</b><b>LR(0)项目集规范族(</b><b>LR(0)items and canonical collection of sets 
+    of LR(0) items)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　文法G的产生式的右部适当位置添加有一个圆点则称为一个<b>LR(0)</b>项目。<b></b> 
+  <p align=left style='text-align:left;text-autospace:none'>构成识别一个文法活前缀的DFA项目集(状态)的全体称为这个文法的LR(0)项目集规范族。
+  <p align=left style='text-align:left;text-autospace:none'><b>49</b><b>．四元式</b><b>(quadruples)</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　四元式是一种中间代码的形式,是一个有四个域的纪录结构: 
+    四个域分别称为 op,arg1,arg2 和 result 即操作符,运算对象1, 运算对象2 和运算结果.一个例子: 
+  <p align=left style='text-align:left;text-autospace:none'>　　　( + ,a, b, c) 
+  <p align=left style='text-align:left;text-autospace:none'><b>50．传值（Call－by－value）和传地址（Call－by－reference）</b>
+  <p align=left style='text-align:left;text-autospace:none'>　　是调用过程向被调用过程参数传递的两种方法. 
+  <p align=left style='text-align:left;text-autospace:none'>　　传值也称值调用，即将实参计算处它的值，然后把它传给被调过程。具体如下： 
+  <p align=left style='text-align:left;text-autospace:none'>　　①形式参数当作过程的局部变量处理，即在被调过程的活动记录中开辟了形参的存储空间，这些存储位置即是我们所说的实参或形式单元。 
+  <p align=left style='text-align:left;text-autospace:none'>　　②调用过程计算实参的值，并将它们的右值（r－value）放在为形式单元开辟的空间中。 
+  <p align=left style='text-align:left;text-autospace:none'>　　③被调用过程执行时，就像使用局部变量一样使用这些形式单元。 
+  <p align=left style='text-align:left;text-autospace:none'>　　传值或值调用的重要特点是对形式参数的任何运算不影响调用过程的活动记录中实参的值。 
+  <p align=left style='text-align:left;text-autospace:none'>　　当参数通过引用传递时，也称作传地址，或引用调用。调用过程传给被调过程的是指针，指向实参存储位置的指针。 
+  <p align=left style='text-align:left;text-autospace:none'>　　①如实参是一个名字或是具有左值的表达式，则左值本身传递过去。 
+  <p align=left style='text-align:left;text-autospace:none'>&nbsp;</p></div></body></html>

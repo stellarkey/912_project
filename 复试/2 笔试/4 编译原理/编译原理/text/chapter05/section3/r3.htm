@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　根据第5.2节的内容可得：<br>
+      　　·可推出ε的非终结符表为:<br>
+      <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center">E</td>
+          <td align="center">E'</td>
+          <td align="center">T</td>
+          <td align="center">T'</td>
+          <td align="center">F</td>
+        </tr>
+        <tr> 
+          <td align="center">否</td>
+          <td align="center">是 </td>
+          <td align="center">否</td>
+          <td align="center">是 </td>
+          <td align="center">否</td>
+        </tr>
+      </table>
+    　　·各非终结符的FIRST集合如下：<br>
+      　　FIRST(E)={(,i}<br>
+      　　FIRST(E′)={+,ε}<br>
+      　　FIRST(T)={(,i}<br>
+      　　FIRST(T′)={*,ε}<br>
+      　　FIRST(F)={(,i}<br>
+      　　·各非终结符的FOLLOW集合为：<br>
+      　　FOLLOW(E)={),#}<br>
+      　　FOLLOW(E′)={)，#}<br>
+      　　FOLLOW(T)={+，)，#}<br>
+      　　FOLLOW(T′)={+，)，#}<br>
+      　　FOLLOW(F)={*，+，)，#}<br>
+      　　·各产生式的SELECT集合为：<br>
+      　　SELECT(E→TE′)={(,i}<br>
+      　　SELECT(E′→+TE′)={+}<br>
+      　　SELECT(E′→ε)={)，#}<br>
+      　　SELECT(T→FT′)={(，i}<br>
+      　　SELECT(T′→*FT′)={*}<br>
+      　　SELECT(T′→ε)={+，)，#}<br>
+      　　SELECT(F→(E))={(}<br>
+      　　SELECT(F→i)＝{i}<br>
+      　　由上可知有相同左部产生式的SELECT集合的交集为空，所以文法是LL(1)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

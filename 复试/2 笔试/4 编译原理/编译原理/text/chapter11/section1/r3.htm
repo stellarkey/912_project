@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　为了说明这些常用的优化技术，我们来看下面这个例子，源程序是：<br>
+      　　P∶=0<br>
+      　　for I∶=1 to 20 do<br>
+      　　P∶=P+A[I]*B[I];<br>
+      　　经过编译得到的中间代码如图11.2所示，这个程序段由B<sub><font size="-2">1</font></sub>和B<sub><font size="-2">2</font></sub>两个部分组成，B<sub><font size="-2">2</font></sub>是一个循环，假定机器按字节编址。那么，对于这个中间代码段，如何进行上述优化。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 11.2 中间代码段</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/p11_2.gif" width="279" height="349"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

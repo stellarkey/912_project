@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.4.2 语义动作</b><br>
+      　　当语法分析程序识别出某个句型时，它即用相应的语法规则进行归约，YACC在进行归约之前，先完成用户提供的语义动作，这些语义动作可以是返回语法符号的语义值，也可以是求某些语法符号的语义值，或者是其它适当的动作如建立语法树，产生目标代码，打印有关信息等。<br>
+      　　终结符的语义值是通过词法分析程序返回的，这个值由全局变量(YACC自动定义的)yylval带回，如果用户在词法分析程序识别出某终结符时，给yylval赋与相应的值，这个值就自动地作为该终结符的语义值。当语义值的类型不是int时，要注意赋与yylval的值的类型需与相应的终结符的语义值类型一致。<br>
+      　　语义动作是用C语言的语句写成的，跟在相应的语法规则后面，用花括号括起来。例如<br>
+      　　A∶(B)<br>
+      　　　　　　　　{ hello (l，&quot;abc&quot;);}<br>
+      　　XXX ∶ YYY ZZZ<br>
+      　　　　　　{ printf (&quot;amessage＼n&quot;);<br>
+      　　　　　　　flag=25;<br>
+      　　　　　　}<br>
+      　　　　; <br>
+      　　要存取语法符号的语义值，用户要在语义动作中使用以$开头的伪变量，这些伪变量是YACC内部提供的，用户不用定义。<br>
+      　　伪变量$$代表产生式左部非终结符的语义值，产生式右部各语法符号的语义值按从左到右的次序为$1，$2，…。<br>
+      例如在下面的产生式中：<br>
+      　　A ∶B C D<br>
+      　　　;<br>
+      A的语义值为$$，B。C。D的语义值依次为$1，$2，$3。<br>
+      　　为说明伪变量的作用，请看下例：有产生式<br>
+      　　expr∶ '(' expr ')'<br>
+      　　　　;<br>
+      　　左边的expr的值应该等于右边的expr的值，表示这个要求的语义动作为，<br>
+      　　expr∶ '(' expr ')'<br>
+      　　　　　{$$=$2;}<br>
+      　　　 　;<br>
+      　　如果在产生式后面的语义动作中没有为伪变量$$赋值，YACC自动把它置为产生式右部第一个语法符号的值(即$1)。<br>
+      　　有较复杂的应用中，往往需要在产生式右部的语法符号之间插入语义动作。这意味着使语法分析器在识别出句柄的一部分时就完成这些动作。请看下例： <br>
+      　　A ∶ B<br>
+      　　　　　{$$=1;}<br>
+      　　　 　C<br>
+      　　　　　{x=$2; y=$3;}<br>
+      　　　; <br>
+      例中x的值最后为1而y的值置为符号C的语义值，注意B后面的语义动作$$=1并非将符号A的语义值置为1，这是因为上面的例子是按下面的方式实 <br>
+      现的。<br>
+      　　$ACT ∶/* empty */<br>
+      　　　　　　{$$=1;}<br>
+      　　　　　;<br>
+      　　A　　∶ B $ACT C<br>
+      　　　　　　{x=$2; y=$3;}<br>
+      　　　　　; <br>
+      即YACC自动设置一个非终结符$ACT及一个空产生式用以完成上述语义动作。<br>
+      　　关于语义动作的实例请读者详细阅读本附录C.6中的两个例子。</td>
+  </tr>
+</table>
+</body>
+</html>

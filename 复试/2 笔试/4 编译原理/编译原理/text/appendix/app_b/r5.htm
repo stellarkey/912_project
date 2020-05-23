@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　5) 选择和字符组<br>
+        　　运算符|表示选择：<br>
+        　　(ab|cd)<br>
+        与ab或cd匹配。<br>
+        　　运算符()表示一组字符，注意()与[]的区别。(ab)表示字符串ab，而[ab]则表示单个字符a或b<br>
+        　　圆括号()用于表示复杂的正规式，例如：<br>
+        　　(ab|cd+)。(ef)<br>
+        与abefef，efef，cdef，cdcd匹配，但不与abc，abcd或abcdef匹配。<br>
+        　　6) 上下文相关性<br>
+        　　LEX可以识别一定范围的上下文，因此可在一定程度上表示上下文相关性。<br>
+        　　若某正规式的第一个字符是∧，则仅当该正规式出现在一行的开始处时才被匹配，一行的开始处是指整个输入串的开始或者紧接在一个回车换行之后，注意∧还有另一个作用即求补，∧的这两种用法不可能发生矛盾。<br>
+        　　若某正规式的最后一个字符是$，则仅当该表达式出现在一行的结尾处时才被匹配，一行的结尾处是指该表达式之后紧接一个回车换行。<br>
+        　　运算符/指出某正规式是否被匹配取决于它的后文，例如：<br>
+        　　ab/cd<br>
+        仅在ab之后紧接cd的情况下才与ab匹配。<br>
+        　　$其实是/的一个特殊情形，例如下面两个正规式等价：<br>
+        　　ab，ab/\n<br>
+        　　某正规式是否被匹配，或者匹配后执行什么样的动作也可能取决于该表达式的前文，前文相关性的处理方法在后面专门讨论，将用到运算符&lt;&gt;。 
+        <br>
+        　　7) 重复和辅助定义<br>
+        　　当被{}括起来的是数字对时，{}表示重复;当它括起来的是一个名字时，则表示辅助定义的展开。例如<br>
+        　　a{1，5}<br>
+        表示集合{a，aa，aaa，aaaa，aaaaa}。<br>
+        　　{digit}<br>
+        则与预先定义的名叫digit的串匹配，并将有定义插入到它在正规式中出现的位置上，辅助定义在后面专门讨论。<br>
+        　　最后，符号%的作用是作为LEX源程序的段间分隔符。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

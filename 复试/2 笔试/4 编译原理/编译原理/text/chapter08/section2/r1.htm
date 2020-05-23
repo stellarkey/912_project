@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　在语法分析过程中，随着分析的步步进展，根据每个产生式所对应的语义子程序（或语义规则描述的语义动作）进行翻译的办法称作语法制导翻译。<br>
+        　　假如我们要把中缀算术表达式翻译为后缀波兰表示形式（后缀波兰表示形式参见8.3.1），给出如下语义描述： <br>
+        　　E→T + E<sup><font size="-2">1</font></sup> { E.code=T.code|| E<sup><font size="-2">1</font></sup>.code||+ 
+        }<br>
+        　　E→T { E.code=T.code }<br>
+        　　T→F * T<sup><font size="-2">1</font></sup> { T.code=F.code||T<sup><font size="-2">1</font></sup>.code|| 
+        * }<br>
+        　　T→F { T.code =F.code }<br>
+        　　F→（E） { F.code = E.code }<br>
+        　　F→a { F.code = a }<br>
+        　　其中使用E.code，T.code和F.code分别表示相应的后缀式，&quot;||&quot;表示后缀式的连接。如果对于输入串a+a<sup><font size="-2">*</font></sup>a采用最左分析，其形成的推导过程为： 
+        <br>
+        　　E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">T+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">F+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+T<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+T<sup><font size="-2">*</font></sup> 
+        F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+F<sup><font size="-2">*</font></sup>F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+a<sup><font size="-2">*</font></sup>F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a+a<sup><font size="-2">*</font></sup>a<br>
+        　　(α，β),α是输入句子和句型，β是翻译的输出形式，则有：<br>
+        　　(E,E.code) <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (T+E, T.code||E.code||+) T (F+E, F.code||E.code||+)<br>
+        　　　　　　　 <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+E, a||E.code||+)<br>
+        　　　　　　 　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+T, a||T.code||+)<br>
+        　　　　　　 　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+F<sup><font size="-2">*</font></sup>, a||F.code||T.code||<sup><font size="-2">*</font></sup>+)<br>
+        　　　　　　 　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+a<sup><font size="-2">*</font></sup>, a||a||T.code||<sup><font size="-2">*</font></sup>+)<br>
+        　　　　　　 　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+a<sup><font size="-2">*</font></sup>F, a||a||F.code||<sup><font size="-2">*</font></sup>+)<br>
+        　　　　　　 　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+        (a+a<sup><font size="-2">*</font></sup>a, a||a||a||<sup><font size="-2">*</font></sup>+)去掉a||a||a||<sup><font size="-2">*</font></sup>+中的连结符，得到中缀表达式a+a<sup><font size="-2">*</font></sup>a的后缀式aaa<sup><font size="-2">*</font></sup>+ 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

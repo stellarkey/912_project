@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　语义形式化 (语义建模)有几种模型<br>
+        　　① 文法模型---- 属性文法<br>
+        　　② 命令式或操作式模型 ----- 操作语义学<br>
+        　　③ 应用式模型-----指称语义学<br>
+        　　④ 公理式模型-----公理语义学<br>
+        　　⑤ 规格说明模型-----代数数据类型<br>
+        　　属性文法将在我们的讲义中介绍。操作语义描述一段程序的含义是通过执行该段程序所改变的计算机（无论是真实计算机还是虚拟计算机）状态来反映。计算机里所有的寄存器的值和存储单元的值作为计算机的状态。<br>
+        　　For (expr1;expr2;expr3) 的操作语义表示：<br>
+        　　{ expr1;<br>
+        　　　... <br>
+        　　Loop:if expr2=0 goto out<br>
+        　　　… xpr3;<br>
+        　　　goto loop<br>
+        　　　out:<br>
+        　　...}<br>
+        　　公理语义概念是随着程序正确性的证明而发展的。当正确性证明能构造时表明程序执行它的规格说明所描述的计算。在一个证明中，每一个语句之前之后都有一个逻辑表达式对程序的变量进行约束,以此说明这个语句的含义。一般的记号是{P} 
+        S {Q}。<br>
+        　　指称语义的基本概念是给每一段程序实体定义一个数学意义上的对象，和一个从实体实例向数学意义对象的映射的函数。<br>
+        　　规格说明模型通过描述实现一个程序的各种函数间的关系来说明语义。如表明一个实现服从任何两个函数间的这种关系，则可以声明这个实现是此规格说明的正确实现。
+    </td>
+  </tr>
+</table>
+</body>
+</html>

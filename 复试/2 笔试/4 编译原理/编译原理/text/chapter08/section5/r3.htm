@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　例如布尔表达式a&lt;b or c&lt;d and e&gt;f翻译为如下四元式序列：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" width="35" height="19"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td height="19"><font color="#0000FF">例 8.3</font></td>
+        </tr>
+        <tr>
+          <td valign="top" width="35" height="19">&nbsp;</td>
+          <td height="19">　　（1）　if a＜b goto E．true<br>
+            　　（2）　goto （3）<br>
+            　　（3）　if c＜d　goto （5）<br>
+            　　（4）　goto E．false<br>
+            　　（5）　is e＞f goto E．true<br>
+            　　（6）　goto E．false<br>
+            　　这样生成的四元式显然不是最优的，如四元式（2）是不需要的。这种问题可留待代码优化阶段解决。</td>
+        </tr>
+      </table>
+      　　在例8.3中，我们使用E．true和E．false分别表示整个表达式a＜b or c＜d and e＞f的真、假出口，而E．true和E．false的值并不能在产生四元式的同时就知道。为了看清这一点，我们把该表达式放在条件语句中考虑，如语句 
+      <br>
+      if a＜b or c＜d and e＞f then S<sup><font size="-2">1</font></sup> else S<sup><font size="-2">2</font></sup>的四元式序列为<br>
+      　　（1）　if　a＜b　goto　（7） 　 /*（7）是整个布尔表达式的真出口*/<br>
+      　　（2）　goto　（3）<br>
+      　　（3）　if　c＜d　goto　（5）<br>
+      　　（4）　goto　(p+1) /*（p+1）是整个布尔表达式的假出口*/<br>
+      　　（5）　if　e＞f　goto　（7）<br>
+      　　（6）　goto　（p+1）<br>
+      　　（7） （关于S<sup><font size="-2">1</font></sup>的四元式）<br>
+      　　…<br>
+      　　（p）　goto　（q）<br>
+      　　（p+1）　（关于S<sup><font size="-2">2</font></sup>的四元式）<br>
+      　　…<br>
+      　　（q）</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　procedure listcode;<br>
+      　　var i:integer;<br>
+      　　　begin (*list code generated for this block*)<br>
+      　　　　if listswitch<br>
+      　　　　　then<br>
+      　　　　　　begin <br>
+      　　　　　　　for i∶=cx0 to cx-1 do<br>
+      　　　　　　　　with code[i] do<br>
+      　　　　　　　　begin<br>
+      　　　　　　　　　writeln(i,mnemonic[f]:5,l:3,a:5);<br>
+      　　　　　　　　　writeln(fa,i:4,mnemonic[f]:5,l:3,a:5)<br>
+      　　　　　　　　end;<br>
+      　　　　　　end<br>
+      　　　end(*listcode*); 
+      <p>　procedure statement(fsys:symset);<br>
+        　　var i,cx1,cx2:integer;</p>
+      <p>　procedureexpression(fsys:symset);<br>
+        　　var addop:symbol;</p>
+      <p> 　procedure term(fsys:symset);<br>
+        　　var mulop:symbol;</p>
+      <p> 　procedure factor(fsys:symset);<br>
+        　　var i:integer;<br>
+        　　　begin<br>
+        　　　　test(facbegsys,fsys,24);<br>
+        　　　　while sym in facbegsys do<br>
+        　　　　　begin<br>
+        　　　　　　if sym=ident<br>
+        　　　　　　　then<br>
+        　　　　　　　　begin<br>
+        　　　　　　　　　i∶=position(id);<br>
+        　　　　　　　　　if i=0<br>
+        　　　　　　　　　　then error(11)<br>
+        　　　　　　　　　　else<br>
+        　　　　　　　　　　　with table[i] do<br>
+        　　　　　　　　　　　case kind of<br>
+        　　　　　　　　　　　　constant:gen(lit,0,val);<br>
+        　　　　　　　　　　　　variable:gen(lod,lev-level,adr);<br>
+        　　　　　　　　　　　　procedur:error(21)<br>
+        　　　　　　　　　　　end;<br>
+        　　　　　　　　　　getsym<br>
+        　　　　　　　　end<br>
+        　　　　　　　else<br>
+        　　　　　　　　if sym=number<br>
+        　　　　　　　　　then<br>
+        　　　　　　　　　　begin<br>
+        　　　　　　　　　　　if num&gt;amax<br>
+        　　　　　　　　　　　　then<br>
+        　　　　　　　　　　　　　begin<br>
+        　　　　　　　　　　　　　　error(31);<br>
+        　　　　　　　　　　　　　　num∶=0<br>
+        　　　　　　　　　　　　　end;<br>
+        　　　　　　　　　　　　gen(lit,0,num);<br>
+        　　　　　　　　　　　　getsym<br>
+        　　　　　　　　　　end<br>
+        　　　　　　　　　else<br>
+        　　　　　　　　　　if sym=lparen<br>
+        　　　　　　　　　　　then<br>
+        　　　　　　　　　　　　begin<br>
+        　　　　　　　　　　　　　getsym;<br>
+        　　　　　　　　　　　　　expression([rparen]+fsys);<br>
+        　　　　　　　　　　　　　if sym=rparen<br>
+        　　　　　　　　　　　　　　then getsym<br>
+        　　　　　　　　　　　　　　else error(22)<br>
+        　　　　　　　　　　　　end;<br>
+        　　　　　　　　test(fsys,facbegsys,23)<br>
+        　　　　　end<br>
+        　　　end(*factor*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

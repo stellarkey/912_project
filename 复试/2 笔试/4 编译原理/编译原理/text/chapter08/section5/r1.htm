@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　上述两种方法对于不包含布尔函数调用的表达式是没有什么差别的。但是，假若一个布尔式中会有布尔函数调用，并且这种函数调用引起副作用（如有对全局量的赋值）时，这两种方法未必等价。采用哪种方法取决于程序设计语言的语义，有些语言规定，函数过程调用应不影响这个调用处环境的计值，或者说，函数过程的工作不许产生副作用，在这种规定下，可以任选其中一种。<br>
+        　　若按第一种办法计算布尔表达式。布尔表达式a or b and not c翻译成的四元式序列为：<br>
+        　　（1）　t<sub><font size="-2">1</font></sub>∶=not c<br>
+        　　（2）　t<sub><font size="-2">2</font></sub>∶=b and t<sub><font size="-2">1</font></sub><br>
+        　　（3）　t<sub><font size="-2">3</font></sub>∶=a or t<sub><font size="-2">2</font></sub><br>
+        　　对于像a＜b这样的关系表达式，可看成等价的条件语句if a＜b then 1　<br>
+        　　else 0，它翻译成的四元式序列为：<br>
+        　　（1）　if　a＜b goto （4）<br>
+        　　（2）　t∶=0<br>
+        　　（3）　goto （5）<br>
+        　　（4）　t∶=1<br>
+        　　（5）　…<br>
+        　　其中用临时变量t存放布尔表达式a＜b的值，(5)为后续的四元式序号。<br>
+        　　图8.11给出了按第一种办法计算布尔表达式的值，将布尔表达式翻译成四元式的描述，在该描述中使用了过程newtemp和emit，其含义同前，过程nextstat给出在输出序列中下一四元式序号，emit过程每被调用一次，nextstat增加1。
+    </td>
+  </tr>
+</table>
+</body>
+</html>

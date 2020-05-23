@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　<font color="#0000FF">请你注意这个结论：DFA是NFA的特例</font><br>
+      　　对每个NFA N一定存在一个DFA M，使得L(M)=L(N)。对每个NFA N存在着与之等价的DFA M。与某一NFA等价的DFA不唯一。<br>
+      　　在有穷自动机的理论里，有这样的定理：设L为一个由不确定的有穷自动机接受的集合，则存在一个接受L的确定的有穷自动机。我们不对定理进行证明，只介绍一种算法（这种算法称为子集法），将NFA转换成接受同样的语言的DFA。<br>
+      　　为什麽对DFA如此亲睐呢？因为它的行为很容易用程序来模拟。 <br>
+      　　DFA M=（K，Σ，f，S，Z）的行为的模拟程序 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　　　K:=S；<br>
+            　　　c:=getchar;<br>
+            　　　while c&lt;&gt;eof do <br>
+            　　　　{K:=f(K,c);<br>
+            　　　　　c:=getchar;<br>
+            　　　　};<br>
+            　　　if K is in Z then return (‘yes’)<br>
+            　　　　else return (‘no’)</td>
+        </tr>
+      </table>
+      　　从NFA的矩阵表示中可以看出，表项通常是一个状态的集合，而在DFA的矩阵表示中，表项是一个状态，NFA到相应的DFA的构造的基本想法是该DFA的每一个状态对应NFA的一组状态。该DFA使用它的状态去记录在NFA读入一个输入符号后可能达到的所有状态。也就是说，在读入输入符号串a<font size="-2"><sub>1</sub></font>a<font size="-2"><sub>2</sub></font>…a<font size="-2"><sub>n</sub></font>之后，该DFA处在这样一个状态，该状态表示这个NFA的状态的一个子集T，T是从NFA的开始状态沿着某个标记为a<font size="-2"><sub>1</sub></font>a<font size="-2"><sub>2</sub></font>…a<font size="-2"><sub>n</sub></font>的路径可以到达的那些状态。<br>
+      　　为介绍算法首先定义对状态集合I的几个有关运算：<br>
+      　　1. 状态集合I的ε-闭包，表示为ε-closure(I)，定义为一状态集，是状态集I中的任何状态S经任意条ε弧而能到达的状态的集合。<br>
+      　　回顾在前面章节对转换函数的扩充：如输入字符是空串，则自动机仍停留在原来的状态上，显然，状态集合I的任何状态S都属于ε-closure(I)。<br>
+      　　2. 状态集合I的a弧转换，表示为move(I,a)，定义为状态集合J，其中J是所有那些可从I中的某一状态经过一条a弧而到达的状态的全体。<br>
+      　　我们使用图4.4的NFA N的状态集合来理解上述两个运算。</td>
+  </tr>
+</table>
+</body>
+</html>

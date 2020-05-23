@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>结论：</b>LL(1)文法是无二义的。<br>
+      　　LL(1)文法的含义是：第一个L表明自顶向下分析是从左向右扫描输入串，第二个L表明分析过程中将用最左推导，'1'表明只需向右看一个符号便可决定选择哪个产生式(规则)进行推导，类似也可以有LL(K)文法，也就是需向前查看K个符号才可确定选用哪个产生式。通常采用K=1，个别情况采用K=2。回顾5.1的例5.1～例5.3文法满足LL(1)文法，例5.4～例5.6不满足LL(1)文法。<br>
+      　　对例5.5文法不是LL(1)文法，不能用确定的自顶向下分析。其原因我们也可以直观地对输入串W=ab的下列两种不同推导过程看出，其第一种推导过程可为：<br>
+      　　S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">abAS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">abS,在句型abS中由于S不能推出ε,所以第一种推导过程推不出ab,而按第二种推导过程可为S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ab,第二种推导过程推出了ab。在上述两种推导过程中，第一个输入符a的匹配都用了产生式S→aAS,得到句型aAS。这时按最左推导需用A的产生式右部替换A，而关于A的产生式有两个不同的右部，即有两个候选。当前的输入符号为b，第一种推导过程认为产生式A→bA的右部开始符号为b,所以可用bA替换A，使b得到匹配，第二种推导过程认为A的后跟符集合中含有b，所以用产生式A→ε进行推导，用ε替换了A，得到句型aS，符号b由S往下推导去匹配，而关于S的产生式恰有S→b，所以用它推导b得到匹配。<br>
+      　　以上两种推导中，当第二步推导时当前输入符为b，对句型aAS中的A用哪个产生式推导不能唯一确定，也就是导致了这个文法不能构造确定的自顶而下分析。</td>
+  </tr>
+</table>
+</body>
+</html>

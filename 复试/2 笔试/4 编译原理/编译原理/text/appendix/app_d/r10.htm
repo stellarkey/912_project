@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 　　/* 表达式处理 */<br>
+      　　int expression(bool* fsys,int* ptx,int lev) /* 参数意义见block和enter函数 */<br>
+      　　{<br>
+      　　　enum symbol addop; /* 用于保存正负号 */<br>
+      　　　bool nxtlev[symnum]; 
+      <p> 　　　if(sym==plus||sym==minus) /* 开头的正负号，此时当前表达式被看作一个正的或负的项 */<br>
+        　　　{<br>
+        　　　　addop=sym; /* 保存开头的正负号 */<br>
+        　　　　getsymdo;<br>
+        　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　nxtlev[plus]=true;<br>
+        　　　　nxtlev[minus]=true;<br>
+        　　　　termdo(nxtlev,ptx,lev); /* 处理项 */<br>
+        　　　　if(addop==minus)gendo(opr,0,1); /* 如果开头为负号生成取负指令 */<br>
+        　　　}<br>
+        　　　else /* 此时表达式被看作项的加减 */<br>
+        　　　{<br>
+        　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　nxtlev[plus]=true;<br>
+        　　　　nxtlev[minus]=true;<br>
+        　　　　termdo(nxtlev,ptx,lev); /* 处理项 */<br>
+        　　　}<br>
+        　　　while(sym==plus||sym==minus)<br>
+        　　　{<br>
+        　　　　addop=sym;<br>
+        　　　　getsymdo;<br>
+        　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　nxtlev[plus]=true;<br>
+        　　　　nxtlev[minus]=true;<br>
+        　　　　termdo(nxtlev,ptx,lev); /* 处理项 */<br>
+        　　　　if(addop==plus)<br>
+        　　　　{<br>
+        　　　　　gendo(opr,0,2); /* 生成加法指令 */<br>
+        　　　　}<br>
+        　　　　else gendo(opr,0,3); /* 生成减法指令 */<br>
+        　　　}<br>
+        　　　return 0;<br>
+        　　}</p>
+      <p>　　/* 条件处理 */<br>
+        　　int condition(bool* fsys,int* ptx,int lev) /* 参数意义见block和enter函数 */<br>
+        　　{<br>
+        　　　enum symbol relop;<br>
+        　　　bool nxtlev[symnum];<br>
+        　　　if(sym==oddsym) /* 准备按照odd运算处理 */<br>
+        　　　{<br>
+        　　　　getsymdo;<br>
+        　　　　expressiondo(fsys,ptx,lev);<br>
+        　　　　gendo(opr,0,6); /* 生成odd指令 */<br>
+        　　　}<br>
+        　　　else<br>
+        　　　{<br>
+        　　　　/* 逻辑表达式处理 */<br>
+        　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　nxtlev[eql]=true;nxtlev[neq]=true;<br>
+        　　　　nxtlev[lss]=true;nxtlev[leq]=true;<br>
+        　　　　nxtlev[gtr]=true;nxtlev[geq]=true;<br>
+        　　　　expressiondo(nxtlev,ptx,lev); <br>
+        　　　　if(sym!=eql&amp;&amp;sym!=neq&amp;&amp;sym!=lss&amp;&amp;sym!=leq&amp;&amp;sym!=gtr&amp;&amp;sym!=geq)error(20);<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　relop=sym;<br>
+        　　　　　getsymdo;<br>
+        　　　　　expressiondo(fsys,ptx,lev);<br>
+        　　　　　switch(relop) <br>
+        　　　　　{<br>
+        　　case eql:<br>
+        　　　　　　gendo(opr,0,8);<br>
+        　　　　　　break;<br>
+        　　case neq:<br>
+        　　　　　　gendo(opr,0,9);<br>
+        　　　　　　break;<br>
+        　　case lss:<br>
+        　　　　　　gendo(opr,0,10);<br>
+        　　　　　　break;<br>
+        　　case geq:<br>
+        　　　　　　gendo(opr,0,11);<br>
+        　　　　　　break;<br>
+        　　case gtr:<br>
+        　　　　　　gendo(opr,0,12);<br>
+        　　　　　　break;<br>
+        　　case leq:<br>
+        　　　　　　gendo(opr,0,13);<br>
+        　　　　　　break;<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　}<br>
+        　　　return 0;<br>
+        　　}<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

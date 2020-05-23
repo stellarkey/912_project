@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　注意：LR(0)分析表的归约项目，不管当前遇到什么输入符号都做归约动作。也是和SLR(1)分析表的主要区别。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.7 实数说明文法的SLR(1)分析表</font> 
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="4">ACTION</td>
+                <td align="center" valign="top" colspan="2">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">r</td>
+                <td align="center" valign="top">,</td>
+                <td align="center" valign="top">i</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">D</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6</td>
+                <td align="center" valign="top">S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  S6<br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  3</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　因此假定一个LR(0)规范族中含有如下的项目集(状态)I<br>
+      　　I={X→α·bβ,A→γ·,B→δ·}<br>
+      　　也就是在该项目集中含有移进-归约冲突和归约-归约冲突。其中α,β,γ,δ为文法符号串，b为终结符。那么只要在所有含有A或B的句型中，直接跟在A或B后的可能终结符的集合即FOLLOW(A)和FOLLOW(B)互不相交，且都不包含b，也就是只要满足<br>
+      　　FOLLOW(A)∩FOLLOW(B)=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　FOLLOW(A)∩{b}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　FOLLOW(B)∩{b}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　那么，当在状态I时面临某输入符号为a时，则动作可由下规定决策。<br>
+      　　1) 若a=b，则移进。<br>
+      　　2) 若a∈FOLLOW(A)，则用产生式A→γ进行归约。<br>
+      　　3) 若a∈FOLLOW(B)，则用产生式B→δ进行归约。<br>
+      　　4) 此外，报错。<br>
+      　　通常对于LR(0)规范族的一个项目集I中可能含有多个移进项目和多个归约项目，我们可假设项目集I(状态)中有m个移进项目：A<sub><font size="-2">1</font></sub>→α<sub><font size="-2">1</font></sub>·a<sub><font size="-2">1</font></sub>β<sub><font size="-2">1</font></sub>，A<sub><font size="-2">1</font></sub>→α<sub><font size="-2">2</font></sub>·a<sub><font size="-2">2</font></sub>β<sub><font size="-2">2</font></sub>，…, 
+      A<sub><font size="-2">m</font></sub>→α<sub><font size="-2">m</font></sub>·a<sub><font size="-2">m</font></sub>β<sub><font size="-2">m</font></sub>； 
+      同时含有n个归约项目为：B<sub><font size="-2">1</font></sub>→γ<sub><font size="-2">1</font></sub>·，B<sub><font size="-2">2</font></sub>→γ<sub><font size="-2">2</font></sub>·，…,B<sub><font size="-2">n</font></sub>→γ<sub><font size="-2">n</font></sub>·只要集合{a<sub><font size="-2">1</font></sub>，a<sub><font size="-2">2</font></sub>，…, 
+      a<sub><font size="-2">m</font></sub>}和FOLLOW(B<sub><font size="-2">1</font></sub>)，FOLLOW(B<sub><font size="-2">2</font></sub>)，…，FOLLOW(B<sub><font size="-2">n</font></sub>）两两交集都为空，那么我们仍可用上述规则解决冲突即考查当前输入符号决定动作。<br>
+      　　1) 若a∈｛a<sub><font size="-2">1</font></sub>，a<sub><font size="-2">2</font></sub>，…, 
+      a<sub><font size="-2">m</font></sub>｝，则移进。<br>
+      　　2) 若a∈FOLLOW(B<sub><font size="-1">i</font></sub>)，i=1,2…n，则用B<sub><font size="-1">i</font></sub>→γ<sub><font size="-1">i</font></sub>进行归约。<br>
+      　　3) 此外，报错。</td>
+  </tr>
+</table>
+</body>
+</html>

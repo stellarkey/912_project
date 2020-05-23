@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　procedure condition(fsys:symset);<br>
+      　　var relop:symbol;<br>
+      　　　begin<br>
+      　　　　if sym=oddsym<br>
+      　　　　　then<br>
+      　　　　　　begin<br>
+      　　　　　　　getsym;<br>
+      　　　　　　　expression(fsys);<br>
+      　　　　　　　gen(opr,0,6)<br>
+      　　　　　　end<br>
+      　　　　　else<br>
+      　　　　　　begin<br>
+      　　　　　　　expression([eql,neq,lss,leq,gtr,geq]+fsys);<br>
+      　　　　　　　if not(sym in [eql,neq,lss,leq,gtr,geq])<br>
+      　　　　　　　　then error(20)<br>
+      　　　　　　　　else<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　relop∶=sym;<br>
+      　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　expression(fsys);<br>
+      　　　　　　　　　　case relop of<br>
+      　　　　　　　　　　　eql:gen(opr,0,8);<br>
+      　　　　　　　　　　　neq:gen(opr,0,9);<br>
+      　　　　　　　　　　　lss:gen(opr,0,10);<br>
+      　　　　　　　　　　　geq:gen(opr,0,11);<br>
+      　　　　　　　　　　　gtr:gen(opr,0,12);<br>
+      　　　　　　　　　　　leq:gen(opr,0,13);<br>
+      　　　　　　　　　　end<br>
+      　　　　　　　　　end<br>
+      　　　　　　end<br>
+      　　　end(*condition*);</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>符号串的运算</b><br>
+      　　符号串的长度：符号串中符号的个数.符号串s的长度记为|s|。 ε的长度为0<br>
+      　　连接：符号串x、y的连接,是把y的符号写在x的符号之后得到的符号串xy 如 x=ab,y=cd 则 xy=abcd 有εa = aε <br>
+      　　方幂：符号串自身连接n次得到的符号串a<sup><font size="-2">n</font></sup> 定义为 aa…aa n个a a<sup><font size="-2">1</font></sup>=a, 
+      a<sup><font size="-2">2</font></sup>=aa则a<sup><font size="-2">0</font></sup>=ε使用∑<sup><font size="-2">*</font></sup> 
+      表示S上的一切符号串（包括ε）组成的集合。∑<sup><font size="-2">*</font></sup>称为Σ的闭包。<br>
+      　　∑上的除ε外的所有符号串组成的集合记为∑<sup><font size="-2">+</font></sup> 。 ∑<sup><font size="-2">+</font></sup> 
+      称为Σ的正闭包。 <br>
+      <b>语言</b><br>
+      　　语言是由句子组成的集合，是由一组符号所构成的集合。换言之，<br>
+      　　字母表∑上的一个语言是∑上的一些符号串的集合 (字母表∑上的每个语言是∑<sup><font size="-2">*</font></sup> 
+      的一个子集)。例如：若有字母表Σ={a,b} ,则∑<sup><font size="-2">*</font></sup>={ε,a,b,aa,ab,ba,bb,aaa,aab,…}<br>
+      　　根据上述关于语言的概念，我们说集合A={ab,aabb,aaabbb,…,a<sup><font size="-2">n</font></sup> 
+      b<sup><font size="-2">n</font></sup>,…}<br>
+      　　为字母表∑上的一个语言，也可以把集合A描述为{w|w∈∑<sup><font size="-2">*</font></sup>且w=a<sup><font size="-2">n</font></sup> 
+      b<sup><font size="-2">n</font></sup>,n≥1}。<br>
+      　　我们说集合B={a,aa,aaa,…}为字母表∑上的一个语言，同样也可以把集合B描述为{w|w∈∑<sup><font size="-2">*</font></sup>且w=a<sup><font size="-2">n</font></sup>,n≥1}。<br>
+      <font color="#0000FF">注意： </font><br>
+      　　{ε}是一个语言。<br>
+      　　Φ 即{ }是一个语言。<br>
+      　　给出<b>有关语言的运算</b><br>
+      　　既然将语言定义为一个集合，那么有关集合的运算也适合语言。即：设L是（∑上的）一个语言,M是（∑上的）一个语言，则语言L和M的<b>并，交，差，补</b>是一个语言。<br>
+      　　语言L和M的并表示为 L∪M，是一个语言，满足: {w|w is in L or is in M} <br>
+      　　如： L1 ={a,b,…y,z} M1 ={1,2…8,9 } L1∪M1 ={a,b,… y,z，1,2…8,9 }<br>
+      　　语言L和M的连接是一个语言，记为 LM LM={st |s∈L且 t∈M} 如： L1M1 ={a1,b1,…y1,z1,a2,b2…a9…z9} 
+      <br>
+      　　有L {ε}= {ε}L=L<br>
+      　　L的n次连接L<sup><font size="-2">n</font></sup>= LL...L <br>
+      　　语言L的闭包记为 L<sup><font size="-2">*</font></sup>　L<sup><font size="-2">*</font></sup> 
+      = L<sup><font size="-2">0</font></sup> ∪ L<sup><font size="-2">1</font></sup> 
+      ∪ L<sup><font size="-2">2</font></sup> ∪... L<sup><font size="-2">0</font></sup>= 
+      {ε} ，<br>
+      　 　　　　　　　 　L<sup><font size="-2">n </font></sup>= L L<sup><font size="-2">n-1</font></sup> 
+      = L<sup><font size="-2">n-1</font></sup> L,n≥1<br>
+      　　语言L的正闭包记为 L<sup><font size="-2">+</font></sup>， L<sup><font size="-2">+</font></sup>= 
+      L<sup><font size="-2">1</font></sup> ∪ L<sup><font size="-2">2</font></sup> 
+      ∪ L<sup><font size="-2">3</font></sup> ...<br>
+      　　　　　　　　　　L<sup><font size="-2">+</font></sup> = LL<sup><font size="-2">* 
+      </font></sup>= L<sup><font size="-2">*</font></sup>L <br>
+      　　　　　　　　　　L<sup><font size="-2">*</font></sup> = L<sup><font size="-2">+</font></sup> 
+      ∪ {ε}<br>
+      　　如：（L1∪M1）<sup><font size="-2">* </font></sup>={a,b,… y,z，1,2…8,9 ，aa,1a,…xyz,6789st..} 
+      <br>
+      　　　　L1（L1∪M1）<sup><font size="-2">* </font></sup>={所有字母打头的字母和数字符号串}</td>
+  </tr>
+</table>
+</body>
+</html>

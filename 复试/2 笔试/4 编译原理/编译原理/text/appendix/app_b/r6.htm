@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.4 LEX源程序中的动作</b><br>
+        　　前面说过当LEX识别出一个词形时，要完成相应的动作。这一节叙述LEX为描述动作提供的帮助。<br>
+        　　首先应指出，输入串中那些不与任何识别规则中的正规式匹配的字符串将被原样照抄到输出文件中去。因此如果用户不仅仅是希望照抄输出，就必须为每一个可能的词形提供识别规则，并在其中提供相应的动作。用LEX为工具写程序语言的词法分析器时尤其要注意。<br>
+        　　最简单的一种动作是滤掉输入中的某些字符串，这种动作用C的空语句&quot;;&quot;来实现。<br>
+        　　例　滤掉输入串中所有空格。tab和回车换行符，相应的识别规则如下：<br>
+        　　[\t\n]; <br>
+        　　如果相邻的几条规则的动作都相同，则可以用|表示动作部分，它指出该规则的动作与下一条规则的动作相同。例如上例也可以写成：<br>
+        　　&quot;&quot;|<br>
+        　　&quot;\t&quot;|<br>
+        　　&quot;\n&quot;;<br>
+        　　注意\t和\n中的双引号可以去掉。<br>
+        　　外部字符数组yytext的内容是当前被某规则匹配的字符串，例如正规式[a-z]+与所有由小写字母组成的字符串匹配，要想知道与它匹配的具体字符串是什么，可用下述规则：<br>
+        　　[a-z]+printf(&quot;%s&quot;，yytext);<br>
+        动作printf(&quot;%s&quot;，yytext)就是将字符数组yytext的内容打印出来，这个动作用得很频繁，LEX提供了一个宏ECHO来表示它，因此上述识别规则可以写成：<br>
+        　　[a-z]+ECHO;<br>
+        　　请注意，上面说过缺省的动作就是将输入串原样抄到输出文件中，那么上述规则起什么作用呢。这一点将在&quot;规则的二义性&quot;一节中解释。<br>
+        　　有时有必要知道被匹配的字符串中的字符个数，外部变量yyleng就表示当前yytext中字符的个数。例如，要对输入串中单词的个数和字符的个数进行计数(单词假定是由大写或小写字母组成的字符串)，可用下述规则：<br>
+        　　[a-zA-Z]+{words++;<br>
+        　　　　　　　chars+=yyleng;<br>
+        　　　　　　　}<br>
+        　　注意被匹配的字符串的第一个字符和最后一个字符分别是 <br>
+        　　yytext[0]和yytext[yyleng-1]</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p><b>C.5 程序段部分</b><br>
+        　　程序段部分主要包括以下内容:主程序main();错误信息执行程序yyerror(s);词法分析程序yylex();用户在语义动作中用到的子程序，下面分别介绍。<br>
+        <b>C.5.1 主程序</b><br>
+        　　主程序的主要作用是调用语法分析程序yyparse()，yyparse()是YACC从用户写的YACC源程序自动生成的，在调用语法分析程序yyparse()之前或之后用户往往需要做一些其它处理，这些也在main()中完成，如果用户只需要在main()中调用yyparse()，则也可以使用Unix的YACC库(-1y)中提供的main()而不必自己写。库里的main()如下:<br>
+        　　main(){<br>
+        　　　　　return(yyparse());<br>
+        　　　　　}<br>
+        <b>C.5.2 错误信息报告程序</b> <br>
+        　　YACC的库也提供了一个错误信息报告程序，其源程序如下:<br>
+        　　#include &lt;stdio.h&gt;<br>
+        　　　yyerror(s) char * s {<br>
+        　　　　　　fprintf(stderr，&quot;%s＼n&quot;，s);<br>
+        　　　　　　}<br>
+        如果用户觉得这个yyerror(s)太简单。也可以自己提供一个，如在其中记住输入串的行号并当yyerror(s)被调用时，可以报告出错行号。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

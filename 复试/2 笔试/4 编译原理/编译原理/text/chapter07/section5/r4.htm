@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　下例说明LALR(1)分析法强于SLR(1)分析法<br>
+      　　若有文法G1(S′)的产生式如下：<br>
+      　　(0) S′→S<br>
+      　　(1) S→L=R<br>
+      　　(2) S→R<br>
+      　　(3) L→*R<br>
+      　　(4) L→i<br>
+      　　(5) R→L<br>
+      　　该文法的LR(0)项目集规范族为：<br>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td>　　I<sub><font size="-2">0</font></sub>： S′→·S<br>
+            　　　 　S→·L=R<br>
+            　　　 　S→·R<br>
+            　　　 　L→·*R<br>
+            　　　 　L→·i<br>
+            　　　 　R→·L<br>
+            　　I<sub><font size="-2">1</font></sub>： S′→S·<br>
+            　　I<sub><font size="-2">2</font></sub>： S→L·=R<br>
+            　　　 　R→L· <br>
+            　　I<sub><font size="-2">3</font></sub>： S→R·<br>
+            　　I<sub><font size="-2">4</font></sub>： L→*·R<br>
+          </td>
+          <td> 　 　R→·L<br>
+            　 　L→·*R <br>
+            　 　L→·i <br>
+            I<sub><font size="-2">5</font></sub>： L→i· <br>
+            I<sub><font size="-2">6</font></sub>： S→L=·R <br>
+            　 　R→·L <br>
+            　 　L→·*R <br>
+            　　 L→·i <br>
+            I<sub><font size="-2">7</font></sub>： L→*R· <br>
+            I<sub><font size="-2">8</font></sub>： R→L· <br>
+            I<sub><font size="-2">9</font></sub>： S→L=R· </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

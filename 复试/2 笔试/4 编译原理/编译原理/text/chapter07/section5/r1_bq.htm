@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　(2) 对于合并同心集后的项目集的转换函数仍为同心集，因为相同的心之转换函数的心仍相同，即仍属同心集，所以合并同心集后转换函数为自动合并，如例中I<sub><font size="-2">3</font></sub>和I<sub><font size="-2">6</font></sub>为同心集，它们的转换函数分别为：<br>
+      　　I<sub><font size="-2">3</font></sub>： GO(I<sub><font size="-2">3</font></sub>，a)= 
+      I<sub><font size="-2">3</font></sub><br>
+      　　　　 GO(I<sub><font size="-2">3</font></sub>，b)= I<sub><font size="-2">4</font></sub><br>
+      　　　 　GO(I<sub><font size="-2">3</font></sub>，B)= I<sub><font size="-2">8</font></sub><br>
+      　　I<sub><font size="-2">6</font></sub>： GO(I<sub><font size="-2">6</font></sub>，a)= 
+      I<sub><font size="-2">6</font></sub><br>
+      　　　　 GO(I<sub><font size="-2">6</font></sub>，b)= I<sub><font size="-2">7</font></sub><br>
+      　　　 　GO(I<sub><font size="-2">6</font></sub>，B)= I<sub><font size="-2">9</font></sub><br>
+      　　然而，I<sub><font size="-2">3</font></sub>和I<sub><font size="-2">6</font></sub>，I<sub><font size="-2">4</font></sub>和I<sub><font size="-2">7</font></sub>，I<sub><font size="-2">8</font></sub> 
+      和I<sub><font size="-2">9</font></sub>分别都为同心集。<br>
+      　　(3) 若文法是LR(1)文法，合并同心集后若有冲突也只可能是归约-归约冲突，而不可能产生移进-归约冲突<br>
+      　　对(3)的证明不防假设某LR(1)文法的项目集I<sub><font size="-2">k</font></sub> 与I<sub><font size="-2">j</font></sub>为同心集，其中：<br>
+      　　I<sub><font size="-2">k</font></sub> 为：[A→α·，u<sub><font size="-2">1</font></sub>]<br>
+      　　　　 　[B→β·aγ,b]<br>
+      　　I<sub><font size="-2">j</font></sub> 为：[A→α·,u<sub><font size="-2">2</font></sub>]<br>
+      　　　　 　[B→β·aγ,c]<br>
+      　　其中u<sub><font size="-2">1</font></sub>，u<sub><font size="-2">2</font></sub>分别为超前搜索符集合，因为假设文法是LR(1)的，所以不可能有移进-归约冲突，也就是在I<sub><font size="-2">k</font></sub> 
+      中{u<sub><font size="-2">1</font></sub>}∩{a}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，在I<sub><font size="-2">j</font></sub>中有{u<sub><font size="-2">2</font></sub>}∩{a}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，显然合并同心集后({u<sub><font size="-2">1</font></sub>}∪{u<sub><font size="-2">2</font></sub>})∩{a}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　(4) 合并同心集后对某些错误发现的时间会产生推迟现象，但错误的出现位置仍是准确的。这意味着LALR(1)分析表比LR(1)分析表对同一输入串的分析可能会有多余归约。这个问题将在后面用例子来说明。</td>
+  </tr>
+</table>
+</body>
+</html>

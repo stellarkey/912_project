@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　正规式定义中的“|”读为“或”（也有使用“+”代替 “|” 的）；“·”读为“连接”；“*”读为“闭包”（即，任意有限次的自重复连接）。在不致混淆时，括号可省去，但规定算符的优先顺序为“(”、“)”、“*”、“·”、“|” 
+      。连接符“·”一般可省略不写。“*”、“·”和“|” 都是左结合的。<br>
+      　　令∑={a，b}， ∑上的正规式和相应的正规集的例子有：<br>
+      　　<font color="#0000FF">正规式</font> 　 　　　　　　<font color="#0000FF">正规集</font><br>
+      　　a 　　　　　　　　　　{a}<br>
+      　　a|b 　　　　　　　　　{a,b}<br>
+      　　ab　　　　　　　　　　{ab}<br>
+      　　(a|b)(a|b)　　　　　　{aa,ab,ba,bb}<br>
+      　　a<sup><font size="-2">*</font></sup>　　　　　　　　　　{ε,a,a, ……任意个a的串}<br>
+      　　(a|b)<sup><font size="-2">*</font></sup>　　　　　　　　{ε,a,b,aa,ab ……所有由a和b组成的串}<br>
+      　　(a|b)<sup><font size="-2">*</font></sup>(aa|bb)(a|b)<sup><font size="-2">*</font></sup>　 
+      {∑<sup><font size="-2">*</font></sup>上所有含有两个相继的a或两个相继的b组成的串}<br>
+      <br>
+      　　若两个正规式e<sub><font size="-2">1</font></sub>和e<sub><font size="-2">2</font></sub>所表示的正规集相同，则说e<sub><font size="-2">1</font></sub>和e<sub><font size="-2">2</font></sub>等价，写作e<sub><font size="-2">1</font></sub>=e<sub><font size="-2">2</font></sub>。<br>
+      　　例如： e<sub><font size="-2">1</font></sub>= (a|b)， e<sub><font size="-2">2</font></sub> 
+      = b|a<br>
+      　　又如： e<sub><font size="-2">1</font></sub>= b(ab)<sup><font size="-2">*</font></sup> 
+      ，e<sub><font size="-2">2</font></sub> =(ba)<sup><font size="-2">*</font></sup> 
+      b <br>
+      　　再如： e<sub><font size="-2">1</font></sub>= (a|b)<sup><font size="-2">*</font></sup> 
+      ，e<sub><font size="-2">2</font></sub> =(a<sup><font size="-2">*</font></sup> 
+      |b<sup><font size="-2">*</font></sup> )<sup><font size="-2">*</font></sup> 
+      <br>
+      　　设r,s,t为正规式，正规式服从的代数规律有：<br>
+      　　① r|s=s|r 　　　　　　&quot;或&quot;服从交换律<br>
+      　　② r|(s|t)=(r|s) | t 　&quot;或&quot;的可结合律<br>
+      　　③ (rs)t=r(st) 　　　　&quot;连接&quot;的可结合律<br>
+      　　④ r(s|t)=rs|rt <br>
+      　　　 (s|t)r=sr|tr 　　　　分配律<br>
+      　　⑤ εr=r, rε=r 　　　 ε是&quot;连接&quot;的恒等元素零一律<br>
+      　　⑥ r|r=r <br>
+      　　　 r<sup><font size="-2">*</font></sup>=ε|r|rr|…　　　　&quot;或&quot;的抽取律 </td>
+  </tr>
+</table>
+</body>
+</html>

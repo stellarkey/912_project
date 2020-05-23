@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　编译程序中标识符的内部规则是符号表关键字组织的基础和依据。用户程序中的标识符，考虑用户的习惯和程序的可读性，标识符的长度是从1到内部规则规定长度之间任意字符个数。为使得符号表中存放标识符的关键字段等长，可设置关键字段为标识符的最大长度。譬如上述C语言的关键字段长度可以是32个（其中31个是存放名字，余一个是存放字符串结束标志&quot;凵&quot;的，这是C语言处理所需要的）。图示如下（图9.9）。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.9 等长关键字段符号表</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p9_9.gif" width="387" height="167"></td>
+        </tr>
+      </table>
+      　　由于程序中的标识符长短不一,有时可能差别很大,用等长结构会产生溢出或冗余。希望既保证关键字段的等长，又要减少甚至消除冗余，可采用关键字池的索引结构。</td>
+  </tr>
+</table>
+</body>
+</html>

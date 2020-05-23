@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>4.3 正规文法，正规式和有穷自动机</b><br>
+      　　在第三章,我们介绍了正规式和有穷自动机（FA）, 正规式定义的是正规集，有穷自动机接受的也是正规集，我们已讨论了正规式和有穷自动机（FA）的等价性，现在我们讨论正规（3型）文法和它们的等价性。<br>
+      <b>4.3.1 3型文法和相应识别系统FA</b><br>
+      　　根据形式语言理论, 3型文法（正规文法）产生的语言是有穷自动机（FA）所接受的集合.可以给出3型文法和相应识别系统FA间的转换规则.<br>
+      　　采用下面的规则可从正规文法G（假定G为右线性文法）直接构造一个有穷自动机NFA M；使得L(M)=L(G)：<br>
+      　　· 字母表与G的终结符集相同；<br>
+      　　· 为G中的每个非终结符生成M的一个状态，(不妨取成相同的名字)G的开始符号S是开始状态S；<br>
+      　　· 增加一个新状态Z，做为NFA的终态；<br>
+      　　· 对G中的形如 A→tB其中t为终结符或ε，A和B为非终结符的产生式，构造M的一个转换函数f(A,t)=B；<br>
+      　　· 对G中形如A→t的产生式，构造M的一个转换函数f(A,t)=Z。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 在适当的位置显示错误 */<br>
+      　　void error(int n)<br>
+      　　{<br>
+      　　　char space[81];<br>
+      　　　memset(space,32,81);<br>
+      　　　space[cc-1]=0; /* 出错时当前符号已经读完，所以cc-1 */ <br>
+      　　　printf(&quot;****%s!%d\n&quot;,space,n);<br>
+      　　　fprintf(fa1,&quot;****%s!%d\n&quot;,space,n);<br>
+      　　　err++; 
+      <p>　　}</p>
+      <p>　　/* 词法分析，获取一个符号 */<br>
+        　　int getsym()<br>
+        　　{<br>
+        　　　int i,j,k;<br>
+        　　　while(ch==' '||ch==10||ch==9) /* 忽略空格、换行和TAB */<br>
+        　　　{<br>
+        　　　　getchdo;<br>
+        　　　}<br>
+        　　　if(ch&gt;='a'&amp;&amp;ch&lt;='z')<br>
+        　　　{ 　　　　　　/* 名字或保留字以a..z开头 */<br>
+        　　　　k=0;<br>
+        　　　　do<br>
+        　　　　{<br>
+        　　　　　if(k&lt;al)<br>
+        　　　　　{<br>
+        　　　　　　a[k]=ch;<br>
+        　　　　　　k++;<br>
+        　　　　　}<br>
+        　　　　　getchdo;<br>
+        　　　　}<br>
+        　　　　while(ch&gt;='a'&amp;&amp;ch&lt;='z'||ch&gt;='0'&amp;&amp;ch&lt;='9');<br>
+        　　　　a[k]=0;<br>
+        　　　　strcpy(id,a);<br>
+        　　　　i=0;<br>
+        　　　　j=norw-1;<br>
+        　　　　do /* 搜索当前符号是否为保留字 */<br>
+        　　　　{<br>
+        　　　　　k=(i+j)/2;<br>
+        　　　　　if(strcmp(id,word[k])&lt;=0)j=k-1;<br>
+        　　　　　if(strcmp(id,word[k])&gt;=0)i=k+1;<br>
+        　　　　}<br>
+        　　　　while(i&lt;=j);<br>
+        　　　　if(i-1&gt;j)sym=wsym[k]; else sym=ident; /* 搜索失败则，是名字或数字 */<br>
+        　　　}<br>
+        　　　else<br>
+        　　　{<br>
+        　　　　if(ch&gt;='0'&amp;&amp;ch&lt;='9')<br>
+        　　　　{ 　　　　　　　/* 检测是否为数字：以0..9开头 */<br>
+        　　　　　k=0;<br>
+        　　　　　num=0;<br>
+        　　　　　sym=number;<br>
+        　　　　　do<br>
+        　　　　　{<br>
+        　　　　　　num=10*num+ch-'0';<br>
+        　　　　　　k++;<br>
+        　　　　　　getchdo;<br>
+        　　　　　}<br>
+        　　　　　while(ch&gt;='0'&amp;&amp;ch&lt;='9'); /* 获取数字的值 */<br>
+        　　　　　k--;<br>
+        　　　　　if(k&gt;nmax)error(30);<br>
+        　　　　}<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　if(ch==':') /* 检测赋值符号 */<br>
+        　　　　　{<br>
+        　　　　　　getchdo;<br>
+        　　　　　　if(ch=='=')<br>
+        　　　　　　{<br>
+        　　　　　　　sym=becomes;<br>
+        　　　　　　　getchdo;<br>
+        　　　　　　}<br>
+        　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　sym=nul; /* 不能识别的符号 */<br>
+        　　　　　　　}<br>
+        　　　　　　}<br>
+        　　　　　　else<br>
+        　　　　　　{<br>
+        　　　　　　　if(ch=='&lt;') /* 检测小于或小于等于符号 */<br>
+        　　　　　　　{<br>
+        　　　　　　　　getchdo;<br>
+        　　　　　　　　if(ch=='=')<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　sym=leq;<br>
+        　　　　　　　　　getchdo;<br>
+        　　　　　　　　}<br>
+        　　　　　　　　else<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　sym=lss;<br>
+        　　　　　　　　}<br>
+        　　　　　　　}<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　if(ch=='&gt;') /* 检测大于或大于等于符号 */<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　getchdo;<br>
+        　　　　　　　　　if(ch=='=')<br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　　sym=geq;<br>
+        　　　　　　　　　　getchdo;<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　　else<br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　　sym=gtr;<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　}<br>
+        　　　　　　　　else<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　sym=ssym[ch]; /* 当符号不满足上述条件时，全部按照单字符符号处理 */<br>
+        　　　　　　　　　getchdo;<br>
+        　　　　　　　　}<br>
+        　　　　　　　}<br>
+        　　　　　　}<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　　return 0;<br>
+        　　　}<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

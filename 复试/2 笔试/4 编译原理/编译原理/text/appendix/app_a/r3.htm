@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> procedure error(n:integer);<br>
+      　begin<br>
+      　　writeln(′****′,′ ′:cc-1,′!′,n:2);<br>
+      　　writeln(fa1,′****′,′ ′:cc-1,′!′,n:2);<br>
+      　　err∶=err+1<br>
+      　end(*error*); 
+      <p> procedure getsym;<br>
+        　var i,j,k:integer;</p>
+      <p>　　procedure getch;<br>
+        　　　begin<br>
+        　　　　if cc=ll<br>
+        　　　　then<br>
+        　　　　　begin<br>
+        　　　　　　if eof(fin)<br>
+        　　　　　　then<br>
+        　　　　　　　begin<br>
+        　　　　　　　　write(′program incomplete′);<br>
+        　　　　　　　　goto 99<br>
+        　　　　　　　end;<br>
+        　　　　　　ll∶=0;<br>
+        　　　　　　cc∶=0;<br>
+        　　　　　　write(cx:4,′ ′);<br>
+        　　　　　　write(fa1,cx:4,′ ′);<br>
+        　　　　　　while not eoln(fin) do<br>
+        　　　　　　　begin<br>
+        　　　　　　　　ll∶=ll+1;<br>
+        　　　　　　　　read(fin,ch);<br>
+        　　　　　　　　write(ch);<br>
+        　　　　　　　　write(fa1,ch);<br>
+        　　　　　　　　line[ll]∶=ch<br>
+        　　　　　　　end;<br>
+        　　　　　　writeln;<br>
+        　　　　　　ll∶=ll+1;<br>
+        　　　　　　read(fin,line[ll]);<br>
+        　　　　　　writeln(fa1);<br>
+        　　　　　end;<br>
+        　　　　cc∶=cc+1;<br>
+        　　　　ch∶=line[cc]<br>
+        　　end (*getch*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

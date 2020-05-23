@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>6.2.3 算符优先关系表的构造 </b><br>
+      　　可由定义直接构造<br>
+      　　由定义6.2我们可计算出给定的算符文法中任何两个终结符对(a,b)之间的优先关系，其算法如下：<br>
+      　　首先定义如下两个集合：<br>
+      　　FIRSTVT(B)={b|B<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      b… 或 B<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      Cb…}<br>
+      　　LASTVT(B)={a|B<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">…a 
+      或 B<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      …aC}<br>
+      　　三种优先关系的计算为：<br>
+      　　a) <img src="../../../img/chap06/symbol03.gif" width="18" height="20">关系: 
+      <br>
+      　　可直接查看产生式的右部，对如下形式的产生式<br>
+      　　A→…ab… , A→…aBb…<br>
+      　　有a <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      b 成 立。<br>
+      　　b) <img src="../../../img/chap06/symbol01.gif" width="18" height="20">关系:<br>
+      　　求出每个非终结符B的FIRSTVT(B)，在如下形式的产生式<br>
+      　　A→…aB… 中，对每一 b∈FIRSTVT(B),有a<img src="../../../img/chap06/symbol01.gif" width="18" height="20">b成立。<br>
+      　　c) <img src="../../../img/chap06/symbol02.gif" width="18" height="20">关系:<br>
+      　　计算每个非终结符B的LASTVT(B)，在如下形式的产生式<br>
+      　　A→…Bb… 中，对每一a∈LASTVT(B)，有a<img src="../../../img/chap06/symbol02.gif" width="18" height="20">b成立。</td>
+  </tr>
+</table>
+</body>
+</html>

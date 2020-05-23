@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 生成虚拟机代码 */<br>
+      　　int gen(enum fct x, /* f */<br>
+      　　　　　　int y, /* l */<br>
+      　　　　　　int z /* a */<br>
+      　　　　　　)<br>
+      　　{<br>
+      　　　if(cx&gt;cxmax)<br>
+      　　　{<br>
+      　　　　printf(&quot;Program too long&quot;); /* 程序过长 */<br>
+      　　　　return -1;<br>
+      　　　}<br>
+      　　　code[cx].f=x;<br>
+      　　　code[cx].l=y;<br>
+      　　　code[cx].a=z;<br>
+      　　　cx++;<br>
+      　　　return 0;<br>
+      　　} 
+      <p><br>
+        　　int test(bool* s1, /* 当前符号应属于的集合 */<br>
+        　　　　　　 bool* s2, /* 为恢复正常语法分析工作的符号集合 */<br>
+        　　　　 　　int n) /* 错误号 */<br>
+        　　{</p>
+      <p> 　　　if(!inset(sym,s1))<br>
+        　　　{<br>
+        　　　　error(n);<br>
+        　　　/* 当检测不通过时，不停获取符号，直到读入一个能使编译程序恢复正常语法分析工作的单词为止 */<br>
+        　　　　while((!inset(sym,s1))&amp;&amp;(!inset(sym,s2)))<br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　}<br>
+        　　　}<br>
+        　　　return 0;<br>
+        　　}<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

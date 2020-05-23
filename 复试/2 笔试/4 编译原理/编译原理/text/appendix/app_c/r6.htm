@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.3.7 终结符定义</b><br>
+      　　在YACC源程序语法规则部分出现的所有终结符(文字字符literal除外)必须在这部分定义，定义方法如下例：<br>
+      　　%token DIGIT LETTER<br>
+      每个终结符定义行以%token开头，注意%与token之间没有空格，一行中可以定义多个终结符，它们之间用空格分开，终结符名可以由字母，数<br>
+      字，下划线组成，但必须用字母开头。非终结符名的组成规则与此相同。终结符定义行可多于一个。<br>
+      　　YACC规定每个终结符都有一个唯一的编号(token number)。当我们用上面的方式定义终结符时，终结符的编号由YACC内部决定，其编号规则是从257开始依次递增，每次加1。但这个规则不适用于文字字符(literal)的终结符。例如在下面的语法规则中，'+'，';'就是文字字符终结符：<br>
+      　　stats:stats;stat;<br>
+      　　expr:expr　+expr;<br>
+      文字字符终结符在规则中出现时用单引号括起来。它们不需要用%token语句定义，YACC对它们的编号就采用该字符在其字符集(如ASCII)中的值。注意上面两条语法规则末尾的分号是YACC元语言的标点符号，不是文字字符终结符。<br>
+      　　YACC也允许用户自己定义终结符的编号。如果这样，那么终结符定义的格式就是：<br>
+      　　%token 终结符名　　整数<br>
+      其中&quot;终结符名&quot;就是要定义的终结符，&quot;整数&quot;就是该终结符的编号，每一个这样的行定义一个终结符。特别注意不同终结符的编号不能相同。例如 
+      <br>
+      　　%token BEGIN100<br>
+      　　%token END101<br>
+      　　%token IF105<br>
+      　　%token THEN200<br>
+      　　… <br>
+      在本附录C.3.6中我们说过如果用户定义了语义值的类型，那么那些具有有意义的语义值的终结符其语义值的类型要用union中的成员名来说明，除了在C.3.6段中介绍的定义方法外，还可以把对终结符的定义和其语义值的类型说明分开，例如 
+      <br>
+      　　%token DREG VREG CONST<br>
+      　　%type &lt;ival&gt; DREG VREG<br>
+      　　%type &lt;dval&gt; CONST</td>
+  </tr>
+</table>
+</body>
+</html>

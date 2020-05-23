@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　假设已构造出文法的LR(0)项目集规范族和计算出所有非终结符的FOLLOW集合。<br>
+      　　项目集规范族为：C={I<sub><font size="-2">0</font></sub>，I<sub><font size="-2">1</font></sub>，…，I<sub><font size="-2">n</font></sub>}，其中I<sub><font size="-2">k</font></sub>为项目集的名字，k为状态名，令包含S′→·S项目的集合I<sub><font size="-2">k</font></sub>的下标k为分析器的初始状态，求出所有非终结符的FOLLOW集。<br>
+      　　那么SLR(1)分析表的动作(ACTION)表,和状态转换(GOTO)表构造步骤为：<br>
+      　　a) 若项目A→α·aβ属于I<sub><font size="-2">k</font></sub> ，且转换函数GO(I<sub><font size="-2">k</font></sub>，a)= 
+      I<sub><font size="-2">j</font></sub>，当a为终结符时，则置ACTION[k,a]为S<sub><font size="-2">j</font></sub>。<br>
+      　　b) 若项目A→α·属于I<sub><font size="-2">k</font></sub>，则对a为任何终结符或'#'，且满足a∈FOLLOW(A)时，置ACTION[I<sub><font size="-2">k</font></sub>,a]= 
+      r<sub><font size="-2">j</font></sub>，j为产生式A→α在文法G′中的编号。<br>
+      　　c) 若GO(I<sub><font size="-2">k</font></sub>，A)= I<sub><font size="-2">j</font></sub>，则置GOTO[k,A]=j，其中A为非终结符，j为某一状态号。<br>
+      　　d) 若项目S′→S·属于I<sub><font size="-2">k</font></sub>，则置ACTION[k,#]=acc，表示接受。<br>
+      　　e) 凡不能用上述方法填入的分析表的元素，均应填上&quot;报错标志&quot;，在表中用空白标志，用上述步骤对算术表达式文法构造改进的SLR(1)分析表如表7.8。</td>
+  </tr>
+</table>
+</body>
+</html>

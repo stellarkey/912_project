@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　首先，为了标志一个符号所属的分程序层次，在符号表中可设立一个属性域用来登录符号所在分程序的层次。通常编译系统在扫描分程序结构的源程序时，设立一个记录当前扫描位置的分程序层次的状态量。每当一个标识符被定义并被登录符号表时，当时的表达分程序层次的状态量作为该标识符的分程序层次被登录到该符号的层次属性域中。<br>
+      　　其次，在编译程序扫描进入一个分程序时，表示分程序层次的状态量要增加一层，使进入分程序后定义的标识符登录符号表时，有相应的层次量作为层次属性登录。与进入分程序相比，在退出一个分程序时，这种单表结构的管理要复杂得多。退出一个分程序时，不但要把表示分程序层次的状态量降低一层，而且需要把符号表中，所有在退出的分程序中登录的符号项清除。这种要求对排序组织或散列组织的符号表来说是一个十分繁琐的工作。<br>
+      　　最后，对于具有分程序结构的源程序，在不同的分程序中(指嵌套的分程序中)允许定义重名的标识符，在上节图9.23例中a,c,d都有重名定义。在单表结构下，图9.23例中的重名标识符可用下推链来组织(参见9.3.5节的图9.17)。编译过程中符号表的动态管理过程如下：<br>
+      　　图9.25表示编译程序扫描进入第一层分程序后单表结构的符号表情况。其中第三栏为层次属性栏，这儿全都是1表示第一层分程序定义。</td>
+  </tr>
+</table>
+</body>
+</html>

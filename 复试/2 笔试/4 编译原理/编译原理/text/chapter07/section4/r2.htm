@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　现在我们再看图7.11在I<font size="-2"><sub>5</sub></font>，I<font size="-2"><sub>7</sub></font>项目集中的移进-归约冲突，不能用SLR(1)<br>
+      　　方法解决的原因如下：<br>
+      　　I<font size="-2"><sub>5</sub></font>： S→ae·c<br>
+      　　　 　A→e·<br>
+      　　因 S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aed<br>
+      　　　　　R 　R 　　R <br>
+      　　　 S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aec<br>
+      　　　　　R 　R <br>
+      　　这两个最右推导已包括了活前缀为a的所有句型，因此，不难看出对活前缀ae来说，当面临输入符号为c时应移进，面临d时应用产生式A→e归约。因为<br>
+      　　S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S≠&gt;aAc<br>
+      　　　　R　R<br>
+      　　这说明从S′出发不能用最右推导（规范推导）推出aAc句型，所以aAc不是该文法的规范句型。回顾LR分析过程，若输入符号串是所给文法的句子，那么分析过程的任何时刻在文法符号栈中的符号和剩余的符号总是构成该文法的规范句型。<br>
+      　　这也说明了并不是FOLLOW(A)的每个元素在含A的所有句型中在A的后面都会出现，例中d只在规范句型aAd中A的后面出现，因此面临输入符为d才应归约。再看在I<font size="-2"><sub>7</sub></font>中。</td>
+  </tr>
+</table>
+</body>
+</html>

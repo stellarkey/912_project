@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>8.4 简单赋值语句的（四元式）翻译</b><br>
+      　　在8.3.3的四元式中，使用变量名字本身表示运算对象ARG1和ARG2，用ti表示RESULT。在实际实现中，它们或者是一个指针，指向符号表的某一登录项，或者是一个临时变量的整数码。在对赋值语句翻译为四元式的描述中，我们将表明怎样查找这样的符号表登录项。首先对id表示的单词定义一属性id．name，用做语义变量，用Lookup（id．name）表示审查id．name是否出现在符号表中，如在，则返回一指向该登录项的指针，否则返回nil。语义过程emit表示输出四元式到输出文件上。语义过程newtemp表示生成一个临时变量，每调用一次，生成一新的临时变量。语义变量E．place，表示存放E值的变量名在符号表的登录项或一整数码（若此变量是一个临时变量）图8.9列出了翻译赋值语句到四元式的语义描述。这里的语义工作包括对变量进行&quot;先定义后使用&quot;的检查。</td>
+  </tr>
+</table>
+</body>
+</html>

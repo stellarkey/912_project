@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 　　 表达式文法的预测分析表如表5.3 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表5.3 表达式文法的预测分析表</font></td>
+        </tr>
+        <tr> 
+          <td> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">&nbsp;</td>
+                <td align="center">i</td>
+                <td align="center">+</td>
+                <td align="center">*</td>
+                <td align="center">(</td>
+                <td align="center">)</td>
+                <td align="center">#</td>
+              </tr>
+              <tr> 
+                <td align="center">E</td>
+                <td align="center">→TE'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">→TE'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" height="20">E'</td>
+                <td align="center" height="20">&nbsp;</td>
+                <td align="center" height="20">→+TE'</td>
+                <td align="center" height="20"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" height="20"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" height="20">→ε</td>
+                <td align="center" height="20">→ε</td>
+              </tr>
+              <tr> 
+                <td align="center">T</td>
+                <td align="center">→FT'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">→FT'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center">T'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">→ε</td>
+                <td align="center">→*FT'</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">→ε</td>
+                <td align="center">→ε</td>
+              </tr>
+              <tr> 
+                <td align="center">F</td>
+                <td align="center">→I</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">→(E)</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　下面用预测分析程序，栈和预测分析表对输入串i+i*i#进行分析，给出栈的变化过程如表5.4。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表5.4 对符号串i+i*i#的分析过程</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="320">
+              <param name=movie value="../../../flash/chap05/f5-3-1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/f5-3-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="320">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

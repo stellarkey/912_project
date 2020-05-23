@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　　(c) 对于正规式R=S<sup><font size="-2">*</font></sup>，NFA(R)为： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page61_1.gif" width="364" height="107"></td>
+        </tr>
+      </table>
+      　　这里x和y分别是NFA(R)的初态和终态，从x引ε弧到N(s)的初态，从N(s)的终态引ε弧到y，从x到y引ε弧，同样N(s)的终态可沿ε弧的边直接回到N(s)的初态。N(s)的初态或终态不再是N(s)的初态和终态。<br>
+      　　　(d) 正规式(s)的NFA同s的NFA一样。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例3.5</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　<font color="#0000FF">　</font>为R=(a|b)abb构造NFA N，使得L(N)=L(R)。<br>
+            　　从左到右分解R，令r<sub><font size="-2">1</font></sub>=a，第一个a，则有：<br>
+            　　<img src="../../../img/totle/page61_5F2a_1.gif" width="137" height="35"><br>
+            　　令r<sub><font size="-2">2</font></sub>=b，则有：<br>
+            　　<img src="../../../img/totle/page61_5F2a_2.gif" width="140" height="39"><br>
+            　　令r<sub><font size="-2">3</font></sub>=r<sub><font size="-2">1</font></sub>|r<sub><font size="-2">21</font></sub>，则有：<br>
+            　　<img src="../../../img/totle/page61_5F2a.gif" width="284" height="136"><br>
+            　　令r<sub><font size="-2">4</font></sub>=r<sub><font size="-2">3</font></sub>'，则有：<br>
+            　　<img src="../../../img/totle/page61_2b.gif" width="398" height="192"><br>
+            　　令r<sub><font size="-2">5</font></sub>=a，<br>
+            　　令r<sub><font size="-2">6</font></sub>=b，<br>
+            　　令r<sub><font size="-2">7</font></sub>=b，<br>
+            　　〖TPBYP623,+12mm。101mm,Y,PZ#〗<br>
+            　　令r<sub><font size="-2">8</font></sub>=r<sub><font size="-2">5</font></sub>r<sub><font size="-2">6</font></sub>，<br>
+            　　令r<sub><font size="-2">9</font></sub>=r<sub><font size="-2">8</font></sub>r<sub><font size="-2">7</font></sub>，则有：<br>
+            　　<img src="../../../img/totle/page61_2c.gif" width="298" height="67"> 
+            <br>
+            　　令r<sub><font size="-2">10</font></sub>=r<sub><font size="-2">4</font></sub>r<sub><font size="-2">9</font></sub>，则最终得到图4.4的NFA 
+            N即为所求。<br>
+            　　其实，分解R的方式很多，用图4.10(a)(b)(c)(d)分别表明另一种分解方式和所构造的NFA。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

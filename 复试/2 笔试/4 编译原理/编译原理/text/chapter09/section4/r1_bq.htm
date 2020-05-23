@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　② <b>符号表的表长是确定的情况</b> 在9.3.2节中提到的散列组织的符号表，其表长通常是确定的，这时的表长并不反映已登录的表项个数，是否已有表项登录是取决于该符号表中是否存在已有表项值的表项。因此对这类符号表的初始化方法，需要将表中全部表项值清除。由于通常表示表项值的关键因素是登录标识符的符号栏(也可能是指向符号的指针)，因此在清除表项值时，实际上可仅清除符号栏。图9.20表示这类符号表初始化的状态。应该说明这种散列表的表长确定的说法是相对于那种随着表项增加而渐增地变化而言的。为了提高编译程序的处理能力，在某些编译程序中也采用了可扩展表长的散列表组织。为了缓解散列冲突，在散列堆聚严重的位置，另开辟解决冲突的表项或者增加主表的长度。但通常这种方式的扩充不是一个一个表项的增加而是根据情况一组一组地增加。增加的表项必须首先清除其表项值。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.20 定长符号表初态</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/9_20.gif" width="321" height="286"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

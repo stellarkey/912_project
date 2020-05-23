@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　说明部分包括变量的说明、常量说明和正规定义，所谓正规定义是形式如下的一系列定义： <br>
+      　　d<sub><font size="-2">1</font></sub>→r<sub><font size="-2">1</font></sub><br>
+      　　d<sub><font size="-2">2</font></sub>→r<sub><font size="-2">2</font></sub><br>
+      　　…<br>
+      　　d<sub><font size="-2">n</font></sub>→r<sub><font size="-2">n</font></sub><br>
+      　　其中Σ是基本字母表，每个d<sub><font size="-2">i</font></sub>是不同的名字，每个r<sub><font size="-2">i</font></sub>是在Σ∪{d<sub><font size="-2">1</font></sub>，d<sub><font size="-2">2</font></sub>，…,d<sub><font size="-2">i-1</font></sub>}上的正规式，即基本字母表和前面定义的名字。正规定义的d<sub><font size="-2">i</font></sub>用做转换规则中出现的正规表达式的成分使用。有些LEX实现版本并不需要&quot;→&quot;(参看图4.15)。<br>
+      　　转换规则是如下形式的语句：<br>
+      　　P<sub><font size="-2">1</font></sub> {action 1}<br>
+      　　P<sub><font size="-2">2</font></sub> {action 2}<br>
+      　　……<br>
+      　　P<sub><font size="-2">n</font></sub> {action n}<br>
+      　　其中每个P<sub><font size="-2">i</font></sub>是一个正规式，是Σ∪{d<sub><font size="-2">1</font></sub>，d<sub><font size="-2">2</font></sub>，…，d<sub><font size="-2">n</font></sub>}上的正规式；每个action 
+      i是一段C程序代码，当然，一般应是任何实现语言的代码段。它指出在识别出P<sub><font size="-2">i</font></sub>所描述的单词之后，词法分析器所应采取的动作。<br>
+      　　第三部分容纳的是action所需要的辅助过程，这些过程可以分别编译并置于词法分析器中。 <br>
+      　　图4.15给出一个识别PL/0单词的LEX程序片断。从这个例子可以看出LEX程序的架构。关于LEX的详解，请参看附录B。 </td>
+  </tr>
+</table>
+</body>
+</html>

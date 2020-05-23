@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　这样，图8.9中的第（3）条产生式及其有关语义描述如图8.10。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 8.10 类型转换的语义处理 </font> </td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+              <tr> 
+                <td width="25">&nbsp;</td>
+                <td width="80">产生式</td>
+                <td>语义动作</td>
+              </tr>
+              <tr> 
+                <td valign="top">&nbsp;</td>
+                <td valign="top">E→E<sup><font size="-2">1</font></sup>*E<sup><font size="-2">2</font></sup></td>
+                <td>｛E．place∶=newtemp；<br>
+                  if E<sup><font size="-2">1</font></sup>．type＝int AND E<sup><font size="-2">2</font></sup>．type＝int 
+                  then<br>
+                  begin emit（E.place，′∶=′，E<sup><font size="-2">1</font></sup>．place，′*<sup><font size="-2">i</font></sup>′, 
+                  E<sup><font size="-2">2</font></sup>．place）；<br>
+                  　　　　　　E．type∶=int<br>
+                  end<br>
+                  else if E<sup><font size="-2">1</font></sup>．type＝real AND E<sup><font size="-2">2</font></sup>．type＝real 
+                  then<br>
+                  begin emit (E．place,′∶=′,E<sup><font size="-2">1</font></sup>．place,′*<sup><font size="-2">r</font></sup>′,E<sup><font size="-2">2</font></sup>．place);<br>
+                  　　　　　　E．type∶=real<br>
+                  end<br>
+                  else if E<sup><font size="-2">1</font></sup>．type＝int/* and 
+                  E<sup><font size="-2">2</font></sup>．type=real　*/　then<br>
+                  begin t∶=newtemp；<br>
+                  　　　emit（t，′∶=′，′itr′，E<sup><font size="-2">1</font></sup>．place）；<br>
+                  　　　emit（E．place，′∶=′，t，′*<sup><font size="-2">r</font></sup>′，E<sup><font size="-2">2</font></sup>．place）；<br>
+                  　　　E．type∶=real<br>
+                  end<br>
+                  else　/*E<sup><font size="-2">1</font></sup>·type＝real and E<sup><font size="-2">2</font></sup>．type＝int*/<br>
+                  begin t∶=newtemp；<br>
+                  　　　emit（t，′∶=′；′itr′，E<sup><font size="-2">2</font></sup>．place）；<br>
+                  　　　emit（E．place，′∶=′，E<sup><font size="-2">1</font></sup>．place，′*<sup><font size="-2">r</font></sup>′,t）；<br>
+                  　　　E．type∶=real<br>
+                  end；<br>
+                  ｝</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　图8.9中的例子里，与非终结符E相联的语义值有E．place，还有E．type。语义值的设计是与语义处理的描述相关的。大家回顾一下PL/0编译程序中对赋值语句的语义处理，其中对赋值语句左部的标识符，检查它的种类（kind），若不是变量名，则指出错误，若是变量名，才生成赋值运算的代码。对右部表达式中作为运算对象的标识符，检查其是否变量名或常量名，是，生成相应代码，不是（即是过程名），则指出错误。这一点若用语义规则描述的话，还应增加一语义值，与非终结符相联，比如用E．kind表示。 
+      <br>
+      　　赋值语句中会含有复杂数据类型，如数组元素、记录（结构）的引用。这种情况的翻译工作要复杂些，我们将在后面给予专门讨论。 </td>
+  </tr>
+</table>
+</body>
+</html>

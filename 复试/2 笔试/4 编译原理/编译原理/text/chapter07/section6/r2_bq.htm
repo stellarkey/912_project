@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　现用表7.17对表达式的输入串i+i*i#分析过程如表7.18所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表7.18 用二义性文法的分析表对输入串i+i*i#的分析过程 
+            </font></td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">步骤</td>
+                <td align="center" valign="top">状态栈</td>
+                <td align="center" valign="top">符号栈</td>
+                <td align="center" valign="top">输入串</td>
+                <td align="center" valign="top">ACTION</td>
+                <td align="center" valign="top">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center">1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                </td>
+                <td valign="top">0<br>
+                  03<br>
+                  01<br>
+                  014<br>
+                  0143<br>
+                  0147<br>
+                  01475<br>
+                  014753<br>
+                  014758<br>
+                  0147<br>
+                  01</td>
+                <td valign="top">#<br>
+                  #i<br>
+                  #E<br>
+                  #E+<br>
+                  #E+i<br>
+                  #E+E<br>
+                  #E+E*<br>
+                  #E+E*i<br>
+                  #E+E*E<br>
+                  #E+E<br>
+                  #E</td>
+                <td align="right" valign="top">i+i*i#<br>
+                  +i*i#<br>
+                  +i*i#<br>
+                  i*i#<br>
+                  *i#<br>
+                  *i#<br>
+                  i#<br>
+                  #<br>
+                  #<br>
+                  #<br>
+                  #</td>
+                <td align="center" valign="top">S3<br>
+                  r4<br>
+                  S4<br>
+                  S3<br>
+                  r4<br>
+                  S5<br>
+                  S3<br>
+                  r4<br>
+                  r2<br>
+                  r1<br>
+                  acc</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  1<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  7<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  8<br>
+                  7<br>
+                  1</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　不难发现对二义性文法规定了优先关系和结合性后的LR分析速度比相应的非二义性文法的LR分析速度要快一些，对输入串i+i*i#的分析，用表7.17比用表7.8(见第7.3节)分析少3步，其分析过程见表7.18和表7.9。对于其它的二义性文法也可用类似的方法处理，可能构造出无冲突的LR分析表。<br>
+      　　对二义性文法规定了优先关系和结合性后，构造出的LR分析表，是否冲突都能解决，需要逐个考察决定。</td>
+  </tr>
+</table>
+</body>
+</html>

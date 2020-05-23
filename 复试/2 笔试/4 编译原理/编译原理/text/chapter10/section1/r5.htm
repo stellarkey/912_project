@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　这种分配方式的存储管理技术甚为复杂，我们这里举出这种分配方法必须考虑的几个问题。<br>
+      　　首先，当运行程序要求一块体积为N的空同时，我们应该分配哪一块给它呢？理论上说，应从比N稍大一点的一个空闲块中取出N个单元，以便使大的空闲块派更大的用场。但这种做法较麻烦。因此，常常仍采用&quot;先碰上哪块比N大就从其中分出N个单元&quot;的原则。但不论采用什么原则，整个大存区在一个定时间之后必然会变面零碎不堪。总有一个时候会出现变样的情形：运行程序要求一块体积为N的空间，但发现没有比N大的空闲块了，然而所有空闲块的总和却要比N大得多！出现这种情形时怎么办呢？这是一个比前面的问题难得多的问题。解决办法似乎很简单，这就是，把所有空闲块连接在一起，形成一片可分配的连续空间。这里主要问题是，我们必须调整运行程序对各占用块的全部引用点。<br>
+      　　还有，如果运行程序要求一块体积为N的空间，但所有空闲块的总和也不够N，那又应怎么办呢？有的管理系统采用一种吊做废品回收的办法来对付这种局面。即寻找那些运行程序业己无用但尚未释放在占用块，或者那些行程序目前很少使用的点用块，把这此占用块收回来，重新分配。但是，我们如何知道哪些块运行时在使用或者目前很少使用呢？即便知道了，一经收回后运行程序在某个时候又要用它时又应该怎么办呢？要使用废品回收技术，除了在语言上要有明确的具体限制外，还需要有特别的硬件措施，否则回收几乎不能实现。</td>
+  </tr>
+</table>
+</body>
+</html>

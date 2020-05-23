@@ -1,0 +1,415 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <b><br>
+  -</b>&gt;<b> 期末考试题 </b>&lt;<b>-</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b>一、 选择</b>（共20小题，每小题2分，共40分）。<br>
+            <br>
+            1. 关于C++与C语言关系的描述中，（ ）是错误的。<br>
+            <input type=radio  name=1 value=a>
+            a.C语言是C++语言的一个子集 <br>
+            <input type=radio  name=1 value=b>
+            b.C语言与C++语言是兼容的<br>
+            <input type=radio  name=1 value=c>
+            c.C++语言对C语言进行了一些改进 <br>
+            <input type=radio  name=1 value=d>
+            d.C++语言和C语言都是面向对象的<br>
+            <br>
+            2．按照标识符的要求，（ ）符号不能组成标识符。<br>
+            <input type=radio  name=2 value=a>
+            a.连接符<br>
+            <input type=radio  name=2 value=b>
+            b.下划线<br>
+            <input type=radio  name=2 value=c>
+            c.大小写字母<br>
+            <input type=radio  name=2 value=d>
+            d.数字字符<br>
+            <br>
+            3. 为了避免嵌套的if-else语句的二义性，C语言规定else总是与（ ）组成配对关系。<br>
+            <input type=radio  name=3 value=a>
+            a.缩排位置相同的if<br>
+            <input type=radio  name=3 value=b>
+            b.在其之前未配对的if<br>
+            <input type=radio  name=3 value=c>
+            c.在其之前未配对的最近的if<br>
+            <input type=radio  name=3 value=d>
+            d.同一行上的if<br>
+            <br>
+            4. 在&quot;int a[ ][3]={{1},{3,2},{4,5,6},{0}};&quot;中，a[2][2]的值是（ 
+            ）。<br>
+            <input type=radio  name=4 value=a>
+            a.1<br>
+            <input type=radio  name=4 value=b>
+            b.0<br>
+            <input type=radio  name=4 value=c>
+            c.6<br>
+            <input type=radio  name=4 value=d>
+            d.2</p>
+          <p>
+            <input type=button name=Button2 value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop1.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+          </p>
+          <p>&nbsp;</p>
+          <p>二<b>、 填空题</b>（25小题，共50分）<br>
+            <b>（以下每小题1分，共10分）</b><br>
+            1． 在C++中，函数的参数有两种传递方式，它们是值传递和 
+            <input type=text size=10 name=m1 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            2． 当一个成员函数被调用时，该成员函数的 
+            <input type=text size=10 name=m2 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            指向调用它的对象。 <br>
+            3． 在基类和派生类中，派生类可以定义其基类中不具备的数据和操作。对两个有相同名字的数据成员进行访问时，如果没有 
+            <input type=text size=10 name=m3 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ，对此数据成员的访问将出现歧义。<br>
+            4． 拷贝构造函数使用 
+            <input type=text size=10 name=m4 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            作为参数初始化创建中的对象。<br>
+            5． 在公有继承的情况下，基类数据成员在派生类中的访问权限 
+            <input type=text size=10 name=m5 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            6． 描述命题&quot;A小于B或小于C&quot;的表达式为 
+            <input type=text size=10 name=m6 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            7． 用new申请某一个类的动态对象数组时，在该类中必须能够匹配到 
+            <input type=text size=10 name=m7 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            构造函数，否则应用程序会产生一个编译错误。 <br>
+            8． 静态数据成员在类外进行初始化，且静态数据成员的一个拷贝被类的所有对象 
+            <input type=text size=10 name=m8 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            9． 为了避免可能出现的歧义，C++对if…else语句配对规则规定为：else总是与 
+            <input type=text size=10 name=m9 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            配对。 <br>
+            10． 设&quot;int a=3,b=4,c=5;&quot;，表达式&quot;（a+b）&gt;c&amp;&amp;b==c&quot;的值是 
+            <input type=text size=10 name=m10 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            <b>（以下每小题2分，共20分）</b><br>
+            11． 面向对象的程序设计有四大特征，它们是抽象、封装、 
+            <input type=text size=10 name=m11 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            、 
+            <input type=text size=10 name=m12 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            12． 在C++中，定义重载函数时，应至少使重载函数的参数个数或参数类型 
+            <input type=text size=10 name=m13 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ；在基类和派生类中，成员函数的覆盖是指 
+            <input type=text size=10 name=m14 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            13． 构造函数与析构函数除功能不同外，在定义形式上，它们的区别还包括构造函数名与类名相同，而析构函数名是在类名前加一个~、 
+            <input type=text size=10 name=m15 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            、 
+            <input type=text size=10 name=m16 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            14． 动态联编要满足两个条件，它们是 
+            <input type=text size=10 name=m17 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            、 
+            <input type=text size=10 name=m18 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            15． 在C++类中，有一种不能定义对象的类，这样的类只能被继承，称之为 
+            <input type=text size=10 name=m19 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ，定义该类至少具有一个 
+            <input type=text size=10 name=m19 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            16． 在C++类中，const关键字可以修饰对象和成员函数，const对象不能 
+            <input type=text size=10 name=m20 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ，const成员函数不能 
+            <input type=text size=10 name=m20 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            17． 举出C++中两种用户自定义的数据类型： 
+            <input type=text size=10 name=m21 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            、 
+            <input type=text size=10 name=m22 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            18． C++中没有字符串类型，字符串是通过 
+            <input type=text size=10 name=m23 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            来表示的，每一个字符串都有一个结尾字符 
+            <input type=text size=10 name=m24 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            19． C++中没有输入输出语句，输入输出是通过 
+            <input type=text size=10 name=m25 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            实现的， 写出一条打印整型变量n的输出语句： 
+            <input type=text size=10 name=m26 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            20． 举出C++中两种代码复用的方式： 
+            <input type=text size=10 name=m27 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            、 
+            <input type=text size=10 name=m28 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。 <br>
+            <b>（以下每小题4分，共20分） </b><br>
+            21． 下面程序的运行结果是 
+            <input type=text size=10 name=m29 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            　　#include &lt;stdio.h&gt;<br>
+            　　void main()<br>
+            　　{<br>
+            　　　char a='a',b='j';<br>
+            　　　float x;<br>
+            　　　x=(b-a)/('F'-'A');<br>
+            　　　printf(&quot;%d\n&quot;,(int)(3.14*x));<br>
+            　　}<br>
+            22． 下面程序的运行结果是 
+            <input type=text size=10 name=m30 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            　　#include &quot;iostream.h&quot; <br>
+            　　void main( ) <br>
+            　　{<br>
+            　　　int i=1;<br>
+            <br>
+            　　　while (i&lt;=15){<br>
+            　　　　i++;<br>
+            　　　　if (i%3!=2) continue; <br>
+            　　　　else cout &lt;&lt;&quot;i=&quot;&lt;&lt;i&lt;&lt;endl;<br>
+            　　　}<br>
+            　　}<br>
+            23． 下面程序的运行结果是 
+            <input type=text size=10 name=m31 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            　　#include &quot;iostream.h&quot; <br>
+            　　class test<br>
+            　　{ <br>
+            　　private:<br>
+            　　　int num; <br>
+            　　　float fl; <br>
+            　　public:<br>
+            　　　test( ); <br>
+            　　　int getint( ){return num;} <br>
+            　　　float getfloat( ){return fl;} <br>
+            　　　~test( ); <br>
+            　　}; <br>
+            　　test::test( ) <br>
+            　　{<br>
+            　　　cout &lt;&lt; &quot;Initalizing default&quot; &lt;&lt; endl; <br>
+            　　　num=0;fl=0.0; <br>
+            　　} <br>
+            　　test::~test( )<br>
+            　　{<br>
+            　　　cout &lt;&lt; &quot;Desdtructor is active&quot; &lt;&lt; endl;<br>
+            　　} <br>
+            　　void main( ) <br>
+            　　{<br>
+            　　　test array[2]; <br>
+            　　　cout &lt;&lt; array[1].getint( )&lt;&lt; &quot; &quot; &lt;&lt; 
+            array[1].getfloat( ) &lt;&lt;endl; <br>
+            　　}<br>
+            24． 下面程序的运行结果是 
+            <input type=text size=10 name=m32 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            　　#include &lt;iostream.h&gt;<br>
+            　　class A<br>
+            　　{<br>
+            　　public:<br>
+            　　　A(){cout&lt;&lt;&quot;A::A() called.\n&quot;;}<br>
+            　　　virtual ~A(){cout&lt;&lt;&quot;A::~A() called.\n&quot;;}<br>
+            　　}; </p>
+          <p>　　class B:public A<br>
+            　　{<br>
+            　　public:<br>
+            　　　B(int i){<br>
+            　　　cout&lt;&lt;&quot;B::B() called.\n&quot;;<br>
+            　　　buf=new char[i];<br>
+            　　}<br>
+            　　virtual ~B(){<br>
+            　　delete []buf;<br>
+            　　cout&lt;&lt;&quot;B::~B() called.\n&quot;;<br>
+            　　}<br>
+            　　private:<br>
+            　　　char *buf;<br>
+            　　};<br>
+            　　void fun(A *a)<br>
+            　　{<br>
+            　　　delete a;<br>
+            　　}<br>
+            　　void main()<br>
+            　　{<br>
+            　　　A *a=new B(15);<br>
+            　　　fun(a);<br>
+            　　}<br>
+            25． 下面程序的运行结果是
+            <input type=text size=10 name=m33 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            。<br>
+            　　#include &lt;stdio.h&gt;<br>
+            　　int a[ ]={1,3,5,7,9};<br>
+            　　int *p[ ]={a,a+1,a+2,a+3,a+4};<br>
+            　　void main( )<br>
+            　　{<br>
+            　　　printf(&quot;%d\t%d\t%d\n&quot;,a[4],*(a+2),*p[1]);<br>
+            　　　printf(&quot;%d\t%d\t%d\n&quot;,**(p+1)+a[2],*(p+4)-*(p+0),*(a+3)%a[4]);<br>
+            　　}
+          <br>
+          <input type=button name=Button value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop1.htm','','width=471,height=384') class=pbox>
+          <input type="reset" name="Reset" value="重置" class=pbox>
+        </form>
+          <form>
+          <p>&nbsp;</p>
+          <p><b>三、 问答题</b>（每小题5分，共20分）<br>
+            <br>
+            1． 若程序员没有定义拷贝构造函数，则编译器自动生成一个缺省的拷贝构造函数，它可能会产生什么问题？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            2． 简述成员函数、全局函数和友元函数的差别。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            3． 简述结构化的程序设计、面向对象的程序设计的基本思想。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            4． 结构struct和类class有什么异同？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form><form>
+          <p>&nbsp;</p>
+          <p><b>四、找出下面程序（或程序段）中的语法错误，并予以纠正</b>（每小题4分，共8分）<br>
+            （1）程序功能是倒序输出各给定的字符串。<br>
+            　#include &lt;stdio.h&gt; <br>
+            　void main()<br>
+            　{<br>
+            　　char str[5][ ]={&quot;First&quot;,&quot;Second&quot;,&quot;Third&quot;,&quot;Forth&quot;,&quot;Fifth&quot;};<br>
+            　　char *cp[ ]={str[4],str[3],str[2],str[1],str[0]};<br>
+            　　int i; </p>
+          <p> 　　while(i&lt;=5)<br>
+            　　{<br>
+            　　　printf(&quot;%c &quot;,*(cp+i));<br>
+            　　　i++;<br>
+            　　}<br>
+            　}<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            （2）程序功能是将各个平方根值放入数组中。<br>
+            　#include &lt;stdio.h&gt;<br>
+            　void main()<br>
+            　{<br>
+            　　int max,a,i;<br>
+            　　scanf(&quot;%d%d&quot;,max,a);<br>
+            　　double x[max];</p>
+           　　for (i=0;i&lt;max;i++)<br>
+          　　　x[i]=sqrt(a*i);<br>
+          　} <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+            
+          <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop3.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+        </form><form>
+          <p>&nbsp;</p>
+          <p><b>五、（8分）下列shape类是一个表示形状的抽象类，area( )为求图形面积的函数，total( )则是一个通用的用以求不同形状的图形面积总和的函数。请从shape类派生三角形类(triangle)、矩形类（rectangle），并给出具体的求面积函数。</b> 
+            <br>
+            　class shape{ <br>
+            　　　public: <br>
+            　　　virtual float area( )=0; <br>
+            　　 }; <br>
+            　　 <br>
+            　float total(shape *s[ ],int n) <br>
+            　　　{ <br>
+            　　　float sum=0.0; <br>
+            　　　for(int i=0;i&lt;n;i++) <br>
+            　　　sum+=s[i]-&gt;area( ); <br>
+            　　　return sum; <br>
+            　 　}<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop4.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form><form>
+          <p>&nbsp;</p>
+          <p><b>六、（6分）完成顺序查找函数f_seq( )。其过程是：从表头开始，根据给定的模式，逐项与表中元素比较。如果找到所需元素，则查找成功，并打印出它在表中的顺序号。如果查找整个表仍未找到所需对象，则查找失败</b><br>
+            　#include &lt;stdio.h&gt;<br>
+            　void f_seq(char *list[],char *object,int len)<br>
+            　//list 指针数组，指向字符串<br>
+            　//object 模式串<br>
+            　//len 表的长度<br>
+            　{<br>
+            　　char **p;<br>
+            　　int strcmp(char *s,char *t); </p>
+          <p> 　　p=list;<br>
+            　　while ( 
+            <input type=text size=10 name=m1 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            )<br>
+            　　　if (strcmp(*p,object)==0)<br>
+            　　　　break;<br>
+            　　　else 
+            <input type=text size=10 name=m2 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ;<br>
+            　　　if (p&lt;list+len)<br>
+            　　　　printf( &quot;Success! **% d\n&quot;,p-list);<br>
+            　　　else printf(&quot;Unsuccess!\n&quot;);<br>
+            　}</p>
+          <p>　int strcmp(char *s,char *t)<br>
+            　{<br>
+            　　for (;*s==*t; s++,t++)<br>
+            　　　if (*s=='\0')<br>
+            　　　　return(0);<br>
+            　　return( 
+            <input type=text size=10 name=m3 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            );<br>
+            　}<br>
+            <br>
+            <b>七、（8分）完成使链表逆置函数reverse，若有链表： <br>
+            <img src="images/pic/exam/exam01_1.gif" width="297" height="49"><br>
+            </b><b>逆置后则变为：<br>
+            <img src="images/pic/exam/exam01_2.gif" width="295" height="49"><br>
+            </b><b>链表结点的结构如下：</b><br>
+            　struct node<br>
+            　{<br>
+            　　int num;<br>
+            　　struct node *next;<br>
+            　} 　<br>
+            　struct node* reverse(struct node *head)<br>
+            　//head 链表头结点<br>
+            　{<br>
+            　　struct node *p,*temp1,*temp2;</p>
+          　　if(head==NULL 
+          <input type=text size=10 name=m4 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ) return head;<br>
+            　　p=head-&gt;next;head-&gt;next=NULL;<br>
+            　　while( 
+            <input type=text size=10 name=m5 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            )<br>
+            　　{<br>
+            　　　temp1=head;<br>
+            　　　 
+            <input type=text size=10 name=m6 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ;<br>
+            　　　temp2=p;<br>
+            　　　p=p-&gt;next;<br>
+            　　　
+            <input type=text size=10 name=m7 style='border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px'>
+            ;<br>
+            　　}//Match while statenment<br>
+            　　return head; //返回逆置后的链表的头结点<br>
+            　}<br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop5.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>(4) LR(0)分析表的构造</b><br>
+      　　LR(0)分析表是LR(0)分析器的重要组成部分，它是总控程序分析动作的依据。对于不同的文法，LR(0)分析表不同，它可以用一个二维数组表示，行标为状态号，列标为文法符号和'#'号，分析表的内容可由两部分组成，一部分为动作(ACTION)表，它表示当前状态下所面临输入符应做的动作是移进、归约、接受或出错，动作表的行标只包含终结符和'#'，另一部分为转换表(GOTO)，它表示在当前状态下面临文法符号时应转向的下一个状态，相当于识别活前缀的有限自动机DFA的状态转换矩阵。因此构造一个文法的LR(0)分析表时，首先应构造识别活前缀的自动机DFA，这样可以很方便地利用DFA的项目集和状态转换函数构造它的LR(0)分析表，在实际应用中为了节省存储空间，通常把关于终结符部分的GOTO表和ACTION表重叠，也就是把当前状态下面临终结符应作的移进-归约动作和转向动作用同一数组元素表示。<br>
+      　　因为一个LR(0)文法的识别活前缀的有限自动机DFA的状态都不含移进-归约、或归约-归约冲突，因此它的分析表中的动作是唯一的，不会同时出现两种以上的情况，所以终结符部分的GOTO表和ACTION表可以重叠。对非终结符部分只有GOTO表无归约情况。</td>
+  </tr>
+</table>
+</body>
+</html>

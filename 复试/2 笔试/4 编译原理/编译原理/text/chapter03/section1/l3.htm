@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>3．1 词法分析程序</b><br>
+      　　首先讨论词法分析程序与语法分析程序的接口方式<br>
+      　　词法分析程序完成的是编译第一阶段的工作。词法分析工作可以是独立的一遍，把字符流的源程序变为单词序列，输出在一个中间文件上，这个文件做为语法分析程序的输入而继续编译过程。然而，更一般的情况，是将词法分析程序设计成一个子程序，每当语法分析程序需要一个单词时，则调用该子程序。词法分析程序每得到一次调用，便从源程序文件中读入一些字符，直到识别出一个单词，或说直到下一单词的第一个字符为止。这种设计方案中，词法分析程序和语法分析程序是放在同一遍里，而省掉了中间文件，象第2章介绍的PL/0编译程序那样.也是大多数编译程序采用的方案。</td>
+  </tr>
+</table>
+</body>
+</html>

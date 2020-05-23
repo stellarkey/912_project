@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <font color="#0000FF">小练习</font>：学员可证明算符文法有如下两个性质。<br>
+      　　<b>性质1</b> 在算符文法中任何句型都不包含两个相邻的非终结符 。<br>
+      　　<b>性质2</b> 如果Ab或(bA)出现在算符文法的句型γ中，其中A∈V<sub><font size="-2">N</font></sub> 
+      ，b∈V<sub><font size="-2">T</font></sub>，则γ中任何含b的短语必含有A。<br>
+      　　参考答案：<br>
+      　　证明：性质1<br>
+      　　用归纳法<br>
+      　　设γ是句型，即S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">γ<br>
+      　　S=ω<font size="-2"><sub>0</sub></font><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ω<font size="-2"><sub>1</sub></font><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      ... <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ω<font size="-2"><sub>n-1</sub></font><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ω<font size="-2"><sub>n</sub></font>=γ<br>
+      　　推导长度为n，归纳起点n=1时，<br>
+      　　S=ω<font size="-2"><sub>0</sub></font><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ω<font size="-2"><sub>1</sub></font>=γ，即S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">γ，必存在产生式S→γ，而由算符文法的定义，文法的产生式中无相邻的非终结符，显然满足性质1。<br>
+      　　假设n＞1, ω<font size="-2"><sub>n-1</sub></font>满足性质1。<br>
+      　　若ω<font size="-2"><sub>n-1</sub></font>=αAδ，A为非终结符。<br>
+      　　由假设α的尾符号和δ的首符号都不可能是非终结符，否则与假设矛盾。<br>
+      　　又若A→β是文法的产生式，则有<br>
+      　　ω<font size="-2"><sub>n-1</sub></font><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ω<font size="-2"><sub>n</sub></font>=αβδ=γ<br>
+      　　而A→β是文法的原产生式，不含两个相邻的非终结符，所以αβγ也不含两个相邻的非终结符。满足性质1。证毕。 <br>
+      　　证明：性质2<br>
+      　　用反证法。<br>
+      　　因为由算符文法的性质1知可有：<br>
+      　　S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">γ=αbAβ<br>
+      　　若存在B<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">αb，这时b和A不同时归约，则必有S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">BAβ,这样在句型BAβ中存在相邻的非终结符B和A，所以与性质1矛盾，证毕。注意：含b的短语必含A，含A的短语不一定含b。</td>
+  </tr>
+</table>
+</body>
+</html>

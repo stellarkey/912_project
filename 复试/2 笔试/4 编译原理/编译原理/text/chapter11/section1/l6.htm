@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>变换循环控制条件</b><br>
+      　　图11.4的代码中，I和T<sub><font size="-2">1</font></sub>始终保持T<sub><font size="-2">1</font></sub>＝4*I的线性关系，因此可以把四元式（12）的循环控制条件I≤20变换成T<sub><font size="-2">1</font></sub>≤80，这样整个程序的运行结果不变。这种变换称为变换循环控制条件。经过这一变换后，循环中I的值在循环后不会被引用，四元式（11）成为多余运算，可以从循环中删除。变换循环控制条件可以达到代码优化的目的。<br>
+      <b>合并已知量与复写传播</b><br>
+      　　图11.4中，四元式（3）计算4*I时，I必为1。即4*I的两个运算对象都是编码时的已知量，可在编译时计算出它的值，即四元式（3）可变为T<sub><font size="-2">1</font></sub>＝4，这种变换称为合并已知量。 
+      <br>
+      　　图11.4中，四元式(6)把T<sub><font size="-2">1</font></sub>的值复写到T<sub><font size="-2">4</font></sub>中，四元式（8）要引用T<sub><font size="-2">4</font></sub>的值，而从四元式（6）到四元式（8）之间未改变T<sub><font size="-2">4</font></sub>和T<sub><font size="-2">1</font></sub>的值，则将四元式（8）改为T<sub><font size="-2">6</font></sub>∶=T<sub><font size="-2">5</font></sub>[T<sub><font size="-2">1</font></sub>]，这种变换称为复写传播.复写传播之后运算结果保持不变。图11.4经过变换循环控制条件，合并已知量和复写传播等变换后，变为图11.5。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 8.9 赋值语句的四元式翻译 </font></td>
+        </tr>
+        <tr>
+          <td valign="top">(1) S→id∶=E {p∶=lookup（ id．name）；<br>
+            　　　　　　　 if p　≠　nil　then<br>
+            　　　　　　　 Emit（p′∶=′E．place）<br>
+            　　　　　　　 else　error}<br>
+            (2) E→E<sup><font size="-2">1</font></sup>+E<sup><font size="-2">2</font></sup> 
+            {E．place∶=newtemp；<br>
+            　　　　　　 Emit（E．place′∶=′E<sup><font size="-2">1</font></sup>.place′+′E<sup><font size="-2">2</font></sup>．place）}<br>
+            (3) E→E<sup><font size="-2">1</font></sup>*E<sup><font size="-2">2</font></sup> 
+            {E．placeE∶=newtemp；<br>
+            　　　　　　 Emit（E．place′∶=′E<sup><font size="-2">1</font></sup>．place′*′E<sup><font size="-2">2</font></sup>．place）}<br>
+            (4) E→－E<sup><font size="-2">1</font></sup> {E．placeE∶=newtemp；<br>
+            　　　　　　 Emit（E．place′∶=′′uminus′E<sup><font size="-2">1</font></sup>．place 
+            ）}<br>
+            (5) E→（E<sup><font size="-2">1</font></sup>） {E．place∶=E<sup><font size="-2">1</font></sup>．place}<br>
+            (6) E→id {p:=lookup（id．name）}；<br>
+            　　　　　　if　p ≠ nil then<br>
+            　　　　　　E．placeE∶=p<br>
+            　　　　　　else　error}</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

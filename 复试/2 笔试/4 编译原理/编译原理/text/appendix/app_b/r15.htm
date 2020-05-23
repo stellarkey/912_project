@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.10 LEX源程序格式总结</b><br>
+        　　为使用方便起见，将LEX源程序的格式，LEX的正规式的格式等总录于此。<br>
+        　　LEX源程序的一般格式为：<br>
+        　　{definitions}<br>
+        　　%%<br>
+        　　{rules}%%<br>
+        　　{user subroutines}<br>
+        　　辅助定义部分包括以下项目：<br>
+        　　1) 辅助定义，格式为：<br>
+        　　name translation<br>
+        　　2) 直接照抄的代码，格式为：<br>
+        　　空格代码<br>
+        　　3) 直接照抄的代码，格式为：<br>
+        　　%{<br>
+        　　代码<br>
+        　　%}<br>
+        　　4) 开始条件，格式为：<br>
+        　　%S name1 name2 …<br>
+        　　还有几个其他项目，不常使用故略去。<br>
+        　　识别规则部分的格式是 <br>
+        　　expression action<br>
+        其中expression必须与action用空格分开，动作如果多于一行，要用花括号括起来。<br>
+        　　LEX的正规式用的运算符有以下一些：<br>
+        　　x　　　　　字符x<br>
+        　　&quot;x&quot;　　　　字符x，若为运算符，则不起运算符作用<br>
+        　　\x　　　　同上<br>
+        　　[xy]　　 　字符x或y<br>
+        　　[x-z]　　　字符x，或y，或z<br>
+        　　[∧x]　　　除x以外的所有字符<br>
+        　　·　　　　 除回车换行外的所有字符<br>
+        　　∧x　　　　出现在一行开始处的x<br>
+        　　&lt;y&gt;x　　　 当LEX处于开始条件y时，x<br>
+        　　x$　　　　 出现在一行末尾处的x<br>
+        　　x。　　　　可有可无的xx0个或多个x<br>
+        　　x+　　　　 1个或多个x<br>
+        　　x|y　　　　x或y<br>
+        　　(x)　　　　字符x<br>
+        　　x/y　　　　字符x但仅当其后紧随y <br>
+        　　{xx}　　　 辅助定义xx的展开<br>
+        　　x{m，n}　　m到n个x</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

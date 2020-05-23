@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　与后缀式不同，三元式中含有对中间计算结果的显式引用，比如三元式（1）表示的是b*c的结果。三元式（3）中的（1）和（2）分别表示第一个三元式和第二个三元式的结果。<br>
+        　　对于一目算符op，只需选用一个运算对象，不妨规定只用ARG1。至于多目算符，可用若干个相继的三元式表示。<br>
+        　　树形表示是三元式表示的翻版。上述三元式可表示成下面的树表示：<br>
+        　　<img src="../../../img/chap08/8_3_1.gif" width="74" height="106"><br>
+        　　表达式的树形表示很容易实现：简单变量或常数的树就是该变量或常数自身，如果表达式e<sub><font size="-2">1</font></sub>和e<sub><font size="-2">2</font></sub>的树分别为T<sub><font size="-2">1</font></sub>和T<sub><font size="-2">2</font></sub>，那么e<sub><font size="-2">1</font></sub>+e<sub><font size="-2">2</font></sub>，e<sub><font size="-2">1</font></sub>*e<sub><font size="-2">2</font></sub>，－e<sub><font size="-2">1</font></sub>的树分别为：<br>
+        　　<img src="../../../img/chap08/8_3_2.gif" width="70" height="73"><img src="../../../img/chap08/8_3_3.gif" width="70" height="73"><img src="../../../img/chap08/8_3_4.gif" width="70" height="73"><br>
+        　　二目运算对应二叉子树，多目运算对应多叉子树，不过，为了便于安排存储空间，一棵多叉子树可以通过引进新结而表示成一棵二叉子树。 </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

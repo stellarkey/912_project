@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　解释程序直接对源程序中的语句进行分析，执行其隐含的操作。<br>
+      　　如执行下面的程序：<br>
+      　　<img src="../../../img/chap01/1_1_05.gif" width="405" height="66"><br>
+      <br>
+      　　解释程序直接输出结果 4。而编译程序则生成目标代码，诸如：<br>
+      　　movf #2, b<br>
+      　　movf b , R1<br>
+      　　addf #2, R1<br>
+      　　movf R1, a <br>
+      <br>
+      　　编译系统生成的目标代码由计算机执行才能生成结果。使用编译系统时会区分编译阶段和运行阶段，编译阶段对源程序进行编译，运行阶段是指目标程序的运行。而解释系统则是边解释边执行。从存储组织来看，在编译阶段，存储区一般要有源程序缓冲区，目标代码缓冲区，名字表以及编译程序使用的源程序中间表示和各种表格等等。在运行阶段，存储区只有目标代码和数据区了。对解释系统来说，在它工作的自始至终，存储区中要有源程序，名字表，标号表等表格，输入输出缓冲区以及数据区等等...</td>
+  </tr>
+</table>
+</body>
+</html>

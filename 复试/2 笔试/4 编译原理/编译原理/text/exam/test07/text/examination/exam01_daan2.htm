@@ -1,0 +1,538 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          文法： <br>
+          　　A→aAd|aAb|ε <br>
+          　　拓广文法为G′，增加产生式S′→A<br>
+          　　若产生式排序为：<br>
+          　　0　 S' →A <br>
+          　　1　 A →aAd<br>
+          　　2 　A →aAb<br>
+          　　3 　A →ε <br>
+          　　由产生式知： <br>
+          　　First (S' ) = {ε,a}<br>
+          　　First (A ) = {ε,a}<br>
+          　　Follow(S' ) = {#} <br>
+          　　Follow(A ) = {d,b,#}<br>
+          　　G′的LR(0)项目集族及识别活前缀的DFA如下图所示： <br>
+          <img src="../../img/pic01.gif" width="334" height="160"> <br>
+          在I<sub><font size="-2">0</font></sub>中：<br>
+          A →.aAd和A →.aAb为移进项目，A →.为归约项目，存在移进-归约冲突，因此所给文法不是LR(0)文法。<br>
+          在I<sub><font size="-2">0</font></sub>、I<sub><font size="-2">2</font></sub>中：<br>
+          Follow(A) ∩{a}= {d，b，#} ∩{a}=<img src="../../img/symbol07.gif" width="12" height="11"><br>
+          所以在I<sub><font size="-2">0</font></sub>、I<sub><font size="-2">2</font></sub>中的移进-归约冲突可以由Follow集解决，所以G是SLR(1)文法。 
+          <br>
+          构造的SLR(1)分析表如下： <br>
+          <font color="#0000FF">题目1的SLR(1)分析表</font> 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">状态（State）</td>
+            <td align="center">Action</td>
+            <td align="center">Goto</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a　　　d　 　b　　 #　</td>
+            <td align="center">A</td>
+          </tr>
+          <tr> 
+            <td align="center">0<br>
+              1<br>
+              2<br>
+              3<br>
+              4<br>
+              5<br>
+            </td>
+            <td align="center">S2　　r3　　r3　　r3<br>
+              　　　　 　　　　　acc<br>
+              S2　　r3　　r3　　r3<br>
+              S4　　S5<br>
+              　　　r1　　r1　　r1<br>
+              　 　 r2　　r2　　r2</td>
+            <td align="center" valign="top">1<br>
+              <font color="#FFFFFF">.</font><br>
+              3<br>
+              <br>
+              <br>
+            </td>
+          </tr>
+        </table>
+        <font color="#0000FF">题目1对输入串ab#的分析过程</font><br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center" width="29%">状态栈（state stack） </td>
+            <td align="center" width="15%">文法符号栈 </td>
+            <td align="center" width="24%">剩余输入串<br>
+              （input left）</td>
+            <td align="center" width="32%">动作（action）</td>
+          </tr>
+          <tr> 
+            <td width="29%">0<br>
+              0 2<br>
+              0 2 3<br>
+              0 2 3<br>
+              0 1<br>
+            </td>
+            <td width="15%">#<br>
+              #a<br>
+              #aA<br>
+              #aAb<br>
+              #A</td>
+            <td align="right" width="24%">ab#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              b#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              b#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td width="32%" valign="top"> Shift<br>
+              Reduce by :A →ε<br>
+              Shift<br>
+              Reduce by :A →aAb<br>
+            </td>
+          </tr>
+        </table>
+        分析成功，说明输入串ab是题目1文法的句子<br>
+        <b><br>
+        问答第2题</b><br>
+        　　文法： <br>
+        　　S→L.L|L <br>
+        　　L→LB|B<br>
+        　　B→0|1 <br>
+        　　拓广文法为G′，增加产生式S′→S<br>
+        　　若产生式排序为：<br>
+        　　0 　S' →S <br>
+        　　1 　S →L.L <br>
+        　　2 　S →L <br>
+        　　3 　L →LB <br>
+        　　4 　L →B<br>
+        　　5 　B →0<br>
+        　　6 　B →1 <br>
+        　　由产生式知： <br>
+        　　First (S' ) = {0,1}<br>
+        　　First (S ) = {0,1} <br>
+        　　First (L ) = {0,1}<br>
+        　　First (B ) = {0,1}<br>
+        　　Follow(S' ) = {#} <br>
+        　　Follow(S ) = {#}<br>
+        　　Follow(L ) = {.,0,1,#}<br>
+        　　Follow(B ) = {.,0,1,#}<br>
+        　　G′的LR(0)项目集族及识别活前缀的DFA如下图所示： <br>
+        <img src="../../img/pic02.gif" width="351" height="290"> <br>
+        在I<font size="-2"><sub>2</sub></font>中：<br>
+        B →.0和 B →.1为移进项目，S →L.为归约项目，存在移进-归约冲突，因此所给文法不是LR(0)文法。<br>
+        在I<font size="-2"><sub><font size="-1">2</font></sub></font>、I<font size="-2"><sub><font size="-1">8</font></sub></font>中：<br>
+        Follow(s) ∩{0，1}= { #} ∩{0，1}=<img src="../../img/symbol07.gif" width="12" height="11"><br>
+        所以在I<font size="-2"><sub><font size="-1">2</font></sub></font> 、I<font size="-2"><sub><font size="-1">8</font></sub></font>中的移进-归约冲突可以由Follow集解决，所以G是SLR(1)文法。 
+        <br>
+        构造的SLR(1)分析表如下：<br>
+        <font color="#0000FF">题目2的SLR(1)分析表 </font><br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">状态（State）</td>
+            <td align="center">Action</td>
+            <td align="center">Goto</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">· 　　0　　　1　　 #</td>
+            <td align="center">S　L　B</td>
+          </tr>
+          <tr> 
+            <td align="center">0<br>
+              1<br>
+              2<br>
+              3<br>
+              4<br>
+              5<br>
+              6<br>
+              7<br>
+              8<br>
+            </td>
+            <td align="center">S4　　S5<br>
+              　　　　　　　　　 acc<br>
+              S6　　S4　　S5　　r2<br>
+              r4　　r4　　r4　　r4<br>
+              r5　　r5　　r5　　r5<br>
+              r6　　r6　　r6　　r6<br>
+              S4　　S5<br>
+              r3　　r3　　r3　　r3<br>
+              　　　S4　　S5　　r1</td>
+            <td align="center" valign="top">1　2　3<br>
+              <font color="#FFFFFF">.</font><br>
+              　　　7<br>
+              <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              　　8　3<br>
+              <font color="#FFFFFF">.</font><br>
+              　　　 7</td>
+          </tr>
+        </table>
+        <font color="#0000FF">题目2对输入串101.110#的分析过程</font><br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center" width="29%">状态栈（state stack） </td>
+            <td align="center" width="13%">文法符号栈</td>
+            <td align="center" width="23%">剩余输入串<br>
+              （input left）</td>
+            <td align="center" width="35%">动作（action）</td>
+          </tr>
+          <tr> 
+            <td width="29%">0<br>
+              0 5<br>
+              0 3<br>
+              0 2<br>
+              0 2 4<br>
+              0 2 7<br>
+              0 2 <br>
+              0 2 5<br>
+              0 2 7<br>
+              0 2 <br>
+              0 2 6<br>
+              0 2 6 5 <br>
+              0 2 6 3 <br>
+              0 2 6 8 <br>
+              0 2 6 8 5<br>
+              0 2 6 8 7<br>
+              0 2 6 8<br>
+              0 2 6 8 4<br>
+              0 2 6 8 7<br>
+              0 1<br>
+            </td>
+            <td width="13%">#<br>
+              #1<br>
+              #B<br>
+              #L<br>
+              #L0<br>
+              #LB<br>
+              #L<br>
+              #L1<br>
+              #LB<br>
+              #L<br>
+              #L.<br>
+              #L.1<br>
+              #L.B<br>
+              #L.L<br>
+              #L.L1<br>
+              #L.LB<br>
+              #L.L<br>
+              #L.L0<br>
+              #L.LB<br>
+              #S<br>
+            </td>
+            <td align="right" width="23%">101.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              01.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              01.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              01.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              1.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              1.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              1.110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              .110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              .110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              .110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              110#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              10#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              10#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              10#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              0#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              0#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              0#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td width="35%" valign="top"> Shift<br>
+              Reduce by :B →1<br>
+              Reduce by :S →LB<br>
+              Shift<br>
+              Reduce by :B →0<br>
+              Reduce by :S →LB<br>
+              Shift<br>
+              Reduce by :B →1<br>
+              Reduce by :S →LB<br>
+              Shift<br>
+              Shift<br>
+              Reduce by :B →1<br>
+              Reduce by :S →B<br>
+              Shift<br>
+              Reduce by :B →1<br>
+              Reduce by :S →LB<br>
+              Shift<br>
+              Reduce by :B →0<br>
+              Reduce by :S →L.L<br>
+            </td>
+          </tr>
+        </table>
+        分析成功，说明输入串101.110是题目2文法的句子。<br>
+        <br>
+        <b>问答第3题</b><br>
+        　　文法：<br>
+        　　S→UTa|Tb <br>
+        　　T→S|Sc|d<br>
+        　　U→US|e <br>
+        　　拓广文法为G'，增加产生式S'→S<br>
+        　　若产生式排序为：<br>
+        　　0 　S' →S<br>
+        　　1 　S →UTa <br>
+        　　2 　S →Tb <br>
+        　　3 　T →S <br>
+        　　4 　T →Sc<br>
+        　　5 　T →d <br>
+        　　6 　U →US <br>
+        　　7 　U →e <br>
+        　　由产生式知： <br>
+        　　First (S' ) = {d,e}<br>
+        　　First (S ) = {d,e}<br>
+        　　First (U ) = {e} <br>
+        　　First (T ) = {d,e}<br>
+        　　Follow(S' ) = {#} <br>
+        　　Follow(S ) = {a,b,c,d,e,#}<br>
+        　　Follow(U ) = {d,e} <br>
+        　　Follow(T ) = {a,b} <br>
+        　　G′的LR(0)项目集族及识别活前缀的DFA如下图所示： <br>
+        <img src="../../img/pic03.gif" width="337" height="263"> <br>
+        在I<sub>1</sub>中：<br>
+        S' →S.为接受项目，T →S. 为归约项目，T →S.c为移进项目，存在接受-归约和移进-归约冲突，因此所给文法不是LR(0)文法。 
+        <br>
+        在I1中： <br>
+        Follow(S') ∩ Follow(T)= { #} ∩{a ，b}=<img src="../../img/symbol07.gif" width="12" height="11"><br>
+        Follow(T) ∩{ c}= { a ，b} ∩{c}=<img src="../../img/symbol07.gif" width="12" height="11"><br>
+        在I<sub>8</sub>中：<br>
+        Follow(U) ∩ Follow(T) ∩{ c}={d,e}∩{ a ，b} ∩{c}=<img src="../../img/symbol07.gif" width="12" height="11"><br>
+        所以在I<sub>1</sub>中的接受-归约和移进-归约冲突与I<sub>8</sub>中的移进-归约和归约-归约冲突可以由Follow集解决，所以G是SLR(1)文法。 
+        <br>
+        构造的SLR(1)分析表如下：<br>
+        <font color="#0000FF">题目3的SLR(1)分析表 </font><br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">状态（State）</td>
+            <td align="center">Action</td>
+            <td align="center">Goto</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a　　 b　 　c　 　d　　 e　　　#</td>
+            <td align="center">S　U　T</td>
+          </tr>
+          <tr> 
+            <td align="center">0<br>
+              1<br>
+              2<br>
+              3<br>
+              4<br>
+              5<br>
+              6<br>
+              7<br>
+              8<br>
+              9<br>
+              10 <br>
+            </td>
+            <td align="center">　　　　　　S5　　S4<br>
+              r3　　r3　　S6　　　　　　　　Acc<br>
+              　　　　　　S5　　S4<br>
+              S9<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　　　　r7　　r7<br>
+              r5　　r5<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font> 
+              <br>
+              r4　　r4<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              S10　　S9<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              r3　　r3<font color="#FFFFFF">.</font>　　S6　　r6　　r6<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font> 
+              <br>
+              r2　　r2<font color="#FFFFFF">.</font>　　r2　　r2　　r2　　r2<br>
+              r1<font color="#FFFFFF"></font>　　r1<font color="#FFFFFF">.</font>　　r1　　r1　　r1　　r1</td>
+            <td align="center" valign="top">1　2　3<br>
+              <font color="#FFFFFF">.</font><br>
+              8　2　7<br>
+              <br>
+              <br>
+              <br>
+              　 <br>
+              <br>
+              　　 <br>
+              　<br>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <b>问答第4题</b><br>
+        　　文法： <br>
+        　　A→BaBb|DbDa <br>
+        　　B→ε<br>
+        　　D→ε<br>
+        　　拓广文法为G′，增加产生式S′→A<br>
+        　　若产生式排序为：<br>
+        　　0 　S'→A<br>
+        　　1 　A →BaBb <br>
+        　　2 　A →DbDa <br>
+        　　3 　B →ε<br>
+        　　4 　D →ε<br>
+        　　由产生式知： <br>
+        　　First (S' ) = {a,b} <br>
+        　　First (A ) = {a,b}<br>
+        　　First (B ) = {ε} <br>
+        　　First (D ) = {ε} <br>
+        　　Follow(S' ) = {#}<br>
+        　　Follow(A ) = {#} <br>
+        　　Follow(B ) = {a,b}<br>
+        　　Follow(D ) = {a,b}<br>
+        　　G′的LR(1)项目集族及识别活前缀的DFA如下图所示： <br>
+        <img src="../../img/pic04.gif" width="356" height="211"><br>
+        在I<sub><font size="-2">0</font></sub>中：<br>
+        B →.,a和T →.，b为归约项目，但它们的搜索符不同，若当前输入符为a时用产生式B →ε归约，为b时用产生式D 
+        →ε归约，所以该文法是LR(1)文法。<br>
+        若不看搜索符，在I<sub>0</sub>中项目B →.和T →.为归约-归约冲突，而<br>
+        Follow(B ) ∩Follow(D ) = {a,b} ∩{a,b}≠<img src="../../img/symbol07.gif" width="12" height="11">，冲突不能用Follow集解决，所以该文法不是SLR(1)文法。<br>
+        构造的LR(1)分析表如下：<br>
+        <font color="#0000FF">题目4的LR(1)分析表 </font> 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">State</td>
+            <td align="center">Action</td>
+            <td align="center">Goto</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a　<font color="#FFFFFF">.</font>　b　<font color="#FFFFFF">.</font>　#</td>
+            <td align="center">A　　B　　D</td>
+          </tr>
+          <tr> 
+            <td align="center">0<br>
+              1<br>
+              2<br>
+              3<br>
+              4<br>
+              5<br>
+              6<br>
+              7<br>
+              8<br>
+              9<br>
+            </td>
+            <td align="center">r3　　r4<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　　　 　Acc<br>
+              S4<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">...</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              S5<br>
+              r3<br>
+              r4<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              S8<br>
+              S9<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　　　　　r1<br>
+              　　　　　　　r2</td>
+            <td align="center" valign="top">1　　2　　3<br>
+              <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              6<br>
+              　　　　　7<br>
+              <br>
+              　 <br>
+              <br>
+              　　 </td>
+          </tr>
+        </table>
+        <p><b>问答第5题</b><br>
+          　　首先化简文法,用d代替do;用o代替 or;用a代替 act;文法可写成：<br>
+          　　S→dSoS|dS|S;S|a<br>
+          　　拓广文法为G'，增加产生式S′→S<br>
+          　　若产生式排序为：<br>
+          　　0 　S' →S <br>
+          　　1 　S →dSoS<br>
+          　　2 　S →dS <br>
+          　　3 　S →S;S　<br>
+          　　4 　S →a <br>
+          　　由产生式知：<br>
+          　　First (S' ) = {d,a}<br>
+          　　First (S ) = {d,a} <br>
+          　　Follow(S' ) = {#} <br>
+          　　Follow(S ) = {o,;,#} <br>
+          　　(1)识别该文法活前缀的DFA如下图。 <br>
+          <img src="../../img/pic05.gif" width="344" height="242"> <br>
+          (2) 该文法不是LR(0)也不是SLR(1)因为： <br>
+          在I<sub>5</sub>、I<sub>6</sub>、和I<sub>8</sub>中存在移进-归约冲突，因此所给文法不是LR(0)文法。<br>
+          又由于Follow(S ) = {o, ; ,#}<br>
+          在I<sub>6</sub>、和I<sub>8</sub>中：<br>
+          Follow(S ) ∩{ ; }={o, ; ,#} ∩{ ; }={;}≠<img src="../../img/symbol07.gif" width="12" height="11"><br>
+          在I<sub>5</sub>中：<br>
+          Follow(S ) ∩{ ; , o }={o , ; ,#} ∩{ ; , o }={; , o }≠<img src="../../img/symbol07.gif" width="12" height="11"><br>
+          所以该文法也不是SLR(1) 文法。<br>
+          此外很容易证明所给文法是二义性的，因此该文法不可能满足LR文法， <br>
+          (3) 若对一些终结符的优先级以及算符的结合规则规定如下：<br>
+          　　a) or 优先性大于 do;<br>
+          　　b) ;服从左结合；<br>
+          　　c) ;优先性大于 do ；<br>
+          　　d) ;优先性大于 or ；<br>
+          则在I<sub>5</sub>中：&quot;or 和;优先性都大于 do&quot;，所以遇输入符o和; 移进；遇#号归约。<br>
+          在I<sub>6</sub>中：&quot;; 号服从左结合&quot;所以遇输入符属于Follow(S )的都应归约。<br>
+          在I<sub>8</sub>中：&quot;; 号优先性大于 or &quot; 所以遇输入符为;号 移进；遇o和#号归约。<br>
+          此外，在I<sub>1</sub>中：接受和移进可以不看成冲突，因为接受只有遇#号。<br>
+          由以上分析，所有存在的移进-归约冲突可用规定的终结符优先级以及算符的结合规则解决，<br>
+          所构造的LR分析表如下：<br>
+        <p><font color="#0000FF"> 题目5文法的LR分析表</font><br>
+        
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">State</td>
+            <td align="center">Action</td>
+            <td align="center">Goto</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">d　 　o　 　;　 　a　 　#</td>
+            <td align="center">S</td>
+          </tr>
+          <tr> 
+            <td align="center">0<br>
+              1<br>
+              2<br>
+              3<br>
+              4<br>
+              5<br>
+              6<br>
+              7<br>
+              8<br>
+            </td>
+            <td align="center">S2　　　　　　　　S3<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><br>
+              　　　　　　 S4　　 　　 Acc<br>
+              S2　　　　　　　　S3<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　r4　　r4　　　　　r4<br>
+              S2　　　　　　　　S3<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　S7　　S4　　　　　r2<br>
+              　　　r3　　r3　　　　　r3<br>
+              S2　　　　　　　　S3<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              　　　r1　　r4　　　　　r1</td>
+            <td align="center" valign="top">1<br>
+              <font color="#FFFFFF">.</font><br>
+              5<br>
+              <font color="#FFFFFF">.</font><br>
+              6<br>
+              <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              8<br>
+              　　 </td>
+          </tr>
+        </table>
+        
+          <!--czp-wenda-daan-->
+       
+        </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

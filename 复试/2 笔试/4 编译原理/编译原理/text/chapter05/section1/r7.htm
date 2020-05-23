@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例5.5</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若有文法G4[S]: <br>
+            　　(1) S→aAS<br>
+            　　(2) S→b<br>
+            　　(3) A→bAS<br>
+            　　(4) A→ε<br>
+            　　对输入串ab#的试探推导，试推过程在图5.9(a), (b),(c)中给出。当面临a时，用产生式(1)推导，a得到匹配，输入串指针移到b，语法树中可用A向下推导，而对A的产生式可选(3)或(4)，先试选用(3)推导。 
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图5.9不确定的自顶向下语法分析树(二) 
+            </font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle1/p5_9.gif" ></td>
+        </tr>
+      </table>
+      　　这时b得到匹配，输入串指针向右移动，输入符已结束，但从语法树可以看出末端结点并非全是终结符，而且ab右部的非终结符ASS不能推出ε,所以可知推导是失败的，需回溯使输入指针退回到b，对A的推导改为选用下一个产生式A→ε，对b用A的后跟符匹配。<br>
+      　　继续用S的产生式和b匹配，S的两个产生式只能选用S→b，则最终得到匹配，试探推导成功。</td>
+  </tr>
+</table>
+</body>
+</html>

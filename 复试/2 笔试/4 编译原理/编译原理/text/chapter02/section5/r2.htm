@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　对分程序体人口的处理（见程序文本block 的过程体）<br>
+      　　begin (*block*)<br>
+      　　　dx:=3;<br>
+      　　　tx0:=tx; （*保留当前table表指针值,实际为过程名在table表中的位置*）<br>
+      　　　table[tx].adr:=cx;（*保留当前code指针值到过程名的adr域*）<br>
+      　　　gen(jmp,0,0);<br>
+      <font color="#0000FF">记录过程在code的入口到table中的adr域如下表所示：</font><b> </b>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td align="center" class="text"><img src="../../../img/chap02/2_1_21.gif" ></td>
+        </tr>
+      </table>
+      （*生成转向过程体入口的指令，该指令的地址为cx已保留在过程名的adr域，真正的过程体入口地址，等生成过程体入口的指令时，再由table[tx].adr中取出 
+      cx将过程体入口返填到cx所指目标代码，即:（jmp,0,0）的第3区域，同时填到table[tx].adr 中*)</td>
+  </tr>
+</table>
+</body>
+</html>

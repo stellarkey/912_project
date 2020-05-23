@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　PL/0编译程序对语法错误的处理采用两种办法：<br>
+      　　(1) 对于一些易于校正的错误，如丢了逗号、分号等，则指出出错位置，并加以校正。校正的方式就是补上逗号或分号。<br>
+      　　(2) 对某些错误编译程序难于确定校正的措施，为了使当前的错误不致影响整个程序的崩溃，把错误尽量局限在一个局部的语法单位中。这样就需跳过一些后面输入的单词符号，直到读入一个能使编译程序恢复正常语法分析工作的单词为止。具体做法是：当语法分析进入以某些关键字(保留字)或终结符集合为开始符的语法单元时，通常在它的入口和出口处，调用一个测试程序TEST(见图2.9)。例如：语句的开始符是begin，if，while，call，read，write；说明的开始符是var，const，procedure；因子的开始符是&quot;(&quot;，ident，number。当语法分析进入这样的语法单元前，可用测试程序检查当前单词符号是否属于它们开始符号的集合，若不是则出错。<br>
+      　　请读者对照图 2.1各语法描述图直观地找出每个非终结符语法单元的开始符号集合，与表2.3进行比较，验证对开始符号集合理解的正确性。对于一个文法符号的开始符号集合的形式定义将在第5章详细介绍。现给出PL/0文法部分非终结符语法单元的开始符号和后继符号的集合。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

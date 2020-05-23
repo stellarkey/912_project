@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>二、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          解答：用T型图 表示编译程序的实现<br>
+          <img src="../../../test12/images/img/13_1.gif" width="385" height="236"> 
+          <br>
+          <br>
+          <b>问答第2题</b><br>
+          解答：用自展方式在PC机上实现C语言的编译程序，首先把C划分成真包含的子集C1和C2，然后分3步实现。<br>
+          <img src="../../../test12/images/img/13_2.gif" width="370" height="185"> 
+          <br>
+          <img src="../../../test12/images/img/13_3.gif" width="345" height="207"> 
+          <br>
+          <img src="../../../test12/images/img/13_4.gif" width="395" height="171"> 
+          <br>
+          <br>
+          <b>问答第3题</b><br>
+          解答：通常把某个机器(称为宿主机)上已有的软件移植到另一台机器(称为目标机)<br>
+          <br>
+          <b>问答第4题</b><br>
+          解答：交叉编译是指把一个源语言在宿主机上经过编译产生目标机的汇编语言或机器语言。<br>
+          <br>
+          <b>问答第5题</b><br>
+          解答：编译程序的实现 应考虑：开发周期、目标程序的效率、可移植性、可调试性、可维护性、可扩充性等。<br>
+          <br>
+          <b>问答第6题</b><br>
+          解答：编译程序的实现途径可有：<br>
+          　　- 手工构造：用机器语言、汇编语言或高级程序设计语言书写。<br>
+          　　- 自动构造工具：Lex,Yacc。 Lex ,Yacc分别是词法和语法分析器的生成器。 <br>
+          　　- 移植方式：目标程序用中间语言 <br>
+          　　- 自展方式：用T型图表示 <br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>自上而下的分析方法</b><br>
+      　　以一个简单的例子，说明自上而下分析方法的基本思想。<br>
+      <img src="../../../img/label/icon_lt.gif" width="36" height="36" align="absmiddle" alt="例题"> 
+      <font color="#0000FF">例4.15</font>考虑文法G[S]；<br>
+      　　① S→cAd<br>
+      　　② A→ab<br>
+      　　③ A→a<br>
+      　　识别输入串w=cabd是否该文法的句子。即从根符号S开始如图4.6 (a)所示，试着为cabd构造一棵语法树。在构造的第一步，唯一的一个产生式可施用，则构造了直接推导S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cAd，从S向下画语法树如图4.6的(b)所示。这棵树的最左叶子标记为c，已和w的第一个符号匹配，考虑下一个叶子，标记A，可用A的第一个候选(产生式(2))去扩展A，则会得到如图4.6的(c)所示的语法树，构造的直接推导为cAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cabd。这时输入符号串w的第二个符号a得到了匹配，第三个输入符号为b，将它与下一叶子标记b相比较，得以匹配，叶子d匹配了第四个输入符号，这时可以宣布识别过程胜利结束。所构造的推导过程为：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cabd</td>
+  </tr>
+</table>
+</body>
+</html>

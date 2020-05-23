@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由（1）给出算符文法的性质，可以知道算符文法的任何一个句型应为如下形式：<br>
+      　　#N<font size="-2"><sub>1</sub></font>a<font size="-2"><sub>1</sub></font>N<font size="-2"><sub>2</sub></font>a<font size="-2"><sub>2</sub></font> 
+      ... N<font size="-2"><sub>n</sub></font>a<font size="-2"><sub>n</sub></font> 
+      N<font size="-2"><sub>n+1</sub></font>#<br>
+      　　其中N<font size="-2"><sub><font size="-1">i</font></sub></font>(1≤i≤n+1)为非终结符或空，a<font size="-2"><sub><font size="-1">i</font></sub></font>(1≤i≤n)为终结符。<br>
+      　　若有N<font size="-2"><sub><font size="-1">i</font></sub></font>a<font size="-2"><sub><font size="-1">i</font></sub></font> 
+      ... N<font size="-2"><sub><font size="-1">j</font></sub></font>a<font size="-2"><sub><font size="-1">j</font></sub></font>N<font size="-2"><sub><font size="-1">j+1</font></sub></font>为句柄，则N<font size="-2"><sub>i</sub></font>和N<font size="-2"><sub>j+1</sub></font>在句柄中，这是由于算符文法的任何句型中均无两个相邻的非终结符，且终结符和非终结符相邻时含终结符的句柄必含相邻的非终结符(见6.2.2中的性质2)。<br>
+      　　该句柄中终结符之间的关系为：<br>
+      　　a<font size="-2"><sub><font size="-1">i-1</font></sub></font> <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      a<font size="-2"><sub><font size="-1">i</font></sub></font><br>
+      　　a<font size="-2"><sub><font size="-1">i</font></sub></font> <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      a<font size="-2"><sub><font size="-1">i+1</font></sub></font><img src="../../../img/chap06/symbol03.gif" width="18" height="20">…… 
+      <img src="../../../img/chap06/symbol03.gif" width="18" height="20">a<font size="-2"><sub><font size="-1">j-1</font></sub></font> 
+      <img src="../../../img/chap06/symbol03.gif" width="18" height="20">a<font size="-2"><sub><font size="-1">j</font></sub></font><br>
+      　　a<font size="-2"><sub><font size="-1">j</font></sub></font> <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      a<font size="-2"><sub><font size="-1">j+1</font></sub></font></td>
+  </tr>
+</table>
+</body>
+</html>

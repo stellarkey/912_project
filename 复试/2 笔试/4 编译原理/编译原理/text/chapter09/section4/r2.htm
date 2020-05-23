@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　登录符号到符号表中，首先要确定登录的位置。但对于线性方法和二分方法组织的符号表，首先要在符号表中创立一个新的表项，通常该表的尾指针指向的表项是作为新创建的表项，而尾指针推向下一个备用表项。对于线性组织的符号表，该新创建的表项就是登录符号的表项。图9.21表示登录新符号Symboli的前后情况。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.21 线性符号表登录前后</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_21.gif" width="382" height="234"></td>
+        </tr>
+      </table>
+      对于二分法组织的符号表，在创建了新的表项后，根据登录符号在符号表中按词典排序所确定的位置，把该位置以后的所有原表项下移一个表项的位置，然后在选定位置登录新符号。图9.22表示登录新符号symbolk的前后情况。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.22 排序符号表登录前后</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p9_22.gif" width="384" height="293"></td>
+        </tr>
+      </table>
+      　　对于散列表，新符号的登录是通过杂凑算法决定登录表项的位置。<br>
+      　　一个符号表项的登录最基本的是该符号的名字登录。除此之外还有关于该名字的属性的登录。名字属性大都取决于编译程序获得某个符号时编译所处的程序扫描点的状态。</td>
+  </tr>
+</table>
+</body>
+</html>

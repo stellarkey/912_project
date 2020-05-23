@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　begin (*getsym*)<br>
+      　　　while ch=′ ′ do getch;<br>
+      　　　if ch in [′a′..′z′]<br>
+      　　　　then<br>
+      　　　　　begin (*id or reserved word*)<br>
+      　　　　　　k∶=0;<br>
+      　　　　　　repeat<br>
+      　　　　　　　if k&lt;al<br>
+      　　　　　　　　then<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　k∶=k+1;<br>
+      　　　　　　　　　　a[k]∶=ch<br>
+      　　　　　　　　　end;<br>
+      　　　　　　　getch<br>
+      　　　　　　until not(ch in [′a′..′z′,′0′..′9′]);<br>
+      　　　　　　if k&gt;=kk<br>
+      　　　　　　　then kk∶=k<br>
+      　　　　　　　else<br>
+      　　　　　　　　repeat<br>
+      　　　　　　　　　a[kk]∶=′ ′;<br>
+      　　　　　　　　　kk∶=kk-1<br>
+      　　　　　　　　untilkk=k;<br>
+      　　　　　　id∶=a;<br>
+      　　　　　　i∶=1;<br>
+      　　　　　　j∶=norw;<br>
+      　　　　　　repeat<br>
+      　　　　　　　k∶=(i+j) div 2;<br>
+      　　　　　　　if id&lt;=word[k]<br>
+      　　　　　　　　then j∶=k-1;<br>
+      　　　　　　　　if id &gt;= word[k]<br>
+      　　　　　　　　then i∶=k+1<br>
+      　　　　　　　　until i&gt;j;<br>
+      　　　　　　　　if i-1 &gt; j<br>
+      　　　　　　　　　then sym∶=wsym[k]<br>
+      　　　　　　　　　else sym∶=ident<br>
+      　　　　　end</td>
+  </tr>
+</table>
+</body>
+</html>

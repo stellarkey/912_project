@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　我们把图11．9中各种形式的四元式按其对应结点的后继个数分为四类。其中，四元式（0）称为0型，（1）称为1型；（2）和（3）称为2型；（5）称为3型。对于3型四元式，由于对数组元素赋值的情形需特殊考虑，因此暂不讨论，对四元式（6）也不涉及，下面是仅含0，1，2型四元式的基本块的DAG构造算法。 
+      <br>
+      　　首先，DAG为空。<br>
+      　　对基本块的每一四元式，依次执行：<br>
+      　　1． 如果NODE（B）无定义，则构造一标记为B的叶结点并定义NODE（B）为这个结点；<br>
+      　　如果当前四元式是0型，则记NODE（B）的值为n，转4。<br>
+      　　如果当前四元式是1型，则转2.（1）。<br>
+      　　如果当前四元式是2型，则：（Ⅰ）如果NODE（C）无定义，则构造一标记为C的叶结点并定义NODE（C）为这个结点，（Ⅱ）转2.（2）。<br>
+      　　2． <br>
+      　　（1） 如果NODE（B）是标记为常数的叶结点，则转2.（3），否则转3.（1）。<br>
+      　　（2） 如果NODE（B）和NODE（C）都是标记为常数的叶结点，则转2.（4），否则转3.（2）。<br>
+      　　（3） 执行op　B（即合并已知量），令得到的新常数为P。如果NODE（B）是处理当前四元式时新构造出来的结点，则删除它。如果NODE（P）无定义，则构造一用P做标记的叶结点n。置NODE（P）＝n，转4.。<br>
+      　　（4） 执行B　op　C(即合并已知量)，令得到的新常数为P。如果NODE（B）或NODE（C）是处理当前四元式时新构造出来的结点，则删除它。如果NODE（P）无定义，则构造一用P做标记的叶结点n。置NODE（P）＝n，转4.。</td>
+  </tr>
+</table>
+</body>
+</html>

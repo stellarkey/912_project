@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　程序设计语言中的几类单词可用下述规则描述：<br>
+      　　〈标识符〉→l|l〈字母数字〉<br>
+      　　〈字母数字〉→l|d|l〈字母数字〉|d〈字母数字〉<br>
+      　　〈无符号整数〉→d|d〈无符号整数〉<br>
+      　　〈运算符〉→+|-|*|/|=|〈〈等号〉|〉〈等号〉……<br>
+      　　〈等号〉→=<br>
+      　　〈界符〉→，|；|(|)|……<br>
+      　　其中l表示a～z中的任何一英文字母，d表示0～9中的任一数字。<br>
+      　　关键字（保留字）也是一种单词，一般关键字（保留字）都是由字母构成，它的描述也极容易，实际上，关键字（保留字）集合是标识符集合的子集。<br>
+      　　最复杂的一类单词要属无符号实数了，比如25.55e+5和2.1，它们可以由如下规则描述。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr>
+          <td width="40"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例4.6</font></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>　　〈无符号数〉→d〈余留无符号数〉|.〈十进小数〉|e〈指数部分〉<br>
+            　　〈余留无符号数〉→d〈余留无符号数〉|.〈十进小数〉|e〈指数部分〉|ε<br>
+            　　〈十进小数〉→d〈余留十进小数〉<br>
+            　　〈余留十进小数〉→e〈指数部分〉|d〈余留十进小数〉|ε<br>
+            　　〈指数部分〉→d〈余留整指数〉|s〈整指数〉<br>
+            　　〈整指数〉→d〈余留整指数〉<br>
+            　　〈余留整指数〉→d〈余留整指数〉|ε<br>
+            　　其中s表示正或负号(+，-)，d表示0～9中的任一数字。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>(3) LR(0)项目集规范族的构造</b><br>
+      　　对于构成识别一个文法活前缀的DFA项目集(状态)的全体称为这个文法的LR(0)项目集规范族，我们可以分析图7.8中每个状态中项目集的构成，不难发现如下规律：<br>
+      　　若状态中包含形如A→α·Bβ的项目，则形如B→·γ的项目也在此状态内。例如：0状态中项目集为{S′→·E，E→·aA, E→·bB}。<br>
+      　　回顾由NFA确定化到DFA时，E→·aA和E→·bB正是属于S′→·E的闭包中。因而，可引入闭包函数(CLOSURE)来求DFA一个状态的项目集。<br>
+      　　若文法G已拓广为G′，而S为文法G的开始符号，拓广后增加产生式S′→S。如果I是文法G′的一个项目集，定义和构造I的闭包CLOSURE(I)如下：<br>
+      　　a) I的项目均在CLOSURE(I)中。<br>
+      　　b) 若A→α·Bβ属于CLOSURE(I)，则每一形如B→·γ的项目也属于CLOSURE(I)。<br>
+      　　c) 重复b)直到不出现新的项目为止。即CLOSURE(I)不再扩大。<br>
+      　　由此，我们可以很容易构造出初态的闭包，即S′→·S属于I，再按上述三点求其闭包。</td>
+  </tr>
+</table>
+</body>
+</html>

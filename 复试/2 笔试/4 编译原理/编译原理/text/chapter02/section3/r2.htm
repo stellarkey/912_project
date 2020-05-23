@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由于一个单词往往是由一个或几个字符组成的，所以在词法分析过程GETSYM中又定义了一个取字符过程GETCH(见图2.6)，由词法分析需要取字符时调用。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.6 取字符过程GETCH 
+            </font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_6.gif" width="430" height="473"></td>
+        </tr>
+      </table>
+      <font color="#0000FF">　　</font>GETCH 所用单元说明：<br>
+      　　CH： 存放当前读取的字符，初值为空。<br>
+      　　LINE： 为一维数组，其数组元素是字符，界对为1∶80。用于读入一行字符的缓冲区。<br>
+      　　LL和CC为计数器，初值为0。<br>
+      　　GETSYM流程图的工作单元说明：<br>
+      　　A：一维数组，数组元素为字符，界对[1∶10]。<br>
+      　　ID：同A。<br>
+      　　WORD：保留字表，一维数组，数组元素是以字符为元素的一维数组。界对为[1∶13]。查表方式采用二分法。<font color="#0000FF"><br>
+      </font>　　单个字符对应的单词表的建立是，首先在主程序中定义了下标为字符的数组ssym，数组ssym的元素为单词，主程序开始对下标为字符的所有数组元素置初值为nul，对PL/0语言用到的单个字符为单词的，将其字符作为数组下标的元素置初值为对应的单词。如：<br>
+      　　ssym['+']:=plus; ssym['-']:=minus;<br>
+      　　…<br>
+      　　ssym[';']:=semicolon;</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>7.2.2 识别活前缀的有限自动机 </b> <br>
+      　　在LR方法实际分析过程中并不是去直接分析文法符号栈中的符号是否形成句柄，但它给我们一个启示，我们可以把终结符和非终结符都看成一个有限自动机的输入符号，每把一个符号进栈时看成已识别过了该符号，而状态进行转换，当识别到可归前缀时，相当在栈中形成句柄，则认为到达了识别句柄的终态。<br>
+      　　如果我们对例6.1的文法用拓广文法表示成：<br>
+      　　S′→S[0]<br>
+      　　S→aAcBe[1]<br>
+      　　A→b[2]<br>
+      　　A→Ab[3]<br>
+      　　B→d[4]<br>
+      　　现对句子abbcde的可归前缀列出：<br>
+      　　S[0]<br>
+      　　Ab[2]<br>
+      　　aAb[3]<br>
+      　　aAcd[4]<br>
+      　　aAcBe[1]</td>
+  </tr>
+</table>
+</body>
+</html>

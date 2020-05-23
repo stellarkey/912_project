@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p><b>C.6.2 YACC的源程序例2</b>
+      <p>　　%{</p>
+      <p>　　#include &lt;stdio.h&gt;<br>
+        　　#include &lt;ctype.h&gt;</p>
+      <p>　　typedef struct interval {<br>
+        　　　　　double lo, hi;<br>
+        　　　　　} INTERVAL;<br>
+        　　INTERVAL vmul(), vdiv();</p>
+      <p>　　double atof();</p>
+      <p>　　double dreg[26];<br>
+        　　INTERVAL vreg[26];</p>
+      <p>　　%}</p>
+      <p>　　%start lines</p>
+      <p>　　%union{<br>
+        　　　　　int ival;<br>
+        　　　　　double dval;<br>
+        　　　　　INTERVAL vval;<br>
+        　　　　　}</p>
+      <p>　　%token &lt;ival&gt; DREG VREG<br>
+        　　　/* indices into dreg, vreg arrays */<br>
+        　　%token &lt;dval&gt; CONST<br>
+        　　　/* floating point constant */<br>
+        　　%type&lt;dval&gt; dexp<br>
+        　　　/* expression */<br>
+        　　%type&lt;vval&gt; vexp<br>
+        　　　/* interval expression */</p>
+      <p>　　/* precedence information */<br>
+        　　/* about the operators */</p>
+      <p>　　%left ′+′ ′-′<br>
+        　　%left ′*′ ′/′<br>
+        　　%left UMINUS<br>
+        　　　/* supplies precedence for unary minus */</p>
+      <p>　　%%</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

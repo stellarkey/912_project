@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　对任何正规式r，选择一个非终结符S生成产生式S→r，为区别文法中的产生式，把这个产生式叫做正规产生式，并将S定为G的识别符号。<br>
+      　　若x和y都是正规式，对形如A→xy的正规产生式，重写成：A→xB，B→y两个正规产生式，其中B是新选择的非终结符，即B∈V<sub><font size="-2">n</font></sub><br>
+      　　对已形成的形如A→x<sup><font size="-2">*</font></sup>y的正规产生式，重写为：<br>
+      　　A→xB<br>
+      　　A→y<br>
+      　　B→xB<br>
+      　　B→y 其中B为一新非终结符。<br>
+      　　对形如A→x|y的正规产生式，重写为：<br>
+      　　A→x，A→y<br>
+      　　不断利用上述规则做变换，直到每个产生式都符合三型文法的要求。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr>
+          <td width="40"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例4.9</font></td>
+        </tr>
+        <tr> 
+          <td width="35">&nbsp;</td>
+          <td>　　将R=a(a|d)<sup><font size="-2">*</font></sup>转换成相应的正规文法，令S是文法的开始符号，首先形成<br>
+            　　S→a(a|d)<sup><font size="-2">*</font></sup>，然后形成S→aA和A→(a|d)<sup><font size="-2">*</font></sup>，再重写第二条产生式形成<br>
+            　　S→aA　　A→(a|d)B，<br>
+            　　A→ε　　B→(a|d)B和<br>
+            　　B→ε<br>
+            　　进而变换为<br>
+            　　S→aA　　B→aB<br>
+            　　A→aB　　B→dB<br>
+            　　A→dB　　B→ε　　A→ε即为所求。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

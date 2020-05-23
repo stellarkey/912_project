@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　procedure gen(x:fct;y, z:integer);<br>
+      　　　begin<br>
+      　　　　if cx&gt;cxmax<br>
+      　　　　　then<br>
+      　　　　　　begin<br>
+      　　　　　　　write(′program too long′);<br>
+      　　　　　　　goto 99<br>
+      　　　　　　end;<br>
+      　　　　with code[cx] do<br>
+      　　　　　begin<br>
+      　　　　　　f∶=x;<br>
+      　　　　　　l∶=y;<br>
+      　　　　　　a∶=z<br>
+      　　　　　end;<br>
+      　　　　cx∶=cx+1<br>
+      　　end (*gen*); 
+      <p>procedure test(s1,s2:symset;n:integer);<br>
+        begin<br>
+        　if not(sym in s1)<br>
+        　　then<br>
+        　　　begin<br>
+        　　　　error(n);<br>
+        　　　　s1∶=s1+s2;<br>
+        　　　　while not(sym in s1) do getsym<br>
+        　　　end<br>
+        end(*test*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

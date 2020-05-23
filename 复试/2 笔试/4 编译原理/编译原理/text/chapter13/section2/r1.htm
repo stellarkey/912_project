@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　自展的思想是先用目标机的汇编语言或机器语言书写源语言的一个子集的编译程序，然后再用这个子集作为书写语言，实现源语言的编译程序，如果把这个过程根据情况分成若干步，像滚雪球一样直到生成预计源语言的编译程序为止，我们把这样的实现方式称为自展技术。例如，在目标机A上要实现L语言的编译程序，我们可以把L划分成核心部分为L<sub><font size="-2">1</font></sub>。<br>
+      　　第1步： 我们先用A机器的汇编语言或机器语言A书写L<sub><font size="-2">1</font></sub>的编译程序，表示为<img src="../../../img/chap13/pic02.gif" width="23" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，其T型图如图13.3。<img src="../../../img/index/1x1pixel.gif" width="1" height="20"><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.3 <img src="../../../img/chap13/pic02.gif" width="23" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">的T型图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_3.gif" width="114" height="62"></td>
+        </tr>
+      </table>
+      <font color="#0000FF">　　</font>这就相当于在A机器上已有了一个L<sub><font size="-2">1</font></sub>语言的<img src="../../../img/index/1x1pixel.gif" width="1" height="20">编译程序。L<sub><font size="-2">1</font></sub>已属高级程序设计语言。<br>
+      　　第2步： 我们可以再用L<sub><font size="-2">1</font></sub>书写L语言的编译程序为<img src="../../../img/chap13/pic03.gif" width="21" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，其T型图如图13.4所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.4 <img src="../../../img/index/1x1pixel.gif" width="1" height="20"><img src="../../../img/chap13/pic03.gif" width="21" height="14">的T型图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_4.gif" width="114" height="62"></td>
+        </tr>
+      </table>
+      　　第3步： 由于我们最终要求得到<img src="../../../img/chap13/pic04.gif" width="21" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，目前我们已经有了第1步和第2步所得到的两个编译程序，而<img src="../../../img/index/1x1pixel.gif" width="1" height="20"><font color="#0000FF"><img src="../../../img/chap13/pic03.gif" width="21" height="14"></font>对<font color="#0000FF"><img src="../../../img/chap13/pic02.gif" width="23" height="14"></font>来说只不过是L1语言的源程序，所以只要把<font color="#0000FF"><img src="../../../img/chap13/pic03.gif" width="21" height="14"></font>经过<font color="#0000FF"><img src="../../../img/chap13/pic02.gif" width="23" height="14"></font><img src="../../../img/index/1x1pixel.gif" width="1" height="20">编译即可得到<img src="../../../img/chap13/pic04.gif" width="21" height="14">。我们可用图13.5的双层结合T型图表示<img src="../../../img/index/1x1pixel.gif" width="1" height="20">。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.5 <img src="../../../img/chap13/pic04.gif" width="21" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20"> 
+            的双层结合T型图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_5.gif" width="226" height="85"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

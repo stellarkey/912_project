@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 初始化 */<br>
+      　　void init()<br>
+      　　{<br>
+      　　　int i; 
+      <p> 　　/* 设置单字符符号 */<br>
+        　　for(i=0;i&lt;=255;i++)ssym[i]=nul;<br>
+        　　ssym['+']=plus;<br>
+        　　ssym['-']=minus;<br>
+        　　ssym['*']=times;<br>
+        　　ssym['/']=slash;<br>
+        　　ssym['(']=lparen;<br>
+        　　ssym[')']=rparen;<br>
+        　　ssym['=']=eql;<br>
+        　　ssym[',']=comma;<br>
+        　　ssym['.']=period;<br>
+        　　ssym['#']=neq;<br>
+        　　ssym[';']=semicolon;</p>
+      <p> 　　/* 设置保留字名字 */<br>
+        　　strcpy(&amp;(word[0][0]),&quot;begin&quot;);<br>
+        　　strcpy(&amp;(word[1][0]),&quot;call&quot;);<br>
+        　　strcpy(&amp;(word[2][0]),&quot;const&quot;);<br>
+        　　strcpy(&amp;(word[3][0]),&quot;do&quot;);<br>
+        　　strcpy(&amp;(word[4][0]),&quot;end&quot;);<br>
+        　　strcpy(&amp;(word[5][0]),&quot;if&quot;);<br>
+        　　strcpy(&amp;(word[6][0]),&quot;odd&quot;);<br>
+        　　strcpy(&amp;(word[7][0]),&quot;procedure&quot;);<br>
+        　　strcpy(&amp;(word[8][0]),&quot;read&quot;);<br>
+        　　strcpy(&amp;(word[9][0]),&quot;then&quot;);<br>
+        　　strcpy(&amp;(word[10][0]),&quot;var&quot;);<br>
+        　　strcpy(&amp;(word[11][0]),&quot;while&quot;);<br>
+        　　strcpy(&amp;(word[12][0]),&quot;write&quot;);</p>
+      <p> 　　/* 设置保留字符号 */<br>
+        　　wsym[0]=beginsym; <br>
+        　　wsym[1]=callsym;<br>
+        　　wsym[2]=constsym;<br>
+        　　wsym[3]=dosym;<br>
+        　　wsym[4]=endsym;<br>
+        　　wsym[5]=ifsym;<br>
+        　　wsym[6]=oddsym;<br>
+        　　wsym[7]=procsym;<br>
+        　　wsym[8]=readsym;<br>
+        　　wsym[9]=thensym;<br>
+        　　wsym[10]=varsym;<br>
+        　　wsym[11]=whilesym;<br>
+        　　wsym[12]=writesym;</p>
+      <p> 　　/* 设置指令名称 */<br>
+        　　strcpy(&amp;(mnemonic[lit][0]),&quot;lit&quot;);<br>
+        　　strcpy(&amp;(mnemonic[opr][0]),&quot;opr&quot;);<br>
+        　　strcpy(&amp;(mnemonic[lod][0]),&quot;lod&quot;);<br>
+        　　strcpy(&amp;(mnemonic[sto][0]),&quot;sto&quot;);<br>
+        　　strcpy(&amp;(mnemonic[cal][0]),&quot;cal&quot;);<br>
+        　　strcpy(&amp;(mnemonic[inte][0]),&quot;int&quot;);<br>
+        　　strcpy(&amp;(mnemonic[jmp][0]),&quot;jmp&quot;);<br>
+        　　strcpy(&amp;(mnemonic[jpc][0]),&quot;jpc&quot;);</p>
+      <p> 　　/* 设置符号集 */<br>
+        　　for(i=0;i&lt;symnum;i++)<br>
+        　　{<br>
+        　　　declbegsys[i]=false;<br>
+        　　　statbegsys[i]=false;<br>
+        　　　facbegsys[i]=false;<br>
+        　　}</p>
+      <p> 　　/* 设置声明开始符号集 */<br>
+        　　declbegsys[constsym]=true;<br>
+        　　declbegsys[varsym]=true;<br>
+        　　declbegsys[procsym]=true;</p>
+      <p> 　　/* 设置语句开始符号集 */<br>
+        　　statbegsys[beginsym]=true;<br>
+        　　statbegsys[callsym]=true;<br>
+        　　statbegsys[ifsym]=true;<br>
+        　　statbegsys[whilesym]=true;</p>
+      <p> 　　/* 设置因子开始符号集 */<br>
+        　　facbegsys[ident]=true;<br>
+        　　facbegsys[number]=true;<br>
+        　　facbegsys[lparen]=true;<br>
+        　　}<br>
+        　</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

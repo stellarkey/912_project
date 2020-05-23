@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　(3) 限定高级语言情况下的中间语言：这种中间语言是针对某种特定的高级语 言设计的，称LSIL(Language Specific Intermediate 
+      Language)，它可以充分反映特定高级语言的特性，只要把这特定的高级语言翻译成中间语言LSIL，然后对不同的计算机只要编写从LSIL到相应目标机的代码生成器，便可实现这特定高级语言的编译程序。如图12.6所示。其LSIL的设计要求与具体计算机无关，而LSIL到目标机的代码生成一般来说不难实现。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 12.6 一种源语言对应多种目标机时编译程序示意图 
+            </font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle/p12_6.gif" width="358" height="133"></td>
+        </tr>
+      </table>
+      　　以限定高级语言情况下的中间语言，有利于编译程序实现途径的可移植性，如果分析器是用高级语言自身编写，那么编译程序还具有自展功能也为移植带来极大的方便。这种方法虽然相当成功，但与一种高级语言对应一种计算机所设计的编译程序相比，编译程序的效率还是会有所下降。 
+      <br>
+      　　(4) 假想栈式抽象机<br>
+      　　假想栈式抽象机是一种包括基本运算和数据类型的中间语言。这种抽象机描述了一种或一类高级语言的特性。例如，由U. Ammann等人提供的可移植的PASCAL编译程序P4，采用的栈式抽象机称SC，对应的中间语言称PCODE。它的实现是把PASCAL语言翻译成不依赖任何具体计算机，而适合在SC上运行的PCODE代码，然后当需要在某一具体机器上实现PASCAL编译程序时，就用该计算机已有的语言或汇编语言书写一个对抽象机SC及其语言的描述，而描述的最简捷办法是书写对PASCAL目标程序PCODE在SC上的汇编和解释程序，用以代替代码生成过程。由于它的分析程序是用PASCAL语言自身编写的，所以它的可扩展性和可移植性相当好，若用汇编语言书写解释程序，其效率是可以达到一般实用要求的。它的最大缺点是由于SC和PCODE不依赖于具体机器，而对其PCODE又用解释执行代替代码生成，因而不能反应近代计算机多变址器的特点，致使变址器不能有效利用，所以这种办法的目标程序执行效率下降。</td>
+  </tr>
+</table>
+</body>
+</html>

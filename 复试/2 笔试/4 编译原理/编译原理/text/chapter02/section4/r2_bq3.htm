@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <font color="#0000FF">过程ENTER的实现程序：</font> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">tx ：table表的指针<br>
+            procedure enter(k:object );<br>
+            　begin (* enter object into table *)<br>
+            　　tx:=tx+1;<br>
+            　　with table[tx] do (* 开域语句 *）<br>
+            　　begin<br>
+            　　　name:=id;(* 表示table[tx].name:=id;名字记录在table表中 *） <br>
+            　　　kind:=k;(* 表示table[tx].kind:=k;类型记录在table表中 * )<br>
+            　　　case k of<br>
+            　　　constant: <br>
+            　　　　begin<br>
+            　　　　　if num&gt;amax then<br>
+            　　　　　　begin<br>
+            　　　　　　　error(31);<br>
+            　　　　　　　num:=0;<br>
+            　　　　　　end;<br>
+            　　　　　val:=num;(* table[tx].val:=num;常量的值记录在table表中 *)<br>
+            　　　　end;<br>
+            　　variable: <br>
+            　　　begin<br>
+            　　　　level:=lev;（*表示table[tx].level:=lev变量定义的所在层次记录 在table表中 *） <br>
+            　　　　adr:=dx;（*表示table[tx].adr:=dx给变量分配的位置记录在table表中 *） <br>
+            　　　　dx:=dx+1;（*给变量分配位置的指示器加1，指向下一个变量的位置*）<br>
+            　　　end;<br>
+            　　procedur: level:=lev；<br>
+            　　　(* 表示table[tx].level:=lev;过程定义的所在层次记录在table表中 *）<br>
+            　　end(* case *); <br>
+            　end<br>
+            end(*enter*);</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

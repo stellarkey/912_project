@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　图10.4给出一个FORTRAN 77的程序例子。在图10.5中描述了该程序中局部变量的静态存储位置。<font color="#0000FF"><br>
+      </font> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td><font color="#0000FF">图10.4 一个FORTRAN 77的例子</font> </td>
+        </tr>
+        <tr>
+          <td>　　(1) PROGRAM CNSUME<br>
+            　　(2) CHARACTER * 50 BUF //程序体所拥有的静态量BUF<br>
+            　　(3) INTEGER NEXT //程序体所拥有的静态量NEXT<br>
+            　　(4) CHARACTER C, PRDUCE //程序体所拥有的静态量C<br>
+            　　(5) DATA NEXT /1/, BUF / ' ' /<br>
+            　　(6) 6 　C=PRDUCE()<br>
+            　　(7)　　 BUF(NEXT:NEXT)=C <br>
+            　　(8) 　　NEXT=NEXT+1<br>
+            　　(9)　 　IF(C .EN. ' ' )GOTO 6<br>
+            　　(10)　 　WRITE ( *,' (A)' )BUF<br>
+            　　(11) END<br>
+            　　(12) CHARACTER FUNCTION PRDUCE()<br>
+            　　(13) 　CHARACTER * 80 BUFFER<br>
+            　　(14) 　INTEGER NEXT<br>
+            　　(15) 　SAVE BUFFER, NEXT<br>
+            　　　　　　//PRDUCE函数体所拥有的静态量BUFFER, NEXT<br>
+            　　(16) 　DATA NEXT /81/<br>
+            　　(17) 　IF (NEXT .GT.80)THEN<br>
+            　　(18) 　　READ ( *,' (A)' )BUFFER<br>
+            　　(19) 　　NEXT=1<br>
+            　　(20) 　END IF<br>
+            　　(21)　PRDUCE=BUFFER(NEXT:NEXT)<br>
+            　　(22) 　NEXT=NEXT+1<br>
+            　　(23)　END<font color="#0000FF"></font></td>
+        </tr>
+      </table>
+      <font color="#0000FF"> </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图10.5 FORTRAN77的静态存储分配</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/p10_5.gif" width="367" height="248"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

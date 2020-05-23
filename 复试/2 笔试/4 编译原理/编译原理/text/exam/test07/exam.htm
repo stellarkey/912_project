@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>编译原理第七章习题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  <b>编译原理第七章习题</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+              <form>
+          <b>一、问答题</b><br>
+          <b><br>
+          问答第1题</b><br>
+          　　已知文法<br>
+          　　A→aAd|aAb|ε <br>
+          　　判断该文法是否是SLR(1)文法，若是构造相应分析表，并对输入串ab#给出分析过程。<br>
+          <textarea name=textarea cols=50 rows=5></textarea>
+          <br>
+          <br>
+          <b>问答第2题</b><br>
+          　　若有定义二进制数的文法如下：<br>
+          　　S→L.L|L <br>
+          　　L→LB|B<br>
+          　　B→0|1 <br>
+          　　(1) 试为该文法构造LR分析表，并说明属哪类LR分析表。<br>
+          　　(2) 给出输入串101.110的分析过程。 <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          <b>问答第3题</b><br>
+          　　文法G=({U,T,S},{a,b,c,d,e},P,S) <br>
+          　　其中P为：<br>
+          　　S→UTa|Tb<br>
+          　　T→S|Sc|d <br>
+          　　U→US|e <br>
+          　　(1) 判断G是LR(0)，SLR(1)，LALR(1)还是LR(1)，说明理由。 <br>
+          　　(2) 构造相应的分析表。 <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          <b>问答第4题</b><br>
+          　　证明文法：<br>
+          　　S→A$ <br>
+          　　A→BaBb|DbDa<br>
+          　　B→ε<br>
+          　　D→ε<br>
+          　　是LR(1)但不是SLR(1)。(其中'$'相当于'#') <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <b><br>
+          问答第5题</b><br>
+          　　给定文法： <br>
+          　　S→do S or S|do S|S;S|act <br>
+          　　(1) 构造识别该文法活前缀的DFA。 <br>
+          　　(2) 该文法是LR(0)吗?是SLR(1)吗?说明理由。 <br>
+          　　(3) 若对一些终结符的优先级以及算符的结合规则规定如下：<br>
+          　　a) or 优先性大于 do;<br>
+          　　b) ;服从左结合； <br>
+          　　c) ;优先性大于 do ； <br>
+          　　d) ;优先性大于 or ；<br>
+          　　请构造该文法的LR分析表,并说明LR(0)项目集中是否存在冲突和冲突如何解决的。 <br>
+          <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <!--czp-wenda-timu-->
+          <br>
+          <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

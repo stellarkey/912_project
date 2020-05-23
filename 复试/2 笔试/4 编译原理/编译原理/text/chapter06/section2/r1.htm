@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如:若有文法G为：<br>
+      　　(1) E→E+E<br>
+      　　(2) E→E*E<br>
+      　　(3) E→i<br>
+      　　对输入串i1+i2*i3的归约过程可表示为表6.3。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表6.3 对输入串i1+i2*i3的归约过程</font> </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap06/f6-2-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap06/f6-2-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　在分析到第6步时，栈顶的符号串为E+E，若只从移进-归约的角度讲，栈顶已出现了产生式(1)的右部，可以进行归约，但从通常四则运算的习惯来看应先乘后加，所以应移进，这就提出了算符优先的问题。<br>
+      　　本节所给例子是二义性文法，对二义性文法不能构造确定的分析过程，但是在本例中，人为地规定了算符之间的优先关系，仍然可构造出确定的分析过程。</td>
+  </tr>
+</table>
+</body>
+</html>

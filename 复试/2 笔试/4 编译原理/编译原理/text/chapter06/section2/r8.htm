@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由于算符优先分析过程归约时，只能把<img src="../../../img/chap06/symbol01.gif" width="18" height="20">和<img src="../../../img/chap06/symbol02.gif" width="18" height="20">之间的符号串作为可归约串进行归约。<br>
+      　　例如：若有一输入串i+i#，用表达式文法的算符优先关系表6.5，进行算符优先归约时步骤如表6.8。 <br>
+      　　由表6.8可以看出算符优先分析不是规范归约，在第3)步和第6)步栈顶的F都不能当做句柄归约为T，因为在第3)步句型#F+i#中，只有#<img src="../../../img/chap06/symbol01.gif" width="18" height="20">+，所以 
+      F 构不成句柄，在第6)步句型#F+F#中，也只有#<img src="../../../img/chap06/symbol01.gif" width="18" height="20">+和+<img src="../../../img/chap06/symbol02.gif" width="18" height="20">#，因而栈顶的F仍不能构成句柄。而对输入串i+i#当用规范归约时其过程如表6.7。 
+      <br>
+      　　至于为什么在规范归约的过程中F能构成句柄的原因将在第7章的LR类分析法中介绍。<br>
+      　　为了解决在算符优先分析过程中如何寻找到可归约串的问题，现引进最左素短语的概念。 </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　I<font size="-2"><sub>7</sub></font>： S→be·d<br>
+      　　　　 A→e·<br>
+      　　而 S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">bAc<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">bec<br>
+      　　　　 　R　R　　 R <br>
+      　　 　S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">bed<br>
+      　　　　　R 　R<br>
+      　　这两个最右推导，包含了活前缀为b的所有句型，因此FOLLOW(A)中的c只能跟在句型bAc中A的后面，这样在I<font size="-2"><sub>7</sub></font>中当面临输入符为c时才能归约，所以我们在构造闭包函数时。<br>
+      　　若[A→α·Bβ]∈项目集I，则[B→·γ](B→γ为一产生式)也包含在I中，不妨考虑，把FIRST(β)作为用产生式B→γ归约的搜索符，称为向前搜索符，作为归约时查看的符号集合，用以代替SLR(1)分析中的FOLLOW集，把此搜索符号的集合也放在相应项目的后面，这种处理方法即为LR(1)方法。<br>
+      　　<font color="#0000FF">请学员思考</font>：为什么LR(1)比SLR(1) 方法对文法实用的范围更广？采用向前搜索符和用FOLLOW集作为归约时向前查看的符号集合有什么区别?<br>
+      　　原因是：一个非终结符号的FOLLOW集合，包含了所有含该非终结符的任一句型中在该非终结符后的向前搜索符集合。如在项目集I中有项目：<br>
+      [A→α·Bβ]， [B→·γ]。<br>
+      　　当分析经过若干步后在项目集 J中含有项目[B→γ·]需要用产生式B→γ归约，这时向前查看的符号集合是FIRST(β)，而FIRST(β)<img src="../../../img/chap07/symbol04.gif" width="13" height="12">FOLLOW（B）。</td>
+  </tr>
+</table>
+</body>
+</html>

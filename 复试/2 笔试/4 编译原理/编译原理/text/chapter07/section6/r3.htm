@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <hr size="1">
+      【本章小结】<br>
+      　　LR分析的特征是：<br>
+      　　◇ 归约过程是规范的：<br>
+      　　◇符号栈中的符号是规范句型的前缀，且不含句柄以后的任何符号(活前缀)。<br>
+      　　◇ 分析决策依据栈顶状态和现行输入符号是什么来决定的。<br>
+      　　◇为构造LR分析表，可先构造识别活前缀和句柄的DFA。<br>
+      　　◇ LR分析器的关键部分是分析表的构造, 对一个文法能判断是否是LR类文法，能构造相应的LR分析表，并能对给定的输入串进行分析以决定该输入串是否为所给文法的句子<br>
+      　　◇ 四种LR类型：<br>
+      　　LR(0) SLR(1) LALR(1) LR(1) 功能逐个增强 <br>
+      　　◇ 四种LR类型的文法是真包含关系<br>
+      　　<img src="../../../img/chap07/7_6_1.gif" width="364" height="126"><br>
+      　　◇ 四种LR类分析器的作用<br>
+      　　<img src="../../../img/chap07/7_6_2.gif" width="284" height="65"><br>
+      　　◇ LR类型文法是无二义的<br>
+      　　◇ 某些二义性文法，人为地给出优先性和结合性的规定，可能构造出比相应非二义性文法更优越的LR分析器。 
+      <hr size="1">
+    </td>
+  </tr>
+</table>
+</body>
+</html>

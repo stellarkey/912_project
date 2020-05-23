@@ -1,0 +1,94 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<title>词法分析</title>
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+<body lang=ZH-CN class="Normal" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+    <tr>
+      
+    <td> 
+      <p align=left style='text-align:left;text-autospace:none'><b>　<br>
+        21．左递归文法（Left recursive grammar）</b> <br>
+        　　一个文法含有下列形式的产生式时。 <br>
+        　　a)A→A<sub><img align="absmiddle" 
+src="chb.files/image251.gif" v:shapes="_x0000_i1226"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        A∈<sub><img align="absmiddle" 
+src="chb.files/image252.gif" v:shapes="_x0000_i1227"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image253.gif" v:shapes="_x0000_i1228"></sub>∈<sub><img align="absmiddle" 
+src="chb.files/image254.gif" v:shapes="_x0000_i1229"></sub> <br>
+        　　b)A→B<sub><img align="absmiddle" 
+src="chb.files/image255.gif" v:shapes="_x0000_i1230"></sub> <br>
+        　　B→Ａ<sub><img align="absmiddle" 
+src="chb.files/image256.gif" v:shapes="_x0000_i1231"></sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        A,B∈<sub><img align="absmiddle" 
+src="chb.files/image257.gif" v:shapes="_x0000_i1232"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image258.gif" v:shapes="_x0000_i1233"></sub>、<sub><img align="absmiddle"
+src="chb.files/image259.gif" v:shapes="_x0000_i1234"></sub>∈<sub><img align="absmiddle"
+src="chb.files/image260.gif" v:shapes="_x0000_i1235"></sub> <br>
+        　　在a)中也可称为含有左递归的规则或称直接左递归，在b)中为A<sub><img align="absmiddle" 
+src="chb.files/image261.gif" v:shapes="_x0000_i1236"></sub>Ａ…称文法中含有左递归或间接左递归，文法中只要含有a)或含有b)或二者皆有均认为文法是左递归的。 
+        <br>
+        <b><br>
+        22．LL（1）文法</b> <br>
+        　　满足如下条件的上下文无关文法称为LL（1）文法：对每个非终结符A的两个不同产生式， <br>
+        　　A→<sub><img align="absmiddle" 
+src="chb.files/image262.gif" v:shapes="_x0000_i1237"></sub>，A→<sub><img align="absmiddle" 
+src="chb.files/image263.gif" v:shapes="_x0000_i1238"></sub>，满足 <br>
+        　　SELECT（A→<sub><img align="absmiddle" 
+src="chb.files/image264.gif" v:shapes="_x0000_i1239"></sub>）<sub><img align="absmiddle" 
+src="chb.files/image266.gif" v:shapes="_x0000_i1240"></sub>SELECT（A→<sub><img align="absmiddle"
+src="chb.files/image267.gif" v:shapes="_x0000_i1241"></sub>）＝<sub><img align="absmiddle" 
+src="chb.files/image268.gif" v:shapes="_x0000_i1242"></sub> <br>
+        　　其中<sub><img align="absmiddle" 
+src="chb.files/image269.gif" v:shapes="_x0000_i1243"></sub>、<sub><img align="absmiddle" 
+src="chb.files/image270.gif" v:shapes="_x0000_i1244"></sub>不同时能<sub><img align="absmiddle" 
+src="chb.files/image272.gif" v:shapes="_x0000_i1245"></sub>。 <br>
+        　　LL（1）文法的含义是：第一个L表明自顶向下分析是从左向右扫描输入串，第二个L表明分析过程中将用最左推导，1表明只需向右看一个符号便可决定如何推导即选择哪个产生式（规则）进行推导，类似也可以有LL（K）文法，也就是需向前查看K个符号才可确定选用哪个产生式。通常采用K＝1，个别情况采用K＝2。 
+        <br>
+        <b><br>
+        23．递归子程序法（Recursive-descent）</b> <br>
+        　　递归子程序法是LL（1）文法的分析程序的一种实现方法。它对应文法中每个非终结符编写一个递归过程，这种分析程序由这一系列递归过程的相互调用来完成语法分析工作。 
+        <br>
+        <b><br>
+        24</b><b>．移进－归约分析（shift</b><b>－reduce analysis</b><b>）</b> <br>
+        　　自底向上分析方法，也称移进－归约分析法，它的实现思想是对输入符号串自左向右进行扫描，并将输入符逐个移入一个后进先出栈中，边移入边分析，一旦栈顶符号串形成某个句型的句柄时，（该句柄对应某产生式的右部），就用该产生式的左部非终结符代替相应右部的文法符号串，这称为一步归约。重复这一过程直到归约栈中只剩文法的开始符号时则为分析成功，也就确认输入串是文法的句子。 
+        <br>
+        <b><br>
+        25</b><b>．算法优先文法</b><b>(Operator Precedence Grammar)</b> <br>
+        　　设有一不含<sub><img align="absmiddle" 
+src="chb.files/image273.gif" v:shapes="_x0000_i1246"></sub>产生式的算法文法G，如果对任意两个终结符对a，b之间至多只有＜·、·＞和<sub><img align="absmiddle" 
+src="chb.files/image275.gif" v:shapes="_x0000_i1247"></sub>三种关系的一种成立，则称G是一个算符优先文法(Operator 
+        Precedence Grammar)，即OPG文法。 <br>
+        <b><br>
+        26</b><b>．最左素短语（Most left prime phrase</b><b>）</b> <br>
+        　　设有文法G［S］，其句型的素短语是一个短语 ，它至少包含一个终结符，并除自身外不包含其它素短语，句型的最左边的素短语称最左素短语。 <br>
+        <b><br>
+        27</b><b>．LR</b><b>分析</b> <br>
+        　　是一种自底向上的语法分析技术,通常称为LR(K).L是说从左至右扫描输入串,R是说分析过程所形成的推导是最右推导,K是指在做分析决策时向前察看K个输入符号.LR分析可用于一大类上下文无关文法,是一种最常用的无回朔的移进归约分析, 
+        <br>
+        <b><br>
+        28</b><b>．属性文法（Attribute grammar</b><b>）</b> <br>
+        　　形式上讲，一个属性文法是一个三元组，Ａ＝（Ｇ，Ｖ，Ｆ），一个上下文无关文法Ｇ；一个属性的有穷集Ｖ和关于属性的断言或谓词的有穷集Ｆ。每个属性与文法的某个非终结符或终结符相联。每个断言与文法的某产生式相联。如果对Ｇ中的某一输入串而言（句子），Ａ中的所有断言对该输入串的语法树结点的属性全为真，则该串也是Ａ语言中的句子。编译程序的静态语义审查工作就是验证关于所编译的程序的断言是否全部为真。 
+        <br>
+        <b><br>
+        29</b><b>．语法制导翻译（Syntax-directed translation</b><b>）</b> <br>
+        　　在语法分析过程中，随着分析的步步进展，根据每个产生式所对应的语义子程序（或语义规则描述的语义动作）进行翻译的办法称作语法制导翻译。 <br>
+        <b><br>
+        30</b><b>．</b><b>数组</b><b>内情向量（array dope vector</b><b>）</b> <br>
+        　　一般编译程序对数组说明的处理是把数组的有关信息汇集在一个叫做“内情向量”或“信息向量”的表格中，以便以后计算数组元素的地址时引用这些信息。每个数组有一个内情向量。其中的信息包括，数组的类型，维数，各维的上、下界，以及数组的首地址。编译程序处理数组说明的主要工作是把内情向量登录在符号表中，这些属性信息是确定存储分配时数组所占空间的大小和数组元素位置的依据。 
+        <br>
+        　
+    </td>
+    </tr>
+  </table>
+</body></html>

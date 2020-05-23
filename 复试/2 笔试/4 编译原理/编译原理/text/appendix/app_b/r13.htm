@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.9 再谈上下文相关性的处理</b><br>
+        　　在第B.3节中介绍LEX用的正规式时提到了上下文相关性的表示，这里再详细介绍LEX提供的处理上下文相关的措施。<br>
+        　　要处理的问题是某些规则在不同的上下文中要采取不同的动作，或者说同样的字符串在不同的上下文中有不同的解释。例如，在程序设计语言中，同一个等号&quot;=&quot;，在说明部分表示为变量赋初值，这时的动作应是修改符号表内容；而在语句部分等号就是赋值语句的赋值号，这时又应该产生相应于赋值语句的代码。因此要依据等号所处的上下文来判断它的含义。LEX提供了两种主要的方法，<br>
+        　　1) 使用标志来区分不同的上下文<br>
+        　　标志是用户定义的变量，用户在不同的上下文中为它置不同的值，以区分它在哪个上下文中，这样识别规则就可以根据标志当前值决定在哪个上下文中并采取相应的动作。<br>
+        　　例　将输入串照原样输出，但对magic这个词，当它出现在以字母a开头的行中，将其改为first，出现在以b开头的行中将其改为second，出现在以c开头的行中则改为third。使用标志flag的LEX源程序如下：<br>
+        　　　int flag;<br>
+        　　%%<br>
+        　　∧a　　{flag=a;ECHO;}<br>
+        　　∧b　　{flag=b;ECHO;}<br>
+        　　∧c　　{flag=c;ECHO;}<br>
+        　　＼n　　{flag=0;ECHO;}<br>
+        　　magic　{<br>
+        　　　　　　switch (flag)<br>
+        　　　　　　{<br>
+        　　　　　　case a:printf(′first′);break;<br>
+        　　　　　　case b:printf(′second′);break;<br>
+        　　　　　　case c:printf(′third′);break;<br>
+        　　　　　　default:ECHO; break;<br>
+        　　　　　　}<br>
+        　　　　　 } </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

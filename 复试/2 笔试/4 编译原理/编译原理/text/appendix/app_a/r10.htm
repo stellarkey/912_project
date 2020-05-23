@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　　begin(*term*)<br>
+      　　　　factor([times,slash]+fsys);<br>
+      　　　　while sym in [times,slash] do<br>
+      　　　　　begin<br>
+      　　　　　　mulop∶=sym;<br>
+      　　　　　　getsym;<br>
+      　　　　　　factor(fsys+[times,slash]);<br>
+      　　　　　　if mulop=times<br>
+      　　　　　　　then gen(opr,0,4)<br>
+      　　　　　　　else gen(opr,0,5)<br>
+      　　　　　　end<br>
+      　　　end(*term*); 
+      <p>　　　begin(*expression*)<br>
+        　　　　if sym in [plus,minus]<br>
+        　　　　　then<br>
+        　　　　　　begin<br>
+        　　　　　　　addop∶=sym;<br>
+        　　　　　　　getsym;<br>
+        　　　　　　　term(fsys+[plus,minus]);<br>
+        　　　　　　　if addop=minus<br>
+        　　　　　　　　then gen(opr,0,1)<br>
+        　　　　　　end<br>
+        　　　　　else term(fsys+[plus,minus]);<br>
+        　　　　while sym in [plus,minus] do<br>
+        　　　　　begin<br>
+        　　　　　　addop∶=sym;<br>
+        　　　　　　getsym;<br>
+        　　　　　　term(fsys+[plus,minus]);<br>
+        　　　　　　if addop=plus<br>
+        　　　　　　　then gen(opr,0,2) <br>
+        　　　　　　　else gen(opr,0,3) <br>
+        　　　　　end<br>
+        　　　end(*expression*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　一旦标号L定义时，我们将根据这条链回填那些待填转移目标的四元式。一般而言，假定用下面的产生式来定义标号语句<br>
+        　　S→label S<br>
+        　　label→i：<br>
+        　　那么，当用label→i：进行归约时，应做如下的语义动作：<br>
+        　　1.若i所指的标识符（假定为L）不在符号表中，则把它填入，置&quot;类型&quot;为&quot;标号&quot;，&quot;定义否&quot;为&quot;已&quot;，&quot;地址&quot;为nextstat。<br>
+        　　2.若L已在符号表中但&quot;类型&quot;不为&quot;标号&quot;或&quot;定义否&quot;为&quot;已&quot;，则报告出错。<br>
+        　　3.若L已在符号表中，则把标志&quot;未&quot;改为&quot;已&quot;，然后，把地址栏中的链首（记为q）取出，同时把nextstat填在其中，最后，执行回填。 
+        <br>
+        　　翻译goto语句时，还有两点必须注意，第一：是相同名字的标号可以在不同名字作用域中定义。如：<br>
+        　　（1）　begin<br>
+        　　（2）　 L:begin<br>
+        　　（3）　 goto L；<br>
+        　　（4）　 ……<br>
+        　　（5）　 L：…<br>
+        　　（6）　 end<br>
+        　　（7）　end<br>
+        　　当在行（3）处理goto语句时，不知道L的作用域到底是哪个，（因为还没见到语句（5）），因此一定要延迟解决这个标号的使用。<br>
+        　　另外有些转移标号是非法的，如下例：<br>
+        　　（1）　for i∶=1 to 10 do<br>
+        　　（2）　 begin goto L；<br>
+        　　（3）　 for j∶=1 to 20 do<br>
+        　　（4）　 begin goto L；<br>
+        　　… …<br>
+        　　（n）　 L: end　｛for j｝<br>
+        　　end　｛for　i｝<br>
+        　　处理到第（n）行后，第（4）行的goto目标得以解决。而第（2）行的goto L是非法的，但只有当循环关闭时才能确定。<br>
+        　　还要注意的问题是转移出分程序或过程外的goto语句，编译程序需要很多额外的编码，比如要恢复和保留一些运行环境等，这在后面(第10章)介绍了运行环境时，可能会理解更深些。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

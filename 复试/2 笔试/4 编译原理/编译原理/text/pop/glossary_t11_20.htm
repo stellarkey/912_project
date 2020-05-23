@@ -1,0 +1,237 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<title>词法分析</title>
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+<body lang=ZH-CN class="Normal" bgcolor="#FFFFFF">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>　<br>
+      11．句型（Sententialform），句子（Sentence）和语言（Language）</b><br>
+      　　设G［S］是一文法，如果符号串x是从识别符号推导出来的，即有S<sub><img align="absmiddle" 
+src="chb.files/image077.gif" v:shapes="_x0000_i1088"></sub>　x，则称x是文法G［S］的句型。若x仅由终结符号组成，即S<sub><img align="absmiddle" 
+src="chb.files/image078.gif" v:shapes="_x0000_i1089"></sub>x，x∈<sub><img align="absmiddle" 
+src="chb.files/image080.gif" v:shapes="_x0000_i1090"></sub>，则称x为G［S］的句子。 <br>
+      　　文法G所产生的语言定义为集合｛x｜S<sub><img align="absmiddle" 
+src="chb.files/image081.gif" v:shapes="_x0000_i1091"></sub>x，其中S为文法识别符号，且x∈<sub><img align="absmiddle" 
+src="chb.files/image082.gif" v:shapes="_x0000_i1092"></sub>｝。可用L(G) 或L(G[S])表示该集合。 
+      <br>
+      <b><br>
+      12.</b><b>推导（Derive</b><b>）和语法树（Parse tree</b><b>）</b> <br>
+      　　推导的概念：分别定义V*中的符号之间的关系<b>直接推导</b><b><sub><img align="absmiddle" 
+src="chb.files/image084.gif" v:shapes="_x0000_i1094"></sub></b>、<b>长度为</b><b>n</b><b>（n<sub><img align="absmiddle" 
+src="chb.files/image086.gif" v:shapes="_x0000_i1095"></sub>1</b><b>）的推导<sub><img align="absmiddle" 
+src="chb.files/image088.gif" v:shapes="_x0000_i1096"></sub></b>和<b>长度为</b><b>n</b><b>（n<sub><img align="absmiddle" 
+src="chb.files/image089.gif" v:shapes="_x0000_i1097"></sub>0</b><b>）的推导<sub><img align="absmiddle" 
+src="chb.files/image091.gif" v:shapes="_x0000_i1098"></sub></b>： <br>
+      　（1）如<sub><img align="absmiddle" 
+src="chb.files/image092.gif" v:shapes="_x0000_i1099"></sub>是文法G=(<sub><img align="absmiddle" 
+src="chb.files/image093.gif" v:shapes="_x0000_i1100"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image094.gif" v:shapes="_x0000_i1101"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image095.gif" v:shapes="_x0000_i1102"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image096.gif" v:shapes="_x0000_i1103"></sub>)的规则（或说是P中的一个产生式），<sub><img align="absmiddle"
+src="chb.files/image098.gif" v:shapes="_x0000_i1104"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image100.gif" v:shapes="_x0000_i1105"></sub>是V<sup>*</sup>中的任意符号，若有符号串v，w满足： 
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      　　v＝<sub><img align="absmiddle" 
+src="chb.files/image101.gif" v:shapes="_x0000_i1106"></sub><sub><img align="absmiddle" 
+src="chb.files/image102.gif" v:shapes="_x0000_i1107"></sub><sub><img align="absmiddle" 
+src="chb.files/image103.gif" v:shapes="_x0000_i1108"></sub>，w＝<sub><img align="absmiddle" 
+src="chb.files/image104.gif" v:shapes="_x0000_i1109"></sub><sub><img align="absmiddle" 
+src="chb.files/image105.gif" v:shapes="_x0000_i1110"></sub><sub><img align="absmiddle" 
+src="chb.files/image106.gif" v:shapes="_x0000_i1111"></sub> <br>
+      　　则说v（应用规则<sub><img align="absmiddle" 
+src="chb.files/image107.gif" v:shapes="_x0000_i1112"></sub>）直接产生w，或说，w是v的<b>直接推导，</b>或说，w直接<b>归约</b>到v，记做v<sub><img align="absmiddle"
+src="chb.files/image108.gif" v:shapes="_x0000_i1113"></sub>w。 <br>
+      　（2）如果存在直接推导的序列： <br>
+      　　v<sub><img align="absmiddle" 
+src="chb.files/image109.gif" v:shapes="_x0000_i1114"></sub>w<sub>0</sub><sub><img align="absmiddle" 
+src="chb.files/image110.gif" v:shapes="_x0000_i1115"></sub> w<sub>1</sub><sub><img align="absmiddle" 
+src="chb.files/image111.gif" v:shapes="_x0000_i1116"></sub> w<sub>2</sub>…<sub><img align="absmiddle" 
+src="chb.files/image112.gif" v:shapes="_x0000_i1117"></sub> w<sub>n</sub><sub><img align="absmiddle"
+src="chb.files/image113.gif" v:shapes="_x0000_i1118"></sub>w，（n&gt;0） <br>
+      　　则称v推导出（产生）w（推导长度为n），或称w归约到v。记作v<sub><img align="absmiddle" 
+src="chb.files/image114.gif" v:shapes="_x0000_i1119"></sub>w。 <br>
+      　（3）若有v<sub><img align="absmiddle" 
+src="chb.files/image115.gif" v:shapes="_x0000_i1120"></sub>w，或v＝w，则记作<sub><img align="absmiddle" 
+src="chb.files/image116.gif" v:shapes="_x0000_i1121"></sub>。 <br>
+      　　语法树（推导树）的概念：给定文法G=(<sub><img align="absmiddle" 
+src="chb.files/image117.gif" v:shapes="_x0000_i1122"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image118.gif" v:shapes="_x0000_i1123"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image119.gif" v:shapes="_x0000_i1124"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image120.gif" v:shapes="_x0000_i1125"></sub>)，对于G的任何句型都能构造与之关联的语法树（推导树）。这棵树满足下列4个条件： 
+      <br>
+      　　①每个结点都有一个标记，此标记是V的一个符号。 <br>
+      　　②根的标记是S。 <br>
+      　　③若一个结点n至少有一个它自己除外的子孙，并且有标记A，则A肯定在<sub><img align="absmiddle" 
+src="chb.files/image121.gif" v:shapes="_x0000_i1126"></sub>中。 <br>
+      　　④如果结点n的直接子孙，从左到右的次序是结点n<sub>1</sub>，n<sub>2</sub>，… ，n<sub>k</sub>，其标记分别为A<sub>1</sub>，A<sub>2</sub>，…，A<sub>k</sub>，那么A<sub><img align="absmiddle" 
+src="chb.files/image123.gif" v:shapes="_x0000_i1127"></sub>A<sub>1</sub>A<sub>2</sub>，…，A<sub>k</sub>一定是P中的一个产生式。 
+      <br>
+      <b><br>
+      13</b><b>．二义文法（Ambiguous grammer</b><b>）<br>
+      </b> 　　如果一个文法存在某个句子对应两棵不同的语法树，则说这个文法是二义的。或者说，若一个文法中存在某个句子，它有两个不同的最左(最右)推导，则这个文法是二义的。 
+      <br>
+      <b><br>
+      14</b><b>．短语，句柄 (phrase , sentence handle)</b><br>
+      　　令G是一文法，S是文法的开始符号，<sub><img align="absmiddle"
+src="chb.files/image125.gif" v:shapes="_x0000_i1128"></sub>是文法G的一个句型。如果有：<sub><img align="absmiddle"
+src="chb.files/image127.gif" v:shapes="_x0000_i1129"></sub>且<sub><img align="absmiddle"
+src="chb.files/image129.gif" v:shapes="_x0000_i1130"></sub>则称<sub><img align="absmiddle" 
+src="chb.files/image130.gif" v:shapes="_x0000_i1131"></sub>是句型<sub><img align="absmiddle"
+src="chb.files/image131.gif" v:shapes="_x0000_i1132"></sub>相对与非终结符 A的短语。特别，如有<sub><img align="absmiddle" 
+src="chb.files/image133.gif" v:shapes="_x0000_i1133"></sub>则称<sub><img align="absmiddle" 
+src="chb.files/image134.gif" v:shapes="_x0000_i1134"></sub>是句型<sub><img align="absmiddle" 
+src="chb.files/image135.gif" v:shapes="_x0000_i1135"></sub>相对于规则<sub><img align="absmiddle" 
+src="chb.files/image137.gif" v:shapes="_x0000_i1136"></sub>的直接短语 (也称简单短语)。一个句型的最左直接短语称为该句型的句柄。 
+      <br>
+      <b><br>
+      15．正规式（regular expression）和它所表示的正规集（regular set）<br>
+      </b> 　　设字母表为<sub><img align="absmiddle" 
+src="chb.files/image139.gif" v:shapes="_x0000_i1137"></sub>,辅助字母表<sub><img align="absmiddle" 
+src="chb.files/image141.gif" v:shapes="_x0000_i1138"></sub>=｛<sub><img align="absmiddle" 
+src="chb.files/image143.gif" v:shapes="_x0000_i1139"></sub>,<sub><img align="absmiddle" 
+src="chb.files/image145.gif" v:shapes="_x0000_i1140"></sub>，｜，.，*,(,)｝。<br>
+      　　1. <sub><img align="absmiddle" 
+src="chb.files/image146.gif" v:shapes="_x0000_i1141"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image147.gif" v:shapes="_x0000_i1142"></sub>都是<sub><img align="absmiddle" 
+src="chb.files/image148.gif" v:shapes="_x0000_i1143"></sub>上的正规式，它们所表示的正规集分别为{<sub><img align="absmiddle"
+src="chb.files/image149.gif" v:shapes="_x0000_i1144"></sub>}和<sub><img align="absmiddle" 
+src="chb.files/image150.gif" v:shapes="_x0000_i1145"></sub>； <br>
+      　　2.任何a∈<sub><img align="absmiddle" 
+src="chb.files/image151.gif" v:shapes="_x0000_i1146"></sub>，a是<sub><img align="absmiddle" 
+src="chb.files/image152.gif" v:shapes="_x0000_i1147"></sub>上的一个正规式，它所表示的正规集为{a}； 
+      <br>
+      　　3.假定<sub><img align="absmiddle" 
+src="chb.files/image154.gif" v:shapes="_x0000_i1148"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image156.gif" v:shapes="_x0000_i1149"></sub>都是<sub><img align="absmiddle" 
+src="chb.files/image157.gif" v:shapes="_x0000_i1150"></sub>上的正规式，它们所表示的正规集分别为L(<sub><img align="absmiddle" 
+src="chb.files/image158.gif" v:shapes="_x0000_i1151"></sub>)和L(<sub><img align="absmiddle" 
+src="chb.files/image159.gif" v:shapes="_x0000_i1152"></sub>)，那么，(<sub><img align="absmiddle" 
+src="chb.files/image160.gif" v:shapes="_x0000_i1153"></sub>)，<sub><img align="absmiddle" 
+src="chb.files/image161.gif" v:shapes="_x0000_i1154"></sub>｜<sub><img align="absmiddle" 
+src="chb.files/image162.gif" v:shapes="_x0000_i1155"></sub>，<sub><img align="absmiddle"
+src="chb.files/image163.gif" v:shapes="_x0000_i1156"></sub>·<sub><img align="absmiddle" 
+src="chb.files/image164.gif" v:shapes="_x0000_i1157"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image166.gif" v:shapes="_x0000_i1158"></sub>也都是正规式，它们所表示的正规集分别为L(<sub><img align="absmiddle" 
+src="chb.files/image167.gif" v:shapes="_x0000_i1159"></sub>)，L(<sub><img align="absmiddle" 
+src="chb.files/image168.gif" v:shapes="_x0000_i1160"></sub>)∪L(<sub><img align="absmiddle" 
+src="chb.files/image169.gif" v:shapes="_x0000_i1161"></sub>)，L(<sub><img align="absmiddle" 
+src="chb.files/image170.gif" v:shapes="_x0000_i1162"></sub>)L(<sub><img align="absmiddle"
+src="chb.files/image171.gif" v:shapes="_x0000_i1163"></sub>)和(L(<sub><img align="absmiddle" 
+src="chb.files/image172.gif" v:shapes="_x0000_i1164"></sub>))<sub><img align="absmiddle" 
+src="chb.files/image174.gif" v:shapes="_x0000_i1165"></sub>。<br>
+      　　4.仅由有限次使用上述三步骤而定义的表达式才是<sub><img align="absmiddle" 
+src="chb.files/image175.gif" v:shapes="_x0000_i1166"></sub>上的正规式，仅由这些正规式所表示的字集才是<sub><img align="absmiddle" 
+src="chb.files/image176.gif" v:shapes="_x0000_i1167"></sub>上的正规集。 <br>
+      <b><br>
+      16．确定的有穷状态自动机DFA(deterministic finite automaton)和不确定的有穷状态自动机NFA(nondeterministic 
+      finite automaton）<br>
+      </b>　　我们这里是把DFA和NFA作为正规集的识别工具而介绍的。<br>
+      　　DFA定义如下：<br>
+      　　一个确定的有穷自动机(DFA)M是一个五元组：M=(K, <sub><img align="absmiddle" 
+src="chb.files/image177.gif" v:shapes="_x0000_i1168"></sub>，f，S，Z)其中 <br>
+      　　1.K是一个有穷集，它的每个元素称为一个状态；<br>
+      　　2. <sub><img align="absmiddle"
+src="chb.files/image178.gif" v:shapes="_x0000_i1169"></sub>是一个有穷字母表，它的每个元素称为一个输入字符,所以也称<sub><img align="absmiddle"
+src="chb.files/image179.gif" v:shapes="_x0000_i1170"></sub>为输入符号字母表:<br>
+      　　3.f是转换函数，是在K×<sub><img align="absmiddle" 
+src="chb.files/image180.gif" v:shapes="_x0000_i1171"></sub><sub><img align="absmiddle"
+src="chb.files/image181.gif" v:shapes="_x0000_i1172"></sub>K上的映像，即，如f(<sub><img align="absmiddle" 
+src="chb.files/image183.gif" v:shapes="_x0000_i1173"></sub>,a)=<sub><img align="absmiddle"
+src="chb.files/image185.gif" v:shapes="_x0000_i1174"></sub>(<sub><img align="absmiddle"
+src="chb.files/image186.gif" v:shapes="_x0000_i1175"></sub>∈K, <sub><img align="absmiddle" 
+src="chb.files/image187.gif" v:shapes="_x0000_i1176"></sub>∈K)就意味着，当前状态为<sub><img align="absmiddle"
+src="chb.files/image188.gif" v:shapes="_x0000_i1177"></sub>，输入字符为a时，将转换到下一状态<sub><img align="absmiddle" 
+src="chb.files/image189.gif" v:shapes="_x0000_i1178"></sub>，我们把<sub><img align="absmiddle" 
+src="chb.files/image190.gif" v:shapes="_x0000_i1179"></sub>称作<sub><img align="absmiddle" 
+src="chb.files/image191.gif" v:shapes="_x0000_i1180"></sub>的一个后继状态;<br>
+      　　4.S∈K是唯一的一个初态；<br>
+      　　5.Z<sub><img align="absmiddle" 
+src="chb.files/image193.gif" v:shapes="_x0000_i1181"></sub>K，是一个终态集，终态也称可接受状态或结束状态。<br>
+      　　NFA定义如下;<br>
+      　　一个不确定的有穷自动机(NFA)M是一个五元组，M=(K, <sub><img align="absmiddle" 
+src="chb.files/image194.gif" v:shapes="_x0000_i1182"></sub>，f，S，Z)其中 <br>
+      　　1.K是一个有穷集，它的每个元素称为一个状态；<br>
+      　　2. <sub><img align="absmiddle" 
+src="chb.files/image195.gif" v:shapes="_x0000_i1183"></sub>是一个有穷字母表，它的每个元素称为一个输入字符； 
+      <br>
+      　　3. f是一个从K×<sub><img align="absmiddle"
+src="chb.files/image197.gif" v:shapes="_x0000_i1184"></sub>到K的子集的映像.<br>
+      　　4. S<sub><img align="absmiddle" 
+src="chb.files/image198.gif" v:shapes="_x0000_i1185"></sub>K，是一个非空初态集;<br>
+      　　5. Z<sub><img align="absmiddle" 
+src="chb.files/image199.gif" v:shapes="_x0000_i1186"></sub>K，是一个终态集。 <br>
+      　　DFA和NFA的等价定理：对于每个NFA M，存在一个DFA M’，使得L（M）＝L（M’），即M和M’是等价的。 <br>
+      <b><br>
+      17</b><b>．最小状态DFA(reduced DFA or minimum DFA)</b> <br>
+      　　我们说一个确定的有穷自动机是化简了的，即是说，它没有多余状态并且它的状态中没有两个是互相等价的，这种DFA也叫做最小状态DFA。一个DFA可以通过消除多余状态和合并等价状态而转换成一个与之等价的最小状态DFA。 
+      <br>
+      <b><br>
+      18</b><b>．FIRST</b><b>集</b><br>
+      　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image216.gif" v:shapes="_x0000_i1200"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image201.gif" v:shapes="_x0000_i1188"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image202.gif" v:shapes="_x0000_i1189"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image203.gif" v:shapes="_x0000_i1190"></sub>)是上下文无关文法 FIRST(<sub><img align="absmiddle" 
+src="chb.files/image204.gif" v:shapes="_x0000_i1191"></sub>)=｛a｜<sub><img align="absmiddle" 
+src="chb.files/image206.gif" v:shapes="_x0000_i1192"></sub>，a∈<sub><img align="absmiddle" 
+src="chb.files/image207.gif" v:shapes="_x0000_i1193"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image208.gif" v:shapes="_x0000_i1194"></sub>, <sub><img align="absmiddle"
+src="chb.files/image209.gif" v:shapes="_x0000_i1195"></sub>∈<sub><img align="absmiddle" 
+src="chb.files/image211.gif" v:shapes="_x0000_i1196"></sub>｝若<sub><img align="absmiddle"
+src="chb.files/image213.gif" v:shapes="_x0000_i1197"></sub>，则规定<sub><img align="absmiddle" 
+src="chb.files/image214.gif" v:shapes="_x0000_i1198"></sub>∈FIRST(<sub><img align="absmiddle" 
+src="chb.files/image215.gif" v:shapes="_x0000_i1199"></sub>)。 <br>
+      <b><br>
+      19．FOLLOW集</b><br>
+      　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image216.gif" v:shapes="_x0000_i1200"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image217.gif" v:shapes="_x0000_i1201"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image218.gif" v:shapes="_x0000_i1202"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image219.gif" v:shapes="_x0000_i1203"></sub>)是上下文无关文法，A∈<sub><img align="absmiddle" 
+src="chb.files/image220.gif" v:shapes="_x0000_i1204"></sub>，Ｓ是开始符号<br>
+      　　FOLLOW(A)=｛a｜<sub><img align="absmiddle" 
+src="chb.files/image222.gif" v:shapes="_x0000_i1205"></sub>且a∈<sub><img align="absmiddle" 
+src="chb.files/image223.gif" v:shapes="_x0000_i1206"></sub>，a∈FIRST(<sub><img align="absmiddle" 
+src="chb.files/image224.gif" v:shapes="_x0000_i1207"></sub>)，<sub><img align="absmiddle" 
+src="chb.files/image226.gif" v:shapes="_x0000_i1208"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image228.gif" v:shapes="_x0000_i1209"></sub>｝ <br>
+      　　若<sub><img align="absmiddle" 
+src="chb.files/image229.gif" v:shapes="_x0000_i1210"></sub>，且<sub><img align="absmiddle" 
+src="chb.files/image231.gif" v:shapes="_x0000_i1211"></sub>，则#∈FOLLOW(A)。<br>
+      　　也可定义为：FOLLOW(A)={a|<sub><img align="absmiddle"
+src="chb.files/image233.gif" v:shapes="_x0000_i1212"></sub>…Aa…,a∈<sub><img align="absmiddle" 
+src="chb.files/image234.gif" v:shapes="_x0000_i1213"></sub>}<br>
+      　　若有<sub><img align="absmiddle" 
+src="chb.files/image235.gif" v:shapes="_x0000_i1214"></sub>…A，则规定#∈FOLLOW(A) 
+      <br>
+      　　这里我们用‘＃’作为输入串的结束符，或称为句子括号，如：＃输入串＃。 <br>
+      <b><br>
+      20</b><b>．SELECT</b><b>集</b><br>
+      　　给定上下文无关文法的产生式A→<sub><img align="absmiddle" 
+src="chb.files/image236.gif" v:shapes="_x0000_i1215"></sub>&nbsp; A∈<sub><img align="absmiddle"
+src="chb.files/image237.gif" v:shapes="_x0000_i1216"></sub>，<sub><img align="absmiddle"
+src="chb.files/image238.gif" v:shapes="_x0000_i1217"></sub>∈<sub><img align="absmiddle"
+src="chb.files/image240.gif" v:shapes="_x0000_i1218"></sub>，若<sub><img align="absmiddle" 
+src="chb.files/image242.gif" v:shapes="_x0000_i1219"></sub>，则SELECT(A→<sub><img align="absmiddle"
+src="chb.files/image243.gif" v:shapes="_x0000_i1220"></sub>)= FIRST(<sub><img align="absmiddle" 
+src="chb.files/image244.gif" v:shapes="_x0000_i1221"></sub>) 　　如果<sub><img align="absmiddle" 
+src="chb.files/image246.gif" v:shapes="_x0000_i1222"></sub><sub><img align="absmiddle" 
+src="chb.files/image248.gif" v:shapes="_x0000_i1223"></sub>，则SELECT(A→<sub><img align="absmiddle" 
+src="chb.files/image249.gif" v:shapes="_x0000_i1224"></sub>)=FIRST(<sub><img align="absmiddle" 
+src="chb.files/image249.gif" v:shapes="_x0000_i1224"></sub>)∪FOLLOW(A)。 <br>
+      　</td>
+  </tr>
+</table>
+</body></html>

@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表 2.2 TABLE表中的信息 </font></td>
+        </tr>
+        <tr align="center"> 
+          <td> 
+            <table  width="90%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr bgcolor="#DAE1BB"> 
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">NAME</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">KIND</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">LEVEL/VAL</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">ADR</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">SIZE</font></td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top"><font face="Arial, Helvetica, sans-serif">TXo</font>→</td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">A<br>
+                  B<br>
+                  C<br>
+                  D<br>
+                  E<br>
+                  P</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">CONSTANT<br>
+                  CONSTANT<br>
+                  VARIABLE<br>
+                  VARIABLE<br>
+                  VARIABL<br>
+                  EPROCEDUR</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">35<br>
+                  49</font><br>
+                  <font face="Arial, Helvetica, sans-serif">LEV<br>
+                  LEV<br>
+                  LEV<br>
+                  LEV</font></td>
+                <td align="center" valign="bottom"><font face="Arial, Helvetica, sans-serif">DX<br>
+                  DX+1<br>
+                  DX+2</font><br>
+                  过程p的入口（待填）</td>
+                <td align="center" valign="bottom">4</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top"><font face="Arial, Helvetica, sans-serif">TX</font>→</td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">G 
+                  <br>
+                  …</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">VARIABLE 
+                  <br>
+                  …</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">LEV+1<br>
+                  …</font></td>
+                <td align="center"><font face="Arial, Helvetica, sans-serif">ADR：DX<br>
+                  …</font></td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　TABLE表的表头索引TX和层次单元LEV都以BLOCK的参数形式出现。在主程序调用BLOCK时实参值都为0。每个过程中变量的相对起始位置在BLOCK内置初值DX∶=3。 
+      <br>
+      　　例如：<font color="#0000FF">对变量定义的语法处理</font><br>
+      　　语法：&lt;变量说明部分&gt;: := var &lt;标识符&gt;{， &lt;标识符&gt;}；<br>
+      　　程序：
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">if sym=varsym then<br>
+            　begin<br>
+            　　getsym;<br>
+            　　repeat<br>
+            　　　vardeclaration;(*变量说明处理*) <br>
+            　　　while sym=comma do<br>
+            　　　　begin<br>
+            　　　　　getsym;<br>
+            　　　　　vardeclaration<br>
+            　　　　end;<br>
+            　　　if sym=semicolon then<br>
+            　　　　getsym<br>
+            　　　else error(5)<br>
+            　　until sym&lt;&gt;ident;<br>
+            　end; </td>
+        </tr>
+      </table>
+      <font color="#0000FF">变量说明处理程序：</font> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">Procedure vardeclaration;<br>
+            　begin<br>
+            　　if sym = ident then<br>
+            　　　begin<br>
+            　　　　enter(variable);( *调用过程enter造名字表*）<br>
+            　　　　getsym<br>
+            　　　end<br>
+            　　else error(4)<br>
+            　end(*vardeclaration*); </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

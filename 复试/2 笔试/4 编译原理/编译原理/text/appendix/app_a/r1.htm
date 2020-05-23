@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>program pl0(fa,fa1,fa2);<br>
+      (*PL0 compiler with code generation*)
+      <p>label 99;</p>
+      <p>const norw=13;(*of reserved words*)<br>
+        　　txmax=100;(*length of identifier table*)<br>
+        　　nmax=14;(*max number of digits in numbers*)<br>
+        　　al=10;(*length of identifiers*)<br>
+        　　amax=2047;(*maximum address*)<br>
+        　　levmax=3;(*max depth of block nesting*) <br>
+        　　cxmax=200;(*size of code array*)</p>
+      <p>type symbol=(nul,ident,number,plus,minus,times,slash,oddsym,<br>
+        　　　　　　　eql,neq,lss,leq,gtr,geq,lparen,rparen,comma,<br>
+        　　　　　　　semicolon,period,becomes,beginsym,endsym,ifsym,<br>
+        　　　　　　　thensym,whilesym,writesym,readsym,dosym,callsym,<br>
+        　　　　　　　constsym,varsym,procsym);<br>
+        　　alfa= packed array[1..al] of char;<br>
+        　　object = (constant,variable,procedur);<br>
+        　　(*wirth used the word &quot;procedure&quot; there,which won't work!*) 
+        <br>
+        　　symset = set of symbol;<br>
+        　　fct = ( lit, opr,lod,sto, cal, int, jmp, jpc);<br>
+        　　instruction = packed record<br>
+        　　　　　　　　　　f:fct;(*function code*)<br>
+        　　　　　　　　　　l:0..levmax;(*level*)<br>
+        　　　　　　　　　　a:0..amax;(*displacement addr*)<br>
+        　　　　　　　　　end;<br>
+        　　　　　　　(*lit 0,a load constant a<br>
+        　　　　　　　　opr 0,a execute opr a<br>
+        　　　　　　　　lod l,a load variable l,a<br>
+        　　　　　　　　sto l,a store variable l,a<br>
+        　　　　　　　　cal l,a call procedure a at level l<br>
+        　　　　　　　　int 0,a increment t-register by a<br>
+        　　　　　　　　jmp 0,a jump to a<br>
+        　　　　　　　　jpc 0,a jump conditional to a *)</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

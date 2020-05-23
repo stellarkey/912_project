@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　因此词法分析程序GETSYM将完成下列任务：<br>
+      　　(1) 滤空格：空格在词法分析时是一种不可缺少的界符，而在语法分析时则是无用的，所以必须滤掉。<br>
+      　　(2) 识别保留字：设有一张保留字表。对每个字母打头的字母、数字字符串要查此表。若查着则为保留字，将对应的类别放在SYM中。如IF对应值IFSYM，THEN对应值为THENSYM。若查不着，则认为是用户定义的标识符。<br>
+      　　(3) 识别标识符：对用户定义的标识符将IDENT放在SYM中，标识符本身的值放在ID中。<br>
+      　　(4) 拼数：当所取单词是数字时，将数的类别NUMBER放在SYM中，数值本身的值存放在NUM中。<br>
+      　　(5) 拼复合词：对两个字符组成的算符 <br>
+      　　如：＞=、∶=、＜= 等单词，识别后将类别送SYM中。<br>
+      　　(6) 输出源程序：为边读入字符边输出(可输出在文件中)。</td>
+  </tr>
+</table>
+</body>
+</html>

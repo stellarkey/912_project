@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　以表达式文法为例构造预测分析表。<br>
+      　　表达式文法为：<br>
+      　　E→E+T|T<br>
+      　　T→T*F|F<br>
+      　　F→i|(E)<br>
+      　　构造步骤：<br>
+      (1) 判断文法是否为LL(1)文法<br>
+      　　由于文法中含有左递归，所以必须先消除左递归，使文法变为：<br>
+      　　E→TE′<br>
+      　　E′→+TE′|ε<br>
+      　　T→FT′<br>
+      　　T′→*FT′|ε<br>
+      　　F→i|(E)</td>
+  </tr>
+</table>
+</body>
+</html>

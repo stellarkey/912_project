@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p> 　　INTERVAL hilo(a, b, c, d)<br>
+        　　　　double a, b, c, d; {<br>
+        　　　　/* return the smallest interval */<br>
+        　　　　/* containing a, b, c, and d used */<br>
+        　　　　/* by *, / routines */<br>
+        　　　　INTERVAL v;
+      <p>　　　if (a&gt;b) { v.hi = a; v.lo = b; }<br>
+        　　　　else { v.hi = b; v.lo = a; }</p>
+      <p>　　　if (c&gt;d) {<br>
+        　　　　　　　　if (c&gt;v.hi) v.hi= c;<br>
+        　　　　　　　　if (d&lt;v.lo) v.lo= d;<br>
+        　　　　　　　　}<br>
+        　　　else {<br>
+        　　　　　　if (d&gt;v.hi) v.hi= d;<br>
+        　　　　　　if (c&lt;v.lo) v.lo= c;<br>
+        　　　　　　}<br>
+        　　　return(v);<br>
+        　　}</p>
+      <p>INTERVAL vmul(a, b, v)<br>
+        double a, b;<br>
+        INTERVAL v; {<br>
+        　　return(hilo(a*v.hi, a*v.lo, b*v.hi, b*v.lo));<br>
+        }</p>
+      <p>dckeck(v)<br>
+        INTERVAL v; {<br>
+        　　if (v.hi&gt;=0. &amp;&amp; v.lo&lt;=0. ){<br>
+        　　　printf(&quot;divisor interval contains 0.\n&quot;);<br>
+        　　　return(1);<br>
+        　　}<br>
+        return(0);<br>
+        }</p>
+      <p>INTERVAL vdiv(a, b, v)<br>
+        double a, b;<br>
+        INTERVAL v; {<br>
+        　　return( hilo(a/v.hi, a/v.lo, b/v.hi, b/v.lo));<br>
+        }</p>
+      <p></p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

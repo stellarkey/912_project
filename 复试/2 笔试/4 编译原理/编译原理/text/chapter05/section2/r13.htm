@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <font color="#0000FF">练习：</font>读者以文法G6为例：<br>
+      　　(1) A→aB<br>
+      　　(2) A→Bb<br>
+      　　(3) B→Ac<br>
+      　　(4) B→d<br>
+      　　消除文法中的左递归，并检验改写后的文法是否为LL(1)文法。<br>
+      参考答案：<br>
+      　　用产生式(1)、(2)的右部代替产生式(3)中的非终结符A得到左部为B的产生式为：<br>
+      　　(1) B→aBc<br>
+      　　(2) B→Bbc<br>
+      　　(3) B→d<br>
+      　　消除左递归后得：<br>
+      　　B→(aBc|d)B′<br>
+      　　B′→bcB′|ε<br>
+      　　再把原来其余的产生式A→aB，A→Bb加入，最终文法为：<br>
+      　　(1) A→aB<br>
+      　　(2) A→Bb<br>
+      　　(3) B→(aBc|d)B′<br>
+      　　(4) B′→bcB′|ε<br>
+      　　可以检验改写后的文法不是LL(1)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

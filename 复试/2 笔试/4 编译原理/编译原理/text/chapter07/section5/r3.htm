@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　用表7.11的LR(1)分析表分析输入串ab#的分析过程如表7.13所示。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.13 对输入串ab#用LR(1)分析的过程</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1">步骤</td>
+                <td align="center" valign="top">状态栈</td>
+                <td align="center" valign="top">符号栈</td>
+                <td align="center" valign="top">输入串</td>
+                <td align="center" valign="top">ACTION</td>
+                <td align="center" valign="top">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center">1<br>
+                  2<br>
+                  3<br>
+                </td>
+                <td>　　0<br>
+                  　　03<br>
+                  　　034</td>
+                <td>　　#<br>
+                  　　#a<br>
+                  　　#ab</td>
+                <td align="right">ab#<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  b#<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  #<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font></td>
+                <td align="center">S3<br>
+                  S4<br>
+                  出错</td>
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　在LR(1)项目集规范族中，当分析进入状态I4时，b后只能出现a或b而不能出现'#'号，因而出错。<br>
+      　　用表7.12的LALR(1)分析表分析同样的输入串ab#分析过程如表7.14所示。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.14 对输入串ab#用LALR(1)分析的过程</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" width="10%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1">步骤</td>
+                <td align="center" valign="top" width="34%">状态栈</td>
+                <td align="center" valign="top" width="16%">符号栈</td>
+                <td align="center" valign="top" width="14%">输入串</td>
+                <td align="center" valign="top" width="14%">ACTION</td>
+                <td align="center" valign="top" width="12%">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" width="10%">1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                </td>
+                <td width="34%">　　0<br>
+                  　　0(3,6) <br>
+                  　　0(3,6)(4,7)<br>
+                  　　0(3,6)(8,9)<br>
+                  　　02</td>
+                <td width="16%">　　#<br>
+                  　　#a<br>
+                  　　#ab<br>
+                  　　#aB<br>
+                  　　#B</td>
+                <td align="right" width="14%">ab#<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  b#<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  #<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  #<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font><br>
+                  #<font color="#FFFFFF">..</font><font color="#FFFFFF">..</font></td>
+                <td align="center" width="14%">S3,6<br>
+                  S4,7<br>
+                  r3<br>
+                  r2<br>
+                  出错</td>
+                <td align="center" valign="top" width="12%"><sub><font color="#FFFFFF">.</font></sub><font color="#FFFFFF"><br>
+                  <sub>.</sub></font><br>
+                  (8,9)<br>
+                  2<img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　表 7.13 和表 7.14 说明对输入串ab#用LR(1)分析比用LALR(1) 分析提前两步发现错误。 <br>
+      　　在LR(1)分析中I<sub><font size="-2">4</font></sub>的向前搜索符只有{a,b}，而用LALR(1)分析由于I<sub><font size="-2">4</font></sub>，I<sub><font size="-2">7</font></sub>为同心集，合并同心集后I<sub><font size="-2">4</font></sub>的向前搜索符集合变为{a,b，#}，所以集合扩大了，因而发现错误的时间也就推迟了。表7.14对ab#的分析进行了两步多余归约，但是发现错误的位置还是确切的。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

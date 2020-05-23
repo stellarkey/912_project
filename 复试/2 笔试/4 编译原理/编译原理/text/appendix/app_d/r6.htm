@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 解释程序 */<br>
+      　　void interpret()<br>
+      　　{<br>
+      　　　int p,b,t; /* 指令指针，指令基址，栈顶指针 */<br>
+      　　　struct instruction i; /* 存放当前指令 */<br>
+      　　　int s[stacksize]; /* 栈 */ 
+      <p> 　　　printf(&quot;start pl0\n&quot;);<br>
+        　　　t=0;b=0;p=0;<br>
+        　　　s[0]=s[1]=s[2]=0;<br>
+        　　　do<br>
+        　　　{<br>
+        　　　　i=code[p]; /* 读当前指令 */<br>
+        　　　　p++;<br>
+        　　　　switch(i.f)<br>
+        　　　　{<br>
+        　　　　　case lit: /* 将a的值取到栈顶 */<br>
+        　　　　　s[t]=i.a;<br>
+        　　　　　t++;<br>
+        　　　　　break;<br>
+        　　　　　case opr: /* 数学、逻辑运算 */<br>
+        　　　　　switch(i.a)<br>
+        　　　　　{<br>
+        　　　case 0:<br>
+        　　　　　　t=b;<br>
+        　　　　　　p=s[t+2];<br>
+        　　　　　　b=s[t+1];<br>
+        　　　　　　break;<br>
+        　　　　　　case 1:<br>
+        　　　　　　s[t-1]=-s[t-1];<br>
+        　　　　　　break;<br>
+        　　　case 2:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]+s[t];<br>
+        　　　　　　break;<br>
+        　　　case 3:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]-s[t];<br>
+        　　　　　　break;<br>
+        　　　case 4:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]*s[t];<br>
+        　　　　　　break;<br>
+        　　　case 5:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]/s[t];<br>
+        　　　　　　break;<br>
+        　　　case 6:<br>
+        　　　　　　s[t-1]=s[t-1]%2;<br>
+        　　　　　　break;<br>
+        　　　case 8:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]==s[t];<br>
+        　　　　　　break;<br>
+        　　　case 9:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]!=s[t];<br>
+        　　　　　　break;<br>
+        　　　case 10:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]&lt;s[t];<br>
+        　　　　　　break;<br>
+        　　　case 11:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]&gt;=s[t];<br>
+        　　　　　　break;<br>
+        　　　case 12:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]&gt;s[t];<br>
+        　　　　　　break;<br>
+        　　　case 13:<br>
+        　　　　　　t--;<br>
+        　　　　　　s[t-1]=s[t-1]&lt;=s[t];<br>
+        　　　　　　break;<br>
+        　　　case 14:<br>
+        　　　　　　printf(&quot;%d&quot;,s[t-1]);<br>
+        　　　　　　fprintf(fa2,&quot;%d&quot;,s[t-1]);<br>
+        　　　　　　t--;<br>
+        　　　　　　break;<br>
+        　　　case 15:<br>
+        　　　　　　printf(&quot;\n&quot;);<br>
+        　　　　　　fprintf(fa2,&quot;\n&quot;);<br>
+        　　　　　　break;<br>
+        　　　case 16:<br>
+        　　　　　　printf(&quot;?&quot;);<br>
+        　　　　　　fprintf(fa2,&quot;?&quot;);<br>
+        　　　　　　scanf(&quot;%d&quot;,&amp;(s[t]));<br>
+        　　　　　　fprintf(fa2,&quot;%d\n&quot;,s[t]);<br>
+        　　　　　　t++;<br>
+        　　　　　　break;<br>
+        　　　}<br>
+        　　　break;<br>
+        　　　case lod: /* 取相对当前过程的数据基地址为a的内存的值到栈顶 */<br>
+        　　　　　　s[t]=s[base(i.l,s,b)+i.a];<br>
+        　　　　　　t++;<br>
+        　　　　　　break;<br>
+        　　　case sto: /* 栈顶的值存到相对当前过程的数据基地址为a的内存 */<br>
+        　　　　　　t--;<br>
+        　　　　　　s[base(i.l,s,b)+i.a]=s[t];<br>
+        　　　　　　break;<br>
+        　　　case cal: /* 调用子过程 */<br>
+        　　　　　　s[t]=base(i.l,s,b); /* 将父过程基地址入栈 */<br>
+        　　　　　　s[t+1]=b; /* 将本过程基地址入栈，此两项用于base函数 */<br>
+        　　　　　　s[t+2]=p; /* 将当前指令指针入栈 */<br>
+        　　　　　　b=t; /* 改变基地址指针值为新过程的基地址 */<br>
+        　　　　　　p=i.a; /* 跳转 */<br>
+        　　　　　　break;<br>
+        　　　case inte: /* 分配内存 */<br>
+        　　　　　　t+=i.a; <br>
+        　　　　　　break;<br>
+        　　　case jmp: /* 直接跳转 */<br>
+        　　　　　　p=i.a;<br>
+        　　　　　　break;<br>
+        　　　case jpc: /* 条件跳转 */<br>
+        　　　　　　t--;<br>
+        　　　　　　if(s[t]==0)p=i.a;<br>
+        　　　　　　break;<br>
+        　　　}<br>
+        　　}<br>
+        　　while(p!=0);<br>
+        　　fclose(fa2);<br>
+        　}<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

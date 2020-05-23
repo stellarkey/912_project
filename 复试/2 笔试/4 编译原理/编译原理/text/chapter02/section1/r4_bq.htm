@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>练习</b>：下面给出一个PL/0语言的程序，请学员对应PL/0语言的语法描述图与EBNF ，检查该程序的语法是否正确。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　CONST A=10;<br>
+            　　VAR B,C;<br>
+            　　PROCEDURE P;<br>
+            　　　VAR <font color="#0000FF">D</font>;<br>
+            　　　PROCEDURE <font color="#0000FF">Q</font>;<br>
+            　　　　VAR <font color="#FF0000">X</font>;<br>
+            　　　　<font color="#FF0000">BEGIN</font><br>
+            　　　　　<font color="#FF0000">READ(X)</font>;<br>
+            　　　　　<font color="#0000FF">D</font><font color="#FF0000">:=</font> 
+            <font color="#0000FF">D*</font> C <font color="#FF0000">+X; WRITE(</font><font color="#0000FF">D</font><font color="#FF0000">)</font>;<br>
+            　　　　　<font color="#FF0000">WHILE X#0 DO CALL</font> P;<br>
+            　　　　<font color="#FF0000">END</font>;<br>
+            　　　<font color="#0000FF">BEGIN<br>
+            　　　　READ(D, </font>C<font color="#0000FF">);<br>
+            　　　　CALL Q;<br>
+            　　　END;</font><br>
+            　　<font color="#FF00FF">BEGIN<br>
+            　　　CALL </font>P<font color="#FF00FF">;<br>
+            　　END.</font> </td>
+        </tr>
+      </table>
+      <b><br>
+      PL/0编译程序的使用限制</b><br>
+      　　◇ 标识符的有效长度是10<br>
+      　　◇ 数字最多为14位<br>
+      　　◇ 过程最多可嵌套三层，可递归调用<br>
+      　　◇ 标识符的作用域同PASCAL，内层可引用包围它的外层定义的标识符（如：变量名，过程名，常量名） </td>
+  </tr>
+</table>
+</body>
+</html>

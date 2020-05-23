@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　例如，我们可以构造算术表达式文法的LR(0)项目集规范族，然后分析它是LR(0)文法还是SLR(1)文法，现将表达式文法拓广如下：<br>
+      　　(0) S′→E<br>
+      　　(1) E→E+T<br>
+      　　(2) E→T<br>
+      　　(3) T→T*F<br>
+      　　(4) T→F<br>
+      　　(5) F→(E)<br>
+      　　(6) F→i<br>
+      　　该文法的LR(0)项目集规范族为：<br>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td>　　I<sub><font size="-2">0</font></sub>： S′→·E<br>
+            　　 　　E→·E+T <br>
+            　　 　　E→·T<br>
+            　　　 　T→·T*F<br>
+            　　　 　T→·F<br>
+            　　　 　F→·(E)<br>
+            　　　 　F→·i<br>
+            　　I<sub><font size="-2">1</font></sub>： S′→E·<br>
+            　　　 　E→E·+T<br>
+            　　I<sub><font size="-2">2</font></sub>： E→T·<br>
+            　　　 　T→T·*F<br>
+            　　I<sub><font size="-2">3</font></sub>： T→F·<br>
+            　　I<sub><font size="-2">4</font></sub>： F→(·E)<br>
+            　　　 　E→·E+T<br>
+            　　 　　E→·T<br>
+            　　 　　T→·T*F <br>
+            　　 　　T→·F<br>
+            　　 　　F→·(E)<br>
+            　　 　　F→·i<br>
+          </td>
+          <td valign="top"> I<sub><font size="-2">5</font></sub>： F→i·<br>
+            I<sub><font size="-2">6</font></sub>： E→E+·T<br>
+            　 　T→·T*F <br>
+            　 　T→·F <br>
+            　 　F→·(E) <br>
+            　 　F→·i <br>
+            I<sub><font size="-2">7</font></sub>： T→T*·F <br>
+            　 　F→·(E) <br>
+            　 　F→·i <br>
+            I<sub><font size="-2">8</font></sub>： F→(E·) <br>
+            　 　E→E·+T <br>
+            I<sub><font size="-2">9</font></sub>： E→E+T· <br>
+            　 　T→T·*F <br>
+            I<sub><font size="-2">10</font></sub>： T→T*F·<br>
+            I<sub><font size="-2">11</font></sub>： F→(E)· <br>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

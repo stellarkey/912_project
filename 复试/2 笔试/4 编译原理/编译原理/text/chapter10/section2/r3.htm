@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="113"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" height="22"><font color="#0000FF"> 图10.11具有嵌套过程的PASCAL程序</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" height="22">　　(1) program sort(input, output); //sort的过程头<br>
+            　　(2)　　var a: array [0..10] of integer;<br>
+            　　(3)　　x: integer;<br>
+            　　(4)　　procedure readarray; //sort内嵌套定义的readarray的过程头<br>
+            　　(5)　　　var i: integer;<br>
+            　　(6)　　　begin…a…end{readarray}; //readarray的过程体<br>
+            　　(7)　　procedure exchange(i,j: integer);<br>
+            　　　　　　　　　　//sort内嵌套定义的exchange的过程头<br>
+            　　(8)　　　begin<br>
+            　　(9) 　　 x∶=a[i]; a[i]∶=a[j]; a[j]∶=x; //exchange的过程体<br>
+            　　(10)　　 end{exchange};<br>
+            　　(11)　 procedure quicksort(m,n: integer);<br>
+            　　　　　　　　　　//sort内嵌套定义的quicksort的过程头<br>
+            　　(12) 　　var k,v: integer; <br>
+            　　(13)　　 function partition(y,z:integer):integer;<br>
+            　　　　　　　　　　//quicksort内嵌套定义的partition的函数头<br>
+            　　(14)　　　　var i.j:integer;<br>
+            　　(15)　　　　begin …a… //partition的函数体<br>
+            　　(16)　　　　…v…<br>
+            　　(17) 　　　 …exchange(i,j);…<br>
+            　　(18) 　　　 end{partition};<br>
+            　　(19) 　　begin…end{quicksort}; //quicksort的过程体<br>
+            　　(20) begin…end{sort}. //sort的例程体</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

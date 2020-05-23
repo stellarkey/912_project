@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在一个有向图中，我们称任一有向边n<sub><font size="-2">i</font></sub>→n<sub><font size="-2">j</font></sub>(或表示为有序对（n<sub><font size="-2">i</font></sub>，n<sub><font size="-2">j</font></sub>）)中的结点n<sub><font size="-2">i</font></sub>为结点n<sub><font size="-2">j</font></sub>的前驱（父结），结点n<sub><font size="-2">j</font></sub>为结点n<sub><font size="-2">i</font></sub>的后继（子结）。又称任一有向边序列n<sub><font size="-2">1</font></sub>→n<sub><font size="-2">2</font></sub>，n<sub><font size="-2">2</font></sub>→n<sub><font size="-2">3</font></sub>，…，n<sub><font size="-2">k-1</font></sub>→n<sub><font size="-2">k</font></sub>为从结点n<sub><font size="-2">1</font></sub>到结点n<sub><font size="-2">k</font></sub>的一条通路。如果其中n<sub><font size="-2">1</font></sub>＝n<sub><font size="-2">k</font></sub>，则称该通路为环路。该结点序列也记为（n<sub><font size="-2">1</font></sub>，n<sub><font size="-2">2</font></sub>，…，n<sub><font size="-2">k</font></sub>）。例如，图11.7中有向图的通路（n<sub><font size="-2">2</font></sub>，n<sub><font size="-2">2</font></sub>）和（n<sub><font size="-2">3</font></sub>，n<sub><font size="-2">4</font></sub>，n<sub><font size="-2">3</font></sub>）就是环路。如果有向图中任一通路都不是环路，则称该有向图为无环路有向图，简称DAG。图11.8的有向图就是一个DAG。在DAG中，如果（n<sub><font size="-2">1</font></sub>，n<sub><font size="-2">2</font></sub>，…，n<sub><font size="-2">k</font></sub>）是其中一条通路，则称结点n<sub><font size="-2">1</font></sub>为结点n<sub><font size="-2">k</font></sub>的祖先，结点n<sub><font size="-2">k</font></sub>为结点n<sub><font size="-2">1</font></sub>的后代。图11.8中结点n<sub><font size="-2">6</font></sub>就是结点n<sub><font size="-2">9</font></sub>的祖先，n<sub><font size="-2">9</font></sub>是n<sub><font size="-2">6</font></sub>的后代。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 11.7有向图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/pic11_7.gif" width="200" height="193"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 11.8DAG</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/pic11_8.gif" width="400" height="212"></td>
+        </tr>
+      </table>
+      　　我们要用到的有向图，是一种其结点带有下述标记或附加信息的DAG：<br>
+      　　① 图的叶结点，即无后继的结点，以一标识符（变量名）或常数作为标记，表示这个结点代表该变量或常数的值。如果叶结点用来代表某变量A的地址，则用addr（A）作为这个结点的标记。通常把叶结点上作为标记的标识符加上下标0，以表示它是该变量的初值。<br>
+      　　② 图的内部结点，即有后继的结点,以一运算符作为标记，表示这个结点代表应用该运算符对其后继结点所代表的值进行运算的结果。<br>
+      　　③ 图中各个结点上可能附加一个或多个标识符，表示这些变量具有该结点所代表的值。 </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.7 PL/0语法调用关系图 
+            </font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p2_7.gif" width="110" height="290"></td>
+        </tr>
+      </table>
+      　　如果一个PL/0语言的单词序列在整个语法分析中，都能逐个得到匹配，直到程序结束符'.'，这时就说所输入的程序是正确的。对于正确的语法分析做相应的语义翻译，最终得出目标程序。<br>
+      以上所说语法分析过程非常直观粗浅，实际上应用递归子程序法构造语法分析程序时，对文法有一定的要求和限制，这个问题我们将在第5章详细讨论。<br>
+      　　此外，从PL/0的语法描述图中可以清楚地看到，当对PL/0语言进行语法分析时，各个非终结符语法单元所对应的分析过程之间必须存在相互调用的关系。这种调用关系可用图2.7表示。也可称为PL/0语法的依赖图，在图中箭头所指向的程序单元表示存在调用关系，从图中不难看出这些子程序在语法分析时被直接或间接递归调用。 
+      <font color="#0000FF"><br>
+      </font>　　由图 2.7 PL/0语法调用关系图可以看出对分程序和语句为直接递归调用，对表达式为间接递归调用。 <br>
+      <font color="#0000FF">例：如何用递归子程序法实现表达式的语法分析<br>
+      现用2.1中给出的表达式语法图进行语法分析，语法图如下：</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.1(e) 表达式语法描述图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_1e.gif" width="430" height="127"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.1(f) 项语法描述图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_1f.gif" width="430" height="150"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.1(g) 因子语法描述图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_1g.gif" width="430" height="148"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

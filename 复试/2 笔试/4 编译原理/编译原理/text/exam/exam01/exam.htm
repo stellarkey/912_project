@@ -1,0 +1,544 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="B";mykeys[1]="B";mykeys[2]="A";mykeys[3]="A";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="AC";mykeys[1]="ABD";//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  <b>编译原理试卷一</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b>一、 选择</b><br>
+            <br>
+            1.一个正规语言只能对应(　　)？ <br>
+            <input type="radio" name="1" value="A">
+            A 一个正规文法； <br>
+            <input type="radio" name="1" value="B">
+            B 一个最小有限状态自动机； <br>
+            <br>
+            2.文法G[A]：A→ε A→aB B→Ab B→a是(　　)： <br>
+            <input type="radio" name="2" value="A">
+            A 正规文法 <br>
+            <input type="radio" name="2" value="B">
+            B 二型文法<br>
+            <br>
+            3.下面说法正确的是(　　)： <br>
+            <input type="radio" name="3" value="A">
+            A 一个SLR（1）文法一定也是LALR（1）文法 <br>
+            <input type="radio" name="3" value="B">
+            B 一个LR（1）文法一定也是LALR（1）文法<br>
+            <br>
+            4.一个上下文无关文法消除了左递归，提取了左公共因子后是满足LL（1）文法的(　　)： <br>
+            <input type="radio" name="4" value="A">
+            A 必要条件 <br>
+            <input type="radio" name="4" value="B">
+            B 充分必要条件<br>
+            <!--czp-select-timu-->
+            <br>
+            <input type=button name=Button2 value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop1.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck(this.form)" class=pbox>
+          </form>
+ 
+        <form>
+          <b>二、多项选择</b><br>
+          <br>
+          1.PL/0语言的目标程序解释执行时用到的数据对象有(　　)：<br>
+          <input type="checkbox" name="1" value="A">
+          A 目标代码CODE <br>
+          <input type="checkbox" name="1" value="B">
+          B 符号表TABLE <br>
+          <input type="checkbox" name="1" value="C">
+          C 数据栈S <br>
+          <input type="checkbox" name="1" value="D">
+            D 关键字表WORD<br>
+            <br>
+          2.PL/0语言编译时产生或使用的数据对象有(　　)：<br>
+          <input type="checkbox" name="2" value="A">
+          A 目标代码CODE <br>
+          <input type="checkbox" name="2" value="B">
+          B 符号表TABLE <br>
+          <input type="checkbox" name="2" value="C">
+          C 数据栈S <br>
+          <input type="checkbox" name="2" value="D">
+            D 关键字表WORD<br>
+            <!--czp-mulselect-timu-->
+            <br>
+            <input type=button name=Button2 value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop6.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck1(this.form)" class=pbox>
+        </form> 
+          <form>
+          <b>三、问答题</b><br>
+          <br>
+          <b>问答第1题</b><br>
+          (5分)将文法G[S] 改写为等价的G′[S]，使G′[S]不含左递归和左公共因子。<br>
+          　　G[S]： S→bSAe | bA<br>
+          　　　　　 A→Ab | d <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <b><br>
+          问答第2题</b><br>
+          (10分) 判断下面文法是否为LL(1)文法，若是,请构造相应的LL(1)分析表。<br>
+          　　S→aH <br>
+          　　H→aMd | d <br>
+          　　M→Ab | ε <br>
+          　　A→aM | e <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <b><br>
+          问答第3题</b><br>
+          　　给出与正规式R＝（ab）<sup><font size="-1">*</font></sup>（a|b<sup><font size="-1">*</font></sup>）ba等价的NFA。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <b><br>
+          问答第4题</b><br>
+          将下图的NFA确定化为DFA。<br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr> 
+              <td align="center"><img src="img/pic2_1.gif" width="453" height="116"></td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第5题</b><br>
+          (7分)<br>
+          　　（1）给出下列PL/0示意程序中当程序执行到X过程调用Z过程后（即执行Z过程 体时）的栈式存储分配布局和用Display显示表时Z过程最新活动记录的内容。<br>
+          　　（2）说明Display表和DL（老SP）,RA,TOP及全局Display的作用。 PL/0示意程序为： <br>
+          　　const a=80;<br>
+          　　var b,c;<br>
+          　　procedure X;<br>
+          　　　var d;<br>
+          　　　procedure Z;<br>
+          　　　　var e,g;<br>
+          　　　　begin (* Z *)<br>
+          　　　　　c:=b*a；<br>
+          　　　　end ；(* Z *)<br>
+          　　　begin (* X *)<br>
+          　　　　call Z;<br>
+          　　　end ；(* X *)<br>
+          　　　procedure Y;<br>
+          　　　　var f;<br>
+          　　　　begin (* Y *)<br>
+          　　　　　call X;<br>
+          　　　　end ；(* y *)<br>
+          　　　begin (* main *)<br>
+          　　　　call Y;<br>
+          　　　end. (* main *)<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第6题</b><br>
+          (5分)给出问答第5题PL/0示意程序编译到Y过程体时TABLE表的内容。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第7题</b><br>
+          (10分)某语言的拓广文法G′为：(0) S′→T <br>
+          　　　　　　　　　　　　　　 (1) T →aBd|ε<br>
+          　　　　　　　　　　　　　　 (2) B →Tb|ε <br>
+          证明G不是LR(0)文法而是SLR(1)文法，请给出SLR(1)分析表。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第8题</b><br>
+          (5分)给出文法G[S]的LR(1)项目集规范族中I<sub>0</sub>项目集的全体项目。 <br>
+          G[S]为： S →BD|D<br>
+          　　　　 B →aD|b<br>
+          　　　　 D →B <br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr> 
+              <td valign="top" width="9%">I<sub><font size="-2">0</font></sub>:</td>
+              <td width="91%"><img src="img/pic2_5F2a.gif" width="136" height="120"></td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第9题</b><br>
+          (5分)文法G[M]及其LR分析表如下，请给出对串dbba#的分析过程。<br>
+          G[M]: 1) M →VbA 　　　2) V →d <br>
+          　　　3) V →ε 　　 　4) A →a <br>
+          　　　5) A →Aba 　　　6) A →ε <br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+            <tr> 
+              <td align="center"> 
+                <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                  <tr> 
+                    <td align="center" rowspan="2">name</td>
+                    <td align="center" colspan="4">ACTION</td>
+                    <td align="center" colspan="3">GOTO</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">
+                      <p>b</p>
+                      </td>
+                    <td align="center">d</td>
+                    <td align="center">a</td>
+                    <td align="center">#</td>
+                    <td align="center">M</td>
+                    <td align="center">A</td>
+                    <td align="center">V</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">0</td>
+                    <td align="center">r3 </td>
+                    <td align="center">S3</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">1</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">2</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">1</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">acc</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">2</td>
+                    <td align="center">S4</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">3</td>
+                    <td align="center">r2</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">4</td>
+                    <td align="center">r6</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">S5</td>
+                    <td align="center">r6</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">6</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">5</td>
+                    <td align="center">r4</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">r4</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">6</td>
+                    <td align="center">S7</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">r1</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr> 
+                    <td align="center">7</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">S8</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center">8</td>
+                    <td align="center">r5</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">r5</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <b><br>
+          问答第10题</b><br>
+          （5分）文法G[E]为： E→E+T|T <br>
+          　　　　　　　　　　T→T*F|F <br>
+          　　　　　　　　　　F→(E)|i <br>
+          试给出句型(E+F)*i的短语，简单(直接)短语,句柄和最左素短语。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第11题</b><br>
+          （6分）按指定类型给出下列语言的文法。<br>
+          (1)L<sub>1</sub>={ a<sup>n</sup>b<sup>m</sup> c| n≥0,m>0 } 用正规文法。<br>
+          (2) L<sub>2</sub>={ a0<sup>n</sup>1<sup>n</sup> bd<sup>m</sup> | n>0，m 
+          >0} 用二型文法。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+          <br>
+          <b>问答第12题</b><br>
+          （6分）试对 if (ad) then s:=e else s:=f 的四元式序列给出第四区段应回填的指令地址，并指出真假出口链和链头及回填的次序。 
+          <br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>应回填的值</td>
+              <td>回填的次序</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>(1)</td>
+              <td>if a&lt;b goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>真链头 E.true= </td>
+            </tr>
+            <tr>
+              <td>(2)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>真出口链( 　 )</td>
+            </tr>
+            <tr>
+              <td>(3)</td>
+              <td>if a&gt;d goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>(4)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>假链头 E.false= </td>
+            </tr>
+            <tr>
+              <td>(5)</td>
+              <td>s:=e</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>假出口链( 　 )</td>
+            </tr>
+            <tr>
+              <td>(6)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>(7)</td>
+              <td> s:=f</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>(8)</td>
+              <td>...</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <!--czp-wenda-timu-->
+          <br>
+          <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+          <input type='reset' name='Submit3' value='重置' class=pbox>
+          
+          </form></td>
+  </tr>
+</table></center>
+
+</body>
+</html>

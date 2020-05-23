@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td>练习</td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若有文法G4的产生式为：<br>
+            　　(1) S→Ap|Bq<br>
+            　　(2) A→aAp|d<br>
+            　　(3) B→aBq|e<br>
+            　　用(2)、(3)产生式的右部替换(1)中产生式的A、B使文法变为：<br>
+            　　(1) S→aApp|aBqq<br>
+            　　(2) S→dp|eq<br>
+            　　(3) A→aAp|d<br>
+            　　(4) B→aBq|e<br>
+            　　对(1)提取左公共因子则得：<br>
+            　　S→a(App|Bqq)<br>
+            　　再引入新非终符S′结果得等价文法为：<br>
+            　　(1) S→aS′<br>
+            　　(2) S→dp|eq<br>
+            　　(3) S′→App|Bqq<br>
+            　　(4) A→aAp|d<br>
+            　　(5) B→aBq|e<br>
+            　　同样分别用(4)、(5)产生式的右部替换(3)中右部的A、B再提取左公共因子最后结果得：<br>
+            　　(1) S→aS′<br>
+            　　(2) S→dp|eq<br>
+            　　(3) S′→aS″<br>
+            　　(4) S′→dpp|eqq<br>
+            　　(5) S″→Appp|Bqqq<br>
+            　　(6) A→aAp|d<br>
+            　　(7) B→aBq|e<br>
+            　　可以看出若对(5)中产生式A、B继续用(6)、(7)产生式的右部替换，只能使文法的产生式愈来愈多无限增加下去，但不能得到提取左公共因子的预期结果。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

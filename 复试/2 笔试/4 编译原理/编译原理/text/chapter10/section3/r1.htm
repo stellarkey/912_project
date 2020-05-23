@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　如图10.19的过程exchangel既使用了非局部量数组ａ，又使用了形式参数(简称形参)i和j，将a[i]和a[j]的值进行交换。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 10.19 带有非局部变量和形参的PASCAL过程 
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top">　　(1) procedure exchangel(i，j: integer);<br>
+            　　　　　//过程exchangel的头，带有形式参数i ， j<br>
+            　　(2)　var x: integer;<br>
+            　　(3) 　begin;<br>
+            　　(4)　　　x∶=a[i]; a[i]∶=a[j]; a[j ]∶ =x<br>
+            　　　　　　　//数组a是非局部变量<br>
+            　　(5)　 end;</td>
+        </tr>
+      </table>
+      　　语句exchangel(m，n);表示了对图10.19中过程exchangel的一次调用，其中m，n为实在参数，简称实参。我们所讨论的问题是，为执行exchangel(m，n)，形参i，j应按何种方式同实参m，n相联，换句话说，如何把实在参数传递给相应的形式参数呢？有几种形实参对应的方法，分别称作值调用，地址（引用）调用，名字调用以及宏扩展。也就是说，参数传递的几种不同途径是传值，传地址，传名及宏扩展等等。<br>
+      　　知道一个语言使用的参数传递的方法非常重要，因为一个程序的结果依赖于所使用的方法。观察图10.20的PASCAL程序。我们知道该程序的输出是a=2，b=1如果将第3行的关键字var去掉，则该程序的输出是a=1，b=2。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

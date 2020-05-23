@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　若对文法G′的产生式编号如下：<br>
+      　　(0) S′→E 　　　　(4) A→d<br>
+      　　(1) E→aA　　　　　(5) B→cB<br>
+      　　(2) E→bB 　　　　 (6) B→d<br>
+      　　(3) A→cA<br>
+      　　请学员按上述算法构造这个文法的LR(0)分析表。 <br>
+      　　参考答案如表7.3所示：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.3 LR(0)分析表</font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">&nbsp;</td>
+                <td align="center" colspan="5">ACTION</td>
+                <td align="center" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">a</td>
+                <td align="center" valign="top">b</td>
+                <td align="center" valign="top">c</td>
+                <td align="center" valign="top">d</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">E</td>
+                <td align="center" valign="top">A</td>
+                <td align="center" valign="top">B</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                </td>
+                <td align="center" valign="top">S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r2<br>
+                  r3<br>
+                  r5<br>
+                  r4<br>
+                  r6</td>
+                <td align="center" valign="top">S3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r2<br>
+                  r3<br>
+                  r5<br>
+                  r4<br>
+                  r6</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font> <br>
+                  S4<br>
+                  S5<br>
+                  S4<br>
+                  S5<br>
+                  r1<br>
+                  r2<br>
+                  r3<br>
+                  r5<br>
+                  r4<br>
+                  r6</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font> <br>
+                  S10<br>
+                  S11<br>
+                  S10<br>
+                  S11<br>
+                  r1<br>
+                  r2<br>
+                  r3<br>
+                  r5<br>
+                  r4<br>
+                  r6</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r2<br>
+                  r3<br>
+                  r5<br>
+                  r4<br>
+                  r6</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  8</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  7 <br>
+                  <font color="#FFFFFF">.</font><br>
+                  9 </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <b>结论: </b>LR(0)文法是无二义的。若G是LR(0)文法,也是 SLR(1)、LR(1)、LALR(1)文法。 </td>
+  </tr>
+</table>
+</body>
+</html>

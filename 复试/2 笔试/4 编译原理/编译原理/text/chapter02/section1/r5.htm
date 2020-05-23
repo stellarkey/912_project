@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>目标指令有8条：</b><br>
+      　　① LIT：将常量值取到运行栈顶。a域为常数值。<br>
+      　　② LOD：将变量放到栈顶。a域为变量在所说明层中的相对位置,l为调用层<br>
+      　　与说明层的层差值。<br>
+      　　③ STO：将栈顶的内容送入某变量单元中。a,l域的含意同LOD指令。<br>
+      　　④ CAL：调用过程的指令。a为被调用过程的目标程序入口地址，l为层差。<br>
+      　　⑤ INT：为被调用的过程(或主程序)在运行栈中开辟数据区。a域为开辟的单元个数。<br>
+      　　⑥ JMP：无条件转移指令，a为转向地址。<br>
+      　　⑦ JPC：条件转移指令，当栈顶的布尔值为非真时，转向a域的地址，否则顺序执行。<br>
+      　　⑧ OPR：关系运算和算术运算指令。将栈顶和次栈顶的内容进行运算，结果存放在次栈顶，此外还可以是读写等特殊功能的指令，具体操作由a域值给出。（详见解释执行程序）。<br>
+      <b><br>
+      类pcode代码指令的详细解释（指令功能表） <br>
+      </b>　　认识目标代码类pcode <br>
+      　　目标代码类pcode是一种假想栈式计算机的汇编语言。<br>
+      　　指令格式：<br>
+      <table  width="60%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">f</font></td>
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">l</font></td>
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">a</font></td>
+        </tr>
+      </table>
+      　　f 功能码<br>
+      　　l 层次差 （标识符引用层减去定义层）<br>
+      　　a 根据不同的指令有所区别</td>
+  </tr>
+</table>
+</body>
+</html>

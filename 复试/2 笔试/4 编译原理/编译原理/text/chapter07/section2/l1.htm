@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>7.2 LR(0)分析 </b> <br>
+      　　LR(0)分析表构造的思想和方法是构造其它LR分析表的基础。我们回顾在第6章中曾给出例6.1文法G[S]为：<br>
+      　　(1) S→aAcBe<br>
+      　　(2) A→b<br>
+      　　(3) A→Ab<br>
+      　　(4) B→d<br>
+      　　对输入串abbcde#用自底向上归约的方法进行分析，当归约到第5步时栈中符号串为#aAb，我们采用了产生式(3)进行归约而不是用产生式(2)归约，而在第3步归约时栈中符号串为#ab时却用产生式(2)归约，虽然在第2步和第5步归约前栈顶符号都为b，但归约所用产生式却不同，其原因在于已分析过的部分在栈中的前缀不同，也就是我们在LR分析中引进的状态栈的栈顶状态不同，为了说明这个问题我们先在表7.1中给出例6.1文法G[S]的LR(0)分析表，在表7.2给出对输入串abbcde#的分析过程，并引进一些概念和术语。</td>
+  </tr>
+</table>
+</body>
+</html>

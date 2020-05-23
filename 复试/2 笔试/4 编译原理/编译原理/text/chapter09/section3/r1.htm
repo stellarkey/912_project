@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　第一种： 把属性种类完全相同的那些符号组织在一起，构造出表项是分别为等长的多个符号表。这样组织的最大优点是每个符号表的属性个数和结构完全相同。则表项是等长的，并且表项中的每个属性栏都是有效的，对于单个符号表示来说，这样使得管理方便一致，空间效率高。但这样组织的主要缺点是一个编译程序将同时管理若干个符号表，增加了总体管理的工作量和复杂度。而且对各类符号共同属性的管理必须设置重复的运行机制。使得符号表的管理显得臃肿。<br>
+      　　第二种： 把所有语言中的符号都组织在一张符号表中。组成一张包括了所有属性的庞大的符号表。这样组织方式的最大优点是总体管理非常集中单一，且不同种类符号的共同属性可一致地管理和处理。这样组织所带来的缺点是，由于属性的不同，为完整表达各类符号的全部属性必将出现不等长的表项，以及表项中属性位置的交错重叠的复杂情况，这就极大地增加了符号表管理的复杂度。为使表项等长且实现属性位置的唯一性，可以把所有符号的可能属性作为符号表项属性。这种组织方法可能有助于降低符号表管理复杂性，但对某个具体符号，可能增加了无用的属性空间，从而增加了空间开销。<br>
+      　　假设有下列三类符号及其所需之属性。<br>
+      <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center">第一类符号</td>
+          <td align="center">属性1</td>
+          <td align="center">属性2</td>
+          <td align="center">属性3</td>
+        </tr>
+      </table>
+      <br>
+      <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center">第二类符号</td>
+          <td align="center">属性1</td>
+          <td align="center">属性2</td>
+          <td align="center">属性4</td>
+        </tr>
+      </table>
+      <br>
+      <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center">第三类符号</td>
+          <td align="center">属性2</td>
+          <td align="center">属性5</td>
+          <td align="center">属性6</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

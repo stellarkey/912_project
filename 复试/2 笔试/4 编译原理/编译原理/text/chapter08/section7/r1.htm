@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>简单说明句的翻译<br>
+        　　程序设计语言中最简单的说明句的语法描述为： <br>
+        　　D→integer〈namelist〉|real〈namelist〉<br>
+        　　〈namelise〉→〈namelist〉，id|id<br>
+        　　即使用关键字integer和real定义一串名字的性质。对这种说明句的翻译是指在符号表中登录该名和性质。<br>
+        　　用上述文法来制导翻译(自下而上)存在着这样一个问题，我们只能在把所有的名字都归约成namelist后才能把它们的性质登记进符号表。这意味着namelist必须用一个队列(或栈)来保存所有这些名字。但我们可以把上述的文法改写成：<br>
+        　　D→D<sup><font size="-2">1</font></sup>,id<br>
+        　　　 |integer id<br>
+        　　　 |realid<br>
+        　　这样,就能把所说明的性质及时地告诉每个名字id，或者说，每当读进一个标识符时，就可以把它的性质登记在符号表中，不用把它们集中起来最后再成批登记了。<br>
+        　　现在来定义这些产生式所对应的语义动作，给非终结符D一个语义变量D.ATT，用以记录说明句所引入的名字的性质(int还是real)，使用过程enter(id,A)把名字id和性质A登录在名表中。<br>
+        　　(1) D→integerid {enter(id,int);<br>
+        　　　　　　　　　　　　D.ATT∶=int}<br>
+        　　(2) D→realid {enter(id,real);<br>
+        　　　　　　　　　 　D.ATT∶=real}<br>
+        　　(3) D→D<sup><font size="-2">1</font></sup>,id {enter(id,D<sup><font size="-2">1</font></sup>.ATT);<br>
+        　　　　　　　　　D.ATT∶=D<sup><font size="-2">1</font></sup>.ATT}</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

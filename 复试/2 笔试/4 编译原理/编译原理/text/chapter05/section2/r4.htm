@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　请学员自己用LL（1）文法的定义，证明例5.1～例5.3满足LL(1)文法, 例5.4～例5.6不满足LL(1)文法。<br>
+      　　现给出例5.3和例5.5的证明供学员验证。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td>　　<font color="#0000FF">例5.3</font>的文法G3[S] 为： <br>
+            　　S→aA<br>
+            　　S→d<br>
+            　　A→bAS<br>
+            　　A→ε<br>
+            　　不难看出由定义5.3可得：<br>
+            　　SELECT(S→aA)={a}<br>
+            　　SELECT(S→d)={d}<br>
+            　　SELECT(A→bAS)={b}<br>
+            　　SELECT(A→ε)={a,d,#, }<br>
+            　　所以 SELECT(S→aA)∩SELECT(S→d)={a}∩{d}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+            　　SELECT(A→bAS)∩SELECT(A→ε)={b}∩{a,d,#, }=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+            　　由定义5.4知例5.3文法是LL(1)文法，所以可用确定的自顶向下分析。</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td>　　而对<font color="#0000FF">例5.5</font> 文法G5[S]为：<br>
+            　　S→aAS<br>
+            　　S→b<br>
+            　　A→bA<br>
+            　　A→ε<br>
+            　　则 SELECT(S→aAS)={a}<br>
+            　　SELECT(S→b)={b}<br>
+            　　SELECT(A→bA)={b}<br>
+            　　SELECT(A→ε)={a,b}<br>
+            　　所以 SELECT(S→aAS)∩SELECT(S→b)={a}∩{b}=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+            　　SELECT(A→bA)∩SELECT(A→ε)={b}∩{a,b}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+            　　因此，例5.5文法不是LL(1)文法，因而也就不可能用确定的自顶向下分析。</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

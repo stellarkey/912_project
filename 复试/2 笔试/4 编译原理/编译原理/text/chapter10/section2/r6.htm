@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.17 display作为活动记录的一部分</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_17.gif" width="350" height="315"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr>
+          <td valign="top" align="center">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.18 P1调用P2的两种不同嵌套</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle/p10_18.gif" width="319" height="190"><br>
+            <font color="#0000FF">图 10.18(a)　调用情形一 　　　图 10.18(b)　调用情形二</font> 
+          </td>
+        </tr>
+      </table>
+      　　如果P2是一个真实过程(P2不是形式参数)，那么，P0或者就是P1自身或者既是P1又是P2的直接外层(见图10.18的(a)、(b)两种情形)。不论哪一种情形，只要在进入P2后能够知道P1的display就能知道P0的display，从而可直接构造出P2的display。<br>
+      　　事实上，只需从P1的display中自底而上地取过l<sub><font size="-2">2</font></sub>个单元(l<sub><font size="-2">2</font></sub>为P2的层数)再添上进入P2后新建立的SP值就构成了P2的display。也就是说，在这种情况下，我们只需把P1的display地址作为连接数据之一传送给P2就能够建立P2的display。<br>
+      　　如果P2是形式参数，那么，调用P2意味着调用P2当前相应的实在过程。此时的P0应是这个实在过程的直接外层过程。我们假定P0的display地址可从形式单元P2所指示的地方获得。<br>
+      　　为了能在P2中获得P0的display地址，我们必须在P1调用P2时设法把P1的display地址作为连接数据之一(称为&quot;全局display地址&quot;)传送给P2。于是连接数据变为三项:<br>
+      　　(1) 老SP值；<br>
+      　　(2) 返回地址；<br>
+      　　(3) 全局display地址。<br>
+      　　这样，整个活动记录的组织就如图10.17所示。<br>
+      　　注意，0层过程（主程序）的display只含一项，这一项就是主程序开始工作时所建立的第一个SP值。</td>
+  </tr>
+</table>
+</body>
+</html>

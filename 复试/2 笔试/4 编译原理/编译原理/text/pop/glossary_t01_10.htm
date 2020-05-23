@@ -1,0 +1,143 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<title>词法分析</title>
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+<body lang=ZH-CN class="Normal" bgcolor="#FFFFFF">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+    <tr>
+      
+    <td><b>　<br>
+      1</b><b>．词法分析（Lexical analysis</b><b>或Scanning</b><b>）和词法分析程序（Lexical analyzer</b><b>或Scanner</b><b>）</b> 
+      <br>
+        　　词法分析阶段是编译过程的第一个阶段。这个阶段的任务是从左到右一个字符一个字符地读入源程序，即对构成源程序的字符流进行扫描然后根据构词规则识别单词(也称单词符号或符号)。词法分析程序实现这个任务。词法分析程序可以使用lex等工具自动生成。 
+        <br>
+      <b><br>
+      2．语法分析（Syntax analysis或Parsing）和语法分析程序（Parser）</b> <br>
+        　　语法分析是编译过程的一个逻辑阶段。语法分析的任务是在词法分析的基础上将单词序列组合成各类语法短语，如“程序”，“语句”，“表达式”等等.语法分析程序判断源程序在结构上是否正确.源程序的结构由上下文无关文法描述. 
+        <br>
+      <b><br>
+      3．语义分析（Syntax analysis）</b> <br>
+        　　语义分析是编译过程的一个逻辑阶段. 语义分析的任务是对结构上正确的源程序进行上下文有关性质的审查, 进行类型审查.例如一个C程序片断:<br>
+        　　int arr[2],b;<br>
+        　　b = arr * 10; <br>
+        　　源程序的结构是正确的. <br>
+      　　语义分析将审查类型并报告错误:不能在表达式中使用一个数组变量,赋值语句的右端和左端的类型不匹配. <b><br>
+      <br>
+      4.Lex</b> <br>
+        　　一个词法分析程序的自动生成工具。它输入描述构词规则的一系列正规式,然后构建有穷自动机和这个有穷自动机的一个驱动程序,进而生成一个词法分析程序.<br>
+      <b><br>
+      5.Yacc</b> <br>
+        　　一个语法分析程序的自动生成工具。它接受语言的文法,构造一个LALR(1)分析程序.因为它采用语法制导翻译的思想,还可以接受用C语言描述的语义动作,从而构造一个编译程序.&nbsp; 
+        Yacc 是 Yet another compiler compiler的缩写.<br>
+      <b><br>
+      6．源语言（Source language）和源程序（Source program）</b> <br>
+        　　被编译程序翻译的程序称为源程序,书写该程序的语言称为源语言.<br>
+      <b><br>
+      7．目标语言（Object language or Target language）和目标程序（Object program or Target 
+      program）</b> <br>
+        　　编译程序翻译源程序而得到的结果程序称为目标程序, 书写该程序的语言称为目标语言.<br>
+      <b><br>
+      8．中间语言（中间表示）（Intermediate language(representation)）</b> <br>
+      　　在进行了语法分析和语义分析阶段的工作之后，有的编译程序将源程序变成一种内部表示形式，这种内部表示形式叫做中间语言或中间表示或中间代码。所谓“中间代码”是一种结构简单、含义明确的记号系统，这种记号系统复杂性介于源程序语言和机器语言之间，容易将它翻译成目标代码。另外，还可以在中间代码一级进行与机器无关的优化。<br>
+      <b><br>
+      9．文法（Grammars）</b> <br>
+        　　文法是用于描述语言的语法结构的形式规则。文法G定义为四元组(<sub><img align="absmiddle" 
+src="chb.files/image002.gif" v:shapes="_x0000_i1025"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image004.gif" v:shapes="_x0000_i1026"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image006.gif" v:shapes="_x0000_i1027"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image008.gif" v:shapes="_x0000_i1028"></sub>)。其中<sub><img align="absmiddle" 
+src="chb.files/image009.gif" v:shapes="_x0000_i1029"></sub>为非终结符号(或语法实体，或变量)集；<sub><img align="absmiddle" 
+src="chb.files/image010.gif" v:shapes="_x0000_i1030"></sub>为终结符号集；<sub><img align="absmiddle" 
+src="chb.files/image011.gif" v:shapes="_x0000_i1031"></sub>为产生式(也称规则)的集合；产生式(规则)是形如<sub><img align="absmiddle" 
+src="chb.files/image013.gif" v:shapes="_x0000_i1032"></sub>或 a ::=b 的(a , b)有序对,其中<sub><img align="absmiddle" 
+src="chb.files/image015.gif" v:shapes="_x0000_i1033"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image016.gif" v:shapes="_x0000_i1034"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image017.gif" v:shapes="_x0000_i1035"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image019.gif" v:shapes="_x0000_i1036"></sub>且至少含有一个非终结符，而<sub><img align="absmiddle" 
+src="chb.files/image021.gif" v:shapes="_x0000_i1037"></sub><sub><img align="absmiddle" 
+src="chb.files/image023.gif" v:shapes="_x0000_i1038"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image024.gif" v:shapes="_x0000_i1039"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image025.gif" v:shapes="_x0000_i1040"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image026.gif" v:shapes="_x0000_i1041"></sub>。<sub><img align="absmiddle" 
+src="chb.files/image027.gif" v:shapes="_x0000_i1042"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image028.gif" v:shapes="_x0000_i1043"></sub>和<sub><img align="absmiddle" 
+src="chb.files/image029.gif" v:shapes="_x0000_i1044"></sub>是非空有穷集。<sub><img align="absmiddle" 
+src="chb.files/image030.gif" v:shapes="_x0000_i1045"></sub>称作识别符号或开始符号，它是一个非终结符，至少要在一条规则中作为左部出现。 
+        <br>
+      　　一个文法的例子: G=(<sub><img align="absmiddle"
+src="chb.files/image031.gif" v:shapes="_x0000_i1046"></sub>={A，R},<sub><img align="absmiddle" 
+src="chb.files/image032.gif" v:shapes="_x0000_i1047"></sub>={0,1} ，<sub><img align="absmiddle" 
+src="chb.files/image033.gif" v:shapes="_x0000_i1048"></sub>={A&reg;0R，A&reg;01,R&reg;A1},<sub><img align="absmiddle" 
+src="chb.files/image034.gif" v:shapes="_x0000_i1049"></sub>=A) <b><br>
+      <br>
+      10．文法分类（A hierarchy of Grammars）</b> <br>
+        　　著名语言学家Noam Chomsky定义了四类文法和四种形式语言类，文法的四种类型分别是0型、1型、2型和3型。几类文法的差别在于对产生式施加不同的限制，分别是： 
+        <br>
+        　　0型文法(短语结构文法)(phrase structure grammars)： <br>
+        　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image035.gif" v:shapes="_x0000_i1050"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image036.gif" v:shapes="_x0000_i1051"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image037.gif" v:shapes="_x0000_i1052"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image038.gif" v:shapes="_x0000_i1053"></sub>)，如果它的每个产生式<sub><img align="absmiddle" 
+src="chb.files/image039.gif" v:shapes="_x0000_i1054"></sub>是这样一种结构<sub><img align="absmiddle" 
+src="chb.files/image040.gif" v:shapes="_x0000_i1055"></sub>： (<sub><img align="absmiddle" 
+src="chb.files/image041.gif" v:shapes="_x0000_i1056"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image042.gif" v:shapes="_x0000_i1057"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image043.gif" v:shapes="_x0000_i1058"></sub>　　且至少含有一个非终结符，而<sub><img align="absmiddle" 
+src="chb.files/image044.gif" v:shapes="_x0000_i1059"></sub><sub><img align="absmiddle" 
+src="chb.files/image045.gif" v:shapes="_x0000_i1060"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image046.gif" v:shapes="_x0000_i1061"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image047.gif" v:shapes="_x0000_i1062"></sub>)<sub><img align="absmiddle" 
+src="chb.files/image048.gif" v:shapes="_x0000_i1063"></sub>，则G是一个0型文法。 <br>
+        　　1型文法（上下文有关文法）(context-sensitive grammars)： <br>
+        　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image049.gif" v:shapes="_x0000_i1064"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image050.gif" v:shapes="_x0000_i1065"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image051.gif" v:shapes="_x0000_i1066"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image052.gif" v:shapes="_x0000_i1067"></sub>)为一文法，若<sub><img align="absmiddle" 
+src="chb.files/image053.gif" v:shapes="_x0000_i1068"></sub>中的每一个产生式<sub><img align="absmiddle" 
+src="chb.files/image054.gif" v:shapes="_x0000_i1069"></sub>均满足|<sub><img align="absmiddle" 
+src="chb.files/image056.gif" v:shapes="_x0000_i1070"></sub>，仅仅<sub><img align="absmiddle" 
+src="chb.files/image058.gif" v:shapes="_x0000_i1071"></sub>　　除外，则文法G是1型或上下文有关的。 
+        <br>
+        　　2型文法（上下文无关文法）(context-free grammars)： <br>
+        　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image059.gif" v:shapes="_x0000_i1072"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image060.gif" v:shapes="_x0000_i1073"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image061.gif" v:shapes="_x0000_i1074"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image062.gif" v:shapes="_x0000_i1075"></sub>)，若P中的每一个产生式<sub><img align="absmiddle" 
+src="chb.files/image063.gif" v:shapes="_x0000_i1076"></sub>满足：<sub><img align="absmiddle" 
+src="chb.files/image065.gif" v:shapes="_x0000_i1077"></sub>是一非终结符，<sub><img align="absmiddle" 
+src="chb.files/image066.gif" v:shapes="_x0000_i1078"></sub><sub><img align="absmiddle" 
+src="chb.files/image067.gif" v:shapes="_x0000_i1079"></sub>(<sub><img align="absmiddle" 
+src="chb.files/image068.gif" v:shapes="_x0000_i1080"></sub>∪<sub><img align="absmiddle" 
+src="chb.files/image069.gif" v:shapes="_x0000_i1081"></sub>)<sub><img align="absmiddle"
+src="chb.files/image070.gif" v:shapes="_x0000_i1082"></sub>　　则此文法称为2型的或上下文无关的。 
+        <br>
+        　　3型文法（正规文法）(<b>regular grammars</b>)： <br>
+        　　设G=(<sub><img align="absmiddle" 
+src="chb.files/image071.gif" v:shapes="_x0000_i1083"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image072.gif" v:shapes="_x0000_i1084"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image073.gif" v:shapes="_x0000_i1085"></sub>，<sub><img align="absmiddle" 
+src="chb.files/image074.gif" v:shapes="_x0000_i1086"></sub>)，若<sub><img align="absmiddle" 
+src="chb.files/image075.gif" v:shapes="_x0000_i1087"></sub>中的每一个产生式的形式都是A→aB或A→a，其中A和B都是非终结符，a是终结符，则G是3型文法或正规文法。 
+        <br>
+        　　0型文法产生的语言称为0型语言。 <br>
+        　　1型文法产生的语言称为1型语言，也称作上下文有关语言。 <br>
+        　　2型文法产生的语言称为2型语言，也称作上下文无关语言。 <br>
+      　　3型文法产生的语言称为3型语言，也称作正规语言。 <br>
+      　</td>
+    </tr>
+  </table>
+  
+</body></html>

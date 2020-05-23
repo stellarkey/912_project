@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在上面记录第1，2类符号的符号表中，可对不同符号所要求的不同属性值域，采用多态方式的合并，得到图9-5所示。对第一类符号来说，其中的《属性值4》栏是冗余的，而对第二类符号来说，则《属性值3》栏是冗余的。对于这样的情况我们可以把《属性值3》和《属性值4》二栏合并用《属性值34》来替换，在C语言中可用UNION来实现。当该表项符号是属第一类时，《属性值34》中收集的是&quot;属性值3&quot;的值；若表项的符号是第二类符号时，《属性值34》中收集的是&quot;属性值4&quot;的值。这样的组织结构会增加符号表管理和运行的复杂性，但减少了空间开销。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.5属性复合组织的符号表</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p9_5.gif" width="367" height="135"></td>
+        </tr>
+      </table>
+      　　从上述讨论可看到，为便于符号表的组织管理，每一张符号表的表长通常为定长是合理的。即每张符号表可看成是一个多元组，每个元组由若干个成员（属性）组成，元组之间有相同的成员个数和一致的排列。元组之间的区分必须是表项中唯一标识该项的栏，这在符号表中就是&quot;符号&quot;这一栏，也就是表的&quot;关键字栏&quot;。对于变量、函数及过程来说，它们的&quot;标识符&quot;就是作为它们记录在表中的关键字（即&quot;符号&quot;）。对于语言的&quot;保留字&quot;来说，它本身就作为表项中的关键字。对于语言的操作符（包括拼写操作等，如乘幂 
+      **）来说，它的字符或字符串就作为该操作符表项的关键字。</td>
+  </tr>
+</table>
+</body>
+</html>

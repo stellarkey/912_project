@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 8.4 语法制导方法计算表达式</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p8_4.gif" width="353" height="300"></td>
+        </tr>
+      </table>
+      　　这里再给出一种翻译模式，也是把中缀形式的算术表达式映射到后缀波兰表示：<br>
+      　　E→ T + E 　{ E=TE+ }<br>
+      　　E→ T 　　　{ E=T }<br>
+      　　T→ F * T 　{ T=FT * }<br>
+      　　T→ F　　　 { T =F }<br>
+      　　F→(E) 　　 { F = E }<br>
+      　　F→ a 　　　{ F = a }<br>
+      　　句子a+a*a 的一个推导过程：<br>
+      　　E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      T+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      F+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+T<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+F<sup><font size="-2">*</font></sup>T<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+a<sup><font size="-2">*</font></sup>T<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+a<sup><font size="-2">*</font></sup>F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      a+a<sup><font size="-2">*</font></sup>a<br>
+      　　伴随着句子a+a<sup><font size="-2">*</font></sup>a的这个推导过程,按照上述翻译模式所进行的一步步翻译：<br>
+      　　E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      TE+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      FE+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aE+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aT+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aFT<sup><font size="-2">*</font></sup>+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aaT<sup><font size="-2">*</font></sup>+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aaF<sup><font size="-2">*</font></sup>+<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      aaa<sup><font size="-2">*</font></sup>+<br>
+      　　语法制导翻译的具体实现途径不困难。假定有一个LR语法分析器，现在把它的分析栈扩充，使得每个文法符号都跟有语义值，即把栈的结构看成图8.5所示那样。</td>
+  </tr>
+</table>
+</body>
+</html>

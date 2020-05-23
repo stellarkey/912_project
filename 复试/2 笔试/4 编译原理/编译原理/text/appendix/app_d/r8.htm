@@ -1,0 +1,103 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 生成一项名字表 */<br>
+      　　void enter(enum object k, /* 名字种类const,var or procedure */<br>
+      　　int* ptx, /* 名字表尾指针的指针，为了可以改变名字表尾指针的值，以后所有的ptx都是这样 */<br>
+      　　int lev, /* 名字所在的层次,，以后所有的lev都是这样 */<br>
+      　　int* pdx /* dx为当前应分配的变量的相对地址，分配后要增加1，所以使用指针，以后所有的pdx都是这样 */<br>
+      　　)<br>
+      　　{<br>
+      　　　(*ptx)++;<br>
+      　　　strcpy(table[(*ptx)].name,id); /* 全局变量id中已存有当前名字的名字 */<br>
+      　　　table[(*ptx)].kind=k; <br>
+      　　　switch(k)<br>
+      　　　{<br>
+      　　　　case constant: /* 常量名字 */<br>
+      　　　　if(num&gt;amax)<br>
+      　　　　{<br>
+      　　　　　error(31); /* 数值越界 */<br>
+      　　　　　num=0;<br>
+      　　　　}<br>
+      　　　　table[(*ptx)].val=num;<br>
+      　　　　break;<br>
+      　　case variable: /* 变量名字 */<br>
+      　　　　table[(*ptx)].level=lev;<br>
+      　　　　table[(*ptx)].adr=(*pdx);<br>
+      　　　　(*pdx)++;<br>
+      　　　　break;<br>
+      　　case procedur: /*　过程名字　*/<br>
+      　　　　table[(*ptx)].level=lev;<br>
+      　　　　break;<br>
+      　　}<br>
+      　} 
+      <p>　　/* 查找名字的位置 */<br>
+        　　/* 找到则返回在名字表中的位置，否则返回0 */<br>
+        　　int postion(char* idt, /* 要查找的名字 */<br>
+        　　int tx /* 当前名字表尾指针 */<br>
+        　　)<br>
+        　　{<br>
+        　　　int i;<br>
+        　　　strcpy(table[0].name,idt);<br>
+        　　　i=tx;<br>
+        　　　while(strcmp(table[i].name,idt)!=0)i--;<br>
+        　　　return i;<br>
+        　　}</p>
+      <p>　　/* 常量声明处理 */<br>
+        　　int constdeclaration(int* ptx,<br>
+        　　int lev,<br>
+        　　int* pdx)<br>
+        　　{<br>
+        　　　if(sym==ident)<br>
+        　　　{<br>
+        　　　　getsymdo;<br>
+        　　　　if(sym==eql||sym==becomes)<br>
+        　　　　{<br>
+        　　　　　if(sym==becomes)error(1); /* 把=写成了:= */<br>
+        　　　　　getsymdo;<br>
+        　　　　　if(sym==number)<br>
+        　　　　　{<br>
+        　　　　　　enter(constant,ptx,lev,pdx);<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}<br>
+        　　　　　else error(2); /* 常量说明=后应是数字 */<br>
+        　　　　}<br>
+        　　　　else error(3); /* 常量说明标识后应是= */<br>
+        　　　}<br>
+        　　　else error(4); /* const后应是标识 */<br>
+        　　　return 0;<br>
+        　　}</p>
+      <p>　　/* 变量声明处理 */<br>
+        　　int vardeclaration(int* ptx,int lev,int* pdx)<br>
+        　　{<br>
+        　　　if(sym==ident)<br>
+        　　　{<br>
+        　　　　enter(variable,ptx,lev,pdx); /* 填写名字表 */<br>
+        　　　　getsymdo;<br>
+        　　　}<br>
+        　　　else error(4); /* var后应是标识 */<br>
+        　　　return 0;<br>
+        　　}<br>
+        　</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　例 : A + B * ( C - D ) + E / ( C - D ) ^N<br>
+        　　^ 四元式：<br>
+        　　（1）（ - C　D　T1）<br>
+        　　（2）（*　B　T1　T2）<br>
+        　　（3）（+　A　T2　T3）<br>
+        　　（4）（－　C　D　T4）<br>
+        　　（5）（^　T4　N　T5）<br>
+        　　（6）（/　E　T5　T6）<br>
+        　　（7）（+　T3　T6　T7）<br>
+        　　三元式：<br>
+        　　（1）（－　C　D）<br>
+        　　（2）（*　B　（1））<br>
+        　　（3）（+　A　（2））<br>
+        　　（4）（－　C　D）<br>
+        　　（5）（^　（4）　N）<br>
+        　　（6）（/　E　（5））<br>
+        　　（7）（+　（3）　（6））<br>
+        　　间接三元式：间接三元式序列　　　　　　　　　　<br>
+        　　（1）（－　C　D）<br>
+        　　（2）（*　B　（1））<br>
+        　　（3）（+　A　（2））<br>
+        　　（4）（　　（1）　N）<br>
+        　　（5）（/　E　（4））<br>
+        　　（6）（+　（3）　（5））<br>
+        　　间接码表<br>
+        　　（1）<br>
+        　　（2）<br>
+        　　（3）<br>
+        　　（1）<br>
+        　　（4）<br>
+        　　（5）<br>
+        　　（6）<br>
+        　　间接码表表面了执行间接三元式的顺序 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

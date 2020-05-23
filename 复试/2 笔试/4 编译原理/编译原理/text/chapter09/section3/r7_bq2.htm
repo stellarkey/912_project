@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　（3）对于第9.2节的⑤中提到符号变量存储分配时，每个变量的存储分配具有两个属性信息，即存储类别和相对存储区头的位移量。存储类别域可与数据类型一样构造，而位移量是用相对存储区头的字节数表示的，因此可以用整型量构造位移量的属性域。<br>
+      　　（4）有一些是表示符号之间关系的属性，可用指针或指针链来构造这些属性域。如函数符号与它的形参符号之间就需要建立关系，可以在符号表中设置一个&quot;函数-形参&quot;指针域。对函数符号在该属性域中存放指向该函数第一个形参的符号所在符号表中位置的指针，而对形式参数符号在该属性域中存放指向它的下一个形式参数符号所在符号表中的位置的指针。若一个函数是无参的，则该参数符号项中&quot;函数形参&quot;指针域值为&quot;空&quot;，若某个形式参数是它所属函数的最后一个形式参数，则该形参符号项中&quot;函数形参&quot;指针域值亦为&quot;空&quot;。举例如下：有函数<br>
+      　　func1 (para1, para2, para3)<br>
+      　　func2 ()<br>
+      在符号表中得到如图9.11的表示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF">图 9.11 函数形参链属性表达</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_11.gif" width="365" height="390"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

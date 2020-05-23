@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　因为若文法中有左递归则会出现下列情况： <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例5.12</font></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　文法G5含有直接左递归：<br>
+            　　S→Sa<br>
+            　　S→b<br>
+            　　所能产生的语言L=｛ba<sup><font size="-2">n</font></sup>|n≥0｝，对输入串baaaa#是该语言的句子，但用自顶向下分析时可看出当输入符为b时，为与b匹配则应选用S→b来推导，但这样就推不出后边部分，而若用S→Sa推导则出现图5.6的情况，无法确定到什么时候才用S→b替换。另一方面，用递归子程序法时，在处理S的过程中，没有对当前输入符号匹配就又进入递归调用处理S的过程，这样就会造成死循环。<br>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+              <tr> 
+                <td valign="top" align="center"><font color="#0000FF"> 图 5.6 含直接左递归文法的语法分析树结构</font></td>
+              </tr>
+              <tr> 
+                <td align="center"><img src="../../../img/totle/p5_6%20copy.gif" width="153" height="237"></td>
+              </tr>
+            </table>
+            　　对含有间接左递归的文法同样可有上述现象。<br>
+            　　含有间接左递归的文法例5.13 有文法G6为：<br>
+            　　(1) A→aB<br>
+            　　(2) A→Bb<br>
+            　　(3) B→Ac<br>
+            　　(4) B→d<br>
+            　　若有输入串为adbcbcbc#，则分析过程的语法树为图5.7(a)。</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图5.7 含间接左递归文法的语法分析树</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle/p5_7%20copy.gif" width="242" height="337"></td>
+        </tr>
+      </table>
+      　　这时B若用产生式(4)替换，则推导到此终止，不能推出adbcbcbc#，而若选用(3)则有图5.7(b)。<br>
+      　　而自左向右分析法在没有与当前输入符号匹配又进入A陷入死循环那么只能用带回溯的不确定分析方法。</td>
+  </tr>
+</table>
+</body>
+</html>

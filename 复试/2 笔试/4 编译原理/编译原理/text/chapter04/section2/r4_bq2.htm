@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　 我们归纳一下,该文法产生句子的一般过程：若使用产生式(1)n-1次，得到推导序列：S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n-1</font></sup>S(BE)<sup><font size="-2">n-1</font></sup>，然后使用产生式(2)一次，得到：S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n</font></sup>(BE)<sup><font size="-2">n</font></sup>。然后从a<sup><font size="-2">n</font></sup>(BE)<sup><font size="-2">n</font></sup>继续推导，总是对EB使用产生式(3)的右部进行替换，而最终在得到的串中，所有的B都先于所有的E，即得到：S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n</font></sup>B<sup><font size="-2">n</font></sup>E<sup><font size="-2">n</font></sup><br>
+      　　接着，使用产生式(4)一次，得到S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n</font></sup>bB<sup><font size="-2">n-1</font></sup>E<sup><font size="-2">n</font></sup>，然后使用产生式(5)n-1次得到：<br>
+      　　S <img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n</font></sup>b<sup><font size="-2">n</font></sup>E<sup><font size="-2">n</font></sup>，最后使用产生式(6)一次，使用产生式(7)n-1次，得到：S 
+      <img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">a<sup><font size="-2">n</font></sup>b<sup><font size="-2">n</font></sup>e<sup><font size="-2">n</font></sup><br>
+      　　我们也能证明，对于n≥1，串a<sup><font size="-2">n</font></sup>b<sup><font size="-2">n</font></sup>e<sup><font size="-2">n</font></sup>是唯一形式的终结符号串。在从S开始的任何推导中，在未使用产生式(2)之前，是不能使用产生式(4)、(5)、(6)或(7)的，因为从(4)到(7)的每一个产生式的左端都要求B或者E的左边直接有个终结符。使用产生式(2)之前，所有的句型都是由多个a跟以一个S，然后跟以与a同样多个B和E组成。使用产生式(2)之后，对于n≥1，句型就由n个a，后面跟某种次序的n个B和n个E组成，因为没有S出现在句型中了，所以以后的推导中不可再使用产生式(1)和(2)了。从S推导出的串的特点都是全部终结符后面是全部非终结符。在使用产生式(3)到(7)中任何一个之后，推导出的串仍具有这种特点。而产生式(4)到(7)只能在终结符和非终结符的边界上使用，它们的作用是把一个B变为b或把一个E变为e。产生式(3)的使用可把B移到左边，把E移到右边。为得到终结符号串，在任何E被转换成e之前，所有的B都必须在终结符和非终结符接口处被转换为b。否则假设在所有的B转换到b之前，把一个E转换到e。这时推导出的串可表示为a<sup><font size="-2">n</font></sup>b<sup><font size="-2">i</font></sup>eα，其中i＜n，α是由B和E组成的串，接着进行推导时，只有产生式(3)和(7)可以使用；(3)用在非终结符中，(3)只能重新安排α中的B和E，但却不能删除任何B，产生式(7)用于终结符和非终结符间的交换处，能把E转换为e，但最后一个B是最左非终结符。没有产生式能改变这个B。即永远无法推导出终结符号串，因此所做的假设是不成立的，结论只能是在任何E被转换为e之前，所有的B都必须在终结符和非终结符之间的接口处转换成b，后面的推导都是在形为a<sup><font size="-2">n</font></sup>B<sup><font size="-2">n</font></sup>E<sup><font size="-2">n</font></sup>的串上继续，即a<sup><font size="-2">n</font></sup>b<sup><font size="-2">n</font></sup>e<sup><font size="-2">n</font></sup>是仅可能推导出的串。<br>
+      　　因此L(G)=｛a<sup><font size="-2">n</font></sup>b<sup><font size="-2">n</font></sup>e<sup><font size="-2">n</font></sup>|n≥1｝。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

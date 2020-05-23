@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>12.3.3 代码生成算法</b> <br>
+      　　为了在代码生成中能有效地分配寄存器，还需随时掌握各寄存器的使用情况。用一个数组RVALUE来描述(记录)每个寄存器当前的状况，是处于空闲状态还是被某个或某几个变量占用；用寄存器R<sub>i</sub>的编号值作为数组RVALUE的下标，其数组元素值为变量名（当变量被复写时，则一个寄存器的值可表示多个变量的值）；用数组AVALUE[M]表示变量的存放情况。因此一个变量的值可能存放在寄存器中或存放在内存中，也可能既在寄存器中又在内存中。<br>
+      　　综上所述一个变量的值表示可能有：<br>
+      　　RVALUE[R<sub><font size="-1">i</font></sub>]={A,C}表示R<sub><font size="-1">i</font></sub>的现行值是变量A，C的值<br>
+      　　AVALUE[A]={A}表示A的值在内存中<br>
+      　　AVALUE[A]={R<sub><font size="-1">i</font></sub>,A}表示A的值既在寄存器R<sub><font size="-1">i</font></sub>中又在内存中<br>
+      　　AVALUE[A]={R<sub><font size="-1">i</font></sub>}表示变量A的值在寄存器R<sub><font size="-1">i</font></sub>中 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　前面讲过，过程活动记录中有形式单元，形式单元与活动记录起点之间的距离是确定的。因此对于par T<sub>i</sub>(i=1,2,…,n)的处理是：根据par 
+      T<sub>i</sub>(i=1,2,…,n)中T<sub>i</sub>的种别而生成传送指令，或将参数的值或将参数的地址传送至新的过程的活动记录的形式单元中。<br>
+      　　对于call p,n则应生成传送参数个数n的指令；保护现行SP至新过程的活动记录（老SP）；转子，转向P的第一条指令；定义新SP；保护返回地址；定义新值；填写display或存取链内容等指令。<br>
+      　　如果过程含动态数组（局部），则应生成对数组进行存储分配的指令，即生成运行时动态地建立内情向量和分配数组空间的目标指令（内情向量表区已分配在过程活动记录中）。这些指令主要完成计算各维的上下界，计算并填好内情向量的所有信息，计算所需的数组空间，然后在TOP所指的位置之上留出数组所需空间，将TOP调整为指向数组区的顶端。<br>
+      　　在过程执行语句的工作过程中，凡引用形参、局部变量或数组元素都可根据过程活动记录起点的相对位置访问。<br>
+      　　当过程P工作完毕要返回到调用段时，若语言有形如return（E）的返回语句，或P是个函数过程时，则可把已算好的值传送至某个特定的寄存器中，调用段将从这个特定的寄存器中获得被调过程的结果值。然后所生成的目标指令则应完成的工作是：恢复SP；恢复TOP，按保存的返回地址实行无条件转移。</td>
+  </tr>
+</table>
+</body>
+</html>

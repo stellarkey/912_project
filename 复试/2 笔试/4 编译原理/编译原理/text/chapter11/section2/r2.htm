@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　基本块的主要保结构变换是<br>
+      　　① 删除公共子表达式<br>
+      　　② 删除无用代码<br>
+      　　③ 重新命名临时变量<br>
+      　　④ 交换语句次序<br>
+      　　对于删除公共子表达式和删除无用代码这两种优化技术，我们在11.1中已经讨论过，这里简单介绍重新命名临时变量和交换语句次序是什么含义。<br>
+      　　重新命名临时变量：假如有语句t∶=b+c，其中t是临时变量。如果把这个语句改为u∶=b+c，其中u是新的临时变量，并且把这个t的所有引用改成u，那么基本块的运算结果不变。<br>
+      　　交换语句次序： 如果基本块有两个相邻的语句：<br>
+      　　t<sub><font size="-2">1</font></sub>∶=b+c<br>
+      　　t<sub><font size="-2">2</font></sub>∶=x+y<br>
+      　　当且仅当x和y都不是t<sub><font size="-2">1</font></sub>，b和c都不是t<sub><font size="-2">2</font></sub>时，我们可以交换这两个语句的次序。</td>
+  </tr>
+</table>
+</body>
+</html>

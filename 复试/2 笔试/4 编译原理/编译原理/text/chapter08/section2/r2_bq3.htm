@@ -1,0 +1,165 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　同时把LR分析器的能力扩大，使它不仅执行语法分析任务，且能在用某个产生式进行归约的同时调用相应的语义子程序，完成在例8.1的属性文法中描述的语义动作。每步工作后的语义值保存在扩充的分析栈里&quot;语义值&quot;栏中。采用的LR分析表见图8.6，其中使用d代替digit。分析和计值2+3*5的过程列在图8.7中。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图8.7 2+3*5的分析和计值过程</font></td>
+        </tr>
+        <tr>
+          <td align="center"> 
+            <table width="98%" border="0" cellspacing="0" cellpadding="0" class=text>
+              <tr> 
+                <td>步骤</td>
+                <td>归约动作</td>
+                <td>状态栈</td>
+                <td>语义栈（值栈）</td>
+                <td>符号栈</td>
+                <td>留余输入串</td>
+              </tr>
+              <tr> 
+                <td>1</td>
+                <td>&nbsp;</td>
+                <td>0</td>
+                <td>-</td>
+                <td>#</td>
+                <td align="right">2+3*5#</td>
+              </tr>
+              <tr> 
+                <td>2</td>
+                <td>&nbsp;</td>
+                <td>05</td>
+                <td>--</td>
+                <td>#2</td>
+                <td align="right">+3*5#</td>
+              </tr>
+              <tr> 
+                <td>3</td>
+                <td>r6</td>
+                <td>03</td>
+                <td>-2</td>
+                <td>#F</td>
+                <td align="right">+3*5#</td>
+              </tr>
+              <tr> 
+                <td>4</td>
+                <td>r4</td>
+                <td>02</td>
+                <td>-2</td>
+                <td>#T</td>
+                <td align="right">+3*5#</td>
+              </tr>
+              <tr> 
+                <td>5</td>
+                <td>r2</td>
+                <td>01</td>
+                <td>-2</td>
+                <td>#E</td>
+                <td align="right">+3*5#</td>
+              </tr>
+              <tr> 
+                <td>6</td>
+                <td>&nbsp;</td>
+                <td>016</td>
+                <td>-2-</td>
+                <td>#E+</td>
+                <td align="right">3*5#</td>
+              </tr>
+              <tr> 
+                <td>7</td>
+                <td>&nbsp;</td>
+                <td>0165</td>
+                <td>-2--</td>
+                <td>#E+3</td>
+                <td align="right">*5#</td>
+              </tr>
+              <tr> 
+                <td>8</td>
+                <td>r6</td>
+                <td>0163</td>
+                <td>-2-3</td>
+                <td>#E+F</td>
+                <td align="right">*5#</td>
+              </tr>
+              <tr> 
+                <td>9</td>
+                <td>r4</td>
+                <td>0169</td>
+                <td>-2-3</td>
+                <td>#E+T</td>
+                <td align="right">*5#</td>
+              </tr>
+              <tr> 
+                <td>10</td>
+                <td>&nbsp;</td>
+                <td>01697</td>
+                <td>-2-3-</td>
+                <td>#E+T·</td>
+                <td align="right">5#</td>
+              </tr>
+              <tr> 
+                <td>11</td>
+                <td>&nbsp;</td>
+                <td>016975</td>
+                <td>-2-3--</td>
+                <td>#E+T·5</td>
+                <td align="right">#</td>
+              </tr>
+              <tr> 
+                <td>12</td>
+                <td>r6</td>
+                <td>01697（10）</td>
+                <td>-2-2-5</td>
+                <td>#E+T·F</td>
+                <td align="right">#</td>
+              </tr>
+              <tr> 
+                <td>13</td>
+                <td>r3</td>
+                <td>0169</td>
+                <td>-2-（15）</td>
+                <td>#E+T</td>
+                <td align="right">#</td>
+              </tr>
+              <tr> 
+                <td>14</td>
+                <td>t1</td>
+                <td>01</td>
+                <td>（17）</td>
+                <td>#E</td>
+                <td align="right">#</td>
+              </tr>
+              <tr> 
+                <td>15</td>
+                <td>接受</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td align="right">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　按照上述实现办法，若把语义子程序改为产生某种中间代码的动作，那么则可在语法分析的制导下，随着分析的进展逐步生成中间代码。</td>
+  </tr>
+</table>
+</body>
+</html>

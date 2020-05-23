@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　若已构造出某文法的LR(1)项目集族C。<br>
+      　　C＝{I<sub><font size="-2">0</font></sub>,I<sub><font size="-2">1</font></sub>,…,I<sub><font size="-2">n</font></sub>}其中Ik的k为分析器的状态，则动作ACTION表和状态转换GOTO表构造方法如下：<br>
+      　　(1) 若项目[A→α·aβ,b]属于I<sub><font size="-2">k</font></sub>，且GO（I<sub><font size="-2">k</font></sub>,a）=I<sub><font size="-2">j</font></sub>，其中a∈V<sub><font size="-2">T</font></sub>,则置ACTION[k,a]=S<sub><font size="-2">j</font></sub>。其S<sub><font size="-2">j</font></sub>的含义是把输入符号a和状态j分别移入文法符号栈和状态栈。<br>
+      　　(2) 若项目[A→α·,a]属于I<sub><font size="-2">k</font></sub>，则置ACTION[k,a]= r<sub><font size="-2">j</font></sub> 
+      其中a∈V<sub><font size="-2">T</font></sub>，r<sub><font size="-2">j</font></sub> 
+      的含义为把当前栈顶符号串α归约为A(即用产生式A→α归约)。j为在文法中对产生式A→α的编号。<br>
+      　　(3) 若项目[S′→S·，#]属于I<sub><font size="-2">k</font></sub>，则置ACTION[k，#]＝&quot;acc&quot;，表示&quot;接受&quot;。<br>
+      　　(4) 若GO(I<sub><font size="-2">k</font></sub>，A)＝I<sub><font size="-2">j</font></sub>，其中A∈V<sub><font size="-2">N</font></sub>，则置GOTO[k,A]＝j。表示转入j状态，置当前文法符号栈顶为A，状态栈顶为j。<br>
+      　　(5) 凡不能用规则(1)~(4)填入分析表中的元素，均置&quot;报错标志&quot;。本教材中用&quot;空白&quot;表示。<br>
+      　　根据上述规则，我们对7.4例中文法的LR(1)项目集族构造其相应的LR(1)分析表如表7.10。<br>
+      　　LR(1)分析表的构造除 (2) 外，其余同LR(0)或SLR(1)。即 若项目[A→α·,a]属于I<sub><font size="-2">k</font></sub>，则置ACTION[k,a]= 
+      r<sub><font size="-2">j</font></sub>。也就是归约时向前查看的符号为向前搜索符。 </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>6.2.1 直观算符优先分析法 </b><br>
+      　　通常在算术表达式求值过程中，运算次序是先乘除后加减，这说明了乘除运算的优先级高于加减运算的优先级，乘除为同一优先级但运算符在前边的先做，这称为左结合，同样加减运算也是如此，这也说明了运算的次序只与运算符有关，而与运算对象无关，因而直观算符优先分析法的关键是对一个给定文法G，人为地规定其算符的优先顺序，即给出优先级别和同一个级别中的结合性质，算符间的优先关系表示规定如下：<br>
+      　　a<img src="../../../img/chap06/symbol01.gif" width="18" height="20">b表示a的优先性低于b。<br>
+      　　a<img src="../../../img/chap06/symbol03.gif" width="18" height="20">b表示a的优先性等于b，即与b相同。<br>
+      　　a<img src="../../../img/chap06/symbol02.gif" width="18" height="20">b表示a的优先性高于b。<br>
+      　　但必须注意，这三个关系和数学中的＜，＝，＞是不同的。当有关系a<img src="../../../img/chap06/symbol02.gif" width="18" height="20">b时，却不一定有关系b<img src="../../../img/chap06/symbol01.gif" width="18" height="20">a，当有关系a<img src="../../../img/chap06/symbol03.gif" width="18" height="20">b时，却不一定有b<img src="../../../img/chap06/symbol03.gif" width="18" height="20">a，例如：通常表达式中运算符的优先关系有+<img src="../../../img/chap06/symbol02.gif" width="18" height="20">-，但没有-<img src="../../../img/chap06/symbol01.gif" width="18" height="20">+，有'('<img src="../../../img/chap06/symbol03.gif" width="18" height="20">')'，但没有')'<img src="../../../img/chap06/symbol03.gif" width="18" height="20">'('。<br>
+      　　下面给出一个表达式的文法为：<br>
+      　　E→E+E|E－E|E*E|E/E|E↑E|(E)|i</td>
+  </tr>
+</table>
+</body>
+</html>

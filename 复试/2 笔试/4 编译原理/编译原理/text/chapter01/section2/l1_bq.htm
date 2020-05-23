@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>词法分析</b><br>
+      　　词法分析阶段是编译过程的第一个阶段。这个阶段的任务是从左到右一个字符一个字符地读入源程序，对构成源程序的字符流进行扫描和分解，从而识别出一个个单词(也称单词符号或符号)。这里所谓的单词是指逻辑上紧密相连的一组字符，这些字符具有集体含义。比如标识符用于表示变量名,是由字母字符开头，后跟字母、数字字符的字符序列组成的一种单词。保留字(关键字或基本字)是一种单词，此外还有算符，界符等等。例如某源程序片断如下：<br>
+      　　begin var sum, first, count: real; sum∶=first+count*10 end.<br>
+      词法分析阶段将构成这段程序的字符组成了如下<b>19个单词序列</b>：<br>
+      　　1. 保留字begin<br>
+      　　2. 保留字var<br>
+      　　3. 标识符sum <br>
+      　　4. 逗号，<br>
+      　　5. 标识符first<br>
+      　　6. 逗号，<br>
+      　　7. 标识符count<br>
+      　　8. 冒号：<br>
+      　　9. 保留字real <br>
+      　　10. 分号；<br>
+      　　11. 标识符sum <br>
+      　　12. 赋值号∶=<br>
+      　　13. 标识符first<br>
+      　　14. 加号+<br>
+      　　15. 标识符count <br>
+      　　16. 乘号*<br>
+      　　17. 整数10<br>
+      　　18. 保留字end<br>
+      　　19. 界符·<br>
+      　　可以看出，五个字符即b，e，g，i和n构成了一个称为保留字的单词begin，两个字符即∶和=构成了表示赋值运算的符号∶=。这些单词间的空格在词法分析阶段都被滤掉了。<br>
+      　　我们知道, 标识符用于表示变量名,可以很方便的使用id1，id2和id3分别表示sum，first和count三个标识符的内部形式，那么经过词法分析后上述程序片断中的赋值语句<br>
+      sum∶=first+count*10则表示为<br>
+      id1∶=id2+id3*10</td>
+  </tr>
+</table>
+</body>
+</html>

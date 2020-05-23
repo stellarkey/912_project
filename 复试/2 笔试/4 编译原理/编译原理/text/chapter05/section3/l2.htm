@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>5.3.2 预测分析方法 </b><br>
+      　　预测分析方法是自顶向下分析的另一种方法，一个预测分析器是由三个部分组成。<br>
+      　　· 预测分析程序(总控程序)<br>
+      　　· 先进后出栈(stack)<br>
+      　　· 预测分析表<br>
+      　　其中只有预测分析表与文法有关，而分析表又可用一个矩阵M(或称二维数组)表示。矩阵的元素M[A，a]中的下标A表示非终结符，a为终结符或句子括号&quot;#&quot;，矩阵元素M[A,a]中的内容为存放着一条关于A的产生式，表明当用非终结符A向下推导时，面临输入符a时，所应采取的候选产生式，当元素内容无产生式时，则表明用A为左部向下推导时遇到了不该出现的符号，因此元素内容为转向出错处理的信息。</td>
+  </tr>
+</table>
+</body>
+</html>

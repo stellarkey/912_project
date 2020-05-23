@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　请你说出error1和error2分别违背了什么语义规则，warning呢？
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　Program p(input,output);<br>
+            　Var rate:real;<br>
+            　procedure initial;<br>
+            　…<br>
+            　position := initial + rate * 60<br>
+            　/* error1 */ /* error2 */ /* warning1 */;</td>
+        </tr>
+      </table>
+      <br>
+      　　现在的程序段只剩下一个警告错误了 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　Program p(input,output);<br>
+            　Var rate:real;<br>
+            　Var initial :real;<br>
+            　Var position :real ;<br>
+            　…<br>
+            　position := initial + rate * 60<br>
+            　…</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

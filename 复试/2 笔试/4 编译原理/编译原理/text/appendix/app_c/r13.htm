@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p><b>C.5.3 词法分析程序</b><br>
+        　　词法分析程序必须由用户提供，其名字必须是yylex，词法分析程序向语法分析程序提供当前输入的单词符号。yylex提供给yyparse的不<br>
+        是终结符本身，而是终结符的编号，即token number，如果当前的终结符有语义值，yylex必须把它赋给yylval。下面是一个词法分析程序例<br>
+        子的一部分：<br>
+        　　yylex () {<br>
+        　　　　　　　extern int yylval;<br>
+        　　　　　　　int c;<br>
+        　　　　　　　…<br>
+        　　　　　　　c=getchar ();<br>
+        　　　　　　　…<br>
+        　　　　　　　switch (c) {<br>
+        　　　　　　　　　　　　　　…<br>
+        　　　　　　　case 0:<br>
+        　　　　　　　case 1:<br>
+        　　　　　　　… <br>
+        　　　　　　　case 9:<br>
+        　　　　　　　　　　　yylval=c-0;<br>
+        　　　　　　　　　　　return (DIGIT);<br>
+        　　　　　　　　　　　…<br>
+        　　　　　　　　　　　}<br>
+        　　　　　　　…<br>
+        上述词法分析程序碰到数字时将与其相应的数值赋给yylval，并返回DIGIT的终结符编号，注意DIGIT代表它的编号(如可以通过宏来定义)。<br>
+        　　用户也可以用LEX为工具编写词法分析程序，如果这样，在YACC源程序的程序段部分就只需要用下面的语句来代替词法分析程序：<br>
+        　　#include &quot;lex.yy.c&quot;<br>
+        　　为了清楚LEX与YACC的关系，我们用图C.2表示LEX与YACC配合使用的情况：
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图 C.2 LEX和YACC</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/index/app_3.gif" width="352" height="130"></td>
+        </tr>
+      </table>
+       　　在UNIX系统中，假设LEX源程序名叫plo.l，YACC源程序名叫plo.y，则从这些源程序得到可用的词法分析程序和语法分析程序依次使用下述三个命令： 
+      <br>
+      　　lex plo.l<br>
+      　　yacc plo.y<br>
+      　　cc y.tab.c -ly -ll <br>
+      第一条命令从LEX源程序plo.l产生词法分析程序，文件名为lex.yy.c.;第二条命令从YACC源程序plo.y产生语法分析程序，文件名为y.tab.c;第三条命令将y.tab.c这个c语言的程序进行编译得到可运行的目标程序。<br>
+      　　第三条命令中的-ll是调用LEX库，-ly是调用YACC库，如果用户在YACC源程序的程序段部分自己提供了main()和yyerror(s)这两个程序，则不必使用-ly。<br>
+      　　另外如果在第二条命令中使用选择项-v，例如<br>
+      　　yacc -v plo.y<br>
+      　　则YACC除产生y.tab.c外，还产生一个名叫y.output的文件，其内容是被处理语言的LR状态转换表，这个文件对检查语法分析器的工作过程很有用。 
+      <br>
+      <b>C.5.4 其它程序段</b><br>
+      　　语义动作部分可能需要使用一些子程序，这些子程序都必须遵守C语言的语法规定，这里不多讲了。</td>
+  </tr>
+</table>
+</body>
+</html>

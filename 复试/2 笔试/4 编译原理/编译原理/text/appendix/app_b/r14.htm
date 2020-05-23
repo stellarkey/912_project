@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　2) 使用开始条件来区分不同上下文<br>
+        　　在LEX源程序中用户可以用名字定义不同的开始条件。当把某个开始条件置于某条识别规则之前时，只有在LEX处于这个开始条件下这条规则才起作用，否则等于没有这条规则。LEX当前所处的开始条件可以随时由用户程序(即LEX动作)改变。<br>
+        　　开始条件由用户在LEX源程序的&quot;辅助定义部分&quot;定义，语法是<br>
+        　　%Start name1 name2 name3…<br>
+        其中Start可以缩写成S或s。开始条件名字的顺序可以任意给出，有很多开始条件时也可以由多个%Start行来定义它们。<br>
+        　　开始条件在识别规则中的使用方法是把它用尖括号括起来放在识别规则的正规式左边：<br>
+        　　&lt;name1&gt; expression<br>
+        　　要进入开始条件如name1，在动作中用语句<br>
+        　　BEGIN name1<br>
+        它将LEX所处的当前开始条件改成name1<br>
+        　　要恢复正常状态，用语句<br>
+        　　BEGIN 0<br>
+        它将LEX恢复到LEX解释器的初始条件。<br>
+        　　一条规则也可以在几个开始条件下都起作用，如<br>
+        　　&lt;name1，name2，name3&gt; rule<br>
+        使rule在三个不同的开始条件下都起作用。要使一条规则在所有开始条件下都起作用，就不在它前面附加任何开始条件。<br>
+        　　例　解决1)中的问题，这次用开始条件，LEX源程序如下：<br>
+        　　%start　　　AA BB CC<br>
+        　　%%<br>
+        　　∧a　　　　{ECHO;BEGIN AA;}<br>
+        　　∧b　　　　{ECHO;BEGIN BB;}<br>
+        　　∧c　　　　{ECHO;BEGIN CC;}<br>
+        　　\n　　　　{ECHO;BEGIN 0;}<br>
+        　　&lt;AA&gt;magic　　　printf(′first′);<br>
+        　　&lt;BB&gt;magic　　　printf(′second′);<br>
+        　　&lt;CC&gt;magic　　　printf(′third′);</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

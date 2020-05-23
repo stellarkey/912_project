@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>
+      <p> 　　本附录给出的是用C语言实现的PL/0编译程序的文本，其中函数和变量名及功能，基本上与附录A中的PASCAL版本相同，只是增加了一个可以输出名字表的选项。<br>
+        　　/* <br>
+        　　Windows 下c语言PL/0编译程序<br>
+        　　在Visual C++ 6.0和Visual C.NET上运行<br>
+        　　使用方法：<br>
+        　　运行后输入PL/0源程序文件名<br>
+        　　回答是否输出虚拟机代码<br>
+        　　回答是否输出名字表<br>
+        　　fa.tmp输出虚拟机代码<br>
+        　　fa1.tmp输出源文件及其各行对应的首地址<br>
+        　　fa2.tmp输出结果<br>
+        　　fas.tmp输出名字表<br>
+        　　*/</p>
+      <p>　　<b>pl0c.h</b><br>
+        　　/* 关键字个数 */<br>
+        　　#define norw 13<br>
+        　　/* 名字表容量 */<br>
+        　　#define txmax 100<br>
+        　　/* 所有的add1用于定义数组 */<br>
+        　　#define txmaxadd1 101<br>
+        　　/* number的最大位数 */<br>
+        　　#define nmax 14<br>
+        　　/* 符号的最大长度 */<br>
+        　　#define al 10<br>
+        　　/* 地址上界 */<br>
+        　　#define amax 2047<br>
+        　　/* 最大允许过程嵌套声明层数 */<br>
+        　　#define levmax 3<br>
+        　　/* 最多的虚拟机代码数 */<br>
+        　　#define cxmax 200<br>
+        　　#define cxmaxadd1 201</p>
+      <p>　　/* 当函数中会发生fatal error时，返回-1告知调用它的函数，最终退出程序 */<br>
+        　　#define getsymdo if(-1==getsym())return -1<br>
+        　　#define getchdo if(-1==getch())return -1<br>
+        　　#define testdo(a,b,c) if(-1==test(a,b,c))return -1<br>
+        　　#define gendo(a,b,c) if(-1==gen(a,b,c))return -1<br>
+        　　#define expressiondo(a,b,c) if(-1==expression(a,b,c))return -1<br>
+        　　#define factordo(a,b,c) if(-1==factor(a,b,c))return -1<br>
+        　　#define termdo(a,b,c) if(-1==term(a,b,c))return -1<br>
+        　　#define conditiondo(a,b,c) if(-1==condition(a,b,c))return -1<br>
+        　　#define statementdo(a,b,c) if(-1==statement(a,b,c))return -1<br>
+        　　#define constdeclarationdo(a,b,c) if(-1==constdeclaration(a,b,c))return 
+        -1<br>
+        　　#define vardeclarationdo(a,b,c) if(-1==vardeclaration(a,b,c))return 
+        -1</p>
+      <p>　　typedef enum {false,true} bool;</p>
+      <p>　　/* 符号 */<br>
+        　　enumsymbol<br>
+        <br>
+        　　{nul,ident,number,plus,minus,times,slash,oddsym,eql,neq,lss,leq,<br>
+        　　　gtr,geq,lparen,rparen,comma,semicolon,period,becomes,beginsym,<br>
+        　　　endsym,ifsym,thensym,whilesym,writesym,readsym,dosym,callsym,<br>
+        　　　constsym,varsym,procsym};<br>
+        <br>
+        　　#define symnum 32</p>
+      <p>　　/* 名字表中的类型 */<br>
+        　　enum object {constant,variable,procedur};</p>
+      <p>　　/* 虚拟机代码 */<br>
+        　　enum fct {lit,opr,lod,sto,cal,inte,jmp,jpc};<br>
+        　　#define fctnum 8</p>
+      <p>　　/* 虚拟机代码结构 */<br>
+        　　struct instruction<br>
+        　　{<br>
+        　　　enum fct f; /* 虚拟机代码指令 */<br>
+        　　　int l; /* 引用层与声明层的层次差 */<br>
+        　　　int a; /* 根据f的不同而不同 */<br>
+        　　};</p>
+      <p>　　FILE* fas; /* 输出名字表 */<br>
+        　　FILE* fa; /* 输出虚拟机代码 */<br>
+        　　FILE* fa1; /* 输出源文件及其各行对应的首地址 */<br>
+        　　FILE* fa2; /* 输出结果 */<br>
+        　　bool listswitch; /* 显示虚拟机代码与否 */<br>
+        　　bool tableswitch; /* 显示名字表与否 */<br>
+        　　char ch; /* 获取字符的缓冲区，getch 使用 */<br>
+        　　enum symbol sym; /* 当前的符号 */<br>
+        　　char id[al]; /* 当前ident */<br>
+        　　int num; /* 当前number */<br>
+        　　int cc,ll,kk; /* getch使用的计数器，cc表示当前字符(ch)的位置 */<br>
+        　　int cx; /* 虚拟机代码指针 */<br>
+        　　char line[81]; /* 读取行缓冲区 */<br>
+        　　char a[al]; /* 临时符号 */<br>
+        　　struct instruction code[cxmaxadd1]; /* 存放虚拟机代码的数组 */<br>
+        　　char word[norw][al]; /* 保留字 */<br>
+        　　enum symbol wsym[norw]; /* 保留字对应的符号值 */<br>
+        　　enum symbol ssym[256]; /* 单字符的符号值 */<br>
+        　　char mnemonic[fctnum][5]; /* 虚拟机代码指令名称 */<br>
+        　　bool declbegsys[symnum]; /* 表示声明开始的符号集合 */<br>
+        　　bool statbegsys[symnum]; /* 表示语句开始的符号集合 */<br>
+        　　bool facbegsys[symnum]; /* 表示因子开始的符号集合 */</p>
+      <p>　　/* 名字表结构 */<br>
+        　　struct tablestruct<br>
+        　　{<br>
+        　　　char name[al]; /* 名字 */<br>
+        　　　enum object kind; /* 类型：const,var or procedure */<br>
+        　　　int val; /* 数值，仅const使用 */<br>
+        　　　int level; /* 所处层，仅const不使用 */<br>
+        　　　int adr; /* 地址，仅const不使用 */<br>
+        　　　int size; /* 需要分配的数据区空间，仅procedure使用 */<br>
+        　　};</p>
+      <p>　　struct tablestruct table[txmaxadd1]; /* 名字表 */</p>
+      <p>　　FILE* fin;<br>
+        　　FILE* fout;<br>
+        　　char fname[al];<br>
+        　　int err; /* 错误计数器 */</p>
+      <p>　　void error(int n); <br>
+        　　int getsym();<br>
+        　　int getch();<br>
+        　　void init();<br>
+        　　int gen(enum fct x,int y,int z);<br>
+        　　int test(bool* s1,bool* s2,int n);<br>
+        　　int inset(int e,bool* s);<br>
+        　　int addset(bool* sr,bool* s1,bool* s2,int n);<br>
+        　　int subset(bool* sr,bool* s1,bool* s2,int n);<br>
+        　　int mulset(bool* sr,bool* s1,bool* s2,int n);<br>
+        　　int block(int lev,int tx,bool* fsys);<br>
+        　　void interpret();<br>
+        　　int factor(bool* fsys,int* ptx,int lev);<br>
+        　　int term(bool* fsys,int* ptx,int lev);<br>
+        　　int condition(bool* fsys,int* ptx,int lev);<br>
+        　　int expression(bool* fsys,int* ptx,int lev);<br>
+        　　int statement(bool* fsys,int* ptx,int lev);<br>
+        　　void listcode(int cx0);<br>
+        　　int vardeclaration(int* ptx,int lev,int* pdx);<br>
+        　　int constdeclaration(int* ptx,int lev,int* pdx);<br>
+        　　int postion(char* idt,int tx);<br>
+        　　void enter(enum object k,int* ptx,int lev,int* pdx);<br>
+        　　int base(int l,int* s,int b);<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

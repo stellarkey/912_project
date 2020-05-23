@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　同心集是指两个项目集它们所含的LR(0)项目相同（即不看搜索符时），而加了搜索符变成不同的LR(1)项目集。这种现象也可以看成是由于LR(1)项目集的构造使某些同心集进行了分裂。<br>
+      　　若文法G′为：<br>
+      　　(0) S′→S (2) B→aB<br>
+      　　(1) S→BB (3) B→b<br>
+      　　它的LR(1)项目集族和转换函数如图7.12，LR(1)分析表如表7.11。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图 7.12 LR(1)项目集和转换函数</font> 
+          </td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap07/f7-4-3.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/f7-4-3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　只要仔细分析该文法的LR(1)每个项目集的项目，不难发现，即使不考查搜索符，它的任何项目集中都没有动作冲突，因此实际上这个文法是LR(0)文法，读者可以自己构造它的LR(0)项目集,可以得知它的LR(0)分析器只含7个状态，而现在LR(1)分析器却含有10个状态，其中I3和I6，I4和I7，I8和I9分别为同心集。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center">
+            <font color="#0000FF">表 7.11 LR(1)分析表</font> </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="3">ACTION</td>
+                <td align="center" valign="top" colspan="2">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">a</td>
+                <td align="center" valign="top">b</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">B</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                </td>
+                <td align="center" valign="top">S3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S6<br>
+                  S3<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top">S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S7<br>
+                  S4<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S7<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top">2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  5<br>
+                  8<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  9</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　如果一个文法的LR(1)分析表不含多重入口时，(或任何一个LR(1)项目集中无移进-归约冲突或归约-归约冲突)则称该文法为LR(1)文法，所构造的相应分析表称为LR(1)分析表，能使用LR(1)分析表的分析器称为LR(1)分析器或称规范的LR分析器。<br>
+      　　<font color="#0000FF">结论:</font> LR(1)文法是无二义的。<br>
+      　　LR(1)项目集的构造对某些同心集的分裂可能使状态数目剧烈的增长。<br>
+      　　一个文法是LR(0)文法一定也是SLR(1)文法，也是LR(1)文法。反之则不一定成立。</td>
+  </tr>
+</table>
+</body>
+</html>

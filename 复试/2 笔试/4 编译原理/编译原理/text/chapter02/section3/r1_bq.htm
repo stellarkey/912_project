@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　词法分析过程图2.5的GETSYM框图对应程序见PL/0编译程序文本中procedure getsym，其中对标识符和关键字（保留字）的识别方式为：<br>
+      当识别到字母开头的字母数字串时，先查关键字表。若查不到则为标识符，查到则为关键字。PL/0编译程序文本中主程序开始对关键字表置初值如下：<br>
+      　　关键字表为：<br>
+      　　word[1]:='begin '；word[2]:='call '；<br>
+      　　...<br>
+      　　word[13]:='write '；<br>
+      　　每个数组元素的字符长度为10，不满10个字符时，以空格补满。<br>
+      　　查到时找到关键字相应的内部表示为：<br>
+      　　Wsym[1]:=beginsym; wsym[2]:=callsym；<br>
+      　　…<br>
+      　　wsym[13]:=writesym；<br>
+      　　PL/0编译程序文本中开始对类型的定义中给出单词定义为：<br>
+      　　type symbol=(nul,ident,number,plus,…,varsym,procsym)；<br>
+      　　定义单词是纯量/枚举类型，又定义了3个全程量为： <br>
+      　　sym:symbol;<br>
+      　　id:alfa;<br>
+      　　num:integer;</td>
+  </tr>
+</table>
+</body>
+</html>

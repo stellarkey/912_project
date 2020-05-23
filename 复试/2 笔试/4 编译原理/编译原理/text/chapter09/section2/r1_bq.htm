@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　② <b>符号的类型</b> 标识符中除过程标识符之外函数和变量标识符都具有数据类型（data type）属性。对于函数的数据类型指的是该函数值的数据类型。基本数据类型有整型、实型、字符型、逻辑型（布尔型）及位组型等，符号的类型属性是在语言程序中该符号的定义中得到。变量符号的类型属性决定了该变量的数据在存储空间的存储格式，还决定了在该变量上可以施加的运算操作。<br>
+      　　例如当一个变量为整型时，通常在存储区中是以一个带有一位符号位的定点字长表示。若变量为实型时，则在存储区中是以2倍或4倍字长的浮点表示。表示形式是<br>
+      　　t*2<sup><font size="-2">n</font></sup><br>
+      其中t是若干位定点尾数表示，而n是若干位的阶码表示。因此变量的类型属性是决定该变量存储空间的尺寸和数据的存储格式。<br>
+      　　随着程序设计语言的发展，语言中变量的类型也得到了扩充，目前大多数语言已定义了在基本数据类型基础上扩充的复合数据类型。 复合数据类型有数组类型、记录结构类型等，它们都是由基本数据类型组合而成的。数组或记录结构中的每个基本元素可以是基本数据类型，也可以是其它任何一种组合式数据类型，构成嵌套式数据类型定义。作为存储变量地址的指针类型所指向的变量同样可以是基本数据类型，也可以是其它任何一种组合式数据类型。定义一个变量的基本数据类型或它的组合类型都是符号表中表示标识符属性的重要信息。符号表中设置一个符号类型域，存放该符号的类型。对复合数据类型，通常还需要设置该类型的扩展成分，以存放复合类型的完整的类型属性。</td>
+  </tr>
+</table>
+</body>
+</html>

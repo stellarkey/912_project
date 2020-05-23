@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如，产生式S→aAcBe对应有6个项目。<br>
+      　　[0]　S→·aAcBe<br>
+      　　[1]　S→a·AcBe<br>
+      　　[2]　S→aA·cBe<br>
+      　　[3]　S→aAc·Be<br>
+      　　[4]　S→aAcB·e<br>
+      　　[5]　S→aAcBe·<br>
+      　　一个产生式可对应的项目个数是它的右部符号长度加1，值得注意的是对空产生式A→ε仅有项目A→·。<br>
+      　　因为ε不是一个实际输入符号,所以它的对应项目为A→·,绝对不能写成A→·ε进而又有A→ε·。<br>
+      每个项目的含义与圆点的位置有关，概括地说，圆点的左部表示分析过程的某时刻用该产生式归约时句柄已识别过的部分，圆点右部表示待识别的部分。 <br>
+      　　例中项目的编号用[]中的数字表示，第[0]个项目意味着希望用S的右部归约，当前输入串中符号应为a；项目[1]表明用该产生式归约已与第一个符号a匹配过了，需分析非终结符A的右部；项目[2]表明A的右部已分析完归约成A，目前希望遇到输入串中的符号为c；以此类推直到项目[5]为S的右部都已分析完毕，则句柄已形成可以进行归约。</td>
+  </tr>
+</table>
+</body>
+</html>

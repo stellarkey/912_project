@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　⑵ <b>动态存储区</b> 根据变量的局部定义和分程序结构，编译程序设置动态存储区来适应这些局部变量的生存和消亡。局部动态变量的生存期是定义该变量的局部范围，即在该定义范围之外此变量已经没存在的必要。及时撤销时这些单元的分配可以回收，从而提高程序运行时的空间效率。<br>
+      　　对变量存储分配的属性除了存储类别之外还要确定其在所在存储区的具体位置的属性信息。通常在符号表中存放具体位置的信息是按该变量的存储区类分别依出现先后的次序（扫描源程序的次序）排列下相对该存储区表头的相对位移量来表示的。<br>
+      　　例如对于外部量（C语言为例）<br>
+      　　…<br>
+      　　int a; // 外部定义的整型变量a<br>
+      　　…<br>
+      　　float b; // 外部定义的实型变量b<br>
+      　　…<br>
+      　　struct cc{ int d; // 外部定义的结构类型cc, cc的第一个结构分量d<br>
+      　　　　　　　 float e; // cc的第二个结构分量t<br>
+      　　　　　　　…<br>
+      　　　　　　　}c; // 外部定义的结构型变量c<br>
+      　　…<br>
+      　　其中a，b，c是三个外部量，d，e是结构分量，则在符号表中，这5个变量项有关存储位置的属性信息将如图9.1。这儿cc是一个结构标记，作为标识符它要登入到符号表中，但它只是一个类型标识符，因此没有地址分配的问题。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.1符号表中变量分配相对位置属性的表示</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_1.gif" width="387" height="355"></td>
+        </tr>
+      </table>
+      　　对于外部量a，b，c依次相对公共静态区头的相对位置分别是0，4，8。这儿虽然a是整形量只需要2个字节，但因为b是实形量，它本身需要4个字节，而且b的地址也必须是4的倍数的字节号。对于c来说它是一个结构变量，其中占最大字节数的结构分量是e，需要4个字节，因此c必须亦是依4的倍数的字节号作为它的地址(根据存储器所遵循的Alignment规则)。<br>
+      　　至于d和e是cc的结构分量，其位置属性由结构c来决定，因此d，e的相对位移量分别是0，4。<br>
+      　　对于局部量来说，上面的原则是相同的，所不同的仅是相对不同的区头。 </td>
+  </tr>
+</table>
+</body>
+</html>

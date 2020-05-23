@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　交叉编译所产生目标机的汇编语言或机器语言在宿主机上是不能运行，只能在目标机上运行，因此，程序调试比较麻烦。<br>
+      <font color="#0000FF">　　</font>现在我们利用A机器上已有的L语言的编译程序使其在B机器上也能实现。<br>
+      　　第1步： 我们用L语言书写L语言的编译程序产生B机器上的汇编语言或机器语言为<img src="../../../img/chap13/pic08.gif" width="20" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，其T型图表示为图13.8。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.8 <img src="../../../img/chap13/pic08.gif" width="20" height="14"> 
+            <img src="../../../img/index/1x1pixel.gif" width="1" height="20">的T型图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_8.gif" width="93" height="53"></td>
+        </tr>
+      </table>
+      　　通常也把这种用某语言自己书写自己的编译程序称做自编译程序。<br>
+      　　第2步： 把<img src="../../../img/chap13/pic08.gif" width="20" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">经过<img src="../../../img/chap13/pic04.gif" width="21" height="14">编译得到<img src="../../../img/chap13/pic10.gif" width="20" height="14">，其T型图<img src="../../../img/index/1x1pixel.gif" width="1" height="20">如图13.9。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td height="26" valign="top" align="center"><font color="#0000FF"> 图 
+            13.9 <img src="../../../img/chap13/pic10.gif" width="20" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20"> 
+            的双层结合T型图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_9.gif" width="226" height="85"></td>
+        </tr>
+      </table>
+      <font color="#0000FF">　　</font>这样在A机器上得到一个用A机器语言书<img src="../../../img/index/1x1pixel.gif" width="1" height="20">写生成B机器目标语言的L语言编译程序<img src="../../../img/index/1x1pixel.gif" width="1" height="20"><font color="#0000FF"><img src="../../../img/chap13/pic10.gif" width="20" height="14"></font>，我们把它称为交叉<img src="../../../img/index/1x1pixel.gif" width="1" height="20">编译程序。<br>
+      　　第3步： 把<font color="#0000FF"><img src="../../../img/chap13/pic08.gif" width="20" height="14"></font>在A机器上经过<font color="#0000FF"><img src="../../../img/chap13/pic10.gif" width="20" height="14"></font><img src="../../../img/index/1x1pixel.gif" width="1" height="20">编译得到<img src="../../../img/chap13/pic11.gif" width="20" height="14">，其T型图如图13.10所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center" height="18"><font color="#0000FF"> 图 
+            13.10 <img src="../../../img/chap13/pic11.gif" width="20" height="14"> 
+            <img src="../../../img/index/1x1pixel.gif" width="1" height="20">的双层结合T型图</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p13_10.gif" width="246" height="92"></td>
+        </tr>
+      </table>
+      　　经过以上3步我们最终在B机器上实现了L语言的编译程序<img src="../../../img/chap13/pic11.gif" width="20" height="14">。<img src="../../../img/index/1x1pixel.gif" width="1" height="20"></td>
+  </tr>
+</table>
+</body>
+</html>

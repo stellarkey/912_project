@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　我们假定要讨论的开关语句的形式为：<br>
+        　　switch E of<br>
+        　　case V<sub><font size="-2">1</font></sub>：S<sub><font size="-2">1</font></sub><br>
+        　　case V<sub><font size="-2">2</font></sub>：S<sub><font size="-2">2</font></sub><br>
+        　　…<br>
+        　　case V<sub><font size="-2">n-1</font></sub>：S<sub><font size="-2">n-1</font></sub><br>
+        　　default：S<sub><font size="-2">n</font></sub><br>
+        　　end<br>
+        　　这里的E是一个表达式，也称为选择子。开关语句是分情形选择机制，在E被计算之后，测试它的值符合哪种case中的值，而执行和该值相关的语句，并做相应的转移。如果E的值不能与任何V<sub><font size="-1">i</font></sub>（1≤i≤n-1）匹配，便执行&quot;default&quot;时的语句。<br>
+        　　直观上看，case语句翻译成如下的一连串条件转移语句。<br>
+        　　t∶=E；<br>
+        　　L<sub><font size="-2">1</font></sub>：if t≠V<sub><font size="-2">1</font></sub> 
+        goto L<sub><font size="-2">2</font></sub>； <br>
+        　　S<sub><font size="-2">1</font></sub>；<br>
+        　　goto next；<br>
+        　　L<sub><font size="-2">2</font></sub>：if t≠V<sub><font size="-2">2</font></sub> 
+        goto L<sub><font size="-2">3</font></sub>；<br>
+        　　S<sub><font size="-2">2</font></sub><br>
+        　　goto next；<br>
+        　　…<br>
+        　　L<sub><font size="-2">n-1</font></sub>：if t≠V<sub><font size="-2">n-1</font></sub> 
+        goto L<sub><font size="-2">n</font></sub>；<br>
+        　　S<sub><font size="-2">n-1</font></sub>；<br>
+        　　goto next；<br>
+        　　L<sub><font size="-2">n</font></sub>：S<sub><font size="-2">n</font></sub>；<br>
+        　　next： 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

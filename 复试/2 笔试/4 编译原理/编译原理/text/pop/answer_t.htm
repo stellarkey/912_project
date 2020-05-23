@@ -1,0 +1,620 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b><a name="top"></a><br>
+      1、<a href="#01" class="text">证明 对任一左线性文法G，若α∈L（G）则α的第一个符号必定是α的句柄。</a><br>
+      <br>
+      2、<a href="#02" class="text">分别给出与图1的 FA等价的正规文法G和正规式r。</a><br>
+      <br>
+      3、<a href="#03" class="text">给出与如下文法G(S) 等价的LL(1) 文法G'(S)。</a><br>
+      <br>
+      4、<a href="#04" class="text">下列算符文法G[S]是二义的，其定义一般程序设计语言的if语句和其他（非if）语句，按照else与最近的then匹配（或者说then和else之间的语句是&quot;匹配&quot;的）的原则，给出一个与G[S]等价的OPG文法G'[S]。</a><br>
+      <br>
+      5、<a href="#05" class="text">使用图2的LR分析表分析d;;a是不是如下文法G[S]的句子，按照LR分析算法给出分析步骤。</a><br>
+      <br>
+      6、<a href="#06" class="text">图3中的程序，过程调用序列为Sort→quiksort→partition→exchange若目标代码运行时的环境采用栈式存储管理方案，描述此时exchange的AR的display表内容。</a><br>
+      <br>
+      7、<a href="#07" class="text">通常可使用一棵称作DOMtree的树表示程序流图中结点间的dominate关系。首结点是根，每个结点n只是它的子孙结点的必经结点，且每个结点只有一个父结点，这个父结点就是从首结点到n的任何路径上的、除它自身外的最后一个必经结点。</a><br>
+      <br>
+      8、<a href="#08" class="text">在PL/0语言编译程序代码生成的实现中，当语法分析到过程体的开始语句时，应当在目标代码CODE()和名字表 
+      TABLE()的相应位置（已经拉链过）回填过程的入口地址，是否只在CODE()中回填就可以？</a><br>
+      <br>
+      9、<a href="#09" class="text">PL/0语言编译程序的实现中，如何保证标识符的作用域？</a><br>
+      <br>
+      10、<a href="#10" class="text">L/0语言编译程序的实现使用了递归子程序法，从PL/0语言也允许过程递归调用从它的实现中可看出，递归子程序法对每个过程可能存在直接或间接递归调用，所以对某个过程在退出之前可能又被调用，因此调用前的某些信息需要保留，通常在入口时需保留某些信息，出口时需恢复。由于递归过程是遵循先进后出规律，所以通常开辟先进后出栈来处理。但是，PL/0语言编译程序的实现是用PASCAL语言编写的，它是如何实现在过程入口时保留某些信息，出口时恢复某些信息的？</a><br>
+      <br>
+      11、<a href="#11" class="text">如果用FORTRAN语言编写PL/0语言的编译程序会与用PASCAL语言编写一样吗？</a></b><br>
+      <b><br>
+      12、<a href="#12" class="text">为什么若Ａ→αB 是一个产生式,或A→αBβ是 一个产生式，而βT<img src="../../img/chap04/symbol01.gif" width="15" height="9" class="text" border="0"><img src="../../img/index/1x1pixel.gif" width="1" height="16" border="0">*ε(即ε∈FIRST(β)），则把FOLLOW（A）加至FOLLOW（B）中？</a></b><br>
+      <b><br>
+      13、<a href="#13" class="text">为什么算符优先分析有可能把不是所给文法的句子也正确归约，而发现不了错误？</a></b><br>
+      <b><br>
+      14、<a href="#14" class="text">在LR分析的项目集中，若含有形如S′→S·项目（S′→S·称接受项目），则该项目集对应的的状态称接受状态。为什么在接受状态中不可能有移进-接受冲突，而可能有接受-归约冲突？</a></b><br>
+      <b><br>
+      15、<a href="#15" class="text">为什么LALR(1)的状态个数与SLR(1)的相同，它们归约时都是向前看一个输入符号，但是LALR(1)比SLR(1)对文法的要求要低？发现错误的时间要早？</a></b> 
+      <br>
+      <b><br>
+      16、<a href="#16" class="text">在LR的一个项目集中可能存在移进项目、归约项目、待约项目和接受项目4种，所以可能会出现移进-归约、归约-归约或归约-接受冲突，但为什么与待约项目无关？</a></b><br>
+      <b><br>
+      17、<a href="#17" class="text">用自展方式在PC机上实现C语言的编译程序，首先把C划分成真包含的子集C1和C2，然后分3步实现 
+      。但是对步骤2和步骤3的双层结合T型图看不明白。</a></b><br>
+      <b><br>
+      18、<a href="#18" class="text">给出下述NFA M的五元组表示，并将其确定化。</a></b><br>
+      <b><br>
+      19、<a href="#19" class="text">构造一个不具有ε-转移的NFA M'，使得L(M')=L(M). </a></b><br>
+      <b><br>
+      20、<a href="#20" class="text">对目标代码运行时的存储空间采用基于过程活动记录的栈式分配方案，举例说明象PASCAL这样的语言如何实现对非局部变量的访问。</a></b><br>
+      <br>
+      <b>21、<a href="#21" class="text">文法G[R]:R→R+R|R·R|R*|(R)|a|b|ε</a></b><a href="#21" class="text"><br>
+      <b>（1）证明文法G[R]生成字母表Σ={a,b}上的所有正规表达式(用+代替&quot;|&quot;，连接符·没有省略)<br>
+      （2）证明此文法是二义的</b></a><br>
+      <b></b><b><br>
+      22、<a href="#22" class="text">找出下列流图中的回边和回边组成的循环。编译中利用流图完成什么工作？ </a><br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a name="01"></a>1、证明 对任一左线性文法G，若α∈L（G）则α的第一个符号必定是α的句柄.</b><br>
+      <font color="#0000FF">证明：</font><br>
+      设G = ({S<sub><font size="-2">1</font></sub>,S<sub><font size="-2">21</font></sub>,… 
+      …,S<sub><font size="-2">n</font></sub>},{a<sub><font size="-2">1</font></sub>,a<sub><font size="-2">2</font></sub>,… 
+      …,a<sub><font size="-2">m</font></sub>},S<sub><font size="-2">0</font></sub>,P)<br>
+      其中P形为：S<sub><font size="-2">i</font></sub>→S<sub><font size="-2">j</font></sub>a<sub><font size="-2">k</font></sub>或S<sub><font size="-2">i</font></sub>→a<sub><font size="-2">k</font></sub>,i∈{0,1,2,… 
+      …,n},k∈{0,1,2,… …,m}<br>
+      设 ＝a<sub><font size="-2">1</font></sub>a<sub><font size="-2">l+1</font></sub>… 
+      …a<sub><font size="-2">l+n</font></sub>，则 的推导树一定为如下结构：<br>
+      <img src="../../img/pop/an_1.gif" width="238" height="191"> <br>
+      显然a<sub><font size="-2">1</font></sub>是a<sub><font size="-2">1</font></sub>a<sub><font size="-2">l+1</font></sub>… 
+      …a<sub><font size="-2">l+n</font></sub>的句柄。 <br>
+      .........................................................<a href="#top" class="text"><b>top↑</b></a><br>
+      <b><br>
+      <a name="02"></a>2、分别给出与图1的 FA等价的正规文法G和正规式r。</b><br>
+      <font color="#0000FF">解：</font><br>
+      正规文法 S→0A|1B<br>
+      A→1S|1<br>
+      B→0S|0<br>
+      正规式 S→(01|10)(01|10)<sup><font size="-2">*</font></sup><br>
+      .........................................................<b class="text"><a href="#top" class="text">top↑</a></b> 
+      <br>
+      <b><br>
+      <a name="03"></a>3、给出与如下文法G(S) 等价的LL(1) 文法G'(S)。</b><br>
+      <b>G(s): S→aSb|P <br>
+      P→bPc|bQc<br>
+      Q→Qa|a</b><br>
+      <font color="#0000FF">解：</font><br>
+      将G(s)中的左递归规则和会有左公因子的规则进行改造，得<br>
+      G'(S)： S→aSb|P<br>
+      　　　　P→bP'<br>
+      　　　　P'→Pc|Qc<br>
+      　　　　Q→aQ'<br>
+      　　　　Q'→aQ'| <br>
+      验证LL（1）文法条件：<br>
+      <table width="100%" border="1" cellspacing="0" cellpadding="2" bordercolor="#99CC00" bordercolorlight="cccccc" bordercolordark="#FFFFFF" class="text">
+        <tr align="center"> 
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"></td>
+          <td>FIRST</td>
+          <td>FOLLOW</td>
+        </tr>
+        <tr align="center"> 
+          <td>S</td>
+          <td>a,b</td>
+          <td>b</td>
+        </tr>
+        <tr align="center"> 
+          <td>P</td>
+          <td>b</td>
+          <td>c,b</td>
+        </tr>
+        <tr align="center"> 
+          <td>P'</td>
+          <td>b,a</td>
+          <td>c,b</td>
+        </tr>
+        <tr align="center"> 
+          <td>Q</td>
+          <td>a</td>
+          <td>c</td>
+        </tr>
+        <tr align="center"> 
+          <td>Q'</td>
+          <td>a,ε</td>
+          <td>c</td>
+        </tr>
+      </table>
+    G'满足LL（1）条件。 <br>
+      .........................................................<b class="text"><a href="#top" class="text">top↑</a></b> 
+      <br>
+      <b><br>
+      <a name="04"></a>4、下列算符文法G[S]是二义的，其定义一般程序设计语言的if语句和其他（非if）语句，按照else与最近的then匹配（或者说then和else之间的语句是&quot;匹配&quot;的）的原则，给出一个与G[S]等价的OPG文法G'[S]。</b><br>
+      G[S]： S→C | a<br>
+      　　　 C→tS | tSeS<br>
+      <font color="#0000FF">解：</font> <br>
+      G'[S]： S→M|U<br>
+      　　　　M→tMeM|a<br>
+      　　　　U→tS|tMeS<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b><br>
+      <br>
+      <a name="05"></a><b>5、使用图2的LR分析表分析d;;a是不是如下文法G[S]的句子，按照LR分析算法给出分析步骤</b><br>
+      G[S]:（1）S→d;B<br>
+      　　 （2）B→B;a<br>
+      　 　（3）B→a<br>
+      　 　（4）B→ε<br>
+      <font color="#0000FF">解：</font><br>
+      <table width="100%" border="1" cellspacing="0" cellpadding="2" bordercolor="#99CC00" bordercolorlight="cccccc" bordercolordark="#FFFFFF" class="text">
+        <tr align="center"> 
+          <td>步骤</td>
+          <td>状态栈</td>
+          <td>符号栈</td>
+          <td>余留输入串</td>
+          <td>下步动作</td>
+        </tr>
+        <tr align="center"> 
+          <td>0）</td>
+          <td>0</td>
+          <td>#</td>
+          <td>D；；a#</td>
+          <td>移进S2</td>
+        </tr>
+        <tr align="center"> 
+          <td>1）</td>
+          <td>02</td>
+          <td>#d </td>
+          <td>；；a#</td>
+          <td>移进S3</td>
+        </tr>
+        <tr align="center"> 
+          <td>2）</td>
+          <td>023</td>
+          <td>#d；</td>
+          <td>；a#</td>
+          <td>归约r4（B→ε）</td>
+        </tr>
+        <tr align="center"> 
+          <td>3）</td>
+          <td>0234</td>
+          <td>#d；B</td>
+          <td>；a#</td>
+          <td>移进S6</td>
+        </tr>
+        <tr align="center"> 
+          <td>4）</td>
+          <td>02346</td>
+          <td>#d；B</td>
+          <td>a#</td>
+          <td>移进S7</td>
+        </tr>
+        <tr align="center"> 
+          <td>5）</td>
+          <td>023467</td>
+          <td>#d；B；a</td>
+          <td>#</td>
+          <td>归约r2（B→B;a）</td>
+        </tr>
+        <tr align="center"> 
+          <td>6）</td>
+          <td>0234</td>
+          <td> #d；B</td>
+          <td>#</td>
+          <td>归约r1（S→d;B）</td>
+        </tr>
+        <tr align="center">
+          <td>7）</td>
+          <td>01</td>
+          <td>#S</td>
+          <td>#</td>
+          <td>acc</td>
+        </tr>
+      </table>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> 
+      <br>
+      <br>
+      <a name="06"></a><b>6、图3中的程序，过程调用序列为Sort→quiksort→partition→exchange若目标代码运行时的环境采用栈式存储管理方案，描述此时exchange的AR的display表内容。</b><br>
+      <font color="#0000FF">解：</font><br>
+      运行栈的布局：<br>
+      <img src="../../img/totle2/a2.gif" width="332" height="246"> <br>
+      运行时display表d： <br>
+      <table width="100%" border="1" cellspacing="0" cellpadding="2" bordercolor="#99CC00" bordercolorlight="cccccc" bordercolordark="#FFFFFF" class="text">
+        <tr align="center"> 
+          <td>d[1] <br>
+          </td>
+          <td>t3</td>
+        </tr>
+        <tr align="center"> 
+          <td>d[0] </td>
+          <td>0</td>
+        </tr>
+      </table>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> 
+      <br>
+      <br>
+      <a name="07"></a><b>7、通常可使用一棵称作DOMtree的树表示程序流图中结点间的dominate关系。首结点是根，每个结点n只是它的子孙结点的必经结点，且每个结点只有一个父结点，这个父结点就是从首结点到n的任何路径上的、除它自身外的最后一个必经结点。</b><br>
+      7.1 给出图4流图的DOMtree；7..2 找出流图中所有回边及回边组成的循环。<br>
+      <font color="#0000FF">解：</font><br>
+      7.1 D(1)={1}<br>
+      　　D(2)={1,2}<br>
+      　　D(3)={1,2,3}<br>
+      　　D(4)={1,2,4}<br>
+      　　D(5)={1,2,4,5}<br>
+      　　D(6)={1,2,3,6}<br>
+      　　D(7)={1,2,7}<br>
+      　　D(8)={1,2,7,8}<br>
+      　　Domtree:<br>
+      　　<img src="../../img/totle2/a3.gif" width="195" height="198"><br>
+      7.2 回边：5→4<br>
+      　　　　　7→2<br>
+      　　循环：{4,5}<br>
+      　　　　　{2,3,4,5,6,7}<br>
+      　　<img src="../../img/totle2/a4.gif" width="222" height="185"><br>
+      　　G[S]:S→d;B (2) B→B;a (3) B→a (4) B→ε <br>
+      <table width="100%" border="1" cellspacing="0" cellpadding="2" bordercolor="#99CC00" bordercolorlight="cccccc" bordercolordark="#FFFFFF" class="text">
+        <tr align="center"> 
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td colspan="4">Action</td>
+          <td colspan="2">Goto</td>
+        </tr>
+        <tr align="center"> 
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>d</td>
+          <td>;</td>
+          <td>a</td>
+          <td>#</td>
+          <td>S</td>
+          <td>B</td>
+        </tr>
+        <tr align="center"> 
+          <td>0</td>
+          <td>S2</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>1</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td>1</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>Acc</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td>2</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>S3</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>&nbsp;</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td>3</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">4</font></sub></td>
+          <td>S5</td>
+          <td>r<sub><font size="-2">4</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>4</td>
+        </tr>
+        <tr align="center"> 
+          <td>4</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>S6</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">1</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td>5</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">5</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">5</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td>6</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>S7</td>
+          <td>&nbsp;</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+        <tr align="center">
+          <td>7</td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">2</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td>r<sub><font size="-2">2</font></sub></td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+          <td><img src="../../img/index/1x1pixel.gif" width="1" height="1"><br>
+          </td>
+        </tr>
+      </table>
+      图2<br>
+      <table width="100%" border="1" cellspacing="0" cellpadding="2" bordercolor="#99CC00" bordercolorlight="cccccc" bordercolordark="#FFFFFF" class="text">
+        <tr> 
+          <td align="center">（1）<br>
+          </td>
+          <td>Program sort (input, output)；</td>
+        </tr>
+        <tr> 
+          <td align="center">（2）</td>
+          <td> var a ：array[0..10]of integer；</td>
+        </tr>
+        <tr> 
+          <td align="center">（3）</td>
+          <td>x：integer；</td>
+        </tr>
+        <tr> 
+          <td align="center">（4）</td>
+          <td>Procedure readarray；</td>
+        </tr>
+        <tr> 
+          <td align="center">（5）</td>
+          <td>Var i ：integer；/*注释语句1*/</td>
+        </tr>
+        <tr> 
+          <td align="center">（6）</td>
+          <td>begin…a…end {readarray}；</td>
+        </tr>
+        <tr> 
+          <td align="center">（7）</td>
+          <td>Procedure exchange（i,j:integer）；</td>
+        </tr>
+        <tr> 
+          <td align="center">（8）</td>
+          <td>begin</td>
+        </tr>
+        <tr> 
+          <td align="center">（9）</td>
+          <td>x：=a[i];a[i]:=a[j];a[j]:=x</td>
+        </tr>
+        <tr> 
+          <td align="center">（10）</td>
+          <td>end {exchange}；</td>
+        </tr>
+        <tr> 
+          <td align="center">（11）</td>
+          <td>Procedure quicksort (m,n:integer)；</td>
+        </tr>
+        <tr> 
+          <td align="center">（12）</td>
+          <td>var k,v : integer；</td>
+        </tr>
+        <tr> 
+          <td align="center">（13）</td>
+          <td>function partition(y,z: integer)：integer；/*注释语句2*/</td>
+        </tr>
+        <tr> 
+          <td align="center">（14）</td>
+          <td>var i,j：integer；: integer；</td>
+        </tr>
+        <tr> 
+          <td align="center">（15）</td>
+          <td>begin…a…</td>
+        </tr>
+        <tr> 
+          <td align="center">（16）</td>
+          <td>…v…</td>
+        </tr>
+        <tr> 
+          <td align="center">（17）</td>
+          <td>…exchange (i,j);…</td>
+        </tr>
+        <tr> 
+          <td align="center">（18）</td>
+          <td>end{partition}；</td>
+        </tr>
+        <tr> 
+          <td align="center">（19）</td>
+          <td>begin…end {quicksort}；</td>
+        </tr>
+        <tr>
+          <td align="center">（20）</td>
+          <td>begin…end {sort}．</td>
+        </tr>
+      </table>
+    图3<br>
+      <img src="../../img/totle2/a5.gif" width="170" height="258"><br>
+      图4<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b><br>
+      <br>
+      <a name="08"></a><b>8、在PL/0语言编译程序代码生成的实现中，当语法分析到过程体的开始语句时，应当在目标代码CODE()和名字表 
+      TABLE()的相应位置（已经拉链过）回填过程的入口地址，是否只在CODE()中回填就可以？</b><br>
+      <font color="#0000FF">答：</font>从目标代码CODE()执行的正确性来说没有问题，但在TABLE()中也回填过程的入口地址，对以后出现调用该过程语句时可直接从TABLE()中找到过程的入口地址，可少执行一条跳转指令。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b><br>
+      <br>
+      <a name="09"></a><b>9、PL/0语言编译程序的实现中，如何保证标识符的作用域？</b><br>
+      <font color="#0000FF">答：</font>PL/0语言对标识符的作用域同PASCAL，内层可引用包围它的外层定义的标识符（如：变量名，过程名，常量名），实现时tx是BLOCK的实际值参，当递归进入分程序BLOCK时当时的tx为实际值参，退出BLOCK时tx恢复到调用前的值。从下面的示意图（1）中可看出内层可引用包围它的外层定义的标识符，反之则不行。<br>
+      Table表的下标指针tx说明：<br>
+      <img src="../../img/totle2/a6.gif" width="310" height="197"> <br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b><br>
+      <br>
+      <a name="10"></a><b>10、PL/0语言编译程序的实现使用了递归子程序法，从PL/0语言也允许过程递归调用从它的实现中可看出，递归子程序法对每个过程可能存在直接或间接递归调用，所以对某个过程在退出之前可能又被调用，因此调用前的某些信息需要保留，通常在入口时需保留某些信息，出口时需恢复。由于递归过程是遵循先进后出规律，所以通常开辟先进后出栈来处理。但是，PL/0语言编译程序的实现是用PASCAL语言编写的，它是如何实现在过程入口时保留某些信息，出口时恢复某些信息的？</b><br>
+      <font color="#0000FF">答：</font>因为PASCAL语言本身允许过程递归调用，所以用PASCAL语言编写递归子程序时，对过程入口时保留某些信息，出口时恢复某些信息的工作由PASCAL语言的编译程序自动完成。就象用PL/0语言编写一个含有过程递归调用的程序时，在这个程序中不必再处理信息的保留和恢复。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b><br>
+      <br>
+      <a name="11"></a><b>11、如果用FORTRAN语言编写PL/0语言的编译程序会与用PASCAL语言编写一样吗？</b><br>
+      <font color="#0000FF">答：</font>不一样，因为FORTRAN语言不允许递归调用，它的编译程序没有对递归调用时某些信息保留和恢复进行处理，所以，若用FORTRAN语言采用递归子程序法编写PL/0语言的编译程序时，则必须要对过程入口和出口时的某些信息进行保留和恢复处理。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="12"></a>12、为什么若Ａ→αB 是一个产生式,或A→αBβ是 一个产生式，而βT<img src="../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../img/index/1x1pixel.gif" width="1" height="16">*ε(即ε∈FIRST(β)），则把FOLLOW（A）加至FOLLOW（B）中？</b><br>
+      <font color="#0000FF">答：</font>若有S<b><img src="../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../img/index/1x1pixel.gif" width="1" height="16"></b>* 
+      …Aa…, a ∈VT， 由A→αB ，则可有S<b><img src="../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../img/index/1x1pixel.gif" width="1" height="16"></b>* 
+      …αBa…,所以 a∈FOLLOW（B）。又由因有A→αBβ，则可有S<b><img src="../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../img/index/1x1pixel.gif" width="1" height="16"></b>* 
+      …αBβa…，再因有β<b><img src="../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../img/index/1x1pixel.gif" width="1" height="16"></b>*ε，所以a∈FOLLOW（B），可见FOLLOW（A）∈FOLLOW（B）。<br>
+      这个问题非常重要，是计算FOLLOW集出错的主要原因。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="13"></a>13、为什么算符优先分析有可能把不是所给文法的句子也正确归约，而发现不了错误？</b><br>
+      <font color="#0000FF">答：</font>因为算符优先分析方法只考虑终结符之间的优先关系，不考虑非终结符之间的优先关系，在归约过程中只要找到可归约串即最左素短语作为句柄就归约为某一非终结符，并不考虑归约到的那个非终结符名字是什么，因而算符优先归约不是规范归约。这样也就去掉了单非终结符的归约，因为若只有一个非终结符时无法与句型中该非终结符的左部及右部的串比较优先关系。归约时只看产生式文法符号的个数和终结符相应的位置。<br>
+      　　例如，下述文法是一个算符优先文法，其产生式为：<br>
+      　　S→S;D|D<br>
+      　　D→D(T)|H<br>
+      　　H→a|(S)<br>
+      　　T→T+S|S<br>
+      　　用算符优先分析法对输入串(a+a)#进行分析时，可以完全正确地进行归约，然而(a+a)#却不是该文法能推导出的句子。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="14"></a>14、在LR分析的项目集中，若含有形如S′→S·项目（S′→S·称接受项目），则该项目集对应的的状态称接受状态。为什么在接受状态中不可能有移进-接受冲突，而可能有接受-归约冲突？</b><br>
+      <font color="#0000FF">答：</font>因为在接受状态中，接受项目S′→S·只能遇到'#'号才能接受，而移进的输入符号不可能有'#'号，只在输入串结束时才可能遇到'#'号。但是在接受状态中可能存在接受-归约冲突，因为LR分析是规范归约，可能当前输入符为'#'号，但还存在其它的归约项目，这时就无法确定归约还是接受，所以出现接受-归约冲突。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="15"></a>15、为什么LALR(1)的状态个数与SLR(1)的相同，它们归约时都是向前看一个输入符号，但是LALR(1)比SLR(1)对文法的要求要低？发现错误的时间要早？</b> 
+      <br>
+      <font color="#0000FF">答：</font>因为向前看一个输入符号只对归约项目起作用，SLR(1) 方法仅仅用产生式左部非终结符FOLLOW集的元素作向前查看的符号，而LALR(1)是由 
+      LR(1)项目集规范族合并同心集的方法构造的，LR(1)分析向前查看的是搜索符，对搜索符的计算方法比FOLLOW集更确切，搜索符真包含在FOLLOW集中。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="16"></a>16、在LR的一个项目集中可能存在移进项目、归约项目、待约项目和接受项目4种，所以可能会出现移进-归约、归约-归约或归约-接受冲突，但为什么与待约项目无关？</b><br>
+      <font color="#0000FF">答：</font>以构造文法G′的LR(0)项目集规范族为例，其步骤如下：<br>
+      　　a) 置项目S′→·S为初态集的核，然后对核求闭包，CLOSURE(｛S′→·S｝）得到初态的项目集。<br>
+      　　b) 对初态集或其它所构造的项目集应用转换函数GO(I，X)=CLOSURE(J)求出新状态J的项目集。<br>
+      　　c) 重复b)直到不出现新的项目为止。<br>
+      　　而求闭包的计算方法是：<br>
+      　　1) I的项目均在CLOSURE(I)中。<br>
+      　　2) 若A→α·Bβ属于CLOSURE(I)，则每一形如B→·γ的项目也属于CLOSURE(I)。<br>
+      　　3) 重复2)直到不出现新的项目为止。即CLOSURE(I)不再扩大。<br>
+      　　从2)中可见A→α·Bβ为待约项目，与非终结符B有关的形如B→·γ的项目都已经加入到闭包中，即已经包含在项目集中。<br>
+      　　那么如果γ的第1个符号是：<br>
+      　　（1） 终结符：则B→·γ应是移进项目；<br>
+      　　（2） 非终结符：则B→·γ应是待约项目；还应继续求闭包。<br>
+      　　（3） γ是ε：则B→·γ应是归约项目（记作：B→·）<br>
+      　　由以上分析，求闭包后待约项目的特性都已反映到新增加的移进项目或归约项目中。所以，在分析一个项目集的冲突时不考虑待约项目。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="17"></a>17、用自展方式在PC机上实现C语言的编译程序，首先把C划分成真包含的子集C1和C2，然后分3步实现 。但是对步骤2和步骤3的双层结合T型图看不明白。</b><br>
+      <img src="../../img/totle2/a7.gif" width="329" height="201"> <br>
+      <img src="../../img/totle2/a8.gif" width="325" height="235"> <br>
+      <font color="#0000FF">答：</font>我们自展方式在PC机上实现C语言的编译程序，使用了双层结合T型图描述实现步骤，而结合T型图的原则是：<br>
+      　　（1） 下面的T型图的左右上角两个语言分别与上面左右两个T型图的底部语言同。<br>
+      　　（2） 上面左右两个T型图的左右上角的语言必须分别相同。<br>
+      　　一个T型图表示一个程序，这个程序的功能是把某种源语言翻译成等价功能的目标语言，T型图的底部表示编写这个翻译程序所用的语言，左上角表示某种源语言，右上角表示目标语言。所以，在步骤2中双层结合T型图的底层T型图的功能是把C1翻译成PC，上层左上角的T型图是把C2翻译成PC，但它是用C1编写的，也就是一个用C1编写的程序，所以经过底层T型图功能的翻译后，它就变成右上角T型图所表示的用PC编写的程序，功能仍是把C2翻译成PC。步骤3可用同样的方法解释。<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      <b><br>
+      <a name="18"></a>18、给出下述NFA M的五元组表示，并将其确定化</b><br>
+      <img src="../../img/totle2/a9.gif" width="254" height="101"> <br>
+      <font color="#0000FF">解：</font><br>
+      　　状态集={q0,q1}<br>
+      　　字母表={0，1}<br>
+      　　开始状态{q0}<br>
+      　　终态{q1}<br>
+      　　转换函数f(q0,0)={q0, q1},f(q0,1)={ q1}<br>
+      　　　　　　f(q1,1)={ q0, q1},f(q1,0)=Φ<br>
+      　　确定化<br>
+      <img src="../../img/totle2/a10.gif" width="253" height="187"> <br>
+      .........................................................top↑ <br>
+      <b><br>
+      <a name="19"></a>19、构造一个不具有ε-转移的NFA M'，使得L(M')=L(M). <br>
+      <img src="../../img/totle2/a11.gif" width="356" height="98"> <br>
+      </b><font color="#0000FF">解：<br>
+      <img src="../../img/totle2/a12.gif" width="251" height="251"> <br>
+      </font>.........................................................<b><a href="#top" class="text">top↑</a></b> 
+      <font color="#0000FF"><br>
+      </font><b><br>
+      <a name="20"></a>20、对目标代码运行时的存储空间采用基于过程活动记录的栈式分配方案，举例说明象PASCAL这样的语言如何实现对非局部变量的访问。</b><br>
+      <font color="#0000FF">答：</font>在过程活动记录中保存访问链，指向直接包围外层的过程活动记录始址<br>
+      　　如：program p(i,0);<br>
+      　　　　procedure P1<br>
+      　　　　　var px1;<br>
+      　　　　　procedure p11;<br>
+      　　　　　　var px11;<br>
+      　　　　　　begin<br>
+      　　　　　　　:=px1;<br>
+      　　　　　　end;<br>
+      　　　　　procedure Q11;<br>
+      　　　　　　var<br>
+      　　　　　　begin<br>
+      　　　　　　　:=px1;<br>
+      　　　　　　end;<br>
+      　　　　begin<br>
+      　　　　end;<br>
+      　　begin<br>
+      　　end;<br>
+      　　若调用序列为P→P1→P11<font color="#0000FF"><br>
+      <img src="../../img/totle2/a13.gif" width="281" height="156"> <br>
+      </font>.........................................................<b><a href="#top" class="text">top↑</a></b> 
+      <font color="#0000FF"><br>
+      </font><b><br>
+      <a name="21"></a>21、文法G[R]:R→R+R|R·R|R*|(R)|a|b|ε</b><br>
+      <b>（1）证明文法G[R]生成字母表Σ={a,b}上的所有正规表达式(用+代替&quot;|&quot;，连接符·没有省略)<br>
+      （2）证明此文法是二义的</b><br>
+      <font color="#0000FF">证明：</font><br>
+      (1) Σ={a,b}上的正规式都能由此文法生成<br>
+      　　① ε能生成<br>
+      　　② a∈∑,b∈∑能生成<br>
+      　　③ 若r1,r2是正规式，则r1+r2能生成<br>
+      　　　 r1·r2能生成<br>
+      　 　　（r1）能生成<br>
+      　　 　r1*能生成<br>
+      (2) 对句子a+a·b可构造两可不同的语法树<font color="#0000FF"><br>
+      <img src="../../img/totle2/a14a.gif" width="177" height="135"> <br>
+      <img src="../../img/totle2/a14b.gif" width="207" height="130"> <br>
+      </font>.........................................................<b><a href="#top" class="text">top↑</a></b> 
+      <font color="#0000FF"><br>
+      </font><b><br>
+      <a name="22"></a>22、找出下列流图中的回边和回边组成的循环。编译中利用流图完成什么工作？ <br>
+      <img src="../../img/totle2/a15.gif" width="223" height="361"> <br>
+      </b><font color="#0000FF">解：</font><br>
+      　　回边 B<sub><font size="-2">5</font></sub>→B<sub><font size="-2">4</font></sub> 
+      循环{B<sub><font size="-2">4</font></sub>,B<sub><font size="-2">5</font></sub>}<br>
+      　　B<sub><font size="-2">6</font></sub>→B<sub><font size="-2">2</font></sub> 
+      循环{B<sub><font size="-2">2</font></sub>,B<sub><font size="-2">3</font></sub>,B<sub><font size="-2">4</font></sub>,B<sub><font size="-2">5</font></sub>,B<sub><font size="-2">6</font></sub>}<br>
+      .........................................................<b><a href="#top" class="text">top↑</a></b> <br>
+      　</td>
+  </tr>
+</table>
+</body>
+</html>

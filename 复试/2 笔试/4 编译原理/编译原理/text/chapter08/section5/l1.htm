@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>8.5 布尔表达式的翻译</b><br>
+      　　程序设计语言中的布尔表达式有两个作用。一是计算逻辑值，更多的情况是二，用做改变控制流语句中的条件表达式，如在if-then，if-then-else，或是while-do语句中那样。<br>
+      　　布尔表达式是由布尔算符and，or和not施于布尔变量或关系表达式而成。即布尔表达式的形式为E<sub><font size="-2">1</font></sub> 
+      rop E<sub><font size="-2">2</font></sub>，其中E<sub><font size="-2">1</font></sub>和E<sub><font size="-2">2</font></sub>都是算术表达式，rop是关系符，如〈＝＜，＝，〉＝，≠等等。有的语言，如PL/1，允许更通用的表达式，其中，布尔算符，算术算符和关系算符可以施于任何类型的表达式，并不区别布尔值和算术值，只不过在需要时执行强制变换。为简单起见，我们只考虑如下文法生成的布尔表达式。<br>
+      　　E→E and E|E or E| not E|id rop id|true|false并且按通常习惯，约定布尔算符的优先顺序（从高到低）为not
+      、and、or，并且and和or服从左结合。 <br>
+      <b>8.5.1 布尔表达式的翻译方法</b><br>
+      　　通常，计算布尔表达式的值有两种办法，第一种办法，如同计算算术表达式一样，步步计算出各部分的真假值，最后计算出整个表达式的值。例如，用数值1表示true，用0表示false。那么布尔表达式1 
+      or（not 0 and 0）or 0的计算过程是： <br>
+      　　1 or（not 0 and 0）or 0<br>
+      　　＝1 or（1 and 0）or 0<br>
+      　　＝1 or 0 or 0<br>
+      　　＝1 or 0<br>
+      　　＝1<br>
+      　　另一种计算方法是采取某种优化措施，只计算部分表达式，例如要计算A or B，若计算出A的值为1，那么B的值就无需再计算了，因为不管B的值为何结果，A 
+      or B的值都为1。</td>
+  </tr>
+</table>
+</body>
+</html>

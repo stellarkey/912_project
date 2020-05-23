@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　在控制语句中, 布尔表达式E作为控制流转移的条件，仅把其翻译成一串条件转和无条件转的四元式代码。比如将布尔表达式E=a rop b翻译成四元式代码：<br>
+      　　if a rop b goto E．true和<br>
+      　　goto E．false<br>
+      　　这里，使用E．true和E．false分别表示布尔表达式E的&quot;真&quot;&quot;假&quot;出口转移目标。下面将多处使用它们。<br>
+      　　对于E为E<sup><font size="-2">1</font></sup> or E<sup><font size="-2">2</font></sup>的形式，若E<sup><font size="-2">1</font></sup>是真，则可知道E为真即E<sup><font size="-2">1</font></sup>的真出口和E的真出口一样。如果E<sup><font size="-2">1</font></sup>是假，那么必须计算E<sup><font size="-2">2</font></sup>，E<sup><font size="-2">1</font></sup>的假出口应是E<sup><font size="-2">2</font></sup>代码的第一个四元式标号，这时E<sup><font size="-2">2</font></sup>的真出口和假出口分别与E的真出口和假出口一样。 
+      <br>
+      　　类似的考虑适于E为E<sup><font size="-2">1</font></sup> and E<sup><font size="-2">2</font></sup> 的情形。 
+     E为not E<sup><font size="-2">1</font></sup> 的翻译更容易，只需调换E<sup><font size="-2">1</font></sup> 的真假出口即可得到E的真假出口。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　图9.27表示编译程序扫描进入第三层分程序后单表结构的符号表情况。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图9.27进入分程序第三层时的符号表层次属性表达</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p9_27.gif" width="381" height="259"></td>
+        </tr>
+      </table>
+      　　图9.28表示编译程序扫描进入第四层分程序后单表结构的符号表情况。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图9.28进入分程序第四层时的符号表层次属性表达</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p9_28.gif" width="420" height="273"></td>
+        </tr>
+      </table>
+      　　在该例中可看出，下推链中存放的是嵌套分程序中同名标识符的外层定义属性，这种结构不但符合作用域规则，也实现了可视性规则。当编译程序扫描退出第四层时，符号表又回到图9.27的情况，同样当编译程序扫描退出第三、第二层时，符号表相应回到图9.26、9.25的情况。在编译程序扫描退出第一层时，由于a,b,d是符号表中的表项，且其层次属性是1。退回最外层(0层)同时需在符号表中清除a,b,d三个表项。</td>
+  </tr>
+</table>
+</body>
+</html>

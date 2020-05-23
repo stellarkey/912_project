@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　c) 消除文法中一切左递归的算法。<br>
+      　　对文法中一切左递归的消除要求文法中不含回路即无A<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      A的推导。满足这个要求的充分条件是，文法中不包含形如A→A的有害规则和A→ε的空产生式。<br>
+      算法步骤：<br>
+      　　1) 把文法的所有非终结符按某一顺序排序；<br>
+      　　如A<sub><font size="-2">1</font></sub>，A<sub><font size="-2">2</font></sub>,…,A<sub><font size="-2">n</font></sub><br>
+      　　2) 从A1开始消除左部为A<sub><font size="-2">1</font></sub>的产生式的直接左递归，然后把左部为A<sub><font size="-2">1</font></sub>的所有规则的右部逐个替换左部为A<sub><font size="-2">2</font></sub>右部以A<sub><font size="-2">1</font></sub>开始的产生式中的A<sub><font size="-2">1</font></sub>，并消除左部为A<sub><font size="-2">2</font></sub>的产生式中的直接左递归。继而以同样方式把A<sub><font size="-2">1</font></sub>，A<sub><font size="-2">2</font></sub>的右部代入左部为A<sub><font size="-2">3</font></sub>右部以A<sub><font size="-2">1</font></sub>或A<sub><font size="-2">2</font></sub>开始的产生式中，消除左部为A<sub><font size="-2">3</font></sub>的产生式之直接左递归，直到把左部为A<sub><font size="-2">1</font></sub>，A<sub><font size="-2">2</font></sub>，…, 
+      A<sub><font size="-2">n-1</font></sub>的右部代入左部为A<sub><font size="-2">n</font></sub>的产生式中，从A<sub><font size="-2">n</font></sub>中消除直接左递归。<br>
+      　　3) 去掉无用产生式。<br>
+      　　把上述算法归结为：<br>
+      　　若非终结符的排序为A<sub><font size="-2">1</font></sub>，A<sub><font size="-2">2</font></sub>，…，A<sub><font size="-2">n</font></sub>。<br>
+      　　FOR i∶=1 TO N DO<br>
+      　　　BEGIN<br>
+      　　　　FOR j∶=1 TO i-1 DO<br>
+      　　　　　BEGIN<br>
+      　　　　　　若A<sub><font size="-2">j</font></sub>的所有产生式为：<br>
+      　　　　　　A<sub><font size="-2">j</font></sub>→δ<sub><font size="-2">1</font></sub>|δ<sub><font size="-2">2</font></sub>|…|δ<sub><font size="-2">k</font></sub><br>
+      　　　　　　替换形如A<sub><font size="-2">j</font></sub>→A<sub><font size="-2">j</font></sub>r的产生式变为：<br>
+      　　　　　　A<sub><font size="-2">i</font></sub>→δ<sub><font size="-2">1</font></sub>r|δ<sub><font size="-2">2</font></sub>r|…|δ<sub><font size="-2">k</font></sub>r<br>
+      　　　　　END<br>
+      　　　　消除A<sub><font size="-2">i</font></sub>中的一切直接左递归。<br>
+      　　　END<br>
+      　　最后删除无用产生式。</td>
+  </tr>
+</table>
+</body>
+</html>

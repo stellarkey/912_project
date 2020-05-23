@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① R=φ，构造任一具有空终态集的NFA M <br>
+      　　② R=ε，构造的NFA M=({k<sub><font size="-2">0</font></sub>}, ∑,f,k<sub><font size="-2">0</font></sub>,{k<sub><font size="-2">0</font></sub>}),其中 
+      f（k<sub><font size="-2">0</font></sub>,a）对于所有a∈∑都没定义。 <br>
+      　　③ R=a，a∈∑，构造的NFA M=({k<sub><font size="-2">0</font></sub>,,k<sub><font size="-2">1</font></sub>},∑,f,k<sub><font size="-2">0</font></sub>.{k<sub><font size="-2">1</font></sub>})，其中 
+      f(k<sub><font size="-2">0</font></sub>,a) = k<sub><font size="-2">1</font></sub><br>
+      　　④ R=R1 | R2，将步骤（1）（2）（3）分别应用到R1,R2 产生M1= =(K1,∑,f1,k1,F1), M2=(K2,∑,f2,k2,F2),其中K1,K2不相交。构造的NFA 
+      M= (K1∪K2∪{k},∑,f,k,F)，k是新增加的状态符号，f包含f1和f2,且f(k,a)=f1(k1,a)∪f2(k2,a)。若k1<img src="../../../img/chap03/symbol05.gif">F1且k2<img src="../../../img/chap03/symbol05.gif">F2则 
+      F=F1∪F2，否则F=F1∪ F2 ∪{k} <br>
+      　　⑤ R=R1.R2 将步骤（1）（2）（3）分别应用到R1,R2 产生M1==(K1,∑,f1,k1,F1)，M2=(K2,∑,f2,k2,F2)，其中K1,K2不相交。构造的NFA 
+      M= (K1∪K2,∑,f,k1,F2),令k=(K1∪K2，f包含f1和f2，且<br>
+      　　f(k,a)=f1(k,a),当 k<img src="../../../img/chap03/symbol05.gif">F1时；<br>
+      　　f(k,a)=f2(k,a),当 k∈K2时；<br>
+      　　f(k1,e)=k2<br>
+      　　⑥ R=R1<sup><font size="-2">*</font></sup><br>
+      　　将步骤（1）（2）（3）分别应用到R1,产生M1==(K1,∑,f1,k1,F1)，<br>
+      　　构造的NFA M= (K1∪{k<sub><font size="-2">0</font></sub>,F<sub><font size="-2">0</font></sub>} 
+      ,∑,f,k<sub><font size="-2">0</font></sub>,F<sub><font size="-2">0</font></sub>)其中 
+      k<sub><font size="-2">0</font></sub>,F<sub><font size="-2">0</font></sub> 
+      是新增加的两个状态，令k= K1∪{k<sub><font size="-2">0</font></sub>,F<sub><font size="-2">0</font></sub>}<br>
+      　　f(k,a)=f1(k,a),当 k<img src="../../../img/chap03/symbol05.gif">F1时; <br>
+      　　f(k<sub><font size="-2">0</font></sub>,ε)=f(F1 ,ε)= {k1,,F<sub><font size="-2">0</font></sub>} 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

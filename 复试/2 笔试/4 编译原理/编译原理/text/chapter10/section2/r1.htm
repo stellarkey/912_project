@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.6 过程的活动记录</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">
+            <table  width="60%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">临时工作单元</td>
+              </tr>
+              <tr> 
+                <td align="center">局部变量</td>
+              </tr>
+              <tr> 
+                <td align="center">机器状态信息</td>
+              </tr>
+              <tr> 
+                <td align="center">存取链</td>
+              </tr>
+              <tr> 
+                <td align="center">控制链</td>
+              </tr>
+              <tr> 
+                <td align="center">实参</td>
+              </tr>
+              <tr>
+                <td align="center">返回地址</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　对它们的简单描述如下：<br>
+      　　① 临时工作单元：比如计算表达式过程中需存放中间结果用的临时值单元。<br>
+      　　② 局部变量：一个过程的局部变量。<br>
+      　　③ 机器状态信息：保存该过程执行前关于机器状态的信息，诸如程序计数器、寄存器的值，这些值都需要在控制从该过程返回时给予恢复。<br>
+      　　④ 存取链：用以存取非局部变量，这些变量存放于其它过程的活动记录中。并不是所有语言需要该信息。<br>
+      　　⑤ 控制链：指向调用该过程的那个过程的活动记录，这也不是所有语言都需要的。<br>
+      　　⑥ 实参：也称形式单元，由调用过程向该被调过程提供实参的值（或地址）。当然在实际编译程序中，也常常使用机器寄存器传递实参。<br>
+      　　⑦ 返回地址：保存该被调过程返回后的地址。<br>
+      　　这些域的大小在编译时是已知的，如果局部变量中包含有可变数组，那么则采用第9.2节中所介绍的内情向量，将内情向量置于过程活动记录中。另外，有些语言的编译程序还将参数个数存放于活动记录中，以便进行参数个数的检查。<br>
+      　　<b>注意：</b>并不是所有语言的编译程序全部使用这些信息。 </td>
+  </tr>
+</table>
+</body>
+</html>

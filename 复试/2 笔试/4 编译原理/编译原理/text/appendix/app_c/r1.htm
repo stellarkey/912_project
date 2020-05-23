@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p> <b>C．1 YACC概述</b><br>
+        　　形式语言都有严格定义的语法结构，我们对它们进行处理时首先要分析其语法结构。YACC是一个语法分析程序的自动产生器，严格地说LEX也是一个形式语言的语法分析程序的自动产生器。不过LEX所能处理的语言仅限于正规语言，而高级语言的词法结构恰好可用正规式表示，因此LEX只是一个词法分析程序的产生器。YACC可以处理能用LALR（1）文法表示的上下文无关语言。而且我们将会看到YACC具有一定的解决语法的二义性的功能。<br>
+        　　YACC的用途很广，但主要用于程序设计语言的编译程序的自动构造上。例如，可移植的C语言的编译程序就是用YACC来写的。还有许多数据库查询语言是用YACC实现的。因此YACC又叫做&quot;编译程序的编译程序&quot;（A　Compiler 
+        Compiler）。<br>
+        　　YACC的工作示意图如图C.1。<br>
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图 C.1 YACC示意图 </font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/index/app_2.gif" width="384" height="135"></td>
+        </tr>
+      </table>
+      
+        　　在图C.1中，&quot;YACC源程序&quot;是用户用YACC提供的一种类似BNF的语言写的要处理的语言的语法描述。YACC会自动地将这个源程序转换成用LR方法进行语法分析的语法分析程序YYparse，同LEX一样，YACC的宿主语言也是C，因此YYparse是一个C语言的程序，用户在主程序中通过调用YYparse进行语法分析。<br>
+      　　语法分析必须建立在词法分析的基础之上，所以生成的语法分析程序还需要有一个词法分析程序与它配合工作。YYparse要求这个词法分析程序的名字为YYlex。用户写YYlex时可以借助于LEX。因为LEX产生的词法分析程序的名字正好是YYlex，所以LEX与YACC配合使用是很方便的，这将在C．5的C．5．3中详细介绍，请注意词法分析程序也是可以包含在YACC源程序中的。<br>
+      　　在YACC源程序中除了语法规则外，还要包括当这些语法规则被识别出来时，即用它们进行归约时要完成的语义动作，语义动作是用C语言写的程序段。<br>
+      　　语法分析的输出可能是一棵语法树，或生成的目标代码，或者就是关于输入串是否符合语法的信息。需要什么样的输出都是由语义动作和程序部分的程序段来实现的。<br>
+      　　下面分节介绍YACC源程序的写法以及在UNIX系统中使用YACC的有关命令。</td>
+  </tr>
+</table>
+</body>
+</html>

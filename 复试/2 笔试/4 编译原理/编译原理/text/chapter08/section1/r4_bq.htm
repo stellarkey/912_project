@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　属性文法记号中常使用N．T的形式表示与非终结符N相联的属性t。比如可把对上面表达式的类型检查的属性文法写成图8．2的形式。与每个非终结符T相联的有属性t，t要么是int，要么是bool。与非终结符E的产生式相联的断言指明：两个T的属性必须相同。图8．1的（b）是图8.1(a)语法树结点带有语义信息的表示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图8．2类型检查的属性文法 
+            </font> </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">E→T<sup><font size="-2">1</font></sup>+T<sup><font size="-2">2</font></sup> 
+            {T<sup><font size="-2">1</font></sup>.t＝int　AND　T<sup><font size="-2">2</font></sup>.t＝int}<br>
+            E→T<sup><font size="-2">1</font></sup>orT<sup><font size="-2">2</font></sup> 
+            {T<sup><font size="-2">1</font></sup>.t＝bool　ATD T<sup><font size="-2">2</font></sup>.t＝bool}<br>
+            T→num{T.t∶＝int}<br>
+            T→true{T.t∶＝bool}<br>
+            T→false{T.t∶＝bool} </td>
+        </tr>
+      </table>
+      　　属性文法中的属性分成两类：继承属性和综合属性，简单地说，综合属性用"自上而上&quot;传递信息，而继承属性用于&quot;自上而下&quot;传递信息。<br>
+      　　在一个属性文法中，对应于每个产生式A→a都有一套与之相关联的语义规则，每条规则的形式为<br>
+      　　b := f (c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,…c<sub><font size="-2">k</font></sub>) 
+      <br>
+      　　这里，f是一个函数，而且或者<br>
+      　　（1）b是A的一个综合属性并且c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,…c<sub><font size="-2">k</font></sub>是产生式右边文法符号的属性：或者<br>
+      　　（2）b是产生式右边某个文法符号的一个继承属性并且c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,…c<sub><font size="-2">k</font></sub>是A或产生式右边任何文法符号的属性。<br>
+      　　在两种情况下，我们都说属性b依赖于属性c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,…c<sub><font size="-2">k</font></sub>。<br>
+      　　我们不对属性文法进行理论上的研究而仅仅将它做为工具描述语义分析。在编译的许多实际应用中，属性和断言以多种形式出现，也就是说，与每个文法符号相联的可以是各种属性、断言、以及语义规则，或者某种程序设计语言的程序段等等。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

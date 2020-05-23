@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          解答: FORTRAN中，名字作用域有四种：<br>
+          　　<1>在BLOCK DATA块中定义的标识符，其作用域是整个程序。<br>
+          　　<2>在COMMON块中定义的标识符，其作用域是声明了该COMMON块的所有例程（包括函数和过程）。<br>
+          　　<3>在例程中定义的标识符（包括哑变量），其作用域是声明该标识符的例程。<br>
+          　　<4>在例程中用SAVE定义的标识符，其作用域是声明该标识符的例程，且在退出该例程时，该标识符的值仍保留（即内部静态量）。<br>
+          <br>
+          <b>问答第2题</b><br>
+          解答: <br>
+          (1) . extern定义的变量，其作用域是整个C语言程序； <br>
+          　　. extern static定义的变量，其作用域是该定义所在的C程序文件；<br>
+          　　. auto定义的变量，其作用域是该定义所在的例程；<br>
+          　　. local static定义的变量，其作用域是该定义所在的例程。且在退出该例程时，该变量的值仍保留。 <br>
+          　　. register定义的变量，其作用域与auto定义的变量一样。这种变量的值，在寄存器有条件时，可存放在寄存器中，以提高运行效率。<br>
+          (2) · 对extern变量，设置一个全局的静态公共区进行分配。<br>
+          　　. 对extern static变量，为每个C程序文件，分别设置一个局部静态公共区进行分配。<br>
+          　　. 对auto和register变量，设定它们在该例程的动态区中的相对区头的位移量。而例程动态区在运行时再做动态分配。<br>
+          　　. 对local static变量，为每个具有这类定义的例程，分别设置一个内部静态区进行分配。<br>
+          (3) 实施标识符变量重复定义合法性检查，及引用变量的作用域范围的合法性检查。 <br>
+          <b><br>
+          问答第3题</b><br>
+          解答: 重名动态下推链的目的是，保证在合法重名定义情况下，提供完整确切的符号表项，从而保证引用变量的上下文合法性检查和非法重名定义检查。 
+          <br>
+          　　其工作原理是：当发生合法重名定义时，将上层重名表项下推到链中，而在符号标中原重名表项处登录当前重名定义的符号属性；在退出本层时，将最近一次下推的表项，回推登录到符号表中原重名表项处。 
+          <br>
+          <br>
+          <b>问答第4题</b><br>
+          解答: 可采用下列散列杂凑算法（设表长为N） 散列地址=MOD（（<第一字节值>+<第二字节值>），N） 发生冲突时再散列的方法：在该冲突处开始，向下寻找第一个空表项，若找到则该表项地址为再散列地址；若找不到空表项，则循环到表头开始，向下寻找第一个空表项，一直到发生冲突处为止，若找到空表项则该表项地址为再散列地址，否则表示符号表已满，编译系统给出符号表溢出信息，终止编译。 
+          <br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

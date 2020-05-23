@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　⒉ 由于相同左部非终结符的右部存在能<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε的情况且该非终结符的后跟符号的集合中含有其它右部开始符号集合的元素。<br>
+      <font color="#0000FF">例5.5</font><b>文法的特点是：</b><br>
+      　　相同左部非终结符A的产生式有两个A→bAS和A→ε。当当前输入符为b时，推导对产生式的选择可有两种考虑：<br>
+      　　① 用产生式A→bAS的右部替换A，因为bAS的开始符号为b可与当前输入符b匹配。<br>
+      　　② 用产生式A→ε的右部ε替换A，这时期望用A的后跟符号b与当前输入符b匹配。<br>
+      　　这种情况就不能唯一的确定选择哪个产生式进行推导，其原因是A的后跟符号集合含有b，而A的另一产生式A→bAS的开始符号集合中也含有b。它们的交集不为空，凡含有这种情况产生式的文法就不能用确定的自顶向下语法分析。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>删除多余运算（删除公共子表达式）</b><br>
+      　　优化的目的在于使生成的目标代码较少而执行速度较快。图11.2中间代码段四元式（3）和四元式（6）都是4*I的运算，而从四元式（3）到四元式（6）没有对I赋值，显然，两次计算出的值是相等的。所以四元式（6）的运算是多余的。我们可以把四元式（6）变换成：T<sub><font size="-2">4</font></sub>∶=T<sub><font size="-2">1</font></sub>。这种优化称为删除多余运算或称为删除公共子表达式。 
+      <br>
+      <b>代码外提</b> <br>
+      　　减少循环中代码总数的一个重要办法是循环不变代码外提。这种变换把循环不变运算，即其结果独立于循环执行次数的表达式，提到循环的前面,使之只在循环外计算一次。上例中，我们可以把四元式（4）和四元式（7）提到循环外。经过删除多余运算和代码外提后，代码变换成图11.3。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          　　文法：<br>
+          　　S→a|<font size="-2">∧</font>|(T)<br>
+          　　T→T,S|S <br>
+          　　展开为： <br>
+          　　S→a <br>
+          　　S→<font size="-2">∧</font><br>
+          　　S→(T) <br>
+          　　T→T,S<br>
+          　　T→S <br>
+          (1) FIRSTVT -- LASTVT表
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRSTVT集</td>
+            <td align="center">LASTVT集</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">{ a <font size="-2">∧</font> ( }<font color="#FFFFFF">..</font></td>
+            <td align="center">{ a <font size="-2">∧</font> ) }<font color="#FFFFFF">..</font></td>
+          </tr>
+          <tr> 
+            <td align="center">T</td>
+            <td align="center">{ a <font size="-2">∧</font> ( , }</td>
+            <td align="center">{ a <font size="-2">∧</font> ) , }</td>
+          </tr>
+        </table>
+         (2) 算符优先关系表（OPERATER PRIORITY RELATION TABLE）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center"><font size="-2">∧</font></td>
+            <td align="center">(</td>
+            <td align="center">)</td>
+            <td align="center">,</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center" valign="top">a<br>
+              <font size="-2">∧</font><br>
+              (<br>
+              )<br>
+              ,<br>
+              #<br>
+            </td>
+            <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <img src="symbol01.gif" width="18" height="20"></td>
+            <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <img src="symbol01.gif" width="18" height="20"></td>
+            <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <font color="#FFFFFF">.</font><br>
+              <img src="symbol01.gif" width="18" height="20"> <br>
+              <img src="symbol01.gif" width="18" height="20"></td>
+            <td align="center" valign="top"><img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol03.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <br>
+            </td>
+            <td align="center" valign="top"><img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol01.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <br>
+            </td>
+            <td align="center" valign="top"><img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol02.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="1x1pixel.gif" width="1" height="22"><br>
+              <img src="symbol03.gif" width="18" height="20"><img src="1x1pixel.gif" width="1" height="22"></td>
+          </tr>
+        </table>
+        表中无多重人口所以是算符优先（OPG）文法。<br>
+        （3）对输入串（a,a）#的算符优先分析过程为<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">栈（STACK）</td>
+            <td align="center">当前输入字符（CHAR）</td>
+            <td align="center">剩余输入串（INPUT_STRING）</td>
+            <td align="center">动作（ACTION）</td>
+          </tr>
+          <tr> 
+            <td>#<br>
+              #(<br>
+              #(a<br>
+              #(N<br>
+              #(N,<br>
+              #(N,a<br>
+              #(N,N<br>
+              #(N<br>
+              #(N)<br>
+              #N</td>
+            <td align="center">(<br>
+              a<br>
+              ,<br>
+              ,<br>
+              a<br>
+              )<br>
+              )<br>
+              )<br>
+              #<br>
+              #</td>
+            <td align="right" valign="top">a,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              <br>
+              <br>
+            </td>
+            <td valign="top">Move in<br>
+              Move in<br>
+              Reduce: S→a<br>
+              Move in<br>
+              Move in<br>
+              Reduce: S→a<br>
+              Reduce: T→T,S<br>
+              Move in<br>
+              Reduce: S→(T)<br>
+            </td>
+          </tr>
+        </table>
+        Success! <br>
+        对输入串（a,(a,a)）# 的算符优先分析过程为：<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center" width="14%">栈（STACK）</td>
+            <td align="center" width="20%">当前字符（CHAR）</td>
+            <td align="center" width="25%">剩余输入串<br>
+              （INPUT_STRING）</td>
+            <td align="center" width="41%">动作（ACTION）</td>
+          </tr>
+          <tr> 
+            <td width="14%">#<br>
+              #(<br>
+              #(a<br>
+              #(N<br>
+              #(N,<br>
+              #(N,(<br>
+              #(N,(a<br>
+              #(N,(N<br>
+              #(N,(N<br>
+              #(N,(N,a<br>
+              #(N,(N,N<br>
+              #(N,(N<br>
+              #(N,(N)<br>
+              #(N,N<br>
+              #(N<br>
+              #(N)<br>
+              #N<br>
+            </td>
+            <td align="center" width="20%">(<br>
+              a<br>
+              ,<br>
+              ,<br>
+              (<br>
+              a<br>
+              ,<br>
+              ,<br>
+              a<br>
+              )<br>
+              )<br>
+              )<br>
+              )<br>
+              )<br>
+              )<br>
+              #<br>
+              #</td>
+            <td align="right" valign="top" width="25%">a,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              (a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              (a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              <br>
+              <br>
+            </td>
+            <td width="41%" valign="top">Move in<br>
+              Move in<br>
+              Reduce: S→a<br>
+              Move in<br>
+              Move in<br>
+              Move in<br>
+              Reduce: S→a<br>
+              Move in<br>
+              Move in<br>
+              Reduce: S→a<br>
+              Reduce: T→T,S<br>
+              Move in<br>
+              Reduce: S→(T)<br>
+              Reduce: T→T,S<br>
+              Move in<br>
+              Reduce: S→(T) <br>
+            </td>
+          </tr>
+        </table>
+        Success!<br>
+        <br>
+          <b>问答第2题</b><br>
+        　　文法：<br>
+        　　S→a|<font size="-2">∧</font>|(T) <br>
+        　　T→T,S|S <br>
+        　　对(a,a）和（a,(a,a)）的最右推导：<br>
+        　　(a,a）的最右推导过程为：<br>
+        　　S<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,S) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,a)<br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(S,a) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,a)<br>
+        　　（a,(a,a)）的最右推导过程为: <br>
+        　　S<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,S)<br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,(T)) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,(T,S))<br>
+        　　 <img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,(T,a)) 
+        <br>
+        　　 <img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,(S,a)) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,(a,a))<br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(S,(a,a)) 
+        <br>
+        　 　<img src="symbol04.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(a,a)) 
+        <br>
+        　　对输入串(a,a）# 的规范归约过程为： <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center" width="18%">栈（stack）</td>
+            <td align="center" width="32%">剩余输入串<br>
+              （input left）</td>
+            <td align="center" width="50%">动作（action）</td>
+          </tr>
+          <tr> 
+            <td width="18%">#<br>
+              #( <br>
+              #( a<br>
+              #( S<br>
+              #( T<br>
+              #( T,<br>
+              #( T,a<br>
+              #( T,S<br>
+              #( T<br>
+              #(T)<br>
+              #S</td>
+            <td align="right" width="32%">(a,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td width="50%" valign="top">Shift<br>
+              Shift<br>
+              Reduce by :S →a<br>
+              Reduce by :T→S<br>
+              Shift<br>
+              Shift<br>
+              Reduce by :S →a<br>
+              Reduce by :T →T,S<br>
+              Shift<br>
+              Reduce by :S →(T)<br>
+            </td>
+          </tr>
+        </table>
+        Success!<br>
+        (4) 对输入串（a,(a,a)）# 的规范归约过程为：<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center" width="28%">栈（stack）</td>
+            <td align="center" width="25%">剩余输入串<br>
+              （input left）</td>
+            <td align="center" width="47%">动作（action）</td>
+          </tr>
+          <tr> 
+            <td width="28%">#<br>
+              #( <br>
+              #( a<br>
+              #( S<br>
+              #( T<br>
+              #( T,<br>
+              #( T,(<br>
+              #( T,(a<br>
+              #( T,(S<br>
+              #( T,(T<br>
+              #( T,(T,<br>
+              #( T,(T,a<br>
+              #( T,(T,S<br>
+              #( T,(T<br>
+              #( T,(T)<br>
+              #( T,(S<br>
+              #( T<br>
+              #( T)<br>
+              #S<br>
+            </td>
+            <td align="right" width="25%">(a,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,(a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              (a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ))#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td width="47%" valign="top">Shift<br>
+              Shift<br>
+              Reduce by :S →a<br>
+              Reduce by :T→S<br>
+              Shift<br>
+              Shift<br>
+              Shift<br>
+              Reduce by :S →a<br>
+              Reduce by :T →S<br>
+              Shift<br>
+              Shift<br>
+              Reduce by :S →a<br>
+              Reduce by :T →TS<br>
+              Shift<br>
+              Reduce by :S →(T)<br>
+              Reduce by :T →T,S<br>
+              Shift<br>
+              Reduce by :S →(T)<br>
+            </td>
+          </tr>
+        </table>
+        Success!<br>
+        <!--czp-wenda-daan-->
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

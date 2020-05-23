@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如有一程序中出现符号的情况如下：<br>
+      　　…………………<br>
+      　　…a…………… //第一次出现a的地方<br>
+      　　…………b…… //第一次出现b的地方<br>
+      　　…a…………… //第二次出现a的地方<br>
+      　　…………d…… //第一次出现d的地方<br>
+      　　…c…………… //第一次出现c的地方<br>
+      　　…………b…… //第二次出现b的地方<br>
+      　　……<br>
+      　　则符号表中表项排列将如图9.6。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.6 线性组织的符号表</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle/p9_6.gif" width="370" height="182"></td>
+        </tr>
+      </table>
+      　　其中h表示该符号表之表头，是表的开始位置，p表示该符号表的表项是符号表当前的结束位置。在编译程序工作过程中，扫描得到之新符号总是登录到p的位置，而p又取下一新位置，编译程序开始工作时p处于h表头位置。这种组织方式在&quot;数据结构&quot;的讨论中可知它的管理简单但运行效率低，特别当表项数目较大后效率就非常低。因为它没有空白项，因此存储空间效率高，但对于符号个数不确定的情况下，无法事先确定该符号表的总长度。对于事先能确定符号个数且符号个数不大（公认为小于20）时采用线性表组织是非常合适的。</td>
+  </tr>
+</table>
+</body>
+</html>
