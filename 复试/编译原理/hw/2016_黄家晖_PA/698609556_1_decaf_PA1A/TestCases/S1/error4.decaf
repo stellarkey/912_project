@@ -1,7 +1,0 @@
-class Main {
-    static void main() {
-        string str;
-        str = "string
-        ";
-    }
-}
