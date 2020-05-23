@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent"> 　　假设神经元网络包含ν个可见单元，即可与外界发生联系的单元。而<img src="../../images/image_content/6/6_3022.gif" width="76" height="27" align="absmiddle">是所需要的训练模型，它们只表现在这ν个可见单元的输出端上。对训练系统来说，不仅要规定这些所需的状态，同时要规定它们出现的概率。因而训练的目的是控制网络状态的能量级，使得网络在自由运行的条件下，各种状态发生的概率与它们在训练时一致。<br>
+        　　为了说明Hinton等提出的训练方法，设各个状态所期望的概率表示为<br>
+        　　<img src="../../images/image_content/6/6_3023.gif" width="181" height="32" align="absmiddle"><br>
+        　　而当网络在自由运行时，各种状态出现的概率可写为<br>
+        　　<img src="../../images/image_content/6/6_3024.gif" width="182" height="34" align="absmiddle"><br>
+        　　因此训练的目的是使<img src="../../images/image_content/6/6_3025.gif" width="177" height="29" align="absmiddle">为此Hinton等人提出一种衡量这两组概率差异的函数<br>
+        　　<img src="../../images/image_content/6/6_3026.gif" width="228" height="42" align="absmiddle">　　　(6-34)<br>
+        　　显然当<img src="../../images/image_content/6/6_3027.gif" width="177" height="29" align="absmiddle">时，该G值为零。上式中第一项<img src="../../images/image_content/6/6_3028.gif" width="41" height="27" align="absmiddle">则起到加权的作用。训练的目的是使G值减小到零。<br>
+        　　Hinton等人提出了一个很重要的方法，即<br>
+        　　<img src="../../images/image_content/6/6_3029.gif" width="148" height="57" align="absmiddle">　　　(6-35)<br>
+        　　其中<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">是结点间的联系权值，T是Boltzmann意义上的温度，<img src="../../images/image_content/6/6_3031.gif" width="20" height="30" align="absmiddle">与<img src="../../images/image_content/6/6_3032.gif" width="19" height="25" align="absmiddle">是指第i与j结点同时处于激励状态的概率，<img src="../../images/image_content/6/6_3031.gif" width="20" height="30" align="absmiddle">是训练中要求的概率，<img src="../../images/image_content/6/6_3032.gif" width="19" height="25" align="absmiddle">则是网络自由运行时出现的概率。<br>
+        　　Hinton等人提出的这种方法具有十分重要的价值。首先他们找到一种使G值降低的训练方法。为使G值降低而调整联接权值<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">只需知道<img src="../../images/image_content/6/6_3033.gif" width="59" height="33" align="absmiddle">，与其它结点的信息无关。因此只要按与<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">有关的两结点的上述值成正比的值调整即可，该比值则需经实验确定。其次这种训练方法对可见结点与隐结点是一视同仁的，因而解决了隐结点参数训练的问题。<br>
+        　　上述训练方法可归纳如下：<br>
+        　　1.训练过程的目的是调整包含隐结点在内所有结点的联接权值；<br>
+        　　2.将所见结点的状态一个接一个地按其所需概率锁定在所需状态上；<br>
+        　　3.在这种锁定过程中计算每个<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">所联接两端同时处于激励状态的概率并存储下来；<br>
+        　　4.让网络自由运行，对每个<img src="../../images/image_content/6/6_3030.gif" width="22" height="25" align="absmiddle">记录其两端同时处于激励状态的概率；<br>
+        　　5.对3与4所得结果进行比较，并因而调整其相应权值，使这两者越来越接近。<br>
+        　　至于算法的细节，读者可参阅有关文章与书籍。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

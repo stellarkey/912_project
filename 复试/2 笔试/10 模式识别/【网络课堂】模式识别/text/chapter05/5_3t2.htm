@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　<span class="spe">动态聚类方法的任务是将数据集划分成一定数量的子集，例如将一个数据集划分成三个子集，四个子集等。因此要划分成多少个子集往往要预先确定，或大致确定，当然这个子集数目在理想情况现能体现数据集比较合理的划分。这里要解决的问题是:<br>
+            　　1． 怎样才能知道该数据集应该划分的子集数目<br>
+            　　2． 如果划分数目已定，则又如何找到最佳划分。因为数据集可以有许多种不同的划分方法，需要对不同的划分作出评价，并找到优化的划分结果。由于优化过程是从不甚合理的划分到“最佳”划分，是一个动态的迭代过程，故这种方法称为动态聚类方法。我们先讨论在子集数目已定条件下的聚类方法，然后在讨论如何确定合理的子集数目。</span><br>
+            <strong>5.3.1.1 动态聚类方法基本要点<a name="1"></a><br>
+            </strong>　　为了说明动态聚类方法的基本要点，我们先来观察图5.5中一个二维特征空间中的样本分布如何实现聚类的问题。 </td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_1040.gif" width="226" height="169"><br>
+            图 5.5 </td>
+        </tr>
+        <tr> 
+          <td><span class="FCcontent">　　为了说明动态聚类方法的基本要点，我们先来观察图5.5中一个二维特征空间中的样本分布如何实现聚类的问题。图中的样本应聚成三类，用圆表示这些样本所在的区域。聚类的过程显然可以从先确定各聚类的代表点开始。譬如选择图5.5中三个质心点，然后按各样本到三个质心最短矩离将样本分到该类。对于像图5.5所示这种分布，采用人工选择代表点的方法，聚类计算是一件容易的事。然而由计算机自行执行聚类过程，就不那么容易了。人由于对图5.5这种样本的分布有一个总体的了解，可以比较准确地决定各类及其代表点。但是由计算机来计算，所确定的初始代表点很可能不甚合理，以至于影响到聚类的结果。这就需要有一个对聚类的结果进行修改或迭代的过程，使聚类结果逐步趋向合理。迭代的过程需要一个准则函数来指导，使迭代朝实现准则函数的极值化方向收敛。综上所述，一个动态聚类算法需要有以下几个要点：<br>
+            　　1.选定某种距离度量作为样本间的相似性度量；<br>
+            　　2.确定样本合理的初始分类，包括代表点的选择，初始分类的方法选择等。<br>
+            　　3.确定某种评价聚类结果质量的准则函数，用以调整初始分类直至达到该准则函数的极值。<br>
+            　　</span><span class="spe">这是一个动态聚类方法的三个要素，其中初始划分只是为了使划分能从某个初始点开始，在5.3.1.2中给出了一些经验性做法。而相似度量计算方法对解决实际问题很重要，我们先从最简单的度量——数据之间的欧氏距离开始，然后再提到其它相似性度量方法。第三个要素，即使用准则函数作为优化的评价是动态聚类方法的核心。因此学习时着重体会这种处理问题的方法。学习5.3.1.2中c-均值算法这一节时，第1点准则函数和第三点迭代计算是重点，第四点是算法的归纳。</span><span class="FCcontent"><br>
+            　　下面首先结合C-均值算法进行讨论，然后给出一些其它的动态聚类算法。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

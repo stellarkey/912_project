@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　<span class="spe">　从上述讨论中可以看出，尽管近邻法有其优良品质，但是它的一个严重弱点与问题是需要存储全部训练样本，以及繁重的距离计算量。但以简单的方式降低样本数量，只能使其性能降低，这也是不希望的。为此要研究既能减少近邻法计算量与存储量，同时又不明显降低其性能的一些改进算法。<br>
+            　　总的说来，改进的方法大致分为两种原理。一种是对样本集进行组织与整理，分群分层，尽可能将计算压缩到在接近测试样本邻域的小范围内，避免盲目地与训练样本集中每个样本进行距离计算。另一种原理则是在原有样本集中挑选出对分类计算有效的样本，使样本总数合理地减少，以同时达到既减少计算量，又减少存储量的双重效果。下面就一些典型算法进行讨论。 
+            <br>
+            <br>
+            <strong>3.4.3.1 快速搜索近邻法</strong><br>
+            　　这种方法着眼于只解决减少计算量，但没有达到减少存储量的要求。其基本思想是将样本集按邻近关系分解成组，给出每组的质心所在，以及组内样本至该质心的最大距离。这些组又可形成层次结构，即组又分子组，因而待识别样本可将搜索近邻的范围从某一大组，逐渐深入到其中的子组，直至树的叶结点所代表的组，确定其相邻关系。为了简单先从最近邻法讨论起。</span><br> 
+            <font color="#800040">一、样本集分级分解</font><br>
+            　　根据以上基本思想，先对样本集进行分级分解，分级分解过程可列举如下。<br>
+            首先将整个样本分成l个子集，每个子集又分为它的l个子集，如此进行若干次就能建立起一个样本集的树形结构。分成子集的原则是该子集内的样本尽可能聚成堆，这可用聚类方法实现。<br>
+            　　结点参数： 树形结构，每个结点表示一样本子集，描述该子集的参数是：<br>
+            　　<img src="../../images/image_content/3/3_5F4037.gif" width="330" height="101"> 
+            <br>
+            　　图3.20是一个树形结构样本集，其中分支数l＝3。</td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5F4038.gif" width="294" height="458"><br> 
+            <span class="FCcontent">图 3.20 </span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"><font color="#800040">二、快速搜索算法</font><br>
+            　　要实现快速搜索近邻，需要有方法快速判断某个样本子集是否是该待识样本的可能近邻样本集，从而可将无关的样本子集尽快排除。另一方面在某样本子集内寻找哪个样本是近邻时，需快速排除不可能为近邻的样本。这两个快速判别算法可用以下两个规则表示：<br>
+            规则1： 如果存在<br>
+            　　<img src="../../images/image_content/3/3_5F4039.gif" width="110" height="25" align="absmiddle"> 
+            (3-75)<br>
+            　　则<img src="../../images/image_content/3/3_5F4040.gif" width="50" height="24" align="absmiddle">不可能是X的近邻。其中B是待识别样本在搜索近邻过程中的当前近邻距离，B在搜索过程中不断改变与缩小。算法开始可将B设为无穷大。<img src="../../images/image_content/3/3_5F4041.gif" width="70" height="28" align="absmiddle">表示待识样本X到结点<img src="../../images/image_content/3/3_5F4042.gif" width="20" height="22" align="absmiddle">的均值点距离。<br>
+            　　这个规则的证明是显而易见的，图3.21表示一待识样本及其当前近邻与一样本子集的关系。如果以X为圆心，B为半径作圆，则圆与样本子集<img src="../../images/image_content/3/3_5F4042.gif" width="20" height="22" align="absmiddle">的分布圆不会相交，因而<img src="../../images/image_content/3/3_5F4042.gif" width="20" height="22" align="absmiddle">中任一样本不可能比X的当前近邻更靠近X。 
+            　　</td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5F4043.gif" width="338" height="253"><br> 
+            <span class="FCcontent">图 3.21 </span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　规则2： 如果<br>
+            　　<img src="../../images/image_content/3/3_5F4044.gif" width="142" height="25" align="absmiddle">　　　　 
+            (3-76)<br>
+            　　其中X<sub>i</sub>∈<img src="../../images/image_content/3/3_5F4042.gif" width="20" height="22" align="absmiddle">，则X<sub>i</sub>不可能是X的近邻。<br>
+            规则2的证明同规则1，不再赘述。由此可见，只要将每个样本子集<img src="../../images/image_content/3/3_5F4042.gif" width="20" height="22" align="absmiddle">中的每个样本X<sub>i</sub>到其均值M<sub>p</sub>的距离D(X<sub>i</sub>,M<sub>p</sub>)存入存储器中，就可利用上式将许多不可能成为测试样本近邻的训练样本排除。<br>
+            　　在叙述了以上两个规则之后，下面讨论如何运用这两个规则设计一个近邻的快速搜索算法。搜索算法的大体过程是这样的： 当搜索树形样本集结构由高层次向低层次深入时，对同一层次的所有结点，可以利用规则1排除掉一些不可能包含待识别样本的近邻的结点(样本子集)。但是这往往不能做到只留下唯一的待搜索结点，因此必须选择其中某一结点先深入搜索，以类似于深度优先的方法确定搜索路径直至叶结点。然而在该叶结点中找到的近邻并不能保证确实是全样本集中的最近邻者，所找到的该近邻样本需要在那些有可能包含最近邻的样本子集中核对与修正，直至找到真正的最近邻样本为止。根据上述说明，读者就不难理解以下具体的搜索步骤了。<br>
+            　　树搜索算法。<br>
+            　　步骤1： [初始化]置B＝∞，L＝1(当前层次)，p＝0(确定当前结点)。<br>
+            　　步骤2： [置后选待搜索结点]把当前结点的所有直接后继结点放入层的一目录表中，并对这些结点计算D(X，M<sub>p</sub>)。<br>
+            　　步骤3： [排除无关结点]对层目录表中的每个结点P，用规则1将与近邻无缘的结点从目录表中清除。<br>
+            　　步骤4： [路径选择]如该层次目录表中有不止一个结点，选其中D(X，M<sub>p</sub>)最小者，将该结点从目录表中删除，如该结点是叶结点转 
+            步骤5，如不是叶结点，则L＝L+1，转步骤2；如该层次目录表中无结点待搜索，则L＝L-1，如L＝0则停止，否则转步骤3。<br>
+            　　步骤5： [近邻样本搜索]对现在执行结点p中的每个样本X<sub>i</sub>，利用规则2作如下检验： 如果D(X，Mp)＞D(X<sub>i</sub>,M<sub>p</sub>)+B则X<sub>i</sub>不是X的最近邻，否则计算D(X，X<sub>i</sub>)，若D(X，X<sub>i</sub>)＜B，置NN＝i和B＝D(X,X<sub>i</sub>)。对当前执行结点中所有X<sub>i</sub>被检验后，转步骤3。<br>
+            在算法结束时，输出X的最近邻XNN及两者间距离<img src="../../images/image_content/3/3_5F4054.gif" width="87" height="30" align="absmiddle">。 
+            <p class="FCcontent">　　<span class="spe">k-近邻法的快速计算<br>
+              　　k-近邻法快速计算是搜索待测样本的k个最近邻，以做到最后在这k个最近邻中计算占多数的训练样本类别。因此只要发现有一个训练样本比当前第k个近邻的距离要小，就把当前第k个近邻剔除出当前k近邻组。</span><br>
+              　　k-近邻法的快速计算法与上述过程大体相同，只是B值修改为当前第k个近邻的距离值。然后在步骤5中，对所计算的距离要与该k个当前的近邻比较，若比其中某个距离小，则删除最大者。除了以上两点修正外，其它算法与最近邻快速算法一样。<br>
+              　　<span class="spe">以上是快速算法的原理与计算过程。至于树结构的层次与叶结点内样本个数的选择在设计时根据中间结点计算与叶结点计算的综合平衡考虑。</span><br>
+            </p></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　<span class="spe">学习这一节要顺序掌握以下几个问题：<br>
+            　　(1) 如果在Hopfield网络中存储某个模式，存储模式是由什么因素决定的？<br>
+            　　答案是: 各结点之间的联接规则——Hebb规则。<br>
+            　　(2) 如果Hopfield网络要存储不止一个模式，那么各结点之间的连接又应该如何确定? 答案是: 单个模式连接方式的总和。<br>
+            　　(3) 联想记忆功能指的是什么？<br>
+            　　答案是: 从结点的外触发输入端送入一个信号，则从各结点的输出端输出的模式(是一个向量)，是在网络中存储的模式中与触发信号最相似的一个。要弄清它的机制。<br>
+            　　(4) Hopfield对能量函数的定义及其意义?<br>
+            　　答案是: 网络内存储的模式都是处在网络能量函数的局部最低处，因此如果将要求优化解的问题与Hopfiield网络的能量函数联系起来，按要求优化解的问题的要求设定Hopfield网络的连接系数，则系统的稳态就是该优化问题的一个优化解。</span><br>
+            　　在人工神经元网络界常说的Hopfield模型的结构可用图6-2表示。其中每个神经元使用McCulloch-Pitts模型。其特点是每个神经元的输出端都有连线与其它结点相连，因此每个神经元结点不仅接收从外部来的输入信号，并且受到本网络所有其它结点状态的影响。正是由于这种联接方式，使其中每个结点的状态对其它结点的状态产生制约作用，任何一个结点所处的状态，对其它结点处于各自不同状态产生影响，而其它结点的相应状态又反过来保证了该结点稳定在该特定状态，从而使整个系统达到一种平衡与稳定的状态。在没有外界干扰信号的影响下，这种状态将保持稳定，而一旦有外界信号作用后，可能导致维持原有平衡状态的条件不复存在，从而使该系统所有结点或一部分结点的状态发生变化。在外界信号消失后，该系统有可能重新回到原稳态，但也有可能过渡到另一种平衡状态。</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/6/6_2002.gif" width="181" height="192"><br>
+            <img src="../../images/image_content/6/6_2003.gif" width="318" height="214"> 
+            <br>
+            <span class="FCcontent">图6-2 </span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　正是由于这种网络结构具有自己特定的稳态，使人们想到了要利用这种特性实现联想记忆的功能。要实现联想记忆首先要设法将所需存储的每个模式分别成为该网络的一个个稳态，也才有可能在外界信号的激励下，使该网络从原有某稳定状态过渡到另一稳态，从而实现了联想记忆，或按内容检索存储模式的功能。<br>
+            　　为了实现这种功能，需要讨论以下几个问题：<br>
+            　　1.如何设置所需稳态。网络的稳态取决于各输入端的加权系数以及阈值，设置稳态的过程实质上就是确定这些参数的过程；<br>
+            　　2.为何与所存模式相近的输入触发信号能导引网络至所需状态；<br>
+            　　3.网络的存储容量问题以及有没有可能存在记忆错误的问题。<br>
+            　　为了便于对以上问题进行分析，对网络中每个结点作如下规定：<br>
+            　　1.结点只能处在+1与-1这两种状态；<br>
+            　　2.结点的阈值为零。<br>
+            　　在这种条件下，第i个结点的状态Si可写成如下形式<br>
+            　　<img src="../../images/image_content/6/6_2004.gif" width="123" height="40" align="absmiddle">　　　　(6-3)<br>
+            　　其中<img src="../../images/image_content/6/6_2005.gif" width="21" height="26" align="absmiddle">是第j个结点到第i个结点的联接权值，sgn是符号函数<br>
+            　　<img src="../../images/image_content/6/6_2006.gif" width="176" height="62" align="absmiddle">　　　(6-4)</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">这一节讨论求数据集的主分量为例学习人工神经元网络中一种很重要的非监督学习方法。网络是如图6-13所示的单输出结点网络。所执行的计算是最简单的点积，即由联接权值向量<img src="../../images/image_content/6/6_5002.gif" width="115" height="16" align="absmiddle">与数据向量<img src="../../images/image_content/6/6_5003.gif" width="115" height="19" align="absmiddle">进行点积运算，利用对数据集中逐个数据进行点积运算来逐渐修正联接权值向量W，当联接权值向量W趋于稳定时，该W向量就体现了该数据集的主分量。这种学习方法的原理可以用图6-14左图的数据集来分析。图6-14左图中的椭圆表示一个椭圆分布，均值在坐标原点的数据集。从图中可以看出，该数据集的主分量应在135度左右因为数据集中的大多数与该方向持接近的姿态，因此将这些数据与主分量做点积可望得到较大值。而那些与主分量接近正交的数据与之点积，点积值就应该接近于零。正是基于这个观察，求主分量可采用同一种迭代修正的算法。具体来说，用(6-55)式计算<img src="../../images/image_content/6/6_5004.gif" width="90" height="25" align="absmiddle">的修正量<img src="../../images/image_content/6/6_5005.gif" width="30" height="23" align="absmiddle">可使当前的W朝主分量的方向趋近。<br>
+            　　具体的迭代过程为：<br>
+            　　(1) 随机地设定联接权值向量W(0)<br>
+            　　(2) 将当前地联接权值向量W(k)与数据集中的逐个数据进行点积，并计算联接权值向量的修正量<img src="../../images/image_content/6/6_5006.gif" width="31" height="21" align="absmiddle"><br>
+            　　(3) <img src="../../images/image_content/6/6_5007.gif" width="154" height="27" align="absmiddle"><br>
+            　　(4) 回到(2)<br>
+            　　需要注意的是(6-55)式计算修正量的方法只是讲一个原理，在实际采用时要作修正，这主要时考虑按(6-55)式迭代修正，会使W的幅度无限增长，为了保证W向量的幅度稳定，Oja提出一种改进的修正方法，从(6-59)到(6-61)证明用这种方法求得的联接权向量, 
+            的确是最大的主分量，因为它是数据集协方差矩阵的特征向量，并证明幅度可以稳定。这部分推导不作基本要求。(6-62)和(6-63)等讨论了提取多个主分量的方法，仅供有兴趣的同学参考。<br>
+            　　现在我们再仔细分析一下这种学习方法的特点。首先我们观察一下(6-55)式，(6-55)式是对联接加权向量的每个分量w<sub>i</sub>的修正值，因此如写成对整个联接权向量的修正值，则有<br>
+            　　<img src="../../images/image_content/6/6_5008.gif" width="81" height="29" align="absmiddle"><br>
+            　　其中<img src="../../images/image_content/6/6_5009.gif" width="115" height="29" align="absmiddle"><br>
+            　　从中可见联接权值向量的修正量与输入向量成正比。例如中层结点输出值V。结合(6-54)，可以计算出因<img src="../../images/image_content/6/6_5006.gif" width="31" height="21" align="absmiddle">引起结点输出值可能的变化量<br>
+            　　<img src="../../images/image_content/6/6_5010.gif" width="240" height="32" align="absmiddle"><br>
+            　　由于<img src="../../images/image_content/6/6_5011.gif" width="31" height="29" align="absmiddle">是一个向量自身的点积，其必定为正，因此<img src="../../images/image_content/6/6_5012.gif" width="56" height="23" align="absmiddle">。由此可见这种学习方法将促使结点的输出值朝增强的方向变化，也就是说联接权值要顺应事件变化而变化。由于这与神经心理学家Hebb于1949年提出的一种对脑细胞的性质的假设是一致的，因此这种非监督学习被称为Hebb学习方法。它是多种人工神经元网络的学习的基础。</span></td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5013.gif" width="291" height="149"><br>
+            图6-13 单输出结点网络 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　非监督Hebb学习方法大都用来对数据集进行分析，例如数据集的方差、主分量分析等。其使用的网络结构往往十分简单，是只有一层的前向网络。图6-13是一个只有一个输出结点的网络，其中输入端子的个数为N。输出结点可以是线性单元，也可以是非线性单元。为了简便我们先对一个线性单元的情况进行分析，以便说明这种学习方法的特点与功能。<br>
+            　　在只有一个线性单元的网络中，输出结点的输出值V为<br>
+            　　<img src="../../images/image_content/6/6_5014.gif" width="186" height="40" align="absmiddle">　　　(6-54)<br>
+            　　其中W与<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">都是N维的向量，N是输入信号的维数，T是转置符号。<br>
+            　　显然输出值V是两个向量W与ξ的点积，如果<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">的幅值能保持恒定，那么V值的大小将反映<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">与W之间的相似程度。因此选择不同的W值，就可以对某个数据集的分布进行测试。在这里使用神经网络的目的在于获得数据集的某些统计量，并用W值表示出来，因此就需要一个学习过程来求得这个W向量的值。下面以一个二维数据为例说明这种学习方法的原理。<br>
+            　　假如该二维数据集中的每个数据用一个向量表示<img src="../../images/image_content/6/6_5016.gif" width="82" height="29" align="absmiddle">，而所要训练的权向量W在统计意义上能反映与数据集的某种相似程度，那么可以使用基于Hebb规则的权值修改方法<br>
+            <img src="../../images/image_content/6/6_5017.gif" width="82" height="30" align="absmiddle"> 
+            (6-55)<br>
+            　　其<img src="../../images/image_content/6/6_5018.gif" width="17" height="25" align="absmiddle">是数据的第i位分量，V是网络的输出，而η是一个控制修改率的系数。显然使用(6-55)式的结果会使V值朝着使现有值增大的方向变化。而如果数据集中有部分数据很相似，并占据大多数，那么训练后的W向量就其方向而言会趋于某一稳定值。为了进一步了解W与数据集的关系，我们不妨先假设W有一个稳定值，其含义是指<img src="../../images/image_content/6/6_5005.gif" width="30" height="23" align="absmiddle">的平均值为零，因此可有<br>
+            　　<img src="../../images/image_content/6/6_5019.gif" width="253" height="57" align="absmiddle"> 
+            (6-56)<br>
+            　　如果定义一个矩阵<br>
+            　　<img src="../../images/image_content/6/6_5020.gif" width="66" height="30" align="absmiddle"><br>
+            　　其中<img src="../../images/image_content/6/6_5021.gif" width="91" height="34" align="absmiddle"> 
+            　　(6-57)<br>
+            　　则(6-56)式又可表示成<br>
+            　　<img src="../../images/image_content/6/6_5022.gif" width="86" height="40" align="absmiddle"><br>
+            　　并有<img src="../../images/image_content/6/6_5023.gif" width="58" height="23" align="absmiddle"> 
+            　　(6-58)<br>
+            　　显然由于<img src="../../images/image_content/6/6_5024.gif" width="53" height="31" align="absmiddle">，C矩阵是对称的，加上C矩阵又可写成外积形式<img src="../../images/image_content/6/6_5025.gif" width="80" height="26" align="absmiddle">，因此它必然是半正定的。它的特征值非负。那么按照(6-58)式，这个稳定的W值应是C矩阵对应于零特征值的特征向量。<br>
+            　　然而仅仅使用(6-57)式对权向量的各分量进行修改，W向量的幅值是不可能保持稳定的，为了避免W向量幅值的无限增长，人们提出了各种方法，如通过规范化强制使W向量的模恒定为1等。其中最主要的一种方法是<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">提出的规则。这种规则是对基本的Hebb规则的修改，使用这种规则可使W向量的模自动保持为1。这种规则是<br>
+            　　<img src="../../images/image_content/6/6_5027.gif" width="137" height="31" align="absmiddle">　　　(6-59)</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

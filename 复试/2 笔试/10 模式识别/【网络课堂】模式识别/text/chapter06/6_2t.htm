@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　Hopfield在1982年文章中提到的网络模型，是一种带反馈的网络(见图6-2)。<span class="spe">为了便于理解Hopfield模型的工作原理，我们可以先观察计算机中最常用的触发器为例。一个触发器通常由两个反相器组成，如图所示。假设每个反相器的输入与输出只取+1和-1两种值由于反相器实现反相功能，并且其输出被耦合至另一结点的输入端。因此一旦其中一结点(如A)的输出端为+1时，另一结点(B)的输入为+1，而输出为-1，该-1值又耦合至A结点输入，可维持A输出为1。这就是双稳态触发器的原理。</span></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_2001.gif" width="203" height="255"><br>
+            补图3 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">可以认为Hopfield网络在原理上是双稳态触发器的扩展，是从双结点结构扩展到多结点的全连接结构。如果这个网络由N个结点组成，则每个结点的输出要连接到其余N-1个结点的输入端去。每个结点都有N个输入端，其中N-1个用来与其他结点连接，还有一个用作接受外界的输入信号(相当于双稳态触发器的外触发信号端)。从Hopfield网络与双稳态触发器在结构上的相似性可以看出，既然双稳态触发器能够存储两种稳态，那么Hopfield网络也必然具备存储稳态的功能。通过与双稳态触发器在结构上的相似性对比，我们可以从本质上体会到Hopfield网络的工作原理，体会到讲义上提到这种系统是一种动力系统，系统内部存在内力等性质。在学习本节内容时，我们可以随时与双稳态触发器作对比，分析它们之间的相似之处，也要看到它们之间的不同之处。 
+            </span> <br>
+            　　具体说来，网络中的每一个神经元既可能接受来自网络输入端从外界获取的信息，又从网内的其它神经元输出端引入信息，因而形成网内神经元之间互相耦合的结构。这样一来，每一个神经元的状态不仅受到外界输入信息的影响，它还与网内其它神经元所处的状态有关。因此，整个网络的状态不仅与从外界输入的信息有关，还与网络内部的参数有关。它与外界输入信息的关系不再是一个简单的映射关系，而可以看作是外界输入信息与网内结点相互制约共同作用的结果。在许多应用问题中，从外界输入的信息只起一种触发作用。它引起了网络中每个结点状态的变化，从而产生了新的相互制约关系，使系统呈现出相应的状态。如果将外部信息的作用称之为外力，而内部各神经元的相互作用为内力的话，这种网络就是有一种具有内力的系统，因而称这种网络为动力系统。它与本章中要讨论的不带反馈的网络在结构、工作机制、分析方法与应用场合等方面都有很大的不同。<br>
+            　　人们之所以对这种类型的网络很感兴趣，最初是与联想记忆(Associative Memory)问题有关的。这种联想记忆功能是人类具有的一种十分主要的功能。譬如人们在看到与某一事物有关的部分信息时，往往可以联想到该事物的其它信息，或与该事物相似或有关的其它事物的信息。Hopfield模型及其有关的其它模型在一定程度上也可以具有这样的功能，因而引起了人们的关注。此外，这种类型的网络还能在问题求优化解等多方面得到应用，因此这种类型的网络成为人工神经元网络体系中最主要的网络类型之一。<br>
+            　　<span class="spe">这一段主要讲Hopfield网络的两种应用，一种是存储信息，并有联想记忆的功能，也就是说可以从某个已存入信息的局部获得这个信息的完整形式。另一个是可用来对问题求优化解。</span><br>
+            　　需要指出的是，现在被称为Hopfield模型的网络类型，并不是Hopfield首先提出的。在他那篇重要文章发表之前，不少人已对这种网络模型的许多方面进行过研究。而Hopfield的主要贡献在于他将前人有关的工作组织到一起，引入一种称之为“能量”的概念，并强调所存储的记忆起到一种动态吸引子(dynamic 
+            attractor)的作用。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

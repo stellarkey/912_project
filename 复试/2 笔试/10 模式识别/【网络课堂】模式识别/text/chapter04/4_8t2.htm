@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　<span class="spe">此节不作基本要求</span><br>
+            　　上述分支定界算法虽然比盲目穷举法节省计算量，但计算量仍可能很大而无法实现，因此人们还是常用次优搜索法。<br>
+            　　<font color="#800040">4.8.2.1 单独最优特征组合</font><br>
+            　　这是一种最简单的方法，即将各特征按单独使用计算其判据值，然后取其前d个判据值最大的特征作为最优特征组合。这种做法的问题在于即使各特征是独立统计的，也不一定得到最优结果。但如果可分性判据可写成如下形式<br>
+            　　<img src="../../images/image_content/4/4_8021.gif" width="118" height="49" align="absmiddle"><br>
+            　　或 <img src="../../images/image_content/4/4_8022.gif" width="116" height="46" align="absmiddle"><br>
+            　　则用这种方法可以选出一组最优的特征来。例如当两类都是正态分布，各特征统计独立时，用Mahalanobis距离作为可分性判据，上述条件可以满足。<br>
+            　　<font color="#800040">4.8.2.2 顺序前进法(SFS)</font><br>
+            　　这是最简单的自下而上搜索方法。首先计算每个特征单独进行分类的判据值，并选择其中判据值最大的特性，作为入选特征。然后每次从未入选的特征中选择一个特征，使得它与已入选的特征组合在一起时所得的J值为最大，直到特征数增至d个为止。<br>
+            顺序前进法与前一小节的单独特征最优化组合相比，一般说来，由于考虑了特征之间的相关性，在选择特征时计算与比较了组合特征的判据值，要比前者好些。其主要缺点是，一旦某一特征被选入，即使由于后加入的特征使它变为多余，也无法再把它剔除。<br>
+            该法可推广至每次入选r个特征，而不是一个，称为广义顺序前进法(GSFS)。<br>
+            　　<font color="#800040">4.8.2.3 顺序后退法(SBS)</font><br>
+            　　这是一种与上一节相反的方法，是自上而下的方法。做法也很简单，从现有的特征组中每次减去一个不同的特征并计算其判据，找出这些判据值中之最大值，如此重复下去直到特征数达到予定数值d为止。<br>
+            与SFS相比，此法计算判据值是在高维特征空间进行的，因此计算量比较大。<br>
+            此法也可推广至每次剔除r个，称为广义顺序后退法(GSBS)。<br>
+            　　<font color="#800040">4.8.2.4 增l减r法(l-r法)</font><br>
+            　　前面两种方法都有一个缺点，即一旦特征入选(或剔除)，过程不可逆转。为了克服这种缺点，可采用将这两种方法结合起来的方法，即增l减r法。其原理是对特征组在增加l个特征后，转入一个局部回溯过程，又用顺序后退法，剔除掉r个特征。这种方法既可能是“自上而下”方法，也可能是“自下而上”的，这取决于l与r的数据大小。当l＜r时，入选特征数逐渐增加，属“自下而上”型，反之属“自上而下”型。<br>
+            　　此法也可推广至用GSFS及GSBS代替SFS及SBS，并可在实现增加l特征时采用分几步实现。增l特征用<img src="../../images/image_content/4/4_8023.gif" width="17" height="30" align="absmiddle">步，减r则用<img src="../../images/image_content/4/4_8024.gif" width="20" height="26" align="absmiddle">步，该种方法一般称为<img src="../../images/image_content/4/4_8025.gif" width="54" height="27" align="absmiddle">法。这种做法是为了既考虑入选(或剔除)特征之间的相关性，又不至因此引起计算量过大。合理地设置<img src="../../images/image_content/4/4_8024.gif" width="20" height="26" align="absmiddle">与<img src="../../images/image_content/4/4_8023.gif" width="17" height="30" align="absmiddle">，可以同时对两者，即计算复杂性及特征选择的合理性兼顾考虑。<br>
+            前面所讲的各种方法都可看作是<img src="../../images/image_content/4/4_8025.gif" width="54" height="27" align="absmiddle">法的特例，它们的关系如表4 
+            1所示。</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/4/4_8026.gif" width="368" height="213"></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

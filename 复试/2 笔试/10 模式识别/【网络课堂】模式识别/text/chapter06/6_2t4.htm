@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><strong><span class="FCcontent">6.2.4 Hopfield模型在问题求优化解中的应用</span></strong><span class="FCcontent"><br>
+            　　</span><span class="spe">在学习能量函数底定义及其性质之后，我们可以从一个更深入的角度来看Hopfield网络的性质。从(6-12)式中可以看到，Hopfield网络的能量函数值取决于两类因素，一个是网络的联接权值w<sub>ij</sub>，i,j=1,…,N(w<sub>ii</sub>=0，i=1,…,N)，而另一个则是结合的输出端状态Si，i=1,…,N。利用稳态式能量函数极小点这一性质，在确定了所要求的稳态后，可以通过求能量函数值极小，确定联接权值参数(即所有的w<sub>ij</sub>)这在式(6-18)以及其前的推导过程中已说明。而这一节则讨论用于求优化解的例子。<br>
+            　　这是一个在所有联接权值w<sub>ij</sub>设定的条件下，求稳态时各结点的输出端状态S<sub>i</sub>的问题。所有Si的状态就体现了要解决的优化问题的解。在学习时，要注意以下几点：<br>
+            　　(1) 如何将一个求优化问题的解的问题与Hopfield网络联系起来的？<br>
+            　　(2) 怎样将要优化的函数与Hopfield网络的能量函数联系起来的？<br>
+            　　(3) 特别要注意如何将优化问题要遵循的约束条件转化成一个求极值函数的方法，然后是将该函数与能量函数联系起来，从而确定联接权值w<sub>ij</sub>的方法。</span><span class="FCcontent"><br>
+            　　Hopfield模型作为一种联想记忆，在神经网络研究中起着重要的作用。在实际应用中Hopfield模型又常被用来对问题求优化解。如果将所关注的优化问题的优化解表示成对某种代价函数求极小值的问题，而这种代价函数若能表示成Hopfield模型中的能量函数形式，则网络状态在达到某个稳态时，该稳态就体现了某个优化的解。<br>
+            　　为了说明这一点，可以举推销员路径规划问题为例。<br>
+            　　推销员路径规划问题是指为一个推销员确定从N个城市中的某个城市出发，遍访其它N-1个城市并返回初始出发点的最佳路径。在旅行中推销员对每个城市必须访问一次也只能访问一次，而最佳则是要求所经历的路径是最短的。这个问题可用于卡车司机的路径规划及机器人手臂运动的自动规划等。在规划路径时，各城市之间的距离已知。这种距离是一种抽象的概念，它不一定符合欧氏距离的约束条件。如果将第i个城市与第j个城市间距离表示成<img src="../../images/image_content/6/6_2045.gif" width="18" height="32" align="absmiddle">，则甚至可能有<img src="../../images/image_content/6/6_2046.gif" width="90" height="34" align="absmiddle">。<br>
+            　　对这个问题使用Hopfield模式求解可以有多种不同的方法。问题的解答是要给每个城市确定其访问顺序。为了便于用神经网络进行求解。我们需要构造一个由N行及N列组成的二维矩阵表示，如图6-3所示(N＝5)。<br>
+            　　</span><span class="spe">例子中共有五个城市，起名为A,B,C,D,E，优化的问题解是为它们确定一个旅行的顺序，也就是要给它们每个城市一个顺序号，顺序号是1－5。由于每一个城市都有获取其中任一序号的可能性，可以用5个结点状态的0或1来表示该城市与哪个顺序号之间联系起来。则5个城市一共有25个结点。这是为什么要设置一个25个结点的网络的原因。为了方便起见，结点排列成一个二维表格形式，以便与其物理含义相联系，便于用二维下标表达各个约束条件。如S<sub>31</sub>则表示第三个城市与顺序1联系起来的结点，如该结点状态为1，则表示第三个城市(c)排在顺序第1号，即从该城市开始旅行。</span></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_2047.gif" width="133" height="133"><br>
+            图6-3 用二维矩阵表示路径规划问题 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">在弄清楚为什么可以用一个5×5结点的Hopfield网络来计算最优解的原理后，下一个问题就是要根据约束条件建立一个需优化的函数。具体做法为：<br>
+            　　(1)考虑所有约束条件：<br>
+            　　(a) 一个城市只能访问一次，因此只能有一个顺序号<br>
+            　　(b) 每个城市必须给予不同的顺序号，却不能同时访问两个及两个以上城市<br>
+            　　(c) 每个城市必须都访问到<br>
+            　　(d) 旅途应最短<br>
+            　　(2)为每个约束条件建立一个方程，如(6-26)，(6-27)，(6-28)，或要求极值的一个函数，如要求旅途最短这一条件不能写成一个方程，只能写成一个函数。<br>
+            　　(3)将各个满足约束条件方程与函数组合起来成(6-29)式，注意处理(6-26)与(6-28)的不同之处。</span><br>
+            　　该矩阵中的每一个元素<img src="../../images/image_content/6/sai.gif" width="30" height="18" align="absmiddle">的第一个下标号表示城市的代码a＝｛A，B，C，D，E｝，而后一个下标号表示其访问顺序号i＝｛1，2，3，4，5｝。<img src="../../images/image_content/6/sai.gif" width="30" height="18" align="absmiddle">只能取0与1两种状态，当取后者时表示第A个城市的访问顺序是i。根据题意一个合法的解必须满足以下条件：根据一个城市只能访问一次的原则，应有<img src="../../images/image_content/6/6_2048.gif" width="143" height="39" align="absmiddle"><br>
+            　　其中 <br>
+            　　<img src="../../images/image_content/6/6_2049.gif" width="244" height="37" align="absmiddle">　　　(6-26)<br>
+            　　或表示成上述和式应取极值；<br>
+            　　根据每个访问序号不能同时赋给两个不同的城市，则应有<br>
+            　　<img src="../../images/image_content/6/6_2050.gif" width="141" height="45" align="absmiddle">其中 
+            <br>
+            　　<img src="../../images/image_content/6/6_2051.gif" width="245" height="39" align="absmiddle">　　　(6-27)<br>
+            　　或上述和式取极值；<br>
+            　　根据必须访问每一个城市的约束条件<br>
+            　　<img src="../../images/image_content/6/6_2052.gif" width="100" height="42" align="absmiddle">其中<img src="../../images/image_content/6/6_2053.gif" width="106" height="37" align="absmiddle"> 
+            (6-28)<br>
+            　　除了以上约束条件以外，还应满足旅途路径最短的要求，则有<br>
+            　　<img src="../../images/image_content/6/6_2054.gif" width="203" height="42" align="absmiddle">　　　(6-29)<br>
+            　　取极值。其中<img src="../../images/image_content/6/sai.gif" width="30" height="18" align="absmiddle">与<img src="../../images/image_content/6/sbi.gif" width="36" height="18" align="absmiddle">同时为“1”，则表明由第A个城市离开进入第b个城市，<img src="../../images/image_content/6/sbi.gif" width="36" height="18" align="absmiddle">为“1”则表示了相反的情况。<br>
+            　　根据以上各种约束条件，可以设计出一个包含各种约束的能量函数。<br>
+            　　<img src="../../images/image_content/6/6_2055.gif" width="370" height="124" align="absmiddle">　　　(6-29)<br>
+            　　<span class="spe">在确定了需优化的函数之后，就要将该函数与Hopfield网络的能量函数挂起钩来，从而确定每一个联接权值的值。联接权值w<sub>ai,bj</sub>表示第a<sub>i</sub>结点与b<sub>j</sub>结点之间的联接权值，它们要与(6-29)式中各个部分对应起来。例如(6-29)中的第一项只对同一列内结点起约束作用，因此需要引用<img src="../../images/image_content/6/6_2056.gif" width="20" height="23" align="absmiddle">函数表示这种约束。实际上只是说在考虑同一列内不同结点之间的联接权值时才有-A这一项，不同列的结点之间在联接权值中没有这一项。<br>
+            由于(6-29)式右边第三项与Hopfield网络的能量函数形式不符，因此要对它先分解，然后再采取相应措施。</span><br>
+            　　对照式(7-12)可以看出以上矩阵可用一个具有N2个结点的Hopfield模型实现，而各结点之间的权值<span class="spe"><img src="../../images/image_content/6/6_2057.gif" width="35" height="29" align="absmiddle"></span>则分别由对应上式各项的分量组成。如对应于第一项的权值分量为<br>
+            　　<img src="../../images/image_content/6/6_2058.gif" width="99" height="35" align="absmiddle">，<br>
+            　　其中<br>
+            　　<img src="../../images/image_content/6/6_2059.gif" width="141" height="63" align="absmiddle"><br>
+            　　至于对应第三项的分量可通过以下推演加以确定<br>
+            　　<img src="../../images/image_content/6/6_2060.gif" width="296" height="112" align="absmiddle">　　　　(6-30)<br>
+            　　显然(6-30)右端的第二项是常数可略去，而第三项则可通过给每个结点设置一阈值<img src="../../images/image_content/6/6_2061.gif" width="78" height="29" align="absmiddle">而实现。<br>
+            　　将以上方式设立的Hopfield模型以某种随机的初始状态投入运行，系统会趋于某种稳定状态。一旦到达这种稳定状态，它就是该问题的一个最佳解。<br></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

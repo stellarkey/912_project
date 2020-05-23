@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent">　　<span class="spe">记得在前面说过，模式识别或者通俗一点讲自动分类的基本方法有两大类，一类是将特征空间划分成决策域，这就要确定判别函数或确定分界面方程。而另一种方法则称为模板匹配，即将待分类样本与标准模板进行比较，看跟哪个模板匹配度更好些，从而确定待测试样本的分类。上面我们讨论的方法可以说都是将特征空间划分为决策域，并用判别函数或决策面方程表示决策域的方法。而近邻法则在原理上属于模板匹配。它将训练样本集中的每个样本都作为模板，用测试样本与每个模板做比较，看与哪个模板最相似(即为近邻),就按最近似的模板的类别作为自己的类别。譬如A类有10个训练样本，因此有10个模板，B类有8个训练样本，就有8个模板。任何一个待测试样本在分类时与这18个模板都算一算相似度，如最相似的那个近邻是B类中的一个，就确定待测试样本为B类，否则为A类。因此原理上说近邻法是最简单的。<br>
+        　　但是近邻法有一个明显的缺点就是计算量大，存储量大，要存储的模板很多，每个测试样本要对每个模板计算一次相似度，因此在模板数量很大时，计算量也很大的。那么有一个如此明显缺点的方法还有没有存在的必要性呢？这就要看其是否有优点，所以对近邻法的优点也要弄清楚。结论是:在模板数量很大时其错误率指标还是相当不错的。这就是说近邻法有存在的必要。<br>
+        那么能否趋利避害，保留其优点，克服或改进其缺点呢？人们就想出各种改进的办法。剪辑近邻法与压缩近邻法就是两种有代表性的改进方法。<br>
+        　　学习这一章抓住以下几个要点：<br>
+        　　(1) 弄清楚近邻法的定义(包括k近邻法)，与基本做法<br>
+        　　(2) 弄清“近邻法性能好”是在什么意义上讲的。知道渐进平均错误率的定义<br>
+        　　(3) 快速搜索方法是使用怎样的原理？<br>
+        　　(4) 剪辑近邻法的原理是什么? 而压缩近邻法与剪辑近邻法有什么不同之处？</span><br>
+        <strong><br>
+        3.4.1 近邻法原理及其决策规则</strong><br>
+        　　在3.3.2中曾提到最小距离分类器。它将各类训练样本划分成若干子类，并在每个子类中确定代表点，一般用子类的质心或邻近质心的某一样本为代表点。测试样本的类别则以其与这些代表点距离最近作决策。该法的缺点是所选择的代表点并不一定能很好地代表各类，其后果将使错误率增加。那末增加代表点的数量有没有可能获得性能好的分类器呢?一种极端的情况是以全部训练样本作为“代表点”，计算测试样本与这些“代表点”，即所有样本的距离，并以最近邻者的类别作为决策。这种方法就是近邻法的基本思想。最初的近邻法是由Cover和Hart于1968年提出的，随后得到理论上深入的分析与研究，是非参数法中最重要的方法之一。这一节将讨论其基本原理，错误率分析及若干改进方法。</p>
+      <p class="FCcontent"><strong>3.4.1.1 最近邻法决策规划</strong><a name="1"></a><br>
+        　　将与测试样本最近邻样本的类别作为决策的方法称为最近邻法。对一个C类别问题，每类有N<sub>i</sub>个样本，i＝1，…，C，则第i类ω<sub>i</sub>的判别函数<br>
+        　　，k＝1，…，Ni<img src="../../images/image_content/3/3_5F4001.gif" width="261" height="36" align="absmiddle"> 
+        　　　　　(3-61)<br>
+        　　其中X<sub>i</sub><sup>k</sup>表示是ω<sub>i</sub>类的第k个样本。以(3-61)式为判别函数的决策规则为：<br>
+        　　如果<img src="../../images/image_content/3/3_5F4002.gif" width="231" height="39" align="absmiddle"> 
+        <br>
+        　　则决策X∈ωj (3-62)<br>
+        　　<span class="spe">由此可见最近邻法在原理上最直观，方法上也十分简单，只要对所有样本(共N＝∑N<sub>i</sub>)进行N次距离运算，然后以最小距离者的类别作决策。<br>
+        　　在(3-61)与(3-62)式中用‖·‖表示距离，其实这是一个象征性的表示，你可以采用任何一种相似性的度量，在这课文中一般以欧氏距离为相似性度量。我们很早就讲过了, 
+        由于特征向量各个分量之间对应的物理意义很可能不一致，因此究竟采用何种相似性度量要看问题而定。</span><br>
+        <strong>3.4.1.2 k-近邻法决策规则</strong><a name="2"></a><br>
+        　　最近邻法可以扩展成找测试样本的k个最近样本作决策依据的方法。其基本规则是，在所有N个样本中找到与测试样本的k个最近邻者，其中各类别所占个数表示成k<sub>i</sub>,i＝1，…，co则决策规划是：<br>
+        　　如果<img src="../../images/image_content/3/3_5F4004.gif" width="220" height="35" align="absmiddle"><br>
+        　　则决策X∈ω<sub>j</sub> (3-63)<br>
+        　　k近邻一般采用k为奇数，跟投票表决一样，避免因两种票数相等而难以决策。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

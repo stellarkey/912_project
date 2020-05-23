@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><strong><span class="FCcontent">6.2.2.5 
+      Hopfield模型存在的问题</span></strong><span class="FCcontent"><br>
+      　　利用Hopfield模型存储与检索信息时，会遇到检索到错误信息的问题。这个问题是由于网络不仅具有与所存模型对应的稳态，同时还存在一些意想不到的稳态，因而系统在演变时就有可能滞留于这些寄生稳态而导致错误。<br>
+      　　产生寄生稳态的原因大致有三种情况。第一种情况是与所需状态相反的情况，对应这种情况能量函数值也是最小的。这种情况可通过设置一符号检测位加以判断与解决。<br>
+      　　第二种情况来自于所存储模式的一种混合状态，它产生于任何奇数个所存储模式的线性组合。例如由三个所存模式的对称组合，<br>
+      　　<img src="../../images/image_content/6/6_2037.gif" width="235" height="38" align="absmiddle">　　　(6-19)<br>
+      　　也能形成稳态，因而造成错误。<br>
+      　　第三种情况则出现在存储模式数量ｐ较大时，此时网络能量函数的某些局部极值与原存储模式或其组合都不相关。<br>
+      　　因此后两种情况的存在使得网络的性能变坏。人们为此研究了各种减少错误模式的方法。<br>
+      　　使用Hopfield模型的另一个实际问题是存储容量问题。具体说来，一个有N个结点的Hopfield模型，到底能存入多少个稳态呢?Abu-Mustafa等人的研究表明稳态的最大数量是N。由于每个稳态具有N位，因此在稳态中所存储的总量为N<sup>2</sup>。如果Hopfield模型中每个结点都与其余N-1个结点连接，而连接数值有T个不同的值，则数值本身需用log<sub>2</sub>T位表示，这样一来存储连接权值的寄存器容量为N2log<sub>2</sub>T，也就是说所耗费的资源比传统的计算机大。这可看作是对基于内容记忆方式具有纠错性能所需化的代价吧。<br>
+      　　在实际使用Hopfield模型中另一个问题是所谓“学习不了的问题(hard learning problem)”。也就是说某些计算难以用其实现。为了解决这种问题，原则上需要在网络中引入隐结点。并需找到其学习方法，这将在下一节中讨论。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

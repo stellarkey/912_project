@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="spe"><strong>学习指南</strong><a name="1"></a><br>
+            　　学习这一章首先要弄清楚这一章要讨论的主要问题。这一章要讨论的问题与前几章有所不同。前两章主要讨论模式识别的重要概念，如贝叶斯分类器、线性分类器与非线性分类器等。在讨论这些设计分类器的方法时，提到有一个样本集，样本集中的样本用一个已经确定的向量来描述，这也就是说对要分类的样本怎样描述这个问题是已经确定的。例如对苹果与梨的划分，我们使用尺寸、重量和颜色三种度量来描述。这种度量方法是已经确定好的。在这种条件下研究用线性分类器好还是非线性分类器好，以及这些分类器的其它设计问题。这一章要讨论的问题是对已有的特征空间进行改造,着重于研究对样本究竟用什么样的度量方法更好。譬如上面提到的对苹果与梨用三种度量来描述。那么是否运用这三种度量是最有效的呢？譬如颜色这一个指标对区分红香蕉苹果与梨很有效。因为前者是红色，后者是黄色，用这个指标上的差异很容易将红香蕉苹果与梨区分开。但是如用颜色区分黄香蕉苹果与梨恐怕就会困难得多。换句话说在这种情况下，这个指标就不很有效了。可见对分类器设计来说，使用什么样的特征描述事物，也就是说使用什么样的特征空间是个很重要的问题。这个问题称之为描述量的选择问题，意思是指保留哪些描述量，删除哪些描述量的问题。但对特征进行删选并不是唯一的方法，这种方法也不一定很有效，因此本章还要研究其它方面，由于对特征空间进行改造目的在于提高其某方面的性能，因此又称特征的优化问题。<br>
+            　　对特征空间的改造、优化、主要的目的是降维，即把维数高的特征空间改成维数低的特征空间，降维主要有两种途径。一种是删选掉一些次要的特征，问题在于如何确定特征的重要性，以及如何删选。另一种方法是使用变换的手段，在这里主要限定在线性变换的方法上，通过变换来实现降维，这两种方法的区分要弄清楚。<br>
+            学习本章时，可把重点放在基于变换的方法，因为这里涉及的概念的方法不仅模式识别中有用，在其它领域中也会有用。学习这一章时，可以通过4.3节了解基本方法，但对具体计算过程可粗略了解即可。第4.4与4.5节中了解一些准则定义即可。4.6节中讨论的K-L变换用处较广，可作为学习重点。4.8节讲特征选择的一些问题，不作学习的主要内容。<br>
+            <strong>学习目的</strong><a name="2"></a><br>
+            　　1．了解特征空间的选择在设计模式识别系统，解决模式识别具体问题中是至关重要的。<br>
+            　　2．了解描述量选择，特征组合优化的两种基本方法，一是对原特征空间进行删选，另一种是通过变换改造原特征空间。<br>
+            　　3．典型的运用线性变换对原特征空间优化的基本方法，进一步深入理解模式识别处理问题的基本方法——确定准则函数，并通过计算进行优化。<br>
+            　　4．使用特征选择方法的基本问题。 </span> <p class="spe"><strong>本章重点</strong><a name="3"></a><br>
+              　　1．弄清对特征空间进行优化的含义<br>
+              　　2．对特征空间进行优化的两种基本方法——特征选择与特征的组合优化<br>
+              　　3．对特征空间进行优化的一些常用判据<br>
+              　　4．利用线段变换进行特征空间优化的基本方法，4.3节了解一些基本概念就可。4.6节是中的K-L变换要重点掌握。</p>
+            <p class="spe"><strong>本章难点</strong><a name="4"></a><br>
+              　　1．学习本章首先要透彻理解什么叫特征空间的优化，为什么要对特征空间进行优化。<br>
+              　　2．对特征空间进行优化，要用到一些数学工具，如向量点积、线性变换、正交变换、解决条件极值问题的拉格朗日乘子方法等。这些数学工具是最常用的一些方法，应该通过本章学习进一步加深领会。<br>
+              　　3．本章中的4.6节，讨论利用K-L变换对特征空间进行降维，其中部分推导中用了正交变换，条件极值问题系数学工具，又涉及矩阵的特征值与特征向量问题。这部分数学内容要掌握，另一方面要体会使用K-L变换的好处，如果对富里叶变换，对信号进行时域分析与在频域分析等概念已有一定理解，可有助于对使用K-L变换方法的理解。</p>
+            <p><span class="spe"><strong>知识点</strong><a name="5"></a></span><br>
+            </p></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/4/4_1001.gif" width="318" height="598"></td>
+        </tr>
+        <tr> 
+          <td class="spe"><strong>课前思考题</strong><a name="6"></a><br>
+            　　1．什么叫特征空间？如果我们用颜色、尺寸、重量来衡量水果的构造的特特空间是几维空间？<br>
+            　　2．如果用颜色、尺寸与重量组成的特征空间来区分苹果与梨，你认为这三种度量中的哪种最有效？为什么？能否想像这两种水果在这个三维空间的分布？如果用这个特征空间来区分红苹果与樱桃，你想像一下这两类水果在特征空间如何分布？能否对这两种情况设计更经济有效的特征空间？<br>
+            　　3．如果两类物体在一个二维特征空间如图分布,能否用删除其中任一维来优化特征空间？有没有什么方法能得到一个对分类很有利的一维特征空间？</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/4/4_1002.gif" width="344" height="275"></td>
+        </tr>
+        <tr> 
+          <td class="spe">　　4．上题的答案可用下图Y<sub>1</sub>与Y<sub>2</sub>组成的空间表示？你认为哪个分量可以删掉？</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/4/4_1003.gif" width="400" height="336"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">5．你有没有办法将原在X<sub>1</sub>、X<sub>2</sub>空间表示的数改成用Y<sub>1</sub>、Y<sub>2</sub>空间表示？</span></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　改变成本函数是改进误差回传算法基本算法的一个重要方面。基本算法中使用的成本函数为平方函数，其相应的<img src="../../images/image_content/6/6_5F4026.gif" width="19" height="25" align="absmiddle">计算式(6-40)中包含了<img src="../../images/image_content/6/6_5F4036.gif" width="43" height="27" align="absmiddle">)项。当<img src="../../images/image_content/6/6_5F4037.gif" width="20" height="31" align="absmiddle">的值较大时，<img src="../../images/image_content/6/6_5F4038.gif" width="39" height="28" align="absmiddle">处于函数的饱和段，因此<img src="../../images/image_content/6/6_5F4036.gif" width="43" height="27" align="absmiddle">项的值很小。而<img src="../../images/image_content/6/6_5F4026.gif" width="19" height="25" align="absmiddle">的值不仅在输出结点层的权值修改量中起作用，它还会传播到其它层的<img src="../../images/image_content/6/6_5F4026.gif" width="19" height="25" align="absmiddle">中去，因而使整个训练过程的效率降低。其实平方成本函数并不是唯一的选择。事实上只要能在<img src="../../images/image_content/6/6_5F4039.gif" width="54" height="32" align="absmiddle">条件下达到最小值的任何可导函数都可以使用。一种被称为相对熵的如下函数形式是经常使用的一种成本函数。<br>
+            　　<img src="../../images/image_content/6/6_5F4040.gif" width="346" height="60" align="absmiddle">　　　　(6-46)<br>
+            　　显然这种函数值除了对所有i与<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">有<img src="../../images/image_content/6/6_5F4039.gif" width="54" height="32" align="absmiddle">时为零外，其它情况下都为正值。它的优点在于，如果有一个结点的输出在一个错误的极值处饱和，那么它的值就会发散。而对平方成本函数来说，它的值只会达到某个常数值，因而训练过程会在一个相对平坦的E值处逗留很长时间。<br>
+            　　如果f函数采用tanh函数，则(6-40)就会变成<br>
+            　　<img src="../../images/image_content/6/6_5F4041.gif" width="114" height="31" align="absmiddle">　　　(6-47)<br>
+            　　在上式中<img src="../../images/image_content/6/6_5F4036.gif" width="43" height="27" align="absmiddle">不存在了，这就可以克服使用(6-40)式计算修改量的缺点。<br>
+            　　此外还有计算误差的其它方法，如<br>
+            　　<img src="../../images/image_content/6/6_5F4042.gif" width="191" height="35" align="absmiddle">　　　(6-48)<br>
+            　　或<img src="../../images/image_content/6/6_5F4043.gif" width="178" height="37" align="absmiddle"> 
+            (6-49)<br>
+            　　等，它们都可改进训练效率。<br>
+            　　影响训练效率的因素还来自确定权值修改量的方式，在基本算法中<br>
+            　　<img src="../../images/image_content/6/6_5F4044.gif" width="110" height="48" align="absmiddle"><br>
+            　　即以与相应偏导数成正比的量作为权值修正量，比例系数为<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">。然而使用<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">的问题在于，当<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">很小时会使收敛速度很慢，而选择大的<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值，则又可能发生振荡。这主要是由于成本函数组成的表面在其谷盆底处很平坦，而在谷壁处又有陡峭的壁造成。同此人们可以采用更复杂的优化方法，而放弃梯度算法。一种常用的又很简单的方法是增加惯性项，也就是让权值系数的修改量有一定的延续性，不致于发生很大的振荡，其做法可用下式表示<br>
+            　　<img src="../../images/image_content/6/6_5F4046.gif" width="226" height="52" align="absmiddle">　　　(6-50)<br>
+            　　其中引入序号t表示前后两次权值修改量之间有关系，在t+1时刻权值的修改量包含其部分前次修改量。α是确定前修改量参与当前修改量的因素，它必须控制在0与1之间，经常使用的值是0.9。<br>
+            　　在使用(6-50)进行权值修改时，如果运行在成本函数表面的平稳段，则<img src="../../images/image_content/6/6_5F4047.gif" width="38" height="50" align="absmiddle">在每一时刻接近于一个常数值，上式将收敛至<br>
+            　　<img src="../../images/image_content/6/6_5F4048.gif" width="132" height="52" align="absmiddle">　　　(6-51)<br></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4049.gif" width="354" height="189"><br>
+            图6-10 惯性项的效果 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　也就是说其实际的学习率是<img src="../../images/image_content/6/6_5F4050.gif" width="34" height="37" align="absmiddle">。而如果处于振荡的情况，则由于有惯性项存在，它在没有增大振荡幅值的效果下，能使整个过程有<img src="../../images/image_content/6/6_5F4051.gif" width="35" height="40" align="absmiddle">倍的加速。图6-10是一个利用惯性项起作用的例子，其中左右两图表示了一个12步的修正过程。左右两图中<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">都取相同值(0.0476)，它对没有惯性项的情况是最佳的。但右图则是加上α=0.5的惯性项后的效果。可见惯性项的效果是很明显的。<br>
+            　　增加惯性项的做法最初用于按样本函数修改的方式中，但对批处理训练法也有效。在按样本逐次进行修改的方式中使用，可保留训练轨迹中的振荡，这在一定程度上也是有益的。<br>
+            　　除了以上两种方法上的改进外，使用自适应的学习率<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">也很有效。其基本着眼点是依据误差项递减的效果，自适应地调整<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值。如果使用了修改后的网络，误差反而增加，则表明<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值太大，调过头了。如果使用某个<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值能使误差连续降低，则该<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">值又可能太保守了。一种自适应修改<img src="../../images/image_content/6/6_5F4045.gif" width="13" height="18" align="absmiddle">的方法是<br>
+            　　<img src="../../images/image_content/6/6_5F4052.gif" width="271" height="85" align="absmiddle">　　　(6-52)<br>
+            　　以上讨论一些如何加速训练过程的方法。除此之外如何从局部极值下摆脱出来也是一个主要的方面。例如在训练一开始就将数值设置在较大的值，容易使其在一开始就陷入局部极值而无法调整。此外局部极值往往由于误差之间互相补偿造成，因此在按样本逐个修正的方法中，随机地使用训练样本有好处，它就相当于在训练过程中引进随机噪声。另一种引进噪声的方法是允许误差偶而增加，并采用模拟退火的方法等。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_colume.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="FFFAE5">
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top" class="FCcontent"><!-- InstanceBeginEditable name="colume" --><span class="FCtitle1"><strong>§6.5 
+      人工神经网络中的非监督学习方法</strong></span><br>
+      <strong> <a href="6_5.htm" target="_parent">6.5.1 引言</a></strong><br>
+      <strong><a href="6_5_2.htm" target="_parent">6.5.2 非监督Hebb学习方法</a></strong><br>
+      <strong> <span class="FCtitle2">6.5.3 非监督竞争学习方法</span></strong><br>
+      <strong>　<a href="6_5_3.htm" target="_parent">6.5.3.1 引言</a></strong><br>
+      <strong>　<a href="6_5_32.htm" target="_parent">6.5.3.2 自适应共振理论</a></strong><br>
+      <strong>　<a href="6_5_33.htm" target="_parent">6.5.3.3 自组织特征映射</a></strong><br>
+      　　<span class="spe">这一节的自组织特征映射仍然是一个非监督竞争学习方法的例子，但是它有自己的特点。首先这个网络的结构有一个特点：输出结点的数量很大，并布置成有规则的格局。在一维时是顺序排列，即有相应序号。在二维时则布置成网格的结构。输出结点之间的结构可以看作各结点有自己的坐标，有明确无误的相邻关系。这是它的一个特殊点。这些结点与输入向量的每个分量都联接，因此每个输出结点孤立来看与6.5.2讨论的非监督Hebb学习方法时的单结点网络是一样的。这种布局可以看成两个空间，一个是由输入向量组成的输入空间，一般是一维或二维的，故一般是一个低维的结构。这种结构的目的显然是实现两个空间的映射关系，从高维空间到低维空间中的映射时，保留原输入空间数据之间的相近关系，这种相近关系用结点间几何距离远近来表示。换句话说，输入第一个信号在输出某结点i响应最大，称为获胜，则与其相似的输入数据应在与<img src="../../images/image_content/6/6_5043.gif" width="14" height="25" align="absmiddle">相邻的输出结点中获胜。从前面的学习中我们体会到，每个结点的输出是输入数据向量<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">与其联接权向量W<sub>i</sub>(i为该输出结点的序号)之间的点积，因此对该网络的训练过程就是要确定每个结点的联接权向量，使相邻的结点有相近的联接权向量。用式子来表示，如果两个相邻结点的联接权向量分别表示成W<sub>i</sub>和W<sub>j</sub>，则这两个向量应该很接近，如果各结点的联接权向量的模相同，则Wi和Wj的点积值应该是最高的。<br>
+      训练联接权值向量分布的方法在原理上十分简单：<br>
+      　　(1) 对各结点的联接权值向量随机设置。<br>
+      　　(2) 开始输入第一个数据，由于联接权值向量随机设置，总有一个结点与该数据的点积值达最大，则对该结点的联接权值向量进行训练，相邻的结构使该联接权值向量向该数据靠拢。<br>
+      　　(3) 在对获胜的结点进行训练的同时，对其邻近的结点也进行适当的训练，原则是让邻近结点的联接权值向量有较大的变化，距离较远的则不受影响。对近邻结点的训练用(6-76)式的函数来控制。其中<img src="../../images/image_content/6/6_5077.gif" width="45" height="19" align="absmiddle">则用类似于(6-77)式的函数来设计。</span><br>
+      　　<span class="spe">开始训练时，让邻域函数波及范围大些，训练过程深入后，减小邻域函数的波及范围，以提高低维空间的分辨率。 </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

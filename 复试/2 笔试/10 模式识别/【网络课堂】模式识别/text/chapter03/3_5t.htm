@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent"><strong>3.5.1 线性可分条件下的支持向量机最优分界面</strong><br>
+            　<span class="spe">　Vapnik等人在多年研究统计学习理论基础上对线性分类器提出了另一种设计最佳准则。其原理也从线性可分说起，然后扩展到线性不可分的情况。甚至扩展到使用非线性函数中去，这种分类器被称为支持向量机(Support 
+            Vector Machine,简称SVM)。支持向量机的提出有很深的理论背景。但我们只就支持向量机的最浅显原理进行讨论。因此本章所说的SVM设计的思路只是我们对它一种通俗化的理解。<br>
+            支持向量机方法是在近年来提出的一种新方法。<br>
+            　　在学习这种方法时，首先要弄清楚这种方法考虑问题的特点，这就要从线性可分的最简单情况讨论起，在没有弄懂其原理之前，不要急于学习线性不可分等较复杂的情况，支持向量机在设计时，需要用到条件极值问题的求解，因此需用拉格朗日乘子理论，但对多数人来说，以前学到的或常用的是约束条件为等式表示的方式，但在此要用到以不等式作为必须满足的条件，此时我们只要了解拉格朗日理论的有关结论就行。</span><br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/3/3_5001.gif" width="368" height="255"><br>
+            <span class="FCcontent">图3.28</span></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　SVM的思路是这样的，由于两类别训练样本线性可分，因此在两个类别的样本集之间存在一个隔离带。对一个二维空间的问题我们用图3.28表示。其中用圈和交叉符号分别表示第一类和第二类训练样本，H是将两类分开的分界面，而H1与H2与H平行，H是其平分面，H1上的样本是第一类样本到H最近距离的点，H2的点则是第二类样本距H的最近点，由于这两种样本点很特殊，处在隔离带的边缘上，因此用再附加一个圈表示。这些点称为支持向量，它们决定了这个隔离带。<br>
+            　　从图上可以看出能把两类分开的分界面并不止H这一个，如果略改变H的方向，则根据H1、H2与H平行这一条件，H1、 H2的方向也随之改变，这样一来，H1与H2之间的间隔(两条平行线的垂直距离)会发生改变。显然使H1与H2之间间隔最大的分界面H是最合理的选择，因此最大间隔准则就是支持向量机的最佳准则。为了将这个准则具体化，需要用数学式子表达。为了方便，我们将训练样本集表示成{ 
+            x<sub>i</sub>,y<sub>i</sub> },i=1,…,N,其中x<sub>i</sub>为d维向量也就是我们常说的特征向量，而y<sub>i</sub>∈{-1，+1},即用y<sub>i</sub>是+1或-1表示其类别。对于分界面H表示成<br>
+            　　<img src="../../images/image_content/3/3_5003.gif" width="111" height="35" align="absmiddle">　　　　　(3-80)<br>
+            　　并且令<img src="../../images/image_content/3/3_5004.gif" width="228" height="55" align="absmiddle"> 
+            　　　　　(3-81)<br>
+            　　对在H1与H2平面上的点，上两式取等号。上两式也可合并成<br>
+            　　<img src="../../images/image_content/3/3_5005.gif" width="167" height="35" align="absmiddle">　　　　　(3-82)<br>
+            　　显然H1平面到坐标原点的距离为<img src="../../images/image_content/3/3_5006.gif" width="56" height="50" align="absmiddle"> 
+            ，而H2则为<img src="../../images/image_content/3/3_5007.gif" width="56" height="49" align="absmiddle"> 
+            ，故H1到H2的间隔为<img src="../../images/image_content/3/3_5008.gif" width="29" height="48" align="absmiddle"> 
+            ，即与<img src="../../images/image_content/3/3_5009.gif" width="27" height="33" align="absmiddle">成反比。因此欲达到　　　　　Vapnik提出的使间隔最大的准则，则应使<img src="../../images/image_content/3/3_5009.gif" width="27" height="33" align="absmiddle">最小，而(3-82)则是它必须遵守的约束条件，可改写成大于零的不等式，<br>
+            　　<img src="../../images/image_content/3/3_5010.gif" width="154" height="38" align="absmiddle">　　　　　(3-83)<br>
+            　　对于这样一个带约束条件为不等式的条件极值问题，需要引用扩展的拉格朗日乘子理论，按这个理论构造拉格朗日函数的原则为：目标函数(在此为<img src="../../images/image_content/3/3_5009.gif" width="27" height="33" align="absmiddle">最小，为了方便用<img src="../../images/image_content/3/3_5011.gif" width="48" height="41" align="absmiddle">最小)减去用拉格朗日乘子(乘子值必须不小于0)与约束条件函数的乘积，在我们讨论的问题中可写成<br>
+            　　<img src="../../images/image_content/3/3_5012.gif" width="311" height="55" align="absmiddle"> 
+            (3-84)，<br>
+            　　由于(3-84)中的目标函数是二次函数，而约束条件中为线性函数，按拉格朗日理论该问题存在唯一解，根据研究扩展的拉格朗日理论的　　Kuhn与Tucker等人的研究，表明以下是该唯一解的充分必要条件：<br>
+            　　<img src="../../images/image_content/3/3_5013.gif" width="203" height="52" align="absmiddle">　　　　　(3-85)<br>
+            　　<img src="../../images/image_content/3/3_5014.gif" width="166" height="52" align="absmiddle">　　　　　(3-86)<br>
+            　　以及 <img src="../../images/image_content/3/3_5015.gif" width="157" height="30" align="absmiddle">　　　　　(3-87)<br>
+            　　<img src="../../images/image_content/3/3_5016.gif" width="188" height="36" align="absmiddle">　　　　　(3-88)<br>
+            　　<img src="../../images/image_content/3/3_5017.gif" width="52" height="32" align="absmiddle">　　　　　(3-89)<br>
+            　　<span class="spe">(3-87)和(3-88)表明，只有满足<img src="../../images/image_content/3/3_5018.gif" width="148" height="35" align="absmiddle">条件的点,其拉格朗日乘子才可能不为零; 
+            而对满足<img src="../../images/image_content/3/3_5019.gif" width="148" height="34" align="absmiddle">的样本数据来说，其拉格朗日乘子必须为零，显然只有部分(经常是少量)的样本数据的a<sub>i</sub>不为零，而线性分界面的权向量W则是这些a<sub>i</sub>不为零的样本数据的线性组合，ai不为零的样本数据也因而被称为支持向量。 
+            </span>
+            <p class="FCcontent"><span class="spe">　　到此为止，我们可再回顾一下线性可分条件下的支持向量机方法说了些什么。<br>
+              　　首先支持向量机的方法是明确提出一个隔离带概念，并把使隔离带最宽作为确定线性分界面的最佳原则。既然是隔离带又有线性可分作条件，只需找到处在隔离带边缘上的点，以便确定最优的隔离带就行，而其它数据点的作用，只是要求所确定的隔离带能保证把它们置在隔离带外确定的一方就行。这样一来，数据点就分成两部分，一种对确定隔离带参数(体现在权向量w的确定上式(3-90))很重要，而另一类(一般说占数据的大部分)对确定隔离带的参数没有直接的影响，在这个意义上说它们对确定隔离带参数无关紧要。它们相应的拉格朗日乘子ai是否为0,就表示了数据的这种重要性，对确定隔离带参数主要的点应有<img src="../../images/image_content/3/3_5020.gif" width="46" height="24" align="absmiddle"> 
+              ，并称为支持向量，而其余的数据点，它的<img src="../../images/image_content/3/3_5021.gif" width="45" height="22" align="absmiddle">,这在式(3-88)中体现。一旦使式(3-91)达极大值的 
+              确定下来(只有少量的<img src="../../images/image_content/3/3_5022.gif" width="18" height="27" align="absmiddle"><font color="#000000">&gt;0</font>，其余都为0)，则最佳的权向量w也就可以利用(3-90)式定下来，它们是这些支持向量数据的线性求和。</span><br>
+              　　如图3-29所示：<br>
+            </p></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/3/3_5024.gif" width="400" height="322"><br>
+            图3.29 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">如果知道哪些数据是支持向量，哪些不是，则问题就简单了。问题在于哪些数据是支持向量事先并不能确定，因此这只有通过求(3-84)式的极大值来求解。 
+            </span> 
+            <p class="FCcontent">　　从(3-85)可以看出，只要最佳的a<sub>i</sub>求得(表示成<img src="../../images/image_content/3/3_5022.gif" width="18" height="27" align="absmiddle">)，则<br>
+              　　<img src="../../images/image_content/3/3_5026.gif" width="112" height="41" align="absmiddle">　　　　　(3-90)<br>
+              　　为了求出最佳的a<sub>i</sub>，拉格朗日理论中引入一种对偶函数，与(3-84)式相对偶的函数的构造方法是：对L(W,a) 
+              分别求它对W及w<sub>0</sub>的偏微分，并置为零，然后再代回到(3-84)式中，从而得到<br>
+              　　<img src="../../images/image_content/3/3_5027.gif" width="258" height="55" align="absmiddle"> 
+              　　　　(3-91)<br>
+              　　拉格朗日理论证明：满足上述条件(3-85)到(3-89)时，找(3-91)式极大值的解就是(3-84)式的条件极小值，因此由(3-91)可求得各个最佳值<img src="../../images/image_content/3/3_5022.gif" width="18" height="27" align="absmiddle">，代入(3-90)即可得到<img src="../../images/image_content/3/3_5028.gif" width="19" height="14" align="absmiddle">，在W确定之后w<sub>0</sub>值也可利用(3-88)对某个<img src="../../images/image_content/3/3_5020.gif" width="46" height="24" align="absmiddle">的数据求出。<br>
+              　　<span class="spe">对(3-91)式的来源不要求弄懂，只需知道，它的极大值解与(3-84)式的极小值解是一致的就行了。因为后面还要用(3-91)说明一些问题。</span><br>
+            </p></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

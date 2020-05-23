@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_colume.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="FFFAE5">
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top" class="FCcontent"><!-- InstanceBeginEditable name="colume" --><span class="FCtitle1"><strong>§3.3 
+      非线性判别函数</strong></span><strong><br>
+      <span class="FCtitle2"><a href="3_3.htm" target="_parent">3.3.1 非线性判别函数与分段线性判别函数</a><br>
+      <a href="3_3_2.htm" target="_parent">3.3.2 基于距离的分段线性判别函数</a><br>
+      3.3.3 错误修正算法<br>
+      　　</span></strong>要弄懂这种错误修正算法的原理，首先要弄清值<img src="../../images/image_content/3/3_3124.gif" width="69" height="29" align="absmiddle"> 
+      相比较的含义。我们知道a<sub>i</sub>与a<sub>j</sub>代表两类增广权向量，y则代表规范化的增广权向量，这在感知准则函数中已定义过。 
+      <img src="../../images/image_content/3/3_3125.gif" width="29" height="30" align="absmiddle">是a<sub>i</sub>向量与y向量的点积，<img src="../../images/image_content/3/3_3126.gif" width="28" height="30" align="absmiddle"> 
+      是a<sub>j</sub>向量与y向量的点积。一般来说点积值比较大则表示这两个向量在方向上比较一致，换句话说向量间的夹角较小。如果某一类样本比较分散，但是能用若干个增广权向量表示，使同一类规范化增广样本向量能够做到与代表自己一类的增广权向量的点积的最大值比，与其它类增广权向量的点积值要大，就可以做到正确分类。因此这种算法就是要用错误提供的信息进行叠代修正。所以它对每类样本集进行具体划分，而希望能知道每类所需的增广权向量数目。当然，实际上，该数目也可以在计算过程中按分类效果调整。<strong><span class="FCtitle2"><br>
+      <a href="3_3_4.htm" target="_parent">3.3.4 局部训练法</a></span><br>
+      </strong><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

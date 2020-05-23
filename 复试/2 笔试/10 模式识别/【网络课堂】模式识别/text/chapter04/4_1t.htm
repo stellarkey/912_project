@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　</span><span class="spe">　对一个具体问题来说，有以下几个不同的层次：<br>
+            　　1．物理量的获取与转换，这是指用什么样的传感器获取电信号，如摄取景物则要用摄像机。文字与数字识别首先要用扫描仪等设备。手写体文字所用传感器与印刷体文字也很可能不同。这些都属于物理量的获取，并且已转换成电信号，为计算机分析打下了基础。<br>
+            对从传感器中得到的信号，可以称之为原始信息，因为它要经过加工、处理才能得到对模式分类更加有用的信号。<br>
+            　　2．描述事物方法的选择与设计<br>
+            在得到了原始信息之后，要对它进一步加工，以获取对分类最有效的信息。这部分信息必须对原始信息进行加工，而设计所要信息的形式是十分关键的。例如对阿拉伯数字的识别可以提出各种不同的想法，有的提出分析从框架的左边框到数字之间的距离变化反映了不同数字的不同形状，这可以用来作为数字分类的依据。又有的方案则是强调分析不同截面的信号，如在框架的若干部位沿不同方向截取截面分析从背景到字，以及从字到背景转换的情况,如AB截面切割字符三次，CD截面切割字符一次等。</span></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/4/4_1004.gif" width="180" height="225"><img src="../../images/image_content/4/4_1005.gif" width="200" height="228"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">从我们举的例子可以看出，设计对事物的描述方法是充分发挥设计者智慧的过程，这个层次的工作往往因事物而易，与设计者本人的知识结构也有关。这是一个目前还无法自动进行的过程。这个层次的工作是最关键的，但因为太缺乏共性，也不是本章讨论的内容。<br>
+            　　3．特征空间的优化。这个层次的工作发生在已有了特征的描述方法之后，也就是已有了一个初始的特征空间，如何对它进行改造与优化的问题。一般说来要对初始的特征空间进行优化是为了降维。即初始的特征空间维数较高。能否改成一个维数较低的空间，称为优化，优化后的特征空间应该更有利于后续的分类计算，这就是本章着重讨论的问题。</span><br>
+            　　<span class="example">例 用RGB颜色空间和HSI颜色空间<br>
+            　　RGB和HSI是两种常用的颜色空间，虽然它们描述颜色的范围是一样的，也有确定的转换关系，但是用这两种不同的特征描述图像，对以后的识别工作会有很大影响。</span></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/4/4_1006.gif" width="400" height="227"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="example">上图中右边是原始图像，左边是用HSI空间描述的同一图像(但是为了显示出来，用H对应R，S对应G，I对应B，然后再以RGB的方式显示出来)。在不同的颜色空间中，可能会导致一些原来看起来差距比较大的两种颜色经过变换后很接近，比如车道中的淡灰色轮胎印。然而也可能会引入其它难处理的问题。究竟采用哪种颜色空间，就要根据具体问题具体选择，或实际尝试才能知道了。</span><br>
+            　　总的说来，确定特征空间是对样本使用何种描述量度量的问题，但是其中包括若干层次的问题。一个首要的问题是如何把物体所具有的物理性质，结构性质等转换成计算机能处理的数学描述量。譬如物体表面的颜色、亮暗程度要通过摄像机转换成数值，这就牵涉到使用何种传感器对物理量等进行转换与度量的问题。<br>
+            　　使用传感器对样本的物理及其它属性进行转换与度量可得到对样本的原始度量。然而原始度量需要进一步转换成有效的特征。例如由摄像机所摄图像，得到的原始度量是各像素的灰度值。这些数值孤立地看，往往没有什么确切含意。但这些原始度量值的相互关系，却包含了有关景物的信息。例如将图像中各种区域的轮廓勾画出来，可以得到有关景物的信息。这种对原始度量的加工与处理，是特征提取的主要内容。但是这种处理与加工与具体的模式识别任务密切有关，因而因具体任务而易，缺乏共同性，因此也不在本章讨论内容之列。<br>
+            　　本章讨论的问题是对原有特征空间的处理与加工，使之较原特征空间优化。所谓优化是要求既降低特征的维数，又能提高分类器的性能。这里讨论的是一些不同模式识别系统中具有共性的问题，特征选择与特征提取，并给出一些解决这些问题的基本方法。<br>
+            　　<span class="spe">对特征空间进行优化有两种基本方法，一种为特征选择，一种为特征的组合优化，讲义中这一段主要说明两者的差别。简单说，选择只是删掉部分特征，而特征的组合优化是要通过一种映射，也就是说新的每一个特征是原有特征的一个函数。</span><br>
+            　　为了说得更明确，假设已有D维特征向量空间，<img src="../../images/image_content/4/4_1007.gif" width="135" height="23" align="absmiddle">，则所谓特征选择是指从原有的D维特征空间，删去一些特征描述量，从而得到精简后的特征空间。在这个特征空间中，样本由d维的特征向量描述：<img src="../../images/image_content/4/4_1008.gif" width="136" height="23" align="absmiddle"> 
+            ，d＜D。由于X只是Y的一个子集，因此每个分量xi必然能在原特征集中找到其对应的描述量xi＝yj。<br>
+            　　而特征提取则是找到一个映射关系：<br>
+            　　A:Y→X 　　　　(4-1)<br>
+            　　使新样本特征描述维数比原维数降低。其中每个分量xi是原特征向量各分量的函数，即<br>
+            　　<img src="../../images/image_content/4/4_1010.gif" width="139" height="21" align="absmiddle">　　　　　　(4-2)<br>
+            　　因此这两种降维的基本方法是不同的。在实际应用中可将两者结合起来使用，比如先进，然后再进一步选择其中一部分，或反过来。<br>
+            <span class="example"><strong><br>
+            思考题</strong><br>
+            　　①研究模式识别中事物的描述方法主要靠什么？<br>
+            　　②设原特征空间表示成<img src="../../images/image_content/4/4_1011.gif" width="100" height="23" align="absmiddle">即一个三维空间。<br>
+            　　现在在x空间基础上得到一个二维的特征空间<img src="../../images/image_content/4/4_1012.gif" width="93" height="24" align="absmiddle"><br>
+            　　其中若<img src="../../images/image_content/4/4_1013.gif" width="71" height="25" align="absmiddle">，属哪一种方法：特征选择还是组合优化。<br>
+            　　若 <img src="../../images/image_content/4/4_1014.gif" width="102" height="55" align="absmiddle">试问属哪种<br>
+            </span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

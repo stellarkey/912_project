@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　从前一节的分析可以看到，单结点的网络可以用来对一个数据集进行分析，那么如果空间有不止一个数据集，而是几个聚类，则应该用几个结点组成的网络，让每个结点分析一个聚类。问题在于每个数据能否找到自己应该属于哪一个聚类。其实非监督Hebb学习方法提供了数据自己归类的可能性。如果我们使用图6-15的结构来实行三个聚类的划分，并假设各个结点的联接权向量各不相同。这样一来每个数据的量与这三个联接权向量的点积值会出现差异，原则上说联接权的量与该数据向量较接近的结点会得到较高的点积值。因此比较这些点积值就可把该数据的归属确定，并让该数据参与对该结点联接权值的修正。(即实现非监督Hebb学习方法)。由此看来计算不同结点的点积值并进行比较就是一种竞争。为了体现这种竞争，人们提出了使用竞争网络的方法。其实竞争网络就是在图6-15中的三个结点之间实行侧抑制：每个结点对自身增加一个正反馈，用来增强自身的输出，而每个结点又给其它结点一个起抑制作用的联接，意在进一步削弱对方的输出值，这种互相抑制的机制会造成使三个结点中具有初始优势的结点最终得胜，表现在该结点输出为1，而其它结点落败，表现在结点值为零。这种在非监督Hebb学习方法中引入竞争机制的方法，称为非监督学习方法。这是这一节的主要概念。可结合讲义的推导与例子加深对次概念的了解。<br>
+            <strong><br>
+            6.5.3.1 引言</strong><br>
+            　　非监督竞争学习方法主要的功能是聚类与分类，即将输入的数据按它们呈现的分布特点划分成若干聚类。由于这个分类的功能要通过输出结点层中结点的状态来体现，因此往往要求输出结点中只有一个能处于激活状态。这就需要在网络中引入竞争机制，每个结点参与竞争以争取处于唯一的激活状态，这就是这种学习方法与上一节中讨论的非监督Hebb学习方法的不同之处。<br>
+            　　非监督竞争学习方法中的网络结构在一般情况下也往往是单层的前馈网络，除了Grossberg与Carpenter提出的自适应共振理论(ART)结构复杂以外，其它网络的结构都比较简单。除了特征映射网络的输出结点往往具有数量很多的结点外，其它网络的输出结点数目也并不多。<br>
+            　　非监督竞争学习方法中输出结点之间的竞争，实质上是比较结点激励值的大小。如果第i个输出结点与所有输入端点的联接权值用<img src="../../images/image_content/6/6_5042.gif" width="22" height="26" align="absmiddle">表示，该权向量的每个分量表示成<img src="../../images/image_content/6/6_2033.gif" width="28" height="30" align="absmiddle">，则该结点的激励值<br>
+            　　<img src="../../images/image_content/6/6_5040.gif" width="141" height="43" align="absmiddle">　　(6-64)<br>
+            　　其中<img src="../../images/image_content/6/6_5041.gif" width="39" height="28" align="absmiddle">表示两个向量<img src="../../images/image_content/6/6_5042.gif" width="22" height="26" align="absmiddle">与<img src="../../images/image_content/6/6_5015.gif" width="12" height="22" align="absmiddle">之间的点积。因此结点间的竞争也就是确定哪一个结点的h值为最大。如果将竞争得胜结点下标写作<img src="../../images/image_content/6/6_5043.gif" width="14" height="25" align="absmiddle">，那末得胜的结点应有<br>
+            　　<img src="../../images/image_content/6/6_5044.gif" width="99" height="33" align="absmiddle">对所有I 
+            (6-65)</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5045.gif" width="344" height="203"><br>
+            图6-15 一个简单的竞争学习网络 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　在实际的网络中往往在输出结点之间加上侧抑制功能，如图6-15所示。每个输出结点对其它输出结点施加抑制作用，而对自身则有自激励作用。因此在适当选择侧抑制的权值以及非线性激励函数的条件下，可以确保只有一个输出结点争得激活状态，同时又避免出现振荡的情况。<br>
+            　　由此可见所谓实行竞争机制，实质是对输出结点的激励值进行比较，然后依据激励值决定唯一的胜者。因此将这种网络用作分类器，只需依据(6-65)进行分类判断即可，或根据处于激活状态的输出结点决定。其主要的问题是如何能适当地确定权向量从而可对输入数据实行聚类。确定权向量的过程就是学习的过程。<br>
+            　　实质上在竞争学习中权向量的修改规则，与前一节所提到的非监督Hebb学习使用的规则很相似。在前一节中曾提到所使用的规则的基本原理是使权向量在变化后，能在当前训练样本作用下，使输出值向增大的方向变化。对带有竞争机制的非监督学习方法来说，当某个训练样本<img src="../../images/image_content/6/6_5046.gif" width="18" height="27" align="absmiddle">输入后，使与获得的输出结点相连接的权值采用以下修改规则<br>
+            　　<img src="../../images/image_content/6/6_5047.gif" width="83" height="19" align="absmiddle">　　(6-66)<br>
+            　　则就会使获得胜利的结点的有关权值向量<img src="../../images/image_content/6/6_5042.gif" width="22" height="26" align="absmiddle">更接近于当前的输入向量<img src="../../images/image_content/6/6_5046.gif" width="18" height="27" align="absmiddle">。实际上如果将输出结点的状态表示为<img src="../../images/image_content/6/6_5048.gif" width="18" height="23" align="absmiddle">，且令<br>
+            　　<img src="../../images/image_content/6/6_5049.gif" width="147" height="57" align="absmiddle"><br>
+            　　那么上式就可写成<br>
+            <img src="../../images/image_content/6/6_5050.gif" width="104" height="36" align="absmiddle"> 
+            (6-67)<br>
+            　　显然该式与(6-55)式就很接近了。使用上式对权向量进行修改，与(6-54)式一样存在权向量幅值不断增长的缺点。<br>
+            　　对于这一缺点也可采用上一节中<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">规则相似的方法解决。与(6-59)式相似，将权值修改的规则改为<br>
+            　　<img src="../../images/image_content/6/6_5051.gif" width="147" height="40" align="absmiddle">　　(6-68)<br>
+            　　该式就与Sanger规则及<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">的规则很相似了。<br>
+            　　对于为什么使用上述规则可实现对输入模式聚类，可以用图6-16形象地加以说明。图中所示的样本<img src="../../images/image_content/6/6_5057.gif" width="19" height="25" align="absmiddle">由三个分量组成，在分量只取0/1两种状态时，每个样本应为单位立方体的某一顶点。但对该三维样本来说，不妨使用连续值，并用一单位球面上的点表示样本向量的方向，如图6-16(a)所示。此时权向量也是三维的向量，其初始位置如(a)中的叉号表示。从图中可以看出输入样本有三个集群，但初始时的权值并不能代表各聚类的典型值。图6-16(b)则是经过训练后的最后状态。此时各个权向量分别处在各组样本的包围之中。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5052.gif" width="238" height="217"><br>
+            <img src="../../images/image_content/6/6_5053.gif" width="231" height="213" align="absmiddle"> 
+            <br>
+            图6-16 竞争学习示例 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　训练的过程可以作如下解释。起初权向量处于随机的状态。在某个训练样本的作用下，其中一个权向量获胜。该权向量必然是与该样本向量夹角最小的。而按(6-68)修改有关的权向量就使权向量往该样本向量进一步靠扰。如果每个模式均衡地参与训练，就使相关的权向量往相应的吸引子靠扰，最终达到稳定状态。<br>
+            实际上以上学习方法往往可以表示成成本函数收敛到一个最佳解的问题。例如定义一个成本函数如下<br>
+            　　<img src="../../images/image_content/6/6_5054.gif" width="203" height="47" align="absmiddle">　　(6-69)<br>
+            　　其中<img src="../../images/image_content/6/6_5055.gif" width="22" height="28" align="absmiddle">被称为聚类隶属矩阵，它定义为<br>
+            　　<img src="../../images/image_content/6/6_5056.gif" width="184" height="57" align="absmiddle">　　(6-70)<br>
+            　　这表明<img src="../../images/image_content/6/6_5055.gif" width="22" height="28" align="absmiddle">的值反映了第<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">个输入模型<img src="../../images/image_content/6/6_5057.gif" width="19" height="25" align="absmiddle">是否使第i个输出结点成为胜者。<br>
+            　　对(6-69)式采用梯度算法就得到<br>
+            　　<img src="../../images/image_content/6/6_5058.gif" width="251" height="52" align="absmiddle">　　(6-71)<br>
+            　　实际上该式与(6-68)式的不同在于<img src="../../images/image_content/6/6_2033.gif" width="28" height="30" align="absmiddle">的增量在(6-68)式中是随着每一个输入模式<img src="../../images/image_content/6/6_5057.gif" width="19" height="25" align="absmiddle">的训练而修改的，而用(6-71)式权向量系数则是同属一聚类的所有输入模式共同作用的结果。<br>
+            　　使用成本函数方式得到的结果有两点值得注意。第一点是学习修改规则往往与一成本函数联系在一起，而学习的结果表现在权向量的值趋向于某个稳定值。但存在局部最小值问题。另一点是训练可采用批处理修改或随训练随修改的方式。使用批处理是指在输入模式对权向量修改量以累计方式一次完成。它可使权向量达到稳态值。而随训练随修改的方式会使权值不断的改变，并出现周期性重复的状况。为了克服这种缺点可以采用增加“惯性项”的方法，或其它方法。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

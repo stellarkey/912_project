@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent"><strong>6.2.2.1 存储一个模式的情况</strong><br>
+        　　设所存储的模式为N位，模式第i位的状态为<img src="../../images/image_content/6/6_2007.gif" width="20" height="30" align="absmiddle">，则对所有i应有<br>
+        　　<img src="../../images/image_content/6/6_2008.gif" width="132" height="44" align="absmiddle">　　　　(6-5)<br>
+        　　显然，如果令<br>
+        　　<img src="../../images/image_content/6/6_2009.gif" width="95" height="45" align="absmiddle">　　　(6-6)<br>
+        　　则式(6-5)就能成立，网络就处在相应的平衡状态。<br>
+        　<span class="spe">　学到此可以归纳出Hopfield网络联接权值要满足的条件<br>
+        　　(1) 连接权值是对称的，即<img src="../../images/image_content/6/6_2010.gif" width="173" height="28" align="absmiddle"><br>
+        　　(2) 结点自身不连接，即<img src="../../images/image_content/6/6_2011.gif" width="153" height="25" align="absmiddle"> 
+        <br>
+        　　(3) 连接权值与所存储的模式是有关的。</span><br>
+        　　但是还需检测该种平衡对外界干扰信号的抗衡能力。为此假设有几个结点的状态与所存模式不符(用S<sub>j</sub>表示)，并用后几个序号表示，则结点i的纯输入为<br>
+        　　<img src="../../images/image_content/6/6_2012.gif" width="171" height="53" align="absmiddle">　　　(6-7)<br>
+        　　显然只要<img src="../../images/image_content/6/6_2013.gif" width="44" height="46" align="absmiddle">，上式中前一项将唯一决定符号函数的值，这表明部分错误信息的存在并不能影响到导致网络各结点的状态偏离正确的状态。<br>
+        　<span class="spe">　从(6-5)到(6-7)式可以体会到为什么Hopfield网络能具有联想记忆的功能，即触发信号只提供了所存储模式的部分信息时，Hopfield网络的输出端却能提供完整的信息。这个问题的关键是神经元结点中具备的阈值函数所致。从(6-5)式看，任何一个结点的状态是由输入信息的加权和通过一个符号函数sgn决定的。每一个结点接受所有其它结点提供的信息，其联接方式主要起到各结点相互支持的作用。如果任一个结点的状态与所存模式不符，它就会产生反作用，只要这些起反作用的结点数量有限，它们的反作用总量还达不到改变hi极性的程度，该结点仍能保持和转成正确的状态。这就是该网络能实现联想记忆的根本原因。</span></p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

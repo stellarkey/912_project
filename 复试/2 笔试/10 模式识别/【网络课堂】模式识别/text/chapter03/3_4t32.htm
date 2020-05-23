@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>3.4.3.2 剪辑近邻法</strong><br>
+            　　<span class="spe">以上讨论的快速算法只是研究如何减少计算量的问题，而不考虑存储量的压缩。实际上由于对样本进行分层次分组，并附有一些参数，实际的存储量还有可能增加。本节讨论的算法着眼于如何减少模板样本数目，从而可同时减少分类时的计算量及模板样本的存储量，同时还能进一步改进分类器的性能，如降低错误率等要求。本节讨论的剪辑近邻法除了在样本数量上有一定程度的减少外，更主要的优点是错误率的降低。</span><br>
+            　　剪辑近邻法的基本思想是从这样一个现象出发的，即当不同类别的样本在分布上有交迭部分的，分类的错误率主要来自处于交迭区中的样本。当我们得到一个作为识别用的参考样本集时，由于不同类别交迭区域中不同类别的样本彼此穿插，导致用近邻法分类出错。因此如果能将不同类别交界处的样本以适当方式筛选，可以实现既减少样本数又提高正确识别率的双重目的。为此可以利用现有样本集对其自身进行剪辑。下面以两类别问题为例说明这种方法的原理。<br>
+            　　假设现有一个样本集N，样本数量为N。我们将此样本集分成两个互相独立的样本子集。一个被当作考试集<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">，另一个作为参考集<img src="../../images/image_content/3/3_5F4056.gif" width="29" height="24" align="absmiddle">，数量分别为N<sub>T</sub>与N<sub>R</sub>，N<sub>T</sub>+N<sub>R</sub>＝N。将<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中的样本表示成<img src="../../images/image_content/3/3_5F4057.gif" width="122" height="28" align="absmiddle">，而在<img src="../../images/image_content/3/3_5F4056.gif" width="29" height="24" align="absmiddle">中的样本表示为<img src="../../images/image_content/3/3_5F4058.gif" width="100" height="24" align="absmiddle">。<br>
+            　　<span class="spe">将一个样本集分成两个相互独立的样本子集是指，分完以后的两个子集具有相同的分布例如将一个样本集分成两个相互独立的对等子集，则在每个特征空间的子区域，两个子集都有相同的比例，或说各类数量近似相等。要注意指出的是每个子区域(从大空间到小空间)实际做时要用从总的集合中随机抽取的方式进行。</span><br>
+            　　剪辑的过程是： 首先对<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中每一个X<sub>i</sub>在<img src="../../images/image_content/3/3_5F4056.gif" width="29" height="24" align="absmiddle">中找到其最近邻的样本Y<sub>i</sub>(X<sub>i</sub>)，用Y<sub>i</sub>(X<sub>i</sub>)表示Y<sub>i</sub>是X<sub>i</sub>的最近邻参考样本。如果Y<sub>i</sub>与X<sub>i</sub>不属于同一类别，则将X<sub>i</sub>从<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中删除，最后从<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中得到一个经过剪辑的样本集，称为剪辑样本集<img src="../../images/image_content/3/3_5F4059.gif" width="32" height="26" align="absmiddle">。<img src="../../images/image_content/3/3_5F4059.gif" width="32" height="26" align="absmiddle">可用来取代原样本集<img src="../../images/image_content/3/3_5F4060.gif" width="20" height="23" align="absmiddle">，作为参考样本集对待识别样本进行分类。<br>
+            　　<span class="spe"><img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">经过剪辑后，要作为新的训练样本集，则<img src="../../images/image_content/3/3_5F4056.gif" width="29" height="24" align="absmiddle">是对其性能进行测试的样本，如发现<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中的某个训练样本对分类不利，就要把它剪辑掉。</span><br>
+            　　实际上剪辑样本的过程也可以用k-近邻法进行，即对<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">中的每个样本X<sub>i</sub>，找到在<img src="../../images/image_content/3/3_5F4056.gif" width="29" height="24" align="absmiddle">中的k个近邻，用k-近邻法判断X<sub>i</sub>是否被错分类。从而决定其取舍，其它过程与前述方法完全一样。<br>
+            　　剪辑近邻法也可用到多类别情况。剪辑过程也可不止一次。重复多次的称为重复剪辑近邻法。图3.22到图3.25是一个两类正态分布样本的重复剪辑结果，图3.22是原始样本集，图3.23是经一次迭代的结果，图3.24是三次迭代留下的样本，图3.25是算法终止时留下的样本。<br> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="380" height="320">
+              <param name="movie" value="../../swf/add6.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/add6.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="380" height="320"></embed></object></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"> 　　所使用的重复剪辑算法步骤如下：<br>
+            　　1. 将样本集<img src="../../images/image_content/3/3_5F4060.gif" width="20" height="23" align="absmiddle">随机划分为S个子集，即<br>
+            　　<img src="../../images/image_content/3/3_5F4061.gif" width="205" height="23"><br>
+            　　　2. 用最近邻法，以<img src="../../images/image_content/3/3_5F4062.gif" width="108" height="27" align="absmiddle">为参考集，对<img src="../../images/image_content/3/floweri.gif" width="19" height="22" align="absmiddle">中的样本进行分类，其中i＝1，…，s。<br>
+            　　3. 去掉步骤2中被错分类的样本。<br>
+            　　4. 用所有留下的全部样本的构成新的样本集<img src="../../images/image_content/3/3_5F4055.gif" width="27" height="23" align="absmiddle">。<br>
+            　　5. 如该次剪辑过程中没有样本被删除，则停止，否则转步骤1。<br>
+            　　由此可见每次迭代过程都要重新对现有样本集进行重新随机划分，以保证了剪辑的独立性。从图3.22到图3.25可以看出，剩下的样本集形成了两个很好的聚类，并且在每个聚类中的样本都属同一类。<br>
+            　　<span class="spe">前面我们已经提到，用近邻法容易出错的区域是在两类的交界处，这时某个训练样本存在与否就会影响到某些测试分类的结果。因此剪辑的效果往往把这些处于交界的训练样本给剪辑掉了。</span><br>
+            　　以上讨论了剪辑近邻法的原理与算法，另一个问题是对剪辑近邻法错误率的分析。这里我们只给出简单的结论：<br>
+            　　1.利用最近邻法剪辑后得到的样本集进行分类，其错误率总小于原样本集，如用<img src="../../images/image_content/3/3_5F4063.gif" width="45" height="30" align="absmiddle">表示其错误率，则有<br>
+            　　<img src="../../images/image_content/3/3_5F4064.gif" width="92" height="34" align="absmiddle">　　　(3-77)<br>
+            　　其中P(e)表示用原样本的渐近平均错误率。在P(e)很小，如P(e)&lt;0.1情况下可有<br>
+            　　<img src="../../images/image_content/3/3_5F4065.gif" width="96" height="45" align="absmiddle">　　　(3-78)<br>
+            　　由于近邻法错误率上界为2P*(两倍贝叶斯错误率)，因而<br>
+            　　<img src="../../images/image_content/3/3_5F4066.gif" width="83" height="37" align="absmiddle">　　　(3-78)<br>
+            　　2.利用k-近邻法进行剪辑得到的样本集进行分类，则在N→∞及k→∞，且K/N→0的条件下有<br>
+            　　<img src="../../images/image_content/3/3_5F4067.gif" width="79" height="35" align="absmiddle">　　　(3-79)<br>
+            该式表明k很大时，剪辑样本法的错误率可收敛于最优情况P*。当然实际上k值不能取得太大。<br>
+            　　3.多类情况，剪辑效果更好。<br> 　　</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

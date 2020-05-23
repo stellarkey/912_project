@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <p class="FCcontent">　　对比Hopfield模型，可以看到两者最大的差别在于Hopfield模型中的任两个结点是彼此耦合的双向连接，因而能形成内力，并因而决定网络最终的状态。而前馈网络则不同，处于高层的结点只接收从低层传来的信息，却并不对低层施加任何影响，因而输出层的状态依赖于网络输入端所接受的信息，实现对输入信号的某种映射。一旦输入端信息改变或消失，其输出状态也随之改变，或处于无意义的不定状态。<br>
+        　<span class="spe">　这一段回答了我们刚才提到的第一个问题，即MLP是一种分层的结构，同一层的结点之间没有任何联系，它们对同一组数据进行操作，如第一个隐含层直接对输入数据进行操作，而高一层的结点则对它们的输出进行操作，因此是对操作结果进行再一次操作。因为信息从输入端进入，经过运算，逐级往前传递，故称为前馈网络。<br>
+        　　此外还要加强每个结点中非线性函数的重要性。我们不妨思考一下，如果我们保留这个网络的结构，但是将结点中的非线性函数去掉，这会产生怎样的效果呢？就拿我们讨论过的由三个结点组成的双层网络来看，我们知道，它将一个特征空间用两条直线组成的折线分成两个部分。如果我们去掉了结点中的非线性函数，则结点的输出y<sub>1</sub>与y<sub>2</sub>就成为<br>
+        　　y<sub>1</sub>=f<sub>1</sub>(x) (与y<sub>1</sub>=sgn(f<sub>1</sub>(x))对比)<br>
+        　　y<sub>2</sub>=f<sub>2</sub>(x)<br>
+        　　则输出结点值成了y<sub>1</sub>与y<sub>2</sub>的线性加权和，对两个线性运算结果再进行一次线性运算，其结果仍是对输入量的线性运算，可见效果会大不一样，由此说明了非线性函数在人工神经元网络是不可缺少的。<br>
+        　　既然非线性函数的作用是不可缺少的，不同的非线性函数的作用也就会有不同。对使用阈值函数的神经元来说，从隐层结点输出的值都是二值的。因此其高一层的计算只是对二值量进行运算，故只是一种逻辑运算。而从特征空间的划分来看，它将空间用折线段进行划分。如果神经元结点使用了S状函数，或其它连续变化的函数，则隐层结点的输出可为0－1的范围，或-1－+1范围内的任意值。因而MLP的输出可以是连续函数，在特征空间中可实现用连续的函数实现对空间的划分。隐含层的数量越多，可实现的函数也越复杂。讲义中的两个定理给出了一般性的结论。<br>
+        　　总之多层感知器可以实现复杂的非线性映射，关键问题是网络结构的选择与参数的确定方法。</span><br>
+        　　由此可见，前馈多层网络与Hopfield模型是明显不同的，它不是内部具有稳态的动力系统，它的功能是实现对输入信息的某种映射关系。这种映射关系可以是某种逻辑运算，也可以是对输入信号的分类，也可以是其它复杂的映射或函数关系。以下两个定理说明了多层前馈网络实现复杂的函数映射关系与任意的二值逻辑函数的能力。<br>
+        　　定理：假如隐层的结点可以根据需要自由设置，那么用三层具有S状的输入输出特性的结点，可以以任意精度逼近任意连续函数。<br>
+        　　定理：用三层的阈值网络可以实现任意的二值逻辑函数。<br>
+        　　归纳起来，可以说多层前馈网络的主要功能是实现对信号的各种映射关系。如果网络的输入端有n个，每个端的信号在实数域取值，其输出端有m个输出结点，其输出状态用实数表示，那么前馈网络就是实现从R<sup>n</sup>到R<sup>m</sup>的映射。一般情况下，输入信号与网络输出结点的每一位都限定在某一定的范围内，如(0，1)或(-1，+1)等。当使用前馈网络实现输入信号的分类时，则希望网络输出的状态取｛0，1｝或｛-1，+1｝，两种状态，以离散值表示输入信号的类别。<br>
+        　　要实现复杂的映射关系，关键是网络结构的选择以及参数的确定。多层前馈网络要实现的是复杂的非线性映射。这些参数无法用解析式子求解，而要通过样本进行训练。下一节中讨论的误差回传算法，为训练带隐含层的网络提供了一种可行的方法，打开了前馈网络在各种实际问题中应用的道路。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

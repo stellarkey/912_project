@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><strong><span class="FCcontent">6.2.3 
+      Hopfield模型的扩展</span></strong><span class="FCcontent"><br>
+      　　</span><span class="spe">本节不做基本要求</font></span><span class="FCcontent"><br>
+      　　在将Hopfield模型付诸实用时，会遇到许多问题，因而人们研究并提出许多解决办法。对该模型的主要扩展工作大体分以下几个方面：<br>
+      　　1.连接权值不准确的问题，或使用离散权值精度有限等问题。<br>
+      　　2.状态同步转换问题。Little等人早在1974年就对使用状态同步转移进行了研究。研究表明使用同步转换技术与异步方式，在性能上没有明显变化，特别是当存储个数远远小于结点时。<br>
+      　　3.减少连接数量的问题。使用全连接方式，N个结点需N<sup>2</sup>连接权值。如果能适当减少连接个数，即将连接稀疏化，而不致于使其性能明显变坏，则对实际应用是很重要的。<br>
+      　　4.连接中存在随机的不对称性问题。在非对称性很强时，网络可能会出现循环或混沌现象，但如果非对称性是随机的，并且不太严重，那末它起的作用就象有噪声一样。对存储数量少的情况，p≤N，其性能与严格对称性的情况没有明显差别。<br>
+      　　5.结点连续值输出情况。结点输出与其激励值之间的函数关系，称为激励函数。激励函数可以是连续函数，通常这种函数采用饱和型非线性函数，如<br>
+      　　<img src="../../images/image_content/6/6_2038.gif" width="130" height="51" align="absmiddle">　　　(6-20)<br>
+      　　或<img src="../../images/image_content/6/6_2039.gif" width="156" height="49" align="absmiddle"> 
+      (6-21)<br>
+      　　对于结点具有连续值输出的网络，状态转移可以采用三种不同的方式。其中包含前面提到的异步修正的方式与同步修正的方式。除了以上两种方式之外，第三种是连续修正的方式。在连续修正方式下网络中各个结点的状态在没有达到某种稳态之前，都处于连续的变化之中。<br>
+      　　在使用连续值输出的Hopfield模型中，往往将网络结点的输出表示成V<sub>i</sub>。在稳态时每个结点的输出值与其输入端的激励值之间的关系为<br>
+      　　<img src="../../images/image_content/6/6_2040.gif" width="114" height="42" align="absmiddle">　　　(6-22)<br>
+      　　而当结点的输出值不满足上述关系时，该网络结点的状态就会发生变化，因此可将该状态变化用一微分方程表示<br>
+      　　<img src="../../images/image_content/6/6_2041.gif" width="175" height="48" align="absmiddle">　　　(6-23)<br>
+      　　其中<img src="../../images/image_content/6/6_2042.gif" width="17" height="21" align="absmiddle">是一个时间常数，它的值影响V<sub>i</sub>变化的速率。<br>
+      　　如果将结点的输入值用u<sub>i</sub>表示，并强调在网络状态变化过程中u<sub>i</sub>的变化，则上式可改写成另一形式<br>
+      　　<img src="../../images/image_content/6/6_2043.gif" width="282" height="50" align="absmiddle">　　　(6-24)<br>
+      　　而相应的能量函数则可定义为<br>
+      　　<img src="../../images/image_content/6/6_2044.gif" width="231" height="45" align="absmiddle">　　　(6-25)<br>
+      　　不难看出如此定义的能量函数，其值在状态变化时总是趋向于使能量函数值降低的方向变化。<br>
+      　　Hopfield曾采用运算放大器电路作为网络的一种硬件实现方式。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

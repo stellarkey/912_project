@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　误差回传算法实质上是感知器训练中使用的方法的发展。感知器的训练中使用的方法的核心，是利用感知器实际输出与其期望输出之间差异所提供的信息来修正参数。这种方法在应用到带隐含层的网络时的主要困难，在于对隐含层无法确定其期望状态。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4013.gif" width="306" height="261"><br>
+            图6-9双层前馈网络 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　为了便于说明问题，下面以图6-9所示的两层网络为例。其中输出层结点用O表示其状态，i作为下标表示其标号，隐含层的结点用V表示其状态，而以j作为其标号。为了方便忽略了结点中的阈值项，因此所要确定的参数是输入端到隐含层的权值<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">以及隐含层到输出结点层的权值<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">，其中k为输入端子的标号。<br>
+            　　<span class="spe">最初提出前馈网络中应用错误提供的信息来修正网络参数的学习算法称为基本的误差回传算法。它的基本思想是：<br>
+            　　(1) 设计一个代价函数作为迭代学习过程的目标函数。改进网络参数的标准是看能否使网络的输出接近期望的输出值。例如用多层感知器作分类时，网络的期望输出是指网络应输出的分类号，如果网络的实际输出与其不符，则表示分类出错，这两者的差异就是误差。利用误差提供的信息修正网络中的所有参数就是对网络进行训练的目的。对于网络参数数目较大，使用的训练样本数目也很多。因此训练过程是一个迭代的过程。对于这种迭代过程要设计一个代价函数，或称准则函数，以求通过迭代过程使代价函数值达到极值。在基本的误差回传算法中，代价函数设计成(6-37)表示的函数。它是一个平方求和的形式。这里包含两个方面的因素：<br>
+            　　a.训练样本集由众多的训练样本组成，减小误差要考虑对全体样本集而言，在该式中用<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">作为样本的序号。<br>
+            　　b.网络的输出端数目也往往不止一个，因此要将所有输出端的误差考虑在内。<br>
+            　　(2) 利用代价函数对各参数的偏导数来确定各参数的修正量。<br>
+            　　(3) 利用网络计算的分层结构导出计算的分层表示函数，简化导数计算输出端的值取决于输入函数以及网络中的所有参数，因此输出端输出<img src="../../images/image_content/6/6_5F4017.gif" width="29" height="28" align="absmiddle">是所有参数的函数。由于网络是一个分层结构，各个参数的作用也可分成不同层次。因此将这个复杂的函数写成分层表示。以便用分层函数表示使求偏导数的计算条理化。具体说，<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">是输出层结点的权值，它与输出结点输出值的关系只需用(6-36)式中的倒数第二式表示即可，即<br>
+            　　<img src="../../images/image_content/6/6_5F4018.gif" width="128" height="43" align="absmiddle"><br>
+            　　而相应的<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">修正量<img src="../../images/image_content/6/6_5F4019.gif" width="32" height="25" align="absmiddle">可通过对<img src="../../images/image_content/6/6_5F4017.gif" width="29" height="28" align="absmiddle">求<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">偏导计算，这就是(6-39)式的含义。<br>
+            　　对于隐含层结点中的参数<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">来说，要确定它的变化与代价函数的关系就要将输出端输出的表达式进一步细化，也就是要用到(6-36)式中最右边的表达式。根据此式求代价函数对<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">的偏导数，就得到计算<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">的修正量<img src="../../images/image_content/6/6_5F4019.gif" width="32" height="25" align="absmiddle">，这就是(6-41)式的含义。</span><br>
+            　　误差回传算法是一种通过迭代求优化解的方法。其根本目的是使输出与输入之间的实际映射关系与所期望的映射关系一致。因此首先要确定一个衡量上述关系一致性的代价函数，然后找到各参数值的变化对代价函数所起的作用，从而沿使代价函数值递降的方向调整各个参数值。<br>
+            　　对于图6-9所示的双层网络，如果其第k个输入端子的输入信号表示成<img src="../../images/image_content/6/6_5F4020.gif" width="18" height="29" align="absmiddle">，其中上标<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">是指第<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">个输入信号，而结点的输入输出特性用f表示，那末第i位输出结点的状态可用下式确定<br>
+            　　<img src="../../images/image_content/6/6_5F4021.gif" width="345" height="42" align="absmiddle">　　　(6-36)<br>
+            　　因此如果函数f是连续可导的，那么<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">，<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">与<img src="../../images/image_content/6/6_5F4017.gif" width="29" height="28" align="absmiddle">的关系就可以通过求偏导数以及传递链规则来确定。所以在多层前馈网络中的结点都必须使用S形或其它连续可导的函数。<br>
+            　　在最早提出的误差回传算法中，代价函数采用如下形式<br>
+            　　<img src="../../images/image_content/6/6_5F4022.gif" width="140" height="47" align="absmiddle">　　　(6-37)<br>
+            　　其中<img src="../../images/image_content/6/6_5F4023.gif" width="20" height="28" align="absmiddle">是第i位输出在第μ个输入信号作用时的期望输出状态。此时有<br>
+            　　<img src="../../images/image_content/6/6_5F4024.gif" width="270" height="71" align="absmiddle">　　　(6-38)<br>
+            　　利用梯度下降规则<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">的修正量应沿E变化的负梯度方向，则有<br>
+            　　<img src="../../images/image_content/6/6_5F4025.gif" width="355" height="56" align="absmiddle">　　　(6-39)<br>
+            　　其中<img src="../../images/image_content/6/6_5F4026.gif" width="19" height="25" align="absmiddle">被定义为<br>
+            　　<img src="../../images/image_content/6/6_5F4027.gif" width="159" height="45" align="absmiddle">　　　(6-40)<br>
+            　　上述式子实际上就是在感知器中用的方法，但此时<img src="../../images/image_content/6/6_5F4028.gif" width="28" height="35" align="absmiddle">是隐含结点的输出，而不是感知器输入端上的输入信号。<br>
+            　　对于<img src="../../images/image_content/6/6_5F4014.gif" width="25" height="23" align="absmiddle">来说，它们对输出状态的影响是通过<img src="../../images/image_content/6/6_5F4015.gif" width="23" height="26" align="absmiddle">间接起作用的，因此可以利用求偏导中的传递链方式<br>
+            　　<img src="../../images/image_content/6/6_5F4029.gif" width="310" height="174" align="absmiddle">　　　(6-41)<br>
+            　　其中<img src="../../images/image_content/6/6_5F4030.gif" width="18" height="31" align="absmiddle">被定义为<br>
+            <img src="../../images/image_content/6/6_5F4031.gif" width="166" height="48" align="absmiddle"> 
+            (6-42)<br>
+            　　需要注意的是(6-39)和(6-41)式在形式上很相似，但其中的<img src="../../images/image_content/6/6_5F4026.gif" width="19" height="25" align="absmiddle">与<img src="../../images/image_content/6/6_5F4030.gif" width="18" height="31" align="absmiddle">这两种量的定义与计算是不相同的。这种式子的相似性可以推广到一般的情况。一般说来，对具有任意层有前馈网络，误差回传法的修改规则在形式上可表示成<br>
+            　　<img src="../../images/image_content/6/6_5F4032.gif" width="207" height="52" align="absmiddle">　　　(6-43)<br>
+            　　其中<img src="../../images/image_content/6/6_5F4016.gif" width="12" height="18" align="absmiddle">是指训练时使用的样本空间。<br>
+            　　从以上分析还可看出，隐含层虽然没有与外界发生直接的关系，但是它们的参数在训练过程中的修正量还是受制于从上一层结点回传过来的误差。在使用前馈网络时，信息是从低层往上传递并进行计算。而在训练时，反映误差的量从输出结点向隐含层回传，并因而决定了网络参数的修改。这就是为什么把这种训练算法称为误差回传算法，或简称回传算法的缘故。<br>
+            　　以上说明了著名的误差回传算法。需要指出的是，实际的训练过程可以是每送入一个样本，就计算其相应误差，并修正各个参数。另一种方式是将所有样本逐个地送入网络，累计相应的误差，并由这些累计的误差确定参数的修正量，这种方式称为批处理。<br>
+            　　还需强调指出的是，前馈网络中使用的结点的输入输出特性往往是连续可导的函数，这对回传算法是十分关键的。一般常用的函数形式为<br>
+            　　<img src="../../images/image_content/6/6_5F4033.gif" width="149" height="48" align="absmiddle">　　　(6-44)<br>
+            　　或<img src="../../images/image_content/6/6_5F4034.gif" width="112" height="27" align="absmiddle"> 
+            (6-45)<br>
+            　　这些函数的共同特点是，在h的绝对值较大时函数值的变化很小，而只在h值接近于零处函数值才有明显的变化，参数β控制这一段变化的斜率。<br>
+            　　<span class="spe">基本误差回传算法在原理上很清楚，但实际应用中有不少不足之处，因而实际使用时提出了许多改进方法。这一节不作基本要求。</span><br></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent"><span class="spe"><strong>实例，使用神经元网络建立嘴部图像与嘴部边缘轮廓的对应关系：</strong><br>
+            　　下面举一个综合运用主分量分析(PCA)与人工神经元网络的非线性映射功能的例子。<br>
+            应用背景是当人们在远方进行交谈时,希望不仅能够听到人的声音,还想看到人的脸部表情和说话口型。为此一个研究项目就是要实现从人的说话声音驱动产生人脸的表情。这可以参照补图4的流程框图。一种实现方法是用人说话的声音来控制嘴形轮廓,然后再由嘴形轮廓形状生成嘴内部的图像，这称之为语音驱动的嘴形生成。这样有两个映射关系要确定,一个是从语音信号与嘴形轮廓形状之间的映射关系,另一个是嘴形轮廓形状与嘴内部图象之间的关系。这里我们讨论的是第二个关系。<br>
+            　　首先要解决的问题是用什么方法描述嘴轮廓形状与嘴内部图像。对于嘴部轮廓形状我们采用了一个四次曲线表示，需要5个参数，而嘴内部图像则采用主分量分析的方法。实现用参数向量控制与生成嘴内部图像(请复习一下主分量分析方法，即KL变换的原理)我们使用了一个12维的参数向量来控制嘴内部图像(请问：12维向量，表示我们用了多少张基图像？)在定义了描述方法后，我们就可以将通过嘴形轮廓线控制嘴内部图像的问题转化成一个5维向量控制一个12维向量的问题。为了确定这两种向量之间的关系(称之为映射关系)，可以采用机器学习的方法，也就是说找有一定数量的嘴部图像训练集，用图像处理方法勾画出其轮廓线，并用参数拟和求出其相应参数，另一方面对训练集内的嘴内部图像进行主分量分析，找出最主要的12个主分量。因此对每幅图，就有一对参数向量。可以用它们来训练合适的映射关系。<br>
+            　　由于考虑到这两个向量之间的关系比较适用非线性关系表示，我们使用了含一个隐含层的多感知器，该网络的输入端数为5，输出端为12，隐含层10个结点。训练使用标准的BP算法。为了防止网络过训练，我们采用了一种叫做“早期停止”(early 
+            stopping)的方法。在这种策略中，可利用的数据分为三个子集。第一个子集是训练集，用于计算梯度更新网络结点的权值。第二个子集是监督集，用于监督网络的训练过程。第三个子集是测试集，用于检测网络最终的性能。在正常训练时，训练集和监督集上的误差都呈下降趋势。当训练一段时间后，监督集上的误差开始上升，而训练集上的误差还在持续下降，这说明网络已经开始进入过训练状态，应该结束训练过程。</span></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4059.gif" width="396" height="412"><br>
+            补图4 合成算法的主框架 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">虚线上半部分是离线的训练部分，从训练图像提取出嘴形轮廓和内部图像，分别用PCA训练得到5维和12维向量描述。然后输入神经元网络训练得到映射关系y=f(x)。虚线以下是在线的图像合成模块，通过语音驱动嘴形轮廓，然后再利用训练结果，把嘴形轮廓映射到相应的嘴的内部图象。</span></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4060.gif" width="400" height="222"><br>
+            补图5 合成结果 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">为了检验训练的效果，我们将生成的嘴部图像与实际图像进行比较，在补图5中共有四种发音的嘴部图像序列，第一列是真实图像，第三列是对应的生成图像，可以看到它们之间还是很相似的。第二列是用线性关系生成的图像，它的效果就比较差一些。　　第四列是嘴形的5维向量表示。<br>
+            　　通过这个例子，大家可以体会一下主分量分析方法与多层感知器实现非线性映射的应用方法。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

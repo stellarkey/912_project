@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><strong><span class="FCcontent">5.3.1.2 C-均值算法</span></strong><span class="FCcontent"><br>
+            　　<font color="#800040">1.准则函数—误差平方和准则</font><br>
+            　　这个准则函数是以计算各类均值<img src="../../images/image_content/5/mi.gif" width="20" height="22" align="absmiddle">，与计算各类样本到其所属类均值点误差平方和为准则，若各类均值表示成<br>
+            　　<img src="../../images/image_content/5/5_1042.gif" width="102" height="48" align="absmiddle"> 
+            (5-7)<br>
+            　　其中第i类集合为<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">，其样本数目为<img src="../../images/image_content/5/5_1043.gif" width="18" height="22" align="absmiddle">是样本特征向量。<br>
+            　　此时误差平方和准则可表示成<br>
+            　　<img src="../../images/image_content/5/5_1044.gif" width="152" height="46" align="absmiddle">　　　(5-8)<br>
+            　　其含义是各类样本与其所属样本均值间误差平方之总和。对于样本集的不同分类，导致不同的样本子集<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">及其均值<img src="../../images/image_content/5/mi.gif" width="20" height="22" align="absmiddle">，从而得到不同的<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">值，而最佳的聚类是使<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">为最小的分类。这种类型的聚类通常称为最小方差划分。<br>
+            　　</span><span class="spe">动态聚类算法原理上就是通过迭代求函数极值的方法，因此在精神上与牛顿法等都是相通的。所不同的是要解决的问题是数据的聚类，也就是将现有的数据集进行划分。因此要构造一个函数，这个函数的值与数据划分有关，从而调整数据的划分使该函数达到极值。<br>
+            　　c-均值算法的准则函数(5-8)式表示了相似度量是以数据到数据子集均值的模的平方来度量，这是用欧氏距离的度量方法。</span><span class="FCcontent"><br>
+            　　<font color="#800040">2.样本集初始划分</font><br>
+            　　初始划分的一般作法是先选择一些代表点作为聚类的核心，然后把其余的样本按某种方法分到各类中去。<br>
+            　</span><span class="spe">　通过迭代方法求极值的一个普遍问题是局部极值与全局极值问题。在c-均值算法等动态聚类方法中也有类似问题。在这种情况下初始值的选择就会对最终达到那一个极值有决定性影响，因此c-均值算法的初始划分也是一个重要环节。一般通过一些启发式方式来确定初始划分。</span><span class="FCcontent"><br>
+            　　代表点的几种选择方法：<br>
+            　　(1) 凭经验选择代表点。根据问题的性质，用经验的办法确定类别数，从数据中找出从直观上看来是比较合适的代表点。<br>
+            　　(2) 将全部数据随机地分为C类，计算各类重心，将这些重心作为每类的代表点。<br>
+            　　(3) “密度”法选择代表点。这里的“密度”是具有统计性质的样本密度。一种求法是对每个样本确定大小相等的邻域(如同样半径的超球体)，统计落在其邻域的样本数，称为该点“密度”。在得到样本“密度”后，选“密度”为最大的样本点作为第一个代表点，然后人为规定距该代表点<img src="../../images/image_content/5/5_1046.gif" width="16" height="19" align="absmiddle">距离外的区域内找次高“密度”的样本点作为第二个代表点，依次选择其它代表点，使用这种方法的目的是避免代表点过分集中在一起。<br>
+            　　(4) 从(c-1)聚类划分问题的解中产生C聚类划分问题的代表点。其具体做法是先从一类聚类的解找两聚类划分的代表点，再依次增加一个聚类代表点。对样本集首先看作一个聚类，计算其总均值，然后找与该均值相距最远的点，由该点及原均值点构成两聚类的代表点。依同样方法，对已有(c-1)个聚类代表点(由(c-1)个类均值点组成)找一样本点，使该样本点距所有这些均值点的最小距离为最大，这样就得到了第c个代表点。<br>
+            总之以上所有这些选择代表点的方法都是带经验性的方法，不同的方法得到不同的初始代表点，它将影响到聚类的结果。<br>
+            在选定代表点后要进行初始划分，下面列出几种确定初始划分的方法：<br>
+            　　(1) 对选定的代表点按距离最近的原则将样本划属各代表点代表的类别。<br>
+            　　(2) 在选择样本的点集后，将样本按顺序划归距离最近的代表点所属类，并立即修改代表点参数，用样本归入后的重心代替原代表点，因此代表点在初始划分过程中作了修改。<br>
+            　　(3) 一种既选择了代表点又同时确定了初始划分的方法。首先规定一阈值d。然后选<img src="../../images/image_content/5/5_1047.gif" width="64" height="25" align="absmiddle">，计算样本<img src="../../images/image_content/5/y2.gif" width="18" height="21" align="absmiddle">与<img src="../../images/image_content/5/y1.gif" width="15" height="24" align="absmiddle">的距离<img src="../../images/image_content/5/5_1050.gif" width="64" height="25" align="absmiddle">，如其小于d，则归入<img src="../../images/image_content/5/w1.gif" width="18" height="24" align="absmiddle">否则建立新的类别<img src="../../images/image_content/5/5_1052.gif" width="64" height="33" align="absmiddle">。当轮到样本<img src="../../images/image_content/5/5_1053.gif" width="18" height="30" align="absmiddle">时，已有了K类即，<img src="../../images/image_content/5/5_1054.gif" width="82" height="26" align="absmiddle">，而每类第一个入类样本分别为<img src="../../images/image_content/5/5_1055.gif" width="74" height="26" align="absmiddle">，则计算<img src="../../images/image_content/5/5_1056.gif" width="126" height="29" align="absmiddle">若有<img src="../../images/image_content/5/5_1057.gif" width="87" height="31" align="absmiddle">对所有的i,i＝1,…，k，则建立新类<img src="../../images/image_content/5/5_1058.gif" width="75" height="24" align="absmiddle">。否则将<img src="../../images/image_content/5/5_1053.gif" width="18" height="30" align="absmiddle">归入与<img src="../../images/image_content/5/5_1059.gif" width="79" height="27" align="absmiddle">距离最近的类别中。<br>
+            　　(4) 先将数据标准化，用<img src="../../images/image_content/5/5_1060.gif" width="20" height="25" align="absmiddle">表示标准化后第i数据的第j分量，令<br>
+            　　<img src="../../images/image_content/5/5_1061.gif" width="113" height="51" align="absmiddle">　　　(5-9)<br>
+            　　求出SUM(i)的最大值与最小值<br>
+            　　<img src="../../images/image_content/5/5_1062.gif" width="132" height="33" align="absmiddle">　　(5-10)<br>
+            　　<img src="../../images/image_content/5/5_1063.gif" width="126" height="37" align="absmiddle">　　　(5-11)<br>
+            　　如果欲将样本划分为c类，则对每个i计算<br>
+             　<img src="../../images/image_content/5/5_1064.gif" width="168" height="43" align="absmiddle">　　(5-12)<br>
+            　　如所得结果非整数，则找到其最近整数K，将第i数据归入第K类。<br>
+            </span> 
+            <p class="FCcontent"><font color="#800040">3.迭代计算</font><br>
+              　　<span class="spe">c-均值算法的迭代计算过程在原理上与梯度下降法是一样的，即以使准则函数值下降为准则。但是由于c-均值算法的准则函数值由数据划分的调整所决定，因此只能通过逐个数据从某个子集转移到另一子集计算准则函数值是否降低为准则。</span><br>
+              　　显然由以上各种方法获得的初始划分只能作为一个迭代过程的初始条件，需按准则函数极值化的方向对初始划分进行修改。在使用上面提到的误差平方和准则时，可以按以下方法进行：<br>
+              　　如果原属<img src="../../images/image_content/5/5_1065.gif" width="18" height="26" align="absmiddle">中的一个样本y从<img src="../../images/image_content/5/5_1065.gif" width="18" height="26" align="absmiddle">移入<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">时，它会对误差平方和产生影响,<img src="../../images/image_content/5/5_1065.gif" width="18" height="26" align="absmiddle">类在抽出样本y后用<img src="../../images/image_content/5/5_1067.gif" width="17" height="28" align="absmiddle">表示，其相应均值<img src="../../images/image_content/5/5_1068.gif" width="23" height="23" align="absmiddle">为<br>
+              <img src="../../images/image_content/5/5_1069.gif" width="178" height="48" align="absmiddle"> 
+              (5-13)<br>
+              　　其中<img src="../../images/image_content/5/5_1070.gif" width="51" height="32" align="absmiddle"> 
+              是<img src="../../images/image_content/5/5_1065.gif" width="18" height="26" align="absmiddle">的均值与样本数。<br>
+              　　而样本y新加盟的<img src="../../images/image_content/5/5_1071.gif" width="17" height="32" align="absmiddle">集合，其均值<img src="../../images/image_content/5/5_1072.gif" width="23" height="26" align="absmiddle"><br>
+              <img src="../../images/image_content/5/5_1073.gif" width="176" height="55" align="absmiddle"> 
+              (5-14)<br>
+              　　其中<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">，<img src="../../images/image_content/5/5_1075.gif" width="19" height="21" align="absmiddle">分别是原<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">的均值与样本数。<br>
+              　　由于y的移动只影响到k与j这两类的参数改动，因此，计算<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">值的变动只要计算相应两类误差平方和的变动即可，此时<br>
+              　　<img src="../../images/image_content/5/5_1076.gif" width="194" height="53" align="absmiddle">　　(5-15)<br>
+              　　及<img src="../../images/image_content/5/5_1077.gif" width="197" height="58" align="absmiddle"> 
+              (5-16)<br>
+              　　其中<img src="../../images/image_content/5/5_1078.gif" width="16" height="25" align="absmiddle"> 
+              与<img src="../../images/image_content/5/5_1079.gif" width="15" height="17" align="absmiddle">都是变动后j与k类的误差平方和。如果<br>
+              <img src="../../images/image_content/5/5_1080.gif" width="254" height="60" align="absmiddle"> 
+               (5-17)<br>
+              　　则将样本y从<img src="../../images/image_content/5/5_1065.gif" width="18" height="26" align="absmiddle"> 
+              移入至<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">就会使误差平方总和<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">减小，它表明样本变动是合乎准则要求的。<br>
+              <font color="#800040">　　4.C—均值算法</font><br>
+              　　综上所述C—均值算法可归纳成：<br>
+              　　(1) 选择某种方法把N个样本分成C个聚类的初始划分，计算每个聚类的均值<img src="../../images/image_content/5/5_1081.gif" width="95" height="27" align="absmiddle">和<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle"><br>
+              　　(2) 选择一个备选样本y，设其在<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">中<br>
+              　　(3) 若<img src="../../images/image_content/5/5_1082.gif" width="42" height="26" align="absmiddle">，则转(2)，否则继续<br>
+              　　(4) 计算<br>
+              　<img src="../../images/image_content/5/5_1083.gif" width="209" height="112" align="absmiddle">　　　　(5-18)<br>
+              　　(5) 对于所有的j，若<img src="../../images/image_content/5/5_1084.gif" width="44" height="26" align="absmiddle">，则将y从<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">移到<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">中。<br>
+              　　(6) 重新计算<img src="../../images/image_content/5/mi.gif" width="20" height="22" align="absmiddle">和<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">的值，并修改<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">。<br>
+              　　(7) 若连续迭代N次(即所有样本都运算过) 不变，则停止，否则转到2。<br>
+              　　上述C—均值算法都是在类别c已知条件下进行的，在类别数未知情况下使用C—均值算法时，可以假设类别数是逐步增加的，例如对c＝1，2，3，…分别使用该算法。显然准则函数<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">是随c的增加而单调地减少的。如果样本集的合理聚类数为c类，当类别数继续增大时，相当于将聚类很好的类别又分成子类，则<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">值虽然继续减少但会呈现平缓趋势，如果作一条<img src="../../images/image_content/5/5_1045.gif" width="18" height="28" align="absmiddle">值随c变化的曲线，如图5.6所示，则其拐点对应的类别数就比较接近于最优聚类数。图5.6表示c＝3是较合适的聚类数。</p>
+      </td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_1085.gif" width="267" height="242"><br>
+            图 5.6 </td>
+        </tr>
+        <tr> 
+          <td><span class="FCcontent">　　</span><span class="spe">但是并非所有的情况都能找到明显的转折点。在无明显的转折点时，这种选择最佳分类数的方法将失效。一般需要利用先验知识对不同的聚类结果进行分析比较。 
+            　<br>
+            　　c-均值算法的一个主要问题是划分类别数必须事先确定，这种主观确定数据子集数目并不一定符合数据集自身的特点。这一节介绍的ISO-DATA算法, 
+            将硬性确定聚类数目改成给出这个数目的期望值，作为算法的一个控制量。在算法中又加上分类与合并机制，因而能使聚类结果比较适应数据集的内在特性。<br>
+            　　对于ISODATA算法只要求大体看懂，不要求死扣。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">局部训练法的思想与前面提到的方法不大一样，它的出发点是类间的分界面必然处在两类样本的交界处，因此只需找出这些交界处的样本，然后对这些邻近的不同类样本,按需要确定分界面即可。学习这一段主要能明白它的思路即可。<br>
+            　　实际上决策面都处在不同类别样本分布的交界处或邻接处所在的区域内，譬如图3.14中两类物体在特征空间分布中有若干处很接近或甚至有交迭。用这些区域中的样本来决定判别函数，就可以代替用整个样本集进行训练。基于这种思想的样本训练法称为“局部训练法”。参加训练的局部样本集由两类样本组成。这些区域称之为“交遇区”，局部训练法就是基于交遇区内的样本进行设计的。这种方法要解决的几个问题是：(1) 
+            如何从样本集中找到“交遇区”；(2)如何利用“交遇区”中的样本设计线性分类器以及(3)如何进行分类决策。下面就这些问题分别进行讨论。</span><br></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_3145.gif" width="400" height="372"><br> 
+            <img src="../../images/image_content/3/3_3146.gif" width="400" height="367"> 
+          </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"><strong>3.3.4.1 紧互对原型与交遇区<a name="1"></a></strong><br>
+            　　<span class="spe">这一节提出寻找“交遇区”的一种方法，其实质是先在每类样本集内进行分片划分，所使用的方法是聚类方法，这在第五章会讨论。也可以采用别的方法。划分的目的是使每类样本划分成小片后，找到处在本类样本占领区域边界上的小片原型。找到边界子集的方法是通过与另一类样本子集中找近邻的方法实现的。如果发现分属两类的两个原型互为最近邻，那么这两个原型就被认定为处在两类样本决策域的交界处，它们所在区域就成为交遇区。交遇区就是有这些处在边界上的原型集组成。为了简便计算，每个小片(原型)都找出一质心，用它代表这个小片(也称原型)。通过计算每个原型与其它原型的欧氏距离来计算近邻关系。</span><br>
+            　　为了找到两类样本的交遇区，首先对这两类样本进行聚类分析，从而找出它们各自的一些相对密集的子区域，称为“原型区”。图3.15中<img src="../../images/image_content/3/3_3147.gif" width="23" height="21" align="absmiddle">，<img src="../../images/image_content/3/3_3148.gif" width="20" height="22" align="absmiddle">，<img src="../../images/image_content/3/3_3149.gif" width="20" height="24" align="absmiddle">，等是ω<sub>1</sub>的若干个原型区，而V<sub>2</sub><sup>1</sup>，<img src="../../images/image_content/3/3_3150.gif" width="20" height="22" align="absmiddle">与<img src="../../images/image_content/3/3_3151.gif" width="20" height="23" align="absmiddle">等是ω<sub>2</sub>的原型区。在每个原型区中找到一个质心或距质心很近的样本作为各原型区的代表点，称为“原型”。然后在两个类别的原型集合中，分别计算不同类原型对之间的欧氏距离，并找出各原型在对方类型中相距最近的原型对，如v<sub>2</sub><sup>1</sup>的最近原型是<img src="../../images/image_content/3/3_3152.gif" width="21" height="19" align="absmiddle">，而<img src="../../images/image_content/3/3_3152.gif" width="21" height="19" align="absmiddle">的最近原型是<img src="../../images/image_content/3/3_3150.gif" width="20" height="22" align="absmiddle">等。从这些最小距离原型关系中找到互为最小距离的原型对，如v<sub>1</sub><sup>2</sup>与v<sub>2</sub><sup>3</sup>，组成所谓“紧互对原型对”。紧互对原型对的集合组成“交遇区”。有时可将紧互对原型对扩展成k-紧互对原型对，即将找一个最近的原型改成找k个最近的原型。<br>
+            <strong>3.3.4.2 局部训练法</strong><a name="2"></a><br>
+            　　<span class="spe">这一节讲如何利用“交遇区”来设计分界面的问题。基本思想是边界由若干个交遇区确定，在每个交遇区中只有两种不同类型的样本。由这些样本产生一个合适的分界面，一般使用分段线性分界面。具体做法往往是利用处于最紧贴边界的紧互对原型对产生一初始分界面，然后利用交遇区进行调整，这种调整属于局部性的调整。</span><br>
+            　　在找到一组“交遇区”之后，将这些“交遇区”中的两类样本作为新的样本集，由它们产生分段线性判别函数。具体做法是：<br>
+            　　步骤一： 产生初始超平面<br>
+            　　首先由紧互对原型对集合中最近的一对，<img src="../../images/image_content/3/3_3153.gif" width="57" height="27" align="absmiddle"> 
+            产生一个初始决策面的方程。例如可由这两个原型的垂直平分平面作为初始界面，表示成H<sub>1</sub>；<br>
+            　　步骤二： 初始决策面最佳化<br>
+            　　确定H<sub>1</sub>能正确分类的所有紧互对原型对，并由这些原型对中的样本组成局部训练的样本集，按所使用的准则设计出线性决策面<img src="../../images/image_content/3/3_3154.gif" width="23" height="28" align="absmiddle"> 
+            ，该决策面对现有局部样本集来说是最佳的。对该H<sub>1</sub>决策面又可找出它能正确分类的所有紧互对原型对。如果<img src="../../images/image_content/3/3_3154.gif" width="23" height="28" align="absmiddle">与<img src="../../images/image_content/3/3_3155.gif" width="22" height="25" align="absmiddle">的分类效果相同，则<img src="../../images/image_content/3/3_3154.gif" width="23" height="28" align="absmiddle">不需再调整，否则由<img src="../../images/image_content/3/3_3154.gif" width="23" height="28" align="absmiddle">作为初始决策面重复上述过程，直到所包罗的局部训练样本集不再发生变化为止。<br>
+            　　步骤三： 新决策面的产生与最佳化<br>
+            　　在找到一个最佳的决策面段后，将相应的局部训练样本从原紧互对原型对集合中撤走，然后在剩下的紧互对原型对集合重复上述步骤，产生另一个超平面分界面，如此重复下去直到所有紧互对原型对都被处理完毕，得到一系列超平面，组成分段线性分类器。 
+            <p><strong>3.3.4.3 分段线性分类器检验一个决策规则的确定</strong><a name="3"></a><br>
+              　　<span class="spe">在使用上述方法得到一组超平面作为分段线性分类器的分界面后，仅对交遇区的样本集进行性能检测有时不能发现存在的问题，需要使用全体样本对其进行性能检验，观察其能否对全体样本作出合理的划分。例如图3.16(a)所示样本利用局部训练法产生了H<sub>1</sub>与H<sub>2</sub>两个超平面，将整个特征空间划分成R<sub>1</sub>、R<sub>2</sub>与R<sub>3</sub>三个决策域。在R<sub>1</sub>域中第二类样本占绝大多数，因此R<sub>1</sub>可作为第二类样本ω<sub>2</sub>的决策域，错误率不会很大。同样在R<sub>3</sub>域中ω<sub>1</sub>占大多数，R<sub>32</sub>可作为ω<sub>1</sub>的决策域。问题出在R<sub>2</sub>域。在R<sub>2</sub>域中ω<sub>1</sub>与ω<sub>2</sub>两类样本均占相当比例，因此不能简单地将其确定为哪一类的一个决策域，而需要对其进行进一步划分。下面说明使用全体样本进行检验及改进的具体作法。</span><br>
+              　　如果现有的决策界面数为m，每个决策超平面的增广权向量为<img src="../../images/image_content/3/3_3156.gif" width="117" height="31" align="absmiddle"> 
+              ，那么每一个样本y<sub>j</sub>处在哪个区域，可用它们与这些增广权向量<img src="../../images/image_content/3/3_3157.gif" width="27" height="30" align="absmiddle">的内积符号表示。为了统计这些内积符号的总效果，可定义一个由样本X<sub>j</sub>(用增广样本向量y<sub>j</sub>表示)决策的m维向量<img src="../../images/image_content/3/3_3158.gif" width="226" height="28" align="absmiddle">，其中<br>
+              　　<img src="../../images/image_content/3/3_3159.gif" width="181" height="63" align="absmiddle">　　　　　　　(3-58)<br>
+              　　因此处在同一区域的所有样本都有同样的向量值。例如图3.16(b)中，处在R<sub>1</sub>域中所有样本的m维向量(m＝2)为Z＝{1,1}；而在R<sub>2</sub>或中的样本具有Z＝{0,1}；R<sub>3</sub>域中则为{0,0}。这样一来，全体样本将被划分若干子集，最大可能的子集数为2<sup>m</sup>个。每个子集都可能包含两个类别的训练样本，但在每个子集中两类样本分布的不同，将作为划分与改进决策域的依据。我们用<img src="../../images/image_content/3/3_3162.gif" width="40" height="24" align="absmiddle">表示在第k个子集中第l类训练样本的个数，k＝1，…，2<sup>m</sup>,l＝1，2，并用一个比值函数<img src="../../images/image_content/3/3_3164.gif" width="149" height="53" align="absmiddle"> 
+              表示每个子集中ω<sub>1</sub>类样本所占比例，根据L值及N<sup>1</sup>(Z<sub>K</sub></sub>)与N<sup>2</sup>(Z<sub>K</sub></sub>)这三个数据，可对各个区域作相应决定：<br>
+              　　1 如果L&gt;&gt;1/2，则Z<sub>K</sub></sub>区域为ω<sub>1</sub>的决策域；<br>
+              　　2 如果L&lt;&lt;1/2，则Z<sub>K</sub></sub>区域为ω<sub>2</sub>的决策域；<br>
+              　　3 如果L≈1/2，以及N<sup>1</sup>(Z<sub>K</sub></sub>)、N<sup>2</sup>(Z<sub>K</sub></sub>)很小，则对Z<sub>K</sub></sub>内样本可作拒绝决策；<br>
+              　　4 如果L≈1/2，但N<sup>1</sup>(Z<sub>K</sub></sub>)与N<sup>2</sup>(Z<sub>K</sub></sub>)数量不可忽略，则对此区域，用该子集的样本再次进行局部训练法训练，以获得其进一步划分。重复上述过程，直至对所有区域都能合理地确定为哪一类的决策域，或拒识区域为止。<br>
+            </p></td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/3/3_3165.gif" width="260" height="205"><br>
+            <img src="../../images/image_content/3/3_3166.gif" width="213" height="208"> 
+            <br>
+            图3.16 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent"> 　　图3.16中的样本采用上述方法后，决策平面由两个(H<sub>1</sub>、H<sub>2</sub>)增至三个，即H、H<sub>2</sub>与H3组成。至于对每类样本的决策规划，可用上面提到的m维向量作决策。例如图3.16(b)中Z向量为(1，1，1)、(1，1，0)以及(0，1，0)的区域为ω<sub>2</sub>的决策域，而(0，1，1)(0，0，0)及(0，0，1)区域则为ω<sub>1</sub>的决策域。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
