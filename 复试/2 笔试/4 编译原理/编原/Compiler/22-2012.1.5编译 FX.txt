@@ -1,0 +1,108 @@
+发信人: falchion (随机杀档), 信区: 
+标  题: 2012.1.5编译
+发信站:  (Thu Jan  5 17:29:09 2012), 转信
+
+题目2大张，不过代码很多
+需要速度
+一、decaf
+1.BYACC中函数的表示为
+Function:Attributes Type Ident blabla...
+其中Attributes表示函数性质，如static,private,public等，EBNF为
+Attributes:Attribute*
+为方便起见，假定每个属性可以出现多次，且private和public可重复出现，如public static public private void f()
+//这都什么玩意儿……
+假定static=1,public=2,private=4,那么Attributes=5=101表示private static。
+写出Attributes的BYACC代码：
+Attributes:________
+{
+   __________
+}
+||/*empty*/{
+  /*nothing*/
+}
+2.在判断BadArgCountError中有这样一段代码：
+argNum= func.isStatik()? func.getArglist().size():func.getArglist().size()+1;
+请解释为什么一个+1一个不+1.
+3.TAC码
+class Main{
+  int x;
+  int y;
+  int f(int a){return a;}
+  int g(int a){return a*a;}
+ 
+  static void main(){
+     class Main a;
+     ____________
+}
+还有简写的vtable
+然后给了一段TAC码
+//完全就是天书……全忘了
+然后填答案
+估计答案是a.x  =  a.f(a.y) 四个中的一个
+          a.y         a.x
+把TAC反着写出来也就会了
+
+二、
+PPT10 53页的图，a:=0变成a:=3
+1.编译到第8行时，作用域栈的所有内容；以及每个作用域的符号表
+2.第2次运行到L行时，Display表中的内容（要求回答是第几次调用）
+3.静态作用域和动态，在运行时结果有什么不同？
+
+三、
+PPT10 20页
+1.B5的支配节点，回边，自然循环
+2.B2的livein,liveout
+3.d7的UD链
+4.d5的DU链
+
+四、
+S→M{P.y:=M.x}P{S.x:=M.x+P.x}
+P→{A.y:=0}A{P1.y:=A.x}P1{P.x:=A.x+P1.x}
+P→{A.y:=P.y}A{P.x:=A.x}
+A→({P.y:=A.y}P{A.x:=P.x})
+A→a{A.x:=A.y+1}
+M→ε{M.x:=0}
+1.给出(a)a的语法树，计算顶层节点的属性值
+2.M(P)A和M(A)a的短语，直接短语，句柄
+3.改写上述文法，使得可以用top分析，写出代码
+
+五、
+P→D;E
+D→D;D
+D→d
+E→a
+1.作LR(0) FSM,一部分已画好
+2.上述发生了什么冲突，在哪个状态？
+3.是否是SLR(1)的
+4.做LR(1) FSM，一部分已画好
+5.是否是LR(1)的
+6.添加规则使文法可以使用LR(1)分析；并画状态表，一部分已画好
+
+六、
+S→{P.y:=0}P{S.x:=P.x}
+S→ε{S.x:=0}
+P→({P1.y:=P.y}P1{P2.y:=P1.y})P2{P.x:=P1.x+P2.x}
+P→a{P.x:=P.y+1}
+1.求first集，follow集,PS集
+2.是否是LL(1)的
+3.画预测表
+4.写出递归下降的语法代码。
+
+七、
+每年都有的很长一堆code，今年是gen形式的
+要求实现switch语句和break语句
+switch:
+S→case A is L
+L→V:S L
+L→default S
+break:
+S→while E do S
+S→S1;S2
+S→break
+--
+风萧萧兮易水寒，DB作业兮做不完！
+反正这个月的生活只要改中间的名词就行了……
+
+
+[36m※ 修改:·falchion 于 Jan  6 00:54:26 2012 修改本文·[FROM: 59.66.130.245][m
+[m[1;33m※ 来源:· bbs.net9.org·[FROM: 59.66.130.245][m

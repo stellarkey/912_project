@@ -1,0 +1,59 @@
+发信人: zig (zzZ), 信区: 
+标  题: 2004B的编译
+发信站:  (Mon Jun 20 21:35:30 2005), 转信
+
+2. x = t+1 y = t+2对么？
+5. 除了删除无用赋值还可以怎么优化？
+6.1 是这四个状态么？
+I0:
+S'->.S
+S->.SaS
+S->.Sa
+S->.
+I1:
+S'->S.
+S->S.aS
+S->S.a
+I2:
+S->Sa.S
+S->Sa.
+S->.SaS
+S->.Sa
+S->.
+I3:
+S->S.aS
+S->S.a
+8.符号表这样么？
+
+scope stack:
+LocalScope
+FunctionScope
+ClassScope
+GlobalScope
+
+符号表：
+localscope: a int
+functionscope(B.a): empty
+classscope(B): 
+ double c offset 4
+ int A.b offset 0
+ int B.a offset 4
+GlobalScope
+  class A
+  class B
+
+A.vtable:
+A.b
+A.a
+
+B.vtable:
+A.b
+B.a
+
+--
+Bereavement
+"Grief is as useless as love."
+ -Gix, Yawgmoth praetor
+
+
+[m[1;34m※ 来源:· bbs.net9.org·[FROM: 59.66.131.116][m
