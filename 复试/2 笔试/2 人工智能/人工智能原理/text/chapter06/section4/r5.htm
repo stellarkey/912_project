@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　从上面的讨论来看，Kohonen网络有如下几个特点：<br>
+      　　1. 网络中的权是输入样本的记忆。如果输出神经元j与输入n个神经元之间的连接权用W<sub>j</sub>表示，对应某一类样本<img src="../../../img/chap06/pic55.gif" width="19" height="17">输入，使y<sub>j</sub>达到匹配最大，那么W<sub>j</sub>通过学习后十分靠近<img src="../../../img/chap06/pic55.gif" width="19" height="17">，因此以后当<img src="../../../img/chap06/pic55.gif" width="19" height="17">再次输入时，y<sub>j</sub>这个神经元必定会兴奋。即y<sub>j</sub>成为了样本<img src="../../../img/chap06/pic55.gif" width="19" height="17">的代表。<br>
+      　　2. 网络学习时对连接权的调整过程中，不只是对兴奋的那个神经元所对应的连接权，同时对其周围Nc区域内的神经元也进行调整。因此对于在Nc内的神经元可以代表不只是一个样本<img src="../../../img/chap06/pic55.gif" width="19" height="17">，而是与XP比较相近的样本都可以在Nc内得到反映，因此这种网络对于样本的畸变和噪声的容错性较好。 
+      <br>
+      　　3. 网络学习的结果使比较相近的输入样本在输出二维平面的位置上也比较接近。</td>
+  </tr>
+</table>
+</body>
+</html>

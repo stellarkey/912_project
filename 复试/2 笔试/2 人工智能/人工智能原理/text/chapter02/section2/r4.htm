@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　设C<sub>1</sub>和C2是子句集中的任意两个子句，如果C<sub>1</sub>中的文字L<sub>1</sub>与C<sub>2</sub>中的文字L<sub>2</sub>互补，那么可从C<sub>1</sub>和C<sub>2</sub>中分别消去L<sub>1</sub>和L<sub>2</sub>，并将C<sub>1</sub>和C<sub>2</sub>中余下的部分按析取关系构成一个新子句C<sub>12</sub>，则称这一个过程为归结，称C<sub>12</sub>为C<sub>1</sub>和C<sub>2</sub>的归结式，称C<sub>1</sub>和C<sub>2</sub>为C<sub>12</sub>的亲本子句。<br>
+      　　例如：有子句：C<sub>1</sub>＝P∨C<sub>1</sub>'， <br>
+      　　　　　　　　　C<sub>2</sub>＝～P∨C<sub>2</sub>'<br>
+      　　存在互补对 P和～P，<br>
+      　　则可得归结式：C<sub>12</sub> = C<sub>1</sub>'∨C<sub>2</sub>' <br>
+      　　<font color="#0000FF">注意：</font>C<sub>1</sub>ΛC<sub>2</sub> → C<sub>12</sub> 
+      ， 反之不一定成立。 <br>
+      　　下面证明归结式是原两子句的逻辑推论，或者说任一使C<sub>1</sub>、C<sub>2</sub>为真的解释I下必有归结式C<sub>12</sub>也为真。<br>
+      　　证明：<br>
+      　　设I是使C<sub>1</sub>，C<sub>2</sub>为真的任一解释，若I下的P为真，从而～P为假，必有I下C<sub>2</sub>'为真，故C<sub>12</sub>为真。若不然，在I下P为假，从而I下C<sub>1</sub>'为真，故I下C<sub>12</sub>为真。于是C<sub>1</sub>∧C<sub>2</sub>为真。于是C<sub>1</sub>∧C<sub>2</sub>→R(C<sub>1</sub>,C<sub>2</sub>)成立。<br>
+      　　反之不一定成立，因为存在一个使C<sub>1</sub>'∨C<sub>2</sub>'为真的解释I，不妨设C<sub>1</sub>'为真，C<sub>2</sub>'为假。若P为真，则～P∨C<sub>2</sub>'就为假了。因此反之不一定成立。由此可得归结式的性质。<br>
+      　　归结式的性质：归结式C<sub>12</sub> 是亲本子句C<sub>12</sub> 和C<sub>12</sub>的逻辑结论。</td>
+  </tr>
+</table>
+</body>
+</html>

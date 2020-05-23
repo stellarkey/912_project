@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> procedure RUN-ENVIRONMENT(state, UPDATE-FN, agents, termination 
+      )<br>
+      　inputs: state, 环境的初始状态<br>
+      　　　　　UPDATE-FN， 改变环境的函数<br>
+      　　　　　agents，一系列智能体<br>
+      　　　　　termination，检测结束状态的谓词<br>
+      　repeat<br>
+      　　for each agent in agent do<br>
+      　　　PERCEPT[agent] GET-PERCEPT(agent, state)<br>
+      　　end<br>
+      　　for each agent in agent do<br>
+      　　　ACTION[agent] PROGRAM[agent](PERCEPT[agent])<br>
+      　　end<br>
+      　　state UPDATE-FN(actions, agents, state)<br>
+      　until termination(state)<br>
+      end procedure<br>
+      　　按照这个环境程序形式对真实环境进行模拟是很方便的。环境模拟器把一个或者多个智能体作为输入变量，并循环地为每一个智能体提供感知的输入，然后返回智能体的行为。模拟器可以通过智能体的行为来对环境产生变化。因此一个智能体如果在环境模拟器中工作得很好，它在类似的实际环境中也会较好地工作。 
+      <br>
+      　　通常设计一个智能体时要考虑到整个环境类（一些不同但类似环境的集合）。例如，我们设计的象棋程序就会和不同的人或者机器人交手。如果我们针对一个对手设计程序，可能可以更好的利用这个特定对手的弱点，但是它不是具有广泛应用的象棋程序。因此为了衡量一个智能体的性能，我们通常需要产生不同的环境来运行智能体，并取平均。</td>
+  </tr>
+</table>
+
+</body>
+</html>

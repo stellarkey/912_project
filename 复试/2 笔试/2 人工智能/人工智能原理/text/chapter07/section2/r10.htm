@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　例如：<br>
+        　　　S→aSb<br>
+        　　　S→x<br>
+        　　此时如令<br>
+        　　　S→(S)<br>
+        　　　S→x<br>
+        　　则可生成<br>
+        　　　x，(x)，((x))，(((x)))，((((x))))，……<br>
+        　　此为正则语法无法解决的嵌套结构。<br>
+        　　<b>巴科斯-诺尔范式</b>（BNF，Backus-Naur Form），<br>
+        　　BNF常用来表达上下文无关语法。其表达方式为：<br>
+        　　&quot;：：=&quot;代替&quot;→&quot;<br>
+        　　&quot;|&quot;表示多条产生式有相同的左侧。称作选择项。<br>
+        　　&quot;&lt;&gt;&quot;表示非终结符<br>
+        　　如：&lt;S&gt;：：=(&lt;S&gt;)| x<br>
+        　　表达句子的推导：把推导表示为产生式应用的一个线性序。<br>
+        　　　&lt;SENTENCE&gt;：：=&lt;SUBJECT&gt;&lt;VERBPHARSE&gt;<br>
+        　　　&lt;SUBJEVT&gt;：：= John | Mary<br>
+        　　　&lt;VERBPHRASE&gt;：：=&lt;VERB&gt; &lt;OBJECT&gt;<br>
+        　　　&lt;VERB&gt;：：= eats | drinks<br>
+        　　　&lt;OBJECT&gt;：：= wine | cheese<br>
+        　　句子Mary eats cheese的推导可表示为：<br>
+        　　　&lt;SENTENCE&gt; <img src="../../../img/chap07/symbol04.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        &lt;SUBJECT&gt;&lt;VERBPHRASE&gt;<br>
+        　　　　　　　 　<img src="../../../img/chap07/symbol04.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        Mary&lt;VERBPHRASE&gt;<br>
+        　　　　　　　 　<img src="../../../img/chap07/symbol04.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        Mary&lt;VERB&gt;&lt;OBJECT&gt;<br>
+        　　　　　　　 　<img src="../../../img/chap07/symbol04.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        Mary eats &lt;OBJECT&gt;<br>
+        　　　　　　　　 <img src="../../../img/chap07/symbol04.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        Mary eats cheese.
+    </td>
+  </tr>
+</table>
+</body>
+</html>

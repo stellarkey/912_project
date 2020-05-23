@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　若将一个子框架视作知识单位，如一条产生式规则，这样可将一个问题的求解，通过匹配分散为各个有关的子框架的协调过程，当然实现起来较为困难。这个过程可以描述为：
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图4-10 框架推理过程</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap04/4-11.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap04/4-11.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <strong>例子：</strong><br>
+      　　说明附加过程在推理中的作用：如确定一个人的性别，已匹配的知识库中的框架为——<br>
+      　　【槽名<br>
+      　　Gender NIL<br>
+      　　If needed ASK<br>
+      　　If added CHECK】<br>
+      　　启动过程如下：<br>
+      　　1）如果没有默认值，if needed条件满足<br>
+      　　2）启动ASK，向用户查询并等待输入<br>
+      　　3）若有输入（if added），执行CHECK，检查输入的合法性<br>
+      若有默认值而无输入，则不执行CHECK<br>
+      　　继承性是框架最重要的特性。为了很好的表达这个特性，一个框架系统常常被表达为树形结构。树的每个结点也是一个框架结构，子结点和父结点之间通过Is－a关系或A－Kind－Of关系连接。当子结点的某些槽值或侧面没有被直接记录时，可以从父结点继承这些值。这样表达的另一个好处就是，相同的信息不必重复存储，节省了空间。</td>
+  </tr>
+</table>
+</body>
+</html>

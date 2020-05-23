@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <p> 　　目标概念：<br>
+        　　Safe-to-stack(x，y) x在y上安全堆放<br>
+        　　训练实例（是一些描述物体obj1和obj2的事实）：<br>
+        　　<b>前提</b>：重量、体积、密度，<br>
+        　　　　Weight(obj1, 0.1) 重量是0.1<br>
+        　　　　Weight(obj2, 5) 重量是5<br>
+        　　　　Volume(obj1，1) 体积是1<br>
+        　　　　Density(obj1, 0.1) 密度是0.1<br>
+        　　<b>条件</b>： Lighter(obj1, obj2) obj1比obj2轻<br>
+        　　<b>状态</b>： On(obj1，obj2) 在之上<br>
+        　　<b>是什么</b>： Is-a(obj1，book) 是书<br>
+        　　　　　　 Is-a(obj2，table) 是桌子<br>
+        　　　　　领域知识（是把一个物体安全的放置在另一个物体上面的准则）：<br>
+        　　　　　Fragile(y)→Safe-to-stack(x, y) <br>
+        　　　　　如y是不易碎的，则x可安全放在之y上<br>
+        　　　　　Lighter(x, y)→Safe-to-stack(x, y) <br>
+        　　　　　如x比y轻，则x可安全放在之y上<br>
+        　　以上两条是条件<br>
+        　　　　Volume(p, v)∧Density(p, d)∧Product(v, d, w)→Weight(p, w)<br>
+        　　　　p的体积v与密度d的乘积为重量<br>
+        　　　　Is-a(p, table)→Weight(p, 5)<br>
+        　　　　桌子p的重量是5<br>
+        　　　　Weight(p1, w1)∧Weight(p2, w2)∧Smaller(w1, w2)→Lighter(p1, p2)<br>
+        　　　　如p1的重量与p2的重量比较有p1的比p2的小，则p1比p2轻<br>
+        　　这两条是计算，乘法计算、比较计算。</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

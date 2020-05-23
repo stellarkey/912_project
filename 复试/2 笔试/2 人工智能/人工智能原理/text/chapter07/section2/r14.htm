@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　举例来说，如果我们的文法是：<br>
+        　　　　&lt;S&gt; ::= &lt;NP&gt;&lt;VP&gt;<br>
+        　　　　&lt;NP&gt; ::= &lt;N&gt;|&lt;PRO&gt;<br>
+        　　　　&lt;VP&gt; ::= &lt;TV&gt;|&lt;TV&gt;&lt;NP&gt;<br>
+        　　那么句子：<br>
+        　　　　I like cheese 我喜欢奶酪<br>
+        　　（其中&quot;I&quot;是PRO，&quot;like&quot;是TV，&quot;cheese&quot;是N）的最左推导是：<br>
+        　　　　S <img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/chap07/1x1pixel.gif" width="1" height="17"> 
+        NP VP<br>
+        　　　　　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/chap07/1x1pixel.gif" width="1" height="17"> 
+        PRO VP<br>
+        　　　　　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/chap07/1x1pixel.gif" width="1" height="17"> 
+        PRO TV NP<br>
+        　　　　　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/chap07/1x1pixel.gif" width="1" height="17"> 
+        PRO TV N<br>
+        　　对应的句法树如下图所示：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图7-7 句子&quot;I like cheese&quot;的句法树</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/chap07/pic7_7.gif" width="130" height="98"></td>
+        </tr>
+      </table>
+    　　推导是自左向右的，推导的根据是文法和词典。第一个结果使用的是文法第一条。（任何句子都要从这条开始。）结果的第一条左边是NP所以根据文法第二条得到结果的第二条。使用PRO而不是N的理由是因为，根据词典句子中的第一个词I的词性是PRO。由于PRO是结束符，所以开始分析VP根据文法第三条选择&lt;TV&gt;&lt;NP&gt;。理由是后面还有一个以上的词。其实，开始选TV也可以。如果推导失败，即，推出的结构与例句不符，可以采用回溯的方法，重新推导。由于例句中没有NP，所以，将NP转换成为N。结果与例句完全吻合，推导结束。如果有几种吻合的结果，则就有几棵语法树。</td>
+  </tr>
+</table>
+</body>
+</html>

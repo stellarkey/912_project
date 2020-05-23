@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../img/pop/new_bg.jpg">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>问答题答案</b></p>
+        <p><b>第1题</b><br>
+          <font color="#0000FF">答</font>：性能尺度函数是用来判断智能体成功程度的函数，而没有对所有智能体通用的评价准则，是人类从智能体的行为结果以及相关环境出发对智能体性能的评价。 
+          效率函数是基于效率的智能体的重要组成部分，是智能体对本身状态满足程度的一个详细的描述，一般把一个状态映射到一个实数。这样智能体可以比较不同行动路径的效率指数，从而采取适当的行动。 
+          <br>
+          <br>
+          <b>第2题</b><br>
+          <font color="#0000FF">答</font>：以自动语音翻译器来说明一个智能体的PAGE要素： 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">Agent Type</td>
+            <td align="center">Percepts</td>
+            <td align="center">Actions</td>
+            <td align="center">Goals</td>
+            <td align="center">Environment</td>
+          </tr>
+          <tr> 
+            <td align="center">自动语音翻译器</td>
+            <td align="center">语音输入，键盘输入，指令按钮</td>
+            <td align="center">翻译，把结果通过语音或其它形式表现出来</td>
+            <td align="center">准确，快速，动听。</td>
+            <td align="center">环境噪音，各种方言，同时发音</td>
+          </tr>
+        </table>
+        <p><b>第3题</b><br>
+          <font color="#0000FF">解</font>： <br>
+          　(1) 执行名词置换，我们可以得到如下已经过分析的句子： <br>
+          　　Noun(Block(B)) is on Noun(Floor(F1)) or Noun(Block(B)) is on Noun(Block(C)) 
+          <br>
+          　(2) 应用or规则<br>
+          　　Noun(Block(B)) is on Noun(Floor(F1)) Conj(∨) Noun(Block(B)) is on 
+          Noun(Block(C)) <br>
+          　(3) 应用名词短语非终结符的规则<br>
+          　　NP(Block(B)) is on NP(Floor(F1)) Conj(∨) NP(Block(B)) is on NP(Block(C)) 
+          <br>
+          　(4) 应用介词短语可得<br>
+          　　NP(Block(B)) is Prep(lxy On(x,y)) NP(Floor(F1)) Conj(∨) NP(Block(B)) 
+          is Prep(λxy On(x,y)) NP(Block(C))<br>
+          　(5) 经过简化可得<br>
+          　　NP(Block(B)) is PP (λx On(x,F1)) Floor(F1)) Conj(∨) NP(Block(B)) is 
+          PP(λx On(x,C)) Block(C)) <br>
+          　(6) 应用动词短语的规则Is PP(λx ψ(x ,σ)) → VP(λx ψ(x,σ))得：<br>
+          　　NP(Block(B)) VP(λx On(x,F1)) Floor(F1)) Conj(∨) NP(Block(B)) VP(λx 
+          On(x,C)) Block(C)) <br>
+          　(7) 应用名词短语和动词短语生成句子的规则可得： <br>
+          　　S(Block(B)∧On(B,F1)∧Floor(F1))Conj(∨)S(Block(B)∧On(B,C)∧ Block(C)) 
+          <br>
+          　(8) 应用两个句子连接的规则可得：<br>
+          　　S((Block(B) ∧On(B,F1)∧Floor(F1))∨(Block(B)∧On(B,C)∧ Block(C))) <br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

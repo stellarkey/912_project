@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　下面以二维神经网络为例解释竞争过程中强化区域的变化。<br>
+      　　在输出层中竞争过程中，对于&quot;赢&quot;的那个神经元c，其强化区域是以该神经元为中心的正方形，也可以是六角形的区域Nc，如下图所示：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图6-15 Nc(t)的形状和变化情况</font></td>
+        </tr>
+        <tr>
+          <td align="center"><br>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="150">
+              <param name=movie value="../../../flash/chap06/P6_4_2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap06/P6_4_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="150">
+              </embed> 
+            </object> </td>
+        </tr>
+      </table>
+    　　Nc是t的函数，随着t的增加，Nc的面积逐渐缩小，直至最后只剩下一个，或一组的神经元，它们反映了一类样本的属性。<br>
+      　　如果输入样本用矢量<img src="../../../img/chap06/pic44.gif" width="18" height="20">表示，P 
+      = 1, 2,…, K，共有K个样本；而每个样本的分量<img src="../../../img/chap06/pic42.gif" width="18" height="23">，i=1,…,n，与输入的第i个神经元相联，<img src="../../../img/chap06/pic42.gif" width="18" height="23">与输出的第j个神经元之间的权为w<sub>ij</sub>，而其输出为y<sub>j</sub>。其输入与输出之间满足下列状态方程：<br>
+      　　<img src="../../../img/chap06/pic43.gif" width="167" height="48"><br>
+      　　上式中第一个项为输入的加权累加，第二项是一个与y<sub>j</sub>有关的函数，此函数可采用不同的形式，但为非线性项，它的效果是使y<sub>j</sub>的变化速率变慢。<br>
+      　　这种网络通过算法的结果是连接权重w<sub>ij</sub>越来越接近输入值<img src="../../../img/chap06/pic42.gif" width="18" height="23">。</td>
+  </tr>
+</table>
+</body>
+</html>

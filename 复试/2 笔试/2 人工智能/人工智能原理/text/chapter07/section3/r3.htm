@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　◆ 1971年，Greene和Rubin设计了一个名叫TAGGIT的标注系统，对世界上第一个计算机语料库Brown语料库进行了标注。该系统采用的是规则的方法。标注过程分两部分：首先，利用3,000词左右的词典对语料库进行静态标注。其次是歧义消除。系统共使用3,300条上下文约束规则，每条规则由左右两部分组成,左部是一个词串的首尾二词（此二词词性唯一，首尾二词间有一至三个兼类词），右部是在左部模式限制下可能产生的标记串集。当语料中出现了某种和左部规则相匹配的模式时，则利用所有可能的标注作为一个集合，和规则的右部作交集。如果只剩下一个元素，则认为消歧成功，该元素即为标注结果。该系统的正确率达77%。<br>
+      　　◆ CLAWS（Constituent-Likelihood Automatic Word-Tagging System）。该系统依托对语料的统计，采用语料库语言学(corpus 
+      linguistics)的方法。事实上，对词性进行动态标注是语料库语言学的经典课题。以上所介绍的TAGGIT系统实际上并未运用语料库的方法，它的标注策略是规则的而非统计的。而80年代初由英国Lancaster大学的研究小组设计的CLAWS系统则第一次在词性自动标注中运用了统计语言学的模型。该系统利用带有词类标记的Brown语料库，通过统计分析获得一个反映任意两个邻接标记同现频率的转移概率矩阵，根据这种统计信息进行词性标注。该系统的正确率达96-97%。<br>
+      　　◆ 在CLAWS之后，词性自动标注多采用统计的方法，尤其是n元语法法（n-gram based techniques）。80年代中期后，人工神经网络（artificial 
+      neural network）即连接机制（connectionism）兴起，运用神经网络的方法进行词性自动标注的研究也取得了一定的成果。<br>
+      　　◆ 2001年北京大学计算语言学研究所推出了&quot;汉语文本切分与词性标注&quot;软件。该软件主要采用统计和规则相结合的处理方法。目前，该软件已被国内外30多家单位选用。<br>
+      　　<a href="../../../../../../../../www.icl.pku.edu.cn/nlp-tools/segtagtest.htm">http://www.icl.pku.edu.cn/nlp-tools/segtagtest.htm</a></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　<b>分析：</b>当使用规则R<sub>2</sub>时，证据B<sub>1</sub>并不是确定的发生了，即P(B<sub>1</sub>)≠1，因此要采用插值方法。<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　先依照A必然发生，由定义和R<sub>1</sub>得：<br>
+      　　　O(B<sub>1</sub>)=0.04/(1-0.04)=0.0417<br>
+      　　　O(B<sub>1</sub>|A)=LS*O(B<sub>1</sub>)=0.83<br>
+      　　　P(B<sub>1</sub>|A)=0.83/(1+0.83)=0.454<br>
+      　　然后假设P(B<sub>1</sub>|A)=1,计算：<br>
+      　　　P(B<sub>2</sub>|B<sub>1</sub>)=300*0.02/(300*0.02+1)=0.857<br>
+      　　最后进行插值：<br>
+      　　　P(B<sub>2</sub>|A)=0.02+(0.857-0.02) *(0.454-0.04)/(1-0.04)<br>
+      　　　　　 　=0.410</td>
+  </tr>
+</table>
+</body>
+</html>

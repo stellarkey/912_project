@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　可以将Shakey的设计视为所谓三级结构的一个早期的例子。每一级对应从传感信号到电机命令的不同路径。在上图中，低级路径由黑箭头，中级路径用灰色点划线，高级路径使用黑色点划线来表示。低级动作（LLA）使用一个短而快的、从传感信号到效应器的路径，该路径处理哪些底层直接的&quot;反应&quot;，比如当传感器检测到一个靠近的物体时，就会使小车停止。伺服电机到达指定轴角目标位置的控制也由上述低级机制处理。<br>
+      　　中级部分把LLA组合成更复杂的行为，其实现取决于执行任务时的状态（感知到并模型化）。例如，一个中间级的动作（ILA）为gothrudoor例程，此例程使得Shakey通过一个已被命名的门。它由roll-forward（向前滚动）和turns（转弯）组成它们由接触探测器和一个内部模型中的信息指导，直到断定Shakey已经完全通过了那个门。Shakey的ILA用一种使用T-R程序的方式进行编码。<br>
+      　　高级路径涉及到逻辑规划者。它监督规划的建立过程，并将一个用谓词演算合式公式所表达的目标赋予执行系统，这样所完成的一个规划表达为一个ILA序列。这个序列和它们的前提条件以及执行结果通过一个三角形的表来表示，并如同T-R程序一样去执行。这种以三角形表示的规划表经过正规化后存储到了计划库中，以便将来使用。</td>
+  </tr>
+</table>
+
+</body>
+</html>

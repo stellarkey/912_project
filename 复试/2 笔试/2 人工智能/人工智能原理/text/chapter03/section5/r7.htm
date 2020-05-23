@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　如下图，对于给定的结点集ε，如果对贝叶斯网中的结点V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>之间的每个无向路径，在路径上有某个结点V<sub><font size="-2">b</font></sub>，如果有属性： 
+      <br>
+      　　1）V<sub><font size="-2">b</font></sub>在ε中，且路径上的两条弧都以V<sub><font size="-2">b</font></sub>为尾（即弧在V<sub><font size="-2">b</font></sub>处开始（出发））<br>
+      　　2）V<sub><font size="-2">b</font></sub>在ε中，路径上的一条弧以V<sub><font size="-2">b</font></sub>为头，一条以V<sub><font size="-2">b</font></sub>为尾<br>
+      　　3）V<sub><font size="-2">b</font></sub>和它的任何后继都不在ε中，路径上的两条弧都以V<sub><font size="-2">b</font></sub>为头（即弧在V<sub><font size="-2">b</font></sub>处结束）<br>
+      　　则称V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub> 
+      被V<sub><font size="-2">b</font></sub>结点阻塞。<br>
+      　　结论：如果V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>被证据集合ε中的任意结点阻塞，则称V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>是被ε集合D分离，结点V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>条件独立于给定的证据集合ε，即<br>
+      　　　　P(V<sub><font size="-2">i</font></sub>|V<sub><font size="-2">j</font></sub>,ε) 
+      ＝P(V<sub><font size="-2">i</font></sub>|ε)<br>
+      　　　　P(V<sub><font size="-2">j</font></sub>|V<sub><font size="-2">i</font></sub>,ε) 
+      ＝P(V<sub><font size="-2">j</font></sub>|ε) <br>
+      　　表示为：I(V<sub><font size="-2">i</font></sub>,V<sub><font size="-2">j</font></sub>|ε) 
+      或I(V<sub><font size="-2">j</font></sub>,V<sub><font size="-2">i</font></sub>|ε) 
+      <br>
+      　　<b>无向路径：</b>DAG图是有向图，所以其中的路径也应该是有向路径，这里所指的无向路径是不考虑DAG图中的方向性时的路径。<br>
+      　　<b>条件独立：</b>如具有以上三个属性之一，就说结点V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>条件独立于给定的结点集ε。<br>
+      　　<b>阻塞：</b>给定证据集合ε，当上述条件中的任何一个满足时，就说V<sub><font size="-2">b</font></sub>阻塞相应的那条路径。<br>
+      　　<b>D分离：</b>如果V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub>之间所有的路径被阻塞，就叫证据集合ε可以D分离V<sub><font size="-2">i</font></sub>和V<sub><font size="-2">j</font></sub><br>
+      　　<font color="#0000FF">注意：</font>在论及路径时，是不考虑方向的；在论及&quot;头&quot;和&quot;尾&quot;时，则必须考虑弧的方向。&quot;头&quot;的含义是箭头方向（有向弧）的终止点，&quot;尾&quot;的含义是箭头方向（有向弧）的起始点。</td>
+  </tr>
+</table>
+</body>
+</html>

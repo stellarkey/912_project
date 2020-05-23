@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　公式中的部件并非与其他的终结符直接相关。在本例中，形容词clear, empty和occupied都陈述了一些对象的属性，因此它们应该用适当的关系常量和对象常量引入谓词演算算子。但是，在我们置换这些形容词时，可能不知道它们正在描述哪个对象的属性。因此，对形容词clear，规则表中应该有如下的规则：<br>
+      　　　　clear → Adj(Clear(x))。<br>
+      　　表达式clear(x)解释为一个谓词演算公式，为了生成一个谓词演算公式，该范式应该应用到一些对象常量上。这里使用l表达式来定义这种范式。因此对clear规则的一个更精确的描述为：<br>
+      　　　　Clear → Adj(λx Clear(x))。<br>
+      　　在这里一个短语的含义有时用另一个短语的含义来表达，例如，如果我们把该范式应用到对象常量B，就会得到：<br>
+      　　　　(λx Clear(x))B = Clear(B)。 <br>
+      　　把Clear规则应用到我们已经部分解释的句子，得到：<br>
+      　　　　Noun(Block(B)) is on Noun(Block(C)) Conj(∧) Noun(Block(B)) is Adj(λx 
+      Clear(x))<br>
+      　　对于其它的形容词，利用相同的规则。</td>
+  </tr>
+</table>
+
+</body>
+</html>

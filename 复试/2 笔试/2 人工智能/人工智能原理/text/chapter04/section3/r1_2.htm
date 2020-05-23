@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　先引入谓词：<br>
+      　　Table(A) 　　　　　　　　表示A是桌子<br>
+      　　EmptyHanded(Robot) 　　　机器人Robot双手空空<br>
+      　　At(Robot,A) 　　　　　　 表示机器人Robot在A旁<br>
+      　　Holds(Robot,Box) 　　　　机器人Robot拿着Box<br>
+      　　On(Box,A) 　　　　　　　 积木块Box在A上<br>
+      　　设定初始状态：<br>
+      　　EmptyHanded(Robot)<br>
+      　　On(Box,A)<br>
+      　　Table(A)<br>
+      　　Table(B)<br>
+      　　目标状态是：<br>
+      　　EmptyHanded(Robot)<br>
+      　　On(Box,B)<br>
+      　　Table(A)<br>
+      　　Table(B)<br>
+      　　机器人的每个操作的结果所引起的状态变化，可用对原状态的增添表和删除表来表示。如机器人有初始状态是把Box从A桌移到B桌上，然后仍回到Alcove，这时同初始状态相比有：<br>
+      　　增添表 On（Box，B）<br>
+      　　删除表 On（Box，A）<br>
+      又如机器人从初始状态，走近A桌，然后拿起Box。这时同初始状态相比有：<br>
+      　　增添表 At（Robot，A）<br>
+      　　　　　 Holds（Robot，Box）<br> <br>
+      　　删除表 At（Robot，Alcove）<br>
+      　　　　　 EmptyHanded( Robot )<br>
+      　　　　　 On（ Box，A）<br>
+      进一步说，机器人的每一操作还需要先决条件。如机器人拿起A桌上的Box这一操作，先决条件：<br>
+      　　On（Box，A）（Box在A上）<br>
+      　　At(Robot，A)（机器人在A旁边）<br>
+      　　EmptyHanded（robot）（机器人手空空）<br>
+      　　先决条件成立与否的验证可以使用归结法。如将初始状态视作已知条件，而将要验证的先决条件作为结论，便可作为归结法了。归结过程如下：<br>
+      　　1）At(Robot,A)<br>
+      　　2）EmptyHanded(Robot)<br>
+      　　3）On(Box,B)<br>
+      　　4）Table(A)<br>
+      　　5）Table(B)<br>
+      　　6）～On(Box,B) ∨～At(Robot,A) ∨～EmptyHanded(Robot)（先决条件之否定）<br>
+      　　7）～At(Robot,A) ∨～EmptyHanded(Robot)<br>
+      　　8) ～EmptyHanded(Robot) <br>
+      　　9)NULL<br>
+      　　于是验证了先决条件的成立。<br>
+      　　谓词表示方法的推理主要是归结原理，详细内容参照第二章归结原理<br>
+      　　<b>结论</b> <br>
+      　　逻辑是一种重要的知识表示方法。知识在逻辑法表示下可采用归结法或其它方法进行准确的推理。当然一阶逻辑的表达能力是有限的，如具有归纳结构的知识、多层次的知识类型都难于用一阶谓词来描述。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <font color="#0000FF">　　例题2-2</font><br>
+      　　将下式化为Skolem标准形：<br>
+      　　～(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y) →(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x)(～(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)Q(y, 
+      b)→R(x))<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　第一步，消去→号，得：<br>
+      　　～(～(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y)) ∨(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x) 
+      (～～(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)Q(y, 
+      b)∨R(x))<br>
+      　　第二步，～深入到量词内部，得：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y)∧～(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x) 
+      ((<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)Q(y, 
+      b)∨R(x))<br>
+      　　＝ (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y) ∧(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x) 
+      ((<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)～Q(y, 
+      b)∧～R(x))<br>
+      　　第三步，全称量词左移，（利用分配律），得<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)( (<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y) ∧(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)(～Q(y, 
+      b)∧～R(x)))<br>
+      　　第四步，变元易名，存在量词左移，直至所有的量词移到前面，得：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)( (<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y) ∧(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)(～Q(y, 
+      b)∧～R(x)))<br>
+      　　＝ (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x) 
+      ( (<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)P(a, 
+      x, y) ∧(<img src="../../../img/chap02/icon2.gif" width="18" height="22">z)(～Q(z, 
+      b)∧～R(x)))<br>
+      　　= (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x) 
+      (<img src="../../../img/chap02/icon2.gif" width="18" height="22">y) (<img src="../../../img/chap02/icon2.gif" width="18" height="22">z) 
+      (P(a, x, y) ∧～Q(z, b)∧～R(x))<br>
+      　　由此得到前述范式<br>
+      　　第五步，消去&quot;<img src="../../../img/chap02/icon2.gif" width="18" height="22">&quot;（存在量词），略去&quot;<img src="../../../img/chap02/icon1.gif" width="19" height="18">&quot;全称量词<br>
+      　　消去(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)，因为它左边只有(&quot;x)，所以使用x的函数f(x)代替之，这样得到：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">z)( 
+      P(a, x, f(x)) ∧～Q(z, b)∧～R(x))<br>
+      　　消去(<img src="../../../img/chap02/icon2.gif" width="18" height="22">z)，同理使用g(x)代替之，这样得到：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x) ( 
+      P(a, x, f(x)) ∧～Q(g(x), b)∧～R(x))<br>
+      　　则，略去全称变量，原式的Skolem标准形为：<br>
+      　　P(a, x, f(x)) ∧～Q(g(x), b)∧～R(x)</td>
+  </tr>
+</table>
+</body>
+</html>

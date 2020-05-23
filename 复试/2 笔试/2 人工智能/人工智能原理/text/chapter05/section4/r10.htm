@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>　　步骤①：把集合G初始化为最一般的概念，把集合S初始化为包含所有可能的情况，<br>
+      　　G={(x, y)}<br>
+      　　S={(sm, squ),(sm, cir),(sm, tri),(lg, squ),(lg, cir),(lg, tri)}<br>
+      　　现在提供第一个示教正例(sm, cir)，表示小圆是圆。由于集合G满足正例的要求，所以不发生变化，而集合S原有的元素太多，先将其删去，仅保留符合该次正例的元素，接下来的学习过程中，再由陆续示教的正例进行补充集合S。<br>
+      　　　　　　　S={(sm, cir)}<br>
+      　　步骤②：接受新的示教例子，这个例子是(lg, tri)。这表示大三角不是圆。这个是反例，必须删去G中符合反例的元素，使得G集合特殊化。在规则空间中的变化是G下降。由于示教的是反例，所以集合S没有变化。得到：<br>
+      　　　　G={(x, cir), (sm, y)}<br>
+      　　　　S={(sm, cir)}<br>
+      　　如图所示，此时H仅含有二个概念。这二个概念是满足第一个例子，但不满足第二个例子的全部概念。<br>
+      　　接受第三个示教例子(lg, cir)，这是一个正例，表示大圆是圆。首先从G中删除不满足此正例的概念(sm, y)，再对S中原有的元素S={(sm, 
+      cir)}和本示教例子的(lg, cir)做一般化操作（将常量变成变量），得到：<br>
+      　　　　G={(x, cir)}<br>
+      　　　　S={(x, cir)}<br>
+      　　步骤③：由于此时G=S，且两个集合中仅包含一个元素，因此算法结束，并输出概念：<br>
+      　　　　(x, cir) <br>
+      　　消除候选元素法的执行步骤：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图5-9 初始变型空间 </font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="150">
+              <param name=movie value="../../../flash/chap05/t5_2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/t5_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="150">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-10 第一个示教例子后的变型空间</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="150">
+              <param name=movie value="../../../flash/chap05/t5_3.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/t5_3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="150">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-11 第二个示教例子后的变型空间</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="150">
+              <param name=movie value="../../../flash/chap05/t5_4.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/t5_4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="150">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

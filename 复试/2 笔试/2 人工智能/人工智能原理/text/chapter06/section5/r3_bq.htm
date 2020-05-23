@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　④ <b>文字特征提取</b><br>
+      　　文字图像即使是进行了二值化也将有几十到几百个点素，尤其是汉字至少要400到900个点素。在如此大维数的空间内进行操作，不仅费时、费计算机计算空间，更主要的是高维样本难以进行正确分类。而且，这样的高维特征中含有大量的冗余信息必须剔除。因此，需要在分类之前进行特征提取，即将样本的有效成分提取出来，送到分类器，分类器仅仅根据特征进行分类。文字识别中常用到的基本特征有：灰度特征、方向线素特征、四边码特征、粗外围特征等。<br>
+      　　本节对该部分内容不进行详细论述<br>
+      　　⑤ <b>分类识别</b><br>
+      　　分类器是文字识别系统的核心，主要功能是根据输入样本特征将其进行分类。分类的基本核心是分类决策，即在特征空间中用统计或规则的方法把被识别对象归为某一类。基本做法是在样本训练集基础上确定某个判决规则，要求是按这种判决规则对被识别对象进行分类所造成的错误识别率最小或引起的损失最小。传统的方法有最小距离法等，本节所要介绍的是用神经网络结构建立分类器模型的方法。<br>
+      　　⑥ <b>识别结果后处理</b><br>
+      　　人类辨识文字时是根据字与字的前后关系一目十行的进行的。尤其是手写体字符，龙飞凤舞，有时很难根据一个单字判断它到底是什么字。人们是根据它前后字的关系，上下文的关系进行判断，根据意思理解阅读的。这个问题在自然语言处理一节中有相应的论述，本节对该部分内容不进行详细论述 
+      <br>
+      　　本节将以数字识别为例，分析前馈神经网络、Kohonen网络识别器的特点及设计方法。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap06/6-16.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap06/6-16.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

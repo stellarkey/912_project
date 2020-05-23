@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　词典为：<br>
+        　　　　the：ART<br>
+        　　　　large：ADJ<br>
+        　　　　can：N，AUX，V<br>
+        　　　　hold：N，V<br>
+        　　　　water：N，V<br>
+        　　初始词类序列为空，读入单词the，其类别ART1加入词类序列。<br>
+        　　输入词类ART1（the 位置1到2）：<br>
+        　　　　产生活跃弧 NP→ART·ADJ N（1到2）<br>
+        　　　　产生活跃弧 NP→ART·N（1到2）<br>
+        　　词类序列为空，读入下一个单词large，其类别ADJ1加入词类序列。<br>
+        　　输入词类ADJ1（large 位置2到3）<br>
+        　　　　产生活跃弧 NP→ADJ·N（2到3）<br>
+        　　　　产生活跃弧 NP→ART ADJ·N（1到3）<br>
+        　　词类序列为空，读入下一个单词can，其类别N1、AUX1、V1加入词序列。<br>
+        　　输入词类N1：（can 位置3到4）<br>
+        　　　　生成词类NP2（large can 位置2到4），加入词类序列列表。<br>
+        　　　　生成词类NP1（the large can 位置1到4），加入词类序列列表。<br>
+        　　当前，词类序列列表为（NP1，NP2，AUX1，V1）。<br>
+        　　输入词类NP1：（the large can 位置1到4）<br>
+        　　　　产生活跃弧 S→NP·VP（1到4）<br>
+        　　输入词类NP2：（large can 位置2到4）<br>
+        　　　　产生活跃弧 S→NP·VP（2到4）<br>
+        　　输入词类AUX1：（can 位置3到4）<br>
+        　　　　产生活跃弧 VP→AUX·VP（3到4）<br>
+        　　输入词类V1：（can 位置3到4）<br>
+        　　　　产生活跃弧 VP→V·NP（3到4）
+      </td>
+  </tr>
+</table>
+</body>
+</html>

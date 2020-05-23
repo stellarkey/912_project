@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../img/pop/new_bg.jpg">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>问答题答案</b></p>
+        <p><b>第1题</b><br>
+          <font color="#0000FF">解</font>：我们用x表示颜色，y表示形状，z表示硬度，m表示尺寸。<br>
+          　　步骤①：把集合G初始化为最一般的概念，把集合S初始化为所有的实例，为避免S集合过大，把S初始化为仅包含第一个示教正例：<br>
+          　　　　G={(x, y, z, m)}<br>
+          　　　　S={(黄色, 圆锥形, 软, 大)} <br>
+          　　步骤②：接受新的示教例子，这个例子是(蓝色, 长方形, 软, 小)。这是个反例，G集合特殊化，得到： <br>
+          　　　　G={(黄色, y, z, m)，(x, 圆锥形, z, m)，(x, y, z, 大)}<br>
+          　　　　S={(黄色, 圆锥形, 软, 大)} <br>
+          　　步骤③：接受新的示教例子，这个例子是(黄色, 球形, 软, 小)。这是个正例，首先从G中删除不满足此正例的概念，再对S和该正例作一般化，得到：<br>
+          　　　　G={(黄色, y, z, m)}<br>
+          　　　　S={(黄色, y, 软, m)}<br>
+          　　步骤④：接受新的示教例子，这个例子是(黄色, 圆锥形, 硬, 大)。这是个正例，首先从G中删除不满足此正例的概念，再对S和该正例作一般化，得到： 
+          <br>
+          　　　　G={(黄色, y, z, m)}<br>
+          　　　　S={(黄色, y, z, m)} <br>
+          　　步骤⑤：由于此时G=S，且两个集合仅包含一个元素，因此算法结束，输出概念<br>
+          　　　　(黄色, y, z, m) <br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../img/pop/new_bg.jpg">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>问答题答案</b></p>
+        <p><b>第1题</b><br>
+          <font color="#0000FF">解</font>： ～( (( P ∨ ～Q) → R) → (P ∧ R)) <br>
+          　　= (( P ∨ ～Q) → R) ∧ ～(P ∧ R) <br>
+          　　= (～( P ∨ ～Q) ∨ R ) ∧ (～P∨～R) <br>
+          　　= (～P ∨ R) ∧ (Q ∨ R) ∧ (～P∨～R) <br>
+          建立子句集：<br>
+          　　S = { ～P ∨ R , Q ∨ R , ～P∨～R } <br>
+          <br>
+          <b>第2题</b><br>
+          <font color="#0000FF">解</font>： 1) 要证明P → ( Q → P )永真<br>
+          　　～（Q→P）＝ ～P∧Q <br>
+          　　建立子句集：<br>
+          　　S = { ～P, Q, P} <br>
+          　　进行归结：<br>
+          　　Q <br>
+          　　～P,<br>
+          　　P <br>
+          　　□<br>
+          <br>
+          2) 要证明( P → ( Q → R )) → ((P → Q) → ( P → R))永真<br>
+          　　即证明 ～(( P → ( Q → R )) → ((P → Q) → ( P → R)))为永假。 <br>
+          　　将其化为合取范式： <br>
+          　　～(( P → ( Q → R )) → ((P → Q) → ( P → R)))<br>
+          　　= ( P → ( Q → R ) ∧ ～((P → Q) → ( P → R))<br>
+          　　= (～P ∨ ～Q ∨ R ) ∧ (P → Q) ∧ ～ ( P → R)<br>
+          　　= (～P ∨ ～Q ∨ R ) ∧ (～P ∨ Q) ∧ P ∧ ～R<br>
+          　　建立子句集：<br>
+          　　S = {～P ∨ ～Q ∨ R, ～P ∨ Q, P, ～R } <br>
+          　　进行归结：<br>
+          　　1) ～P ∨ ～Q ∨ R<br>
+          　　2) ～P ∨ Q <br>
+          　　3) P<br>
+          　　4) ～R <br>
+          　　5) Q 　　　　　　（2）（3）归结 <br>
+          　　6) ～Q ∨ R　　　（1）（3）归结 <br>
+          　　7) R 　　　　　　（5）（6）归结<br>
+          　　8) □　　　　　　（4）（7）归结 <br>
+          <br>
+          3) 要证明( Q → ～ P) → ((Q → P) → ～ Q)为永真 <br>
+          　　即证明 ～(( Q → ～ P) → ((Q → P) → ～ Q) )为永假 <br>
+          　　将其化为合取范式： <br>
+          　　～(( Q → ～ P) → ((Q → P) → ～ Q) )<br>
+          　　= ( Q → ～ P) ∧ (Q → P) ∧ Q <br>
+          　　= (～Q ∨ ～P) ∧ (～Q ∨ P) ∧ Q <br>
+          　　建立子句集：<br>
+          　　S = { ～Q ∨ ～P, ～Q ∨ P, Q } <br>
+          　　进行归结： <br>
+          　　(1) ～Q ∨ ～P <br>
+          　　(2) ～Q ∨ P<br>
+          　　(3) Q<br>
+          　　(4) ～P 　　　　（1）（3）归结 <br>
+          　　(5) P 　　　　　（1）（2）归结<br>
+          　　(6) □ <br>
+          <br>
+          <b>第3题</b><br>
+          <font color="#0000FF">解</font>：1) P(x, B, B) 和 P(A, y, z) 可以合一：<br>
+          　　　　Mgu = { A/x, B/y, B/z} <br>
+          　　2) P( g( f (v)) , g(u) ) 和 P(x , x) 不可以合一 <br>
+          　　3) P( x , f(x) ) 和 P(y, y) 不可以合一<br>
+          　　4) P(y, y , B) 和 P( z, x , z) 可以合一<br>
+          　　　　Mgu = { B/x, B/y, B/z} <br>
+          <br>
+          <b>第4题</b><br>
+          <font color="#0000FF">解</font>： 因为 f(x,x)中的x在置换的时候必须保持相同的形式，因此无论怎么置换都不能置换出而第二式中f(y, 
+          f(y,A))的分层嵌套形式，因此两个公式是不能合一的。 <br>
+          <br>
+          <b>第5题</b><br>
+          <font color="#0000FF">解</font>：<br>
+          1) ((<img src="../../img/symbol01.gif" width="12" height="16">x) P(x) 
+          ∨ (<img src="../../img/symbol01.gif" width="12" height="16">x) Q(x)) 
+          → (<img src="../../img/symbol01.gif" width="12" height="16">x) ( P(x) 
+          ∨ Q(x) )<br>
+          　　= ((<img src="../../img/symbol02.gif" width="12" height="16">x) ~P(x) 
+          ∧ (<img src="../../img/symbol02.gif" width="12" height="16">x) ~Q(x) 
+          ) ∨ (<img src="../../img/symbol01.gif" width="12" height="16">y) ( P(y) 
+          ∨ Q(y) )<br>
+          　　= (<img src="../../img/symbol01.gif" width="12" height="16">y) (<img src="../../img/symbol02.gif" width="12" height="16">x) 
+          (~P(x) ∧ ~Q(x) ∨ P(y) ∨ Q(y) )<br>
+          　　= (<img src="../../img/symbol01.gif" width="12" height="16">y) (<img src="../../img/symbol02.gif" width="12" height="16">x) 
+          ( (~P(x) ∨ P(y) ∨ Q(y) ) ∧ (~Q(x) ∨ P(y) ∨ Q(y) ) ) <br>
+          　　化为skolem子句形：<br>
+          　　<img src="../../img/symbol03.gif" width="15" height="16">(~P(x) ∨ 
+          P(a) ∨ Q(a) ) ∧ (~Q(x) ∨ P(a) ∨ Q(a) )<br>
+          <br>
+          2) (<img src="../../img/symbol02.gif" width="12" height="16">x) ( P(x) 
+          → (<img src="../../img/symbol02.gif" width="12" height="16">y) ( (<img src="../../img/symbol02.gif" width="12" height="16">z) 
+          Q(z , y) → ～ (<img src="../../img/symbol02.gif" width="12" height="16">z)R(y 
+          , z) ) )<br>
+          　　= (<img src="../../img/symbol02.gif" width="12" height="16">x) (<img src="../../img/symbol02.gif" width="12" height="16">y) 
+          (<img src="../../img/symbol02.gif" width="12" height="16">z) (<img src="../../img/symbol02.gif" width="12" height="16">v) 
+          ( ～P(x) ∨ ～Q(z , y) ∨ ～R(y , v))<br>
+          　　化为skolem子句形： <br>
+          　　<img src="../../img/symbol03.gif" width="15" height="16">～P(x) ∨ ～Q(z 
+          , y) ∨ ～R(y , v) <br>
+          <br>
+          3) (<img src="../../img/symbol02.gif" width="12" height="16">x) P(x) 
+          → (<img src="../../img/symbol01.gif" width="12" height="16">x) ( (<img src="../../img/symbol02.gif" width="12" height="16">z) 
+          (Q(x ,z )) ∨ (<img src="../../img/symbol02.gif" width="12" height="16">y)R(x 
+          , y , z) )<br>
+          　　= (<img src="../../img/symbol01.gif" width="12" height="16">x) ( ～P(x) 
+          ∨ (<img src="../../img/symbol02.gif" width="12" height="16">z)( Q(x 
+          ,z ) ∨ (<img src="../../img/symbol02.gif" width="12" height="16">y)R(x 
+          , y, z) ))<br>
+          　　= (<img src="../../img/symbol01.gif" width="12" height="16">x) (<img src="../../img/symbol02.gif" width="12" height="16">z) 
+          (<img src="../../img/symbol02.gif" width="12" height="16">y) (～P(x) 
+          ∨ Q(x ,z ) ∨ R(x , y, z) ) <br>
+          　　化为skolem子句形：<br>
+          　　<img src="../../img/symbol03.gif" width="15" height="16">～P(a) ∨ Q(a 
+          ,z ) ∨ R(a , y, z) <br>
+          <br>
+          <b>第6题</b><br>
+          <font color="#0000FF">解</font>： 把上述条件化为逻辑表达式：<br>
+          　　1) (<img src="../../img/symbol02.gif" width="12" height="16">x)( pushable 
+          (x) ) → blue(x) ) → (<img src="../../img/symbol02.gif" width="12" height="16">x)(～pushable(x) 
+          → green(x) )<br>
+          　　2) (<img src="../../img/symbol02.gif" width="12" height="16">x) ( 
+          ( (blue(x) ∧ ～green(x)) ∨ (～blue(x) ∧ green(x))) <br>
+          　　3) (<img src="../../img/symbol01.gif" width="12" height="16">x) (～pushable(x)) 
+          → (<img src="../../img/symbol02.gif" width="12" height="16">x) ( pushable(x) 
+          → blue(x) ) <br>
+          　　4) pushable(O1)<br>
+          　　5) ～pushable(O2)<br>
+          　　将结果命题否定：<br>
+          　　～(<img src="../../img/symbol01.gif" width="12" height="16">x)(green(x))<br>
+          　　将条件表达式和结果命题化为子句形： <br>
+          　　由条件1 <br>
+          　　(1) pushable(x)∨green(x) <br>
+          　　(2) ～blue(a)∨pushable(y)∨green(x) <br>
+          　　由条件2 <br>
+          　　(3) ～green(x)∨～blue(x) <br>
+          　　(4) green(x)∨blue(x)<br>
+          　　由条件3 <br>
+          　　(5) pushable(x)∨～pushable(y)∨blue(y)<br>
+          　　由条件4 <br>
+          　　(6) pushable(O1) <br>
+          　　由条件5<br>
+          　　(7) ~pushable(O2) <br>
+          　　由结论 <br>
+          　　(8) ～green(x) <br>
+          　　归结： <br>
+          　　(9) ～blue(x) ∨ pushable(y) 　(2) (8) <br>
+          　　(10) ～blue(x)　　　　　　　　 (7) (9)<br>
+          　　(11) blue(x)　　　　　　　　　 (4) (8) <br>
+          　　(12) □　　　　　　　　　　　　(10)(11) <br>
+          <br>
+          <b>第7题</b><br>
+          <font color="#0000FF">解</font>： H ＝ { a, f(a), f(f(a)) , ……} <br>
+          　　S 中子句的一个基例为：<br>
+          　　P(a), Q(f(a), f(a)) 或者 <br>
+          　　P(f(a)) , Q(f(f(a)), a) <br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

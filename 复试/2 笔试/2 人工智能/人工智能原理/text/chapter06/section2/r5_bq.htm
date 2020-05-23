@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>　　这个算法的学习过程，由正向传播和反向传播组成。在正向传播过程中，输入信息从输入层经隐节点单元逐层处理，并传向输出层，每一层神经元的状态只影响下一层神经元的状态。如果在输出层不能得到期望的输出，则转入反向传播过程，将误差信号沿原来的连接通路返回，通过修改各层神经元的连接权值，使得误差信号递减至最小。<br>
+      　　设有含n个节点的任意网络，各节点的转移函数为Sigmoid函数。为简单起见，认为网络只有一个输出y，任一节点i的输出为O<sub>i</sub>；并设有N个样本(X<sup>k</sup>,Y<sup>k</sup>)(k=1,2,…,N)，对某一输入X<sup>k</sup>，网络的理想输出为Y<sup>k</sup>，节点i的输出为O<sub>i</sub><sup>k</sup>，节点j的输入为<br>
+      　　<img src="../../../img/chap06/pic14.gif" width="131" height="44"><br>
+      节点j的输出为<br>
+      　　<img src="../../../img/chap06/pic15.gif" width="121" height="38"><br>
+      使用平方型误差函数<br>
+      　　<img src="../../../img/chap06/pic16.gif" width="151" height="53"><br>
+      其中，<img src="../../../img/chap06/pic17.gif" width="21" height="23">为网络的实际输出，定义 
+      <br>
+      　　<img src="../../../img/chap06/pic18.gif" width="130" height="36"><br>
+      　　<img src="../../../img/chap06/pic19.gif" width="98" height="51"><br>
+      于是，<br>
+      　　<img src="../../../img/chap06/pic20.gif" width="298" height="55"></td>
+  </tr>
+</table>
+</body>
+</html>

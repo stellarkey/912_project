@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-3 Safe-to-stack(O1, O2)的概括化解释结构</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap05/5-4.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/5-4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      
+        　　生成解释规则时，所有叶结点的和取作为前件，以顶点的目标概念为后件，略去解释结构的中间部件，即生成了概括化的产生式规则。<br>
+        　　例如：上图得到的规则是<br>
+        　　Volume(O1,v1)ΛDensity(O1,d1)ΛProduct(v1,d1,w1)ΛIs-a(O2,table)Λsmaller(w1,5)<br>
+        　　→Safe-to-stack(O1,O2)<br>
+        　　学习后的结果使用时把叶结点查一查就可以了，叶结点满足了即可（不考虑中间结点）<br>
+        　　例如：满足条件<br>
+        　　Volume(O1,v1)ΛDensity(O1,d1)ΛProduct(v1,d1,w1)ΛIs-a(O2,table)Λsmaller(w1,5)<br>
+        　　即可推出<br>
+        　　Safe-to-stack(O1,O2)<br>
+      　　领域知识是解释学习的前提，领域知识的完整、正确对解释学习非常重要。只有完整、正确的领域知识才有可能产生正确的解释描述。但在实际问题中不完善是难以避免的，这就有可能出现构造不出解释或构造出多种解释的情况。<br>
+      　　为了解决以上问题，最根本的方法是尽量提供完善的领域知识。另外，学习系统本身也应该具有测试和修正不完善知识的能力。</td>
+  </tr>
+</table>
+</body>
+</html>

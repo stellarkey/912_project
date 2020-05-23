@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　Skolem标准形的定义：<br>
+      　　前束范式中消去所有的存在量词，则称这种形式的谓词公式为Skolem标准形，任何一个谓词公式都可以化为与之对应的Skolem标准形。但是，Skolem标准形不唯一。 
+      <br>
+      <sub> 　　</sub>前束范式：A是一个前束范式，如果A中的一切量词都位于该公式的最左边（不含否定词），且这些量词的辖域都延伸到公式的末端。 
+      <br>
+      　　Skolem标准形的转化过程为，依据约束变量换名规则，首先把公式变型为前束范式，然后依照量词消去原则消去或者略去所有量词。具体步骤如下： <br>
+      　　将谓词公式G转换成为前束范式<br>
+      　　前束范式的形式为：<br>
+      　　(Q<sub>1</sub>x<sub>1</sub>)(Q<sub>2</sub>x<sub>2</sub>)…(Q<sub>n</sub>x<sub>n</sub>)M(x<sub>1</sub>,x<sub>2</sub>,…,x<sub>n</sub>)<br>
+      　　即： 把所有的量词都提到前面去。<br>
+      　　<font color="#0000FF">注意：</font>由于所有的量词的辖域都延伸到公式的末端，即，最左边量词将约束表达式中的所有同名变量。所以将量词提到公式最前端时存在约束变量换名问题。要严守规则。 
+      <br>
+      　　约束变量换名规则：<br>
+      　　(Qx ) M（x） <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      （Qy ） M（y） <br>
+      　　(Qx ) M（x,z） <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      （Qy ） M（y,z）<br>
+      　　量词否定等值式：<br>
+      　　～(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) 
+      M（x） <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      （<img src="../../../img/chap02/icon2.gif" width="18" height="22">y ） ～ M（y） 
+      <br>
+      　　～(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) 
+      M（x） <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      （<img src="../../../img/chap02/icon1.gif" width="19" height="18">y ） ～ M（y）<br>
+      　　量词分配等值式：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x )( 
+      P（x） ∧Q（x）) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) P（x） 
+      ∧ (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) Q（x）<br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x )( 
+      P（x） ∨ Q（x）) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) P（x） 
+      ∨ (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) Q（x）<br>
+      　　消去量词等值式：设个体域为有穷集合（a1, a2, …an）<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) P（x） 
+      <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> P（a1） 
+      ∧ P（a2） ∧ …∧ P（an）<br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) P（x） 
+      <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> P（a1） 
+      ∨ P（a2） ∨ … ∨ P（an）<br>
+      　　量词辖域收缩与扩张等值式：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18"> x )( 
+      P（x） ∨ Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon1.gif" width="19" height="18"> x ) P（x） 
+      ∨ Q<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x )( 
+      P（x） ∧ Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon1.gif" width="19" height="18"> x ) P（x） 
+      ∧ Q <br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x )( 
+      P（x） → Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) P（x） 
+      → Q <br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x )( 
+      Q → P（x） ) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      Q → (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) 
+      P（x） <br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x )( 
+      P（x） ∨ Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) P（x） 
+      ∨ Q<br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x )( 
+      P（x） ∧ Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) P（x） 
+      ∧ Q <br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x )( 
+      P（x） → Q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (<img src="../../../img/chap02/icon1.gif" width="19" height="18">x ) P（x） 
+      → Q <br>
+      　　(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x )( 
+      Q → P（x） ) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      Q → (<img src="../../../img/chap02/icon2.gif" width="18" height="22">x ) 
+      P（x）</td>
+  </tr>
+</table>
+</body>
+</html>

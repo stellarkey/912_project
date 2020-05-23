@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <b> 　－数理逻辑的基本定义</b><br>
+      　　下面所列的是一些数理逻辑中重要的定义，在后面的分析中要用到：<br>
+      　　·合取式：p与q，记做p ∧ q<br>
+      　　·析取式：p或q，记做p ∨ q<br>
+      　　·蕴含式：如果p则q，记做p → q<br>
+      　　·等价式：p当且仅当q，记做p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      q<br>
+      　　·若A无成假赋值，则称A为重言式或永真式；<br>
+      　　·若A无成真赋值，则称A为矛盾式或永假式；<br>
+      　　·若A至少有一个成真赋值，则称A为可满足的；<br>
+      　　·析取范式：仅由有限个简单合取式组成的析取式<br>
+      　　·合取范式：仅由有限个简单析取式组成的合取式 <br>
+      　<b>－数理逻辑的基本等值式</b><br>
+      　　下面这些基本的等式在归结原理实施之前的公式转化过程中是非常重要的。只有将逻辑公式正确转换成为归结原理要求的范式，才能够保证归结的正常进行。 
+      <br>
+      　　·交换律：p∨q <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      q ∨p ；<br>
+      　　　　　　　p ∧ q <img src="../../../img/chap02/symbol01.gif" width="20" height="16">q 
+      ∧ p <br>
+      　　·结合律： (p∨q) ∨ r<img src="../../../img/chap02/symbol01.gif" width="20" height="16">p∨(q 
+      ∨r);<br>
+      　　　　　　　 (p ∧ q) ∧ r<img src="../../../img/chap02/symbol01.gif" width="20" height="16">p 
+      ∧(q ∧ r)<br>
+      　　·分配律： p∨(q ∧ r) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (p∨q)∧(p ∨r) ；<br>
+      　　　　　　　 p ∧(q ∨ r) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      (p ∧ q) ∨(p ∧ r)<br>
+      　　·双重否定律：p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～～p<br>
+      　　·等幂律：p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p∨p；p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p∧p<br>
+      　　·摩根律: ～ (p∨q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～ p ∧ ～ q ；<br>
+      　　　　　　　～ (p ∧q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～ p ∨ ～ q <br>
+      　　·吸收律: p∨(p∧q ) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p ；<br>
+      　　　　　　　p ∧(p∨q ) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p <br>
+      　　·同一律: p∨0 <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p ；<br>
+      　　　　　　　p∧1 <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      p <br>
+      　　·零律：p∨1 <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      1<br>
+      　　　　　　p∧0 <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      0<br>
+      　　·排中律：p∨～p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      1<br>
+      　　·矛盾律：p∧～p <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      0<br>
+      　　·蕴含等值式：p → q <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～ p∨q <br>
+      　　·等价等值式：p<img src="../../../img/chap02/arrow.gif" width="20" height="13">q 
+      <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> (p → 
+      q)∧(q → p)<br>
+      　　·假言易位式: p → q <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～ p → ～ q <br>
+      　　·等价否定等值式：p<img src="../../../img/chap02/arrow.gif" width="20" height="13">q 
+      <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> ～p<img src="../../../img/chap02/arrow.gif" width="20" height="13">～q<br>
+      　　·归谬论：(p → q)∧(p → ～q) <img src="../../../img/chap02/symbol01.gif" width="20" height="16"> 
+      ～p</td>
+  </tr>
+</table>
+</body>
+</html>

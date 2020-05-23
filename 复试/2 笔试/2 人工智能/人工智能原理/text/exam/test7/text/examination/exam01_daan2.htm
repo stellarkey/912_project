@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../img/pop/new_bg.jpg">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>问答题答案</b></p>
+        <p><b>第1题</b><br>
+          <font color="#0000FF">解</font>：下面是句子"The man is laughing"的自顶向下的分析：<br>
+          　　<img src="../../img/pic_1.gif" width="307" height="193"> <br>
+          　　下面是句子&quot;The man is laughing&quot;的自底向上的分析过程：<br>
+          　　初始词序列为空，读入单词the，其类别ART1加入词类序列。<br>
+          　　输入词类ART1（the 位置1到2）<br>
+          　　产生活跃弧 NP→ART· N （1到2）<br>
+          　　如下图所示：<br>
+          　　<img src="../../img/pic_2.gif" width="214" height="122"><br>
+          　　词类序列为空，读入下一个单词man，其类别N加入词类序列。<br>
+          　　输入词类N（man位置由2到3）<br>
+          　　生成词类NP1（the man 位置由1到3 ），加入词类序列列表。<br>
+          　　输入词类NP1（the man 位置由1到3 ），<br>
+          　　产生活跃弧 S→NP·V （1到3）<br>
+          　　产生活跃弧 S→NP·AUX V（1到3）<br>
+          　　如下图所示：<br>
+          　　<img src="../../img/pic_3.gif" width="267" height="184"><br>
+          　　词类序列为空，读入下一个单词is，其类别AUX1记入词类序列。<br>
+          　　输入词类AUX1（is位置从3到4）<br>
+          　　产生活跃弧 S→NP AUX·V（1到4）<br>
+          　　如下图所示：<br>
+          　　<img src="../../img/pic_4.gif" width="322" height="183"><br>
+          　　词类序列为空，读入下一个单词laughing，其类别V1记入词类序列。<br>
+          　　输入词类V1（laughing位置从4到5）<br>
+          　　生成初始状态S（位置从1到5），结束！<br>
+          　　下图为最后的分析结果：<br>
+          　　<img src="../../img/pic_5.gif" width="344" height="122"></p>
+        <b>第2题</b><br>
+        <font color="#0000FF">解</font>： 已知文法为：<br>
+        　　　　S→NP V <br>
+        　　　　S→NP AUX V <br>
+        　　　　NP→ART N <br>
+        　　字典信息为： <br>
+        　　　　the：ART <br>
+        　　　　man：N <br>
+        　　　　is：AUX<br>
+        　　　　laughing：V <br>
+        　　待分析的句子为： <br>
+        　　　　The man is laughing<br>
+        　　可得RTN为如下形式： <br>
+        　　<img src="../../img/pic_6.gif" width="339" height="154"><br>
+        　　分析过程如下： <br>
+        　　<img src="../../img/pic_7.gif" width="329" height="123"><br>
+        <!--czp-wenda-daan-->
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

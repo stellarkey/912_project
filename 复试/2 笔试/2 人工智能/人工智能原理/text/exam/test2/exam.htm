@@ -1,0 +1,249 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index1/bg_text2.jpg);
+background-position: right bottom;
+background-repeat: no-repeat;
+background-attachment: fixed;
+
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  <b>人工智能原理练习二</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        
+          <form>
+          <b>问答题</b><br>
+            <br>
+          1．将下面的公式化成子句集<br>
+          　　～( (( P ∨ ～Q) → R) → (P ∧ R))<br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          2．命题是数理逻辑中常用的公式，试使用归结法证明它们的正确性：<br>
+          　　a) P → ( Q → P )<br>
+          　　b) ( P → ( Q → R )) → ((P → Q) → ( P → R)) <br>
+          　　c) ( Q → ～ P) → ((Q → P) → ～ Q) <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          3． 下列子句是否可以合一，如果可以，写出最一般合一置换 <br>
+          　　a) P(x, B, B) 和 P(A, y, z)<br>
+          　　b) P( g( f (v)) , g(u) ) 和 P(x , x) <br>
+          　　c) P( x , f(x) ) 和 P(y, y) <br>
+          　　d) P(y, y , B) 和 P( z, x , z) <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          4．	解释 P( f (x, x), A) 和 P( f (y , f (y, A )) , A )为什么不能合一<br><textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <br>
+          5． 将下列公式化为skolem子句形 <br>
+          　　a) ((<img src="img/symbol01.gif" width="12" height="16">x) P(x) ∨ 
+          (<img src="img/symbol01.gif" width="12" height="16">x) Q(x)) → (<img src="img/symbol01.gif" width="12" height="16">x) 
+          ( P(x) ∨ Q(x) ) <br>
+          　　b) (<img src="img/symbol02.gif" width="12" height="16">x) ( P(x) → 
+          (<img src="img/symbol02.gif" width="12" height="16">y) ( (<img src="img/symbol02.gif" width="12" height="16">z) 
+          Q(x , y) → ～ (<img src="img/symbol02.gif" width="12" height="16">z)R(y 
+          , x) ) )<br>
+          　　c) (<img src="img/symbol02.gif" width="12" height="16">x) P(x) → (<img src="img/symbol01.gif" width="12" height="16">x) 
+          ( ((<img src="img/symbol02.gif" width="12" height="16">z) Q(x ,z )) 
+          ∨ (<img src="img/symbol02.gif" width="12" height="16">z)R(x , y , z) 
+          ) <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          6． 用归结法证明：存在一个绿色物体，如果有如下条件存在：<br>
+          　　a) 如果可以推动的物体是蓝色的，那么不可以推动的物体是绿色的<br>
+          　　b) 所有的物体或者是蓝色的，或者是绿色的，但不能同时具有两种颜色。<br>
+          　　c) 如果存在一个不能推动的物体，那么所有的可推动的物体是蓝色的。<br>
+          　　d) 物体O1是可以推动的 <br>
+          　　e) 物体O2是不可以推动的 <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          7． 设S={ P(x), Q(f(x), y) }，试写出H域上的元素，并写出S的一个基例。<br>
+          <textarea name=jianda cols=50 rows=5></textarea>
+          <br>
+          <!--czp-wenda-timu-->
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=466,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

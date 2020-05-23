@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <b> 　－合取范式 </b> <br>
+      <b>　　</b><b>范式：</b>范式是公式的标准形式，公式往往需要变换为同它等价的范式，以便对它们作一般性的处理。 <br>
+      　　<b>合取范式：</b>单元子句、单元子句的或（∨）的与（∧）。<br>
+      　　如：P∧（ P∨Q）∧（ ～P∨Q） <br>
+      　　例：求取P ∧ (Q → R) → S 的合取范式<br>
+      　　解： P ∧ (Q → R) → S<br>
+      　　　　= ～（P∧(～Q∨R) ∨S<br>
+      　　　　= ～P∨～(～Q∨R) ∨S<br>
+      　　　　= ～P∨(～～Q∧～R) ∨S<br>
+      　　　　= ～P∨(Q∧～R) ∨S<br>
+      　　　　= ～P∨S∨(Q∧～R)<br>
+      　　　　= (～P∨S∨Q) ∧( ～P∨S∨～R) <br>
+      　　<font color="#0000FF">注意：</font>首先一定要将原有的命题公式整理、转换成为各个&quot;或&quot;语句的&quot;与&quot;，不然后续推导没有意义。转换是基于数理逻辑的基本等值公式进行的，&quot;或&quot;转换到&quot;与&quot;中。思路与代数学的提取公因式方法相似。 
+      <br>
+      <b>　－子句集</b> <br>
+      　　命题公式的子句集S是合取范式形式下的子命题（元素）的集合。<br>
+      　　子句集是合取范式中各个合取分量的集合，生成子句集的过程可以简单地理解为将命题公式的合取范式中的与符号&quot;∧&quot;，置换为逗号&quot;，&quot;。 
+      <br>
+      　　上例转换的合取范式：(～P∨S∨Q) ∧( ～P∨S∨～R) <br>
+      　　其子句集为<br>
+      　　S = {～P∨S∨Q, ～P∨S∨～R}<br>
+      　　又如，有命题公式：P∧（ P∨Q）∧（ ～P∨Q）<br>
+      　　其子句集 S：S = {P, P∨Q, ～P∨Q}</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　4. 向网络输入训练样本，由下列公式计算各个神经元的输出及网络的各个输出节点的输出。<br>
+      　　<img src="../../../img/chap06/pic56.gif" width="139" height="41"><br>
+      　　其中，<img src="../../../img/chap06/pic57.gif" width="95" height="42">， x<sub>i</sub>为各个神经元的输入， 
+      w<sub>i</sub>为相应的权重， Y为各个神经元的输出。 <br>
+      　　5. 计算各个输出神经元的实际输出值与理想输出值（教师向量）的差值，根据下式求系统的偏差。 <br>
+      　　<img src="../../../img/chap06/pic58.gif" width="132" height="48"><br>
+      　　系统偏差可以是一个一个输入样本求，也可以是一套P个训练样本计算完毕后再求。此时的计算公式为<br>
+      　　<img src="../../../img/chap06/pic59.gif" width="161" height="46"><br>
+      其中，P为学习样本集的大小，即样本总数。<br>
+      　　6. 根据6.2.3介绍的BP学习算法调整网络权重，完成一次训练。当系统误差达到理想值后，训练结束。<br>
+      　　神经网络的收敛往往是一个振荡的过程。同时前馈神经网络的BP训练算法属于统计学习方法，存在过学习问题。因此，可以在训练的过程中，采用求取测试样本正确率的方法，监测学习的效果以防止训练过度。以测试样本的识别正确率作为系统训练结束的标准。</td>
+  </tr>
+</table>
+</body>
+</html>

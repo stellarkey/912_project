@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　下面所列出的语法规则都符合上下文相关语法，其中→表示逻辑蕴涵。<br>
+      　　例：<br>
+      　　一个扩充的短语结构语法如下所示： <br>
+      　　A→ Noun(E(A))<br>
+      　　B→ Noun(E(B))<br>
+      　　C→ Noun(E(C))<br>
+      　　Block A →Noun(Block(A))<br>
+      　　Block B →Noun(Block(B))<br>
+      　　Block C →Noun(Block(C))<br>
+      　　Floor → Noun(Floor(Fl))<br>
+      　　And → Conj(∧)<br>
+      　　Or → Conj(∨)<br>
+      　　Clear → Adj(λx Clear(x))<br>
+      　　Empty →Adj(λx Clear(x))<br>
+      　　Occupied → Adj(λx ～Clear(x))·<br>
+      　　On → Prep(λxy On(x, y))<br>
+      　　Above → Prep(λxy On(x, y))<br>
+      　　Below → Prep(λxy On(y, x))<br>
+      　　Is Adj(λx φ(x)) → VP(λx φ(x))<br>
+      　　Is PP(λx ψ(x ,σ)) → VP(x ψ(x,σ))<br>
+      　　Prep(λxy ψ(x,y))NP(φ(σ)) → PP(λx ψ(x ,σ)∧φ(σ))<br>
+      　　Noun(φ(σ)) → NP(φ(σ))<br>
+      　　Adj(λx φ(x))NP(ψ(σ)) → NP(φ(σ)∧ψ(σ))<br>
+      　　NP(φ(σ))VP(λxψ(x)) → S(ψ(σ)∧φ(σ))<br>
+      　　S(γ<sub>1</sub>)Conj(∧) S(γ<sub>2</sub>) → S(γ<sub>1</sub> ∧γ<sub>2</sub>)</td>
+  </tr>
+</table>
+
+</body>
+</html>

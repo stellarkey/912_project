@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFDE5" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 　　以下几种情况，我们可以离开当前的结点，到达转移弧的目标结点。<br>
+      　　1. 情况1：如果待分析的单词属于弧上的标记词类，则（1）更新当前位置为句子中的下一个单词；（2）更新当前结点为转移弧的目标结点。<br>
+      　　2. 情况2：如果转移弧为指向另一个转移网络N的push弧，则（1）把转移弧的目标结点加入到返回结点堆栈中；（2）更新当前结点为N的开始结点。<br>
+      　　3. 情况3：如果转移弧为pop弧且返回结点堆栈非空，则去掉堆栈中的第一个结点，并且更新当前结点为该结点。<br>
+      　　4. 情况4：如果转移弧为pop弧，返回结点堆栈为空且句子中单词已经分析结束，则分析成功！</td>
+  </tr>
+</table>
+</body>
+</html>

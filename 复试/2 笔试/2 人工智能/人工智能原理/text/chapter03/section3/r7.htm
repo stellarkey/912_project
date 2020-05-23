@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　<font color="#0000FF">解：</font><br>
+      　　先求B<sub>1</sub>的更新值：<br>
+      　　依R<sub>1</sub>，P<sub>1</sub>（B）＝0.03<br>
+      　　　O（B<sub>1</sub>）＝0.03/(1-0.03)=0.030927<br>
+      　　　O(B<sub>1</sub>|A<sub>1</sub>)=LS×O(B1)=20×0.030927=0.61855<br>
+      　　　P(B<sub>1</sub>|A<sub>1</sub>)= 0.61855/(1+0.61855)=0.382<br>
+      　　使用规则R<sub>1</sub>后，B<sub>1</sub>的概率从0.03上升到0.382<br>
+      　　依R<sub>2</sub>：<br>
+      　　　O(B<sub>1</sub>|A<sub>1</sub>A<sub>2</sub>)=300×O(B<sub>1</sub>|A<sub>1</sub>)=185.565<br>
+      　　　P(B<sub>1</sub>|A<sub>1</sub>A<sub>2</sub>)= 185.565/(1+185.565)=0.99464<br>
+      　　使用规则R<sub>2</sub>后，B<sub>1</sub>的概率从0.382上升到0.99464 <br>
+      　　再求B<sub>2</sub>的更新值：<br>
+      　　由于B<sub>1</sub>不确定所以讨论其前项证据A，<br>
+      　　证据A必然发生时，由以上计算可知P（B<sub>1</sub>）＝0.03，规则<br>
+      　　　R<sub>1</sub>：A<sub>1</sub>→B<sub>1</sub> LS=20 LN=1<br>
+      　　对于规则R<sub>1</sub>，证据A必然发生，可得<br>
+      　　　P（B<sub>1</sub>|A）＝0.382；<br>
+      　　但是使用规则R<sub>3</sub>时，B<sub>1</sub>并非确定地发生，因此要用插值法。<br>
+      　　先假设P（B<sub>1</sub>|A）＝1，此时<br>
+      　　　P（B<sub>2</sub>|B<sub>1</sub>）＝300*0.01/((300-1)*0.01+1)(公式（1）)<br>
+      　　　　　　　　＝0.75188<br>
+      　　再假设P（B<sub>1</sub>|A）＝P(B<sub>1</sub>)=0.03时，即A对B<sub>1</sub>无影响<br>
+      　　　P（B<sub>2</sub>）＝0.01<br>
+      　　根据这两个值可进行插值计算：<br>
+      　　　P（B<sub>2</sub>|A）=0.01+(0.75188-0.01)*(0.382-0.03)/(1-0.03)<br>
+      　　　　　　　 =0.305105 <br>
+      　　<b>总结</b><br>
+      　　主观Bayes方法优点：直观，明了。<br>
+      　　问题：要求B<sub>j</sub>个事件相互独立（无关），实际上是不可能的。<br>
+      　　　　　P(A/B<sub>i</sub>)和P(B<sub>i</sub>)难以计算。实际应用中，为了避开这一点采用LS, LN的专家给定值。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>　　系统的输入是积木世界某物体（或景象）的线条图，使用语义网络来表示该物体结构化的描述。例如，系统要学习拱桥的概念，就给学习程序输入第一个拱桥示例，得到的描述如下图1所示，这个结构化的描述就是拱桥概念的定义。接着再向程序输入第二个拱桥示例，其描述如图2所示。这时学习程序可归纳出图3所示的描述。<br>
+      　　假定下一步向程序输入一个拱桥概念的近似样品，并告知程序，这不是拱桥（即拱桥的反例），则比较程序会发现当前的定义描述（图3）与近似样品的描述只是在B和D节点之间，“不接触”的链接弧有区别。由于近似样品不是拱桥，不是推广当前定义描述去概括它，而是要限制该定义描述适用的范围，因而就要把“不接触”链接修改为“必须不接触”，这是拱桥概念的描述如图4所示。这就是机器最后学习得到的拱桥概念。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-4拱桥概念的归纳学习过程 </font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="300" height="250">
+              <param name=movie value="../../../flash/chap05/P5_4_1_1a.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/P5_4_1_1a.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="300" height="250">
+              </embed> 
+            </object><br>
+            <br>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="300" height="250">
+              <param name=movie value="../../../flash/chap05/P5_4_1_1b.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/P5_4_1_1b.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="300" height="250">
+              </embed> 
+            </object> <br>
+            <br>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="300" height="250">
+              <param name=movie value="../../../flash/chap05/P5_4_1_1c.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/P5_4_1_1c.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="300" height="250">
+              </embed> 
+            </object><br>
+            <br>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="300" height="250">
+              <param name=movie value="../../../flash/chap05/P5_4_1_1d.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/P5_4_1_1d.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="300" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+
+      　　下图是实例学习的两个空间模型。实例空间是所有示教例子的集合，而规则空间是所有规则的集合。实例学习应在规则空间中搜索、匹配所求的规则，并在实例空间中选择一些示教例子，以便解决规则空间中某些规则的歧义性，系统就是这样在实例空间和规则空间中交替进行搜索，直到找到所要求的规则。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-5 实例学习的两个空间模型</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap05/5-5.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/5-5.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+
+      　　首先由示教者给实例空间提供一些初始示教例子，由于示教例子的形式往往不同于规则的形式，程序必须对示教例子进行解释，然后再利用被解释的示教例子去搜索规则空间。一般情况下，不能一次就从规则空间中搜索到要求的规则，因此还要寻找一些新的示教例子，这个过程就是选择示教例子。解释例子和选择例子这两个过程如此循环，直到搜索到要求的规则。</td>
+  </tr>
+</table>
+</body>
+</html>

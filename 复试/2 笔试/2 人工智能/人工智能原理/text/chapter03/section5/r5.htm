@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　　P(~C|~E)＝P(~E|~C)<sup>*</sup>P(~C)/P(~E)，<br>
+      　　从因果推理可知<br>
+      　　　P(~E|~C) = P(~E,S|~C)+P(~E,~S|~C)<br>
+      　　　　　 　　= P(~E|S,~C)<sup>*</sup>P(S)+P(~E|~S,~C)<sup>*</sup>P(~S)<br>
+      　　　　　 　　= (1-0.3)<sup>*</sup>0.4+(1-0.10)<sup>*</sup>(1-0.4)=0.82;<br>
+      　　由此得：<br>
+      　　　P(~C|~E)＝P(~E|~C)<sup>*</sup>P(~C)/ P(~E)(贝叶斯公式)<br>
+      　　　　　　　＝0.82<sup>*</sup>(1-0.3)/ P(~E)<br>
+      　　　　　　　＝0.574/ P(~E)<br>
+      　　同样的，<br>
+      　　　P(C|~E) ＝P(~E|C)<sup>*</sup> P(C)/ P(~E)<br>
+      　　　　　　　＝0.34<sup>*</sup>0.3/ P(~E)<br>
+      　　　　　　　＝0.102 /P(~E)<br>
+      　　由于全概率公式：<br>
+      　　　P(~C|~E)+P(C|~E)＝1<br>
+      　　代入可得<br>
+      　　　P(~E)=0.676<br>
+      　　所以， P(~C|~E)＝0.849<br>
+      　　这种推理方式主要利用Bayes规则转换成因果推理。</td>
+  </tr>
+</table>
+</body>
+</html>

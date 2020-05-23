@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　在动词短语中，本例只含有一个动词is。它总是和一个形容词或一个介词短语合用。当用一个形容词时，我们有规则：<br>
+      　　　　Is Adj(λx φ(x)) → VP(λx φ(x))<br>
+      　　在这个规则中，φ是一个一元关系常量，表示该形容词的相关属性。（本例中没有涉及） <br>
+      　　下面说明一个名词短语和一个动词短语如何组合成为一个句子：<br>
+      　　　　NP(φ(s))VP(λx ψ(x)) → S((λx ψ(x)∧φ(s))s)<br>
+      　　其中ψ是任何关系常量，当应用λ表达式时，ψ的λ变量x被约束。这个组合通过把来自动词短语的一个λ表达式应用到由名词短语给出的对象常量上面获得。 
+      <br>
+      　　经过精简后得到：<br>
+      　　　　NP(φ(σ))VP(λx ψ(x)) → S(ψ(σ)∧φ(σ))<br>
+      　　应用此规则会产生：<br>
+      　　　　NP(Block(B)) is on NP(Block(C)) Conj(∧) NP(Block(B)) VP(λx Clear(x))<br>
+      　　　　NP(Block(B)) is on NP(Block(C)) Conj(∧) S(Clear(B)∧Block(B))</td>
+  </tr>
+</table>
+
+</body>
+</html>

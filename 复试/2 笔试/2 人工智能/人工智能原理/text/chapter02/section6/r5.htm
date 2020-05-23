@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　<font color="#0000FF">例：</font><br>
+      　　S＝{P(x)∨Q(x), R(f(y))}，求其一个H解释I<sup>*</sup><br>
+      　　<font color="#0000FF">解：</font><br>
+      　　S的H域为：<br>
+      　　{a, f(a), f(f(a)), …}<br>
+      　　S的原子集为：<br>
+      　　{P(a), Q(a), R(a), P(f(a)), Q(f(a)), R(f(a)), …}<br>
+      　　凡对A中各元素真假值的一个具体设定都为S的一个H解释。<br>
+      　　如：<br>
+      　　I<sub>1</sub><sup>*</sup>＝{P(a), Q(a), R(a), P(f(a)), Q(f(a)), R(f(a)), …}<br>
+      　　I<sub>2</sub><sup>*</sup>＝{～P(a), ～Q(a), ～R(a), ～P(f(a)), Q(f(a)), R(f(a)), 
+      …}<br>
+      　　I<sub>3</sub><sup>*</sup>＝{P(a), ～Q(a), ～R(a), P(f(a)), Q(f(a)), ～R(f(a)), 
+      …}<br>
+      　　I<sub>1</sub><sup>*</sup>，I<sub>2</sub><sup>*</sup>，I<sub>3</sub><sup>*</sup>中出现的P(a)表示P(a)的取值为T，出现的～P(a)表示P(a)的取值为F。显然在H域上，这样的定义I<sup>*</sup>下，S的真值就确定了。<br>
+      　　如：<br>
+      　　S| I<sub>1</sub><sup>*</sup>＝T，S| I<sub>2</sub><sup>*</sup>＝F，S| I<sub>3</sub><sup>*</sup>＝F<br>
+      　　这是因为<br>
+      　　子句集S＝{P(x)∨Q(x), R(f(y))}的逻辑含义为：<br>
+      　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)((P(x)∨Q(x))∧R(f(y)))，<br>
+      　　论域H为{a, f(a), f(f(a)), …}。<br>
+      　　关键：对于公式G的所有的解释，如果公式取值全为假，才可以判定G是不可满足的。因为所有解释代表了所有的情况，如果这些解释可以被穷举，我们就可以在有限的步数内判断公式G的不可满足性，本小节开始所提的问题便可解决 
+      。</td>
+  </tr>
+</table>
+</body>
+</html>

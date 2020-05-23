@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　至此，分析图表如下所示：（简便起见，产生NP1和NP2的某些活跃弧没有画出来）<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图7-10 &quot;the large can can 
+            hold&quot;的分析</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="400">
+              <param name=movie value="../../../flash/chap07/7-10.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/7-10.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="400">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　（省去了产生NP1和NP2的部分活跃弧）<br>
+      　　读入单词the，其类别为ART，加入词类序列列表。<br>
+      　　输入ART2：（the 位置6到7）<br>
+      　　　产生活跃弧 NP→ART·ADJ N（6到7）<br>
+      　　　产生活跃弧 NP→ART·N（6到7） <br>
+      　　读入单词water，其类别为N和V，加入词类序列列表。<br>
+      　　输入V4：（water 位置7到8）<br>
+      　　　　无新的活跃弧和词类产生。<br>
+      　　输入N4：（water 位置7到8）<br>
+      　　　　生成新的词类NP（位置6到8），加入词类序列列表。 <br>
+      　　输入NP3：（the water 位置6到8）<br>
+      　　　　产生活跃弧 S→NP·VP（6到8）。<br>
+      　　　　生成新的词类VP（位置5到8），加入词类序列列表。 <br>
+      　　输入VP1：（hold the water 位置5到8）<br>
+      　　　　生成新的词类VP（位置4到8），加入词类序列列表。 <br>
+      　　输入VP2：（can hold the water 位置4到8）<br>
+      　　　　生成初始状态S（位置1到8），结束！ <br>
+      　　搜索得到S（覆盖整句），则分析成功！如果想得到读入句子的所有可能的句法结构，我们必须继续分析下去，直到词类序列列表为空。<br>
+      　　下图为最后的分析结果。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图7-11 &quot;The large can can 
+            hold the water&quot;自底向上分析结果</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap07/7-11.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/7-11.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
