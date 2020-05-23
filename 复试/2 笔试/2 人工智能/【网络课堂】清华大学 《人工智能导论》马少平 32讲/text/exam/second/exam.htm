@@ -1,0 +1,285 @@
+<html>
+<head>
+<title>人工智能导论试卷二</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="A";mykeys[1]="A";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=5 leftmargin="5">
+<center>
+  <br>
+  《人工智能导论》试卷二
+  <br>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b>一、 选择</b><br>
+            <br>
+            <br>
+			1、只有在单位耗散值的情况下，当问题有解时，宽度优先算法才能保证找到最优解。
+<p><input type="radio" name="1" value="A"> A  对
+<p><input type="radio" name="1" value="B"> B  错<br>
+            <br>
+            2、在A*算法结束之前，OPEN表中任何满足f(n)&lt;f*(s)的节点n，一定被扩展。 
+          <p><input type="radio" name="2" value="A"> A  对
+<p><input type="radio" name="2" value="B"> B  错<br>
+          </p>
+          <p> 
+            <input type=button name=Button2 value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop1.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck(this.form)" class=pbox>
+          </p>
+          <p>&nbsp;</p></form>
+        <form name="zfl">
+          <p>二<b>、 填空题</b><br>
+            <br>
+            1、基于规则的正向演绎系统使用的条件是（1）事实表达式是<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            （2）规则形式为 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            ，其中 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            （3）目标公式为 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            <br>
+            <br>2、基于规则的逆向演绎系统使用的条件是（1）事实表达式是<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            （2）规则形式为
+<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            ， 其中
+<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            （3）目标公式为
+<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            <br>
+            <br>3、归结法中，可以通过<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">
+            的方法得到问题的解答。<br>
+            <!--czp-input-timu-->
+            <br>
+            <input type=button name=Button value="答案" onClick=MM_openBrWindow('text/examination/exam01_pop0.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset" value="重置" class=pbox>
+          </p>
+          </form>
+          <form>
+          <p>&nbsp;</p>
+          <p><b>三、 问答题</b><br>
+            <br>
+            <br>
+            1、某问题状态图如右图所示。假定k连接符的耗散值为k。 各节点的h值假定为：<br>
+            h(A)=3, h(B)=2, h(C)=6, h(D)=3,<br>
+            h(E)=4, h(F)=2, h(G)=3, h(H)=h(I)=0 (目标节点)<br>
+            用AO*算法求解该问题， 给出每次循环后的搜索图， 并给出求得的解图。</p>
+          <p><img src="images/t1.gif" width="349" height="213"><br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            2、下图所示博弈树，按从左到右的顺序进行α-β剪枝搜索，试标明各生成节点的到推值，何处发生剪枝，及应选择的走步。</p>
+          <p><img src="images/t2.gif" width="395" height="250"><br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            3、有四人过河，只有一条船，最多可乘坐两人。若单个过，各需1，1，5，9分钟，若两人一起过，则需要的时间以多的为准（如需要5分和9分的两人同时乘坐，则需要9分）。问最少需要多少分钟。<br>
+            　　(1)、用产生式系统描述该问题，要求给出综合数据库的定义，规则集，初始状态和结束状态。<br>
+            　　(2)、定义一个h函数，并说明是否满足A*条件。<br>
+            　　(3)、用A算法求解该问题，给出状态搜索图，标出扩展次序、各节点的f值、解路径及解路径的耗散值。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            4、某问题由下列公式描述： <br>
+            　　(1)、（<img src="images/exam3.gif" width="7" height="11">s）~P（s）<br>
+            　　(2)、（<img src="images/exam1.gif" width="12" height="12">s）（P（g（s）））<br>
+            　　(3)、（<img src="images/exam3.gif" width="7" height="11">x）（<img src="images/exam1.gif" width="12" height="12">s）（<img src="images/exam3.gif" width="7" height="11">y）（（P（s）∧Q（b，x，s））→H（y）<br>
+            　　(4)、（<img src="images/exam1.gif" width="12" height="12">x）（<img src="images/exam1.gif" width="12" height="12">s）（Q（b，x，s）→Q（b，x，g（s））） 
+            <br>
+            　　(5)、（<img src="images/exam1.gif" width="12" height="12">x）（<img src="images/exam1.gif" width="12" height="12">s）（<img src="images/exam3.gif" width="7" height="11">y）（~P（s）→Q（b，x，y））<br>
+            求证：( x)H(x) 请用基于规则的逆向演绎系统求解( x)H(x)成立。要求给出一个求得的一致解图，并说明为什么它是一致的；给出目标的解答。 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            5、简述为什么修正的A*算法有可能会减少重复节点的扩展，而又不会比A*多扩展节点。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

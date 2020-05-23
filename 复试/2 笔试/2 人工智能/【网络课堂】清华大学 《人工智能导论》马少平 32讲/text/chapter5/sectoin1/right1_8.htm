@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">4．宏的定义</font></p>
+      <p>　　<font color="#000099">宏在LISP语言中起着重要的作用，是否可以灵活的使用宏，是是否熟练掌握了LISP语言的一个标志。<br>
+        　　在什么情况下要使用宏呢？宏的一个特点是在调用的时候不对其实参求值，所以当用到不需要对实参求值的时候，要使用宏。下面介绍的IF是一个很好的例子。IF不可能用函数实现，只能用宏来实现。宏的另一个特点是二次求值。可以在第一次求值时构造一个LISP函数，第二次求值时再对该函数进一步求值。比如IF就是在第一次求值时，用有关的实参构造一个COND函数，第二次再对该COND求值，完成IF的功能。<br>
+        　　值得注意的是，宏的形参的值是实参本身，而不是像函数那样是实参的值。所谓的宏不对实参求值也是在这个意义下说的。</font></p>
+      <p>　　宏在LISP中起着举足轻重的作用，LISP中的许多功能，正是因为有了宏，才得以实现。定义宏的格式与定义函数格式完全相同，只是将DEFUN换成了DEFMACRO，它们的差别在于以下两点：<br>
+        　　①函数的形参值等于其相应的实参的值，而宏的形参值则等于其相应的实参本身。也就是说，函数将对其调用参数求值，而宏则不对其调用参数求值。<br>
+        　　②函数对其定义体求值，并直接将求值结果作为该函数的回送值；而宏则对其定义体的求值结果再进行一次求值，并把第二次求值结果作为该宏的回送值。通俗一点说就是，函数对其定义体进行一次求值，而宏对其定义体进行两次求值。<br>
+        　　那么，为什么要引入宏呢？下面我们通过定义IF，来说明这个问题。IF有三个参数，我们所希望的功能是：当第一个参数为真时，执行第二个参数，否则执行第三个参数。<br>
+        　　看到这个要求之后，很自然地想到要这样来定义IF：<br>
+        （DEFUN IF（test then else）<br>
+        （COND（test then）<br>
+        （T else）））<br>
+        然而这个定义并不能完成我们所需要的功能，其原因就是函数首先对其参数进行求值。下面通过一个具体的调用例子来说明为什么这个定义不能满足要求。<br>
+        （IF（ATOM X）（SETQ Y 1）（SETQ Y 2）） <br>
+        我们本来希望当X为原子时Y赋值1，否则的话Y赋值2。但由于IF已被定义为函数了，因此首先要对所有参数求值，其结果导致了无论X是原子与否，（SETQ 
+        Y 2）都将被求值，使得Y永远被赋值为2。<br>
+        而用宏则可以解决这个问题，下面给出IF的宏定义。<br>
+        （DEFMACRO IF（test then else）<br>
+        （CONS 'COND（list（list test then）<br>
+        （list T else））））<br>
+        还是以（IF（ATOM x）（SETQ Y 1）（SETQ Y 2））为例，来说明宏IF是如何正确地工作的。<br>
+        首先宏不对其参数求值，并且形参的值就是实参本身。这样，形参test的值为（ATOM X），then的值为（SETQ Y 1），else的值为（SETQ 
+        Y 2）。因而，对IF的定义体的第一次求值结果为：<br>
+        （COND（（ATOM X）（SETQ Y 1））<br>
+        （T（SETQ Y 2）））<br>
+        由于IF是宏，还要对第一次的求值结果进行第二次求值，也就是对上述的COND函数求值，显然当第二次求值时，IF达到了我们所希望的结果。<br>
+        虽然上述IF的宏定义能满足要求，但其定义比较复杂，可读性差。为此，在COMMON LISP中提供了&quot;<img src="../images/dian.gif" width="6" height="19" align="middle">&quot;、&quot;,&quot;和&quot;,@&quot;三个符号，这三个符号，为简化宏定义，提高可读性，起到了关键的作用。<br>
+        符号&quot;<img src="../images/dian.gif" width="6" height="19" align="middle">&quot;同&quot;'&quot;一样具有阻止求值的功能，但在&quot;`&quot;的管辖范围内，当遇到符号&quot;,&quot;或&quot;,@&quot;时，要对&quot;,&quot;或&quot;,@&quot;后面的S－表达式求值，并且对于&quot;,@&quot;，当求值结束后，对求值结果要去掉一层括号。<br>
+        （SETQ L '（a b））<br>
+        <font color="#000099">只对L求值，x、y不求值。</font><br>
+        <img src="../images/dian.gif" width="6" height="19" align="middle">（x 
+        y ,L）==&gt;（x y（a b））<br>
+        <font color="#000099">不但对L求值，还要将求值结果去掉一层括号。</font><br>
+        <img src="../images/dian.gif" width="6" height="19" align="middle">（x 
+        y ,@L）==&gt;（x y a b）<br>
+        使用这些功能，我们可以得到IF的更简洁的宏定义，显然其可读性被改善了。<br>
+        （CEFMACRO IF（test then else）<br>
+        <img src="../images/dian.gif" width="6" height="19" align="middle">（COND（,test 
+        ,then）<br>
+        （T ,else）））<br>
+        &quot;<img src="../images/dian.gif" width="6" height="19" align="middle">&quot;、&quot;,&quot;和&quot;,@&quot;三个符号除了在宏中使用外，在函数中也可以使用，常常被用于构造一个表。<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

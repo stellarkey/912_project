@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#000099">这是另一个大家所熟悉的递归函数的例子--FIBONACCI数函数。该函数具有&quot;双重&quot;递归的性质。即在求n的FIBONACCI数时，需要递归计算n－1的FIBONACCI数和n－2的FIBONACCI数。</font></p>
+      <p>数学上另一个递归定义的函数的例子是FIBONACCI函数，其定义如下：<br>
+        f（0）＝1<br>
+        f（1）＝1<br>
+        f（n）＝f（n－1）＋f（n－2） n＞1<br>
+        用LISP表示就是：<br>
+        <font color="#000099">定义FIBONACCI数函数。函数名为FIBNACCI，参数为n。</font><br>
+        （DEFUN FIBONACCI（n）<br>
+        <font color="#000099">n的FIBONACCI数定义为1。</font><br>
+        （COND（（＝ n 0）1）<br>
+        <font color="#000099">n的FIBONACCI数定义为1。以上是两个最简情况。</font><br>
+        （（＝ n 1）1）<br>
+        <font color="#000099">其他情况下，n的FIBONACCI数是n－1的FIBONACCI数加上n－2的FIBONACCI数。其中n－1的FIBONACCI和n－2的FIBONACCI数均通过递归计算得到。</font><br>
+        （T（＋ （FIBONACCI（－ n 1））<br>
+        （FIBONACCI（－ n 2））））））</p>
+      <p><font color="#000099">图5.2形象的用图表示出了4的FIBONACCI数的求值过程。通过该图可以看到，每一次函数调用，函数都将其分解为两次递归调用，一次是计算n－1的FIBONACCI数，一次是计算n－2的FIBONACCI数。只用当n－1和n－2的FIBONACCI都得到之后，函数才向上传递，完成更上一层的计算。<br>
+        图5.1和图5.2对于理解递归函数的执行过程是一个很好的帮助，不熟悉递归的同学，要对照这两个图仔细的看相应的函数定义，理解其含义。</font></p>
+      <p>图5.2给出的是当n＝4时的递归过程图。</p>
+      <p align="center"> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="90" height="300">
+          <param name="movie" value="../../flash/F5-1.swf">
+          <param name="quality" value="high">
+          <embed src="../../flash/F5-1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="90" height="300"></embed></object>
+        </p>
+      <p align="center"><font color="#FF0000">图5.1（N！ 4）的递归过程</font></p>
+      <p align="center"><font color="#FF0000"> 
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="350" height="290">
+          <param name="movie" value="../../flash/F5-2.swf">
+          <param name="quality" value="high">
+          <embed src="../../flash/F5-2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="350" height="290"></embed></object>
+        　　</font></p>
+      <p align="center"><font color="#FF0000">图5.2（FIBONACCI 4）的递归过程</font></p>
+      <p>&nbsp;</p>
+      <p>在看过递归在两个简单的数学问题上的应用之后，我们对递归的用法有了一个大致的了解。下面我们来看一看，如何使用递归来解决一些更复杂的问题。<br>
+        首先，我们假定LISP中没有MEMBER这个函数，我们通过定义得到它。<br>
+        <font color="#000099">定义MEMBER函数，item和s是该函数的两个参数。其功能是：如果item是表s的元素，则MEMBER为真，并返回以item为第一个元素的子表（在LISP中，NIL为假，非NIL为真），否则为假。</font><br>
+        （DEFUN MEMBER（item s）<br>
+        <font color="#000099">如果s为空，则MEMBER函数返回假，因为空表不含有任何元素。结束。</font><br>
+        （COND（（NULL s）NIL）<br>
+        <font color="#000099">如果s的第一个元素与item相等，则MEMBER返回s，表示item是s的成员，结束。</font><br>
+        （（EQUAL item（CAR s））s）<br>
+        <font color="#000099">其他情况下，递归调用，看item是否在s的CDR部分（即去除第一个元素后组成的表）出现，如果出现，则MEMBER为真，否则为假。需要注意的是，在每次递归调用时，s变成了（CDR 
+        s），必前一次少了一个元素。</font><br>
+        （T（MEMBER item（CDR s）））<br>
+        为了递归能够结束，MEMBER首先考虑两种最简单情况：<br>
+        　　①当s为空时，则item一定不在s中出现，因此MEMBER的回送值为NIL；<br>
+        　　②当s的第一个元素等于item时，MEMBER成功，并以s为其回送值。当这两种最简情况都不成立时，MEMBER进行递归调用，虽然这时问题并没有得到求解，但被简化了一步，所要处理的表比原来少了一个元素。<br>
+        下面再举一个对表中的所有原子进行计数的例子。注意这里是对表内的所有原子计数而不是元素，也就是说，当表的某个元素是表时，还需要深入到该元素的内层进行计数。<br>
+        <font color="#000099">定义COUNTATOMS函数，形参S是一个表。该函数的功能是对S中出现的所有原子进行计数。当S是一个多层表时，还要深入到表的内层进行计数。</font><br>
+        （DEFUN COUNTATOMS（S）<br>
+        <font color="#000099">当S为空时，计数为0。</font><br>
+        （COND（（NULL S）0）<br>
+        <font color="#000099">当S是原子时，计数为1。</font><br>
+        （（ATOM S）1）<br>
+        <font color="#000099">其他情况下，递归调用COUNTATOMS函数，分别对（CAR S）和（CDR S）进行计数，对分别计数结果求和，即为对S的计数。</font><br>
+        （T（＋（COUNTATOMS（CAR S））<br>
+        （COUNTATOMS（CDR S））））））<br>
+        首先，CUNTATOMS定义最简情况即NIL的原子个数为0，原子的原子个数为1，其它情况则递归调用，表头的原子个数加上表尾的原子个数即为整个表的原子个数。<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

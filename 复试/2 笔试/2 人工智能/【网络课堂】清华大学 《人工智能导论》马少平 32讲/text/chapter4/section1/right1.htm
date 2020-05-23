@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　谓词演算是一种形式语言，是人工智能中一种常用的知识表示方法，可表示各种描述语句，例如在产生式系统中，用来表达综合数据库、规则集的描述等。谓词演算体系中的一些演绎推理方法，还可用来建立自动定理证明系统、问答系统、基于规则的演绎系统等。本章将简要介绍一阶谓词逻辑的一些基本概念，讨论它们在人工智能领域中的应用问题。</p>
+      <p ><b>4.1 一阶谓词演算的基本体系</b></p>
+      <p >　　<font color="#CC0000">1．概述</font><br>
+        　　一阶谓词演算体系首先规定有标点符号、括号、逻辑联结词、常量符号集、变量符号集、n元函数符号集、n元谓词符号集、量词（全称量词<img src="../images/001.gif" width="11" height="12">和存在量词<img src="../images/002.gif" width="8" height="12">）等。并概括这些规定，定义了谓词演算的合法表达式（原子公式、合式公式wff），表达式的演算化简方法，以便把一般化的表达式化成为标准式（合取的前束范式或析取的前束范式）来讨论。化简结果的标准式记为<img src="../images/003.gif" width="161" height="16"></p>
+      <p >　　其中<img src="../images/004.gif" width="108" height="16" align="top">为前束，代表各种量词的约束关系，M称为母式，是不包含量词符号量化的合式公式范式。<br>
+        　　谓词演算中建立有很多推理规则，可用来从已知的公式集中推出新的公式，这些导出的公式称为定理。给出定理的推理过程及所使用的推理规则序列就构成了该定理的一个证明。在证明定理的演绎过程中，经常要对量化的表达式进行匹配操作，因而需要对项作变量置换使表达式一致起来，这个过程称作合一。应当指出这种形式逻辑的基本概念和理论也是人工智能中最重要的概念和理论之一，在人工智能的研究中很有用。<br>
+        <br>
+        <font color="#CC0000">　　2．标准式的化简步骤<br>
+        </font>　<font color="#000099">　如果一个合适公式的所有量词均非否定的出现在公式的前部，而且所有的量词的约束范围均是整个公式，则称这样的合适公式为前束范式。任何一个合适公式，都可以等价地转化为一个前束范式。消去前束范式中所有的存在量词后得到的合适公式，称为S范式，这一过程称作skolem化。S范式与它的原式不一定等价，但在不可满足性方面，二者是等价的。也就是说，如果原式是不可满足的，则其对应的S范式也一定是不可满足的。反之亦成立。<br>
+        　　利用结合律、分配律等，可以将S范式转化为一个合取范式，<font color="#CC0000">合取范式</font>是前束范式的一种，其母式具有如下的形式： 
+        <br>
+        A1∧A2∧A3∧……∧An<br>
+        其中Ai（i=1，2，……n）是由原子公式或者原子公式的否定组成的析取项。每个析取项又称之为子句，一个合取范式可以用如下的子句的集合（子句集）表示：<br>
+        {A1，A2，A3，……，An}<br>
+        例：( x)( y)[(P(x, y)∨～Q(x, y))∧(～P(x, y)∨U(x)∨V(y))∧(Q(x, y)∨～U(y))]<br>
+        就是一个合取范式，其子句集为：<br>
+        {P(x, y)∨～Q(x, y)，～P(x, y)∨U(x)∨V(y)，Q(x, y)∨～U(y)}<br>
+        任何一个合式公式，都可以通过9步将其化为子句集。下面通过一个例子说明将合式公式转化为子句集的方法。<br>
+        例：( z)( x)( y){[(P(x)∨Q(x))→R(y)]∨U(z)}<br>
+        （1）消蕴涵符<br>
+        当公式中含有蕴涵符&quot;→&quot;时，首先要消去蕴涵符。<br>
+        由蕴涵等价式：<br>
+        A(x)→B(x) ≡ ～A(x)∨B(x)<br>
+        有：<br>
+        (P(x)∨Q(x))→R(y) =&gt; ～(P(x)∨Q(x))∨R(y)<br>
+        带入式中有：<br>
+        (<img src="../images/002.gif" width="8" height="12">z)(<img src="../images/001.gif" width="11" height="12">x)(<img src="../images/002.gif" width="8" height="12">y){[～(P(x)∨Q(x))∨R(y)]∨U(z)}<br>
+        如果公式中存在多个蕴涵符，则一个一个消去，直到不存在蕴涵符为止。<br>
+        （2）移动否定符<br>
+        如果公式中的否定符&quot;～&quot;不只是作用于原子公式，则要利用摩根定律对公式进行变换，使得否定符只作用于原子公式。<br>
+        摩根定律描述如下：<br>
+        ～(A(x)∨B(x)) ≡ ～A(x)∧～B(x)<br>
+        ～(A(x)∧B(x)) ≡ ～A(x)∨～B(x)<br>
+        因此有：<br>
+        ～(P(x)∨Q(x)) =&gt;～P(x)∧～Q(x)<br>
+        带入式中有：<br>
+        (<img src="../images/002.gif" width="8" height="12">z)(<img src="../images/001.gif" width="11" height="12">x)(<img src="../images/002.gif" width="8" height="12">y){[(～P(x)∧～Q(x))∨R(y)]∨U(z)}<br>
+        如果否定作用于量词的话，可以用量词转换律将量词提到否定的作用域之外。量词转换律表述如下：<br>
+        ～((<img src="../images/001.gif" width="11" height="12">x)A(x)) ≡ (<img src="../images/002.gif" width="8" height="12">x)(～A(x))<br>
+        ～((<img src="../images/002.gif" width="8" height="12">x)A(x)) ≡ (<img src="../images/001.gif" width="11" height="12">x)(～A(x))<br>
+        在本例中没有出现这种情况。</font><br>
+      </p>
+      
+     
+     
+    </td>
+  </tr>
+</table>
+</body>
+</html>

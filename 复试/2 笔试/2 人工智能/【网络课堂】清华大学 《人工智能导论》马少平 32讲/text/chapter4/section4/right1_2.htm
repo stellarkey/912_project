@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#0033CC"><b>以下内容&quot;2．提取回答的一般过程&quot;不作为课内要求，作为扩展内容自学。</b></font></p>
+      <p><font color="#CC0000">　　2．提取回答的一般过程</font><br>
+        　　这一节将通过几个例子，说明提取回答过程应考虑的若干具体问题，最后给出回答提取的过程。<br>
+        　　<font color="#000099">（1）回答中出现Skolem函数的情况</font><br>
+        例1：已知：For all x and y，if x is the parent of y and y is the parent of z， 
+        then x is the grandparent of z. Everyone has a parent.<br>
+        询问：Do there exist individuals x and y such that x is the grandparent of 
+        y?<br>
+        表示成公式集后有<br>
+        事实：（<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">y）（P（x，y）∧P（y，z））→G（x，z））<br>
+        （<img src="../images/001.gif" width="11" height="12">y）（<img src="../images/002.gif" width="8" height="12">x）P（x，y）<br>
+        目标公式：（<img src="../images/002.gif" width="8" height="12">x）（<img src="../images/002.gif" width="8" height="12">y）G（x，y）<br>
+        用归结反演法很容易就给出目标公式的证明，其反演树如图4.10所示。图中母体子句中有横线标记的文字是归结时被合一的文字，子句P（f（w），w）中的Skolem函数f（w）可解释为w父亲的名字。图4.11是这个问题的修改证明树，根部的子句G（f（f（v）），v）是回答语句，形式与目标公式一致，其含义由公式（<img src="../images/001.gif" width="11" height="12">v）G（f（f（v）），v）表达，对于每一个v，及v的祖父，均是满足回答条件的那些个体的实例。 
+      </p>
+      <p align="center"><img src="../images/rl4.10.gif" width="367" height="354"></p>
+      <p align="center"><font color="#FF0000">图4.10 例1的反演树</font></p>
+      <p align="center"><img src="../images/rl4.11.gif" width="352" height="306"></p>
+      <p align="center"><font color="#FF0000">图4.11 例1的修改证明树</font></p>
+      <p><font color="#FF0000">　　<font color="#000099">（2）目标公式是析取范式的情况<br>
+        　　<font color="#000000">这种情况比较复杂，要规定一种方法来处理重言式中出现的合取符号，才能提取出答案来。<br>
+        例2：设前提子句集是：<br>
+        ~A（x）∨F（x）∨G（f（x））<br>
+        ~F（x）∨B（x）<br>
+        ~F（x）∨C（x）<br>
+        ~G（x）∨B（x）<br>
+        ~G（x）∨D（x）<br>
+        A（g（x））∨F（h（x））<br>
+        目标公式：（ x）（ y）（（B（x）∧C（x））∨（D（y）∧B（y）））<br>
+        先来看一下目标否定式的形式：<br>
+        ~（ x）（ y）（（B（x）∧C（x））∨（D（y）∧B（y）））<br>
+        ＝（ x）（ y）~（（B（x）∧C（x））∨（D（y）∧B（y）））<br>
+        ＝（ x）（ y）（（~B（x）∨~C（x））∧（~D（y）∨<br>
+        ~B（y）））</font><br>
+        </font></font></p>
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

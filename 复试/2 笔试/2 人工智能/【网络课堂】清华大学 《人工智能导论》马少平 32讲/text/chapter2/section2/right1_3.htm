@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p > 　　现在再说明一下第7步中标记和修改指针的问题。如果要搜索的隐含图是一棵树，则可肯定第6步生成的后继节点不可能是以前生成过的，这时搜索图就是搜索树，不存在<img src="../images/019.gif" width="18" height="11">、<img src="../images/018.gif" width="17" height="12">这种类型的子节点，因此不必进行修改指针的操作。如果要搜索的隐含图不是一棵树，则有可能出现<img src="../images/019.gif" width="18" height="11">这样的子节点，就是说这时又发现了到达<img src="../images/019.gif" width="18" height="11">的新通路，这样就要比较不同路径的耗散值，把指针修改到具有较小耗散值的路径上。例如，图2.5所示的两个搜索图中，实心圆点在CLOSED表中（已扩展过的节点），空心圆点则在OPEN表中（待扩展点）。先设下一步轮到要扩展节点6，并设生成的两个子节点，其中有一个4已在OPEN中，那么原先路径（s→3→2→4）耗散值为5（设每段路径均为单位耗散），新路径（s→6→4）的耗散值为4，所以4的指针应由指向2修正到指向6，如图2.5（a）所示。接着设下一循环要扩展节点1，若节点1只生成一个子节点2（它已在CLOSED上），显然这时节点2原先指向节点3的指针，要修改到指向节点1，由此又引起子节点3的指针又修改为指向2，如图2.5（b）所示。</p>
+      <p align="center" ><img src="../images/rl2.5.gif" width="379" height="322"></p>
+      <p align="center" ><font color="#FF0000">图2.5 扩展节点6和节点1得到的搜索图</font></p>
+      <p >&nbsp;</p>
+    
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

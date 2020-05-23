@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　（3）梵塔问题</font><br>
+        　　我们用递归算法解决梵塔问题，其算法很简单：假定要把n个盘子从A搬到C，则首先将A上的前（n－1）个盘子搬到B上，然后将A上的最后一个盘子搬到C上，最后将B盘上的（n－1）个盘子搬到C上。对于如何实现（n－1）个盘子的搬动问题，则借助于递归来实现，直到n等于1时才实现真正的搬动。可以证明，这样的搬动算法是可以满足要求的。</p>
+      <p>　　<font color="#000099">定义梵塔问题求解函数HANOI。其中参数a、b、c、n表示将在柱a上的n个盘子，通过柱b移动到柱c上。</font></p>
+      <p>（DEFUN HANOI（a b c n）<br>
+        <font color="#000099">当只有一个盘子时，直接将a上的盘子移动到c上。</font><br>
+        　　（COND（（＝n 1）（MOVE－DISK a c））<br>
+        <font color="#000099">其他情况下，通过递归调用，先将柱a上的n－1个盘子通过柱c移动到柱b上。</font><br>
+        　　　（T（HANOI a c b（－ n 1））<br>
+        <font color="#000099">再将柱a上的一个盘子移动到柱c上。</font><br>
+        　　　　（MOVE－DISK a c）<br>
+        <font color="#000099">最后再通过递归调用，将柱b上的n－1个盘子通过柱a移动到柱c上。</font><br>
+        　　　　　（HANOI b a c（－ n 1）））））</p>
+      <p><font color="#000099">函数MOVE-DISK只起显示的作用，表示出从柱from到柱to移动了一个盘子。</font><br>
+        （DEFUN MOVE－DISK（from to）<br>
+        　　（TERPRI）<br>
+        　　（PRINC&quot;Move Disk From&quot;）<br>
+        　　（PRINC from）<br>
+        　　（PRINC&quot;To&quot;）<br>
+        　　（PRINC to））<br>
+        为了显示盘子的搬动过程，利用MOVE－DISK函数将搬动盘子的次序显示出来，其中TERPRI是回车换行函数，PRINC是显示参数的函数。下面是n＝3时的求解结果：<br>
+        （HANOI 'a 'b 'c 3）<br>
+        MOVE DISK FROM A TO C<br>
+        MOVE DISK FROM A TO B<br>
+        MOVE DISK FROM C TO B<br>
+        MOVE DISK FROM A TO C<br>
+        MOVE DISK FROM B TO A<br>
+        MOVE DISK FROM B TO C<br>
+        MOVE DISK FROM A TO C<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

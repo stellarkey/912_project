@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><b>3.2 与或图的启发式搜索算法AO*</b> </p>
+      <p > 　　<font color="#CC0000"><img src="../images/009.gif" width="27" height="11">算法</font><font color="#000099">类似于普通图搜索中的<img src="../images/010.gif" width="16" height="13">算法。在<img src="../images/010.gif" width="16" height="13">算法中，对当前搜索图的&quot;前沿&quot;（即在OPEN表中的节点）节点进行评价，选取f值最小的节点进行扩展。回想一下，f是如何定义的？<br>
+        f(n) = g(n) + h(n)<br>
+        　　其中g(n)表示的是已经求得的从初始节点到当前节点n的路径耗散值，h(n)表示的是从n到目标节点的最优路径耗散值的估计值。所以对节点n的评价，实际上是对&quot;初始节点--节点n--目标节点&quot;这一条路径的评价。<br>
+        　　在与或图搜索中，由于&quot;与&quot;节点的存在，单纯对一个节点的评价已经不能反映解图的全面情况。与或图中的解图相当于普通图中的解路径。从上边所分析的，&quot;对节点n的评价，实际上是对'初始节点--节点n--目标节点'这一条路径的评价&quot;这一思路出发，我们可以很容易的想到，能否通过对局部解图进行评价，来达到类似于普通图中A*搜索的目的。AO*算法，正是这样的一种适用于与或图的搜索算法。</font></p>
+      <p>启发式的与或图搜索过程和普通图类似，也是通过评价函数f（n）来引导搜索过程。</p>
+      <p>　　对于与或图来说，由于局部图中有多个叶节点，不能像普通图搜索那样，通过对某一个节点的评价来实现对整个局部图的评价。在普通图搜索中，f(n)=g(n)+h(n)，表面上是对n的评价，实际上是对通过n的这条路径的评价。因此对于与或图搜索来说，就是通过对局部图的评价来选择待扩展的节点。</p>
+      <p>下面首先讨论<img src="../images/009.gif" width="27" height="11">算法本身，然后再通过示例说明搜索过程以及与<img src="../images/010.gif" width="16" height="13">算法的某些差别。</p>
+      <p><br>
+        1．<font color="#CC0000"><img src="../images/009.gif" width="27" height="11">算法</font></p>
+      <p><img src="../images/009.gif" width="27" height="11"><font color="#000099">算法可以划分为两个阶段。<br>
+        第一阶段：图生成过程，即扩展节点。<br>
+        对于每一个已经扩展了的节点，<img src="../images/009.gif" width="27" height="11">算法都有一个指针，指向该节点的后继节点中，耗散值小的那个连接符。图生成过程，就是从初始节点出发，按照该指针向下搜索，一直到找到一个未扩展的节点为止。然后扩展该节点。从下面的讨论可以知道，这实际上扩展的是一个耗散值最小的局部图。<br>
+        第二阶段：耗散值计算过程。<br>
+        这是一个逆向的计算过程。设n为最新被扩展的节点，该节点有m个外向连接符连接n的所有后继节点。则根据耗散值的计算公式，可以计算出节点n相对于每一个外向连接符的耗散值。从中选择一个最小值作为n的耗散值。并标记一个指针指向产生最小耗散值的外向连接符。对于n的父节点，进行同样的计算。重复这一过程，直到初始节点s为止。这时，从s出发，选择那些指针所指向的连接符得到的局部图，为当前耗散值最小的局部图。<br>
+        当连接符全部为1－连接符时，局部图就是一个路径，选择一个耗散值最小的局部图扩展，与第二章中从OPEN表中选择一个f值最小的节点扩展是一致的。</font></p>
+      <p>过程<img src="../images/009.gif" width="27" height="11">：<br>
+        1、建立一个搜索图G，G:＝s，计算q（s）＝h（s），IF GOAL（s）THEN M（s，SOLVED）；开始时图G只包括s，耗散值估计为h（s），若s是终节点，则标记上能解。<br>
+        2、Until s已标记上SOLVED，do：<br>
+        3、begin<br>
+        4、G′:＝FIND（G）；根据连接符标记（指针）找出一个待扩展的局部解图G′。<br>
+        5、n:＝G′中的任一非终节点；选一个非终节点作为当前节点。<br>
+        6、EXPAND（n），生成子节点集{nj}，计算q（nj）＝h（nj），其中nj G，G:＝ADD（{nj}，G），IF GOAL（nj） 
+        THEN M（nj， SOLVED）；对G中未出现的子节点计算耗散值，若有终节点则加能解标记，然后把n的子节点添加到G中。<br>
+        7、S:＝{n}；建立含n的单一节点集合S。<br>
+        8、Until S为空，do：<br>
+        9、begin<br>
+        10、REMOVE（m，S），<img src="../images/ts.gif" width="39" height="15">；这个m的子节点m<sub>c</sub>应不在S中。<br>
+        11、·修改m的耗散值q（m）：<br>
+        对m指向节点集{n1i，n2i，…，nki}的每一个连接符i分别计算qi：<br>
+        qi（m）＝Ci+q（n1i）+…+q（nki），<br>
+        q（m）:＝min qi（m）；对m的i个连接符，取计算结果最小的那个耗散值为q（m）。<br>
+        ·加指针到min qi（m）的连接符上，或把指针修改到min qi（m）的连接符上，即原来指针与新确定的不一致时应删去。<br>
+        ·IF M（nji， SOLVED） THEN M（m， SOLVED）；若该连接符的所有子节点都是能解的，则m也标上能解。<br>
+        12、IF M（m， SOLVED）∨（q（m）≠q0（m））<br>
+        THEN ADD（ma， S）；m能解或修正的耗散值与原先估算q0不同，则把m的所有先辈节点ma添加到S中。<br>
+        13、end<br>
+        14、end<br>
+        这个算法可划分成两个操作阶段：第一阶段是4-6步，完成自顶向下的图生成操作，先通过有标记的连接符，找到目前为止最好的一个局部解图，然后对其中一个非终节点进行扩展，并对其后继节点赋估计耗散值和加能解标记。第二阶段是7-12步，完成自下向上的耗散值修正计算、连接符（即指针）的标记以及节点的能解标记。<br>
+        耗散值的修正从刚被扩展的节点n开始，其修正耗散值q（n）取估计h（n）的所有值中最小的一个，然后根据耗散值递归计算公式逐级向上修正其先辈节点的耗散值，只有下层节点耗散值修正后，才可能影响上一层节点的耗散值，因此必须自底向上一直修正到初始节点。这由算法中的内循环过程完成，下面就用图3.1的例子来说明算法的应用过程。<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

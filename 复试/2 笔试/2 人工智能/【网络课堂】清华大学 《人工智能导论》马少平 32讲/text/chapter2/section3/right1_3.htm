@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　同深度优先算法一样，宽度优先算法也是从一般的图搜索算法变化而成。在深度优先搜索中，每次选择深度最深的节点首先扩展，而宽度优先搜索则正好相反，每次选择深度最浅的节点优先扩展。与深度优先算法不同的只是第7步，这里ADD（OPEN，<img src="../images/017.gif" width="15" height="13">）表示将<img src="../images/017.gif" width="15" height="13">类子节点放到OPEN表的后边，从而实现了对OPEN表中的元素按节点深度排序，只不过这次将深度浅的节点放在OPEN表的前面了，而深度深的节点被放在了OPEN表的后边。当问题有解时，宽度优先算法不但能一定找到解，而且在<font color="#CC0000">单位耗散</font>的情况下，可以保证找到最优解。</font></p>
+      <p ><font color="#CC0000">2．宽度优先</font><br>
+        过程BREADTH－FIRST－SEARCH<br>
+        ①G:=G0（G0=s），OPEN:=（s），CLOSED:=（ ）；<br>
+        ②LOOP：IF OPEN＝（ ）THEN EXIT（FAIL）；<br>
+        ③n:＝FIRST（OPEN）；<br>
+        ④IF GOAL（n）THEN EXIT（SUCCESS）；<br>
+        ⑤REMOVE（n，OPEN），ADD（n，CLOSED）；<br>
+        ⑥EXPAND（n）→{<img src="../images/016.gif" width="17" height="12">}，<br>
+        G:＝ADD（<img src="../images/016.gif" width="17" height="12">，G）；<br>
+        ⑦ADD（OPEN，<img src="../images/017.gif" width="15" height="13">），并标记<img src="../images/017.gif" width="15" height="13">到n的指针；把不在OPEN或CLOSED中的节点放在OPEN表的后面，使深度浅的节点可优先扩展。<br>
+        ⑧GO LOOP；</p>
+      <p>　　一般情况下，使用深度优先要对搜索深度事先给出某种限制。当问题有解时，这两种方法都能保证找到解（对于深度优先来说，这里假定深度限制是合适的），在单位耗散的条件下，宽度优先法还能保证找到最短路径。此外对复杂NP完全类问题，一般不可避免会产生指数爆炸问题。<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

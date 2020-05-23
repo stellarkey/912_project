@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#000099">前面提到过，PROLOG语言求解问题的方式与基于规则的逆向演绎系统非常类似。那么在与事实或者规则匹配时，PROLOG系统的搜索策略是什么呢？其基本的求解策略是：从上到下，从左到右，深度优先。也就是说，在寻找匹配的子句的时候，按照书写的顺序，从上到下搜索。在判断规则的若干个条件是否成立的时候，按照规则中子句的顺序，从左到右进行判断。在判断一个条件是否成立的时候，该条件是否成立可能与其他的规则或事实有关，这时按照深度优先的策略，一直进行下去，直到判断出该条件成立或者不成立为止。</font></p>
+      <p>　　则PROLOG按自上而下的次序对子句进行搜索，寻找句首与问题匹配的第一个子句。在该例中，首先与第一个子句匹配，其结果使得X＝john，Y＝bob，与句首匹配后，将偿试该子句的句体是否成功，因这时X与Y已有约束值，则句体变为child（John，Bob），由于它与任何其它的子句均不能匹配，因而失败，PROLOG自动进行回溯，重新寻找可匹配的子句，这样就搜索到了第二个子句，并与其句首匹配，使得X＝john，Z＝bob，而其句体成为child（john，Y）和descendant（Y，bob）。第一项刚好与child（john，mary）匹配，从而Y＝mary，第二项变成descendant（mary，bob）。不难得出它也不能匹配，故再次回溯，重新匹配第一项，使得第一项成为child（john，bill），第二项成为descendant（bill，bob），它与第一个子句的句首匹配，使其句体成为child（bill，bob），而它刚好有与其匹配的事实，故询问得到解答，回答yes。当询问中有变量存在时，其匹配过程与此相仿，只是当匹配成功之后，将变量的值显示出来。</p>
+      <p>　<font color="#000099">　cut符号&quot;！&quot;是用户能够控制PROLOG运行的唯一手段，使用得当的话，可以起到提高效率的作用。&quot;！&quot;像一个&quot;单通道&quot;一样，PROLOG系统一旦通过了它，就不能回溯到其前面去了，起到了阻止回溯的作用。</font></p>
+      <p>　　在PROLOG中使用符号&quot;！&quot;（读作cut）可以控制回溯，这对提高程序的运行效率带来很大的好处。当在询问中遇到&quot;！&quot;时，它象一座墙一样，阻止了PROLOG的回溯，使得回溯只能在它后面进行。例如，我们要查找tom的叔叔，可以询问：<br>
+        ？－father（－，tom），！，brother（－，Y）.<br>
+        　　其中符号&quot;－&quot;是虚变量，只起记录中间结果的作用。该询问首先查找tom的父亲，因每个人只有一个父亲，故不管后边匹配成功与否，都没有必要回溯对第一项寻找其它的解，这里的&quot;！&quot;就起到了阻止这种无用的回溯的作用。<br>
+        　　&quot;！&quot;在规则中有更强的作用，一旦&quot;！&quot;被求值后，它不仅起到了阻止回溯的作用，而且告诉PROLOG该子句是求解该问题的最后一个子句，即使还有其它的子句，PROLOG也不偿试与它们进行匹配。<br>
+        　　例如，我们要测试某人是否是一位男性，这有两种可能，一种可能是用事实直接记录了他是男性，另一种可能是目前没有直接记录他是一位男性，但通过记录的其它信息可判断他是否为一位男性，如看他是否为别人的父亲等。对于这两种情况，我们希望首先直接测试他是否为一位男性，当不能确定时，再通过其它信息来判断。为此，我们写出规则：<br>
+        maletest（M）：－is_male（M），!.<br>
+        maletest（M）：－father（M，－）.<br>
+        由于在第一个子句中有&quot;！&quot;，则如果能用第一个句子直接确定M是位男性的话，则不再使用第二个子句；只有当第一个子句匹配失败时，第二个子句才能被调用。 
+        <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

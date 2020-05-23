@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　（3）求值与赋值<br>
+        　　在LISP语言中，总是试图对任何S-表达式进行求值。在求值的过程中，有这样几个基本约定：（1）如果S-表达式是一个数字，则它的值就是数字本省。（2）如果S-表达式是一个文字原子，则它的值是在此之前，通过赋值函数赋给该原子的值。这与其他语言中的变量有些类似，赋给了它什么值，其值就是什么。（3）如果S－表达式是一个表，则该表被认为是一个函数。其中表的第一个元素是函数名，表的其他元素是该函数的参量。（4）符号&quot;'&quot;是阻止求值符号，如果一个S－表达式前面有符号&quot;'&quot;，则其值就是该S－表达式本身。<br>
+        下面通过例子说明LISP语言是如何求值的。为了说明的方便，假设原子x的值是(a b c)。<br>
+        （1）（CAR '（a b c））<br>
+        这是我们已经熟悉的形式。（CAR '（a b c））是一个表，系统将其看作是一个函数，CAR是函数名，'（a b c）是它的参量。对'（a 
+        b c）系统也要求值，系统要将对'（a b c）的求值结果，带入给CAR函数。由于有符号&quot;'&quot;的存在，'（a b c）的值就是（a 
+        b c），所以CAR的返回结果a。<br>
+        （2）（CAR （a b c））<br>
+        如果不使用&quot;'&quot;号会如何呢？在这种情况下，系统在对（a b c）求值时，将把（a b c）看作是一个函数，其中a是函数名，b、c是a的参数，同时还要对b和c进行求值。CAR将对a的返回值进行操作。如果这时候a不是一个函数名的话，系统将出现求解错误。同样，如果b和c中有一个没有值的话，系统也同样会出错。<br>
+        通过一个例子说明就清楚了。（CAR '（CDR x））和（CAR （CDR x））有什么样的区别？<br>
+        在（CAR '（CDR x））中，由于&quot;'&quot;的存在，'（CDR x）的求值结果是（CDR x），CAR对其操作的结果是CDR。而在（CAR 
+        （CDR x））中，（CDR x）是一个函数，其返回值是（b c），CAR对（b c）的返回值为b。<br>
+        （3）（CAR x）<br>
+        （CAR x）是一个表，系统将其看作是一个函数，CAR是函数名，x是它的参量。x也是一个S－表达式，系统也要求它的值，其值是（a b c）。因此该函数带入的真正参数是（a 
+        b c），CAR返回值a。如果这时写作（CAR 'x），相当于对文字原子x进行CAR操作，由于x是原子，不能进行CAR操作，所以系统将会出错。<br>
+        在LISP语言中，时刻要清楚被操作的对象是谁。比如是对x进行操作，还是对x的值进行操作，二者是根本不同的。</font></p>
+      <p>　　通过前面的介绍我们可以看到，LISP通过对以CAR或CDR开头的表进行求值，可以分离一个表结构，对以CONS等开头的表求值，达到构造表的目的，而对以＋、－、＊和／开头的表求值，则可以进行算术运算等。事实上，LISP总是试图对一切S－表达式进行求值，不仅对表这样，对原子也是如此。不过，表的值是通过函数运算得到的，而原子的值是事先通过赋值函数赋给它的。<br>
+        一个最基本的赋值函数是SET，它有两个参数，其功能是使得第二个参数成为第一个参数的值。例如：<br>
+        （SET 'A '（X Y））<br>
+        这样使得原子A具有值（X Y），而且可以在以后的调用中使用它的值。例如<br>
+        （CAR A）==&gt;X<br>
+        在这里，首先对A求值，得到表（X Y），然后将CAR作用于（X Y）得到返回值X。<br>
+        前面已经提到过，LISP总是试图对每一个S－表达式求值，但有时我们想要说明某些部分是原始数据，不需要对它们进行求值，前面已多次使用到的&quot;'&quot;号所起的就是这个作用&quot;'&quot;号告诉LISP，它后面的一个S－表达式是原始数据，不要对它们进行求值。请看下面两个例子，这里假定x的值是（a 
+        b c）。<br>
+        （CAR '（CDR x））==&gt;CDR<br>
+        （CAR（CDR x））==&gt;b<br>
+        第一个例子中，由于&quot;'&quot;号的存在，（CDR x）被认为是原始数据，不进行求值，CDR是它的第一个元素，因此CAR作用的结果得到CDR；第二个例子中，没有&quot;'&quot;号，首先对x求值得到（a 
+        b c），然后CDR作用于该表得到（b c），最后CAR作用得到b。<br>
+        再举几个例子，以加深对求值与不求值的理解。其中的&quot;；&quot;号，在LISP语言中表示注释。<br>
+        <font color="#000099">这里的几个例子更能充分说明弄清楚作用的对象是谁的重要性。<br>
+        给l赋值（a b c）。</font><br>
+        　（SET '1 '（a b c））；1得到值（a b c）<br>
+        <font color="#000099">对l的值进行CDR操作，得到（b c），将（b c）赋值给n。</font><br>
+        　（SET 'n '（CDR 1）；n得到值（b c）<br>
+        <font color="#000099">对l的值求CAR得到a，将x赋值给a。</font><br>
+        　（SET（CAR 1） 'x）；a得到值x<br>
+        <font color="#000099">对l的值和n的值进行APPEND操作。</font><br>
+        　（APPEND 1 n）==&gt;（a b c b c）<br>
+        <font color="#000099">将l和n组成一个表。</font><br>
+        　（LIST '1 'n）==&gt;（1 n）<br>
+        <font color="#000099">将l的值（a b c）和n组成一个表。</font><br>
+        　（LIST 1 'n）==&gt;（（a b c）n）<br>
+        <font color="#000099">将l的值（a b c）和n的值（b c）组成一个表。</font><br>
+        　（LIST 1 n）==&gt;（（a b c）（b c））<br>
+        正象这里看到的一样，我们经常遇到要为一个原子赋值，为了使用起来更方便，LISP中提供了另一个赋值函数SETQ，它同SET的功能一样，只是SETQ能自动地不对第一个参数求值。<br>
+        　（SETQ A '（x y））<br>
+        这样A将得到值（x y），它同<br>
+        　（SET 'A '（x y））<br>
+        等价。</p>
+      <p><font color="#000099">SETF是对&quot;指定的位置&quot;进行赋值的函数。如（假定x的值是（a b c））：<br>
+        （SETF（CAR x） 'c）<br>
+        （CAR x）指出了要赋值的是x的值的第一个元素那个&quot;位置&quot;，所以（SETF（CAR x） 'c）的结果是使得x变成了（c 
+        b c），即x的第一个元素由原来的a变成了c。<br>
+        注意与（SET（CAR x） 'c）的区别。在（SET（CAR x） 'c）中，是将a的值赋值为c，x的值保持不变。</font></p>
+      <p>COMMON LISP中提供的另一个赋值函数是SETF，它具有很强的功能，除能代替SETQ使用外，还能为某个具体的位置赋值。<br>
+        （SETF x '（a b））；x赋值为（a b）<br>
+        （SETF（CAR x） 'c）；x的CAR部分被c代替了，也就是说x变为（c b）了。
+        
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

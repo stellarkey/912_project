@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="16" topmargin="10" marginwidth="16" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >例如以下事实：<br>
+        老王是小王的双亲之一<br>
+        老赵是小王的双亲之一<br>
+        老王是位男性<br>
+        老赵是位女性<br>
+        可以表示为：</p>
+      <p><font color="#000099">这里的parent、male、female等关系名，并不是PROLOG语言所规定的关键词，是用户自己定义的，就如同在其他语言中定义函数一样。</font></p>
+      <p>parent（old-wang. wang）.<br>
+        parent（old-zhao wang）.<br>
+        male（old-wang）.<br>
+        femal（old-zhao）.</p>
+      <p>一条规则可以由一个完整的句子表示，例如，规则&quot;如果X、Y是Z的双亲，并且X是位男性，Y是位女性，则X是Y的丈夫。&quot;用子句表示出来就是<br>
+        husband（X，Y）：－parent（X，Z），<br>
+        parent（Y，Z），<br>
+        male（X），<br>
+        female（Y）.<br>
+        其中句体中的&quot;，&quot;号表示项与项之间是&quot;与&quot;的关系。而子句与子句之间是&quot;或&quot;的关系。如关于双亲关系，我们可以定义如下：<br>
+        parent（X，Y）：－mother（X，Y）.<br>
+        parent（X，Y）：－father（X，Y）.<br>
+        其含义为&quot;如果X是Y的母亲，则X是Y的双亲之一，或者X是Y的父亲，则X是Y的双亲之一&quot;。<br>
+        PROLOG允许递归定义，通过递归，可以定义出很多我们所需要的规则。例如，整数N的阶乘可以表示为<br>
+        0！＝1<br>
+        1！＝1<br>
+        N！＝N＊（N－1）！<br>
+        若我们用factorial（N，M）表示N的阶乘为M，则factorial可以定义为</p>
+      <p><font color="#000099">用事实表示0的阶乘为1，1的阶乘为1。</font><br>
+        factorial（0，1）.<br>
+        factorial（1，1）.<br>
+        <font color="#000099">如果N1是N－1，且N1的阶乘是M1，且M是N×M1，则N的阶乘是M。</font><br>
+        factorial（N，M）：－ N1 is N－1，<br>
+        factorial（N1，M1），<br>
+        M is N＊M1.<br>
+        其中is的功能是使得其左边的变量得到右边的算术表达式的值。<br>
+        运用表模式，我们还可以定义出许多表处理的关系。例如，假定我们用append（L1，L2，L）表示表L是表L1与L2合并得到的结果表。则其定义如下：</p>
+      <p><font color="#000099">一个空表与表L合并，其结果还是表L。</font><br>
+        append（[ ]，L，L）.<br>
+        <font color="#000099">如果表T<sub>1</sub>与表L合并，结果为T<sub>2</sub>的话，则非空表[H |T<sub>1</sub>]与表L合并，结果为[H |T<sub>2</sub>]。也就是说，结果表的表头是第一个表的表头，结果表的表尾，是第一个表的表尾与第二个表的合并结果。</font><br>
+        append（[H |T<sub>1</sub>]，L，[H |T<sub>2</sub>]）：－append（T<sub>1</sub>，L，T<sub>2</sub>）.<br>
+        第一个子句是说，如果一个空表与表L合并，则结果表就是L本身；第二个子句是说，如果一个非空表[H |T<sub>1</sub>]与表L合并，则结果表的表头应是第一个表的表头H，结果表的表尾T<sub>2</sub>是第一个表的表尾T<sub>1</sub>与第二个表L合并得到的结果表。<br>
+        PROLOG程序的执行是通过询问实现的，询问是通过如下形式的只有句体的子句实现的：<br>
+        ？－P1，P2，…，Pk<br>
+        它表示&quot;P1∧P2∧…∧Pk为真吗？&quot;其中Pi中可以含有变量，当询问成功时，系统给出这些变量的值。例如</p>
+      <p><font color="#000099">询问：表[1，2]与表[3，4]可以合并为一个表吗？</font><br>
+        ？－append（[1，2]，[3，4]，L）.<br>
+        <font color="#000099">该结果表示，表[1，2]与表[3，4]可以合并为一个表（yes表示出了这一点），其结果为L＝[1，2，3，4]。<br>
+        L＝[1，2，3，4]</font><br>
+        yes<br>
+        下面我们通过一个例子来说明PROLOG是如何进行工作的。假设关于Y是X的后代的子句定义如下：<br>
+        descendant（X，Y）：－child（X，Y）<br>
+        descendant（X，Z）：－child（X，Y），descendant（Y，Z）<br>
+        也就是说，&quot;若Y是X的孩子则Y为X的后代，或者若Y是X的孩子，而Z是Y的后代，则Z是X的后代。&quot;，并且已知以下事实：<br>
+        child（john，mary）.<br>
+        child（john，bill）.<br>
+        child（bill，bob）.<br>
+        child（bill，susan）.<br>
+        这时若询问以下问题：<br>
+        ？－descendant（john，bob）.<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

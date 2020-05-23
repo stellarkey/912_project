@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="16" topmargin="10" marginwidth="16" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">　　2．基本函数</font></p>
+      <p>　　<font color="#000099">LISP语言是一种函数型的语言，就如同其他语言中的语句一样，LISP语言提供了一些基本的函数。<br>
+        　　在LISP语言中，所有的函数都以前缀的形式用表表示。也就是说，表的第一个元素是函数名，其他元素是该函数的参量。如&quot;a＋b&quot;表示为：（＋ 
+        a b）等。函数之间可以嵌套，如&quot;a＋b×c&quot;表示为：（＋ a （* b c）），当然也可以表示为：（＋ （* b c） 
+        a）。</font></p>
+      <p>　　LISP语言不同于PASCAL、FORTRAN等过程型语言，它是一种函数型语言，一切功能由函数实现，一个LISP程序就是一些函数的集合。<br>
+        　　所有LISP函数都以表的形式出现，并使用前缀表示方式，每个函数都有一个回送值。</p>
+      <p>　　<font color="#000099">（1）算术函数<br>
+        </font>　　算术运算虽不是LISP语言的特长，但由于它比较简单，大家又比较熟悉，因此我们首先从介绍算术函数开始。<br>
+        算术函数的使用比较简单，只须将要计算的算术表达式转化成相应的前缀形式，用表表示出来就可以了。例如要计算3＋5，只要表示为<br>
+        （＋ 3 5）<br>
+        就可以了。<br>
+        相应地，（＊ 3 5）计算的是3×5，（／ 3 5）计算的是3/5等。由于LISP的函数允许嵌套使用，因而可以计算更为复杂的算术表达式。例如<br>
+        （＋（＊ 3 5）（／ 4 2））==&gt;17<br>
+        其中&quot;==&gt;&quot;是为了书写的方便而加上的，它表示&quot;==&gt;&quot;后面的数字是前面函数的返回值。</p>
+      <p>　　<font color="#000099">（2）表处理函数<br>
+        　　表处理函数是LISP语言的最基本的函数，这里列举的是一些最常用的表处理函数。</font></p>
+      <p>LISP语言中提供的大部分函数都是与表处理有关的，这里首先介绍一些最常用到的表处理函数。<br>
+        函数CAR的功能是将表的第一个元素作为它的返回值。例如<br>
+        （CAR '（a b c））==&gt;a<br>
+        （CAR '（（a b） c））==&gt;（a b）<br>
+        式中符号&quot;'&quot;表示禁止求值之意，后面还要加以说明。<br>
+        第一个例子中，a是表（a b c）的第一个元素，因此CAR的返回值是a；第二个例子中，表（（a b）c）的第一个元素是表（a b），因而求CAR的结果是得到（a 
+        b）。<br>
+        CDR是和CAR相对应的函数，它的返回值是一张表，该表中包含原来表中除第一个元素以外的所有元素。例如<br>
+        （CDR '（a b c））==&gt;（b c）<br>
+        （CDR '（（a b）c））==&gt;（c）<br>
+        同算术函数一样，表处理函数也可以嵌套使用。例如，求表的第二个元素可以这样进行：<br>
+        （CAR（CDR '（a b c）））==&gt;b<br>
+        由于经常用到类似于这样的CAR、CDR的组合，为了方便，LISP中提供了形如C××R和C×××R这样的缩写形式，其中每一个×，要么是A---表示CAR，要么是D---表示CDR。这样，上例可以简写为<br>
+        （CADR '（a b c））==&gt;b<br>
+        函数CONS有两个函数，当第二个参数是原子时，CONS的功能是将两个参数形成一个点对。 <br>
+        （CONS 'a 'b）==&gt;（a·b）<br>
+        当CONS的第二个参数是一个表时，CONS的功能是将第一个参数作为一个元素，插入到第二个参数中。<br>
+        （CONS 'a '（b c））==&gt;（a b c）<br>
+        （CONS '（a b） '（c d））==&gt;（（a b）c d）<br>
+        函数LIST的参数可以有任意多个，其功能是将这些参数作为表的元素组成一个表。<br>
+        （LIST 'a 'b 'c）==&gt;（a b c）<br>
+        （LIST（CAR '（X Y））（CDR '（a b）））==&gt;（X（b））<br>
+        函数APPEND可以将两个表联结成为一个表。新表的元素由原来两个表的所有元素组成。<br>
+        （APPEND '（a b） '（c d））==&gt;（a b c d）<br>
+        CONS、LIST和APPEND是三个最常用到的构造表的函数，由于其功能相近，极易混淆，请注意其区别。<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

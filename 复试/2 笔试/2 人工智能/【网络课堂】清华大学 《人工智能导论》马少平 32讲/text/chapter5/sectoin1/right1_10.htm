@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">6．程序设计举例</font></p>
+      <p ><font color="#000099">　　（1）快速排序</font><br>
+        　　排序是经常遇到的一种操作，它有很多不同的算法，下面我们通过快速排序的例子，来说明如何用LISP编写排序程序。<br>
+        　　快速排序的思想是这样的：首先以表的第一个元素x为基准，将表中比x大的元素放入一个表中，把比x小的元素放入另一个表中，然后将这两个表分别进行排序，并将排序结果同x一起进行合并，作为总的排序结果回送。</p>
+      <p>　　<font color="#000099">为了定义快速排序程序QUICK-SORT函数，首先定义两个辅助函数LARGE和SMALL。其中LARGE的功能是得到表L中比L的第一个元素大的所有元素，而SMALL则是得到L中小于等于L的第一个元素的所有元素（但不包括L的第一个元素）。为了叙述的方便，前者记做large，后者记做small，而L的第一个元素记做first。QUICK-SORT通过递归的方式定义，其思想是（假定按从大到小的方式排序）：如果large的排序结果是large－sort，small的排序结果是small－sort，则对L的排序结果是将large－sort、first和small－sourt按顺序合并在一起。其中的&quot;将large－sort、first和small－sourt按顺序合并在一起&quot;体现了按从大到小顺序排列，如果改为&quot;将small－sort、first和large－sort按顺序合并在一起&quot;则是按从小到大顺序排列。</font></p>
+      <p>（DEFUN QUICK-SORT）（L）<br>
+        （COND（（NULL L）NIL）<br>
+        （T（APPEND（QUICK-SORT（LARGE L））<br>
+        （LIST （CAR L））<br>
+        （QUICK-SORT（SMALL L））））））<br>
+        （DEFUN LARGE（L）<br>
+        （MAPCAN '（LAMBDA（x）<br>
+        （COND（（＞ x（CAR L））（LIST x））<br>
+        （T NIL）））<br>
+        （CDR L）））<br>
+        （DEFUN SMALL（L）<br>
+        （MAPCAN '（LAMBDA（x）<br>
+        （COND（（＜＝x（CAR L））（LIST x））<br>
+        （T NIL）））<br>
+        （CDR L）））<br>
+        　　函数QUICK－SORT是进行快速排序的主函数，LARGE用来求出L中比L的第一个元素大的所有元素，SMALL用来求出L中小于等于L的第一个元素的所有元素。<br>
+        　　其中，MAPCAN函数是一个系统函数，其功能基本同MAPCAR，只是在完成MAPCAR之后，MAPCAN对MAPCAR的回送值s进行一些处理，其处理方法是：若s的某个元素是表，则该表的元素是MAPCAN的回送表中的元素，若s的某个元素是NIL或原子，则该元素不在MAPCAN的回送表中出现。<br>
+        试比较以下两个结果：<br>
+        （MAPCAR 'CAR '（（（a）b）（x y）（NIL z）（（1 2）3）））<br>
+        ==&gt;（（a）x NIL（1 2））<br>
+        （MAPCAN 'CAR '（（（a）b）（x y）（NIL z）（（1 2）3）））<br>
+        ==&gt;（a 1 2）<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

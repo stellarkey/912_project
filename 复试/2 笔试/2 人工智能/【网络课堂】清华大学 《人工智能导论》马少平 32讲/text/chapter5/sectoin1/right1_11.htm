@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　（2）形式微分<br>
+        </font>　　<font color="#000099">所谓形式微分，就是对于给定的一个函数，给出它的符号形式表示的微分式。比如对于函数：</font><br>
+        <font color="#000099">其微分为：</font></p>
+      <p ><font color="#006633">（下式属于注释部分）</font><br>
+        　f<sup>'</sup>(x)=2x+b<br>
+        <font color="#000099">为了利于用LISP语言求解，数学式用前缀形式表示。如上例中f(x)表示为：<br>
+        （＋ （<sup>*</sup>x x）（＋ （<sup>*</sup>b x） c））<br>
+        用（D e x）表示公式e对x求微分。如：<br>
+        （D '（＋ （<sup>*</sup>x x）（＋ （<sup>*</sup>b x） c）） 'x）<br>
+        表示f(x)对x求微分。<br>
+        　　对于每一个像&quot;＋&quot;、&quot;×&quot;这样的运算符，用匿名函数的形式，将其微分规则存储于相应的运算符的d特性中，在具体用到该运算符的微分规则时，通过取特性值的方式得到其微分规则。</font><br>
+        　　所谓形式微分，就是符号微分，它是和数字微分相对应的，它要求输入是一个数学式子，输出是对该数学式子的微分。为了方便起见，约定数学式子全部用前缀形式表示。若用（D 
+        e x）来表示e对x的微分，则函数D可以定义如下：<br>
+        　　<font color="#000099">定义微分函数D。其最简情况是，当被微分公式是一个原子时，如果该原子与被微变量相等则结果为1，否则为0。其他情况下，取公式e的运算符所对应的微分规则，通过APPLY函数，将该微分规则作用于公式e和被微变量x。</font><br>
+        （DEFUN D（e x）<br>
+        　　（COND（（ATOM e）（IF（EQ e x）1 0））<br>
+        　　　　（T（APPLY（D-RULE（CAR e））<br>
+        　　　　　　（APPEND（CDR e）（LIST x））））））<br>
+        　　其中，D－RULE是一个获取给定操作符的微分规则的函数。微分规则的存放，是通过为相应操作符建立d特性的方法完成的，因而D－RULE的定义很简单：<br>
+        （DEFUN D－RULE（operator）<br>
+        （GET operator 'd））<br>
+        　　操作符的d特性值，事先用SETF函数建立好。例如，对于加法和乘法在数学上有<br>
+        <img src="../images/51003.gif" width="139" height="37"></p>
+      <p ><img src="../images/51004.gif" width="159" height="37"><br>
+        则用LISP表示出来就是：</p>
+      <p><font color="#000099">通过乘法的微分规则来说明如何用匿名函数表示微分规则。根据微分公式：</font><br>
+        <font color="#006633">（下式为注释部分）</font></p>
+      <p><img src="../images/51005.gif" width="159" height="37"><br>
+        <font color="#000099">按照该公式，乘法的微分规则可以表示为：<br>
+        （＋（* （D u x） v）（* （D v x） u）））））<br>
+        这里的&quot;＋&quot;、&quot;*&quot;运算符，只是表示出一个符号，并不需要真正的数学运算，而（D u x）、（D v 
+        x）需要用du/dx和dv/dx的求解结果带入，u和v也要用实际参数值带入。所以最终的乘法微分规则表示为：<br>
+        `（＋（* ,（D u x） ,v）（* ,（D v x） ,u）））））<br>
+        这里的符号&quot;`&quot;，达到了不对运算符&quot;＋&quot;、&quot;*&quot;求值的目标，而&quot;,&quot;号则达到了对（D 
+        u x）、（D v x）、u、v求值，将实际的求值结果带入的目的。</font></p>
+      <p>（SETF（GET '＋ 'd） '（LAMBDA（u v x）<br>
+        `（＋ ,（D u x） ,（D v x））））<br>
+        （SETF（GET '* 'd） '（LAMBDA（u v x）<br>
+        `（＋（* ,（D u x） ,v）<br>
+        （* ,（D v x） ,u）））） <br>
+        有了这些规则之后，我们就可以求形式微分了，例如<br>
+        （D '（＋（＊2 x）（* x x）） 'x）<br>
+        ==&gt;（＋（＋（＊ 0 x）（＊ 1 2））（＋（＊ 1 x）（* 1 x）））<br>
+        该结果虽然没有得到化简，但显然是正确的。<br>
+        这个程序的好处是，在增加新的操作符时，不需对程序本身进行修改，只需要对新的操作符添加上相应的微分规则就可以了。下面通过增加&quot;／&quot;（除法）操作符的例子，说明如何添加微分规则。<br>
+        首先写出&quot;／&quot;的数学上的微分法则：</p>
+      <p><img src="../images/51006.gif" width="148" height="37"><br>
+        第二步，用涉及到的参量u、v、x作为形参，用LAMBDA式子表示出等号右边的内容，其中ds用（D s x）代替：<br>
+        （LAMBDA（u v x）<br>
+        （／（－（＊v（D u x））（＊u（D v x）））<br>
+        （＊v v）））<br>
+        然后在LAMBDA式的定义体的最外层加符号&quot;`&quot;，在u、v、（D u x）和（D v x）前加&quot;,&quot;号（在（D 
+        u x）、（D v x）内的u、v前不加&quot;,&quot;号）：<br>
+        （LAMBDA（u v x）<br>
+        `（／（－（* ,v ,（D u x））（* ,u ,（D v x）））（* ,v ,v）））<br>
+        最后，将上述LAMBDA式子赋给／的d特性：<br>
+        （SETF（GET 'd '/） '（LAMBDA（u v x）<br>
+        `（∕（－（＊ ,v ,（D u x））<br>
+        （＊ ,u ,（D v x）））<br>
+        （＊ ,v ,v））））<br>
+        这样就完成了一条新规则的加入。 </p>
+      
+      
+      </td>
+  </tr>
+</table>
+</body>
+</html>

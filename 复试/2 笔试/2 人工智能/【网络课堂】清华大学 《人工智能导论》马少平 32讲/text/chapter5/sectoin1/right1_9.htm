@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">5．特性</font></p>
+      <p>　　<font color="#000099">在LISP语言中，文字原子除了具有平时我们所说的值外，还可以有特性值。不同的特性可以具有不同的值。这有些像C语言中的结构，用域来区分不同的值。</font></p>
+      <p>　　在LISP中，文字原子允许有特性值，并且允许每个原子具有多个不同的特性值。特性的使用，为解决许多问题带来了方便。例如，要进行人事管理，就要记录人的年龄、性别等，为此，我们可以用sex特性来记录性别，而用age特性记录年龄。<br>
+        假设Wang的age特性为60，sex特性为male，则可以用GET函数分别得到其特性值：<br>
+        　　（GET 'Wang 'age）==&gt;60<br>
+        　　（GET 'Wang 'sex）==&gt;male<br>
+        组合使用SETF和GET，可以为某个原子的特性赋值，如为LI的age特性赋值50：<br>
+        　　（SETF（GET 'LI 'age）50）<br>
+        　　最后，作为一个应用特性的例子，我们定义一个判断两个集合是否相等的函数，其中特性的使用降低了算法的复杂性。但在这里，我们假定了集合的元素只是由文字原子组成的。</p>
+      <p>　　<font color="#000099">该例子通过赋特性的方法判断两个集合是否相等。其原理是：首先对第一个集合的每一个元素的set特性赋值为T，然后再看第二个集合中的每一个元素是否都具有该特性值，如果有，并且两个集合的元素数是相等的，则说明这两个集合相等，否则不相等。</font></p>
+      <p>　　（DEFUN SET－EQUAL（set1 set2）<br>
+        <font color="#000099">利用MAPCAR函数对集合set1中每个元素的set特性赋值为T。</font><br>
+        　　（MAPCAR '（LAMBDA（x）<br>
+        　　（SETF（GET x 'set）T））set1）<br>
+        <font color="#000099">利用EVERY函数检查集合set2中的所有元素是否具有该特性值，并且两个集合是否长度相等（元素数一样）</font><br>
+        　　（COND（（AND（EVERY '（LAMBDA（x）<br>
+        　　（GET x 'set））set2）<br>
+        　　（＝（LENGTH set1）（LENGTH set2）））<br>
+        <font color="#000099">如果满足上面两个条件，说明两个集合相等，则将集合set1中元素的set特性值赋值为NIL，返回T值，结束。</font><br>
+        　　（MAPCAR '（LAMBDA（x）<br>
+        　　（SETF（GET x 'set）NIL））set1）T）<br>
+        <font color="#000099">如果不满足上面的两个条件，说明两个集合不相等，则将集合set1中元素的set特性赋值为NIL，返回NIL，结束。</font><br>
+        　　（T（MAPCAR '（LAMBDA（x）<br>
+        　　（SETF（GET x 'set）NIL））set1）NIL）））<br>
+        　　在定义中，我们首先用MAPCAR为set1的每个元素赋set特性值为T，然后进行判断，当集合set1和set2的元素个数相等，并且set2的每个元素的set特性值均为T时，则集合set1和set2相等，先删除set1所有元素的set特性值，然后回送值T；否则也先删除set1所有元素的set特性值，然后回送值NIL。其中函数EVERY的功能是将它的第一个参数（通常是一个函数名）依次作用到第二个参数（通常是一张表）的每个元素上，当得到的每个结果均为非NIL时回送值为T，否则为NIL。<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

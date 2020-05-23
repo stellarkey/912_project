@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　<font color="#990000">（2）函数的迭代定义</font></font></p>
+      <p>　　<font color="#000099">迭代相当于其他语言中的循环，由于LISP语言一切均为函数，所以其迭代也是通过函数实现的。</font></p>
+      <p>　　迭代也是一种主要的函数定义手段，尤其是熟悉象PASCAL这样的过程型语言的用户，可能更习惯于使用迭代而不是递归。使用迭代往往比使用递归效率高和节省内存，但有些问题使用递归要比使用迭代简单、明了。如上面定义过的COUNTATOMS函数，若只单纯地使用迭代，其定义要复杂得多。而且递归是&quot;纯&quot;的LISP定义手法，迭代只是为了增加更多的定义手段才增加到LISP中来的。<br>
+        　　最常用到的迭代，是通过PROG函数实现的，PROG函数本身没有什么具体的含义，它只起到一种可以进行迭代的媒介作用。在PROG函数内，可以使用GO函数转到某个给定的标号，也可以通过RETURN函数退出PROG，并使得PROG的返回值为RETURN的参量值。<br>
+        例如，使用PROG迭代定义阶乘函数：<br>
+        <font color="#000099">这里给出的是使用迭代方法，而非递归方法定义的阶乘函数。</font><br>
+        （DEFUN N！（n）<br>
+        <font color="#000099">通过PROG函数实现迭代，其中的（（result 1））定义了一个局部变量result，其初始值为1。该变量只在PROG函数内部有效。在这里变量result用于记录计算的结果。</font><br>
+        （PROG（（result 1））<br>
+        <font color="#000099">LOOP为循环标记，可以通过GO函数返回到这里。LOOP只是一个标记，也可以使用其他的符号表示。这种标记只可以在PROG（或者其他与PROG类似的函数）内部使用。</font><br>
+        LOOP<br>
+        <font color="#000099">通过条件函数COND定义，当n为0或为1时，回送结果result。其中函数RETURN是跳出PROG的函数。</font><br>
+        （COND（（＝ n 0）（RETURN result））<br>
+        （（＝n 1）（RETURN result））<br>
+        <font color="#000099">其他情况下，将n乘以result，并使得n等于n－1，通过GO函数，跳转到LOOP处，循环执行。</font><br>
+        （T（SETQ result（＊ n result））<br>
+        （SETQ n（－ n 1））<br>
+        （GO LOOP）））））<br>
+        紧跟在PROG后面的表，说明了result是一个局部变量，其初始值为1，下面的LOOP是一个标号，当n＝0或n＝1时，通过RETURN函数，回送result的值，其它情况，将n乘到result上去，并得到n减1，使用GO函数返回到标号LOOP，如此循环往复，直到结束为止。</p>
+      <p><font color="#000099">MAP类函数是LISP语言提供的另一类处理迭代的函数，这类函数的特征是函数名均以MAP开头。当以表的元素为循环主题时，这类函数往往用起来会非常简练和方便。</font></p>
+      <p>LISP中还提供了一类隐式迭代函数，这一类函数的函数名均以MAP开头，故称它们为MAP类函数。MAP类函数的一个典型代表是MAPCAR函数。<br>
+        MAPCAR函数的第一个参量是一个要调用的函数名，其它参量均为表，其它参量的个数等于第一个参量（它是一个函数名）所需要的参量数。MAPCAR的功能是，从第二个参量开始，依次取出各个参量的第i个元素（1≤i≤n，n是各个参量中最短的那个表的长度），然后把它们作为第一个参量的参量进行求值，每次求值的结果形成一张表作为MAPCAR的回送值。</p>
+      <p><font color="#000099">图5.3给出了（MAPCAR '＋ '（1 2 3） '（4 5 6））的操作示意图。该图表示，MAPCAR函数依次从两个表中取出对应位置的元素，对他们实行&quot;＋&quot;操作（由MAPCAR函数的第一个参数&quot;'+&quot;指定），并将计算结果组成一个表。</font></p>
+      <p align="center"><img src="../images/rl5.3.gif" width="400" height="400"></p>
+      <p>（MAPCAR '＋ '（1 2 3） '（4 5 6））==&gt;（5 7 9）<br>
+        它的作用方式可用图5.3表示。<br>
+        下面，我们使用MAPCAR函数，给出前面已经定义过的COUNTATOMS函数的更简洁的定义。<br>
+        <font color="#000099">该例子重写了前面已经定义过的COUNTATOMS函数。在这里使用MAPCAR函数，并与递归相结合，可以看出定义是多么的简练。</font><br>
+        （DEFUN COUNTATOMS（s）<br>
+        （COND（（ATOM s）1）<br>
+        （T（APPLY '＋（MAPCAR 'COUNTATOMS s）））））<br>
+        这里我们用到了APPLY函数，通常APPLY有两个参量，第一个参量是一个函数名，第二个参量是一张表，APPLY的功能是将表中的所有元素做为函数的参量进行求值，并将函数的返回值作为其自己的返回值。 
+        <br>
+        （SETQ L '（1 2））<br>
+        （APPLY '＋ L）==&gt;3</p>
+      <p><font color="#000099">LAMBDA表达式可以定义匿名函数。匿名函数常与MAPCAR等需要函数名作为参数的函数一起使用。LAMBDA函数以匿名的方式定义了一个函数。</font></p>
+      <p>有时为了完成更复杂一些的操作，在MAPCAR函数中经常要用到LAMBDA式子。LAMBDA式子可以定义匿名函数，凡是在要求用函数名作为参量的地方，均可以用LAMBDA式子代替。<br>
+        LAMBDA式子的格式如下：<br>
+        （LAMBDA（＜形参表＞）{＜函数定义体＞}）<br>
+        作为使用LAMBDA的例子，我们把COUNTATOMS重新定义如下：<br>
+        （DEFUN COUNTATOMS（s）<br>
+        （APPLY '＋（MAPCAR '（LAMBDA（x）<br>
+        （COND（（ATOM x）1）<br>
+        （T（COUNTATOMS x））））s）））<br>
+        该定义的思路是：将s中的各个元素交给MAPCAR去处理，若某个元素是原子，就记数1，若不是原子（一定是表）就递归调用COUNTATOMS来处理，然后将计算结果加起来作为COUNTATOMS的返回值。 
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

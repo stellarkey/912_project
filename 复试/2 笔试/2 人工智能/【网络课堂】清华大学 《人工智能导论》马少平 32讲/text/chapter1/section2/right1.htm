@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt"> 
+      <p ><b>1.2 产生式系统的基本过程</b></p>
+      <p >　　<font color="#000099">这里给出的只是产生式系统求解过程的一个框架，并没有涉及具体的算法。其中第四步&quot;在规则集中，选某一条可应用于DATA的规则R&quot;是求解过程的关键部分，搜索策略决定了如何选择规则，将在下一章具体介绍。<br>
+        为了使读者对产生式系统的求解过程有一个更明确的概念，我们给出一个简单的例子。<br>
+        例：设字符转换问题规则如下：<br>
+        A∧B→C<br>
+        A∧C→D<br>
+        B∧C→G<br>
+        B∧E→F<br>
+        D→E<br>
+        已知：A，B<br>
+        求：F<br>
+        首先用产生式系统来描述该问题。<br>
+        （1）综合数据库<br>
+        综合数据库用集合{x}表示，其中x为字符。<br>
+        （2）规则集<br>
+        该问题比较简单，因为问题本身已经给出了字符的转换规则，我们用&quot;IF ～ THEN ～&quot;的形式表示如下：<br>
+        1，IF A∧B THEN C<br>
+        2，IF A∧C THEN D<br>
+        3，IF B∧C THEN G<br>
+        4，IF B∧E THEN F<br>
+        5，IF D THEN E<br>
+        （3）控制策略<br>
+        控制策略简单的说，就是选择规则的方法，我们这里采用按照规则的自然顺序选择规则的方法。这种策略称为顺序排队。<br>
+        （4）初始状态<br>
+        {A，B}，A、B是已知条件。<br>
+        （5）结束条件<br>
+        F∈{x}，当目标F在综合数据库中出现时，则F被求得。<br>
+        在介绍求解过程之前，为了方便叙述，我们首先介绍两个术语。</font><br>
+        <font color="#CC0000">可触发规则：</font><font color="#000099">当一个规则的前件被综合数据库中的数据满足时，该规则称为可触发规则。 
+        </font><br>
+        <font color="#CC0000">被触发规则：</font><font color="#000099">从可触发规则中选择一个规则来执行，被执行的规则称为被触发规则。<br>
+        该问题的求解过程，如下表所示。</font><br>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="250">
+          <param name=movie value="../../flash/F1-1.swf">
+          <param name=quality value=high>
+          <embed src="../../flash/F1-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="250">
+          </embed> 
+        </object> </p>
+      <p >　　<font color="#000099">A、B是已知的条件，一开始就在综合数据库中。此时只有规则1是可触发的。由于只有一个可触发规则，所以选择规则1执行。规则1的执行结果得到C，C被加入到综合数据库中。由于有了C，使得规则2和规则3成为可触发规则（此时规则1的前件虽然也同样可以被满足，由于该规则已经被执行过，而且其当前的触发条件并没有改变，与他被执行时的条件是一样的，所以规则1不在可触发规则之列）。此时可触发规则有两条，按照顺序排队策略，排在前面的规则优先执行，所以选择规则2为被触发规则。规则2的执行结果产生了D，D被加入到综合数据库中。依次类推，规则3、规则5和规则4先后被执行，最终产生了F。从而F被求得，结束运行。</font></p>
+      <p>用产生式系统求解八数码游戏和M－C问题这一类问题时，其基本算法可写成如下形式：<br>
+        过程PRODUCTION<br>
+        1．DATA←初始数据库<br>
+        2．until DATA满足结束条件以前，do：<br>
+        3．begin<br>
+        4．在规则集中，选某一条可应用于DATA的规则R<br>
+        5．DATA←R应用到DATA得到的结果<br>
+        6．end<br>
+        这个过程是不确定的，因为在第4步没有明确规定如何挑选一条合用的规则，但该过程来求解问题，实际上就是一个搜索过程。<br>
+        下面先简要介绍控制策略的问题，下一章再详细讨论各种搜索策略的具体算法。<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

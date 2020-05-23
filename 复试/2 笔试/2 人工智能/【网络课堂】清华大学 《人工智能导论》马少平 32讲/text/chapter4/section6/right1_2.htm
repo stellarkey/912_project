@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#CC0000">猴子摘香蕉问题</font><font color="#000099">是一个典型的规划问题，下面要介绍的就是如何用归结法求解规划问题的方法。从方法上来说，用归结法求解规划问题并没有什么特殊性，采用的还是提取问题的答案的方法。也就是说，通过修改证明树，获取问题的答案。我们希望该答案得到的就是规划问题的解。为此，巧妙的在谓词表达式中引入一个状态项s，该状态可以表示猴子在做了一个动作之后系统所处于的状态。同时还引入了pushbox（x，s）、climbbox（s）和grasp（s）三个函数，分别表示在状态s下，猴子将箱子推到x位置、猴子爬到箱子上和猴子摘香蕉三个动作。用ONBOX（s）、AT（x，y，s）和HB（s）三个谓词分别表示在状态s下，猴子是否在箱子上、x是否在y位置和猴子是否摘到了香蕉。<br>
+        这样，当问题简化为a＝b时（即初始状态下认为猴子和箱子在同一个位置），问题可以用谓词描述为：<br>
+        （1）初始状态<img src="../images/46003.gif" width="15" height="15">下，&quot;猴子不在箱子上&quot;，表示为：<br>
+        ~ONBOX（<img src="../images/46003.gif" width="15" height="15" align="top">）<br>
+        （2）对于任何状态s和任何位置x，如果在状态s下&quot;猴子不在箱子上（~ONBOX（s））&quot;，则经过动作&quot;把箱子推到位置x（pushbox（x，s））&quot;后的下一个状态，&quot;箱子在x处（AT（box，x，pushbox（x，s）））&quot;。表示为：<br>
+        （ x）（ s）（~ONBOX（s）→AT（box，x，pushbox（x，s）））<br>
+        注意：这里已经假设了猴子与箱子在同一个位置（即a＝b的情况）。<br>
+        （3）对于任何状态s，如果在状态s下，猴子在经过动作&quot;爬上箱子（climbbox（s））&quot;后的下一个状态，猴子就在箱子上了。表示为：<br>
+        （<img src="../images/001.gif" width="11" height="12">s）（ONBOX（climbbox（s）））<br>
+        （4）对于任何一个状态s，如果在状态s下，&quot;猴子在箱子上（ONBOX（s））&quot;，并且&quot;箱子在c处（AT（box，c，s））&quot;，则经过&quot;猴子摘香蕉（grasp（s））&quot;动作后的下一个状态，&quot;猴子摘到了香蕉（HB（grasp（s）））&quot;。表示为：<br>
+        （<img src="../images/001.gif" width="11" height="12">s）（（ONBOX（s）∧AT（box，c，s））→HB（grasp（s）））<br>
+        （5）对于任何一个状态s和任何一个位置x，如果在状态s下，&quot;箱子在x处（AT（box，x，s））&quot;，则猴子在经过动作&quot;爬上箱子（climbbox（s））&quot;之后的下一个状态，&quot;箱子还在x处（AT（box，x，climbbox（s）））&quot;。表示为：<br>
+        （<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">s）（AT（box，x，s）→AT（box，x，climbbox（s）））<br>
+        （6）求解的目标就是：存在一个状态s，在该状态下，猴子摘到了香蕉。即：<br>
+        （<img src="../images/002.gif" width="8" height="12">s）HB（s）<br>
+        　　有了以上表示方法后，采用基于归结的提取回答的方法，通过修改证明树，可以得到问题的解答为HB(grasp(climbbox(pushbox(c, 
+        s0))))。该解答告诉我们猴子摘香蕉问题的行为序列为：（1）猴子把箱子推到c处；（2）猴子爬到箱子上；（3）猴子摘香蕉。<br>
+        图4.20给出了该问题的修改证明树。<br>
+        </font> </p>
+      <p>下面介绍一种基于归结的提取回答方法用于求解猴子摘香蕉问题的方法。为此在谓词中引入状态项s，以说明谓词应用的具体状态条件，如把初始状态的公式集表示为：<br>
+        {~ONBOX（s0）， AT（box， b， s0）， AT（monkey， a， <img src="../images/46003.gif" width="15" height="15" align="top">）， 
+        ~HB（<img src="../images/46003.gif" width="15" height="15" align="top">）}<br>
+        此外对规则也必须按谓词演算的体系进行形式化描述，如对grasp（s）的作用要用如下的合式公式表示：<br>
+        （<img src="../images/001.gif" width="11" height="12">s）（ONBOX（s）∧AT（box， 
+        c， s）→HB（grasp（s）））<br>
+        其含义是对任何一个状态s，若猴子在箱子上，且箱子处在c点处，那么在s状态下应用grasp操作的情况下，猴子就拿到了香蕉。<br>
+        下面以一个简单的初始状态a＝b和只需要三条规则的情况来说明如何形式化，并应用提取回答过程进行求解的方法。这时初始状态公式集为<br>
+        {~ONBOX（<img src="../images/46003.gif" width="15" height="15" align="top">）， 
+        AT（box， b， <img src="../images/46003.gif" width="15" height="15" align="top">）， 
+        AT（monkey， b， <img src="../images/46003.gif" width="15" height="15" align="top">）， 
+        ~HB（<img src="../images/46003.gif" width="15" height="15" align="top">）}<br>
+        可简化为~ONBOX（<img src="../images/46003.gif" width="15" height="15">），于是有<br>
+        （1）~ONBOX（<img src="../images/46003.gif" width="15" height="15">）<br>
+        （2）（<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">s）（~ONBOX（s）→AT（box， 
+        x， pushbox （x， s）））<br>
+        （3）（<img src="../images/001.gif" width="11" height="12">s）（ONBOX（climbbox（s）））<br>
+        （4）（<img src="../images/001.gif" width="11" height="12">s）（（ONBOX（s）∧AT（box， 
+        c， s））→HB（grasp （s）））<br>
+        （5）（<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">s）（AT（box， 
+        x， s）→AT（box， x， climbbox（s）））<br>
+        （6）（<img src="../images/002.gif" width="8" height="12">s）HB（s）<br>
+        公式组中，（1）是初始状态，（6）是目标公式，（2）－（4）是规则描述公式，（5）是推理公理，表示猴子爬上箱子时，箱子的位置仍然不变，当然还可以引入其他的推理公理。<br>
+        为了用归结法证明目标公式，把它们公为子句表示形式：<br>
+        （1）~ONBOX（<img src="../images/46003.gif" width="15" height="15">）<br>
+        （2）ONBOX（s1）∨AT（box， x1， push（x1， s1））<br>
+        （3）ONBOX（climbbox（s2））<br>
+        （4）~ONBOX（s3）∨~AT（box， c， s3）∨HB（grasp（s3））<br>
+        （5）~AT（box， x4， s4）∨AT（box， x4， climbbox（s4））<br>
+        （6）~HB（S5）<br>
+      </p>
+      <p > </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

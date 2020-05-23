@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p align="center" ><img src="../images/rl4.2.gif" width="399" height="349"></p>
+      <p align="center" ><font color="#FF0000">图4.2 实例的状态空间图 </font></p>
+      <p align="center" ><img src="../images/rl4.3.gif" width="395" height="358"></p>
+      <p align="center" ><font color="#FF0000">图4.3归结反演树</font></p>
+      <p ><font color="#000099">　　（1）宽度优先策略</font></p>
+      <p align="center" ><img src="../images/rl4.4.gif" width="399" height="269"></p>
+      <p align="center" ><font color="#FF0000">图4.4 宽度优先搜索过程</font></p>
+      <p >　　宽度优先策略首先归结出基本集S中可能生成的所有归结式，称第一级归结式，然后生成第二级归结式等等，直到出现空子句。宽度优先策略是完备的，但效率低，图4.4给出这种策略求解上述例子的一个搜索图。<br>
+        <font color="#000099">　　（2）支持集策略</font> </p>
+      <p align="center" ><img src="../images/rl4.5.gif" width="399" height="327"></p>
+      <p align="center" ><font color="#FF0000">图4.5 支持集策略搜索过程 </font></p>
+      <p >　　支持集策略是指在每一次归结时，其母子句中，至少有一个是与目标公式否定式有关的子句（即目标公式否定式本身或与该否定式有关的后裔）。可以证明支持集策略是完备的，即当矛盾存在时，一定能找到由支持集策略产生的一棵反演树。也可以把支持集策略看成是在宽度优先策略中引进某种约束条件，它代表一种启发信息，因而有较高的效率。图4.5是同一个例子的支持集策略搜索图，粗线所示部分就是图4.3反演树的前三层部分。可以看出各级的归结式数目要比宽度优先策略生成的少，但在第三级还没有空子句。就是说这种策略限制了子句集元素的剧增，但会增加空子句所在的深度。此外这种策略具有逆向推理的含义，因为进行归结的一个母子句与目标子句有关，可以看成推理过程是沿目标、子目标的方向进行的。<br>
+        <font color="#000099">　　（3）单元子句优先策略</font><br>
+        　　这种策略是支持集策略的进一步改进，每次归结时优先选取单文字的子句（称单元子句）为母子句进行归结，显然归结式的文字数会比其他情况归结的结果要少，这有利于向空子句的方向搜索，实际上会提高效率。<br>
+      </p>
+    
+      </td>
+  </tr>
+</table>
+</body>
+</html>

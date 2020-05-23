@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="10" topmargin="10" marginwidth="10" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">　　2．规则的应用</font></p>
+      <p>　　<font color="#000099">在一个逆向演绎系统中，规则具有形式：W→L，其中W是任意形式的与或形，L是单文字，它表示L可以由W推导出。其中的变量受全称量词约束，如果有存在量词，则将其Skolem化，消去存在量词。<br>
+        　　如果在与或图中有一个叶节点刚好与L可以合一，则可以使用规则对与或图进行变换。其方法是，求出该叶节点与L的mgu g，将该叶节点与L用一个匹配弧连接起来，用g对W进行置换，然后将W添加到与或图中。</font></p>
+      <p>　　逆向系统中的B规则限制为W→L的形式，其中前项W是任意形式的与或形公式，后项L是单文字，蕴涵式的任何变量都受全称量词约束。当B规则为W→L1∧L2时，则可化简为两条规则W→L1和W→L2来处理。<br>
+        　　当与或图中有某个端点的文字 和L可合一且mgu为u时，则B规则可应用，通过匹配弧连接的后裔节点L，就是规则前项Wu对应的与或图表示的根节点。规则应用后得到的解图集所对应的子句就是对偶系统归结时得到的归结式集。即将规则W→L的否定式（W∧~L）得到的子句和目标公式的子句一起，对文字L进行归结得到的归结式。</p>
+      <p><font color="#000099">在逆向系统中，事实表达式限定为是文字的合取，并且进行了普通的Skolem化简，变量受全称量词约束。</font></p>
+      <p>逆向系统演绎过程的结束条件是生成的与或图含有事实表达式，而事实表达式限制为文字的合取形式。当事实表达式有一个文字同与或图中某一个端节点所标记的文字（子目标）匹配上时，就可以通过匹配弧把事实文字加到图上。这样当最后得到的与或图包含一个结束在事实节点上的一致解图时，系统便结束演绎，一个一致解图是解图中匹配弧置换集具有合一复合置换的那个解图。和正向系统类似，B规则可以多次调用，事实文字也可以重复多次匹配，但每次匹配都要进行变量改名。<br>
+        下面通过一个简例说明逆向系统的演绎过程。<br>
+        设事实有<br>
+        F1：DOG（FIDO）<br>
+        F2：~BARKS（FIDO）<br>
+        F3：WAGS-TAIL（FIDO）<br>
+        F4：MEOWS（MYRTLE）<br>
+        规则集：<br>
+        R1：（WAGS-TAIL（x1）∧DOG（x1））→FRIENDLY（x1）<br>
+        R2：（FRIENDLY（x2）∧~BARKS（x2））→~AFRAID（y2，x2）<br>
+        R3：DOG（x3）→ANIMAL（x3）<br>
+        R4：CAT（x4）→ANIMAL（x4）<br>
+        R5：MEOWS（x5）→CAT（x5）<br>
+        询问：<br>
+        If there are a cat and a dog such that the cat is unafraid of the dog.<br>
+        目标公式：<br>
+        （vx）（vy）（CAT（x）∧DOG（y）∧~AFRAID（x，y））</p>
+      <p align="center"><img src="../images/rl4.27.gif" width="399" height="402"></p>
+      <p align="center"><font color="#FF0000">图4.27 逆向系统的一致解图</font></p>
+      <p>　　<font color="#000099">图4.27是一个逆向系统的例子。同在正向系统中一样，空心的箭头是匹配弧，它表示与或图中的一个节点与某规则的结论部分相匹配。同样，箭头的方向并不代表合一的&quot;方向&quot;，合一完全按照通常的合一原则进行。如图中左边CAT(x)与规则5的CAT(x5)合一，图中的置换是{x/x5}，该置换作用于规则5的前提部分，MEOWS(x5)变换为MEOWS(x)。由于x和x5都是变量，所以置换也可以是{x5/x}。该置换作用于规则5的前提部分，MEOWS(x5)保持不变。在MEOWS(x5)与事实MEOWS(MYRTLE)匹配时，置换变成了{MYRTLE/x5}。此时由于MYRTLE是常量，置换只能是{MYRTLE/x5}。该局部图如下图所示。</font></p>
+      <p align="center"><img src="../images/48001.gif" width="158" height="222"></p>
+      <p>　　由于置换不一样了，该局部图与原图有所变化，但是最终得到的合一复合是一样的。</p>
+      <p>　　图4.27给出这个问题逆向求解的一个一致解图，图中事实节点由双框线标记，规则的应用由规则编号标记。解图中的所有匹配弧的置换集是<br>
+        {x/x5}，{MYRTLE/x}，{FIDO/y}，{x/y2，y/x2}，{FIDO/y}，{y/x}，{FIDO/y}，{FIDO/y}<br>
+        由此求得的合一复合是<br>
+        {MYRTLE/x5，MYRTLE/x，FIDO/y，MYRTLE/y，FIDO/x2，FIDO/x1}<br>
+        解图是一个一致解图，目标公式得到证明。把这个合一复合置换应用到目标公式得到的例，其回答语句为<br>
+        （CAT（MYRTLE）∧DOG（FIDO）∧~AFRAID（MYRTLE，FIDO）） <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
