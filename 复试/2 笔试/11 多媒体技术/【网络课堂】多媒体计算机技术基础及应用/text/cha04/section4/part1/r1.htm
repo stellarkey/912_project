@@ -1,0 +1,163 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　预测编码（Predictive 
+        Coding）是统计冗余数据压缩理论的三个重要分支之一，它的理论基础是现代统计学和控制论。预测编码主要是减少了数据在时间和空间上的相关性，因而对于时间序列数据有着广泛的应用价值。<br>
+        　　它的基本思想是这样的：建立一个模型，这个模型利用以往的样本数据，对下一个新的样本值进行预测，将预测所得的值与实际值相减得到一个差值，再对该差值进行编码。由于差值很小，可以减少编码的码位。实现压缩。</div>
+      <br>
+      <span class="zhongdian"><b><font color="#003399">　　</font>1．预测编码原理</b> <br>
+      　　模型<img src="../../../../images/chatp/chap04/040.gif" width="52" height="14" align="absmiddle">利用以往的样本数据<img src="../../../../images/chatp/chap04/040.gif" width="52" height="14" align="absmiddle">对下一个新的样本值进行预测<br>
+      　　　　<img src="../../../../images/chatp/chap04/040.gif" width="52" height="14" align="absmiddle">将预测所得的值与实际值的差值进行编码<img src="../../../../images/chatp/chap04/040.gif" width="52" height="14" align="absmiddle">由于差值很小，<br>
+      　　　　　　　　 可以减少编码的码位。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　也就是说先建立一个模型，在编码端（发送端）按此模型计算预测值并求出预测值和实际值之差，再将&quot;差&quot;编码，通过信道将&quot;差&quot;的编码传送给接收端，接受端也有一个与发送端一致的模型，按此模型解码。<br>
+        　　例如以图像数据压缩为例，预测编码方法是从相邻象素之间有很强的相关性特点考虑的。比如当前像素的灰度或颜色信号，数值上与其相邻像素总是比较接近，除非处于边界状态。那么，当前像素的灰度或颜色信号的数值，可用前面已出现的像素的值，进行预测（估计），得到一个预测值（估计值），将实际值与预测值求差，对这个差值信号进行编码、传送。<br>
+        　　预测编码方法分为线性预测和非线性预测编码。</div>
+      <br>
+      <span class="zhongdian">　　<b>2．预测编码的分类</b><br>
+      　　分为：线性预测和非线性预测</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　线性预测编码方法，也称差值脉冲编码调制法，简称DPCM(Differention 
+        Pulse Code Modulation)。下面一起学习DPCM--差值脉冲编码调制法的基本原理。</div>
+      <br>
+      <span class="zhongdian"> 　　<b>3．DPCM编码算法</b><br>
+      　　（1）DPCM的基本原理</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide04Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　一幅二维静止图像，设空间坐标<img src="../../../../images/chatp/chap04/041.gif" width="37" height="20" align="absmiddle">像素点的实际灰度为<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">，<img src="../../../../images/chatp/chap04/043.gif" width="53" height="25" align="absmiddle">是根据以前已出现的像素点的灰度对该点的预测灰度，也称预测值或估计值。</div>
+      <br>
+      <span class="zhongdian">　　<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">　--空间坐标 
+      像素点的实际灰度值。<br>
+      　　<img src="../../../../images/chatp/chap04/043.gif" width="53" height="25" align="absmiddle">　--空间坐标 
+      像素点的预测灰度值</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide05Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　实际值和预测值之间的差值，以下式表示，</div>
+      <br>
+      　<span class="zhongdian">　<img src="../../../../images/chatp/chap04/044.gif" width="172" height="25" align="absmiddle">　-- 
+      实际值和预测值之差 </span><br>
+      <a href="#nowhere" onClick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide06Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　将差值<img src="../../../../images/chatp/chap04/045.gif" width="44" height="20" align="absmiddle">定义为预测误差，由于图像像素之间有极强的相关性，所以这个预测误差是很小的。编码时，不是对像素点的实际灰度<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">进行编码，而是对预测误差信号<img src="../../../../images/chatp/chap04/045.gif" width="44" height="20" align="absmiddle">进行量化、编码、发送，由此而得名为差值脉冲编码调制法，简写DPCM。 
+      </div>
+      <br>
+      <span class="zhongdian">　　对预测误差信号 进行量化、编码、发送，<br>
+      　　由此而得名为差值脉冲编码调制法，简写DPCM。</span><br>
+      <br>
+      <span class="zhongdian"><font color="#003399">　　</font>（2）DPCM编、解码原理图<br>
+      　 4.4-1 DPCM编、解码原理图<br>
+      　 
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="460" height="260">
+        <param name=movie value="../../../../swf/4-4.swf">
+        <param name=quality value=high>
+        <embed src="../../../../swf/4-4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="460" height="260"> 
+        </embed> </object>
+      </span> <br>
+      <a href="#nowhere" onClick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide07Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　DPCM编、解码系统由以下三部分组成。它包括发送、接收和信道传输三部分。<br>
+        　　第一部分发送端（绿框部分动态显示）由编码器、量化器组成；第二部分接收端（黄框部分动态显示）包括解码器和预测器等，第三部分是信道传送（红框部分动态显示） 
+        DPCM系统的组成归纳如下：</div>
+      <br>
+      <span class="zhongdian"><font color="#990000">　　</font>系统组成<br>
+      　　　　<img src="../../../../images/chatp/chap04/047.gif" width="206" height="155"> 
+      <br>
+      　　发送端　若不带量化器--可逆的无失真的DPCM编码，是信息保持编码<br>
+      　　　若带量化器--有失真的DPCM编码 </span><br>
+      <a href="#nowhere" onClick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide08Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　由图可见DPCM系统具有结构简单，容易用硬件实现（接收端的预测器和发送端的预测器完全相同）的优点。<br>
+        　　图中输入信号<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">是坐标为<img src="../../../../images/chatp/chap04/041.gif" width="37" height="20" align="absmiddle">像素点的实际灰度值，<img src="../../../../images/chatp/chap04/043.gif" width="53" height="25" align="absmiddle">是由已出现先前相邻像素点的灰度值对该像素点的预测灰度值。 
+        是预测误差。假如发送端不带量化器，直接对预测误差<img src="../../../../images/chatp/chap04/045.gif" width="44" height="20" align="absmiddle">进行编码、传送，接收端可以无误差地恢复<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">。这是可逆的无失真的DPCM编码，是信息保持编码；但是，如果包含量化器，这时编码器对<img src="../../../../images/chatp/chap04/048.gif" width="52" height="21" align="absbottom">编码，量化器导致了不可逆的信息损失，这时接收端，经解码恢复出的灰度信号，不是真正的<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">，以<img src="../../../../images/chatp/chap04/049.gif" width="57" height="21" align="absmiddle">表示这时的输出。<br>
+        　　可见引入量化器会引起一定程度的信息损失，使图像质量受损。但是，为了压缩比特数，利用人眼的视觉特性，对图像信息丢失不易觉察的特点，带有量化器有失真的DPCM编码系统还是普遍被采用。 
+        <br>
+        　　量化器是如何设计的？如何能作到最佳线性预测呢？让我们一起来学习&quot;最佳线性预测&quot;</div>
+      <br>
+      <span class="zhongdian"><b><font color="#003399">　　</font>4．最佳线性预测</b><br>
+      　　　　f) 预测器的设计<br>
+      　　假定给定样本序列：<img src="../../../../images/chatp/chap04/050.gif" width="17" height="19" align="absmiddle">、<img src="../../../../images/chatp/chap04/051.gif" width="19" height="20" align="absmiddle">、……<img src="../../../../images/chatp/chap04/052.gif" width="28" height="22" align="absmiddle">预测<img src="../../../../images/chatp/chap04/053.gif" width="19" height="21" align="absmiddle"> 
+      <br>
+      　　令预测值为：<img src="../../../../images/chatp/chap04/054.gif" width="19" height="21" align="absmiddle">且<img src="../../../../images/chatp/chap04/054.gif" width="19" height="21" align="absmiddle"><img src="../../../../images/chatp/chap04/055.gif" width="226" height="47" align="absmiddle"><br>
+      　　其中 <img src="../../../../images/chatp/chap04/056.gif" width="17" height="20" align="absmiddle">、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">、<img src="../../../../images/chatp/chap04/058.gif" width="28" height="21" align="absmiddle">…… 
+      为预测系数。<br>
+      　　那么预测误差 </span><img src="../../../../images/chatp/chap04/image071.gif" width="77" height="16" align="absmiddle"><br>
+      <a href="#nowhere" onClick="ShowItem(hide09Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide09Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　预测器的设计关键是预测系数。预测系数为多少时？才能得到期望的值--预测值接近实际值。 
+      </div>
+      <br>
+      <span class="zhongdian">　　<img src="../../../../images/chatp/chap04/053.gif" width="19" height="21" align="absmiddle">最优的估计值是使方差<img src="../../../../images/chatp/chap04/059.gif" width="17" height="19" align="absmiddle">的期望值为最小的<img src="../../../../images/chatp/chap04/054.gif" width="19" height="21" align="absmiddle">，也就是说最优的线性预测就是选择预测系数<img src="../../../../images/chatp/chap04/060.gif" width="16" height="21" align="absmiddle">，使差值信号<img src="../../../../images/chatp/chap04/061.gif" width="17" height="17">的均方值最小。<br>
+      　　均方差定义为： <img src="../../../../images/chatp/chap04/062.gif" width="101" height="25" align="absmiddle"><img src="../../../../images/chatp/chap04/063.gif" width="43" height="25" align="absmiddle"><br>
+      　　假如<img src="../../../../images/chatp/chap04/053.gif" width="19" height="21" align="absmiddle">是一个平稳随机过程，<br>
+      　　求<img src="../../../../images/chatp/chap04/063.gif" width="43" height="25" align="absmiddle">对各个<img src="../../../../images/chatp/chap04/060.gif" width="16" height="21" align="absmiddle">取偏导数，令其为零，通过线性方程组求出预测系数<img src="../../../../images/chatp/chap04/060.gif" width="16" height="21" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/064.gif" width="276" height="89"> 
+      <br>
+      　　令<img src="../../../../images/chatp/chap04/065.gif" width="77" height="44" align="absmiddle">就得到n-1线性方程组，可接的系数<img src="../../../../images/chatp/chap04/060.gif" width="16" height="21" align="absmiddle">。 
+      <br>
+      　　下面举一个例子：一个三阶预测系统。<br>
+      　　　g) 一个三阶预测系统（带下划线部分配音）<br>
+      　　如图：这是一幅像素<img src="../../../../images/chatp/chap04/041.gif" width="37" height="20" align="absmiddle">的预测域图，图中示出<img src="../../../../images/chatp/chap04/041.gif" width="37" height="20" align="absmiddle">像素的三个相邻像素， 
+      <br>
+      <font color="#003399">　 </font>4.4-2 预测域<br>
+      　　<img src="../../../../images/chatp/chap04/066.gif" width="219" height="148"><br>
+      　　<img src="../../../../images/chatp/chap04/043.gif" width="53" height="25" align="absmiddle">由先前（同行一点，上一行两点）三点预测，定义为，<br>
+      　　<img src="../../../../images/chatp/chap04/067.gif" width="368" height="25" align="absmiddle">构成三阶预测器。<br>
+      　　其中<img src="../../../../images/chatp/chap04/056.gif" width="17" height="20" align="absmiddle">、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle"> 
+      、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">称预测系数，都是待定参数。<br>
+      　　预测误差<br>
+      　<img src="../../../../images/chatp/chap04/068.gif" width="177" height="25"><br>
+      　<img src="../../../../images/chatp/chap04/069.gif"> <br>
+      　　应用均方误差最小准则，求出预测系数<img src="../../../../images/chatp/chap04/056.gif" width="17" height="20" align="absmiddle"> 
+      、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">，以获得<img src="../../../../images/chatp/chap04/042.gif" width="49" height="21" align="absmiddle">的最佳线性预测值<img src="../../../../images/chatp/chap04/043.gif" width="53" height="25" align="absmiddle">。<br>
+      　　均方误差的表达式为<br>
+      　　<img src="../../../../images/chatp/chap04/070.gif" width="125" height="29"><br>
+      　　<img src="../../../../images/chatp/chap04/071.gif" width="173" height="36"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap04/072.gif" width="242" height="75" align="absmiddle"> 
+      <b>(4.4-3)</b><br>
+      　　将预测值与实际值之间的均方误差<img src="../../../../images/chatp/chap04/073.gif" width="20" height="20" align="absmiddle">，对<img src="../../../../images/chatp/chap04/056.gif" width="17" height="20" align="absmiddle">、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">、<img src="../../../../images/chatp/chap04/075.gif" width="24" height="21" align="absmiddle">求偏导，令<br>
+      　　<img src="../../../../images/chatp/chap04/074.gif" width="69" height="148" align="absmiddle"><b><font color="#003399">　　</font>(4.4-4)</b><br>
+      　　解方程，得<img src="../../../../images/chatp/chap04/056.gif" width="17" height="20" align="absmiddle">、<img src="../../../../images/chatp/chap04/057.gif" width="19" height="19" align="absmiddle">、<img src="../../../../images/chatp/chap04/075.gif" width="24" height="21" align="absmiddle">，即为最佳线性预测系数。<br>
+      　　具体的系统方框图如下：</span><br>
+      <span class="zhongdian"><font color="#003399">　</font> 三阶DPCM线性预测框图</span><br>
+      <img src="../../../../images/chatp/chap04/076.gif"> <br>
+      <a href="#nowhere" onClick="ShowItem(hide10Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide10Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　前面叙述的DPCM系统,是预测系数和量化器参数一次设计好后，整幅图都用这套参数，不再改变。但是在图像平坦区和边缘处要求量化器的输出差别很大，否则会导致图像出现令人讨厌的<a href="#nowhere" title="	DPCM线性预测系统，由于量化误差，导致图像失真，较为常见的有以下几种：
+斜率过载，当预测误差值很大（图像边界），而量化器的量化输出不够大时，出现斜率过载，使边界变模糊。
+颗粒噪声
+	在图像灰度平坦区域（人的面部或背景），预测误差绝对值较小，而量化器的输出绝对值不够小，将预测误差扩大化，使量化输出忽正忽负，出现粒状斑点。
+	3)假轮廓噪声
+	对于图像中平滑上升或平滑下降区域，预测误差绝对值很小，但经过量化器后，由于量化器的步距较大，将差值扩大，使平滑区域变成一个个台阶，形成假轮廓噪声。
+	4)边沿繁忙
+	不同帧之间在同一像素位置产生的量化误差各不相同，使边缘处看到不断闪烁变化的忙乱现象。
+">噪声</a> 。下面将简要介绍一下关于自适应DPCM系统，即ADPCM（Adaptive DPCM）系统。</div></td>
+  </tr>
+</table>
+</body>
+</html>

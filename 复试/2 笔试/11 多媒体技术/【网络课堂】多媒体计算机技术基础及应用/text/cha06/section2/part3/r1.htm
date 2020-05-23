@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　随着多媒体技术的迅速普及，Web上将大量出现多媒体信息，例如，在遥感、医疗、安全、商业等部门中每天都不断产生大量的图像信息。这些信息的有效组织管理和检索中都依赖基于图像内容的检索。目前，这方面的研究已引起了广泛的重视。例如，由IBM公司开发的QBIC是最有代表性的系统，它通过友好的图形界面为用户提供了颜色、纹理、草图、形状等多种检索方法；美国加州大学伯克利分校与加州水资源部合作进行了Chabot计划，以便对水资源部的大量图像提供基于内容的有效检索手段。此外还有麻省理工学院的Photobook，可以利用Face，Shape，Texture，Photobook分别对人脸图像、工具和纹理进行基于内容的检索，在Virage系统中又进一步发展了将多种检索特征相融合的手段。澳洲的New 
+      South Wales大学已开发了NUTTAB系统，用于食品成分数据库的检索。<br>
+      　　为了阐述基于内容检索系统的工作原理，我们举下述一个例子：<br>
+      　　<b><font color="#003399">·清华大学研制的Internet上静态图像的基于内容检索的原型系统；</font></b><br>
+      　　清华大学计算机科学与技术系结合国家863高技术研究发展项目&quot;Web上基于内容的图像检索&quot;的研究，于1997年研制了一个Internet上的静态图像的基于内容检索的原型系统。该项目的研究目标是开发能在Internet/Intranet环境下，通过友好的人-机界面，以颜色、纹理等图像特征或样本图像检索图像的方法和工具。目前该系统对12000张景物照片图像的高维特征建立了GSS-索引，采用Java语言来实现人机交互模块，通过浏览器为检索用户提供一个友好的人机交互界面，得到的检索请求转换为CbExpr检索表达提交给检索引擎进行处理。与网络所造成的延时相比，检索时间基本上可以忽略，表现出了相当好的实时性。<br>
+      　　<b><font color="#003399">(1)系统结构</font></b><a name="01"></a><br>
+      　　设计系统结构时根据Web技术和信息检索技术的实现特点，划分为检索相关模块和建库相关模块两部分，结构框图如图6.7所示。<br>
+      <b><font color="#003399">　　 6.7 
+      Web上基于内容的图像检索原型系统的系统结构<br>
+      <img src="../../../../images/chatp/chap06/008.gif" width="377" height="177"> 
+      </font></b><br>
+      　　<font color="#003399">·检索相关模块</font><br>
+      　　这个模块包括用户检索时用到的程序和文件，包括Querycgi程序、Queryserver程序、初始配置文件和一些界面相关文件。<br>
+      　　在检索时，用户通过本地的浏览器，通过Http Server访问Querycgi，并提出检索请求。Querycgi为一CGI程序，通过CGI接口与Http 
+      Server通信。它负责提供检索界面，接受用户的检索请求，将检索请求传送给Queryserver程序并将Queryserver程序返回的检索结果以可视的形式（图像的Icon或图像本身）传给用户。Queryserver程序为--&quot;精灵&quot;（daemon）程序，绑扎于指定端口上，接受Querycgi传来的检索请求，检索相应的索引文件，处理后返回检索结果。<br>
+      　　界面相关文件是一些与检索界面有关的文件（如构成检索界面的Java Class文件，利用模板提供特征时的模板特征文件等）；初始配置文件则是提供Queryserver参数（如绑扎端口，各特征对应的索引文件名）的文件，供Queryserver启动时初始化使用。<br>
+      　　·建库相关模块<br>
+      　　建库相关模块主要是用来建立和维护整个图像库和相关文件的，主要包括特征提取和索引生成两部分。<br>
+      　　特征提取模块用来对图像库中的图像完成特定特征的抽取，并生成相应的特征文件；而索引生成模块则用来对得到的特征文件进行处理，根据相似检索（similarity 
+      indexing）原理生成相应的特征索引树和特征索引文件，供检索时使用。此外，建库相关模块还包括一些维护图像库（如完成图像格式转换，生成Icon）的工具。<br>
+      　　<font color="#003399"><b>（2）检索查询界面设计</b></font><a name="02"></a><br>
+      　　友好的人机交互界面是一个成功检索系统不可缺少的条件，它可以大大提高检索的效率。在基于内容检索中，由于特征值为高维向量，不具有直观性，因此必须为其提供一个可视化的输入手段。目前采用的特征包括主颜色、颜色直方图、纹理分布、草图等7种，根据特征的种类不同，采用了两种特征输入手段：<br>
+      　　<font color="#003399">·操纵交互输入方式</font><br>
+      　　适用于具有较强操纵性的特征。在这种方式中，用户可通过操纵工具来调整特征值，而特征值的变化直接向用户体现出来。通过这种方式，用户可得到想要的特征值，并提交来构成检索表达。如通过滑动条来调节主颜色，通过画笔来给出颜色直方图构成和颜色分布等。<br>
+      　　<font color="#003399">·模板选择输入方式</font><br>
+      　　有一些特征难以对其进行操纵和调节（如纹理），因此也难以通过操纵交互输入方式来进行特征输入。针对这类特征，我们提供一组在特征空间中具有代表性的特征模板，用户可通过选择与检索特征最接近的模板来完成特征值的输入。<br>
+      　　同时还在研究实现下述特征输入手段：<br>
+      　　·浏览检索<br>
+      　　系统提供一组对象，用户从中选择于检索目标最接近的对象。系统根据用户的选择再给出一组对象供用户进一步选择。如此往复，直到检索完毕。 <br>
+      　　<font color="#003399">·样本检索</font><br>
+      　　即由用户提交一幅图像，系统检索图像库中与此图像相似的一组图像。<br>
+      　　系统的界面模块分别实现了七种特征的前端处理界面，即主颜色、纹理、色调直方图、轮廓、颜色分布、彩色直方图和主题。界面设计如图6.8所示。<br>
+      　　<b><font color="#003399"> 6.8 
+      基于内容检索系统的主界面</font></b><br>
+      　　<img src="../../../../images/chatp/chap06/009.gif" width="363" height="295"> 
+      <br>
+      　　界面结构分为三部分组成：<br>
+      　　<font color="#003399">·检索特征预览</font><br>
+      　　全部提供了七种特征，在任意时候只显示其中三个（如图7.8所示），用户可用鼠标拖动下面的滑动条以显示别的特征的当前查询值。对每一种特征，都有相应的特征名、使能选中框和权重滚动条（滚动条前面的编辑框显示当前的权重值，也可以直接键入）。用户必须选中该特征的使能框，权重滑动条和对应的特征输入区才可用。在该特征使能时，鼠标单击这一区域即可激活对应的特征输入模块。<br>
+      　　<font color="#003399">·检索控制参数</font><br>
+      　　用户可以选择三种单特征查询组合方式：与、或、权重调节中的一种。它们直接影响对单特征查询结构集的处理：<br>
+      　　最大返回结果数--由于图像检索是近似检索，所以查询结果一般都不止一个，我们将满足条件的图片按其相似度从大到小排序，返回前面的若干个。我们规定其合法值是16到100。<br>
+      　　最小相似度--图片库中的任意图片与查询条件的相似度在区间[0，1]上，所以应该预定一个阈值，相似度大于它的图片才认为满足条件。在界面上，用户可以输入0到100之间的一个整数。<br>
+      　　检索精度（epsilon）合法值是0到100。在后台处理时，将它映射到[0，1]区间内。<br>
+      　　<font color="#003399">·特征输入区（工作区）</font><br>
+      　　基于内容的图像检索的查询条件提交方式不同于传统的文本检索，针对每一种特征都应设计特定的交互方式。 <br>
+      　　<b><font color="#003399">（3）提交特征分析</font></b><a name="03"></a><br>
+      　　<font color="#003399">·主颜色（ Dominating Color ）</font><br>
+      　　主颜色就是图片中占较大比重的颜色。在图像处理中，主颜色的提取过程是：将图像的各点颜色值( 一般是RGB值 )量化到16×16×16的区间内，然后对图像的点聚类。如果某聚类颜色的像素点占图像全部像素的20%以上，就认为该聚类中心颜色是该图的主颜色。所以，一幅图片的主颜色可能不止一种。<br>
+      　　<font color="#003399">·纹理 ( Texture )</font><br>
+      　　纹理特征适用于墙纸、布匹等具有简单、重复性的图案的检索。它的提取是用Gober算子分别从5个方向计算得到6个值，总共30个坐标。对纹理而言，如果用户没有一定的美术基础，很难直接用绘画的方式提交数据，因此采用了预定义的模板的方式，用户可以在特征输入区中浏览选择。目前提供了六个模板，以后还可以随时增减，这六个模板的选择是根据图像库中的常见纹理种类而定的。<br>
+      　　<font color="#003399">·色调直方图 ( Histogram of Hue )</font><br>
+      　　在常用的彩色空间中，除了R、G、B还有H（Hue 色调）、S( Saturation 饱和度)、B( Bright 亮度)。其中Hue（色调）的合法取值是0到360，从视觉效果来讲，色调的变化范围就是：赤、橙、黄、绿、青、蓝、紫七色的逐渐过渡。图片的色调直方图表示了各种色调在其中的比例关系，这种关系有较大的变化范围，不宜使用模板，同时要求普通用户也能容易地表达查询要求，因此实现的是一个类似于Paint（画板）的特征提交界面。用户只需很简单的操作就可以画出若干彩色块，大致地从它们的面积就可以知道色调的分布。在正式提交查询数据时，前端模块还对整个画板的像素进行量化、统计，向服务器提交的是一个32维的直方图向量。<br>
+      　　<font color="#003399">·彩色直方图 ( Histogram of HSB )</font><br>
+      　　H、S、B直方图特征的&quot;工作区&quot;与色调直方图的完全一样，只是后台处理不一样。在提交最后的数据时，前端模块先将各像素值从RGB彩色空间转化到HSB彩色空间，然后量化到4×4×4的范围内，同时进行统计，最后向服务器提交的是一个64维的直方图向量。由于HSB的比例关系与人的直观感觉不太一致，所以这种特征的查询效果并不是很好。<br>
+      　　<font color="#003399">·颜色分布 （Color Distribution ）</font><br>
+      　　颜色分布是另外一个检索效果较好的特征。它同时表示了图像中颜色的值与位置属性，比较直观，在查询界面上以用户直接画图的方式提交数据。其工作区的外观和使用与色调直方图一样，但颜色分布特征的提取是这样的：将用户所绘制的图像分割成6×6个大小一样的&quot;Icon&quot;，对每一个Icon中像素的R、G、B值分别求平均，这样得到了36个&quot;平均像素值&quot;，其中既包含了位置的信息，又有颜色值的信息。最后，前端模块向服务器提交的是一个6×6×3=108维的向量。例如，用户想查询有&quot;蓝天与大地&quot;内容的图片，他可以简单地画出图6.9的一幅画，得到的结果如图6.10所示。可以看出，颜色分布特征的查询效果是比较好的。<br>
+      <b><font color="#003399">　　 6.9 
+      提交颜色分布特征 </font></b><br>
+      　　<img src="../../../../images/chatp/chap06/010.gif"> <br>
+      　　<b><font color="#003399"> 6.10颜色分布特征得到的结果 
+      </font></b> <br>
+      　　<img src="../../../../images/chatp/chap06/011.gif"> <br>
+      　　<font color="#003399">·轮廓 （ Sketch ）</font><br>
+      　　在图像库中有很多图片的内容难以用颜色、位置、纹理来描述。比如想查询&quot;画面分为上下两部分&quot;的图像，用前面提到的特征无法方便地描述，可以用Sketch特征来描述画面中的各个部分的相对位置关系。提取特征的步骤是：先用颜色聚类的方法对画面进行划分，然后用中值滤波去掉噪声，得到若干均匀的颜色块（ 
+      称为 &quot;Segment&quot; ）。接着，提取图像的边缘特征，得到一个二值图像，最后将它缩小为16×16的大小，取得一个256维的特征向量，其中每一维的值或为1或为0。对该特征的提交，我们仍采用了用户直接绘画的方式，因为它的变化多，语言表示不直观。&quot;工作区&quot;类似于色调直方图，但是绘制的是黑白图像，并且基本构图元素是点、直线、矩形、椭圆、多边形等线状图形，而不是块状图形。数据的预处理方法是：将用户所画的图形分割成16×16个区域，对区域内的像素值进行统计，如果黑色像素的个数大于阈值，则认为该区域为黑色，否则认为是白色。这样，我们可以得到一个256维的查询特征值。作为例子，假设现在提交一幅图（图6.11），得到的结果如图6.12，总的效果还是比较好的。<br>
+      <font color="#003399"><b>　　 6.11 
+      提交的轮廓特征</b></font> <br>
+      　<img src="../../../../images/chatp/chap06/012.gif"> <br>
+      <b><font color="#003399">　　 6.12轮廓特征的查询结果 
+      </font></b> <br>
+      　　<font color="#003399">·主题（ Topic ）</font><br>
+      　　在研究中我们注意到，基于内容的图像检索也有它的局限性，其中一个很大的不足是难以表达抽象概念，而这一点正是基于文本的检索的长处。比如说查找有&quot;兔子&quot;的图片，用目前我们实现的特征无法表达这一概念，而用文本检索则只需两个字。所以，我们将基于内容和基于文本两种检索方法结合起来，在前六种图像特征之外增加了&quot;主题&quot;检索。我们把主题特征视为图像特征之一，除了索引文件和查询方法以外，在对结果集的处理方面（如与、或、权重调和）与其他特征完全一样，这样既增强了系统的查询能力，又保证了结构的模块化。值得注意的是，主题特征也�&quot;相似度&quot;的定义。因为很难把握两个词之间的相似程度，我们目前只定义了一种比较简单的&quot;相似度&quot;：<br>
+      定义（主题相似度）：<br>
+      　　如果用户提交的主题词个数为M个，图像i的主题描述中有其中的N个主题词，则图像对查询条件的相似度SF ( i ) = N / M ；<br>
+      　　可以事先对每一幅图片都用几个主题词来加以描述，然后对所有图片的主题词进行归类和合并，构成一个有着树型结构的主题词集。由于主题词集是确定的，所以在向服务器提交查询数据时只提交主题词的ID号即可。用户可以在其中选择若干个主题词，综合描述一幅图像。<br>
+      　　主题词和图像特征查询的结合，能取长补短，充分发挥前者表达抽象概念、后者表达形象概念的优点，获得更好的查询效果。 <br>
+      　　<b><font color="#003399">（4）检索关键技术</font></b><a name="04"></a><br>
+      　　<font color="#003399">·检索表达</font><br>
+      　　检索表达能力是影响一个基于内容检索系统性能的重要因素。目前实现的基于内容检索系统，一般都通过指定特征值来检索内容描述与此特征值最近的一组对象，表达能力有限，不能表达在内容描述空间中具有复杂相似度函数分布的检索概念（如&quot;日落&quot;概念在颜色直方图空间对应的在红、黄或紫颜色区域呈峰值）。为此，项目组提出了一种可表达内容描述空间中复杂概念的基于内容检索表达机制CbExpr，并实现了基于CbExpr检索表达机制的图像检索系统。实验表明，CbExpr具有强大而灵活的表达能力，取得了较好的效果。<br>
+      　　<font color="#003399">·快速索引算法</font><br>
+      　　快速索引结构和快速索引算法是基于内容检索的内核，也是大容量基于内容检索系统实用化的关键。其基本思想源于计算机科学中的最近邻搜索（nearest 
+      neighbor search）问题，并在地理信息系统（GIS）等信息系统中得到了广泛的应用。目前，常用的快速索引结构主要包括以R+树为基础的索引树和以k-d树为基础的索引树。<br>
+      　　项目组提出并实现了一种通用快速索引结构GSS，通过对此通用快速索引结构的分割方法、闭包结构和距离定义进行不同的选择，可分别实现传统最近邻索引算法中的以R+树为基础的索引树和以k-d树为基础的索引树，还可以进行采用二次型距离定义的检索处理。而通过采用复合闭包，可对数据集给出更多约束，从而更有效地降低检索过程中的搜索量，提高检索速度。<br>
+      　　针对图像库基于内容检索系统的应用背景，我们实现了基于此通用快速索引结构的索引生成模块、索引存盘模块、索引读取模块和索引检索模块。其中，索引生成模块用于从特征抽取得到的特征列表文件生成检索树；索引存盘模块用于将此索引树存成磁盘上的索引文件；索引读取模块的作用则相反，用来从索引文件恢复索引树；索引检索模块用于处理对于索引树的检索，给定参数（检索特征值、目标个数、最小相似度、近似度）后返回一组对象的标识及其对应的相似度值。 
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

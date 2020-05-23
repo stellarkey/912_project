@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　本建议公布于1972年，它给出话音信号编码的推荐特性。话音的抽样率为8000Hz，允许偏差是±50ppm(Parts 
+      Permillion)。每个样值采用8位二进制编码。推荐使用A律和μ律量化。本建议中分别给出A律和μ律的定义。它是将13位PCM码按A律、14位PCM码按μ律转换8位编码。简单地讲，建议中把13(14)PCM码分割成16段, 
+      各段长度不等，每段给16个码字,总编码共256个。这是一种较为简单的非均匀编量化器。码器输入和输出的示意图如图3.8。图中示意输入为正时，输入码与A律输出码的关系。<br>
+      　<font color="#003399">图3.8 正输入码与A律输出码的关系 </font><br>
+      　　 <img src="../../../../images/chatp/chap03/061.gif" width="251" height="251"><br>
+      　　建议中给出了μ律和A 律编码表。这里列出A 律正输入时的编码表。其中，当yn=xn，其他情况下yn=（xn +xn+1）/ 2。x128是一个虚拟边界值。<br>
+      <font color="#003399">　表3.7 A 律正输入时的编码表 <br>
+      <img src="../../../../images/chatp/chap03/062.gif"> 
+      </font><br>
+      　　选用不同译码规律的国家之间，数据通路传送按A律译码信号。使用μ律的国家应进行转换，建议给出了μ-A、A-μ编码对应表。<br>
+      　　建议还规定，在物理介质上连续传送时，No.1位(极性位0在前, N0.8位(最低有效位)在最后。G.711利用了语音幅度的统计特性，压缩了近二分之一的数据。它早已广泛用于各种数字通信中。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

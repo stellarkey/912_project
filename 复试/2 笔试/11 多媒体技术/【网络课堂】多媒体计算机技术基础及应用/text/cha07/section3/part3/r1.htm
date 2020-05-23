@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text"><font color="#003399"><b>　　数据存储方式</b></font><br>
+      　　首先讨论一下数据存储方式的问题。一种做法是把所有的数据和页都存储在数据库中。数据库可以是现成的商业数据库，也可以是讨论中的对象数据库或多媒体数据库，或者干脆就是一个大&quot;包&quot;文件，把数据和页打进包中。这些做法有很多缺陷：<br>
+      　　1） 现有的商业数据库缺乏对多媒体的支持，难以满足存储和管理多媒体信息的要求。<br>
+      　　2） 对象数据库和多媒体数据库还处于探讨阶段，尚无成熟的系统。<br>
+      　　3） 数据库查询执行缓慢，严重影响演示效果。<br>
+      　　4） 包文件规模受到操作系统限制，如果包太大，存储、管理都有困难，且降低系统运行速度，加大资源的占用。<br>
+      　　在EDHM中，数据和页都存成单独的文件，和前面做法相比有很大优越性：<br>
+      　　1） 演示系统的规模不受限制，受限制的只是单个文件大小。<br>
+      　　2） 可以很自然地存储在网上，形成分布式演示系统。<br>
+      　　3） 支持多人同时工作，只要他们不同时修改一个文件即可，极大地提高了演示的制作效率，同时方便了文件共享和复用。<br>
+      　　4） 修改时只需改动单个的文件，粒度变小，便于维护。<br>
+      　　5） 减小演示运行时的资源占用，加快运行速度（相对数据库查询而言）。<br>
+      　　<b><font color="#003399">链的定位</font></b><br>
+      　　既然文件名可以唯一标识超媒体链，全路径名当然也可以唯一标识。但超媒体链是散布在页文件中，如果一个文件位置改变了，所有指向该文件的链都需要改动，而这种移动往往是不可避免的，因此给链的维护带来巨大困难。如果只用文件名标识链，位置的移动不会导致链的修改。<br>
+      　　有的软件采取用数据文件相对于包文件的相对路径来标识链，这会带来一些方便，只要保持相对路径不变，演示可以整体移动而不用修改。但若演示规模大，存储时跨越多个逻辑驱动器或分布在网上，就只能用全路径名，修改还是再所难免。<br>
+      　　EDHM采取的策略是用文件名唯一标识链，采用集中查找的办法完成从文件名到全路径名的映射。在EDHM中，每个演示称为一个项目，每个项目用一个项目文件进行管理。项目文件包含一个查找表，记录各种文件所在路径，多个路径之间用分号隔开。下面是一个查找表的例子：<br>
+      <b><font color="#003399">　　 表7-8查找表的例子</font></b> 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="20%"> 
+                  <div align="left">　页文件所在路径</div>
+                </td>
+                <td class="text" width="80%"> 
+                  <div align="left">　\\demo\001\page</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="20%"> 
+                  <div align="left">　图像文件所在路径</div>
+                </td>
+                <td class="text" width="80%"> 
+                  <div align="left">　\\demo\001\image;c:\win95</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="20%"> 
+                  <div align="left">　音频文件所在路径</div>
+                </td>
+                <td class="text" width="80%"> 
+                  <div align="left">　\\demo\001\audio;c:\win95\media</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="20%"> 
+                  <div align="left">　视频文件所在路径</div>
+                </td>
+                <td class="text" width="80%"> 
+                  <div align="left">　\\demo\001\video;c:\clips\video</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="20%"> 
+                  <div align="left"> 　文本文件所在路径</div>
+                </td>
+                <td class="text" width="80%"> 
+                  <div align="left">　\\demo\001\text;c:\doc</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　例如，当需要得到一个图像文件的全路径名时，就依次在\\demo\001\image和c:\win95目录中查找，如果找到了，就可以得出其全路径名，否则报告出错。当移动这个图像文件时，只要修改查找表中图像文件所在路径即可，而不用修改链本身。这样使修改集中于项目文件中，系统维护得到极大简化，同时保持了最大限度的灵活性，非常有利于分布式演示系统的制作。此外，文件查找的速度经过实验证明是非常快的，不会影响运行速度。<br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<link rel="stylesheet" href="../../../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../../images/templater/pop/di.gif">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>二、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          数据压缩就是以最少的数码表示信源所发的信号，减少容纳给定消息集合或数据采样集合的信号空间。理解这一概念的关键是要理解"信源"和"信号空间"以及"最少"的含义。"信源"可以是数据、静止图象、语音、电视或其他需要存储和传输的信号；"信号空间"是指信号集合所占的空域、时域和频域空间。空域、时域和频域空间是指：（1）物理空间：如存储器、磁盘、磁带、光盘等数据存储介质。（2）时间区间：如传输给定信源所需的时间。（3）电磁频谱区域：如传输给定信源所需的带宽。"最少"是指在保证信源的一定质量或者说是有效的前提下的最少。<br>
+          <br>
+          <b>问答第2题</b><br>
+          有损压缩是指经过压缩后经解码再还原的信号与原信号不能严格一致，无损压缩是指压缩后经解码还原的信号与原信号严格一致。<br>
+          <br>
+          <b>问答第3题</b><br>
+          一幅512×512的彩色图像，每像素用8bit表示，则其大小为： 512×512×8×3=629145bit≈6.3M bit=768kB 
+          每秒钟传送30帧，其每秒的数据量为： 6.3Mbit×30帧/s =188M bit/s = 23.5MB/s 一分钟的数据量为：23.5MB/s×60 
+          = 1410 MB <br>
+          <br>
+          <b>问答第4题</b><br>
+          信息量与数据量的关系 <br>
+          <b>I = D - du </b>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+          <tr> 
+            <td width="4%" rowspan="3">其中：</td>
+            <td width="1%" rowspan="3"><img src="../../../../../../images/chatp/chap04/test/image001.gif" width="13" height="42" align="absmiddle"></td>
+            <td width="95%">I- 信息量</td>
+          </tr>
+          <tr>
+            <td width="95%">D-数据量</td>
+          </tr>
+          <tr>
+            <td width="95%">du-冗余量</td>
+          </tr>
+        </table>
+        
+          例如：对语音数据来说，中文广播员一分钟读180个汉字,一个汉字存储两个字节,共需360个字节。若存储为音频数据文件，其采样频率为8kHz（人类语言带宽为4kHz）。采样1分钟,其数据量为：8K/s×60s 
+          = 480 K B/分，一分钟的数据冗余为480KB/360B=1000（倍）的冗余。 <br>
+          <br>
+          <b>问答第5题</b><br>
+        （1） 数据压缩是必要的。多媒体信息包括文本、声音、动画、图形、图像以及视频等多种媒体信息。经过数字化处理后其数据量是非常大的，如果不进行数据压缩处理，计算机系统就无法对它进行存储和交换。 
+        <br>
+        （2） 数据压缩是可能的。多媒体数据中存在存在大量的"数据冗余"。信息量"与"数据量"之间的关系：信息量=数据量-冗余量，通常用"I"表示信息量；"D"表示数据量；"du"表示冗余量。信息量与数据量的关系：I 
+        = D - du。 例如：对语音数据来说，中文广播员一分钟读180个汉字,一个汉字存储两个字节,共需360个字节。若存储为音频数据文件，其采样频率为8kHz（人类语言带宽为4kHz）。采样1分钟,其数据量为：8K/s×60s 
+        = 480 K B/分，一分钟的数据冗余为480KB/360B=1000（倍）的冗余。 <br>
+          <br>
+          <b>问答第6题</b><br>
+          数据压缩编码中的量化处理，是指以PCM码作为输入，经正交变换、差分、或预测处理后，熵编码之前，对正交变换系数、差值或预测误差的量化处理。量化处理是一个多对一的处理过程，是个不可逆过程。量化处理中有信息丢失，或者说，会引起量化误差（量化噪声）。<br>
+          <br>
+          <b>问答第7题</b><br>
+        <img src="../../../../../../images/chatp/chap04/test/image002.gif" width="192" height="79"> 
+        <br>
+          <br>
+          <b>问答第8题</b><br>
+          确定输出阶层数为L的量化器，则它的输出值的位数n=log2L（位）。 确定输出量化位数为n的量化器，则它的输出阶数L=2<sup>n</sup>（位）。 <br>
+          <br>
+          <b>问答第9题</b><br>
+          信息是用不确定的量度定义的，被假设为由一系列的随机变量所代表，它们往往用随机出现的符号来表示。 某一事件处于不确定的状态中，当你收到消息后，分解除不确定性，从而获得信息，因此去除不确定性的多少就成为信息的度量。 
+          比如：你在考试过后，没收到考试成绩（考试成绩通知为消息）之前，你不知道你的考试成绩是否及格，那么你就处于一个不确定的状态；当你收到成绩通知（消息）是 
+          "及格"，此时，你就去除了"不及格"（不确定状态，占50%），你得到了消息--"及格"。 一个消息的可能性愈小，其信息含量愈大；反之，消息的可能性愈大，其信息含量愈小。 
+          <br>
+          <br>
+          <b>问答第10题</b><br>
+        设从N中选定任一个数X的概率为P(x)，假定任选一个数的概率都相等，即P(x)=1/N，则信息量I(x)可定义为：I(x)=<img src="../../../../../../images/chatp/chap04/test/image004.gif" width="44" height="15" align="absmiddle">=－<img src="../../../../../../images/chatp/chap04/test/image006.gif" width="40" height="16" align="absmiddle">=－<img src="../../../../../../images/chatp/chap04/test/image008.gif" width="59" height="15" align="absmiddle"> 
+        设底取大于1的整数α， α=2，相应的信息量单位为比特（bit）； 当α=e，相应的信息量单位为奈特（Nat）； 当α=10，相应的信息量单位为哈特（Hart）； 
+        <br>
+          <br>
+          <b>问答第11题</b><br>
+        信源X发出的xj(j=1,2,……n), 共n个随机事件的自信息统计平均（求数学期望），即H(X)=E{I(xj)} =<img src="../../../../../../images/chatp/chap04/test/image010.gif" width="101" height="39" align="absmiddle"> 
+        =<img src="../../../../../../images/chatp/chap04/test/image012.gif" width="152" height="39" align="absmiddle"> 
+        H(X)在信息论中称为信源X的"熵" (Entropy) ，它的含义是信源X发出任意一个随机变量的平均信息量。<br>
+          <br>
+          <b>问答第12题</b><br>
+        答：<img src="../../../../../../images/chatp/chap04/test/image016.gif" width="207" height="42" align="absmiddle"><br>
+          <br>
+          <b>问答第13题</b><br>
+        证明：设已知 P(ai)是信源ai出现的概率，n i是符号ai的编码长度，P(ai)≥P(as)，n i＜n s。 那么，最佳的严格按照所对应符号出现概率的大小逆序排列平均码字长度为：<img src="../../../../../../images/chatp/chap04/test/image018.gif" width="96" height="37" align="absmiddle"> 
+        如果将ai 的码字与as的码字互换，<img src="../../../../../../images/chatp/chap04/test/image020.gif" width="322" height="48" align="absmiddle"> 
+        因为：<img src="../../../../../../images/chatp/chap04/test/image022.gif" width="42" height="15" align="absmiddle"> 
+        所以：<img src="../../../../../../images/chatp/chap04/test/image024.gif" width="87" height="15" align="absmiddle"> 
+        <br>
+          <br>
+          <b>问答第14题</b><br>
+        哈夫曼编码 <br>
+        X1 01 <br>
+        X2 11 <br>
+        X3 10 <br>
+        X4 001 <br>
+        X5 0001 <br>
+        X6 0000 <br>
+          <br>
+          <b>问答第15题</b><br>
+          "0"为大概率符号，Pe=3/4 "1"为小概率符号，Qe=1/4 符号 C A 0 ? ? 1 ? 3/16 0 19/64 9/64 
+          0 85/256 27/256 （头） C=85/256=（0.01010101）b （区间长） A=27/256=（0.00011011）b 
+          （尾） W=C+A=（0.0111）b 在头尾之间的取值：（0.011）b 最终编码为：011 <br>
+          <br>
+        <br>
+        <b>问答第16题</b><br>
+        1 4 2 3 7 5 6<br>
+        I P B B P B B <br>
+        　</td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

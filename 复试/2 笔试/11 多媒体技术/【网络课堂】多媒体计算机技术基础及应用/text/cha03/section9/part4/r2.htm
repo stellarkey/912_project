@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699"> 　　本章主要讲述了九个问题：<br>
+      <font color="#003399">　　1、多媒体中音频信息</font><br>
+      　　音频处理技术的应用领域：<br>
+      　　随着多媒体信息处理技术的发展和计算机数据处理能力的增强，音频处理技术倍受重视，并得到了广泛的应用。如：视频图像的配音、配乐；静态图像的解说、背景音乐；可视电话、电视会议中的话音；游戏中的音响效果；虚拟现实中的声音模拟；用声音控制Web，电子读物的有声输出。除了上述众所熟知的音频技术应用外，还可以应用的领域有：<br>
+      　　·Internet 电话 (IP phone)；<br>
+      　　·声音欺骗系统；<br>
+      　　·现代&quot;芝麻开门&quot;系统；<br>
+      　　·用光盘听书；<br>
+      　　·Internet上的实时音频等<br>
+      　　数字音频：<br>
+      　　计算机内的音频必须是数字形式的，因此必须把模拟音频信号转换成用有限个数字表示的离散序列，即实现音频数字化。在这一处理技术中，涉及到音频的采样、量化和编码。时间上的离散叫采样，幅度上的离散称为量化。<br>
+      　　音频信号处理的特点如下：<br>
+      　　（1）音频信号是时间依赖的连续媒体。因此音频处理的时序性要求很高。如果在时间上有25ms 的延迟，人就会感到断续。<br>
+      　　（2）由于人接收声音有两个通道（左耳、右耳），因此为使计算机模拟自然声音，也应有两个声道，即理想的合成声音应是立体声。<br>
+      　　（3）由于语音信号不仅仅是声音的载体，同时还携带了情感的意向，故对语音信号的处理，不仅是信号处理问题，还要抽取语意等其它信息。因此可能会涉及到语言学、社会学、声学……等。 
+      <br>
+      <font color="#003399">　　2、音频的编码基础</font><br>
+      　　音频编码的目的在于压缩数据。在多媒体音频数据的存储和传输中，数据压缩是必须的。通常数据压缩造成音频质量的下降、计算量的增加。因此，人们在实施数据压缩时，要在音频质量、数据量、计算复杂度三方面进行综合考虑。从信息保持的角度讲，只有当信源本身有冗余时，才能对其进行压缩。<br>
+      　　音频编码的分类：<br>
+      　　（1）基于音频数据的统计特性进行编码，其典型技术是波形编码。<br>
+      　　波形编码的基本思想是，不利用生成语音信号的任何知识而是产生一种重构信号，它的波形与原始话音波形尽可能地一致。一般来说，这种编码方法的复杂程度比较低，数据率在16Kb/s以上，质量相当高。低于这个数据率时，音质急剧下降。<br>
+      　　（2）基于音频的声学参数，进行参数编码，可进一步降低数据率。<br>
+      　　参数编码的基本思想是从话音波形信号中提取生成话音的参数，使用这些参数通过话音生成模型重构出话音。在话音生成模型中，声道被等效成一个随时间变化的滤波器，它由白噪声--无声话音段激励，或者由脉冲串--有声话音激励。因此需要传送给解码器的信息就是滤波器的规格、发声或不发声的标志和有声话音的音节周期，并且每隔10-20ms更新一次。<br>
+      　　混合编码的基本思想是希望填补波形编码和参数编码之间的隔阂。波形编码虽然可以提供高话音的质量，但在数据率低于16Kb/s的情况下，在技术上还没有解决音质的问题；而参数编码的数据率虽然可以降到2.4Kb/s甚至更低，但它的音质根本不可能与自然话音相提并论。为了得到音质高而数据率又低的编码器，就出现了混合编码的方法。这种方法希望寻找一种激励信号，使用这种激励信号产生的波形尽可能接近于原始话音的波形。<br>
+      　　波形编码和参数编码是依据波形本身的相关性和模拟人的发音器官的特性进行编码的方法，<br>
+      　　（3）基于人的听觉特性进行编码。<br>
+      　　当处理10Hz-20000 Hz范围的声音时，数据压缩主要依据是人耳的听觉特性，使用&quot;心理学模型(psycho acoustic 
+      model)&quot;来达到压缩声音数据的目的。<br>
+      　　心理学模型中一个基本的概念就是听觉系统中存在一个听觉阈值电平，低于这个电平的声音信号就听不到，因此就可以把这部分信号去掉。听觉阈值的大小随声音频率的改变而改变，每个人的听觉阈值也不相同。大多数人的听觉系统对2KHz-5KHz之间的声音最敏感。一个人是否听到声音取决于声音的频率，以及声音的幅度是否高于这种频率下的听觉阈值。<br>
+      　　心理声学模型中另一个概念是听觉掩饰特性，即听觉阈值电平是自适应的，也就是听觉阈值电平会随听到的不同频率的声音而发生变化。例如，同时有两种频率的声音存在，它们的强度不同，分贝低的声音就听不到。比如在一个安静的房间可以听到我们普通的谈话声音，但在播放音乐的环境下同样的普通谈话就听不清楚了。<br>
+      　　所以，声音压缩算法可以确立这种感知加权特性的模型来消除更多的冗余数据。<br>
+      　　几种基本的编码算法：<br>
+      　　·脉冲编码调制(Pulse Code Modulation,简称PCM)<br>
+      　　脉冲编码调制(Pulse Code Modulation,简称PCM)，它是概念上最简单、理论上最完善的编码系统；是最早研制成功、使用最为广泛的编码系统；但也是数据量最大的编码系统。<br>
+      　　·瞬时压扩（非均匀量化器 对数瞬时压扩） <br>
+      　　我们知道，声音数字化的两个步骤是，采样和量化，采样就是每间隔一段时间就读一次声音信号的幅度，量化就是把采样得到的声音信号幅度转换为数字值。<br>
+      　　量化可以分为两类：一类称为均匀量化，另一类称为非均匀量化。<br>
+      　　采用相等的量化间隔对采样得到的信号做量化就是均匀量化。<br>
+      　　对输入信号进行量化时，大的输入信号采用大的量化间隔，小的输入信号采用小的量化间隔，这样就可以在满足精度要求的情况下使用较少的位数来表示。声音数据还原时，采用相同的规则，这就是非均匀量化。<br>
+      　　在非均匀量化中，采样输入信号幅度和量化输出数据之间定义了两种对应关系，一种称为m律压扩算法，另一种称为A律压扩算法。<br>
+      　　μ律（m-Law）压扩主要用在北美和日本等地区的数字电话通信中。m为确定压缩量的参数，它反映最大量化间隔和最小量化间隔之比，通常取100≤m≤500。由于m律压扩的输入和输出关系是对数关系，所以这种编码又称为对数PCM。<br>
+      　　A律（A-Law）压扩主要用在欧洲和中国大陆等地区的数字电话通信中。A为确定压缩量的参数，它反映最大量化间隔和最小量化间隔之比。A律压扩的前一部分是线性的，其余部分与μ律压扩相同。 
+      <br>
+      　　·自适应差值脉冲编码(APCM)<br>
+      　　·自适应量化PCM (adaptive pulse code modulation , APCM)是一种根据输入信号幅度大小来改变量化阶距大小的一种波形编码技术。这种自适应可以是瞬时自适应，即量化阶距的大　　小每隔几个样本就改变，也可以是音节自适应，即量化阶距的大小在较长时间周期里发生变化。<br>
+      　　·差值量化编码DPCM是利用样本与样本之间存在信息冗余度来进行编码的一种数据压缩技术。<br>
+      　　·自适应差值量化编码(ADPCM)综合了APCM的自适应性和DPCM系统的差分特性，是一种性能比较好的波形编码。 <br>
+      <font color="#003399">　　3、音频编码标准</font><br>
+      　　当前编码技术发展的一个重要方向就是综合现有的编码技术，制定全球的统一标准，使信息管理系统具有普遍的互操作性并确保了未来的兼容性。国际上，对语音信号压缩编码的审议在CCITT下设的第十五研究组进行，相应的建议为G系列，多由ITU发表。 
+      <br>
+      　　国际电报电话咨询委员会（CCITT）和国际标准化组织（ISO）先后提出一系列有关音频编码的建议。<br>
+      　　1972年首先制定了G.711 64Kbps （A）律PCM编码标准。<br>
+      　　1984年又公布了G.721标准（1986年修订）。它采用的是自适应差分脉冲编码（ADPCM），数据率为32Kbps。这两个标准适用于200～3400Hz窄带话音信号，已用于公共电话网。针对宽带语音（50～7KHz）。<br>
+      　　CCITT制定的G.722编码标准，它的数据率为64Kbps。它可用于综合业务数据网（ISDN）的B通道上传输音频数据。之后公布的G.723建议中码率为40kbps和24kbps, 
+      G.726中码率为16kbps。<br>
+      　　CCITT于1990年通过了16-40kbps镶嵌式ADPCM标准G.727。低码率、短延时、高质量是人们期望的目标。在AT&amp; T 
+      Bell实验室，16Kbps短延时码激励（LD-CELP）编码方案的基础上，经优化。<br>
+      　　CCITT在1992年和1993年分别公布了浮点和定点算法的G.728标准。该算法延时小于2ms，话音质量可达MOS4分以上。ISO的运动图像专家组在制定运动图像编码标准的同时，为图像伴音制定了20KHZ带宽的128Kbps标准。<br>
+      　　1988年欧州数字移动通信GSM制定了泛美数字移动通信网的13Kbps长时预测规则码激励（RPE-LTP）语音编码标准。1989年北美蜂窝电话工业组织（CTIA）公布了北美数字移动通信标准。它采用自适应码本激励。日本的数字移动通信标准是6.7Kbps的VSELP（矢量和激励线性预测）。<br>
+      <font color="#003399">　　4、计算机言语输出</font><br>
+      　　实现计算机语音输出有两种方法：<br>
+      　　一是录音/重放，二是文--语转换。<br>
+      　　若采用第一种方法，首先要把模拟语音信号转换成数字序列，编码后，暂存于存储设备中(录音)，需要时，再经解码，重建声音信号(重放)，如上节所示。录音/重放可获得高音质声音，并能保留特定人或乐器的音色。但所需的存储容量随发音时间线性增长。 
+      <br>
+      　　第二种方法是基于声音合成技术的一种声音产生技术。它可用于语音合成和音乐合成。<br>
+      　　文--语转换是语音合成技术的延伸，它能把计算机内的文体转换成连续自然的语声流。若采用这种方法输出语音，应预先建立语音参数数据库、发音规则库等。需要输出语音时，系统按需求先合成语音单元，再按语音学规则或语言学规则，连接成自然的语流。<br>
+      　　自1976年应用调频(FM)音乐合成技术以来，其乐音已经很逼真。1984年又开发出另一种更真实的音乐合成技术－－波形表(Wavetable)合成。目前这两种音乐合成技术都应用于多媒体计算机的音频卡中。<br>
+      　　计算机语音输出按其实现的功能来分，可以分为以下两个档次：<br>
+      　　（1）有限词汇的计算机语音输出<br>
+      　　这是最简单的计算机语音输出，适合于特定场合的要求。它可以采用录音/重放技术，或针对有限词汇采用某种合成技术，对语言理解没有要求。可用于语音报时、汽车报站等。<br>
+      　　（2）基于语音合成技术的文字－-语音转换 (TTS)<br>
+      　　进行由书面语言到语音的转换。它对书面语进行处理，将其转换为流利的，可理解的语音信号。这是目前计算机言语输出的主要研究阶段。它并不只是由正文到语音信号的简单映射，它还包括了对书面语言的理解，以及对语音的韵律处理。<br>
+      　　什么是汉语文--语转换系统：<br>
+      　　汉语文--语转换(TTS)是一种智能型的语言合成，它涉及到语言学、语音学、语音信号处理、心理学等多个领域。它综合多学科的研究成果，将文字转换成声音，是我们解决计算机语音输出的一种好方法。<br>
+      　　为了更清楚地了解文--语转换(TTS)的工作原理，下面以清华大学计算机系蔡连红教授研制的Sonic系统为例说明。Sonic系统是一个基于波形编辑的文语转换系统。该系统利用汉语词库进行分词，并且根据语音学研究的成果建立了语音规则，对汉语中的某些常见语音现象进行了处理。系统采用PSOLA算法修改超音段语音特征，提高了言语输出的质量。 
+      <br>
+      　　Sonic 框图详见教材图3.29，整个系统可分为四个主要软件模块: 语言学处理、语音学处理、波形编辑合成及安装程序。<br>
+      　　预处理包括全角字符转换为半角、滤掉系统不能辨识字符、检查控制符的合法性。<br>
+      　　语言学处理包括文本规范化，对输入文本的语意，语法和词法分析，提取出其中的韵律特征，对输入文本增加必要的韵律符号，完成字位到音位的转换。声学处理是按语音规则将发音描述进一步变成语音合成器的控制参数，同时由语言学处理加入韵律符号来控制合成语音的重音、声调、时长等超音段特征。<br>
+      　　语音学处理包括文本替换、多音字处理、变音、变调。文本替换就是把文本用它的汉字发音字来替换，如�&quot;二&quot;换成&quot;等于&quot;。多音字处理的目的是使一字多音的字在相应的词中得以正确发音。变音变调的处理在连续语流输出中非常重要。因为流语音节在连续语流中会发生音变、调变、弱化、儿化。<br>
+      　　TTS系统的核心是语音合成，上节已简介了语音合成技术。参数合成和波形编辑方法在TTS系统都有采用。在实施语音合成时，要处理好基元选取、能数提取、实时合成及输出的平滑滤波等一系列问题。<br>
+      　　计算机言语输出的发展方向：<br>
+      　　(1) 特定应用场合的计算机言语输出系统：<br>
+      　　由于计算机言语输出的复杂性，用于普遍场合的言语输出系统的质量还不能达到使用户满意的地步，然而对于特定的应用，可以使系统达到实用的水平。如仪器设备中的语音提示；语音合成、数据库与电话系统的结合，实现有声信息服务。<br>
+      　　(2) 韵律特征的获取与修改<br>
+      　　人说话时含有丰富的韵律特征，这些特征对于表达语义和感情起着至关重要的作用。然而大部分书面语并不能携带丰富的韵律信息。如果忽视自然语言的韵律特征、个人特色，那么通过计算机言语合成只能得到单调枯燥的语音。当前，如何在合成的言语中增加韵律信息是计算机言语输出研究的热点问题。如采用神经网络训练系统、抽取韵律描述规则、设计韵律置标语言等。这些研究的成果将不断改善合成语音的自然度、提高其表现力。另一方面，合成系统也将模拟出具有特定音色的声音。 
+      <br>
+      　　(3) 语言理解与语言合成的结合<br>
+      　　为了产生高质量的计算机言语输出，必须对所要输出的语言有一定的理解，然后在输出的言语中更好地表达语义，从而提高输出言语的可理解度。自然语言理解和语言生成的结合为实现这一目标提供了途径。<br>
+      　　(4)计算机言语输出与计算机言语识别的结合<br>
+      　　计算机言语输出与计算机言语识别是互补的两门学科，它们有许多相似之处，在某些方面它们可以相互借鉴。它们也是人机自然语言交互的两大基石。计算机言语输出和识别的成功将为通过自然语言实现人机交互创造条件。<br>
+      　　(5)计算机言语输出与图像处理相结合。<br>
+      　　最近的一些研究表明，言语输出与图像处理相结合可以帮助听者的理解。在言语输出的过程中伴以话者的表情，可以更好地表达感情和语气，有利于听者的理解。与图像信息相结合为提高言语输出的质量提供了一条有效的途径。
+<br>
+      <font color="#003399">　　5、音乐合成和MIDI</font><br>
+      　　一个乐音必备的三要素： <br>
+      　　一个乐音必备的三要素：音高、音色和响度。<br>
+      　　乐音和噪音的主要区别：<br>
+      　　乐音和噪音的区别主要在于它们是否有周期性。<br>
+      　　观察其时域波形，乐音的波形随时间作周期性变化，噪声则不然；<br>
+      　　观察其频域谱值，乐音包括确定的基频谱和这个基频整数倍的谐波谱，而噪声谱无固定基频，也无规律可言。<br>
+      　　调频音乐合成和波表合成：<br>
+      　　调频音乐合成是使高频振荡波的频率按调制信号规律变化的一种调制方式。采用不同调制波频率和调制指数，就可以方便的合成具有不同频谱分布的波形，再现某些乐器的音色。我们可以采用这种方法得到具有独特效果的&quot;电子模拟声&quot;，创造出丰富多彩的声音，是真实乐器所不具备的音色，这也是FM音乐合成方法特有的魅力之一。 
+      <br>
+      　　波表的英文名称为&quot;WAVE TABLE&quot;，从字面翻译就是&quot;波形表格&quot;的意思。其实它是将各种真实乐器所能发出的所有声音（包括各个音域、声调）录制下来，存贮为一个波表文件。播放时，根据MIDI文件纪录的乐曲信息向波表发出指令，从&quot;表格&quot;中逐一找出对应的声音信息，经过合成、加工后回放出来。<br>
+      <font color="#003399">　　什么情况下使用MIDI</font><br>
+      　　MIDI是乐器数字接口的缩写，它始建于1982年，MIDI泛指数字乐器接口国际标准。标准的多媒体PC平台能够通过内部合成器或连到计算机端口的外部合成器播放MIDI文件。MIDI标准规定了不同厂家的电子乐器与计算机连接的电缆和硬件。它还指定了从一个装置传送数据到另一个装置的通信协议。这样，任何电子乐器，只要有处理MIDI信息的处理器和适当的硬件接口都能变成MIDI装置。MIDI间靠这个接口传递消息(massage)，消息是乐谱(Score)的数字描述。乐谱由音符序列、定时和合成音色(Patches)的乐器定义所组成。当一组MIDI消息通过音乐合成芯片演奏时，合成器解释这些符号，并产生音乐。<br>
+      　　以下几种情况下，使用MIDI谱曲比使用波形音频更合适，如：<br>
+      　　·需要播放长时间高质量音乐。比如你想在硬盘上存储的音乐大于1分钟，而硬盘又没有足够的存储容量。<br>
+      　　·需要以音乐作为背景音响效果。同时从CD-ROM中装载其他数据，如图像、文字的显示。<br>
+      　　·需要以音乐作背景音响效果。同时播放波形音频或实现文--语转换，以实现音乐和语音同时输出。 <br>
+      <font color="#003399">　　6、真实感声音的模拟</font><br>
+      　　近年来，用计算机来生成真实感声音已引起广泛的关注。研究者首先从声音的本质入手，继而研究人对不同声音的感知特性。从这些原本属于物理声学和心理声学的研究结果中找到了影响人类对三维真实感声音感知的重要因素。本节介绍了两种用于产生三维真实感声音的方法。三维真实感声音的研究还处于起步阶段，它与三维真实感图形的研究相比还显得很不成熟。<br>
+      <font color="#003399">　　7、基于音频内容的检索技术</font><br>
+      　　人类有多种方法去检索声音，如：<br>
+      　　·直喻(simile)：说一个声音象一个或一组声音。更简单的例子是说它属于某一类声音。这里，系统需先用另外的声音对这一类里加以训练。 <br>
+      　　·声音/感知特性：用可理解的共同物理特性来描述声音，如亮度、基频的音量。<br>
+      　　·主观特性：用人类的描述语言来说明声音。可以使用一些实例来训练系统以理解这些说明的含意。如用户可以寻找&quot;明亮&quot;声音。<br>
+      　　·拟声(onomatopoeia)：让一个声音在某些音质上类似于你要找的声音。如用户可以制作一种&quot;嗡嗡声&quot;，以此去寻找蜜蜂或电子蜂鸣器的声音。<br>
+      <font color="#003399">　　8、语音识别</font><br>
+      　　语音识别是计算机将人发出的声音、字或短语转换成文字、符号或给出响应、做出回答。口语是最自然的人机交互方式，让说话替代键盘输入汉字是中国人使用计算机者的愿望。它正在变成现实，其技术基础就是语音识别和理解。语音识别系统可分为大、中、小词汇量三种。词汇量少于100的称为小词表语言识别；大于1000的称为大词表语音识别；中间称为中词表语音识别系统，语音识别系统也可按输入方式分成：孤立词、连接词和连续词语音识别系统，也可按说话人分成特定人、限定人和非特定人语音识别系统。<br>
+      <font color="#003399">　　语音识别系统分类</font><br>
+      　　语音识别的研究领域比较广，归纳起来，一般有以下四个方面： <br>
+      　　·按可识别的词汇量多少<br>
+      　　·按照语音的输入方式<br>
+      　　·按发音人的种类（可分为特定人、限定人和非特定人语音识别三种）<br>
+      　　·对说话人的声文进行识别<br>
+      <font color="#003399">　　语音识别系统研究的难点</font><br>
+      　　语音识别的目的是抽取语音信号携带的信息。而语音信号是时间依赖信号。它的特征具有时变性、瞬变性的特点。其随机性和非平稳性给识别带来很多困难。众多专家从事语音识别相关技术的研究。其研究工作主要有：<br>
+      　　① 特征的抽取和表示：这是语音识别的最基本的问题。其目的是找出语音的区别特征和特征的不变性，正确处理语音的模糊性和混沌性。<br>
+      　　② 声学-语音学模型：基于语音学、声学知识，建立精确稳定的低层模型。 <br>
+      　　③ 语言学模型：语音是语言的物质外壳。基于语言学知识，建立语音识别的高层模型，识别并理解语音是我们的最终目的。<br>
+      　　④ 识别系统的稳健性：发音变化、环境差异在所难免，研究优异的自适应算法，搜索策略和算法，对话者、话音、环境、语境进行适应，提高系统的稳健性。<br>
+      <font color="#003399">　　9、音频卡工作原理及应用开发</font><br>
+      　　根据多媒体计算机(MPC)的技术标准，声卡是多媒体技术中最基本的组成部分，是实现声波/数字信号相互转换的硬件电路。<br>
+      　　声卡把来自话筒、磁带、光盘的原始声音信号加以转换，输出到耳机、扬声器、扩音机、录音机等声响设备，或通过音乐设备数字接口(MIDI)使乐器发出美妙的声音。<br>
+      　　声卡的功能：<br>
+      　　1、录制(采集)数字声音文件<br>
+      　　2、播放数字声音文件<br>
+      　　3、编辑与合成声音文件<br>
+      　　4、控制音源的音量<br>
+      　　5、压缩和解压缩<br>
+      　　6、文语转换（语音合成）<br>
+      　　7、语音识别<br>
+      　　8、提供MIDI功能<br>
+      <font color="#003399">　　声卡的分类：</font><br>
+      　　·按应用环境分类<br>
+      　　按照声卡的应用环境，声卡基本可以分为DOS/GAME和Windows两种环境。这两种声卡分别以Sound Blaster 和Windows 
+      Sound System为代表。前者，即Sound Blaster是GAME声卡的事实标准，几乎所有的DOS环境下的游戏都支持Sound Blaster。而在Windows环境下，Windows 
+      Sound System无疑就是标准，它以多媒体计算机为背景，由Microsoft公司提出，目的是为了统一声卡的标准，最终为应用提供方便。<br>
+      　　·从技术角度分类<br>
+      　　从声卡的技术角度分类从声卡所采用的技术上来看，声卡主要可分为三类：<br>
+      　　DSP技术为基础的声卡<br>
+      　　全硬件声卡<br>
+      　　结合一类和二类两种声卡的优点<br>
+      　　·根据采样和量化的位数分类<br>
+      　　根据采样量化的位数，常用有8位、16位和32位声卡。<br>
+      　　位数越高，量化精度越高，质量越好。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

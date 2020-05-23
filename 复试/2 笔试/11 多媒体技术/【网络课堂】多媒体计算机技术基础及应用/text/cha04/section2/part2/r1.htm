@@ -1,0 +1,42 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><span class="zhongdian"><font color="#003399">　　</font>1．量化器的设计要求<br>
+      　　通常设计量化器有下述两种情况：<br>
+      　　（1）给定量化分层级数，满足量化误差最小。<br>
+      　　（2）限定量化误差，确定分层级数，满足以尽量小的平均比特数，表示量化输出。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide01Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　量化器的的功能是以有限个离散值表示无限多个连续值，一定会产生误差，我们希望该误差最小；要做到量化误差最小，就必须用较大的分层级数和较大的输出比特数。而量化器的要求在给定量化分层级数的前提下，既考虑到&quot;量化误差最小&quot;，又要&quot;满足以尽量小的平均比特数&quot;。因此，这是一对相互矛盾的要求，设计量化器只能折衷。<br>
+        　　量化方法有标量量化和矢量量化之分，标量量化有可分为均匀量化、非均匀量化和自适应量化。</div>
+      <br>
+      <span class="zhongdian">　　2．量化方法和量化特性</span><br>
+      　　<img src="../../../../images/chatp/chap04/010.gif" width="212" height="95"> 
+      <br>
+      　 </td>
+  </tr>
+</table>
+</body>
+</html>

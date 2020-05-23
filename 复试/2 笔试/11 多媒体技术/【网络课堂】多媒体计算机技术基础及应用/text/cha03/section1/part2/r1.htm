@@ -1,0 +1,239 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　在计算机内，所有的信息均以数字表示。各种命令是不同的数字，各种幅度的物理量也是不同的数字。当然，语音信号也是由一系列数字来表示，称之为数字音频。数字音频的特点是保真度好，动态范围大。<br>
+      　　<font color="#003399">(1) 什么是数字音频</font><a name="01"></a><br>
+      　　声音是机械振动。振动越强，声音越大，话筒把机械振动转换成电信号，模拟音频技术中以模拟电压的幅度表示声音强弱。<br>
+      　　在数字音频技术中，把表示声音强弱的模拟电压用数字表示，如0.5V电压用数字20表示，2V电压是80表示。模拟电压的幅度，即使在某电平范围内，仍然可以有无穷多个，如1.2V,1.21V,1.215V…。而用数字来表示音频幅度时，只能把无穷多个电压幅度用有限个数字表示。即把某一幅度范围内的电压用一个数字表示，这称之为量化。<br>
+      　　计算机内的基本数制是二进制，为此我们也要把声音数据写成计算机的数据格式，这称之为编码，模拟电压幅度、量化、编码的关系举例如下表。<br>
+      　<font color="#003399">表3.3 模拟电压、量化和编码 <br>
+      </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">电压范围(V)</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">量化(十进制数)</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">编码(二进制数)</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">0.5～0.7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">011</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">0.3～0.5</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">010</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">0.1～0.3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">001</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">-0.1～0.1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">000</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">-0.3～-0.1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">111</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">-0.5～-0.3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-2</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">110</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">-0.7～-0.5</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">101</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">-0.9～-0.7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-4</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">100</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399">
+      </font><br>
+      模拟声音在时间上是连续的，而以数字表示的声音是一个数据序列，在时间上只能是断续的。因此当把模拟声音变成数字声音时，需要每隔一个时间间隔在摸拟声音波形上取一个幅度值，这称之为抽样。该时间间隔称为抽样周期(其倒数称为抽样频率)。<br>
+      　　由此看出，数字声音是一个数据序列。它是由模拟声音经抽样、量化和编码后得到的。计算机、数字CD、数字磁带(DAT)中存储的都是数字声音。模拟一数字转换器可以把模拟声音变成数字声音；数字--模拟转换器可以恢复出模拟声音。<br>
+      脚本注释：<br>
+      通过本小节的学习，同学应该掌握模拟音频和数字音频的概念以及它们的特点。 <br>
+      　　声音是机械振动。振动越强，声音越大，话筒把机械振动转换成电信号，模拟音频技术中以模拟电压的幅度表示声音强弱。<br>
+      在计算机内，所有的信息均是以数字表示的。各种命令是不同的数字，各种幅度的物理量也是不同的数字。当然，语音信号也是由一系列数字来表示，称之为数字音频。<br>
+      数字音频的特点是保真度好，动态范围大。模拟声音在时间上是连续的。数字声音在时间上是断续的。<br>
+      <font color="#003399">　　(2) 音频数字化</font><a name="02"></a><br>
+      　　计算机内的音频必须是数字形式的，因此必须把模拟音频信号转换成有限个数字表示的离散序列，即实现音频数字化。在这一处理技术中，涉及到音频的抽样、量化和编码。 
+      <br>
+      　　音频信息的数字化：计算机内的音频必须是数字形式的，因此必须把模拟音频信号转换成用有限个数字表示的离散序列，即实现音频数字化。在这一处理技术中，涉及到音频的采样、量化和编码。<br>
+      　　抽样：音频实际上是连续信号，或称连续时间函数x(t)。用计算机处理这些信号时，必须先对连续信号抽样，即按一定的时间间隔(T)取值, 得到x(nT)(n为整数)。T称抽样周期，1/T称为抽样频率。称x(nT)为离散信号。<br>
+      　　离散信号x(nT)是从连续信号x(t)上取出的一部分值，那么能用x(nT)唯一地确一或恢复出x(t)吗？一般是不行的。但在一定条件下可以的，即抽样要满足抽样定理。 
+      <br>
+      　　抽样定理告诉我们。设连续信号x(t)的频谱为x(f)，以抽样间隔T抽样得到离散信号x(nT),如果满足：<br>
+      　　　　当|f|≥f<sub>c</sub>时,f<sub>c</sub>是截止频率 <br>
+      　　　　　T≤<img src="../../../../images/chatp/chap03/003.gif" width="28" height="43" align="absmiddle">或f<sub>c</sub>≤<img src="../../../../images/chatp/chap03/004.gif" width="27" height="38" align="absmiddle"> 
+      <br>
+      　　也可以由x(nT)完全确定连续信号x(f): <br>
+      　　　　<img src="../../../../images/chatp/chap03/005.gif" width="169" height="31"> 
+      <br>
+      　　则可由离散信号x(nT)完全确定频谱x(t):<br>
+      　　　　 x(t)=<img src="../../../../images/chatp/chap03/006.gif" width="165" height="83" align="absmiddle"><br>
+      　　当抽样频率等于1/2T时, 即fN=1/2T,称fN为奈魁斯特频率。<br>
+      　　语声信号的频谱在高频处迅速下降，但非限带。在应用中，我们只对一定频率范围内的信号感兴趣，使可以对经滤波限带的音频信号抽样。这样，在抽样前，用一个锐截止模拟低通滤波器对音频信号进行滤波。<br>
+      　　采样和量化<br>
+      　　音频实际上是一个连续的信号，或称连续时间函数x(t)。用计算机处理这些信号时，必须先对连续信号采样，即按一定的时间间隔(T)取值, 得到x(nT)(n为整数)。T称采样周期，1/T称为采样频率。称x(nT)为离散信号。离散信号x(nT)是从连续信号x(t)上取出的一部分值，在满足采样定理的条件下，可以用x(nT)通过数字---模拟转换恢复出x(t)。<br>
+      　　为了把采样序列x(nT)存入计算机，必须将样值量化成一个有限个幅度值的集合x(nT)。通常情况下用二进制数字表示量化后的样值。<br>
+      　　声音数字化的两个步骤是，采样和量化，采样就是每间隔一段时间就读一次声音信号的幅度，量化就是把采样得到的声音信号幅度转换为数字值。<br>
+      　　时间上的离散叫采样，幅度上的离散称为量化。<br>
+      　　常用的音频抽样率有：8kHz、11.025kHz、22.05kHz、16kHz、37.8kHz、44.1kHz、48kHz。<br>
+      　　常用的音频采样频率<br>
+      　　常用的音频采样频率有：8kHz、11.025kHz、16kHz、22.05kHz、37.8kHz、44.1kHz、48kHz等。如果采用更高的采样频率，还可以做出DVD的音质。<br>
+      　　若抽样频率小于fN,离散信号x(nT)不能唯一地确定x(t)。这时离散信号频谱XT<br>
+      (f) 是连续信号频谱折叠而成,即<br>
+      　<img src="../../../../images/chatp/chap03/007.gif" width="288" height="45"> 
+      <br>
+      　　由于x(f)是一个周期函数，周期为2fc，因此XΔ(f)仍是一个周期函数，只是由X(f)分段叠加而成。其直观结果是频谱发生混叠。这一点在实际应用中很重要：当抽样前的滤波器(防混滤波器)不能满足要求或不存在时，就要注意选择音源的频带。此时与其选择宽带音频，还不如选择频带窄一些的效果更好些。否则高频成分混叠到低频，听起来声音会发闷。<br>
+      　　量化：为了把抽样序列x(nT)存入计算机，必须将样值量化成一个有限个幅度值的集合x(nT)。通常，用二进制数字表示量化后的样值是方便的。用B位二进制码字可以表示2B个不同的量化电平。存储数字音频信号的比特率为：<br>
+      　　I=B·fs(比特/秒)<br>
+      　　fs是抽样率(抽样/秒)<br>
+      　　B是每个样值的比特数(比特/抽样)<br>
+      　　量化抽样的过程如下：先将整个幅度划分成为有限个小幅度(量化阶距)的集合，把落入某个阶距内的样值归为一类，并赋予相同的量化值。如果量化值是均匀分布的，我们称之为均匀量化。设△为量化阶距，量化器的最大范围是Xmax，则：<br>
+      　　　<img src="../../../../images/chatp/chap03/008.gif" width="76" height="41"> 
+      <br>
+      　　对于小于(i+<img src="../../../../images/chatp/chap03/009.gif" width="16" height="41" align="absmiddle">)△，而大于(i-<img src="../../../../images/chatp/chap03/009.gif" width="16" height="41" align="absmiddle">)△的样值，均规定为相同的量化值i△。 
+      <br>
+      　　抽样值<img src="../../../../images/chatp/chap03/010.gif" width="13" height="17" align="absmiddle">(nT)与未量化样值x(nT)的关系是：<br>
+      　　　<img src="../../../../images/chatp/chap03/010.gif" width="13" height="17" align="absmiddle">(nT)=x(nT)+e(n)<br>
+      　　e(n)是量化误差(量化噪声),<img src="../../../../images/chatp/chap03/011.gif" width="104" height="41" align="absmiddle">。量化噪声随距离变大而增加。在信号最大幅度确定情况下，可以用增加码位B的方法来减小阶距△，以便减少量化噪声，显然这样导致比特率I的增大。<br>
+      　　我们应该研究减小比特率，又不增大噪声的方法。在公式I=Bfs中，对于确定的信号，f<sub>s</sub>是确定的，那么要减小I，只能想办法减少B。这就是在2.3节中介绍的众多编码算法和标准。<br>
+      <b>　　<font color="#003399">量化的分类：</font></b><font color="#003399"><br>
+      　　量化有好几种方法，但可以归纳为两类：一类称为均匀量化，另一类称为非均匀量化。采用的量化方法不同，量化后的数据量也不同。因此，可以说量化也是一种压缩数据的方法。<br>
+      　　均匀量化和非均匀量化： <br>
+      　　采用相等的量化间隔对采样得到的信号做量化就是均匀量化。均匀量化就是采用相同的&quot;等分尺&quot;来度量采样得到的幅度，也称为线性量化。<br>
+      　　用这种方法量化输入信号时，无论对大的输入信号还是对小的输入信号一律都采用相同的量化间隔。为了适应幅度大的输入信号，同时又要满足精度高的要求，就需要增加样本的位数。但是，对语音信号来说，大信号出现的机会并不多，增加的样本位数就没有充分利用。为了克服这个不足，就出现了非均匀量化的方法，这种方法也称为非线性量化。 
+      <br>
+      　　非均匀量化的基本思想是，对输入信号进行量化时，大的输入信号采用大的量化间隔，小的输入信号采用小的量化间隔，这样就可以在满足精度要求的情况下使用较少的位数来表示。声音数据还原时，采用相同的规则。<br>
+      　　在非线性量化中，采样输入信号幅度和量化输出数据之间定义了两种对应关系，一种称为m律压扩算法，另一种称为A律压扩算法。<br>
+      　　<b>量化的过程：</b><br>
+      　　先将整个幅度划分成为有限个小幅度(量化阶距)的集合，把落入某个阶距内的样值归为一类，并赋予相同的量化值。 </font><br>
+      <font color="#003399"><b>　　</b>(3) 数字音频的文件格式及转换：</font><a name="03"></a><br>
+      　　下表列出音频文件的格式：<br>
+      　　文件扩展名　　　说明<br>
+      　　　　　　　　　 PCM数据序列。看注1。<br>
+      　　·VOC　　　　　Creative公司的波形音频文件格式。注2。<br>
+      　　·WAV　　　　　Microsoft公司的波音频文件格式。注3。<br>
+      　　·SND　　　　　NeXT计算机的波形音频文件格式。<br>
+      　　·AIF　　　　　Apple计算机的波形音频文件格式。注4。<br>
+      　　·MID　　　　　MIDI文件格式。<br>
+      　　·RMI 　　　　　Microsoft公司的MIDI文件格式。它可以包括图片、标记和文本。 　　<br>
+      　　注1：PCM格式是指模拟的音频信号，经模数转换直接形成的二进制序列。该文件没有附加的文件头或文件结束标志。<br>
+        　　在声霸卡提供的软件中，可以利用VOC-HDR程序，为PCM格式的音频文件加上文件头，而形成VOC格式。Windows的convert工具也可以将PCM音频文件转换成Microsoft的WAV格式。
+      <br>
+　　注2：VOC格式是声霸卡(Sound Blaster)使用的音频文件格式。每个VOC文件由文件头块(Header Block)和音频数据块(Data 
+        Block)组成。文件头包含一个标识，版本号和一个指向数据块起始的指针。数据块分成各种类型的子块，如声音数据、静音、标记、ASCⅡ码文件，重复的结束重复以及终止标志，扩展块等。<br>
+        　　现说明VOC格式音频文件的文件头如下:<br>
+      　　00H-13H字节: 文件类型说明。前19个字节包含下面的正文:Creative Voice File。最后是EOF字节(1AH)<br>
+      　　14H-15H字节: 其值为001AH<br>
+      　　16H-17H字节: 文件的版本号。小数点后面的部分在前。如版本号为1.10，则 　 这两个字节内的值为0A01。<br>
+      　　18H-19H字节: 是一个识别码。由这个代码可以检验其文件是否是真正的VOC 文件。其值是16H和17H单元中所存文件版本号的反码再加上1234H。例如，版本号为1.10,010AH的反码是　FEF5H, 
+      则这个代码为: FEF5H+1234H=1129H。<br>
+      　　利用声霸卡提供的软件可以实现VOC和WAV文件的转换：<br>
+        　　程序VOC2WAV转换Creative的VOC文件到Microsoft的WAV文件。<br>
+      　　程序WAV2VOC转换Microsoft的WAV文件到Creative的VOC文件。<br>
+      　　注3:WAV是Microsoft的音频文件格式。Microsoft Sound System的软件SoundFinder可以转换AIF、SND和VOC文件到WAV格式。
+<br>
+      　　注4: AIF是Apple计算机的音频文件格式。Windows的Convert工具可以把AIF格式的文件转换成Microsoft的WAV格式的文件。<br>
+      　　<font color="#003399">通过本小节的学习，同学应该掌握和了解下面的问题：<br>
+      　　1.音频信息的数字化<br>
+      　　计算机内的音频必须是数字形式的，因此必须把模拟音频信号转换成用有限个数字表示的离散序列，即实现音频数字化。在这一处理技术中，涉及到音频的采样、量化和编码。 
+      <br>
+      　　2.采样和量化<br>
+      　　声音数字化的两个步骤是，采样和量化，采样就是每间隔一段时间就读一次声音信号的幅度，量化就是把采样得到的声音信号幅度转换为数字值。<br>
+      　　时间上的离散叫采样，幅度上的离散称为量化。<br>
+      　　3.量化的分类<br>
+      　　两类：一类称为均匀量化，另一类称为非均匀量化。<br>
+      　　4.均匀量化和非均匀量化的特点<br>
+      　　采用相等的量化间隔对采样得到的信号做量化就是均匀量化。<br>
+      　　但均匀量化无论对大的输入信号还是对小的输入信号一律都采用相同的量化间隔。为了适应幅度大的输入信号，又不增加样本的位数可以采用非均匀量化的方法 
+      <br>
+      　　非均匀量化的基本思想是，对输入信号进行量化时，大的输入信号采用大的量化间隔，小的输入信号采用小的量化间隔，这样就可以在满足精度要求的情况下使用较少的位数来表示。声音数据还原时，采用相同的规则。<br>
+      　　5. 非均匀量化的两种算法<br>
+      　　在非线性量化中，采样输入信号幅度和量化输出数据之间定义了良种对应关系，一种称为m律压扩算法，另一种称为A律压扩算法。<br>
+      　　6. 量化的过程<br>
+      　　先将整个幅度划分成为有限个小幅度(量化阶距)的集合，把落入某个阶距内的样值归为一类，并赋予相同的量化值。<br>
+      　　7.常用的音频采样频率<br>
+      　　常用的音频采样频率有：8kHz、11.025kHz、16kHz、22.05kHz、37.8kHz、44.1kHz、48kHz等。如果采用更高的采样频率，还可以做出DVD的音质。</font><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

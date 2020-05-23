@@ -1,0 +1,487 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　每年一次在美国举行的微处理器论坛（Micro-Processor Forum），它将宣告即将来临的微处理器的流行样式。1995年主要围绕着下一代CPU的问题，而1996年论坛的热点论题转到为多媒体而优化的专门的微处理器上，它表明1996年流行的将是针对多媒体用途的微处理器。为了更有效地实时处理模拟音响、视象的数字化数据流，这些多媒体处理器都采用了数字信号处理器（DSP-Digital 
+      Signal Processor）中采用的一些技术。实际上它们通常很象CPU/DSP的混合物，更好的方法将是CISC、RISC和DSP、Array 
+      Processor结构的融合。随着PC从处理简单的数字和文字走向处理更复杂的数据类型，老的处理数字的方法已不完全适用，今后新一代的PC处理音响和视象将和今天PC处理文字和表格一样平常。<br>
+      1996年世界上很多厂商推出了多媒体处理器（Multimedia Processors），其中佼佼者是Chromatic Research公司的Mpact、Philips公司的Trimedia、MicroUnity的Media 
+      Processor（由MediaProcessor、Media Codec及MediaBridge三件组成）以及Nvidia NVI高度集成的多媒体加速器，它们引起世界舆论界普遍的关注，人们认为它将会成为多媒体时代多媒体计算机的协处理器。Microsoft公司总裁Bill 
+      Gates曾预测，未来的个人计算机只有三个主要元件，即存贮模块、CPU及一个执行复杂I/O的处理芯片，多媒体处理器便是一枚可独立执行I/O处理的高速专用芯片。<br>
+      　　1996年2月位于美国桑尼维尔的ChromaticResearch公司开发的Mpact媒体处理器一经问世，就立即引起轰动，受到各种宣传媒体的普通关注：华尔街邮报、今日美国、Byte杂志等数十家都刊登了一系列的评论。有人认为：&quot;媒体处理器--多媒体时代的计算机芯片&quot;。除了Chromatic公司，还有IBM、MicroUnity、Mitsubishi、NEC、Philips、Samsung和SGS-Thomson等众多有影响的大公司正在推出自己的媒体处理器。在下面两小节将重点介绍Mpact和Trimedia芯片、板卡及其软件。IBM公司Mfast，它与上述两个产品不同的地方是增加了MPEG-Ⅱ的编码功能，对于需要高质量的MPEG-Ⅱ视频创作的用户而言，它可能是最好的选择。<br>
+      <b><font color="#003399">　　5.4.2.1 Mpact多媒体处理及其PCI总线评价卡</font></b> <a name="01"></a><br>
+      　　美国Chromatic Research公司是一家不生产半导体芯片的芯片设计和软件开发商，它采用了一种全新的商业模式，它负责Mpact多媒体处理器芯片的设计及软件开发，而芯片和评价卡的生产交给合作伙伴（东芝、LG、SGS-Thomson等半导体厂商）去做，这样Chromatic 
+      Research公司就可以充分利用半导厂家的现有资源，而不要在生产设备上投入巨额资金，而将资金用于设计和研究中。<br>
+      <font color="#003399">　　1.Mpact芯片的功能和工作原理</font><br>
+      　　由Chromatic Research公司设计，LG Semicon、Toshiba公司设计制造的Mpact芯片现有三种型号：<br>
+      　　M1：Mpact/3000；　M1 R75MHz：Mpact R/3600；　M2：Mpact 2/6000<br>
+      　　其中3000、3600、6000描述了芯片的速度，速度单位是MOPS-Millions of Operation Per Second，M1在LG公司的产品型号为GM90DC701Q，在Toshiba公司的型号为：TC 
+      80301F。<br>
+      <b><font color="#003399">　　 5-14　Mpact媒体处理器功能图</font></b><br>
+      　 <img src="../../../../images/chatp/chap05/035.gif" width="370" height="266"><br>
+      　　（1） Mpact芯片的功能<br>
+      　　Mpact芯片的主要功能如图5-14所示。这是Mpact芯片目前设计的已形成的七种多媒体功能，同时芯片设计采用了微码引擎（Microcode 
+      Engine），如果想增加新的功能，可采用软件升级的方式而不必更换硬件，这样可以有效地保护用户投资。具体功能如下：<br>
+      　　① 视频<br>
+      　　·PEG-1实时编码、30帧/秒，家庭视频编辑，数字VCR（视频捕捉+MPEG格式回放）。<br>
+      　　·MPEG-1解码（全屏幕、30帧/秒、18位彩色），VCD播放、专利的动态影像处理技术达到最佳回放效果。<br>
+      　　·MPEG-2解码（全屏幕、30帧/秒）、DVD播放。<br>
+      　　② 二维图像<br>
+      　　·Windows GUI加速。 <br>
+      　　·SVGA、VGA兼容。<br>
+      　　·1280×1024×18，60Hz；<br>
+      　　1024×768×18,60－85Hz；<br>
+      　　1024×768×24,60Hz；<br>
+      　　800×600×24，60－120Hz；<br>
+      　　640×480×24，60－144Hz。<br>
+      　　·符合娱乐PC 97规范，具有多制式电视功能。<br>
+      　　③ 三维图形<br>
+      　　·Windows 95 应用程序接口。<br>
+      　　·Z缓存，双缓存的动态显示；折光、反射映照和阴影、线框图、实体模型。<br>
+      　　·透视纠正，纹理映射。<br>
+      　　·支持点、线、三角形等图案元素。<br>
+      　　·400万像素/秒，80万三角形/秒<br>
+      　　④ 音频<br>
+      　　·MPEG音频<br>
+      　　·Dolby AC-3音频。<br>
+      　　·波表合成。<br>
+      　　·波导合成。<br>
+      　　·三维声音和效果。<br>
+      　　·通用MIDI。<br>
+      　　·FM合成。<br>
+      　　<b><font color="#003399"> 5-15　Mpact结构原理图 
+      <br>
+      　<img src="../../../../images/chatp/chap05/036.gif" width="396" height="408"> 
+      　　 </font></b> <br>
+      　　·声霸卡兼容。<br>
+      　　⑤ 传真/调制解调器<br>
+      　　·V.34bis 33.6K数据传输，V.17一、二两级传真。<br>
+      　　·V.80在异步接口上同步数据传输，V.14异步同步转换，支持RS 2 3 2接口。<br>
+      　　⑥ 电话<br>
+      　　·免提式电话。<br>
+      　　·呼叫识别。<br>
+      　　·自动应答。<br>
+      　　·语音信箱。<br>
+      　　⑦ 视频会议<br>
+      　　·H.320(ISDN)综合业务数字网。<br>
+      　　·H.323(LAN)局域网。<br>
+      　　·H.324(POTS)普通电话系统。<br>
+      　　（2） Mpact多媒体处理器的结构原理<br>
+      　　Mpact核心芯片使用0.5mm三层CMOS工艺，由约1.5兆个晶体管组成。Mpact芯片工作电压为3.3V，它也能在5.0V电压下正常工作。Mpact芯片工作频率为62.5MHz，芯片为240管脚的FQFQ封装芯片。 
+      <br>
+      　　Mpact芯片能处理各项多媒体功能，其内部的CPU指令形式为&quot;超长指令字格式&quot;（Very Long Instruction 
+      Word，VLIW）。指令的执行方式属于&quot;单指令多数据&quot;（Single Instruction 　　Multiple Data，SIMD）方式，&quot;单指令多数据&quot;的指令执行逻辑更加适合于多媒体功能的处理。这是因为多媒体功能处理运算的特点是：运算量大，运算种类单一，精度要求低，速度要求高。SIMD技术正适合多媒体功能的运算，指令的处理在Mpact芯片内还采用了流水线（Pipeline）技术。在流水线中，指令的执行分成四步：取指、解码、执行、回写。流水线技术的使用也提高了Mpact的运算能力。 
+      <br>
+      　　Mpact芯片内部结构如图5-15所示。它是由五个接口控制器，一个多通道SRAM和CPU组成。五个接口控制器为：存贮器接口、PCI总线接口、视频接口、显示接口及外设I/O接口。五个接口与SRAM通过总线和FIFO相连。多通道的SRAM作为主CPU的存贮器，其功能类似于Cache。4K 
+      Byte的SRAM有八个读写通道，SRAM通过八个读写通道可同时支持各接口和CPU之间的数据交换。另外Mpact芯片中还有792 bit的称为Crossbar的内部连通线，Crossbar连通芯片内的各功能部件，使芯片内数据传输率可达9.0GB/s。<br>
+      　　① Mpact的CPU及指令处理单元<br>
+      　　Mpact的CPU（Center Processing Units）由四个ALU（Arithmatic/Logic Unit）组和一个运动估计（Motion 
+      Estimation）单元以及指令解码控制器组成。<br>
+      　　Mpact芯片最小处理单元为72bit。Mpact内每Byte由9Bit组成，72bit为8Byte。在Mpact中，称8Byte为双字长。每一个双字长内可有一或两条指令。一般的指令为3-5Byte长。对于可执行向量运算和块移动操作的指令来说，一条指令可以使4个ALU同时工作，使Mpact芯片的最高运算处理能力达到3.0BOPS（Billions 
+      of Operation Per Second）。<br>
+      　　四个ALU组的功能如下：<br>
+      　　ALU1：ALU1是Shift/align ALU组。<br>
+      　　ALU2：ALU2是通用ALU组。<br>
+      　　ALU3&amp;4：ALU3和ALU4联合用于处理多媒体的一些特殊运算。<br>
+      　　运动估计单元由大约400个算术单元组成，在MPEG-1或MPEG-2的运动估计运算中提供了20BOPS运算能力。<br>
+      　　Mpact芯片的指令有三字，四字，五字指令。典型的四字指令为一字操作码，二字源操作字，一字目标操作字，而三字指令为一字操作码，一字源操作字和一字目标操作字。五字指令提供了四个操作字，这样允许执行向量运算。<br>
+      　　Mpact在执行时，一般由两个指令组成一个&quot;指令对&quot;（Instruction Pair）。&quot;指令对&quot;长度为一个双字长，除非指令之间有资源冲突，两个指令可以同时执行，一旦冲突发生，则两条指令均单独执行。<br>
+      　　② 多通道静态随机存贮器<br>
+      　　4K的SRAM被划分为512个双字长，执行软件将SRAM划分为&quot;指令段&quot;和&quot;数据段&quot;，&quot;指令段&quot;可以为256，512或1K大小，&quot;指令段&quot;内的指令顺序是由地址顺序决定的。&quot;数据段&quot;内地址空间则是自处理的。由于Mpact不提供保护模式，因而划分和管理&quot;指令段&quot;和&quot;数据段&quot;的工作由程序员完成。<br>
+      　　SRAM上有八个通道，其中四个为写通道，另外四个为读通道，这八个通道均可以同时操作。一个写通道被RDRAM专用，另一个写通道为DMA专用，另外两个写通道则为通用通道。<br>
+      　　③ Mpact的RDRAM接口<br>
+      　　Mpact卡上有一组RDRAM芯片作为板卡存贮器。RDRAM能够提供高达500M/S的数据传输率，远远超过其他DRAM的数据传输率，Mpact卡的RDRAM组的大小可在2M-8MB之间自由选择。<br>
+      　　RDRAM的控制器RAC（Rambus Auers Controllor）位于Mpact芯片的内部。RAC提供了对RDRAM的管理，控制器能够直接读写SRAM和显示FIFO，地址转换也在RAC内部完成。另外，RAC还提供了内存刷新和RDRAM的初始化设置。<br>
+      　　Mpact的最小RDRAM要求为2MB（每Byte为9bit，2MB=18Mb）。最大可安装至8MB，RDRAM的大小设置与显示分辨率的关系如表5-1所示。<br>
+      <font color="#003399"><b> 　　 表5-1 
+      RDRAM容量与显示分辨率的关系</b></font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">显示分辨率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">bits/像素颜色</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">最小的容量</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1600′1200</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1360′1024</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1280′1024</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1280′1024</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1152′870</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1152′870</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1024′768</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">24</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1024′768</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8,18</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">800′600</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8,18,24</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">640′480</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8,18,24</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2 MB</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　④PCI总线接口<br>
+      　　PCI Controllor与其三个FIFO部件控制了Mpact芯片和主机X86的交互处理，这种PCI的接口与PCI局部总线技术规范2.0版本完全兼容，PCI接口支持3.3V或5V的电源信号，32bit的PCI峰值传输速率为132MB/s。<br>
+      　　Mpact芯片通过PCI接口可与X86或其子系统以33MHz的同步频率进行主或从的操作。当进行DMA操作时，Mpact芯片作为主，而当对Mpact卡进行读写操作时，Mpact芯片作为从。<br>
+      　　PCI接口的三个FIFO分别为DMA FIFO、读FIFO、写FIFO。DMA FIFO长为8字，而另两个FIFO长为1字，如图5-15所示。<br>
+      　　从主机角度讲，PCI在地址空间占据三个部分：128M的内存，128K的扩展ROM和特殊设备的地址。见图5-16 PCI的地址空间分配图，PCI系统结构空间为PCI的设置空间。这段空间内有PCI的ROM空间和内存空间基址，指示了ROM和内存空间的位置。传统硬件寄存器和BIOS为ROM和基于PCI板的模拟显示卡和声卡的功能寄存器，PCI的128K 
+      ROM空间指的就是这个区域。PCI地址区域的顶部为128M的RAM地址空间。这里地址空间分配给帧缓存、多通道SRAM、扩展的ROM和内部寄存器。在实际情况中，128K的ROM空间和128M的RAM空间均有很大的空闲。如128M的RAM空间，最多只能占用10M左右。<br>
+      <b><font color="#003399">　　 5-16 
+      PCI的地址空间分配表</font></b><br>
+      　　<img src="../../../../images/chatp/chap05/037.gif" width="237" height="299"> 
+      <br>
+      　　⑤ Mpact视频接口<br>
+      　　视频控制器与32Byte的视频FIFO相连，在16bit的视频接口上传送YUV格式的视频数据。视频接口是可编程的双向接口，但是传输只能工作在半双工的状态下。工业标准的NTSC和PAL的编码器、解码器均可在全速率扫描模式下，提供模拟信号或S-Video信号。<br>
+      　　⑥ Mpact的显示接口<br>
+      　　显示控制器与512Byte的显示FIFO相连，它为显示提供连续的RGB信号。显示控制器控制全部的数据，并产生同步信号和时种信号，提供给RAMDAC或显示编码。显示控制器支持8位的索引色（Index 
+      Color）或24位的真彩色（True Color）模式，也支持NTSC或PAL的RGB编码器。<br>
+      　　控制显示，RAMDAC的信号是Mpact S erial总线或外设I/O总线（Peripheral I/O Interface）提供的。<br>
+      　　显示数据可以一字、双字或三字格式存贮，以支持8位，15位、16位、18位或24位色。Mpact的特殊格式Chro-Color为18bit色，正好占用两个字节。<br>
+      　　显示数据从内存格式到RAMDAC格式的转换是在显示控制器内完成的。<br>
+      　　显示的功能逻辑由显示FIFO，显示前端（front end），显示后端（back end）和时钟发生器完成，如图5-17所示。<br>
+      　　显示FIFO将数据由RDRAM帧缓冲区移至显示后端。<br>
+      　　显示前端为RAC提供帧存的地址，光标的地址及格式。<br>
+      　　显示后端将RGB信息送入RAM DAC并提供Zoom控制。<br>
+      　　时钟发生器提供同步时钟脉冲。<br>
+      <b><font color="#003399">　　 5-17 
+      Mpact显示接口原理图</font></b><br>
+      　<img src="../../../../images/chatp/chap05/038.gif" width="392" height="219"> 
+      <br>
+      　　Mpact支持的分辨率如表5-2所示。 <br>
+      <b><font color="#003399">　　<b> </b>表5-2　Mpact的外设I/O接口</font></b> 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">显示分辨率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">像素时钟频率MHz</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">最大刷新速率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">最大的像素彩色位数 </div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1600′1200</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">220</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">75</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1360′1024</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">135</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">75</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1280′1024</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">125</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">75</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1152′870</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">100</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">85</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">1024′768</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">80</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">85</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">800′600</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">50</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">85</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">24</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">640′480</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">32</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">85</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">24</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">NTSC: 720′480</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">12.27</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">85</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">24</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">PAL: 720′576</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">14.75</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">30</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">24</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　⑦Mpact的外设I/O接口<br>
+      　　Mpact的外设I/O接口（Peripheral I/O Interface）可以分为三个部分：一个8位双向并口，四个双向串口，以及三个特殊功能总线。<br>
+      　　Mpact的外设I/O接口提供最高传输率为5MB/s的数据吞吐能力。<br>
+      　　Mpact的串口共四个，每个串口由PSD[i] 、PSDO[i] 、PSCLK[i]及PSSYN[i]四根控制线，数据线(i =0ê3) ，四个串口中的口C连接ROM，口C的硬件编码设计支持24bit的地址的寻址，读取ROM内的数据。口A、B、D为通用口。<br>
+      　　Mpact的并口为8位宽，19位信号/数据线，并口连接了外设I/O接口的控制逻辑，用以扩展并口功能。在Mpact的设计中，并口通过与Mpact系统集成ASIC（MSIA）相连，将8位数据并口线扩展为80位的信号、数据并口线。<br>
+      　　80位的信号、数据并口线为24位地址线、24位输入信号线、16位输出信号线、8位数据I/O线以及8位的Joystick/MIDI信号输入线。<br>
+      　　24位的输入信号线又被分为两个部分：12位为中断请求信号线，另外12位为DMA请求信号线。<br>
+      　　16位的输出信号线也被分为两个部分：8位为片选信号线，另外8位为通用输出控制。<br>
+      　　外设I/O并行总线的功能可归纳为两点：<br>
+      　　·为并口外设提供高速的传输，如Audio Codec、Telephone、MIDI VART等。<br>
+      　　·控制Mpact视频、Mpact显示等有设置和控制参数的设备的特殊接口，如：<br>
+      　　a. Mpact的串行总线2位，MSB1与MSB2。双向数据传输，控制信号传输位。<br>
+      　　b. 可编程位（PB）：2位，单向输出，用于与外设进行通信，由外设的可编程控制器来Set和Clear。<br>
+      　　c. 系统标识ROM位：1位。双向数据传输，它与Mpact卡上的设备标识PROM相连，用于写入或读出每块板卡唯一的标识码。 <br>
+      <br>
+      <font color="#003399">　　2．Mpact PCI总线评价卡</font><br>
+        　　为了评价测试Mpact芯片的功能，同时也为了给使用Mpact芯片提供设计的参考文献资料，Chromatic Research公司于1997年1月15日推出了基于Mpact芯片的PCI卡（Mpact-Based 
+        PCI Card），版本为6.5.1，它是目前推出的功能最全、&quot;最大&quot;（MAX）的设计参考资料。为了不同的应用，它还给出了最大的参考设计的子集，它们是：<br>
+        　　·Ref－PRO<br>
+        　　·Ref－AGV<br>
+        　　·Ref－AGN<br>
+      　　<b><font color="#003399"> </font></b><b><font color="#003399">5-18　Mpact 
+      PCI总线评价卡EVB-101工作原理图</font></b><br>
+      　　<img src="../../../../images/chatp/chap05/039.gif" width="399" height="226"> 
+      <br>
+      　　它们分别包括下述特性：<br>
+      　　Ref－PRO：2D/3D Direct X W/4M Byte；波表合成；MIDI/操纵杆通道；同步键盘4 MByte样板库；33.6K 
+      V.34bps/14.4 V.17调制解调器；DOS、VGA、SVGA兼容；30帧/秒MPEG-1；现有的DVD；FM PC音频。<br>
+      　　Ref－AGV：2D/3D Direct X W/4MByte；波表合成；MIDI/操纵杆通道；同步键盘4MByte样板库；DOS、VGA、SVGA兼容；30帧/秒MPEG-1；现有的DVD；FMPC音频。<br>
+      　　Ref－AGN：2D/3D Direct X W/4MByte；波表合成；MIDI/操纵杆通道；同步键盘4MByte样本板库；C-Video和S-Video输出；DOS、VGA、SVGA兼容；30帧/秒MPEG-1；现有的DVD；FMPC音频；S/P 
+      DIF输出。<br>
+      　　Mpact PCI总线评价卡EVB-101（Mpact PCI Evaluation Board），板卡的工作原理如图5-18所示。EVB 
+      101主板有25cm长，卡上主要的核心部件是Mpact媒体处理器，此外还有视频控制接口部件、外设接口控制部件、显示接口控制部件、存贮器接口控制部件及PCI总线接口驱动器件。Mpact媒体处理器已在上面作了较详细的介绍，下面将重点介绍Mpact产品的专用ASIC芯片及其接口器件以及高速存贮器RDRAM原理和应用。<br>
+      <br>
+      <font color="#003399">　　3．Mpact的支撑软件Mediaware</font><br>
+      　　Chromatic Research公司推出的Mpact支撑软件Mediaware到目前为止已有V 0.9、V1.0、V1.4、V1.6和V2.0。上述各版本基本结构模块是一样，只是功能有比较大的改进。1997年5月30日推出的V2.0版本，与低版本比较增加了下述特性：<br>
+      　　·Mpact实时核（MRK）和Mpact资源器<br>
+      　　·支持Mpact芯片所有功能；<br>
+      　　支持MpactⅡ（Mpact 2/6000芯片）；<br>
+      　　支持MMX优化程序（基本的MMX设置）；<br>
+      　　对于大于24路语音波表可以降低使用CPU资源。<br>
+      　　·2维和3维图形<br>
+      　　MpactⅡ支持Intel的AGP；<br>
+      　　MpactⅡ支持3维特性40 Mpixel/sec、1Mtris/sec；<br>
+      　　加速YUV转换、缩放、剪截及硬件游标。<br>
+      　　·音频<br>
+      　　支持Dolby AC-3 DVD 5.1通道解码；<br>
+      　　32位语音波表；<br>
+      　　Karacel利用麦克风的混合。<br>
+      　　·视频<br>
+      　　实时DVD的解码（MPEG-Ⅱ加上Dolby AC-3）；<br>
+      　　V-CD；<br>
+      　　·Fax/Modem<br>
+      　　V.34 bit Modem；<br>
+      　　V.8 bit多功能Modem。<br>
+      　　·电话<br>
+      　　免提电话音质的改进。<br>
+      　　·视频会议<br>
+      　　支持H.324在电话线上召开视频会议。<br>
+      　　Chromatic Research公司设计的Mpact支撑软件Mediaware的模块结构如图5-19所示。Mediaware设计成模块结构，每个模块可以方便地安装和拆除，从图5-19中可见可以把Mediaware分成六层：下面三层和Mpact芯片硬件关系比较密切；上面三层和Windows关系密切。<br>
+      　　（1）. 最下层是MRK-Mpact实时核（Mpact Real-Time Kernel），最下层是多媒体硬件的I/O通道，正象Mpact芯片结构所述，可以把它们分成五个通道：视频输入输出使用视频通道；2维和3维图像使用显示通道；电话、视频会议和Fax/Modem使用电话通道；操纵杆和MIDI及辅助功能使用通用通道。MRK主要功能是I/O任务动态调度和监控，其调度和抛弃的原则是最近最后期限原则。当一个任务的时间期限到达时，Mpact采用抢占式方法调度新任务。<br>
+      　　（2）. 下数第二层是Mpact音频处理管理器MAPM（Mpact Audio Processing Manager），Mpact的音频任务由MRK子任务管理器MAPM管理。之所以对音频管理采用单独管理方式，是因为人的听觉系统比视觉系统更加敏感。为了保证音频的同步播放，Mpact的Mediaware专门设计了MAPM支持音频的实时快速处理。<br>
+      　　（3）. 再上层是Mpact的资源管理器MRM（Mpact Resource Manager），MRM管理Mpact EVB-101卡和主机上各种资源。MRM依照可用资源的状态，动态实时的连接和装载资源，并且提供适当的下载方式。<br>
+      　　上面三层是和Windows有关的应用层（Application），应用编程接口层（API－Application Programming Interface）及设备驱动器层（Device 
+      Drivers）。<br>
+      　　 设备驱动器层是低层的API、HAL（Hardware Abstract Layer硬件抽象层）及虚拟硬件窗口（VHV－Virtual Hardware 
+      Views）。它包括DOS环境下的VHV、VGA及声霸卡，Windows环境下的驱动器，低层的API和HAL。<br>
+      　　应用编程接口层：Video的软件功能包括：MPEG-1的解码和MPEG-2的解码，这些功能可以通过Direct Video、MCI及Active 
+      Movie的API来调用。2维和3维图形处理功能，对VGA及SVGA的支持，对硬件光标的支持都可通过对Direct Draw API的调用来实现。<br>
+      　　最上层是应用层，它可以在Window 95环境上开发应用软件，也可以在DOS环境下开发应用软件。<br>
+      <b><font color="#003399"> 　　 5-19 
+      Mediaware的模块结构5-19 Mediaware的模块结构</font></b><br>
+      　<img src="../../../../images/chatp/chap05/040.gif" width="378" height="479"></td>
+  </tr>
+</table>
+</body>
+</html>

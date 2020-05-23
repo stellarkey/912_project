@@ -1,0 +1,413 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="D";mykeys[1]="D";mykeys[2]="C";mykeys[3]="C";mykeys[4]="D";mykeys[5]="D";mykeys[6]="B";mykeys[7]="D";mykeys[8]="B";mykeys[9]="C";mykeys[10]="B";mykeys[11]="B";mykeys[12]="D";mykeys[13]="C";mykeys[14]="C";mykeys[15]="C";mykeys[16]="C";mykeys[17]="D";mykeys[18]="A";mykeys[19]="A";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+mykeys[0]="多媒体数据库和基于内容的检索";mykeys[1]="多媒体通信";mykeys[2]="多媒体创作工具";mykeys[3]="一类是对称全双工的多媒体通信";mykeys[4]="另一类是非对称全双工的多媒体通信系统";mykeys[5]="语言信号";mykeys[6]="非语言信号(音乐和杂音)";mykeys[7]="该产品采用了PLV(Product Level Video)视频压缩编码算法";mykeys[8]="设计了两个专用芯片（82750 PB像素处理器及82750 DB显示处理器）";mykeys[9]="设计制造了三块门阵电路：82750LH主机接口门阵、82750LV  VRAM/SCSI/capture接口门阵、82750 LA音频子系统接口门阵";mykeys[10]="首次设计了视频音频引擎 (AVE-Audio Video Engine)；开发了多媒体计算机软件系统AVSS(Audio Video Sub-System)和 AVK(Audio Video  Kernel)";mykeys[11]="以同步信号作为100%";mykeys[12]="黑白电平和消隐电平为70%";mykeys[13]="白电平为0%，图像信号介于白电平和黑电平之间，根据图像的灰度而变化";mykeys[14]=" 一维离散余弦变换";mykeys[15]="二维离散余弦变换";mykeys[16]="DCT正变换";mykeys[17]="量化器";mykeys[18]="熵编码器";mykeys[19]="多媒体和通信";mykeys[20]="CPU芯片原来的计算";mykeys[21]="通用CPU计算功能";mykeys[22]="多媒体和通信";mykeys[23]="累计编码";mykeys[24]="无失真编码";mykeys[25]="分层编码";//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+ 
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <b>一、 选择</b><br>
+          <br>
+          1.要把一台普通的计算机变成多媒体计算机要解决的关键技术是（　　　）<br>
+          ⑴视频音频信息的获取技术　　　 ⑵多媒体数据压缩编码和解码技术 　　 ⑶视频音频数据的实时处理 ⑷视频音频数据的输出技术 
+          <p><input type="radio" name="1" value="A"> A  ⑴                  
+          <p> 
+            <input type="radio" name="1" value="B">
+            B ⑴、⑵ 
+          <p><input type="radio" name="1" value="C"> C  ⑴、⑵、⑶         <p><input type="radio" name="1" value="D"> D  全部
+<br>
+            <br>
+            2.多媒体信息的实时处理、压缩编码算法及通信，大量运行的是8位和16位定点矩阵运算；把这些功能和算法集成到CPU芯片中，要遵循的几条原则是（ 
+            ） 
+          <p><input type="radio" name="2" value="A"> A  压缩的算法采用国际标准的设计原则
+<p><input type="radio" name="2" value="B"> B  多媒体功能的单独解决变成集中解决
+<p><input type="radio" name="2" value="C"> C  体系结构设计和算法相结合
+<p><input type="radio" name="2" value="D"> D  以上信息全对
+<br><br>
+            <br>
+            3.数字音频采样和量化过程所用的主要硬件是（ ） 
+          <p><input type="radio" name="3" value="A"> A  数字编码器     <p><input type="radio" name="3" value="B"> B  数字解码器
+<p><input type="radio" name="3" value="C"> C  模拟到数字的转换器(A/D转换器)
+<p><input type="radio" name="3" value="D"> D  数字到模拟的转换器(D/A转换器)
+<br><br>
+            <br>
+            4.全电视信号主要由（ ）组成。 
+          <p><input type="radio" name="4" value="A"> A  图像信号、同步信号、消隐信号。
+<p><input type="radio" name="4" value="B"> B  图像信号、亮度信号、色度信号。
+<p><input type="radio" name="4" value="C"> C  图像信号、复合同步信号、复合消隐信号。
+<p><input type="radio" name="4" value="D"> D  图像信号、复合同步信号、复合色度信号。
+<br><br>
+            <br>
+            5.国际标准MPEG-Ⅱ采用了分层的编码体系，提供了四种技术,它们是（ ）。 
+          <p><input type="radio" name="5" value="A"> A  空间可扩展性；信噪比可扩充性；框架技术；等级技术。
+<p><input type="radio" name="5" value="B"> B  时间可扩充性；空间可扩展性；硬件扩展技术；软件扩展技术。
+<p><input type="radio" name="5" value="C"> C  数据分块技术；空间可扩展性；信噪比可扩充性；框架技术。
+          <p>
+            <input type="radio" name="5" value="D">
+            D 空间可扩展性；时间可扩充性；信噪比可扩充性；数据分块技术。 <br>
+            <br>
+            <br>
+            6.视频卡的种类很多，主要包括（ ）。<br>
+            （1）视频捕获卡 （2）电影卡 （3）电视卡 （4）视频转换卡 
+          <p><input type="radio" name="6" value="A"> A  （1）                   <p><input type="radio" name="6" value="B"> B  （1）（2）
+<p><input type="radio" name="6" value="C"> C  （1）（2）（3）           <p><input type="radio" name="6" value="D"> D  全部
+<br>
+            <br>
+            7.以PAL制25帧/秒为例，已知一帧彩色静态图像(RGB)的分辨率为512′512，每一种颜色用8bit表示，则该视频每秒钟的数据量为（ 
+            ）。 
+          <p><input type="radio" name="7" value="A"> A  256′256 ′3 ′16′25  bps    <p><input type="radio" name="7" value="B"> B  512′512 ′3′8′25    bps
+<p><input type="radio" name="7" value="C"> C  256′256 ′3′8′25   bps     <p><input type="radio" name="7" value="D"> D  512 ′512′3′16′25   bps
+<br><br>
+            <br>
+            8.在YUV彩色空间中，数字化后Y：U：V是（ ）。 
+          <p><input type="radio" name="8" value="A"> A  4：2：2                <p><input type="radio" name="8" value="B"> B  8：4：2
+<p><input type="radio" name="8" value="C"> C  8：2：4                <p><input type="radio" name="8" value="D"> D  8：4：4
+<br><br>
+            <br>
+            9.在视频信号实时处理技术中，如果电视扫描的正程时间为52.2ms，分辨率为256′256 ，实时意味着处理每个像素的时间近似为（ 
+            ）。 
+          <p><input type="radio" name="9" value="A"> A  0.1ms  <p><input type="radio" name="9" value="B"> B  0.2ms  <p><input type="radio" name="9" value="C"> C   0.8ms  <p><input type="radio" name="9" value="D"> D  0.4ms
+<br><br>
+            <br>
+            10.下列哪种说法是正确的（ ）。 
+          <p><input type="radio" name="10" value="A"> A  信息量等于数据量与冗余量之和。
+<p><input type="radio" name="10" value="B"> B  信息量等于信息熵与数据量之差。
+<p><input type="radio" name="10" value="C"> C  信息量等于数据量与冗余量之差。
+<p><input type="radio" name="10" value="D"> D  信息量等于信息熵与冗余量之和。
+<br><br>
+            <br>
+            11.图像序列中的两幅相邻图像,后一幅图像与前一幅图像之间有较大的相关,这是（ ）。 
+          <p><input type="radio" name="11" value="A"> A  空间冗余                           <p><input type="radio" name="11" value="B"> B  时间冗余
+<p><input type="radio" name="11" value="C"> C  信息熵冗余                         
+          <p>
+            <input type="radio" name="11" value="D">
+            D 视觉冗余 <br>
+            <br>
+            <br>
+            12.帧频率为25帧／秒的电视制式有（ ）。<br>
+            （1）PAL （2）SECAM （3）NTSC （4）YUV 
+          <p><input type="radio" name="12" value="A"> A   (1)    　<p><input type="radio" name="12" value="B"> B  (1)(2)   <p><input type="radio" name="12" value="C"> C  (1)(2)(3)  
+          <p>
+            <input type="radio" name="12" value="D">
+            D 全部 <br>
+            <br>
+            <br>
+            13.下面哪些是MMX技术的特点（ ）。<br>
+            （1） 打包的数据类型。 （2） 与IA结构完全兼容。 （3） 64位的MMX寄存储器组。 （4） 增强的指令系统。 
+          <p><input type="radio" name="13" value="A"> A  （1）（3）（4）<p><input type="radio" name="13" value="B"> B  （2）（3）（4） <p><input type="radio" name="13" value="C"> C  （1）（2）（3）  <p><input type="radio" name="13" value="D"> D  全部
+<br><br>
+            <br>
+            14.在数字音频信息获取与处理过程中，下述顺序哪个是正确的（ ）。 
+          <p><input type="radio" name="14" value="A"> A  A／D变换、采样、压缩、存储、解压缩、D／A变换。
+<p><input type="radio" name="14" value="B"> B  采样、压缩、A／D变换、存储、解压缩、D／A变换。
+<p><input type="radio" name="14" value="C"> C  采样、A／D变换、压缩、存储、解压缩、D／A变换。
+<p><input type="radio" name="14" value="D"> D  采样、D／A变换、压缩、存储、解压缩、A／D变换。
+<br><br>
+            <br>
+            15.下面哪一种说法是不正确的（　 　）。 
+          <p><input type="radio" name="15" value="A"> A  电子出版物存储量大，一张光盘可存储几百本书。
+<p><input type="radio" name="15" value="B"> B  电子出版物可以集成文本、图形、图像、动画、视频和音频等多媒体信息。
+<p><input type="radio" name="15" value="C"> C  电子出版物不能长期保存。
+          <p>
+            <input type="radio" name="15" value="D">
+            D 电子出版物检索快。 <br>
+            <br>
+            <br>
+            16.衡量数据压缩技术性能的重要指标是（ ）。 <br>
+            （1）压缩比 （2）算法复杂度 （3）恢复效果 （4）标准化 
+          <p><input type="radio" name="16" value="A"> A  (1)(3)      <p><input type="radio" name="16" value="B"> B  (1)(2)(3)
+<p><input type="radio" name="16" value="C"> C  (1)(3)(4)   
+          <p>
+            <input type="radio" name="16" value="D">
+            D 全部 <br>
+            <br>
+            <br>
+            17.下列配置中哪些是MPC必不可少的（ ）。 <br>
+            （1）CD-ROM驱动器。 （2）高质量的音频卡。 （3）高分辨率的图形、图像显示。 （4）高质量的视频采集卡。 
+          <p><input type="radio" name="17" value="A"> A  (1)     　　<p><input type="radio" name="17" value="B"> B  (1)(2)
+<p><input type="radio" name="17" value="C"> C  (1)(2)(3)     
+          <p>
+            <input type="radio" name="17" value="D">
+            D 全部 <br>
+            <br>
+            <br>
+            18.从应用角度来看，在视频会议系统的安全保密中，一个安全密码系统应包含的功能为（ ）。 <br>
+            （1）秘密性 （2）可验证性 （3）完整性 （4）不可否认性 
+          <p><input type="radio" name="18" value="A"> A  (1)(2)     <p><input type="radio" name="18" value="B"> B  (1)(2)(3)      <p><input type="radio" name="18" value="C"> C  (1)(4)      <p><input type="radio" name="18" value="D"> D  全部
+<br><br>
+            <br>
+            19.多媒体电子出版物创作的主要过程可分为以下哪些步骤（ ）。 
+          <p><input type="radio" name="19" value="A"> A  应用目标分析、脚本编写、设计框架、各种媒体数据准备、制作合成、测试。
+<p><input type="radio" name="19" value="B"> B  应用目标分析、设计框架、脚本编写、各种媒体数据准备、制作合成、测试。
+<p><input type="radio" name="19" value="C"> C  应用目标分析、脚本编写、各种媒体数据准备、设计框架、制作合成、测试。
+<p><input type="radio" name="19" value="D"> D  应用目标分析、各种媒体数据准备、脚本编写、设计框架、制作合成、测试。
+<br><br>
+            <br>
+            20.基于内容检索的体系结构可分为哪两个子系统（ ）。 
+          <p><input type="radio" name="20" value="A"> A  特征抽取和查询子系统。
+<p><input type="radio" name="20" value="B"> B  多媒体数据管理和调度子系统。
+<p><input type="radio" name="20" value="C"> C  用户访问和数据库管理子系统。
+<p><input type="radio" name="20" value="D"> D  多媒体数据查询和用户访问子系统。
+<br>
+          </p>
+          <p> 
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck(this.form)" class=pbox>
+          </p>
+        </form>
+        <form name="zfl">
+          <p>二<b>、 填空题</b><br>
+            <br>
+            1.多媒体计算机的主要应用领域： 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> ，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> ，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">   。<br>
+            <br>
+            2.多媒体通信可分为两类： 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，   <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">  。<br>
+            <br>
+            3.在多媒体系统中，音频信号可分为两类 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">  。<br>
+            <br>
+            4.VI系统获得了Comdex 91的"最佳多媒体产品奖"和"最佳展示奖"，它解决计算机综合处理声、文、图信息，采用了 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> 视频压缩编码算法，设计了<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">  专用芯片，设计制造了 <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">  门阵电路，设计开发了<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"><br>
+            <br>
+            5.全电视信号的幅度是： 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">   ，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> 。<br>
+            <br>
+            6.余弦变换有 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">和<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">两种。<br>
+            <br>
+            JPEG 编码原理简化框图如图（一）所示，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> ，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">  。<br>
+            <br>
+            7.把多媒体信息实时处理和压缩编码算法做到CPU芯片中，目前有二类芯片：一类是以 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> 功能为主，融合 <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"> 功能；另一类是以   <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">为主，融合<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">功能。<br>
+            <br>
+            8.JPEG算法具有四种操作方式：顺序编码， 
+            <input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">。<br>
+            <br>
+            <input type="reset" name="Reset" value="重置" class=pbox>
+            <input type=button name=Button23 value="判分" onClick="check()" class=pbox>
+          </p>
+          </form>
+          <form>
+          <p><b>三、 问答题</b><br>
+            <br>
+            1.多媒体计算机的发展趋势?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            2.什么是数字锁相? 数字锁相回路主要哪几部分组成?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            3.什么是文语转换系统(TTS)?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            4.什么是AVSS？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            5.变换编码的基本思想是什么？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            6.MPEG在视频压缩中，采用了哪三种图像？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            7.在MPEG视频压缩中，为了提高压缩比，主要使用了哪两种技术？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            8.多媒体数据压缩方法根据不同的依据有不同的分类，试举例说明。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            9.什么是视频会议系统中的QOS管理？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            10.多媒体数据库基于内容的检索需要解决哪两种关键技术？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            11.多媒体计算机的定义？普通的家用电视和多媒体的异同？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            12.什么是JPEG? 论述基于离散余弦变换(DCT)的JPEG编码原理?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            13.论述霍夫曼编码的具体步骤。若信源符号及其概率如下：<br>
+            <img src="../../../images/chatp/test/004.gif" width="390" height="59"> 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            14.什么是机顶盒STB？有几种类型？它的结构是由什么组成的？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            15.使用多媒体著作工具的目的是什么？目前市场流行的多媒体著作工具可以分成几类？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            16.什么是多点控制单元？它的作用是什么？它是如何进行工作的？它的主要组成？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            17.什么是多媒体同步？有几种的同步定义方法？它们是什么？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            18.什么是交互式电视ITV？它由哪几部分组成？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            19.什么是计算机支持的协同工作CSCW？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

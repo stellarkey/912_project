@@ -1,0 +1,135 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> <form><b>问答题</b><br>
+       
+            <br>
+            问答第1题<br>说明音频处理技术的应用领域？<br>
+        <textarea name=textarea cols=50 rows=5></textarea>
+        <br>
+        <br><br>问答第2题<br>什么是模拟音频和数字音频？它们的特点是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第3题<br>什么是音频信息的数字化？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第4题<br>声音数字化的两个步骤是什么：<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第5题<br>什么是采样和量化？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第6题<br>说明量化的过程？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第7题<br>常用的音频采样频率有哪些？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第8题<br>在多媒体系统中，音频信号可分为哪两类？它们有什么区别？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第9题<br>音频信号处理的特点是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第10题<br>从人与计算机交互的角度，音频信号相应的处理是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第11题<br>音频编码的目的是什么？从哪些方面来考虑音频信号的冗余度？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第12题<br> 时域信息和频域信息的冗余度体现在哪些方面？如何从人的听觉感知机理方面对音频信息进行压缩？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第13题<br>音频编码是如何分类的？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第14题<br> 波形编码的基本思想是什么？最简单的波形编码是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第15题<br>参数编码的基本思想是什么？它的特点是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第16题<br>混合编码的基本思想是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第17题<br> 数据的压缩必然引起音频质量的降低，如何评价编/解码器的优劣？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第18题<br>音频波形编码的三种基本的编码算法是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第19题<br>什么是脉冲编码调制PCM？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第20题<br>量化可以分为几类？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第21题<br>什么是均匀量化？什么是非均匀量化？它们的特点是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第22题<br>非均匀量化的两种算法是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第23题<br>什么是μ律压扩和A律压扩？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第24题<br>什么是自适应量化PCM？改变量化阶距有哪两种方法？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第25题<br>什么是差值量化编码DPCM？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第26题<br>什么是自适应差值量化编码(ADPCM)？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第27题<br>什么是掩蔽效应？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第28题<br>什么是感知加权特性？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第29题<br>音频编码有那些国际标准？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第30题<br>实现计算机语音输出有几种方法？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第31题<br> 实现计算机语音输出，其实现的功能可分为哪两个档次？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第32题<br>什么是汉语文--语转换系统？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第33题<br>计算机言语输出的发展方向？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第34题<br>一个乐音必备的三要素是什么？乐音和噪音的主要区别是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第35题<br>什么是调频音乐合成？什么是波表合成？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第36题<br>什么是MIDI？什么情况下使用MIDI？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第37题<br>用什么方法来检索声音？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第38题<br> 语音识别系统分为哪四类？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第39题<br>语音识别系统研究的难点是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第40题<br>什么是AC-3 ?<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第41题<br>什么是语音识别?<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第42题<br>阐述声卡的作用、功能和分类？<br><textarea name=jianda cols=50 rows=5></textarea><br>
+        <br>
+        <!--czp-wenda-timu-->
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

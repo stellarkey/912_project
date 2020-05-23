@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　我们需要一个参考模型来理解多媒体同步的各种需求，区别和构造支持同步运行的运行机制，区别运行机制间的接口，比较多媒体同步的系统解决方案。<br>
+      <b><font color="#003399">　　 同步参考模型</font></b><br>
+      　　<img src="../../../../images/chatp/chap07/007.gif" width="294" height="209"> 
+      <br>
+      　　图7-6表示的同步参考模型体现了不同层次上对于同步的要求。每层实现一个由适当的接口提供的同步机制，这些接口可以用于定义和保证时间关系。<br>
+      　　·媒体层：媒体层针对的是单独的媒体数据流。它所面对的是数据流中的一个个基本的逻辑数据单元。<br>
+      　　·流层：这一层要面对的是多个媒体数据流。为了保持多个数据流的并行、同步的播放，在这层中必须解决的是媒体数据流之间的同步关系。<br>
+      　　·对象层：对象是多媒体演示中的基本单位，对象层同步就是要保证多媒体演示中的各个对象按照规定的次序出现并正确地响应用户的输入事件。这层涉及到多媒体演示之中的对象调度算法和差错检查等。 
+      <br>
+      　　·描述层：描述层解决的是多媒体演示中的对象出现次序及交互处理的描述，即多媒体演示的作者如何描述一个多媒体演示。描述层是多媒体演示系统与演示的制作者（不是演示的读者）之间的接口。在这层只关心是否能够被描述或描述的是否正确，而至于系统是如何用描述控制多媒体对象之间的同步或系统在对象间调度算法却不是描述层所关注的。<br>
+      　　表7-3 总结了同步参考模型中每一层的接口及其任务。<br>
+      <font color="#003399"><b>　　 7-3 
+      同步参考模型的接口和任务</b></font> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="9%"> 
+                  <div align="center">层</div>
+                </td>
+                <td class="text" width="50%"> 
+                  <div align="center">接口</div>
+                </td>
+                <td class="text" width="41%"> 
+                  <div align="center">任务</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="9%"> 
+                  <div align="center">描述层</div>
+                </td>
+                <td class="text" width="50%"> 
+                  <div align="left">·由完成本层任务的工具提供接口；本层本身没有向上的接口</div>
+                </td>
+                <td class="text" width="41%"> 
+                  <div align="left">·编辑<br>
+                    ·格式化<br>
+                    ·将面向用户的QoS映射为对象层的QoS</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="9%"> 
+                  <div align="center">对象层</div>
+                </td>
+                <td class="text" width="50%"> 
+                  <div align="left">·同步定义<br>
+                    ·对象（隐藏所包含的媒体的类型）<br>
+                    ·面向媒体的QoS（可接受的偏差和抖动）</div>
+                </td>
+                <td class="text" width="41%"> 
+                  <div align="left">·规划演示时间表<br>
+                    ·通过流层初始化与时间相关的媒体对象的演示<br>
+                    ·初始化与时间无关的媒体对象的演示<br>
+                    ·初始化演示预备活动</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="9%"> 
+                  <div align="center">流层</div>
+                </td>
+                <td class="text" width="50%"> 
+                  <div align="left">·流和流组<br>
+                    ·流内同步保证<br>
+                    ·组内流间同步保证</div>
+                </td>
+                <td class="text" valign="top" width="41%"> 
+                  <div align="left">·资源预留和规划LDU处理时间表</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="9%"> 
+                  <div align="center">媒体层</div>
+                </td>
+                <td class="text" width="50%"> 
+                  <div align="left">·对LDU的与设备无关的访问<br>
+                    ·对单一LDU处理的保证</div>
+                </td>
+                <td class="text" valign="top" width="41%"> 
+                  <div align="left">·文件和设备访问</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　为什么需要同步参考模型？它是由哪几部分组成的？<br>
+      　　为了理解多媒体同步的各种需求，区别和构造支持同步运行的运行机制，区别运行机制间的接口，比较多媒体同步系统的解决方案，所以需要多媒体同步参考模型。<br>
+      　　多媒体同步模型由媒体层、流层、对象层、描述层和多媒体应用层组成。<br>
+      　　·媒体层：媒体层针对的是单独的媒体数据流。它所面对的是数据流中一个个基本的逻辑数据单元。<br>
+      　　·流　层：这一层要面对的是多个媒体数据流。为了保持多个数据流的并行、同步的播放，在这层中必须解决的是媒体数据流之间的同步关系。<br>
+      　　·对象层：对象层同步就是要保证多媒体演示中的各个对象按照规定的次序出现，并正确地响应用户的输入事件。这层涉及到多媒体演示时的对象调度算法和差错检查。<br>
+      　　·描述层：描述层解决的是多媒体演示时对象出现的次序及交互处理的描述，即作者如何描述一个多媒体演示。<br>
+      　　最后形成一个多媒体应用程序。<br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

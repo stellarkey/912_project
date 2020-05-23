@@ -1,0 +1,130 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center><form>
+  
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> <b>问答题</b><br>
+        <br>
+           
+            问答第1题<br>什么是多媒体著作工具？主要用途是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第2题<br>在制作多媒体应用系统时，比较多媒体著作工具和编程语言的优势和劣势？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第3题<br>多媒体著作工具可以分成几类，它们的特点和代表产品是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第4题<br>在设计和评价多媒体著作工具时要考虑的主要功能是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第5题<br>什么是多媒体同步？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第6题<br>在多种媒体中，那些是时间相关的媒体？哪些是时间无关的媒体？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第7题<br>多媒体同步的基本概念有哪些？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第8题<br>为什么需要同步参考模型？它是由哪几部分组成的？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第9题<br>多媒体同步定义方法有哪几种？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第10题<br>多媒体著作工具Ark的结构如何？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第11题<br>为什么多媒体著作工具Ark使用事件驱动？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第12题<br>多媒体著作工具Ark采用哪两种事件驱动？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第13题<br>多媒体著作工具Ark的数据存储方式有哪些优点？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第14题<br>多媒体著作工具Ark采用什么方法定位链？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第15题<br>多媒体著作工具Ark如何使用数据文件？<br><textarea name=jianda cols=50 rows=5></textarea><br>
+        <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+      
+      </td>
+  </tr>
+</table></form></center>
+
+</body>
+</html>

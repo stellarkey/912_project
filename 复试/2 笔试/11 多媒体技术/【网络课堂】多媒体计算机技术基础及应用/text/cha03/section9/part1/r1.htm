@@ -1,0 +1,479 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699">　　早期的PC机声音输出是由微机内的计时器和机内场声器实现的。由于它编程不便、声音单调，已较少采用。近些年PC游戏兴起、多媒体技术发展，目前绝大多数的声音输出场由PC机的音频卡来实现。<br>
+      　　市场上音频卡的型号繁多，其基本原理框图如图3.53所示。我们在表3.15中摘录一些厂家和产品。本文不一一剖析各产品，而从总体上介绍音频卡的功能、原理及选用。<br>
+      <font color="#003399">　图 3.53　音频卡原理框图</font> <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap03/209.gif" width="322" height="197" border="0"></a> 
+      <br>
+      　<font color="#003399">表 3.19 音频卡一览</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="12%"> 
+                  <div align="center">公司</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">产品</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">声音<br>
+                    类型</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">FM<br>
+                    通道数</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">最大分辨、<br>
+                    采样率</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">立体声(s)<br>
+                    单声道(M)</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">SCSI<br>
+                    接口</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">MIDI</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" rowspan="4" width="12%"> 
+                  <div align="center">CreativeLabs Inc.</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">Sound Blaster 2.0</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">11</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,22kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">无</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Sound Blaster Pro</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">22</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Sound Blaster 16</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">22</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Sound Blaster AWE32</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">波表</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">32</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">6位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="12%" rowspan="3"> 
+                  <div align="center">Media Vision <br>
+                    Inc.</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">Thunder Board</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">11</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,22kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">无</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Spectrum Plus</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">22</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Spectrum 16</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">20</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="12%"> 
+                  <div align="center">Microsoft Crop</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">Windows Sound</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">20</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">无</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" rowspan="6" width="12%"> 
+                  <div align="center">AZTECT</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">BX III</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">20</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">无</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Waverider Pro32-3D</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">波表</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">11</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,22kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Nova 16ExtraⅡ-3D</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">32</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">PRO 16 II</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">16</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">NOVA 16 EXTRA II</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">FM/4</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">20</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">WAVERIDER 32+</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">波表</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">20</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">16位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" rowspan="2" width="12%"> 
+                  <div align="center">Addtech<br>
+                    Research Inc.</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">SC EX Lite</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">OPL2</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">11</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,22kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">M</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">无</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">无</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">Scommander Pro</div>
+                </td>
+                <td class="text" width="8%"> 
+                  <div align="center">OPL3</div>
+                </td>
+                <td class="text" width="7%"> 
+                  <div align="center">22</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">8位,44kHz</div>
+                </td>
+                <td class="text" width="14%"> 
+                  <div align="center">S</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">有</div>
+                </td>
+                <td class="text" width="9%"> 
+                  <div align="center">有</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399">　　声卡完成的工作包括：<br>
+      　　采集声音信号：声卡从话筒中获取模拟声音信号，通过模数转换器(ADC)，将声波振幅信号采样转换成一串数字后存储到计算机中。<br>
+      　　重放声音信号：将存储到计算机中的数字信号送到数模转换器(DAC)，以同样的采样速率还原为模拟波形，待放大后送到扬声器发声，这一技术也称为脉冲编码调制技术(PCM)。<br>
+      </font><img src="../../../../images/chatp/chap03/210.gif" width="402" height="215"><br>
+      　　<img src="../../../../images/chatp/chap03/211.gif" width="334" height="292"> 
+      <br>
+      <font color="#003399">　　1、主芯片 </font><br>
+      　　SB LIVE上用的EMU10K1芯片，这是一块类似DSP（ Digital Signal Processing ）数字信号处理芯片的处理器<br>
+      　　它的作用就是用软件的形式来决定声卡的各种处理机构和效果算法。驱动程序是一个软件集，而芯片是一个运算器，芯片依靠大量、重复地计算，得出结果。<br>
+      　　这样带来的好处是可以依靠升级软件的方式进行升级，降低了升级成本。<br>
+      　　对于这种形式的芯片，它的工作只有一个：计算，依靠大量地计算软件所给出的数据，又产生大量的输出数据来完成处理。<br>
+      　　除了创新的EMU10K1，其他的厂商的芯片都是固定的处理方式和算法的，例如YAMAHA、ESS、Aureal等，这些芯片都是以固定的电路模式来完成声音的产生、处理的， 
+      依靠芯片内部的运算器直接产生、处理声音。 <br>
+      <font color="#003399">　　2、声音混合 </font><br>
+      　　声卡要面对各种输入音源，而且在播放时可以同时发音，就必须有一块芯片把来自各个方向的音频信号叠加在一起。我们常常看见声卡上面有一块48脚或64脚的芯片就起这样的作用。 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/212.gif" width="336" height="252"><br>
+      <font color="#003399">　　3、电源稳压 </font><br>
+      　　虽然主板向声卡提供了正负12V和正5V的电压，但根据环境的不同，许多芯片需要特殊的电压才可以正常工作。<br>
+      　　因为许多芯片需要特殊的电压才可以正常工作，让所有的芯片都可以在自己允许的电压范围内工作而不影响其他部分的比较简单的办法是为同一电压要求的芯片配置稳压电路，因此我们几乎在所有的板卡上都会看到由三极管或三端稳压块组成的稳压电路。<br>
+      　　稳压电路分为线形稳压和开关稳压：线形稳压一般是利用三端稳压块或三极管来对电压进行衰减，但衰减的电压都会消耗在三端稳压块或三极管上面，效率比较低；开关稳压利用三极管的通断时产生的脉冲电流来获得稳定的电压，效率很高，但电路有点复杂。 
+      <br>
+      　　声卡一般都是采用三端稳压获取稳定的电压。 <br>
+      <font color="#003399">　　4、运放</font><br>
+      　　从声音混合芯片里出来的信号还是很微弱的，为了避免在传输过程中被外界的各种干扰信号污染，可以把信号放大一定的倍数再输出。这样就要用到运放了。<br>
+      　　运放是一个简单的电压放大器，可以把微弱的音频信号放大10～1000倍左右，而且耗电低，体积小，不容易受到干扰，很适合在声卡中使用。一般使用的运放是菲利普的TDA系列。另外，有一些声卡提供扬声器输出，由于驱动扬声器所要求的电流比较大，使用的运放输出功率要大一些，一般是LM系列。但有些声卡会把运放省略，直接从声音混合芯片引出信号供给音响系统。 
+      <br>
+      <font color="#003399">　　5、晶振</font><br>
+      　　声卡的主芯片处理的是数字信号，因此它必须以一定的频率运行，因此必须有一个产生特定频率的器件－－晶振。<br>
+      　　<img src="../../../../images/chatp/chap03/213.gif" width="264" height="163"><br>
+      <font color="#003399">　　6、DAC</font><br>
+      　　完成数字/模拟信号的转换工作。<br>
+      <br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

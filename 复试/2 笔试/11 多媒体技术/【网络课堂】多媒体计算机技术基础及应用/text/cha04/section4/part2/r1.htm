@@ -1,0 +1,83 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　自适应技术的概念是预测器的预测系数和量化器的量化参数，能够根据图像的局部区域分布特点而自动调整。实践证明ADPCM编、解码系统与DPCM编、解码系统相比，不仅能改善恢复图像的评测质量和视觉效果；同时还能进一步压缩数据。<br>
+        　　ADPCM系统包括自适应预测，即预测系数的自适应调整和自适应量化（即量化器参数的自适应调整）两部分内容。<br>
+        　　首先我们来学习ADPCM系统所包含的第一个内容--自适应预测</div>
+      <br>
+      <span class="zhongdian">　　1．自适应预测的概念<br>
+      　　从上一个问题的讲述可知一个三阶预测器的预测值计算公式为：<br>
+      <img src="../../../../images/chatp/chap04/077.gif" width="375" height="25"> 
+      <br>
+      　　增加一个可变参数&quot;m&quot;，得<br>
+      <img src="../../../../images/chatp/chap04/078.gif" width="403" height="28" align="absmiddle"> 
+      <b>(4.4-8)</b><br>
+      　　式中m是一个自适应参数，m的取值据量化误差的大小自适应调整。<br>
+      　　当<img src="../../../../images/chatp/chap04/079.gif" width="104" height="24" align="absmiddle">不变<br>
+      　　　<img src="../../../../images/chatp/chap04/080.gif" width="63" height="25" align="absmiddle">自动增大<br>
+      　　　<img src="../../../../images/chatp/chap04/081.gif" width="61" height="24" align="absmiddle">自动减小</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　m自动增大，使<img src="../../../../images/chatp/chap04/082.gif" width="53" height="25" align="absmiddle">随之增大，预测误差减小，使斜率过载尽快收敛；m自动减小，使<img src="../../../../images/chatp/chap04/082.gif" width="53" height="25" align="absmiddle">随之减小，预测误差加大，使量化器输出不致正负跳变，减轻颗粒噪声。大多数情况 
+        处于<i><font face="Times New Roman, Times, serif" size="5">e</font></i>min和<i><font face="Times New Roman, Times, serif" size="5">e</font></i>max之间，m取常数不变。<br>
+        　　下面来学习ADPCM系统所包含的第二个内容--自适应量化<br>
+        　　自适应量化的概念是，根据图像局部区域的特点，自适应地修改和调整量化器的参数。包括量化器输出的动态范围，量化器判决电平（量化器步长）等，下面介绍一种利用视觉阈值曲线导出自适应量化特性，这种情况下的量化属于非线性量化。实际上是在量化器分层确定后，当预测误差值小时，将量化器的输出动态范围减小，量化器步长减小；当预测误差大时，将量化器的输出范围扩大，量化器步长扩大。参数改变的原则，是量化误差低于该误差下的视觉阈值，将误差掩盖。 
+      </div>
+      <br>
+      <span class="zhongdian"><font color="#003399">　　</font>2．自适应量化<br>
+      　　（1） 自适应量化的概念<br>
+      　　·当预测误差值小时，将量化器的输出动态范围减小，量化器步长减小；<br>
+      　　·当预测误差大时，将量化器的输出范围扩大，量化器步长扩大。<br>
+      　　·参数改变的原则：是量化误差低于该误差下的<a href="#nowhere" title="所谓视觉阈（yu四声，当&#8220;界限&#8221;讲）值是指，恰恰可以被人们眼睛看到的失真（误差）值，低于此值的失真（误差）人眼觉察不出，高于此值的失真（误差）就被看到了。所以视觉可见度阈值是确定某像素所允许失真度的一个度量。">视觉阈值</a>，将误差掩盖。<br>
+      　　（2） 自适应量化的方法 <br>
+      　　Musmann和Erdmann方案中所采用的自适应量化方法 <br>
+      　　先定义一视觉掩盖函数M，<br>
+      　　<img src="../../../../images/chatp/chap04/083.gif" width="317" height="24"><br>
+      　　其中　<img src="../../../../images/chatp/chap04/084.gif" width="85" height="25" align="absmiddle"> 
+      <br>
+      　　　　　<img src="../../../../images/chatp/chap04/085.gif" width="85" height="25"> 
+      <br>
+      　　　　　<img src="../../../../images/chatp/chap04/086.gif" width="85" height="25"> 
+      <br>
+      　　　　　<img src="../../../../images/chatp/chap04/087.gif" width="85" height="25"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap04/088.gif" width="103" height="21" align="absmiddle">是<i><font face="Times New Roman, Times, serif" size="3">f</font></i> 
+      点相邻像素点的灰度值。如图4.4-4。 <br>
+      　 4.4-4 <i><font face="Times New Roman, Times, serif" size="3">f</font></i> 
+      像素的相邻像素<br>
+      　　<img src="../../../../images/chatp/chap04/089.gif" width="207" height="84"> 
+      <br>
+      　　当四个差值<img src="../../../../images/chatp/chap04/090.gif" width="104" height="21" align="absmiddle">中有一个较大数值，那么对预测时所形成的量化误差，构成&quot;掩盖效应&quot;，即掩盖量化噪声，使人眼难以察觉。 
+      </span> <br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　以上我们学习了预测编码的基本原理及编码方法的实现，接下来呢将讲述预测编码方法在运动图像压缩和传输中的应用，即电视信号的预测编码。</div>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

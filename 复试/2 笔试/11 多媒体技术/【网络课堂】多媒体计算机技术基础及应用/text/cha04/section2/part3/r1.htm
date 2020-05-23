@@ -1,0 +1,94 @@
+<html>
+<head><Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　标量量化是对单个样本或单个参数的幅值进行量化。&quot;标量&quot;是指被量化的变量维数，即一维变量。<br>
+        　　理解标量量化的基础是学习&quot;均匀量化、非均匀量化和自适应量化&quot;的概念。 <br>
+        　　为了更好的理解均匀量化，要明确&quot;量化步长&quot;、&quot;输出阶&quot;等概念。我们来画一个8阶均匀量化的特征曲线，如图4.2-1。<br>
+        　 4.2-1 一个8阶均匀量化的特征曲线 <font color="#003399"><br>
+        　　<img src="../../../../images/chatp/chap04/011.gif" width="256" height="203"> 
+        <br>
+        　　<font color="#000000">横轴是输入，纵轴是量化的输出值。横轴上的间隔点为步长点，该特征曲线的步长为Δ；最右边和最左边的标记称为过载点；纵轴上的标记称为输出阶。<br>
+        　　横轴上的步长点的距离与纵轴上的输出阶的距离是相同的，这个距离表示为Δ，Δ称为量化器步长。量化输出值若是n位，则称为n位量化器。<br>
+        　　那么，量化步长与输出阶的阶数、输出值的表示位数的关系如何呢？<br>
+        　　一个确定输出阶层数为L的量化器，则它的输出值的位数n=log<sub>2</sub>L（位）。<br>
+        　　一个确定输出量化位数为n的量化器，则它的输出阶数L=2<sup>n</sup>（位）。<br>
+        　　上图为8阶，3比特均匀量化器。<br>
+        　　在图中：<br>
+        　　当x=（0～Δ）时，y=Δ/2<br>
+        　　当x=（Δ<font color="#003399">～</font>2Δ）时，y=3Δ/2<br>
+        　　均匀量化的实质就是将输入x用等步长（Δ）划分；将输出y划分为等距离（Δ）的输出阶；x在0~Δ的所有值，被量化输出为同一个y值。依此类推……实现一对读多的映射。</font></font> 
+        <br>
+        　　非均匀量化与均匀量化的不同是量化步长是不等的，也就是说不是唯一的。这样说也许是不准确的，但有利于理解，准确的说应该是，横轴的量化间隔是不唯一的。<br>
+        　　比如下面是一种常见的非均匀量化器的特性图：</div>
+      <br>
+      <span class="zhongdian">　　1．非均匀量化<br>
+      　　(1) 非均匀量化的特征曲线<br>
+      <font color="#003399">　 </font>4.2-2非均匀量化特征曲线<font color="#003399"> </font><br>
+      <font color="#003399">　　<img src="../../../../images/chatp/chap04/012.gif"> 
+      <br>
+      <font color="#000000">　　</font></font>(2) 理解<br>
+      　　横坐标表示量化输入<br>
+      　　纵坐标表示量化输出　<br>
+      　　当输入在b1～b2范围内时，量化特性的台阶（量化步长）大。<br>
+      　　当输入在0～b1，b2～255范围内时，量化输出的台阶小而且这两段的特性对称。<br>
+      　　输入0～－255的量化输出特性与输入0～255的量化输出特性以零点对称。 </span> <br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a><br>
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　要减少过载，有要保证低幅值的量化性能好，有一种解决的方法就是自适应量化器的步长。量化器步长适应方法分为大两类：前向适应（FA或AQF）和后向适应（BA或BQF）。<br>
+        　　前向适应量化器从输入获取步长信息；。</div>
+      <br>
+      <span class="zhongdian">　　2．自适应量化<br>
+      　　（1）量化器步长适应方法<br>
+      　　·前向适应（FA或AQF）<br>
+      　　·后向适应（BA或BQF）<br>
+      　　（2）前向适应（FA或AQF）：<br>
+      　　①从输入获取步长信息<br>
+      　　②量化的过程<br>
+      　　·缓冲一块数据<br>
+      　　·对这一块计算Δ（K）<br>
+      　　·将计算的Δ（K）送给量化器<br>
+      　　固定量化器步长Δ（K），释放数据进行量化。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a><br>
+
+      <div id="hide03Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　后向适应（BA或BQF）通过量化输出的信号适应步长</div>
+      <br>
+      <span class="zhongdian">　　（3）后向适应（BA或BQF）：<br>
+      　　① 通过量化输出的信号适应步长<br>
+      　　② 优点<br>
+      　　不需要插入延时，样本更新<br>
+      　　③ 缺点<br>
+      　　需要大雨FA的&quot;前瞻&quot;能力。<br>
+      　　④ 步长确定公式<br>
+      　　Δ(k+1)=M(|I(k)|) Δβ(k)</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a><br>
+
+      <div id="hide04Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　两种方式各有优缺点。<br>
+        　　前向适应的缺点：需要插入一段延时（延时至少要等于计算该块数据步长的时间，通常为10~25ms）。远距离传输中易出现回声问题。后向适应需要大雨FA的&quot;前瞻&quot;能力。</div>
+      <br>
+      <font color="#003399"> <br>
+      </font></td>
+  </tr>
+</table>
+</body>
+</html>

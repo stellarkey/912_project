@@ -1,0 +1,45 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+ <div id="hide01Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　矢量量化编码是近年来图像、语音信号编码技术中颇为流行的一种新型量化编码方法。矢量量化编码方法一般是有失真编码方法。</div>
+      <br>
+      <span class="zhongdian">　　1．矢量量化<br>
+      　　对于PCM数据，一个数一个数地进行量化叫标量量化。若对这些数据分组，每组K个数构成一个K维矢量，然后以矢量为单元，逐个矢量进行量化，称矢量量化。<br>
+      <font color="#003399">　　</font>2．矢量量化的编码解码<br>
+      <font color="#003399">　 </font>矢量量化的编码解码 <br>
+      　　<img src="../../../../images/chatp/chap04/013.gif" width="349" height="117"></span><br>
+      <a href="#onwhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">　　图中输入量是一个待编码的Ｋ维矢量，即先将输入图像分割成m个方块，每个块的尺寸为n<sup>2</sup>，然后把每一个方块以列（行）堆叠成K(K=n2)维矢量，作为编码输入矢量。码本C是一个具有N个K维矢量的集合，C={yi}，i=1,2,…,N。码本C实际上是一个长度为N的表，这个表的每一个分量是一个K维矢量<img src="../../../../images/chatp/chap04/015.gif" width="17" height="21" align="absmiddle">，称其为码字。在接收端有一个与发送端完全相同的码本C。<br>
+        　　矢量量化编码过程就是从码本C中搜索一个与输入矢量最接近的码字yi的过程。在码本中寻找到与输入矢量完全一致的码字的概率很小，但只要二者之间误差最小时，便可用该码字yi代表输入矢量。传输时并不传送码字yi本身，只传送其下标&quot;i&quot;。当 
+        码本长度为N，为传送下标所需要的比特数为log2N。传送一个象素所需要的平均比特数为<img src="../../../../images/chatp/chap04/016.gif" width="75" height="53" align="absmiddle">．</div>
+      <br>
+      <span class="zhongdian">　　矢量量化的关键问题是设计一个良好的码本。</span><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

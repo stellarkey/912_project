@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><font color="#003399">　　CD-I系统和DVI系统的发展是源于光盘的发展。所以我们有必要学习一些有关光盘的知识，在此我们要讲如下三个问题：<br>
+      　　1．光盘的种类<br>
+      　　2．盘片的结构 <br>
+      　　3．是如何记录数字量的 </font><br>
+      <br>
+      <font color="#003399">　　1．光盘的种类有：模拟光盘和数字光盘</font><br>
+      　　模拟光盘如：LV FM(Frequency modulation)频率调制；<br>
+      　　数字光盘如：CD-DA Philips/Sony <br>
+      <font color="#003399">　　2．盘片的结构</font><br>
+      　　唱盘、CD-ROM、数字激光视盘统称为CD盘。一张CD盘的外直径为120mm，重量为14克到18克。激光唱盘分为3个区：导入区、导出区和数据区，如图5.2.--1所示。<br>
+      　　  
+      <b><font color="#003399">5.2.1--1CD盘的结构</font></b><br>
+      　　 <img src="../../../../images/chatp/chap05/002.gif" width="309" height="142"><br>
+      　　从光盘的高度方向分为：保护层、反射激光的铝反射层、刻槽和聚碳脂衬垫。如图5.2--2所示。<br>
+      <b><font color="#003399">　　 5.2--2CD盘的结构</font></b> 
+      <br>
+      <img src="../../../../images/chatp/chap05/003.gif"> <br>
+      　　激光唱盘的光道结构与磁盘不同，磁盘是同心圆，光盘是螺旋型光道，CD唱盘的光道长度大约为5公里，如图5.2_--3所示。<br>
+      　　<b><font color="#003399"> 5.2-3 
+      ，CD唱盘的螺旋型光道</font></b><br>
+      　　<img src="../../../../images/chatp/chap05/004.gif" width="186" height="123"> 
+      <br>
+      　　<font color="#003399">3．是如何记录数字量的？</font><br>
+      　　光盘是利用在盘上压制凹坑的办法记录数字的，凹坑的边缘记录&quot;1&quot;，凹坑的平坦部分记录&quot;0&quot;，即理由凹凸不平的坑来记录数据，有变化就记录为&quot;1&quot;。凹坑的深度：0.12mm，凹坑的宽度：0.5-0.6mm，凸/凹的长度：3T--11T，1T=0.277 
+      mm，即二个1之间至少有2个零，最多不超过10个零。如图光盘的数据5.2--4所示。<br>
+      <b><font color="#003399">　　 5.2--4</font></b> 
+      <br>
+      　 <img src="../../../../images/chatp/chap05/005.gif"> <br>
+      　　使用&quot;8到14比特调制编码&quot;，即EFM（Eight to Fourteen Modulation），这种编码的含义是把一个8比特的数据用14比特来表示。那么如何将8位数据转换为14位呢？大家知道，8位数据有256种代码，14位数据有16384种代码，在这16384种代码中有267种代码能够满足上述&quot;0&quot;游程长度的要求（二个1之间至少有2个零，最多不超过10个零）。在267种中有10种在合并通道代码时限制游程长度仍有困难，那么，去掉10个，剩257种。再去掉1个就剩256种。这样就得到了8位数据对应的256种通道码。将其关系建表。<br>
+      　　<b><img src="../../../../images/html/liti.jpg" width="41" height="43" align="absmiddle">例1</b>： 
+      01100001<br>
+      　　不满足3T-11T<br>
+      　　查表：10000100100010<br>
+      　　<b><img src="../../../../images/html/liti.jpg" width="41" height="43" align="absmiddle">例2</b>： 
+      01000111<br>
+      　　不满足3T-11T<br>
+      　　查表：00100100100100<br>
+      　　此外，当两个数放到一起时，不满足3T-11T时怎么办？<br>
+      　　解决：可以加一个三位的合并位（Merging bits）。<br>
+      　　三位的合并位，有以下几种可能：<br>
+      　　000 011<br>
+      　　001 101<br>
+      　　010 110<br>
+      　　100 111<br>
+      　　符合条件的是：000、 001、 010 、100四种。在可以做合并位的四个数中， &quot;100&quot;不行。因此，8位数据转换成了17位。激光唱盘的编码过程如图5.2--5所示。<br>
+      <b><font color="#003399">　　 5.2.1-5 
+      激光唱盘的编码过程</font></b><br>
+      　<img src="../../../../images/chatp/chap05/006.gif"><br>
+      　　CD光盘的发展系列如下： <br>
+      <b><font color="#003399">　　 5-2　光盘发展系列</font></b> 
+      <br>
+      <img src="../../../../images/chatp/chap05/007.gif" width="401" height="270"> 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

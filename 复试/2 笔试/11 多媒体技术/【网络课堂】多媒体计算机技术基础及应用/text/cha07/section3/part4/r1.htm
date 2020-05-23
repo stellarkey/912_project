@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　文字材料、照片、录音带、录像带等原始资料输入到计算机中后经过数据加工，变成符合著作工具要求、可以直接利用的素材数据文件，比如TXT格式的文本文件、BMP格式的位图文件、WAV格式的声音文件、MPG格式的视频文件，著作工具应该以何种方式加以使用呢？<br>
+      　　一般有两种使用方法，一是针对每种类型的数据设计数据对象，让数据对象的成员函数读取该种数据格式的文件，显示其内容；二是利用统一的OLE接口，不必区分是何种格式的文件，只把数据文件当作OLE对象嵌进来即可。常用的可以嵌入的对象有Word文档、Excel电子表格、画笔图形、MIDI序列、视频剪辑等。事实上，由于Windows95上的软件普遍支持OLE，几乎所有类型的数据都可以通过OLE嵌进来，也就是说，只要Ark做成OLE 
+      Container，几乎各种格式的数据文件都可以使用了，再不必对每类数据自己编程处理，从而使程序量减到最小。这是最简单的方法，但局限性也非常大。其缺点如下：<br>
+      　　1） 要使用某种OLE对象，必须有能提供该对象的Server软件安装在同一台计算机上。比如想嵌入Word文档，必须同时装有Word。如果著作工具只能通过OLE加入数据对象，就要求使用Ark的用户同时拥有若干Server软件，比如Word、Excel、WordArt、MS 
+      Equation等，若没有这些Server，著作工具就什么也做不了。<br>
+      　　2） OLE可以嵌入或链接对象，被嵌入的对象存储在工具生成的复合文档（Compound Document）中，会使文档变得很大，打开和存储文档变得缓慢，也增加了出错的可能性。我们不希望把位图文件、视频剪辑等嵌入到Ark文档中，因为一个MPEG文件可能会有几十、甚至上百MB，如果嵌进文档，系统大概就要崩溃了。另外如果一个文件被多次嵌入，会造成大量数据冗余。若使用连接方式，复合文档中存一个指向被连接文档（比如一个Bitmap图像文件）的指针，若这个被连接的文件移动了位置，指针就失效了，这使文档维护变得很困难。<br>
+      　　3） 许多期望的效果难以实现。有几件事OLE很难做：带有滚动条的大段文字、显示不规则形状的位图、在子窗口中播放Flc动画等。<br>
+      　　这些缺点都是很致命的，因此不能只依靠OLE。对OLE应该扬长避短，恰当使用<br>
+      　　在设计Ark时决定编程设计数据对象实现对大部分数据类型的必要支持，同时以OLE作为有益补充。所谓&quot;必要支持&quot;，是指在Ark中，对数据文件只能读取和显示，没有进一步加工处理的功能。所谓&quot;有益补充&quot;是指Ark不直接支持的类型的数据可以用OLE方式嵌进来。下面给出一个表，列出Ark支持的各种数据类型。<br>
+      <b><font color="#003399">　　 7-9 
+      Ark支持的数据文件格式</font></b> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　数据类型</td>
+                <td class="text" width="45%">　数据文件格式</td>
+                <td class="text" width="41%">　解释</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　文本</td>
+                <td class="text" width="45%">　TXT、RTF</td>
+                <td class="text" width="41%">　可以是简单无格式的文本，也可以是RTF（Rich Format 
+                  Text）格式的文档，使用前先用Word或其他文字处理软件编辑好再读进来。</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　图形</td>
+                <td class="text" width="45%">　WMF、EMF</td>
+                <td class="text" width="41%">　元文件（Metafile）是Windows所支持的一种图形文件格式，扩展名一般是WMF或EMF，里面可以存储复杂的图形，比如某个公司的标志。这样每次使用这个标志时就不必重新编辑，从文件里调入即可。</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　超文本</td>
+                <td class="text" width="45%">　AML</td>
+                <td class="text" width="41%">　用Ark定义的超文本标注语言进行标注</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　图像</td>
+                <td class="text" width="45%">　BMP、DIB、PCX、<br>
+                  　GIF、TGA、TIF、JPG</td>
+                <td class="text" width="41%">　单色、16色、256色、24位真彩色的位图</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　声音</td>
+                <td class="text" width="45%">　WAV、MID、RMI、MPA</td>
+                <td class="text" width="41%">　MPA是只有声音通道的MPEG文件</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　视频</td>
+                <td class="text" width="45%">　AVI、MPG、MPV</td>
+                <td class="text" width="41%">　MPV是只有图像通道的MPEG文件</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="14%">　动画</td>
+                <td class="text" width="45%">　FLI、FLC</td>
+                <td class="text" width="41%">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　表7-2列出的是Ark可以读取的数据文件格式，已经基本覆盖了常用文件格式。<br>
+      　　这些数据也当然可以通过OLE方式嵌进来，但只推荐嵌入Ark不直接支持的数据类型的文件或小的Word文档、写字板文档、Excel电子表格以及MS 
+      WordArt、MS Graph、MS Equation等不太大的对象，尽量不要嵌入图像、声音、视频等对象，以免使Ark文档变得过大。<br>
+      　　Ark所采取的设计思想很好地解决了对各种类型的数据的支持问题，克服了前面提到的单纯依靠OLE的弊端。Ark不依赖于某个OLE Server，不使用OLE也可以制作出色的演示；Ark有一套管理素材的方法，避免了嵌入或连接对象所造成的问题（Ark不仅不反对OLE，相反推荐嵌入小OLE对象以丰富Ark的功能）；自己编程可以方便地实现OLE难以做到的事情，增加了灵活性。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

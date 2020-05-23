@@ -1,0 +1,20 @@
+A:link { COLOR: #0000CC; TEXT-DECORATION: none } A:visited { COLOR: #993333; TEXT-DECORATION: 
+none } A:active { COLOR: #EA9A2F; TEXT-DECORATION: none } A:hover { COLOR: #9E0B0E; 
+TEXT-DECORATION: underline }.menu { font-family: "宋体", "隶书", "楷体_GB2312"; font-size: 
+9pt; text-decoration: none; color: #FFFFFF} .chap { font-family: "宋体", "隶书", "楷体_GB2312"; 
+font-size: 10pt; color: #97c594; text-decoration: none; font-weight: bold; line-height: 
+14.2pt} .text { font-family: "宋体"; font-size: 9pt; line-height: 15.7pt; color: 
+#000000} .explaination { font-family: "宋体"; font-size: 9pt; line-height: 15.7pt; 
+color: #003366; text-decoration: none} .section { font-family: "宋体"; font-size: 
+9pt; text-decoration: none; font-weight: bold; color: #000000; line-height: 
+14.2pt} .part { font-family: "宋体"; font-size: 9pt; color: #CC6600; text-decoration: 
+none; line-height: 14.2pt; font-weight: bold} .pt9-black { font-size: 9pt; line-height: 
+14.2pt; color: #000000; text-decoration: none} .title { font-size: 9pt; font-weight: 
+bold; color: #000000; text-decoration: none} .body { margin-top: 0px; margin-right: 
+0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; 
+padding-bottom: 0px; padding-left: 0px; background-image: url(../images/htmls/bg05.gif); 
+background-repeat: repeat-y} .tubiaoti { font-size: 9pt; color: #4132FA; font-weight: bold} .juhuang {  font-size: 9pt; color: #FF9900; font-weight: bold}
+.biaoti {  font-size: 12pt; color: #FF6600; font-weight: bold}
+.biaoti_1 {  font-family: "宋体"; font-size: 14px; color: #000099; font-weight: bolder}
+.biaoti_2 {  font-family: "宋体"; font-size: 13px; color: #006699; font-weight: bold; line-height: 25px}
+.zhongdian {  font-family: "宋体"; font-size: 12px; color: #735609; font-weight: bold}

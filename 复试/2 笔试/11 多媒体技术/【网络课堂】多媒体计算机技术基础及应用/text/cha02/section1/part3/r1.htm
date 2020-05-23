@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　彩色摄像机最初得到的是经过g校正的RGB信号，为了和黑白电视机兼容及压缩编码，在传送过程中包含亮度信号和色差信号，亮度方程简化如下：<br>
+      　　<img src="../../../../images/chatp/chap02/011.gif" width="169" height="19" align="absmiddle"> 
+      　　<b>（2.5）</b><br>
+      　　公式表明，用三基色显示彩色时，各基色组成亮度Y的比例关系是恒定的。这些比例系数有时称之为&quot;可见度系数&quot;，它们的和为1，这表示当基色信号电压ER、EG、EB各为1V时，构成亮度信号EY也是1V。<br>
+      　　三个色差信号B-Y，R-Y，G-Y中有两个是独立的，最后一个可用亮度方程和两个色差信号通过运算得到，表达式如下：<br>
+      　　<img src="../../../../images/chatp/chap02/012.gif" width="393" height="75" align="absmiddle">　　 
+      <b>（2.6）</b><br>
+      　　为了达到彩色与黑白兼容，要求传输的动态范围满足亮度信号的要求，如果按上述方法传输彩色全电视信号，会造成幅度失真，为此必须对彩色信号进行压缩，压缩方法是让色差信号乘上一个小于1的压缩系数： 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/013.gif" width="197" height="48" align="absmiddle"> 
+      　　<b>（2.7）</b><br>
+      　　将式（3.6）代入式（3.7），整理后得到： <br>
+      　　<img src="../../../../images/chatp/chap02/014.gif" width="244" height="75" align="absmiddle"> 
+      　　<b>（2.8）</b><br>
+      　　YIQ彩色空间和RGB彩色空间的转换方法是：将V=0.877(R-Y)，U=0.493(B-Y)，sin33°=0.545，cos33°=0.839代入式（3.4），可得到： 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/015.gif" width="201" height="48" align="absmiddle"> 
+      　　　<b>（2.9）</b> <br>
+      　　将式（3.6）代入式（3.9），整理后得到： <br>
+      　　<img src="../../../../images/chatp/chap02/016.gif" width="223" height="75" align="absmiddle"> 
+      　　<b>（2.10）</b> <br>
+      <br>
+      　　HSI彩色空间为多媒体计算机和计算机视觉彩色图像实时处理和特技提供了有效方法，HSI彩色空间的三个帧存储器（Frame Buffer）的数据，在处理彩色图像时相互是独立的，分别提供解释彩色图像非常有用的信息。一幅彩色图像很容易从RGB彩色空间转换到HSI彩色空间，具体公式如下： 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/017.gif" width="96" height="41" align="absmiddle"> 
+      　　<b>（2.11）</b><br>
+      　　<img src="../../../../images/chatp/chap02/018.gif" width="336" height="41" align="absmiddle"> 
+      　　<b>（2.12）</b> <br>
+      　　<font color="#003399">其中</font><br>
+      　　<img src="../../../../images/chatp/chap02/019.gif" width="108" height="41" align="absmiddle"> 
+      　　<b>（2.13）</b> <br>
+      　　<img src="../../../../images/chatp/chap02/020.gif" width="148" height="45" align="absmiddle"> 
+      　　<b>（2.14）</b><br>
+      　　如果RGB的色度轴可以想象是由摄像机产生的RGB，该颜色的亮度就由式（3.11）确定。色调信号用色平面上的角度来表示。具体方法是：把白色点（R=G=B）与红色顶点的连线作为基准，即该线的角度为零。色度就是色度平面上任意点与白色点的连线和此基准线的夹角，具体算法可由式（2.12）和（2.13）给出。饱和度S是从1中减去R/I、G/I、B/I的最小值，白色是R/I=G/I=B/I=1，所以它的饱和度值为零。 
+      <br>
+      　　　<img src="../../../../images/chatp/chap02/021.gif"> <br>
+      　　<font color="#003399">图2.6　RGB彩色空间和HSI彩色空间处理彩色问题的比较</font> <br>
+      　　变成蓝色，对应的三个帧存储器的值变化如下：143?31（红）、143?31（绿），31?255（蓝）。而在HSI彩色空间，同样的变化，对应的三个帧存储器的值，只要色调H从60变化到240，其它饱和度和亮度都不要变化。从这个例子可以清楚地看到，在处理彩色问题时，HSI彩色空间具有明显的优越性。<br>
+      　　多媒体计算机系统涉及到多种彩色空间，在CD-I系统中，支持的图像格式、视频方式有DYUV、RGB5：5：5、CLUT8、CLUT7、CLUT4、RL7以及RL3。其中DYUV方式与CCIR601-2YCbCr有密切联系；RGB5：5：5方式采用RGB彩色空间，RGB每个分量占用5位；CLUT8、CLUT7、CLUT4、RL7以及RL3采用的也是RGB彩色空间，它用彩色查找表（Color 
+      Look-up Table-CLUT，也叫调色板）进行映射和解码。在DVI系统中采用YUV彩色空间，它所支持的图像格式又涉及到YIQ、RGB彩色空间，其中RGB支持8位、16位和24位。综上所述，搞清楚彩色空间表示以及它们之间的转换，是多媒体计算机彩色图形、静态图像以及动态图像（Video）处理算法的基础。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

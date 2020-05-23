@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699"><font color="#003399"><b>　　3.7.3.1 
+      音频数据库和文件系统</b></font><a name="01"></a><br>
+      　　任何音频数据库或具有大量音频文件的文件系统都可以从基于内容检索的能力上获益，只是需要增加相应的分析数据。当为数据库增加一个新的声音时，形成一个新的数据库记录或具有某些信息的对象，数据库也应允许用户为其加入自己的信息。在多用户系统中，用户可以拥有自己的数据库记录的备份，而且可以按自己的需求进行修改。<br>
+      　　表3.18显示了在一个浏览器中使用的数据库记录的例子。在这个记录中包括声音文件的名字和特性域。系统分析子程序计算声学特性，用户定义的关键字和注释。 
+      <br>
+      　<font color="#003399">表3.18 浏览器中使用的数据库记录的举例 </font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">声音文件属性</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">用户属性</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">分析特性矢量</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">文件名字<br>
+                    采样率<br>
+                    样值大小<br>
+                    声音文件格式<br>
+                    通道数<br>
+                    分析数据</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">关键字<br>
+                    注释</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">时长(均值、方差、自相关)<br>
+                    基频(均值、方差、自相关)<br>
+                    幅度(均值、方差、自相关)<br>
+                    亮度(均值、方差、自相关)<br>
+                    带宽(均值、方差、自相关)</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　任何一个用户都可以把一组声音送给分类算法而形成一个音频类。算法返回一个声音列表和得出的统计信息。这类可以是用户的私有类，或数据库所有用户都能用的类。这个类是否有用取决于应用领域。例如用户对运动和新闻镜头进行自动分段。生成一个允许识别各种声音的类，可能分出鼓掌、干杯、裁判的哨声、近讲麦克风语音等等。数据库应该支持上节所介绍的查询，也应支持关键字、采样率等的标准查询。<br>
+      　　<b><font color="#003399">3.7.3.2 音频数据库浏览器</font></b><a name="02"></a><br>
+      　　本节介绍一个用于音频数据库的浏览器Sound Fisher，它允许用户利用基于内容的查询来查找声音。同时，还可以进行数据库的一般管理，如增、删数据项，或描述一个声音。 
+      <br>
+      　　图3.51表示了在信息查询时的图形用户界面。上半部分是查询窗口(Query window)，查找(Search)按钮启动一个查询，并把结果显示在当前声音窗口(Current 
+      Sounds Window)。初始时，结果(Results)窗口列出数据库中所有的声音。<br>
+      　　使用数据库各变量域的联合约束条件形成一个查询，用一组声音形成某类的训练集。图3.51中，表示要在数据应中找到含有&quot;animal&quot;或&quot;barn&quot;关键字的类似于&quot;goose&quot;的高逼真度的声音。这里忽略声音的时长和音量。 
+      <br>
+      <font color="#003399">图3.51音频数据库的浏览器Sound Fisher的用户界面</font> <br>
+      <br>
+      　　在Query窗口的顶部有几排按钮，联合形成总查询，它们分别表示查询的域名、约束因子和约束因子申请的值。按下某个按钮，会弹出一个菜单或游标和带有浮点值的输入窗口。图3.51中还有一个用于增删按钮的菜单项。上述所有的约束条件按AND(逻辑&quot;与&quot;)形成查询。Query窗口的按钮部分列出训练组的声音，这时是&quot;goose&quot;的全部录音。我们已经将时长的音量设置到零，这样在相似性计算时这两个参数将被忽略。<br>
+      　　在这张图中某些查询因子没有显示，因为它们是模糊的。例如用户能够限制基频在100Hz左右，这个约束条件将会使系统去计算每个声音的基频与100Hz的距离。<br>
+      　　注意如果按&quot;逻辑与&quot;(AND)进行两个因子的模糊查询，则相似度要相乘；如果是�&quot;逻辑或&quot;(OR)，它们的相似度要相加。<br>
+      　　可以通过这个界面用一些方法改善查找。如在用户给定的名字下把全部查询保存起来。也可以被重新调用和修改。Navigate菜单包含了查询命令和进程历史。它即记住了在当前路径下的氖提问。还允许利用Back和Farward命令沿着这个路径航走。每次Search按钮被按下，就形成了一个查询项。当然，也可以从查找中跳出。还可以选择查询当前的声音或整个数据库的声音。<br>
+      　　任何已存储的查询也能作为新查询的一部分。一个可用的结构化的查询域是&quot;query&quot;，它的含意是&quot;saved query&quot;。这是让用户执行一个用布尔表达式将先前的查询组合起来的复杂查询。它还能让用户用含有某种概念(如&quot;scratchiness&quot;)的一类声音来训练系统，并在一个名字下存储那个模型。然后在未来的查询中重新使用这个概念。<br>
+      　　<b><font color="#003399">3.7.3.3 音频编辑</font></b><a name="03"></a><br>
+      　　当前音频编辑器都是直接在音频波形上操作，用户直接使用数字或图形方式下的位置和数值，但是编辑器没有音频内容的知识。只有录音者知道音频的内容，若再让他编辑那个冗长的录音却是非常乏味的。<br>
+      　　比较有用的编辑器应具有音频内容的知识。使用本文介绍的技术能够开发特定应用领域的各种声音分类方法。例如编辑音乐会的录音就可以用掌声、乐器独奏、响的和轻的合奏以及其它类型声音特性来分类。使用分类技术，可将整个音乐乐会录音进行分段和索引，就能快速地读取每个乐章和段落。在编辑过程中，前文所列的各种查询都能用于导航。例如，编辑器能够向系统查寻在双簧管部分中，升C调中的高音&quot;1&quot;，以用于音高较准。<br>
+      　　<b><font color="#003399">3.7.3.4 监听</font></b><a name="04"></a><br>
+      　　在监听中基于内容检索的应用与音频编辑器相同，除了辩认和分类应该是实时完成的。许多办公室早已装备了计算机和音频输入装置。它们可以用于收听人的声音、玻璃打碎的声音等等。大量的司法警察使用麦克风和摄象机连续监视高犯罪率或低忍耐力的区域。这样的监听对于检测声音是否与犯罪事实有关是比较容易和有效的。<br>
+      　　<b><font color="#003399">3.7.3.5 音频和视频的自动分段</font></b><a name="05"></a><br>
+      　　在大量的原始音频和视频档案中，自动索引和分段是非常有用的。在视频分段问题上，利用镜头变化和摄象移动已做了一些工作。采用上面讨论的分析方法，也可以对视频磁带中的音轨或只有音频的记录进行自动索引和分段。<br>
+      　　通过分析录音，抽取音量、音高和亮度的轨迹和其它一些特性来实现分段。如在分析数据时，去查找声音的过渡和突然变化就可以进行某种分段。如利用这个技术可以开发音频--MIDI转换系统。其中，原始的轨迹用幅度和音高分段，并把它转换成MIDI数据格式的乐谱。这种表示便于理解和管理音频录音的音乐内容。这里假设用的是乐器录音，因此音高是非常重要的。对于更一般的内容来说，用幅度或频谱变化来进行分段更合适些。<br>
+      　　当这些声音被分析过后，你就可以把它们作为独立的声音段用前面介绍过的方法分析它们的统计特性，任意地查看它们，也可以对它作进行分类和检索。<br>
+      　　具有这些能力的图形界面编辑器应该具有Search和Find命令，其功能类似于Sound Fisher音频浏览器的查询命令。由于经常需要建立一些新的类，应该有一些命令用于分类和分析，或与数据库应用紧密结合起来。<br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

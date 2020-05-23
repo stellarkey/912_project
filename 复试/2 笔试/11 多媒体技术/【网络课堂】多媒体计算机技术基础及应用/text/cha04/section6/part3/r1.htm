@@ -1,0 +1,267 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><font color="#003399"> <b>　　<span class="zhongdian">1．引言</span> 
+      </b></font><br>
+	  <a href="#nowhere" onclick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　MPEG(Moving Picture Experts Group)的中文意思是运动图像专家小组。 <br>
+      　　MPEG(Moving Picture Experts Group)运动图像专家小组。 <br>
+      　　MPEG委员会的活动开始于1988年，其目标是要在1990年建立一个标准的草案。 <br>
+      　　MPEG和JPEG两个专家小组，都是在ISO领导下的专家小组，其小组成员也有很大的交叠。JPEG的目标是专门集中于静止图像压缩，MPEG的目标是针对活动图像的数据压缩，但是静止图像与活动图像之间有密切关系。 
+      <br>
+      　　MPEG专家小组，承担制定了一个可用于数字存储介质上的视频及其关联音频的国际标准，这个国际标准，简称为MPEG标准。</div> <br>
+      　　<font color="#003399" class="zhongdian">MPEG标准的产生 <br>
+      　　·1988-1992 提出标准化方案。 <br>
+      　　·1991年11月提出草案 <br>
+      　　·1992年通过ISO/SEC 11172JPEG 和MPEG同属于一个工作组。 <br>
+      　　·1993年11月通过 ISO/IEC 13818 <br>
+      　　·1995年5月15日正式通过。</font> <br>
+	  <a href="#nowhere" onclick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　MPEG专家小组的研究内容，不仅仅限制于数字视频压缩，音频及音频和视频的同步问题都不能脱离视频压缩独立进行，MPEG视频是面向位率大约为1.5<sub><img
+src="../../../../images/chatp/chap04/4.6/image002.gif" v:shapes="_x0000_i1025"></sub>的视频信号的压缩，MPEG音频是面向每信道速率为64<sub><img
+src="../../../../images/chatp/chap04/4.6/image004.gif" v:shapes="_x0000_i1026"></sub>、128<sub><img
+src="../../../../images/chatp/chap04/4.6/image005.gif" v:shapes="_x0000_i1027"></sub>和192<sub><img
+src="../../../../images/chatp/chap04/4.6/image006.gif" v:shapes="_x0000_i1028"></sub>的数字音频信号的压缩，MPEG的最终目标还得解决数字视频和数字音频等多样压缩数据流的复合和同步的问题。所以，MPEG是将数字视频信号和与其相伴随的音频信号在一个可以接受的质量下，能被压缩到位率约1.5<sub><img
+src="../../../../images/chatp/chap04/4.6/image008.gif" v:shapes="_x0000_i1029"></sub>的一个MPEG单一位流。 
+      <br>
+      　　综上所述，多媒体运动图像和伴音的数据压缩编码标准，即MPEG标准，实际上包括三个部分，MPEG视频、MPEG音频和MPEG系统。本节的重点放在MPEG视频压缩技术上。</div><br>
+      <span class="zhongdian"> MPEG标准的组成 </span><span class="zhongdian"><br>
+      　　MPEG系统 <br>
+      　　MPEG视频 <br>
+      　　MPEG音频 <br>
+      　　MPEG测试（检测） </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide03Notice" name"hide03Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　MPEG视频压缩技术是针对运动图像的数据压缩技术。为了提高压缩比，帧内图像数据压缩和帧间图像数据压缩技术必须同时使用。要学习MPEG的压缩编码方法，首先要对MPEG数据流结构有所了解。 </div>
+      <br>
+      <b><font color="#003399">　<span class="zhongdian">2．基本的MPEG数据流结构</span> 
+      </font></b><br>
+	  <a href="#nowhere" onclick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide04Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　MPEG-1视频图像数据流是一个分层结构，目的是把比特流中逻辑上独立的实体分开，防止语意模糊，并减轻译码过程的负担。对分层的要求是支持通用性、灵活性和有效性。MPEG标准的通用性可以用MPEG位流来更好地说明。通用性的含义是使MPEG标准的语法规定可满足不同的应用要求。 
+      如表4.6—1所示的MPEG视频比特流分层结构。共包括六层，每一层支持一个确定的函数，或者是一个信号处理函数（DCT，运动补偿），或者是一个逻辑函数（同步，随机存取点）等。 </div>
+      <br>
+      　　<span class="zhongdian">（1）MPEG视频比特流分层结构 <br>
+      　 表4.6—1 MPEG视频比特流语法的六个层次 </span> 
+      <table border=1 cellspacing=0 cellpadding=0 width="250">
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left"><br>
+              <span class="zhongdian">图像序列层（随机存取单元：上下文） </span></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left"><br>
+              <span class="zhongdian">图像组层（随机存取单元：视频编码） </span></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left"><br>
+              <span class="zhongdian">图像层（基本编码单元） </span></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left"><br>
+              <span class="zhongdian">宏块片层（重同步单元） </span></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left" class="zhongdian"><br>
+              宏块层（运动补偿单元） </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=530 valign=top class="text"> 
+            <div align="left"><br>
+              <span class="zhongdian">块层（DCT单元） </span></div>
+          </td>
+        </tr>
+      </table>
+      <br>
+	  <a href="#nowhere" onclick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide05Notice" name"hide05Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　为了更好的理解这个MPEG视频比特流分层结构，我们将其画成形象的结构图如下：</div> <br>
+      　　<span class="zhongdian">（2）MPEG视频比特流分层结构图</span><br>
+      　<img src="../../../../images/chatp/chap04/4.6/image010.gif"
+v:shapes="_x0000_s1026 _x0000_s1027 _x0000_s1028"><br>
+      　　<br>
+	  <a href="#nowhere" onclick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide06Notice" name"hide06Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　下面我们对这六层结构做更具体的讲解。 <br>
+      　　① 图像序列层： <br>
+      　　一个运动序列（视频流）包括一个表头、一组或多组图像序列和序列尾， 序列头应包括图像的如下信息：序列头码 32bit<br>
+      　　水平大小 12bit <br>
+      　　垂直大小 12bit <br>
+      　　像素的长宽比 4bit <br>
+      　　图像速率（传输率） 4bit <br>
+      　　位码率 4bit <br>
+      　　结束码 32bit <br>
+      　　② 图像组层 <br>
+      　　由一系列图像组成,这些图像可以从运动序列中随机抽取。 </div><br>
+      　<img src="../../../../images/html/tushi.gif" width="37" height="25"> <br>
+      　　<img src="../../../../images/chatp/chap04/4.6/image011.gif" > <br>
+	  <a href="#nowhere" onclick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide07Notice" name"hide07Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　③ 图像层 一个图像(静止图像)若是彩色由三个部分组成：一个亮度信号Y，两个色差信号UV。 <br>
+      　　一个图像可以分成许多的宏块，宏块的大小为16×16，是运动补偿的基本单位。由于人的眼睛对亮度敏感，对色差不敏感，所以MPEG-1色度与亮度采样的关系如图4.6—2。每采样4个亮度值，对应的采样1个色差值。所以Y：U：V=8：2：2，但需要指出的是每一个像素的Y、U、V都是用8比特存储。 
+ <br>
+      　　④ 宏块片层 <br>
+      　　一个或多个连续的宏块组成切片中宏块的次序由左到右，由上到下。如果有误差就跳到下一个切片开始位置，使用越多的图像切片误差的隐蔽性就越好。 <br>
+      　　⑤ 宏块层 <br>
+      　　每个宏块都有：一个16×16的亮度信息，8×8的色度信息。 <br>
+      　　⑥ 块层 <br>
+      　　每一块有：8×8的亮度信息和8×8的色度信息 <br>
+      　　以上我们讲了MPEG-1数据流结构，在此基础上我们来学习MPEG的视频压缩技术。MPEG视频压缩技术分为帧内图像数据压缩和帧间图像数据压缩技术。帧内压缩算法与JPEG压缩算法大致相同，采用基于DCT的变换编码技术，用以减少空域冗余信息。我们把重点放在帧间压缩技术上。下面我们讲MPEG的帧间编码技术。 </div>
+      <br>
+      <b><font color="#003399">　　</font><span class="zhongdian">3．帧间编码技术</span><font color="#003399"> 
+      </font></b><br>
+	  <a href="#nowhere" onclick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide08Notice" name"hide08Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　由于MPEG对视频信号作随机存取的重要要求，和通过帧间运动补偿可有效地压缩资料比特数，MPEG采用了三种类型的图像：帧内图（Intrapictures 
+      I），预测图（Predicted Pictures P）和插补图，即双向预测图（Bidirectional Prediction B）。 </div><br>
+      <span class="zhongdian">（1） MPEG图像的三种类型 <br>
+      　　I 图像——Intra Picture <br>
+      　　P 图像——Predicted Picture预测图 <br>
+      　　B 图像——Bidirectional Picture双向预测图 </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide09Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide09Notice" name"hide09Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　I图像也叫I帧，就是静态图像，用JPEG帧内压缩的方法得到，压缩比适度，压缩后变成1—2个比特/像素；P图像（ P帧）由最近的I 帧或P帧经过预测编码得到，称为前向预测，而且可以作为下一个B帧或P帧的照图像；B图像（ 
+      B帧）可以使用前一个和后一个图像作参考图像，也叫双向预测；也可以使用前后两个参考图像,因而B帧用到了前项预测、后项预测还有帧内编码。 帧内图(I)和预测图(P)及双向预测图(B)沿时间轴上的顺序排列如图4.6—3所示。是在沿时间轴方向的排列中，每8帧图像内，有一幅帧内图(I)，一幅预测图(P)，6幅插补图(B)。(B)图处于(I)图和(P)图之间。(I)、(P)和(P)、(I)之间各包括3个(B)图。</div><br>
+      　　<img src="../../../../images/html/tushi.gif" width="37" height="25"> <br>
+      　　<img width=300 height=226 src="../../../../images/chatp/chap04/4.6/image013.gif" v:shapes="_x0000_s1071 _x0000_s1072 _x0000_s1073"> 
+      <br clear=ALL>
+      　<img src="../../../../images/html/tushi.gif" width="37" height="25">　　<br>
+      　　<img width=222 height=131 src="../../../../images/chatp/chap04/4.6/image014.gif" v:shapes="_x0000_s1149 _x0000_s1150 _x0000_s1151 _x0000_s1152 _x0000_s1153 _x0000_s1154 _x0000_s1155 _x0000_s1156 _x0000_s1157 _x0000_s1158 _x0000_s1159 _x0000_s1160 _x0000_s1161 _x0000_s1162 _x0000_s1163 _x0000_s1164 _x0000_s1165 _x0000_s1166 _x0000_s1167 _x0000_s1168 _x0000_s1169 _x0000_s1170 _x0000_s1171 _x0000_s1172 _x0000_s1173 _x0000_s1174 _x0000_s1175 _x0000_s1176 _x0000_s1177 _x0000_s1178 _x0000_s1179 _x0000_s1180 _x0000_s1181 _x0000_s1182"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide10Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide10Notice" name"hide10Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　 第1帧为I帧用的是帧内编码，也就是JPEG编码（显示（1））。第2帧为P帧，P帧用到了帧间预测，由I帧预测P帧，也就是说P帧预测的“源”是I帧，叫前向预测编码（显示（2）；P帧的“源”也可以是P帧（显示（3））；</div> 
+      <br>
+      　　<img src="../../../../images/html/tushi.gif" width="37" height="25"> <br>
+      　　<img width=64 height=110
+  src="../../../../images/chatp/chap04/4.6/image016.gif" v:shapes="_x0000_s1074 _x0000_s1075 _x0000_s1076 _x0000_s1077 _x0000_s1078 _x0000_s1079 _x0000_s1080 _x0000_s1081 _x0000_s1082"> 
+      　　<img width=146 height=129
+  src="../../../../images/chatp/chap04/4.6/image015.gif" v:shapes="_x0000_s1083 _x0000_s1084 _x0000_s1085 _x0000_s1086 _x0000_s1087 _x0000_s1088 _x0000_s1089 _x0000_s1090 _x0000_s1091 _x0000_s1092 _x0000_s1093 _x0000_s1094 _x0000_s1095 _x0000_s1096 _x0000_s1097 _x0000_s1098 _x0000_s1099 _x0000_s1100 _x0000_s1101 _x0000_s1102 _x0000_s1103"> 
+      <br clear=ALL>
+	  <a href="#nowhere" onclick="ShowItem(hide11Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide11Notice" name"hide11Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　B帧是双向预测帧，B帧是向前参考I帧，向后参考P帧而得到的（显示（4））；但B帧不能做为参考帧。也可以使用前后两个参考图像（显示（5））通过双向预测可以获得很高的压缩比</div><br>
+      　　<img src="../../../../images/html/tushi.gif" width="37" height="25"><br>
+      　 <img src="../../../../images/chatp/chap04/4.6/image017.gif" v:shapes="_x0000_s1104 _x0000_s1105 _x0000_s1106 _x0000_s1107 _x0000_s1108 _x0000_s1109 _x0000_s1110 _x0000_s1111 _x0000_s1112 _x0000_s1113 _x0000_s1114 _x0000_s1115 _x0000_s1116 _x0000_s1117 _x0000_s1118 _x0000_s1119 _x0000_s1120 _x0000_s1121 _x0000_s1122 _x0000_s1123 _x0000_s1124 _x0000_s1125 _x0000_s1126 _x0000_s1127 _x0000_s1128 _x0000_s1129 _x0000_s1130 _x0000_s1131 _x0000_s1132 _x0000_s1133 _x0000_s1134 _x0000_s1135 _x0000_s1136 _x0000_s1137 _x0000_s1138 _x0000_s1139 _x0000_s1140 _x0000_s1141 _x0000_s1142 _x0000_s1143 _x0000_s1144 _x0000_s1145 _x0000_s1146 _x0000_s1147 _x0000_s1148 _x0000_s1183 _x0000_s1184 _x0000_s1185 _x0000_s1186 _x0000_s1187 _x0000_s1188 _x0000_s1189 _x0000_s1190 _x0000_s1191 _x0000_s1192 _x0000_s1193 _x0000_s1194 _x0000_s1195 _x0000_s1196 _x0000_s1197 _x0000_s1198 _x0000_s1199 _x0000_s1200 _x0000_s1201 _x0000_s1202 _x0000_s1203 _x0000_s1204 _x0000_s1205 _x0000_s1206 _x0000_s1207 _x0000_s1208 _x0000_s1209 _x0000_s1210 _x0000_s1211 _x0000_s1212 _x0000_s1213 _x0000_s1214 _x0000_s1215 _x0000_s1216 _x0000_s1217 _x0000_s1218 _x0000_s1219 _x0000_s1220 _x0000_s1221 _x0000_s1222 _x0000_s1223 _x0000_s1224 _x0000_s1225 _x0000_s1226 _x0000_s1227 _x0000_s1228 _x0000_s1229 _x0000_s1230 _x0000_s1231 _x0000_s1232 _x0000_s1233 _x0000_s1234 _x0000_s1235 _x0000_s1236 _x0000_s1237 _x0000_s1238 _x0000_s1239 _x0000_s1240 _x0000_s1241 _x0000_s1242 _x0000_s1243 _x0000_s1244"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide12Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide12Notice" name"hide12Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　MPEG中这些帧序列图的组织结构是十分灵活的，它们的组合可由应用规定的参数决定，如随机存取和编码延迟等。 下面讲一下运动序列流的组成 </div><br>
+      　　<span class="zhongdian">（2） 运动序列流的组成 <br>
+      　　图4.6—5示出一个视频序列中帧图显示顺序的例子，这也是帧编码器输入帧图的排列顺序。图中第一行表示帧图属性[(I)图、(P)图、(B)图]，第二行是编码器输入帧图的编号。</span><br>
+      　　 <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap04/4.6/image019.gif" v:shapes="_x0000_s1245 _x0000_s1246 _x0000_s1247" width=289 height=113 border="0"></a> 
+      <br clear=ALL>
+	  <a href="#nowhere" onclick="ShowItem(hide13Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide13Notice" name"hide13Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　从图中可以看出，两幅B图位于两幅参考图之间，一般在每0.5秒给一个I帧，这样可以避免误差变大。组成视频流编码时，允许编码端自行选择I帧的使用频率和在视频流的位置。典型每秒使用2次。允许编码端自行选择任何两帧参考图像（I，P）之间的B帧。插入两个B帧较为适宜。我上面说的是视频流的显示顺序，当要对其进行传输时就不能按这个顺序，因为“2”号B帧是靠参考I和P帧得来的在P未到之前是无法恢复B帧的，译码器接收端收到的传输来的视频流的顺序应和显示的顺序不一致。</div><br>
+      　　<span class="zhongdian">（3） 显示顺序和传输视频流顺序不一致 </span><br>
+      　　<span class="zhongdian">例如：<br>
+      　　显示的顺序：1 2 3 4 5 6 7 <br>
+      　　　　　　　　I B B P B B P <br>
+      　　传输的顺序：1 4 2 3 7 5 6 <br>
+      　　　　　　　　I P B B P B B</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide14Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide14Notice" name"hide14Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　以上讲的是帧间预测，那么如何实现两帧之间的预测呢？也就是说如何实现从I帧的P帧的预测？又如何实现从I、P两帧到B帧的双向预测？MPEG中采用的是运动补偿技术。下面来讲运动补偿技术。 </div>
+      <br>
+      <b><font color="#003399">　　<span class="zhongdian">4．运动补偿 </span></font></b><span class="zhongdian"><br>
+      　　 运动补偿技术指的是： 运动补偿预测是以子块（16×16）为预测单元，把当前子块认为是先前某一时刻图像子块的位移，位移的内容包括运动方向和运动幅度。 
+      </span> <br>
+	  <a href="#nowhere" onclick="ShowItem(hide15Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide15Notice" name"hide15Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　可以说运动补偿技术为了提高效率，是在宏块一级运算的，拿当前帧的一个宏块，到另外一帧里去找，找的方法呢，算法就是匹配算法，如何匹配呢，用的是搜索算法，如果找到了得到的是运动向量。这就是运动补偿。 
+      运动补偿技术主要用于消除P.B图像在时间上的冗余，提高压缩效率是在宏块一级。如何进行运动补偿，先来明确一些基本概念。一宏块类型的定义，有四种类型的宏块</div><br>
+      　　<span class="zhongdian">（1）四种类型的宏块 I 块 帧内宏块 <br>
+      　　F 块 前向预测宏块 <br>
+      　　B 块 后向预测宏块 <br>
+      　　A 块 平均宏块(内插宏块、双向预测宏块) </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide16Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide16Notice" name"hide16Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　我们知道有三种类型的图像I、P、B，这三种类型的图像里所有的宏块是不一样的。 </div><br>
+      　　<span class="zhongdian">（2）各图像中的宏块类型&#159; B图像有四种宏快，是以下四种之一： <br>
+      　　(1)帧内宏块—I块(Intra Macro Block)<br>
+      　　(2)前向预测宏块—F块(Forward Predicted Macro Block ) <br>
+      　　(3)后向预测宏块 —B块 (Backward Predicted Macro Block )<br>
+      　　(4)平均宏块(内插宏块双向预测宏块)A (Average Macro Block ) </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide17Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide17Notice" name"hide17Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　它有着些类型，因为B图像是双向预测。 </div><br>
+      　　<span class="zhongdian">·P图像只有I，F两种宏块。因为P图只能前向预测，所以有F块<br>
+      　　·I图像只有I宏块。因为I图没有预测所以只有一种。</span> <br>
+	  <a href="#nowhere" onclick="ShowItem(hide18Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide18Notice" name"hide18Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　无论是P、B和I块处理技术都一样。都采用基于预测的运动补偿技术。 </div><br>
+      　　<span class="zhongdian">基于块的运动补偿就是要在参照帧中找出一个最佳匹配块，对于F和B找出一个，对于A前后各一个。 
+      <br>
+      　　F块 预测参照前一个I和P图像 <br>
+      　　B块 预测参照后一个I或P图像 <br>
+      　　A块 前一个I图像或P图像和后一个I图像P图像 </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide19Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide19Notice" name"hide19Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　如何找出最佳匹配块呢？采用最佳匹配块算法和搜索算法。</div> <br>
+      　　<span class="zhongdian">（3）匹配块算法有 <br>
+      　　归一化相关函数NCCF <br>
+      　　均方误差MSE <br>
+      　　帧间绝对误差MAD </span><br>
+      　　<span class="zhongdian">（4）搜索算法有<br>
+      　　1.穷尽搜索法 MAD <br>
+      　　2.二维对数法 TDL采用MSE均方误差 <br>
+      　　3.三步搜索法 9个点/步 MSE均方误差 <br>
+      　　采用绕参考点逐渐向外生长的方式: </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide20Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide20Notice" name"hide20Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　找到块匹配后，也就是得到了匹配块的运动向量后，有两种处理办法: <br>
+      　　一是恢复被预测块时，用匹配块代替(B图像常用) ; <br>
+      　　二是对预测的误差采用ADCT技术编码(运动补偿后ADCT编码效率会提高) </div><br>
+      <b><font color="#003399">　　<span class="zhongdian">5． 运动表示 </span></font></b><span class="zhongdian"><br>
+      　　假设 前一帧为 I0， <br>
+      　　后一帧为 I2， <br>
+      　　当前帧为 I1， <br>
+      　　预测的点坐标为 X， <br>
+      　　MV01是该点相对于I0帧的运动向量 <br>
+      　　MV21是该点相对于I2帧的运动向量。 <br>
+      　　B图中宏块的预测方式宏块类型预测器 预测误差 <br>
+      　　帧内 I I1(x) I1(x)-I'1(x) <br>
+      　　前向预测F I1(x)=I0(x+mv01) 1(x)-I'1(x) <br>
+      　　后向预测B I1(x)=I2(x+mv21) I1(x)-I'1(x) <br>
+      　　双向预测A I1(x)=1/2[I0 (X+MV01)+I2(X+MV21)] I1(x)-I'1(x) </span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide21Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide21Notice" name"hide21Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　对于B、F块，只包含一个运动向量，A块包含两个运动向量以差分的形式编码。 </div><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

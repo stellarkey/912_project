@@ -1,0 +1,424 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　根据通信节点的数量，视频会议系统可分为：点对点视频会议系统和多点视频会议系统。<br>
+      <br>
+      　　视频会议系统的分类如下：<br>
+      　　(1) 点对点的视频会议系统<br>
+      　　点对点视频会议系统支持两个通信节点间视频会议通讯功能，它的主要业务是：<br>
+      　　可视电话；台式机-台式机视频会议；会议室-会议室视频会议。<br>
+      　　(2) 多点视频会议系统<br>
+      　　多点视频会议系统允许三个或三个以上不同地点的参加者同时参与会议。<br>
+      　　点对点视频会议系统支持两个通信节点间视频会议通信功能，它的主要业务是：<br>
+      　　1.可视电话<br>
+      　　可视电话是在现有公共电话网上使用的具有双工视频传送功能的电话设备。由于电话网带宽的限制，可视电话只能使用较小的屏幕和较低的视频帧率。例如使用3.3英寸的液晶屏幕，每秒钟可传送2-10帧画面。<br>
+      　　2.桌面视频会议系统<br>
+      　　这种视频会议系统利用用户现有的台式机（如PC机）平台以及网络通信设备和远地另一台装备了同样或兼容设备的台式机通过网络进行通信，这种系统仅限于两个用户或两个小组用户使用。Intel公司的Proshare 
+      Personal Conferencing Video System 200是这类系统的一个典型示例，这是一种点对点的个人视频会议系统，支持ISDN和LAN的连接，采用硬件编码压缩，软件解压缩，为了方便协同工作，Proshare还提供共享笔记本和共享应用程序。<br>
+      　　3.会议室型视频会议系统<br>
+      　　在会议室型视频会议系统的支持下，一群与会者集中在一间特殊装备的会议室中，这种会议室作为视频会议的一个收发中心，与远地的另外一套类似的会议室进行交互通信，完成两点间的视频会议功能。由于会议室与会者较多，因此对视听效果要求较高，一套典型的系统一般应包括：一台或两台大屏幕监视器、高质量摄像机、高分辨率的专用图形摄像机、复杂的音响设备、控制设备及其他可选设备，以满足不同用户的要求。<br>
+      　　多点视频会议系统：多点视频会议系统允许三个或三个以上不同地点的参加者同时参与会议。多点视频会议系统一个关键技术是多点控制问题，多点控制单元（MCU）在通信网络上控制各个点的视频、音频、通用数据和控制信号的流向，使与会者可以接收到相应的视频、音频等信息，维持会议正常进行。<br>
+      <br>
+      <font color="#003399"><b>一、视频会议系统的结构</b></font><a name="01"></a><br>
+      　　视频会议系统的结构如图8.1所示，它主要由视频会议终端、多点控制器、信道（网络）及控制管理软件组成。<br>
+      　　 <b><font color="#003399">8.1 
+      视频会议系统结构框图 </font></b><br>
+      　<img src="../../../../images/chatp/chap08/001.gif" width="383" height="202"><br>
+      　　视频会议系统终端的主要功能是：完成视频信号的采集、编辑处理及显示输出、音频信号的采集、编辑处理及输出、视频音频数字信号的压缩编码和解码，最后将符合国际标准的压缩码流经线路接口送到信道，或从信道上将标准压缩码流经线路接口送到终端中。此外，终端还要形成通信的各种控制信息：同步控制和指示信号、远端摄像机的控制协议、定义帧结构、呼叫规程及多个终端的呼叫规程、加密标准、传送密钥及密钥的管理标准等。<br>
+      　　多点控制单元MCU(Mulitpoint Control Unit）是视频会议系统的关键设备，它的主要功能是对视频、语音及数据信号进行切换，例如它会把传送到MCU某会场发言者的图像信号切换到所有会场。对于语音信号，若同时有几个发言，可以对它们进行混合处理，选出最高的音频信号，切换到其他会场。MCU的主要组成部分是：网络接口单元、呼叫控制单元、多路复用和解复用单元、音频处理器、视频处理器、数据处理器、控制处理器、密钥处理分发器及呼叫控制处理器。<br>
+      　　视频会议系统的服务质量QOS（Quality of Service） 是满足视频会议系统需求的核心问题，视频会议系统要把用户的服务请求映射成预先规定的QOS参数，进而与系统和网络资源对应起来，通过资源的分配和调度满足用户的应用需要。资源的分配和调度可以选用资源的静态管理和动态管理去完成。资源的静态管理包括：QOS的协商和解释、资源许可（admission）、资源的保留和分配及资源的释放。资源的动态管理包括：进程管理、缓冲区管理、传输率和流量控制及差错控制。<br>
+      　　视频会议系统最后一个组成部分是安全保密系统，它也是视频会议一个重要问题。安全保密系统的主要组成部分是加密模块和解密模块，加密模块是将会议终端用户数据加密形成加密后的数据在网络上传输，解密模块接收加密数据进行解密得到用户数据。加密和解密模块的核心是密钥的生成和管理，密钥生成的核心是加密算法，加密算法不包含在国际标准的建议中，它由视频会议系统设计者研制或选用。<br>
+      <br>
+      　　 <b><font color="#003399">二、视频会议系统的标准</font></b><a name="02"></a><br>
+      　　标准化是产业兴旺发达的前提，视频会议系统各种设备的生产厂商，它们的产品必须符合相应的标准互相连接通信，这样才能使视频会议系统产品市场迅速发展。<br>
+      　　总部位于瑞士日内瓦的国际电信联盟（ITU），主要任务是制定通信标准，以便世界范围内通信的相互操作。它的成员来自不同的国家和公司，ITU包括了著名的国际电报电话咨询委员会（CCITT），现在改名为国际电信联盟－电信标准化部门（ITU-T）。<br>
+      　　在20世纪80年代，ITU就专门成立了一个小组研究视频会议，从那时起建立了一系列的建议和标准，关于视频会议最著名的标准是H.320系列和T.120系列建议。H系列的建议和标准是专门针对交互式电视会议业务而制定的，而T系列是针对其他媒体的管理功能作出规定，两种协议的结合将使多媒体会议的通信有更完善的依据。1994年以Intel为首的90多家计算机和通信公司联合制定了一个个人会议标准PCS(Personal 
+      Conferencing Specification)。H系列、T系列及PCS标准简述如下：<br>
+      <font color="#003399">　　1. H.320系列标准(图8.2)</font><br>
+      　　H.320系列标准是会议系统中应用最早，最为成熟的协议，支持ISDN，E1，T1，带宽从64Kbps到2Mbps，几乎所有会议系统厂家都支持。甚至目前许多LAN会议系统产品如Intel的　　Provision，Insoft和Communique等也支持H.320。<br>
+      <b><font color="#003399">　　 8.2 
+      H.320标准系统框图</font></b> <br>
+      　<img src="../../../../images/chatp/chap08/003.gif" width="380" height="176"><br>
+      　　H.320系列标准包括了视频、音频的压缩和解压缩，静止图像，多点会议，加密及一些改进的特性。<br>
+      　　H.320可分为五个部分：通用体系，音频，多点会议，加密，数据传送等。目前包括15个标准，简述如下：<br>
+      　　H.221定义了视听服务中64K-1920K信道的帧结构，后又增加了多点会议及加密的内容。<br>
+      　　H.221可将不同媒体信息进行集成，复接。这种结构虽包含不同媒体信息，但并不是多媒体信息的复合结构。这种信息结构并没有深入到表示层与应用层。接收方是将不同媒体信息在时间上进行分离、缓冲、再同步。这种结构要求终端资源充裕，在终端资源有限的情况下，这种简单的同步方式就无法满足要求了。多媒体信息检索系统中的通信同步采用多媒体对象同步。对象作为一个进行传输交换的信息单元，给出不同媒体信息的连接机制，以及空间与时间上同步的详细规范。 
+      <br>
+      　　H.230传递帧同步控制和指示信号，负责处理基于H.320的CODEC设备之间传送的控制信息。<br>
+      　　H.242描述了在高至2M的数字信道上，会议电视终端之间建立通信和设置呼叫的规程，定义了基于H.320设备之间传送压缩视频和音频信号的协议。<br>
+      　　H.261又称为Px64，它是视频编解码器的标准，采用中间格式兼容不同电视制式间的差异，是一种有运动补偿的帧间预测编码+变换编码（ZDDCT）+量化+可变长编码+传输缓存器控制的混合编码方式。视频编码器按照图像内容进行帧内/帧间判决和处理。<br>
+      　　G.711 64kbps PCM电话质量（3.5kHz）语音压缩标准。<br>
+      　　G.722 48/56/64kbps ADPCM高保真质量语音压缩标准。<br>
+      　　G.728 16kbps LD-CELP语音压缩标准。<br>
+      　　H.231定义了多点控制单元及如何连接3个或更多的基于H.320 CODEC设备。H.243主要处理多个终端之间建立通信的过程，它定义了H.320 
+      CODEC与MCU之间控制过程。H.231和H.243两个建议主要针对视听业务，对数据仅提供初步的支持。这两个建议的控制功能比较简单，有些专家认为这是多点通信控制的暂时解决方案。按照H.231、H.243，要实现对多个视听业务终端的多点控制，需通过设计MCU，桥接各个视听业务终端，MCU将向各终端发送SCM（选定通信模式）信号，并能实现对图像画面，声音等选择、切换功能，MCU中有分接器与按控制要求的复接器。<br>
+      　　H.244是使用H.221 LSD/HSD/MCP信道的远端摄像机控制协议。<br>
+      　　H.281与H.224相同也是远端摄像机控制协议，只是采用数据链路协议。<br>
+      　　H.233提供了H.320设备加密标准。<br>
+      　　H.234确定了如何在不同点之间传送密钥的密钥管理标准。<br>
+      <font color="#003399">　　2. H.323系列标准（图8.3）</font><br>
+      　　H.323描述无QOS（服务质量）保证的LAN多媒体通信终端、设备和服务。H.323终端、设备可携带实时语音、数据、视频或它们的任意组合。其中无QOS保证的LAN包括Ethernet，Fast 
+      　　Ethernet，FDDI，Token Ring等。H.323的LAN可以是一个网段或环，也可以是复杂拓扑结构的多个网段。但多个网段（包括INTERNET）可能会导致很差的性能。H.323终端可以是计算机或单独的设备（如视频电话），其中语音是必须支持的，数据和视频则是可选的。<br>
+      　　H.323系列包括：<br>
+      　　·视频：<br>
+      　　H.261 P×64kbps下音频视频业务的视频编码解码器。<br>
+      　　H.263 低速率通信的视频编解码器。<br>
+      　　·音频<br>
+      　　G.711、G.722、G.728同前；<br>
+      　　G.723 5.3kbps和6.3kbps多媒体通信的双速率语音编码,将改名G.723.1。<br>
+      　　·复用<br>
+      　　H.222 无QOS保证LAN下媒体流的打包和同步。<br>
+      　　·控制<br>
+      　　H.230视听系统中央同步控制和指示信号。<br>
+      　　H.245多媒体通信控制协议。<br>
+      　　H.323的网络接口要求能提供H.225.0，H.222定义的服务的网络接口，如TCP，SPX，UDP，IPX等。<br>
+      <b><font color="#003399">　　 8.3 
+      H.323标准系统框图</font></b> <br>
+      　　<img src="../../../../images/chatp/chap08/004.gif" width="373" height="215"><br>
+      　　H.323与ITU定义的各会议系统之间的互操作性如图8.4所示。<br>
+      　　其中：H.310：H.231－ISDN<br>
+      　　H.324：GSTN(General Switch Telephone Network)普通交换电话网<br>
+      　　H.320：ISDN<br>
+      　　H.322：QOS保证的LAN上多媒体终端和系统<br>
+      　　H.323：无QOS保证的LAN上多媒体终端和系统<br>
+      <b><font color="#003399">　　 8.4 
+      各ITU标准间的互操作</font></b> <br>
+      　　<img src="../../../../images/chatp/chap08/005.gif" width="374" height="214"><br>
+      　　GW：网关单元（gate way unit），提供LAN上H.323终端与其他ITU终端或其他H.323网关的通信。<br>
+      　　<font color="#003399">3. H.324系列低速率通信标准</font><br>
+      　　H.320标准虽然在今天的电视会议系统中被广泛采用，但因为其只适合于ISDN，E-1，T-1等高速率的数字网，而并不适合于像电话线这种窄带网上使用，因此ITU-T又着手制定了适合于极低速率通信网络的H.324标准。其系统框图如图8.5。<br>
+      <b><font color="#003399">　　 8.5 
+      H.324标准系统框图</font></b> <br>
+      　　<img src="../../../../images/chatp/chap08/006.gif" width="376" height="252"><br>
+      　　H.324低速率多媒体通信终端（Terminal for Low Bitrate Multimedia Communication）用于在GSTN（General 
+      Switch Telephone Network）上用V.34 Modem传输实时语音、视频、　　数据的会议系统标准，它包括如下五部分：<br>
+      　　H.324标准集包括如下标准：<br>
+      　　·视频<br>
+      　　H.263 低速率通信的视频编解码器<br>
+      　　·音频<br>
+      　　G.723 5.3kbps和6.3kbps多媒体通信的双速率语音编码,将改名G.723.1<br>
+      　　·复用<br>
+      　　H.223 低速率多媒体通信复用协议<br>
+      　　·控制<br>
+      　　H.245 多媒体通信控制协议<br>
+      　　·安全保密<br>
+      　　H.233 视听服务的安全系统<br>
+      　　H.234 视听服务的密钥管理和验证系统。<br>
+      　　表8.1 描述了系列国际标准的组成部分及应用场合<br>
+      <font color="#003399"><b> 表8.1 
+      系列国际标准的组成及应用</b></font> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">终端类型</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.320系列</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.324系列</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.323/ H.322系列</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.321系列</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">机顶盒</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">支撑环境</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">N-ISDN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">PSTN/PSDN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">LAN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">ATM B-ISDN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">HFC. PTTC</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音频编码</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">G.711<br>
+                    G.722<br>
+                    G.728</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">G.723<br>
+                    AV.25Y</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">G.711, G.722<br>
+                    G.728</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">G.711,G.722<br>
+                    G.728<br>
+                    H.262</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.262</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">视频编码</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.261</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.263 H.264</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.261</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.261 H.262</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">复用</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.221</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.223</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.221 H.222.0<br>
+                    H.222.1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">H.222.0H.222.1</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">网络接口</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">N-ISDN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">V.34</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">LAN</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">AAL ATM</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">电 缆<br>
+                    MODEM</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <font color="#003399">　　4．T系列标准</font><br>
+        　　T.120是国际电信联盟通信标准部开发的系列国际标准，此标准是为多点和多媒体会议系统中发送数据而制定的。T.120也为连接白板和非会议电视应用及文件传输提供了应用规范。<br>
+        　　T.120模型规定了一个通信的基础结构和在此基础上的应用规程。该模型遵循ISO开放系统互连七层模型，每一层向上一层提供业务并向上一层发送由低层提供业务使用的数据。T.120通信基础结构设计灵活，它能同时处理多个独立的应用，允许与电路交换的通信网络和基于分组的局域网以及数据网任意组合进行连接。<br>
+        　　T.120由三部分组成：<br>
+        　　·T.123传输规程框架规定了不同的网络之间的连接。包括在物理层使用的V系统标准调制解调器的公共交换网；使用X.25规程的分组交换数据网；ISDN和电路交换数据网，网上的语音、电视和T.120数据根据H.221、H.320标准内的成帧规程复用。LAN规程不在ITU-T权限内，但对于TCP/IP和NOVELL公司的IPX的参考框架已开发出来，它包括一个增强的传输层能力，因此起到了面向连接的网络作用。<br>
+        　　·多点通信业务（MCS），包括T.122业务定义和T.125规程规范。MCS提供面向连接的业务，它与T.123传输堆栈操作无关。MCS在OSI模型的会话层，将多个点对点传输连接分到多点通信领域。在MCS域内的节点按层次组织，向上连到多点控制单元（MCU），MCS可以是台式的或独立设备中的一个独立节点，如会议桥。<br>
+        　　数据要沿最有效的路径送到节点，多点通信业务（MCS）能够保证从多个源节点来的数据在所有的节点按相同的顺序来接收。这可以在MCS内规定适当的优先级和为不同类型的数据确定选路的级别来实现。MCS支持的种类包括一对一、一对多、和多对一路径，它也可以在多种类型的网络和连接上操作。<br>
+        　　·T.124普通会议控制（GCC）。GCC可以用指定某种业务和管理多点会议来提供会议能力。这种能力包括建立和终止会议，多种应用中的协商能力和提供通用会议的管理能力，如参加人员的清单，主持人控制功能等。GCC也装备了安全机制，如口令编码保护，能限制未被邀请的人参加会议。<br>
+        　　T.120系列标准为应用开发提供了规范，使不同的厂家的产品和不同的业务能够互相通信。ITU-T在T.120规定了两个高层的规范。一个是T.127，它为用户提供同时初始化多点文件传输能力。另一个是T.126，它允许用户在多点文件会议中查阅图像和对它作注释、共享应用程序和交换传真图像。共享可以发生在运行不同操作系统的应用中。<br>
+        　　T.120的主要部分和ITU-T的T.124、T.127等正式建议一起在1995年3月的日内瓦会议上得到了批准（表8.2）。<br>
+        <b><font color="#003399"><b> </b>表8.2 
+        T系列国际标准</font></b><br>
+   
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">建议</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="center">内 容</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.120</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left"> 　多媒体数据传输规程</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.122</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left">　声像会议多点通信业务规程</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.123</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left">　声像会议的通信规程栈</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.124</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left">　通用会议控制</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.126</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left">　允许用户在多点文件会议中查阅图像或对它作诠释、共享应用和交换传真图像</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="16%"> 
+                  <div align="center">T.127</div>
+                </td>
+                <td class="text" width="84%"> 
+                  <div align="left">　为用户提供同时初始化多点文件传输能力</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <b><font color="#003399">　　</font></b>表8.3描述了G.7XX语音压缩编码标准<br>
+      <b><font color="#003399"><b> </b>表8.3 
+      G.7XX语音压缩编码标准</font></b><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%"> 
+                  <div align="center">标准</div>
+                </td>
+                <td class="text" width="26%"> 
+                  <div align="center">内 容</div>
+                </td>
+                <td class="text" width="12%"> 
+                  <div align="center">码率</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">带宽</div>
+                </td>
+                <td class="text" width="15%"> 
+                  <div align="center">算法</div>
+                </td>
+                <td class="text" width="21%"> 
+                  <div align="center">其他</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%"> 　G.711</td>
+                <td class="text" width="26%">　语音频带的脉冲编码调制(PCM)</td>
+                <td class="text" width="12%">　64kb/s</td>
+                <td class="text" width="16%">　300-340HZ</td>
+                <td class="text" width="15%">　PCM</td>
+                <td class="text" width="21%">　长途电话的语音质量</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%">　G.722</td>
+                <td class="text" width="26%">　7KHZ频段的64kb/s语音编码</td>
+                <td class="text" width="12%">　48, 56 64kb/s</td>
+                <td class="text" width="16%">　50-7000HZ</td>
+                <td class="text" width="15%">　SB-ADPCM</td>
+                <td class="text" width="21%">　可传送高质量语音和简单的音乐</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%">　G.728</td>
+                <td class="text" width="26%">　16kb/s LD-CELP语音编码</td>
+                <td class="text" width="12%">　16kb/s</td>
+                <td class="text" width="16%">　300-3400HZ</td>
+                <td class="text" width="15%">　LD-CELP</td>
+                <td class="text" width="21%">　ISDN网传输设备必备</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399">　　5. PCS标准</font><br>
+      　　由于基于微机的桌面会议系统日益增多，由Intel、AT&amp;T、Lotus、HP、DEC和另外11个主流软硬件公司，以及96个计算机和通信公司联合成立了一个个人会议工作组，简称PCWG（Personal 
+      Conferencing Work Group）。它于1994年制定了一个个人会议标准PCS (Personal Conferencing Specification），适合于任何网络（数字、模拟、LAN或WAN）。此标准包括PCS'S 
+      T120、ITU-T桌面系统多点电视会议视频压缩协议。与H.320不同，PCS是专为个人计算机制订的，并与各种个人计算机标准兼容，其中TAPI和TSAPI两种电话API，Intel公司的Indeo编码和解码器及Microsoft公司的DVI图形/图像标准接口。PCS标准目前仅供PCWG成员使用，很快将提供给公众。满足此标准的个人会议系统用户可以无间隙地与其他个人会议系统用户通信。<br>
+      　　<br>
+      　　<font color="#003399">视频会议系统的标准<br>
+      　　<b>[1] 由国际电讯联盟制定的H系列国际标准：</b><br>
+      　　H系列建议和标准是专门针对视频会议业务而制定的，可分为H.320、H.323及H.324。<br>
+      　　(1) H.320是视频会议标准中应用最早最为成熟的标准协议，支持ISDN、E1、T1，带宽从64Kbps到2Mbps，几乎所有视频会议系统制造商都采用。H.320系列标准包括了视频、音频的压缩编码和解码、静止图像、多点会议、加密及一些改进特性。H.320可分成五个部分：通用体系、音频、多点会议、加密、数据传送等15个标准。如：H.221多路复用/解复用； 
+      H.261视频编码和解码、音频编码和解码标准 (G.721、G.722、G.728等)、H.230传递帧同步控制和指示信号、H.242数字信道视频会议终端呼叫规程、H.243多终端建立通讯过程、H.231定义多点控制单元、H.244信道摄像机控制协议、H.233设备加密标准、H.234传递密钥管理标准。<br>
+      　　(2) H.323是描述无QoS保证的LAN(局域网)视频会议标准协议。<br>
+      　　(3) H.324是描述采用普通交换电话网GSTN(General Switch Telephone Network)视频会议标准协议。<br>
+      　　<b>[2] T系列</b><br>
+      　　T.120是国际电信联盟通信标准部开发的系列国际标准，此标准是为多点和多媒体会议系统中发送数据而制定的。T.120也为连接白版和非视频会议应用及文件传输提供规范。它包括： 
+      <br>
+      　　T.120多媒体数据传输规程；<br>
+      　　T.122声像会议多点通信业务规程；<br>
+      　　T.123声像会议的通信规程栈；<br>
+      　　T.124通用会议控制；<br>
+      　　T.126允许用户在多点文件会议中查阅图像或对它作解释、共享应用和交换传真图像；<br>
+      　　T.127为用户提供同时初始化多点文件传输能力。<br>
+      　　T.120由三部分组成：<br>
+      　　(1) T.123传输规程框架规定了不同的网络之间的连接<br>
+      　　(2) T.122和T.125多点通信业务(MCS)<br>
+      　　(3) T.124普通会议控制（GCC）<br>
+      　　还提供了两个高层规范：<br>
+      　　(1) T.127为用户提供同时初始化多点文件转移能力。<br>
+      　　(2) T.126它允许用户在多点文件会议中查阅图像，对它进行注释、共享应用程序和交换传真图像。<br>
+      　　<b>[3] PCS标准</b><br>
+      　　由于基于微机的桌面会议系统日益增多，由Intel、AT&amp;T、 Lotus、HP、DEC和另外11个主流软硬件公司，以及96个计算机和通信公司联合成立了一个个人会议工作组，简称PCWG(Personal 
+      Conferencing Work Group)。<br>
+      　　它于1994年制定了一个个人会议标准(PCS:Personal Conferencing Specification) ，适合于任何网络（数字、模拟、LAN或WAN）。<br>
+      　　与H.320不同，PCS是专为个人计算机制定的，并与各种个人计算机标准兼容，如与Intel公司的Indeo编码和解码器及Microsoft 
+      公司的DVI图形/图像接口兼容。</font><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;">　　量化是任何数字压缩方法的基础，本节讲述的目的是为了后续各节的学习打下基础。<br>
+        　　通常量化是指模拟信号到数字信号的映射，由于模拟量是连续的，而数字量是离散量，因此量化操作实质上是用有限的离散量代替无限的连续模拟量的多对一映射操作。<br>
+        　　你可能很熟悉连续时间信号和连续幅值信号的模数转换。在经过滤波取样之后，就得到了已量化的离散序列；然而，许多重要的压缩方法在量化之前都要进行清除冗余的步骤，规余可以有线性预测操作或对原始信源数据类型进行离散变换，其输出结果可以是一列线性预测系数或一列变换系数；为了能恢复冗余，在重构信源时要用到这些系数，所以这些系数必须量化（这些系数需要存储和传输），因此，许多量化应用系统对一些类型的参数或系数直接进行量化，而不是对原始的时间空间抽样进行量化。所以说：&quot;数据压缩编码中的量化处理，是指以PCM码作为输入，经正交变换、差分、或预测处理后，熵编码之前，对正交变换系数、差值或预测误差的量化处理。&quot;</div><br>
+
+      
+      <span class="zhongdian">　1. 量化原理<br>
+      　　(1) 数据压缩编码中的量化处理，是指以PCM码作为输入，经正交变换、差分、或预测处理后，熵编码之前，对正交变换系数、差值或预测误差的量化处理。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+
+      <div id="hide02Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;">　　在明确了量化处理的含义后就可以比较容易理解（2）、（3）、（4）所讲的内容。</div><br>
+
+     
+      <span class="zhongdian">　　(2) 量化输入值的动态范围很大，需要以多的比特数表示一个数值，量化输出只能取有限个整数，称作量化级，希望量化后的数值（样本）用较少的比特数便可表示。<br>
+      　　(3) 量化处理是一个多对一的处理过程，是个不可逆过程。<br>
+      　　(4) 量化处理中有信息丢失，或者说，会引起量化误差（量化噪声）。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;">　　每个要存储或传输的信号或参数的连续幅值的变量中的内在信息是无限的，必须量化成有限的离散的数字量，量化是一种多对一的映射，不可避免的存在失真，若量化级和样本比特数足够大，则&quot;品质&quot;上的误差可以不被察觉。因而，任何量化步骤都是数据压缩.</div>
+     
+    </td>
+  </tr>
+</table>
+</body>
+</html>

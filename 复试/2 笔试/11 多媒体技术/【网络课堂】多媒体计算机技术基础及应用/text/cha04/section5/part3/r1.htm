@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　余弦变换是傅里叶变换的一种特殊情况。在傅里叶级数展开式中，如果被展开的函数是实偶函数，那么，其傅里叶级数中只包含余弦项，再将其离散化由此可导出余弦变换，或称之为离散余弦变换（Discrete 
+      Cosine Transform，DCT）。<br>
+      　　离散余弦变换，在数字图像数据压缩编码技术中，可与最佳变换K-L变换媲美，因为DCT与K-L变换压缩性能和误差很接近，而DCT计算复杂度适中，又具有可分离特性，还有快速算法等特点，所以近年来在图像数据压缩中，采用离散余弦变换编码的方案很多，特别是90年代迅速崛起的计算机多媒体技术中，JPEG、MPEG、H.261等压缩标准，都用到离散余弦变换编码进行数据压缩。 
+      <br>
+      <font color="#003399">　　 </font>4.20 偶对称<br>
+      　　<img src="../../../../images/chatp/chap04/185.gif" width="236" height="179"> 
+      <br>
+      <font color="#003399">　　 </font>4.21 奇对称<br>
+      　　<img src="../../../../images/chatp/chap04/189.gif" width="208" height="172"><br>
+      　　<b>1. 一维离散余弦变换</b><br>
+      　　设一维离散函数f(x)，x=0，1，…，N-1，把f(x)扩展成为偶函数的方法有两种，以N=4为例，可得出如图4.20和图4.21所示的两种情况。图4.20称偶对称，图4.21称奇对称，从而有偶离散余弦变换（EDCT）和奇离散余弦变换（ODCT）。<br>
+      　　由图4.20和4.21看出，对于偶对称扩展，对称轴在<img src="../../../../images/chatp/chap04/191.gif" width="53" height="41" align="absmiddle">处。<br>
+      　　<img src="../../../../images/chatp/chap04/190.gif" width="225" height="45" align="absmiddle">　　<b>（4.43）</b><br>
+      　　采样点数增到2N。<br>
+      　　奇对称扩展，对称轴在x=0处。<br>
+      　　<img src="../../../../images/chatp/chap04/192.gif" width="231" height="43" align="absmiddle"> 
+      <b>（4.44）</b><br>
+      　　采样点数增到2N－1。<br>
+      　　由离散傅里叶变换定义出发，对公式（4.43）作傅里叶变换，以<img src="../../../../images/chatp/chap04/193.gif" width="37" height="24" align="absmiddle">表示，则得<br>
+      　　<img src="../../../../images/chatp/chap04/194.gif" width="208" height="90" align="absmiddle"> 
+      <b> 　　（4.45）</b> <br>
+      　　式中， <img src="../../../../images/chatp/chap04/195.gif" width="195" height="19" align="absmiddle"><br>
+      　　当 <img src="../../../../images/chatp/chap04/196.gif" width="167" height="45" align="absmiddle"><br>
+      　　当 <img src="../../../../images/chatp/chap04/197.gif" width="307" height="45" align="absmiddle"><br>
+      　　当 <img src="../../../../images/chatp/chap04/198.gif" width="172" height="21" align="absmiddle">， 
+      <img src="../../../../images/chatp/chap04/199.gif" width="96" height="24" align="absmiddle">，且，<br>
+      　　<img src="../../../../images/chatp/chap04/200.gif" width="305" height="45" align="absmiddle"> 
+      <br>
+      　　考虑正变换公式与逆变换公式的对称性，令<br>
+      　　<img src="../../../../images/chatp/chap04/201.gif" width="181" height="75" align="absmiddle">　　<b>（4.46）</b><br>
+      　　<img src="../../../../images/chatp/chap04/202.gif" width="221" height="48" align="absmiddle">　<b>（4.47）</b><br>
+      　　式中<br>
+      　　<img src="../../../../images/chatp/chap04/203.gif" width="144" height="47" align="absmiddle">　　<b>（4.48）</b><br>
+      　　<img src="../../../../images/chatp/chap04/204.gif" width="178" height="78" align="absmiddle">　　<b>（4.49）</b><br>
+      　　定义式（4.46）和式（4.47）为离散偶余弦正变换公式；式（4.48）和式（4.49）为离散偶余弦变换核公式。<br>
+      　　离散偶余弦逆变换公式为<br>
+      　　<img src="../../../../images/chatp/chap04/205.gif" width="292" height="45" align="absmiddle"><b>（4.50）</b><br>
+      　　　　　　x = 0，1，…，N-1<br>
+      　　将公式（4.46）和公式（4.47）合并、化简，可得到一维离散偶余弦正变换公式，即<br>
+      　　<img src="../../../../images/chatp/chap04/206.gif" width="249" height="48" align="absmiddle">　（4.51）<br>
+      　　式中 <img src="../../../../images/chatp/chap04/207.gif" width="131" height="19" align="absmiddle"><br>
+      　　当<img src="../../../../images/chatp/chap04/208.gif" width="39" height="19" align="absmiddle">时， 
+      <img src="../../../../images/chatp/chap04/209.gif" width="84" height="36" align="absmiddle"><br>
+      　　当<img src="../../../../images/chatp/chap04/210.gif" width="131" height="19" align="absmiddle">时， 
+      <img src="../../../../images/chatp/chap04/211.gif" width="56" height="21" align="absmiddle"><br>
+      <b><font color="#003399">　　</font>2. 二维离散偶余弦变换</b><br>
+      　　设 空域变量取值范围为<br>
+      　　<img src="../../../../images/chatp/chap04/212.gif" width="131" height="19"><br>
+      　　<img src="../../../../images/chatp/chap04/213.gif" width="131" height="21"><br>
+      　　频域变量取值范围为<br>
+      　　<img src="../../../../images/chatp/chap04/214.gif" width="131" height="19"><br>
+      　　<img src="../../../../images/chatp/chap04/215.gif" width="131" height="19" align="absmiddle">，那么，<br>
+      　　二维离散偶余弦正变换公式为<br>
+      　　<img src="../../../../images/chatp/chap04/216.gif" width="278" height="88" align="absmiddle"><b>（4.52）</b><br>
+      　　式中u = 0，1，…，N-1<br>
+      　　v = 0，1，…，N-1<br>
+      　　<img src="../../../../images/chatp/chap04/217.gif" width="125" height="36" align="absmiddle">当 
+      <img src="../../../../images/chatp/chap04/218.gif" width="85" height="19" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/219.gif" width="96" height="21" align="absmiddle">， 
+      当<img src="../../../../images/chatp/chap04/220.gif" width="131" height="19" align="absmiddle">，<img src="../../../../images/chatp/chap04/221.gif" width="131" height="19" align="absmiddle"> 
+      <br>
+      　　二维离散偶余弦逆变换公式<br>
+      　　<img src="../../../../images/chatp/chap04/222.gif" width="262" height="88" align="absmiddle"><b>　　（4.53）</b><br>
+      　　式中 <img src="../../../../images/chatp/chap04/223.gif" width="155" height="21" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/224.gif" width="125" height="36" align="absmiddle">当 
+      <img src="../../../../images/chatp/chap04/225.gif" width="85" height="19" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/226.gif" width="96" height="21" align="absmiddle">当 
+      <img src="../../../../images/chatp/chap04/227.gif" width="117" height="19" align="absmiddle">， 
+      <img src="../../../../images/chatp/chap04/228.gif" width="131" height="19" align="absmiddle"><br>
+      　　二维离散余弦变换核具有可分离特性，所以，其正变换和逆变换均可将二维变换分解成一系列一维变换（行、列）进行计算。<br>
+      <font color="#003399"><b>　　</b></font><b>3. 借助FFT实现离散余弦变换</b><br>
+      　　由公式(4.46)和公式(4.47)一维离散偶余弦正变换公式，略加变换，即<br>
+      　　<img src="../../../../images/chatp/chap04/229.gif" width="167" height="44"><br>
+      　　<img src="../../../../images/chatp/chap04/230.gif" width="117" height="19"><br>
+      　　<img src="../../../../images/chatp/chap04/231.gif" width="274" height="108" align="absmiddle"><b>（4.54）</b><br>
+      　　式中，<img src="../../../../images/chatp/chap04/232.gif" width="112" height="53" align="absmiddle">可用FFT算法计算，其结果乘以<img src="../../../../images/chatp/chap04/233.gif" width="31" height="30" align="absmiddle">，取实部即可得到离散余弦变换结果。计算FFT时，x=0，1，…，2N-1求和，但实际上，在x=N，N+1，…，2N+1范围内，f(x)均得零，故仍然计算N个点。<br>
+      <font color="#003399"><b>　</b></font><b>　4. 二维快速离散余弦变换</b><br>
+      　　二维快速离散余弦变换算法，是直接对二维图像数据<img src="../../../../images/chatp/chap04/234.gif" width="108" height="21" align="absmiddle">逐层对半分块，并重新排列数据，直至被分割的子块尺寸为1×1为止。这种算法既不是将二维分离成行、列，再进行一系列的一维变换算法，也不是借助于FFT，再取实部的算法。二维快速余弦变换，只需做实数乘法和加法，对于x方向取样点数为M，y方向采样点数为N的f(x，y)图像数据块，其快速余弦变换的实数乘法次数为<img src="../../../../images/chatp/chap04/235.gif" width="125" height="23" align="absmiddle">。为了公式推导简化，把采样点数MN和常数4都放在正变换式中。即<br>
+      　　正变换（DCT）<br>
+      　　<img src="../../../../images/chatp/chap04/236.gif" width="275" height="86" align="absmiddle"><b>（4.55）</b><br>
+      　　式中u= 0，1，…，M-1<br>
+      　　v= 0，1，…，N-1<br>
+      　　其中，<img src="../../../../images/chatp/chap04/237.gif" width="233" height="61" align="absmiddle"> 
+      <br>
+      　　逆变换(IDCT)<br>
+      　　<img src="../../../../images/chatp/chap04/238.gif" width="260" height="86" align="absmiddle"><b>（4.56）</b><br>
+      　　式中<img src="../../../../images/chatp/chap04/239.gif" width="133" height="19" align="absmiddle"> 
+      <br>
+      　　　　<img src="../../../../images/chatp/chap04/240.gif" width="131" height="21"> 
+      <br>
+      　　其中， <img src="../../../../images/chatp/chap04/241.gif" width="223" height="61" align="absmiddle"><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

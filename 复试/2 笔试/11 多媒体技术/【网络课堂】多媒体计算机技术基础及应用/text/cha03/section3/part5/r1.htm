@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　过去在电话带宽的话音传输中，高质量的语音靠高数据率的编码器。当前几种编码技术也能在16kbit/s数据率上得到高质量语音，然而这些技术都需要相当长的编码延时，典型的延时在40-60ms。与此同时还需要缓存足够的语音抽样。在许多应用中，长延时是不符合要求或不可接受的。<br>
+      　　CCITT制定了16kbit/s通用语音编码标准。1991年公布了浮点编码算法，1992年又公布了定点算法。这个标准可用于：视频电话、无绳电话、数字卫星通讯、公共开关电话网(PSTN)、ISDN、数字电路倍增设备(DCME)、声音存储和传输系统、声音信息的记录和发布、地面数字移动雷达、分组化语音等。<br>
+      　　由于16kbit/s标准必须服务于各种应用，CCITT决定直接设置所选用的编码算法的性能要求和目标，列于表3.8。不是每一种应用都要满足每项要求。CCITT用qdu(quantization 
+      distortion unit)指定质量要求。根据定义64kbit/s G.711PCM编码引入1qdu失真。对于异步串行级联，各级的编码qdu将相加。32kbit/s 
+      G.721ADPCM单个编码器是7qdu失真。CCITT要求16kbit/s标准单个编码器在无位误差通道, 编码器产生4qdu或更小。在噪声通道，随机位误差在 
+      时,译码语音质量不比G.721-ADPCM差。<br>
+      　　图3.16是16kbit/s LD-CELP编码和解码框图。在LD-CELP中，采用后向自适应预测，以减小编码延迟。这就是说，预测系数不是由待编码的语音样值产生，而是由以前已经量化的语音样值产生。这样也就不需要像前向预测那样缓存20ms的输入语音。语音信号每5个样值构成一个矢量。激励矢量也是5维。编码延时小于2ms。5个样值共10bit。为了得到较高的预测增益，采用了50阶的预测器。每4个语音矢量(2.5ms)修改一个LPC预测系数。增益自适应采用10阶后向预测,每个矢量修改一次。为了获得较好的主观评测效果，感觉加权滤波器系数从输入的原始语音中提取，也是每4个矢量修改一次。
+      <br>
+      　<font color="#003399">表3.9 低延时16kbit/s编解码特性(CCITT标准)</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">参　　数</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">ＣＣＩＴＴ要求</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">目标</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">编码延迟</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">＜５ms</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">＜2ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">语音质量Pe=0(无误码)<br>
+                    Pe=10<sup>-3</sup><br>
+                    Pe=10<sup>-2</sup></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">失真＜4qdu<br>
+                    不差于G.721<br>
+                    不差于G.721</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">语音转换三次异步转换</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">失真＜14qdu</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">同步转换</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">信号传输</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">DTMF</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音乐传输</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">无噪声影响</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">在低率下工作</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">工作可靠但性能下降</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">复杂性</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">尽可能低</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><br>
+      <font color="#003399"> 　图3.16 CELP 16kbit/s语音编/解码框图 (a) 编码器 (b) 解码器 </font><br>
+      <img src="../../../../images/chatp/chap03/094.gif" width="340" height="316"><br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
