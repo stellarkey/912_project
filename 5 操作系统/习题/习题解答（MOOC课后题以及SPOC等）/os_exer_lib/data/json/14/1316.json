@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"阅读64bit IBM Powerpc CPU架构是如何实现[反置页表](http://en.wikipedia.org/wiki/Page_table#Inverted_page_table)，给出分析报告。\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1316
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在UNIX系统中，目录结构采用_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.单级目录结构",
+        "B.二级目录结构",
+        "C.单纯树形目录结构",
+        "D.带链接树形目录结构"
+    ],
+    "q_number":222
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在虚拟存储器系统中常使用联想存储器进行管理，它是﹎﹎﹎﹎寻址的。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.按地址",
+        "B.按内容",
+        "C.寄存器",
+        "D.计算"
+    ],
+    "q_number":837
+}

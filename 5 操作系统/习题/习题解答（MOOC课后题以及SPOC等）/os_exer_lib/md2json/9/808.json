@@ -1,0 +1,1 @@
+{"knowledge": "连续内存分配。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)在可变分区式内存管理中，能使内存空间中空闲区分布较均匀的算法是﹎﹎﹎﹎。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.最佳适应算法 \r\n B.最坏适应算法 \r\n C.首次适应算法 \r\n D.循环适应算法\r\n"}

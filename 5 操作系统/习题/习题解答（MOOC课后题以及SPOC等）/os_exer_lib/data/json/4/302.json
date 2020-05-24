@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"有关抢夺资源预防死锁说法中不正确的是（　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.若进程P申请资源R被进程Q占用，当进程Q等待另一资源时，可抢夺资源R，否则进程P等待",
+        "B.一个等待资源的进程只有得到新申请的资源和所有被抢夺的资源后才能继续运行",
+        "C.打印机是可抢夺的资源",
+        "D.主存空间是可抢夺的资源"
+    ],
+    "q_number":302
+}

@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述。\r\n", "question": "现代计算机中，CPU工作方式有目态和管态两种。目态是指运行 ① 程序，管态是指运行 ② 程序。执行编译程序时，CPU处于 ③ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "①用户，②操作系统，③目态", "type": "5\r\n", "options": "  \r\n"}

@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理: 连续内存分配。\r\n", "question": "在启动页机制的情况下，在CPU运行的用户进程访问的地址空间是()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.物理地址空间\r\n B.逻辑地址空间\r\n C.外设地址空间\r\n D.都不是\r\n"}

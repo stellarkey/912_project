@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理。\r\n", "question": "lab3中用于描述“合法”虚拟页的数据结构是（）s3\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.vma_struct\r\n B.trapframe\r\n C.gatedesc\r\n D.segdesc\r\n"}

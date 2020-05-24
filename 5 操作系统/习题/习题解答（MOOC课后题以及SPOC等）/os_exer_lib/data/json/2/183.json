@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在操作系统中，进行资源分配、调度和管理的最小独立单位是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.作业",
+        "B.程序",
+        "C.进程",
+        "D.用户"
+    ],
+    "q_number":183
+}

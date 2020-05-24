@@ -1,0 +1,1 @@
+{"knowledge": "进程间通信。\r\n", "question": "进程向一个中间实体发送消息，等待另一进程异步地接收，这种通信方式属于：\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.共享存储区 \r\n B.消息缓冲 \r\n C.信箱方式 \r\n D.共享文件\r\n"}

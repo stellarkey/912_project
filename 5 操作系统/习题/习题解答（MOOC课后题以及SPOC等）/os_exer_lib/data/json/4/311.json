@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"为方便用户，操作系统负责管理和控制计算机系统的_____ 。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.软件资源",
+        "B.硬件和软件资源",
+        "C.用户有用资源",
+        "D.硬件资源"
+    ],
+    "q_number":311
+}

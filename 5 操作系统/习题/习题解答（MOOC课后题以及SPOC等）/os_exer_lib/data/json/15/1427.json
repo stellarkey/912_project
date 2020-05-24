@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"用户线程与内核线程的区别是什么？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1427
+}

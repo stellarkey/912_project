@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在请求分页管理中，若采用先进先出（FIFO）页面置换算法，可能会产生“Belady异常”，\n“Belady异常”指的是﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.频繁地出页入页的现象",
+        "B.分配的页面数增加，缺页中断的次数也可能增加",
+        "C.进程交换的信息量过大，导致系统工作区不足",
+        "D.分配给进程的内存空间不足使进程无法正常工作"
+    ],
+    "q_number":836
+}

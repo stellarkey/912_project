@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"特权指令、性能优化\n",
+    "question":"使用内联汇编的原因？\n",
+    "source":"网络",
+    "answer":"特权指令、性能优化\n",
+    "type":"question_answer",
+    "q_number":1259
+}

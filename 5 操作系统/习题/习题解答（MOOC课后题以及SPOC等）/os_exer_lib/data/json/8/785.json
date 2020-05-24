@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统的主要性能参数：﹎﹎﹎﹎指的是从作业或命令的输入到其结束的间隔时间，在分析性能时常\n用其倒数。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.周转时间",
+        "B.处理时间",
+        "C.消逝时间",
+        "D.利用率",
+        "E.生产率",
+        "F.吞吐量"
+    ],
+    "q_number":785
+}

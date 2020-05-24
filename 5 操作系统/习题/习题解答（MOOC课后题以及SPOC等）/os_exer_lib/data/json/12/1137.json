@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"为什么要学这门课？\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"multi_answer",
+    "options":[
+        "A.对内容有兴趣",
+        "B.内容与自己的目标相一致，结果有用",
+        "C.由于学分要求，必须选",
+        "D.其他，请注明原因"
+    ],
+    "q_number":1137
+}

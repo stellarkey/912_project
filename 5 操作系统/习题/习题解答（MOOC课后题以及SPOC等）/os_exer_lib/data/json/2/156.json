@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在可变分区存储管理中,可能存在\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.内零头",
+        "B.外零头",
+        "C.A,B均可能",
+        "D.A,B均不可能"
+    ],
+    "q_number":156
+}

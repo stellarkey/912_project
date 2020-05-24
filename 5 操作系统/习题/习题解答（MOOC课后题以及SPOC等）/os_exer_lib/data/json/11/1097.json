@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"3.说明五状态进程模型的状态定义和转换 一、(16分) 请说明五状态进程模型中的状态和状态含义，并说明哪些状态会发生转换以及转换的原因。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":1097
+}

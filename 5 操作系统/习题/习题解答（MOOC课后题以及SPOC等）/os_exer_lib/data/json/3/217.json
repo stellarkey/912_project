@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列进程状态的转换中，哪一个是不正确的。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.就绪运行",
+        "B.运行就绪",
+        "C.就绪阻塞",
+        "D.阻塞就绪"
+    ],
+    "q_number":217
+}

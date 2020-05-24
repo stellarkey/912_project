@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那种存储管理可使用静态重定位\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.固定分区存储管理",
+        "B.页式存储管理",
+        "C.可重定位分区存储管理",
+        "D.段式存储管理"
+    ],
+    "q_number":142
+}

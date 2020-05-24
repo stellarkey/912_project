@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在设备分配中，独占分配方式的主要缺点是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.设备利用率低",
+        "B.设备利用率高",
+        "C.管理复杂",
+        "D.可使设备并行工作"
+    ],
+    "q_number":158
+}

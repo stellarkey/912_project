@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    var stu,computer,enter,finish,test:semaphore;\n    ste:=2N;\n    computer:=2M;\n    enter:=0;\n    finish:=0;\n    test:=0;\n    cobegin\n    Procedure Student   Procedure Teacher   Procedure Guard\n      begin               begin               begin\n      p(computer);        p(finish);            p(stu);\n      p(stu);              Test the work;       p(stu);\n        Start computer;   v(test);               Enter;\n      v(finish);          v(test);              v(enter);\n      v(test);            end                   v(enter);\n      v(computer);                            end\n      end\n    coend\n    ```\n\n",
+    "question":"某高校计算机系开设网络课并安排上机实习，假设机房共有2m台机器，有2n名学生选课（m，n均大于等于1），规定：\n 每两个学生组成一组，各占一台及其协同完成上机实习；\n 只有一组两个学生到齐，并且此时机房有空闲机器时，该组学生才能进入机房；\n 上机实习由一名教师检查，检查完毕，一组学生同时离开机房\n试用P、V实现其过程。\n注意：\n本题目隐含一个进程(Guard )。\n",
+    "source":"网络",
+    "answer":"    ```\n    var stu,computer,enter,finish,test:semaphore;\n    ste:=2N;\n    computer:=2M;\n    enter:=0;\n    finish:=0;\n    test:=0;\n    cobegin\n    Procedure Student   Procedure Teacher   Procedure Guard\n      begin               begin               begin\n      p(computer);        p(finish);            p(stu);\n      p(stu);              Test the work;       p(stu);\n        Start computer;   v(test);               Enter;\n      v(finish);          v(test);              v(enter);\n      v(test);            end                   v(enter);\n      v(computer);                            end\n      end\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1062
+}

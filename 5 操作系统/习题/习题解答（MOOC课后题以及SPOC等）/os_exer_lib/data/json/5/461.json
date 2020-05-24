@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"有２个同类临界资源，被５个并发进程访问，使用信号量机制实现互斥，则初值为＿＿，信号量值的变化范围为＿＿。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":461
+}

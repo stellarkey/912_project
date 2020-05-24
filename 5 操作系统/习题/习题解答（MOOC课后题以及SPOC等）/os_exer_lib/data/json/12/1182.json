@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"为什么现在的操作系统基本上用C语言来实现？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1182
+}

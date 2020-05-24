@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"不可再现性\n",
+    "question":"程序的并发执行和顺序执行相比，表现出一些新的特征即：间断性、失去封闭性、 ______________ 。\n",
+    "source":"网络",
+    "answer":"不可再现性\n",
+    "type":"fill_in_the_blank",
+    "q_number":521
+}

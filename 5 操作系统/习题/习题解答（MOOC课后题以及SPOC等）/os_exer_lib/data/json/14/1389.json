@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"画数据结构图，描述进程的虚拟地址空间、页表项、物理页面和后备页面的关系；\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1389
+}

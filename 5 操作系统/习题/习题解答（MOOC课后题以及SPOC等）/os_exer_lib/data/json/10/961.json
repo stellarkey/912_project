@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"为了允许不同用户的文件具有相同的文件名，通常在文件系统中采用﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.重名翻译",
+        "B.多级目录",
+        "C.约定",
+        "D.路径"
+    ],
+    "q_number":961
+}

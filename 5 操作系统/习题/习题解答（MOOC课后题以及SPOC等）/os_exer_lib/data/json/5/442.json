@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可以通过__________ 把原独享设备改造成能为若干用户共享的设备。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":442
+}

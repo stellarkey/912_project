@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "\"用户在使用配置UNIX/Linux 操作系统的计算机时不能将用户软盘随便插进和拿出，试从UNIX/Linux子文件系统的使用原理说明它需要一定的操作的依据\r\n和操作的步骤。（写出在配置Linux/UNIX OS的计算机上使用软盘的操作步骤和简要依据。）\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "UNIX系统只有一个安装UNIX操作系统的根设备的文件系统常驻系统，在硬盘上的其它盘区和软盘上的文件系统被安装前UNIX", "type": "4\r\n", "options": "  \r\n"}

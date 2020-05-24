@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在MS-DOS操作系统中，把键盘操作命令分为__________ 和___________ 两类。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":451
+}

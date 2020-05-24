@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"你的清华学号？（非清华大学学生只需填写学堂在线的注册邮箱）",
+    "explain":"无标准答案",
+    "degree_of_difficulty":1,
+    "source":"问卷调擦好",
+    "answer":"无标准答案",
+    "type":"fill_in_the_blank",
+    "q_number":1490
+}

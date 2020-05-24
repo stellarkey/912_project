@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "实现CPU和外部设备并行工作的硬件支持是：( )。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.中断机构 \r\n B.外部设备接口（通道、控制器等） \r\n C. 通道和中断 \r\n D.多总线\r\n"}

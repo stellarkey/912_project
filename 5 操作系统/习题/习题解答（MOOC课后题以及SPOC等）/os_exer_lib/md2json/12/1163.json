@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "能否读懂ucore中的AT&T格式的X86-32汇编语言？请列出你不理解的汇编语言。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "http://www.imada.sdu.dk/Courses/DM18/Litteratur/IntelnATT.htm inb一般应用程序用不到的指令等。", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"如何把一个在gdb中或执行过程中出现的物理/线性地址与你写的代码源码位置对应起来？ \n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1172
+}

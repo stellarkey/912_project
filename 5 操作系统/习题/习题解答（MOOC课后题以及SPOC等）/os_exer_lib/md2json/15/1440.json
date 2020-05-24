@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "下面关于硬时限（hard deadlines）和软时限（soft deadlines）的描述错误的是（）。s5\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.如果错过了硬时限，将会发生严重的后果\r\n B.硬时限是通过硬件实现的，软时限是通过软件实现的\r\n C.如果软时限没有被满足，系统也可以继续运行\r\n D.硬时限可以保证系统的确定性\r\n"}

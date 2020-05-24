@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"内核\n",
+    "question":"现代计算机系统是分态的，当操作系统程序执行时，机器处于________ 态。\n",
+    "source":"网络",
+    "answer":"内核\n",
+    "type":"fill_in_the_blank",
+    "q_number":506
+}

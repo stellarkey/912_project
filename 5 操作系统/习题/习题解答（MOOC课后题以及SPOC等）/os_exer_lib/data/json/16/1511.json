@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"考虑写操作情况的改进时钟页面替换算法不会存在Belady现象。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1511
+}

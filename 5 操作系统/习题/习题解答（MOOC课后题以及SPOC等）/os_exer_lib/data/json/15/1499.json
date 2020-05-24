@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"lab7的提交标识（commit id）。注意，如果该题被提交，则代表你已经完成对应的实验内容。\n（示例：338a3ac1f6f7e14948e775bfc2197166edf89b8f）",
+    "explain":"无标准答案",
+    "degree_of_difficulty":1,
+    "source":"问卷调查",
+    "answer":"无标准答案",
+    "type":"fill_in_the_blank",
+    "q_number":1499
+}

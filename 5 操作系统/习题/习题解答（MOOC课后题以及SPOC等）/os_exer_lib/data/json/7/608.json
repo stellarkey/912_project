@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"逻辑地址是（ ）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.用户地址",
+        "B.相对地址",
+        "C.物理地址",
+        "D.绝对地址"
+    ],
+    "q_number":608
+}

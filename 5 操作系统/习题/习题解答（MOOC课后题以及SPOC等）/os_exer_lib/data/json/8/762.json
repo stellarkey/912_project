@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统中，进程与程序的重要区别之一是﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.程序有状态而进程没有",
+        "B.进程有状态而程序没有",
+        "C.程序可占有资源而进程不可",
+        "D.进程能占有资源而程序不能"
+    ],
+    "q_number":762
+}

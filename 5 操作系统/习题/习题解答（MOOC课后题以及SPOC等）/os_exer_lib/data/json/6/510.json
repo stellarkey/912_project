@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"文件系统\n",
+    "question":"从资源管理的角度看操作系统，它具有四大管理功能，其中，____________ 是对系统软件资源的管理。\n",
+    "source":"网络",
+    "answer":"文件系统\n",
+    "type":"fill_in_the_blank",
+    "q_number":510
+}

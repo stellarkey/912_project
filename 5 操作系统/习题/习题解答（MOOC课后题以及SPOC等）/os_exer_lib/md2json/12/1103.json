@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "文件系统：链表方式文件组织方式是什么？访问指定文件偏移位置数据所对应的文件块位置。\r\n    第六题：\r\n    一、  （10分）基本的文件组织方式有哪几种？请用图示方式描述UNIX文件系统UFS的文件组织方式。\r\n    \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在银行家算法中，不安全状态不一定会造成死锁。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1550
+}

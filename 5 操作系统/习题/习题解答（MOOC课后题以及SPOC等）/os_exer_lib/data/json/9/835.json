@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)下面﹎﹎﹎﹎种页面置换算法会产生Belady异常现象？\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.先进先出页面置换算法（FIFO）",
+        "B.最近最久未使用页面置换算法（LRU）",
+        "C.最不经常使用页面置换算法（LFU）",
+        "D.最佳页面置换算法（OPT）",
+        "E.最近未用页面置换算法（NRU）(Clock)"
+    ],
+    "q_number":835
+}

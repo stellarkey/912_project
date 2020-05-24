@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "多个进程的实体能存在于同一内存中，在一段时间内都得到运行。这种性质称作进程的_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.动态性 \r\n B.并发性 \r\n C.调度性 \r\n D.异步性\r\n"}

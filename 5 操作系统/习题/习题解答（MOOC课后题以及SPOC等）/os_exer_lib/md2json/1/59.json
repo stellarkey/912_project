@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "当一个进程从等待态变成就绪态，则一定有一个进程从就绪态变成运行态。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "3\r\n", "options": " A.对 \r\n B.错\r\n"}

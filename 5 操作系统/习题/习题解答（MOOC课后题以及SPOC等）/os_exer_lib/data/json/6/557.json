@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"批处理操作系统、分时操作系统、实时操作系统、网络操作系统、分布式操作系统。\n",
+    "question":"从操作系统提供的服务出发，操作系统可分哪几类？\n",
+    "source":"网络",
+    "answer":"批处理操作系统、分时操作系统、实时操作系统、网络操作系统、分布式操作系统。\n",
+    "type":"question_answer",
+    "q_number":557
+}

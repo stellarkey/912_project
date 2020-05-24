@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "在lab1/bin目录下，通过objcopy -O binary kernel kernel.bin可以把elf格式的ucore kernel转变成体积更小巧的binary格式的ucore kernel。为此，需要如何修改lab1的bootloader, 能够实现正确加载binary格式的ucore OS？ (hard)\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

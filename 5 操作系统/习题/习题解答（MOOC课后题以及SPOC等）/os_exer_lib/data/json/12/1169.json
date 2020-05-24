@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"清除文件夹：make clean 编译lab1：make 调出debug命令行：make debug\n",
+    "question":"尝试用qemu+gdb（or ECLIPSE-CDT）调试lab1\n",
+    "source":"网络",
+    "answer":"清除文件夹：make clean 编译lab1：make 调出debug命令行：make debug\n",
+    "type":"question_answer",
+    "q_number":1169
+}

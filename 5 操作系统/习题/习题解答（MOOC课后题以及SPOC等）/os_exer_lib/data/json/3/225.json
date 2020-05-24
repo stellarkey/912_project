@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"为了使系统中所有的用户都能得到及时的响应，该操作系统应该是_____ 。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.多道批处理系统",
+        "B.分时系统",
+        "C.实时系统",
+        "D.网络系统"
+    ],
+    "q_number":225
+}

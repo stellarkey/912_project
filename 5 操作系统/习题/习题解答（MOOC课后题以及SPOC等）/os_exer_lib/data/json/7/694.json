@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)在存储管理中，采用覆盖与交换技术的目的是【 】。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.逻辑扩充内存容量",
+        "B.物理扩充内存容量",
+        "C.提高CPU效率",
+        "D.实现内存共享"
+    ],
+    "q_number":694
+}

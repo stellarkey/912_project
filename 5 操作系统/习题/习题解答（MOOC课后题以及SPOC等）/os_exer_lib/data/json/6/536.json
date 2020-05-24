@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"地址变换机构的基本任务是将（ ）中的（ ）变换成（ ）中的（ ）。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":536
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"字符设备包括（） s1\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.键盘",
+        "B.鼠标",
+        "C.并口",
+        "D.串口"
+    ],
+    "q_number":1481
+}

@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "请在（1）中打开的文件defs.h中添加“#TEST”注释，并将修改后的文件保存到git上。提交的commit messege为“code-edit test”.\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "lab6中的RR调度算法在( )时对当前进程的完成时间片的递减 s5\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "D", "type": "2\r\n", "options": " A.等待进程结束　\r\n B.进程退出\r\n C.进程睡眠\r\n D.进程被时钟中断打断\r\n"}

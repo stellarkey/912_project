@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"下列二线程互斥机制的伪码实现是否有错？请给出原因分析，如果有错请给出反例。\n\n```\nINITIALIZATION:\n\n    shared int turn;\n    ...\n    turn = i ;\n\nENTRY PROTOCOL (for Thread i ):\n    /* wait until it's our turn */\n    while (turn != i ) {\n    }\n\nEXIT PROTOCOL (for Thread i ):\n    /* pass the turn on */\n    turn = j ;\n```",
+    "explain":"有错。（2分）\n分析原因：只能按顺序交替进行；不按顺序时，即使临界区空闲，也不能进入。（2分）\n一种反例（不是唯一的）：初始时，进程j就不能第一个进入；（1分）",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"有错。（2分）\n分析原因：只能按顺序交替进行；不按顺序时，即使临界区空闲，也不能进入。（2分）\n一种反例（不是唯一的）：初始时，进程j就不能第一个进入；（1分）",
+    "type":"question_answer",
+    "q_number":1564
+}

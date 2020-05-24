@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"磁盘上物理结构为链接结构的文件只能顺序存取\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":902
+}

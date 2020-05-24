@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)在系统中为控制系统调用服务的机构称为_____处理机构。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":705
+}

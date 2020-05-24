@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"1) sem->value++（2分）\n2) 空闲共享资源（2分）\n信号量等待队列中的进程（2分）\n3）关闭中断（1分）\n打开中断（1分）\n通过关闭中断，防止当前的操作被打断，保证了读写内存的原子性，实现了对临界区的互斥操作。（2分）\n",
+    "question":"(20140606-期末考试试题&参考答案.docx)信号量实现\n(10分)在uCore中，信号量的定义如下\n    ```\n\t    typedef struct {\n\t        int value;\n\t        wait_queue_t wait_queue;\n\t    } semaphore_t;\n\t    ```\n\t__up函数是信号量V操作的具体实现函数\n\t    ```\n\t    static __noinline void __up(semaphore_t sem, uint32_t wait_state) {\n\t        bool intr_flag;\n\t        local_intr_save(intr_flag);\n\t        {\n\t            wait_t wait;\n\t            if((wait=wait_queue_first(&(sem->wait_queue)))==NULL){\n\t                ________;\n\t            } else {\n\t                wakeup_wait(&(sem->wait_queue), wait, wait_state, 1);\n\t            }\n\t        }\n\t        local_intr_restore(intr_flag);\n\t    }\n\t    ```\n1）补全程序中的空行________。\n2）信号量的value值>0时，表示________的数量;value值<0时，表示________的数量。\n3）local_intr_save和local_intr_restore这两个函数的功能分别是什么？为什么要调用这两个函数？  \n",
+    "source":"网络",
+    "answer":"1) sem->value++（2分）\n2) 空闲共享资源（2分）\n信号量等待队列中的进程（2分）\n3）关闭中断（1分）\n打开中断（1分）\n通过关闭中断，防止当前的操作被打断，保证了读写内存的原子性，实现了对临界区的互斥操作。（2分）\n",
+    "type":"question_answer",
+    "q_number":842
+}

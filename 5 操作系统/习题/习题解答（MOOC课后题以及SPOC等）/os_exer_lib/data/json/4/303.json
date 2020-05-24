@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"用VI产生的shell文件的性质是（　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.可立即运行",
+        "B.可用chown 使之能运行",
+        "C.可用chgrp 使之能运行",
+        "D.可用chmod 使之能运行"
+    ],
+    "q_number":303
+}

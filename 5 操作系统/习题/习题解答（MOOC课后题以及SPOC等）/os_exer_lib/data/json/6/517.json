@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"动态地址映射是在____________________ 期间，将程序的逻辑地址转换为主存的物理地址。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":517
+}

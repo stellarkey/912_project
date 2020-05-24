@@ -1,0 +1,1 @@
+{"knowledge": "处理机调度。\r\n", "question": "试比较进程调度与作业调度的不同点。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "① 作业调度是宏观调度，它决定了哪一个作业能进入主存。进程调度是微观调度，它决定各作业中的哪一个进程占有中央处理器。 ②", "type": "4\r\n", "options": "  \r\n"}

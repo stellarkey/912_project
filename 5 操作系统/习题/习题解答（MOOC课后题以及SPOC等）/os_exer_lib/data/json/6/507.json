@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"产生死锁的必要条件是___________ 、不剥夺条件、___________ 条件和环路条件。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":507
+}

@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理。\r\n", "question": "lab3中虚存管理需要直接借助的机制包括() s1\r\n\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ACD", "type": "2\r\n", "options": " A.页映射机制\r\n B.段映射机制\r\n C.中断异常处理机制\r\n D.IDE硬盘读写机制\r\n"}

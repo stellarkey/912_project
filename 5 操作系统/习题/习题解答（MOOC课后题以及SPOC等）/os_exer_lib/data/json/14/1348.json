@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"CD LRU和OPT属于一种栈算法\n",
+    "question":"下面哪些页面淘汰算法不会产生Belady异常现象 s4\n",
+    "source":"网络",
+    "answer":"CD",
+    "type":"multi_answer",
+    "options":[
+        "A.先进先出页面置换算法（FIFO)",
+        "B.时钟页面置换算法（CLOCK)",
+        "C.最佳页面置换算法（OPT）",
+        "D.最近最少使用页面置换算法（LRU）"
+    ],
+    "q_number":1348
+}

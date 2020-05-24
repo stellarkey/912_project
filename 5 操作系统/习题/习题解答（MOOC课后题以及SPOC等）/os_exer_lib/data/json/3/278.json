@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"作业调度选中一个作业并把它装入主存，就为该作业创建一个进程，这个进程的初始状态为_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.收容状态",
+        "B.就绪状态",
+        "C.执行状态",
+        "D.等待状态"
+    ],
+    "q_number":278
+}

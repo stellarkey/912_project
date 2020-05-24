@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"通道程序解决了I／O操作的独立性和各部件工作的并行性，采用通道技术后，能实现CPU与通道的并行操作\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":899
+}

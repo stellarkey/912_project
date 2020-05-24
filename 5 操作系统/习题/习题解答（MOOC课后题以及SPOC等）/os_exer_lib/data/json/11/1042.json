@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"一旦出现死锁, 所有进程都不能运行\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1042
+}

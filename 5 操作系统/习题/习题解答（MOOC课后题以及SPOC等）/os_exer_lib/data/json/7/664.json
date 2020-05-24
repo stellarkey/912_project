@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列选项中，降低进程优先权级的合理时机是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.进程的时间片用完",
+        "B.进程刚完成 I/O，进入就绪列队",
+        "C.进程长期处于就绪列队",
+        "D.进程从就绪状态转为运行状态"
+    ],
+    "q_number":664
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"下列哪一条不是批处理系统的优点？\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.吞吐量大",
+        "B.资源利用率高",
+        "C.系统开销小",
+        "D.响应及时"
+    ],
+    "q_number":105
+}

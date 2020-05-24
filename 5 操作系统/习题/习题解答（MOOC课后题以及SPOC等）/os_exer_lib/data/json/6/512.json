@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程创建原语的最重要的功能是__________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":512
+}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"对于如下5条语句执行后得到的5个eip（类型为uint32_t）的结果的数值关系是什么？\n```\n  eip = ((uint32_t *)ebp)[2];\n  eip = ((uint32_t *)ebp)[1];\n  eip = ((uint32_t *)(ebp+4);\n  eip = ((uint32_t *)(ebp+2);\n  eip = ((uint32_t *)(ebp+1);\n```\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1268
+}

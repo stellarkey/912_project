@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"MS-DOS系统中的命令文件使用哪种后缀名？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.EXE",
+        "B.COM",
+        "C.BAT",
+        "D.SYS"
+    ],
+    "q_number":115
+}

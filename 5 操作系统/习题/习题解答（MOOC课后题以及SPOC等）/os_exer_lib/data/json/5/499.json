@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"DOS?P.＊(或DOS?P.???)\n",
+    "question":"MS—DOS中有三个文件：DOSIP.EXE，DOSIP.DAT和DOSZP.COM，若使用系统提供的替代符‘＊’和‘?’，则这三个文件可统一表示为___________ 。\n",
+    "source":"网络",
+    "answer":"DOS?P.＊(或DOS?P.???)\n",
+    "type":"fill_in_the_blank",
+    "q_number":499
+}

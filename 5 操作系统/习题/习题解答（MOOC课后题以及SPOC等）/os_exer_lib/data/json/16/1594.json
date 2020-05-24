@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "特权级"
+    ],
+    "question":" Intel的x86系列CPU在保护模式下，段选择子的最低两位（RPL/CPL）用于检查特权级。段／门描述中也有DPL，那么在访问段时，DPL与RPL/CPL需要满足`(---A---)`的条件，才能访问；在访问门时，DPL与RPL/CPL需要满足`(---B---)`的条件，才能访问。",
+    "explain":"A:MAX(CPL, RPL) <= DPL[段]\nB:CPL <= DPL[门]  & CPL >= DPL[段]",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A:MAX(CPL, RPL) <= DPL[段]\nB:CPL <= DPL[门]  & CPL >= DPL[段]",
+    "type":"fill_in_the_blank",
+    "options":[
+        "A._",
+        "B._"
+    ],
+    "q_number":1594
+}

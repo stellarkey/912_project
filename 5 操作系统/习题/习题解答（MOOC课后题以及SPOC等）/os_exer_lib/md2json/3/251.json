@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "任何两个并发进程之间(　　)\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.一定存在互斥关系　　 \r\n B.一定存在同步关系　　 \r\n C.一定彼此独立无关　　 \r\n D.可能存在同步或互斥关系\r\n"}

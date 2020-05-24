@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"不通过CPU进行主存与I/O设备间大量的信息交换方式，可以是( )方式。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.DMA",
+        "B.中断",
+        "C.查询等待",
+        "D.程序控制"
+    ],
+    "q_number":921
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C 内核态又称为管态\n",
+    "question":"(西北工业大学)CPU执行操作系统代码的时候称为处理机处于（ ）\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.自由态",
+        "B.目态",
+        "C.管态",
+        "D.就绪态"
+    ],
+    "q_number":1213
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"交互性、及时性、独立性\n",
+    "question":"分时系统的特征为____________________________________________________ 。\n",
+    "source":"网络",
+    "answer":"交互性、及时性、独立性\n",
+    "type":"fill_in_the_blank",
+    "q_number":358
+}

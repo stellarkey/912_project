@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "进程在执行中状态会发生变化，不可能出现的状态变化情况是_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.运行变为就绪 \r\n B.运行变为等待 \r\n C.等待变为就绪 \r\n D.等待变为运行\r\n"}

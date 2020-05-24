@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    procedure 输入：\n    begin\n       L1:\n       如果有卡片 then L2\n       等待卡片;\n       L2:\n       把作业输入至输出井并建立JCB块;\n       p(s);\n       把JCB插入链中;\n       v(mutex);\n       v(s);\n       Goto L1;\n    end\n    procedure 调度：\n    begin\n       M:\n       P(s);\n       p(mutex);\n       查JCB;\n       v(s);\n       send();//向控制进程发信息\n       receive();//接受信息\n       Goto M;\n    end\n    procedure 作业控制：\n    begin\n       N:\n       receive();\n       处理; send();//向调度发信息\n       Goto N;\n    end\n    ```\n\n",
+    "question":"批处理系统问题\n设某个批处理系统中，有三个进程：卡片输入进程、作业调度进程、作业控制进程。他们之间的合作关系是：\n只要卡片输入机上有作业信息输入，进程把作业逐个输入至输出井并为每个作业建立一个JCB块并把它插入至后备作业队列(JCB链表)中。\n当内存中无作业运行时，作业调度进程从JCB中选一个作业，把该作业装入内存。\n作业控制进程负责处理已调入内存的作业。\n(1)P,V写出输入和调度进程的同步。\n(2)用消息缓冲痛惜，写出调度进程与作业控制进程间的同步算法。\n",
+    "source":"网络",
+    "answer":"    ```\n    procedure 输入：\n    begin\n       L1:\n       如果有卡片 then L2\n       等待卡片;\n       L2:\n       把作业输入至输出井并建立JCB块;\n       p(s);\n       把JCB插入链中;\n       v(mutex);\n       v(s);\n       Goto L1;\n    end\n    procedure 调度：\n    begin\n       M:\n       P(s);\n       p(mutex);\n       查JCB;\n       v(s);\n       send();//向控制进程发信息\n       receive();//接受信息\n       Goto M;\n    end\n    procedure 作业控制：\n    begin\n       N:\n       receive();\n       处理; send();//向调度发信息\n       Goto N;\n    end\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":644
+}

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统试题_doc)最高响应比优先法是FCFS方式和SJF方式的一种综合平衡。【 】\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":718
+}

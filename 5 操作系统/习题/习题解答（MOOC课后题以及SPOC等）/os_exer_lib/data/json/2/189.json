@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在BFD和SFD分开的目录组织中，哪些信息应放在SFD中？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.文件的符号名",
+        "B.文件长度",
+        "C.文件的存取权限",
+        "D.文件的物理入口地址"
+    ],
+    "q_number":189
+}

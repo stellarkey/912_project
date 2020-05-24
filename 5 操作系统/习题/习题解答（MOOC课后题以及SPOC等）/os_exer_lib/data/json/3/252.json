@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程从运行状态进入就绪状态的原因可能是(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.被选中占有处理机",
+        "B.等待某一事件",
+        "C.等待的事件已发生",
+        "D.时间片用完"
+    ],
+    "q_number":252
+}

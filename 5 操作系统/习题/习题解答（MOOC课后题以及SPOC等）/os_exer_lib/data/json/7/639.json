@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"读者动作有两个，一个时填表进入阅览室，这时要考虑阅览室里是否有空位；一是读者阅读完毕，离开阅览室，这时的操作要考虑阅览室里是否有读者。读者在阅览室读书时，由\n于没有引起资源的变动，不算动作变化。 算法的信号量有三个：seats-表示阅览室时否有座位(初值为100)；readers-\n表示阅览室里的读者数，初值为0；用于互斥的mutex，初值为1。\n    ```\n    var seats, raaders, mutex:semaphore;\n        seats:=100;\n        readers:=0;\n        mutex:=1;\n    cobegin\n       procedure Enter\n       begin\n           while TRUE\n           begin\n               p(seats);   //没有座位则离开\n               p(mutex);   //进入临界区\n               填写登记表;\n               进入阅览室阅读;\n               v(mutex);   //离开临界区 v(readers);\n           end\n       end\n       procedure Leave\n       begin\n           while TRUE\n           begin\n               p(readers);\n               p(mutex);\n               消掉登记;\n               离开阅览室;\n               v(mutex);\n               v(seats);\n           end\n       end\n    coend。\n    ```\n\n",
+    "question":"阅览室问题\n有一个阅览室，共有100个座位，读者进入时必须先在一张登记表上登记，该表为每一个座位列一表目，包括座号和读者姓名等，读者离开时要消掉登记的信息，试问；\n(1)为描述读者的动作，应编写几个程序，设置几个进程？\n(2)试用PV操作描述各个进程之间的同步互斥关系。\n",
+    "source":"网络",
+    "answer":"读者动作有两个，一个时填表进入阅览室，这时要考虑阅览室里是否有空位；一是读者阅读完毕，离开阅览室，这时的操作要考虑阅览室里是否有读者。读者在阅览室读书时，由\n于没有引起资源的变动，不算动作变化。 算法的信号量有三个：seats-表示阅览室时否有座位(初值为100)；readers-\n表示阅览室里的读者数，初值为0；用于互斥的mutex，初值为1。\n    ```\n    var seats, raaders, mutex:semaphore;\n        seats:=100;\n        readers:=0;\n        mutex:=1;\n    cobegin\n       procedure Enter\n       begin\n           while TRUE\n           begin\n               p(seats);   //没有座位则离开\n               p(mutex);   //进入临界区\n               填写登记表;\n               进入阅览室阅读;\n               v(mutex);   //离开临界区 v(readers);\n           end\n       end\n       procedure Leave\n       begin\n           while TRUE\n           begin\n               p(readers);\n               p(mutex);\n               消掉登记;\n               离开阅览室;\n               v(mutex);\n               v(seats);\n           end\n       end\n    coend。\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":639
+}

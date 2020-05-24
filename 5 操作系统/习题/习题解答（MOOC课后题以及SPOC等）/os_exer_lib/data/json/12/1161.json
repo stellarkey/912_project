@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ACD 进程调度是属于操作系统的进程管理和处理器调度子系统要完成的工作，与设备管理没有直接关系\n以ucore OS为例（lab5以后的实验），与进程调度相关的实现位于kern/process和kern/schedule目录下；\n与设备管理相关的实现主要位于kern/driver目录下\n",
+    "question":"设备管理的功能包括____（）\n",
+    "source":"网络",
+    "answer":"ACD",
+    "type":"multi_answer",
+    "options":[
+        "A.设备的分配和回收",
+        "B.进程调度",
+        "C.虚拟设备的实现",
+        "D.外围设备启动"
+    ],
+    "q_number":1161
+}

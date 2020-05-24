@@ -1,0 +1,1 @@
+{"knowledge": "缺页中断。\r\n", "question": "(20150309_操作系统试题_doc)在一个分页存储管理系统中，已知页面大小L=1024KB。现有一进程，其页表如下：\r\n|页号|块号|\r\n| 0 | 5 |\r\n| 1 | 7 |\r\n| 2 | 3 |\r\n| 3 | 2 |\r\n| 4 | 8 |\r\n计算与给定逻辑地址LA对应的物理地址PA，给出计算过程：\r\n（1）逻辑地址LA=2548；\r\n（2）逻辑地址LA=6000。  \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "  ", "type": "4\r\n", "options": "  \r\n"}

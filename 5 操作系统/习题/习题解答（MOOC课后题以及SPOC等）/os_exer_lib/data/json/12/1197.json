@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"请完成piazza讨论区访问的设置，并熟悉piazza的使用。然后在操作系统课的piazza讨论区中找到“开课通知”的访问链接。\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1197
+}

@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在作业调用时，采用最高响应比优先的作业调度算法可以得到最短的作业平均周转时间。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":62
+}

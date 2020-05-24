@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "GCC内联汇编 asm(\"movl %ecx, %eax\"); 的含义是()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.把 ecx 内容移动到 eax\r\n B.把 eax 内容移动到 ecx\r\n"}

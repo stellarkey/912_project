@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在多CPU系统中，仅通过cpu中断使能和屏蔽指令，就可实现对临界区代码的互斥保护。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1549
+}

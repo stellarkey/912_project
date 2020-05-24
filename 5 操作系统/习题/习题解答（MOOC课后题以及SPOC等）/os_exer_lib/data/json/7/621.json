@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"银行家算法是一种（ ）算法。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.死锁解除",
+        "B.死锁避免",
+        "C.死锁预防",
+        "D.死锁检测"
+    ],
+    "q_number":621
+}

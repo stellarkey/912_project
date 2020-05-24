@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"并发、共享性、虚拟和异步性\n",
+    "question":"操作系统的基本特征是____________ ，_______________ ，_________________ 和_______________ 。\n",
+    "source":"网络",
+    "answer":"并发、共享性、虚拟和异步性\n",
+    "type":"fill_in_the_blank",
+    "q_number":477
+}

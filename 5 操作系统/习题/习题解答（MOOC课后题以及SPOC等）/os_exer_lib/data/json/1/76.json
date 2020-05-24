@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程处于就绪状态，是指它正等待着某个事件的发生，这时，即使给它CPU控制权，它也无法执行。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":76
+}

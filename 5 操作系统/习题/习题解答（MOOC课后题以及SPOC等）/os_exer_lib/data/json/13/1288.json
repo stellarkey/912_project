@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理:"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD 都有\n",
+    "question":"操作系统中可采用的内存管理方式包括()\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.重定位(relocation)",
+        "B.分段(segmentation",
+        "C.分页(paging)",
+        "D.段页式（segmentation+paging）"
+    ],
+    "q_number":1288
+}

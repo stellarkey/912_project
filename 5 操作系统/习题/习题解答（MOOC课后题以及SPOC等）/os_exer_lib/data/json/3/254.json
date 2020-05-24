@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"一作业8：00到达系统，估计运行时间为1小时，若10：00开始执行该作业，其响应比是(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.2",
+        "B.1",
+        "C.3",
+        "D.0.5"
+    ],
+    "q_number":254
+}

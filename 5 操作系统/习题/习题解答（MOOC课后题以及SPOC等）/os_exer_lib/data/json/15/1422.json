@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"运行、就绪和等待三种状态的含义？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1422
+}

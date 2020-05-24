@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "关于ucore文件系统支持的I/O 设备包括() s5 I/O 设备接口分析\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.串口设备\r\n A.并口设备\r\n A.CGA设备\r\n A.键盘设备\r\n"}

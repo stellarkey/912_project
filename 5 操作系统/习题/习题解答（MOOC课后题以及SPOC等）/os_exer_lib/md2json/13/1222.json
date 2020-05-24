@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "以ucore lab8的answer为例，uCore的系统调用有哪些？大致的功能分类有哪些？(w2l1)\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "+ 采分点：说明了ucore的大致数量（二十几个），说明了ucore系统调用的主要分类（文件操作，进程管理，内存管理等）", "type": "4\r\n", "options": "  \r\n"}

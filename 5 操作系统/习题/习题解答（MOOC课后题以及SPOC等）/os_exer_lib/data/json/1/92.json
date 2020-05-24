@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"发出I/O请求会导致哪种进程状态演变？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.就绪 → 执行",
+        "B.执行 → 就绪",
+        "C.阻塞 → 执行",
+        "D.执行 → 阻塞"
+    ],
+    "q_number":92
+}

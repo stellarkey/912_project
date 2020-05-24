@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "文件信息的逻辑块号到磁盘物理块号的变换是由( )决定。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A. 逻辑结构 \r\n B. 页表 \r\n C. 物理结构 \r\n D. 重定位寄存器\r\n"}

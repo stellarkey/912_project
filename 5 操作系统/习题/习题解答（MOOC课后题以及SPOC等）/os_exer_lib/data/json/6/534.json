@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"并行、串行\n",
+    "question":"多道程序环境下的各道程序，宏观上，它们是在（ ）运行，微观上则是在（ ）执行。\n",
+    "source":"网络",
+    "answer":"并行、串行\n",
+    "type":"fill_in_the_blank",
+    "q_number":534
+}

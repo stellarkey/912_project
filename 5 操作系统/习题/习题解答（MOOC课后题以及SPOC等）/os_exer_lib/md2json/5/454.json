@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理实验。\r\n", "question": "已知一个三页长的进程具有页号0、1、2，分别对应内存页面号为2、3、6，页面大小为1K，其中某一指令的虚地址为1000，则对应的物理内存地址为＿＿。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "5\r\n", "options": "  \r\n"}

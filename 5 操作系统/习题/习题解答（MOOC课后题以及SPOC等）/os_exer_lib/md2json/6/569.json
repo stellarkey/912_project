@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理实验。\r\n", "question": "何为页表和快表？它们各起什么作用？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "页表指出逻辑地址中的页号与所占主存块号的对应关系。 作用：页式存储管理在用动态重定位方式装入作业时，要利用页表做地址转换工作。", "type": "4\r\n", "options": "  \r\n"}

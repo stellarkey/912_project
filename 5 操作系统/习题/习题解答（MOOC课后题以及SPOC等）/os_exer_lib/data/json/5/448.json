@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX文件系统把目录项两部分：一部分是文件____________ ，另一部分是文件的____________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":448
+}

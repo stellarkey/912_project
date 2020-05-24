@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"磁盘上的每一个物理块要用三个参数来定位，首先要把移动臂移动并定位到不同盘面上具有相同编号的磁道位置，表示该位置的参数称（　　　）号。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.柱面",
+        "B.盘面",
+        "C.扇区",
+        "D.磁头"
+    ],
+    "q_number":295
+}

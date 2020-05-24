@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"系统“抖动”现象的发生是由（ ）引起的。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.置换算法选择不当",
+        "B.交换的信息量过大",
+        "C.内存容量不足",
+        "D.请求页式管理方案"
+    ],
+    "q_number":623
+}

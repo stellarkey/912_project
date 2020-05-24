@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在应用程序每次访问内存单元时，CPU都需对操作系统建立的页表进行快速设置。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1582
+}

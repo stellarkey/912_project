@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"1）页面替换算法按替换范围分为全局页面替换算法和局部页面替换算法两类，缺页率页面替换算法属于那类？描述缺页率页面替换算法的工作原理。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"暂无",
+    "type":"question_answer",
+    "q_number":1529
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"对资源采用按序分配的策略可以使产生死锁的_____ 条件不成立。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.互斥使用资源",
+        "B.占有并等待资源",
+        "C.不可抢夺资源",
+        "D.循环等待资源"
+    ],
+    "q_number":282
+}

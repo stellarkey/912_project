@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"通过硬件和软件的功能扩充，把原来独占的设备改造成能为若干用户共享的设备，这种设备称为( )。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.存储设备",
+        "B.系统设备",
+        "C.虚拟设备",
+        "D.用户设备"
+    ],
+    "q_number":926
+}

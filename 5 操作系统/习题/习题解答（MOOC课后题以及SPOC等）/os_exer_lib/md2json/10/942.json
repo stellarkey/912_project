@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "对磁盘进行移臂调度的目的是缩短( )。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A. 启动时间 \r\n B. 传送时间 \r\n C. 寻找定位时间 \r\n D. 旋转延迟时间\r\n"}

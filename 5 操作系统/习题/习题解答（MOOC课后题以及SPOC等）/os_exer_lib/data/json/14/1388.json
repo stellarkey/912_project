@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"合法的连续虚拟地址区域、整个进程的地址空间\n",
+    "question":"vma_struct和mm_struct的关系是什么？\n",
+    "source":"网络",
+    "answer":"合法的连续虚拟地址区域、整个进程的地址空间\n",
+    "type":"question_answer",
+    "q_number":1388
+}

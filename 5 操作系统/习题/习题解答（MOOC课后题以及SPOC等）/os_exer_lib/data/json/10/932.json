@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"在操作系统中SPOOLing技术是一种并行机制，它可以使 ( )。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.不同进程同时运行",
+        "B.应用程序和系统软件同时运行",
+        "C.不同系统软件同时运行",
+        "D.程序执行与打印同时进行"
+    ],
+    "q_number":932
+}

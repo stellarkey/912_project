@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D 3页时9次缺页，4页时10次缺页\n",
+    "question":"虚拟页访问序列为 1,2,3,4,1,2,5,1,2,3,4,5，物理页帧数量为3和4，采用FIFO置换算法，请问是否会出现bealdy现象() s4\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.会",
+        "B.不会"
+    ],
+    "q_number":1347
+}

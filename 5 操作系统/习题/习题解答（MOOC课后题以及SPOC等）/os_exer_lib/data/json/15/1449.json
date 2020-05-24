@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"共享变量是指（）访问的变量　s2\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.只能被系统进程",
+        "B.只能被多个进程互斥",
+        "C.只能被用户进程",
+        "D.可被多个进程"
+    ],
+    "q_number":1449
+}

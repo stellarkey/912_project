@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"CPU需同时具有段式和页式内存支持机制才能使得OS有效实现虚拟内存管理。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1590
+}

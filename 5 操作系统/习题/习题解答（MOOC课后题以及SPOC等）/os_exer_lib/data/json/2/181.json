@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在分时系统中，当用户数一定时，影响响应时间的主要因素是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.时间片",
+        "B.调度算法",
+        "C.存储分配方式",
+        "D.作业的大小"
+    ],
+    "q_number":181
+}

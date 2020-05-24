@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)若进程正处于运行态时，应终端的请求而暂停下来以便研究其运行情况(执行挂起进程原语)，这时进\n程应转变为﹎﹎﹎﹎状态。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.静止阻塞",
+        "B.活动阻塞",
+        "C.静止就绪",
+        "D.活动就绪",
+        "E.执行"
+    ],
+    "q_number":770
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"用户程序中的I／O操作实际是由（　　　）完成。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.程序设计语言",
+        "B.标准库程序",
+        "C.编译系统",
+        "D.操作系统"
+    ],
+    "q_number":287
+}

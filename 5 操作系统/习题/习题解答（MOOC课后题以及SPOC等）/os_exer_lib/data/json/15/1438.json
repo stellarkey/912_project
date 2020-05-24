@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"在单处理器的多进程系统中，进程什么时候占用处理器和能占用多长时间，取决于（） s4\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.进程相应的程序段的长度",
+        "B.进程总共需要运行时间多少",
+        "C.进程自身和进程调度策略",
+        "D.进程完成什么功能"
+    ],
+    "q_number":1438
+}

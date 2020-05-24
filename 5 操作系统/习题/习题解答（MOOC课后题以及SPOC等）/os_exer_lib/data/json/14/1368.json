@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"lab3中实现虚存管理的过程包括() s2\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.实现对硬盘swap分区的读写",
+        "B.建立处理页访问错误的异常/中断服务例程",
+        "C.实现页替换算法",
+        "D.定义不在物理内存中的“合法”虚拟页"
+    ],
+    "q_number":1368
+}

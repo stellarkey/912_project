@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"对用户程序的加工过程，一般分为编辑、____________ 、____________ 和运行四个步骤。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":505
+}

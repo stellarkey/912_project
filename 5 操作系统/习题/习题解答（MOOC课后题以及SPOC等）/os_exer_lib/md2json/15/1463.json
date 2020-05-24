@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "死锁处理方法主要包括（） s２\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.死锁预防(Deadlock Prevention):确保系统永远不会进入死锁状态\r\n A.死锁避免(Deadlock Avoidance):在使用前进行判断，只允许不会出现死锁的进程请求资源\r\n A.死锁检测和恢复(Deadlock Detection & Recovery)：在检测到运行系统进入死锁状态后，进行恢复\r\n A.由应用进程处理死锁：通常操作系统忽略死锁\r\n"}

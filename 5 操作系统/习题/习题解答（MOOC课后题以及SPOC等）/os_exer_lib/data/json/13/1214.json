@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B 函数调用并不会切换到内核态，而除零操作引发中断，中断和系统调用都会切换到内核态进行相应处理。\n",
+    "question":"（2013统考）下列选项中，会导致用户进程从用户态切换到内核态的操作是（ ） \n```\n1）整数除以0 \n2）sin()函数调用 \n3）read系统调用\n```\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.1、2",
+        "B.1、3",
+        "C.2、3",
+        "D.1、2、3"
+    ],
+    "q_number":1214
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "degree_of_difficulty":1,
+    "explain":"定义信号量S1控制P1与P2之间的同步；S2控制P1与P3之间的同步；empty控制生产者与消费者之间的同步；mutex控制进程间互斥使用缓冲区。程序如下：\nVar s1=0,s2=0,empty=N,mutex=1; Parbegin P1:begin X=produce(); P(empty);\nP(mutex); Put(); If x%2==0 V(s2); else V(s1); V(mutex); end. P2:begin P(s1);\nP(mutex); Getodd(); Countodd():=countodd()+1; V(mutex); V(empty); end.\nP3:begin P(s2) P(mutex); Geteven(); Counteven():=counteven()+1; V(mutex);\nV(empty); end. Parend.\n",
+    "question":"三个进程P1、P2、P3互斥使用一个包含N（N>0）个单元的缓冲区。\nP1每次用produce()生成一个正整数并用put)送入缓冲区某一空单元中；\nP2每次用getodd()从该缓冲区中取出一个奇数并用countodd()统计奇数个数；\nP3每次用geteven()从该缓冲区中取出一个偶数并用counteven()统计偶数个数。\n请用信号量机制实现这三个进程的同步与互斥活动，并说明所定义的信号量的含义。要求用伪代码描述。\n",
+    "source":"网络",
+    "answer":"定义信号量S1控制P1与P2之间的同步；S2控制P1与P3之间的同步；empty控制生产者与消费者之间的同步；mutex控制进程间互斥使用缓冲区。程序如下：\nVar s1=0,s2=0,empty=N,mutex=1; Parbegin P1:begin X=produce(); P(empty);\nP(mutex); Put(); If x%2==0 V(s2); else V(s1); V(mutex); end. P2:begin P(s1);\nP(mutex); Getodd(); Countodd():=countodd()+1; V(mutex); V(empty); end.\nP3:begin P(s2) P(mutex); Geteven(); Counteven():=counteven()+1; V(mutex);\nV(empty); end. Parend.\n",
+    "type":"question_answer",
+    "q_number":658
+}

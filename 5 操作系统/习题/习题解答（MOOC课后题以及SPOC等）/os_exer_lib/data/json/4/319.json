@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"MS-DOS中，假设读目录文件前要先获得其FAT链，而获得FAT链只需访问磁盘一次。若不考虑磁盘缓冲，为定位\n\\DIR11\\DIR22\\DIR33\\F0的首簇，至少需要访问磁盘______ 次；通过相对路径名\n..\\DIR33\\F0定位同一文件的首簇，至少需要访问磁盘______ 次。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":319
+}

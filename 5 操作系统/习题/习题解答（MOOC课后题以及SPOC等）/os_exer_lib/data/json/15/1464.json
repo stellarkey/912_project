@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D 是死锁避免\n",
+    "question":"可以使用银行家算法_ 死锁。s3\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.预防",
+        "B.检测",
+        "C.解除",
+        "D.避免"
+    ],
+    "q_number":1464
+}

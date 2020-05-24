@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "\"试述UNIX (Linux) 树型带勾连的目录结构和查询方法。\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "UNIX为了加快目录的寻找速度，UNIX将文件控制块FCB中文件名和文件说明分开。文件说明为索引节点，各文件索引节点集中存放在索引节点区，索引节点按索引节点", "type": "4\r\n", "options": "  \r\n"}

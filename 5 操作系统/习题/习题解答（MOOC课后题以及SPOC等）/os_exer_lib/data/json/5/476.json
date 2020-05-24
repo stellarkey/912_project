@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"计算学科内十二个重复出现的概念中的六个是______________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":476
+}

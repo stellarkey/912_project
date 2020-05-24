@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"不确定性\n",
+    "question":"在操作系统控制下的多个程序的执行顺序和每个程序的执行时间是不确定的，这种现象称为操作系统的______________________ 。\n",
+    "source":"网络",
+    "answer":"不确定性\n",
+    "type":"fill_in_the_blank",
+    "q_number":330
+}

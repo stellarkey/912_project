@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"访问频率置换算法(Frequency-based Replacement)的基本思路是，在短周期中使用LFU算法，而在长周期中使用LRU算法。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1556
+}

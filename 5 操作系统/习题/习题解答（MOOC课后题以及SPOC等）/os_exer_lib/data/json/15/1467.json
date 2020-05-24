@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD 管道（pipe）的实现只需基于内存即可。\n",
+    "question":"关于信号和管道的进程通信机制的阐述正确的是（） s6\n",
+    "source":"网络",
+    "answer":"ABC",
+    "type":"multi_answer",
+    "options":[
+        "A.信号（signal）是一种进程间的软件中断通知和处理机制",
+        "B.信号的接收处理方式包括：捕获(catch)，忽略(Ignore)，屏蔽（Mask）",
+        "C.管道（pipe）是一种进程间基于内存文件（或内存缓冲区 ）的通信机制",
+        "D.管道（pipe）的实现需要在磁盘文件系统上创建一个文件"
+    ],
+    "q_number":1467
+}

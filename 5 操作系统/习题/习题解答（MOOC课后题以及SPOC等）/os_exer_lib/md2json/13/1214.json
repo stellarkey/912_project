@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "（2013统考）下列选项中，会导致用户进程从用户态切换到内核态的操作是（ ） \r\n```\r\n1）整数除以0 \r\n2）sin()函数调用 \r\n3）read系统调用\r\n```\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.1、2\r\n B.1、3\r\n C.2、3\r\n D.1、2、3\r\n"}

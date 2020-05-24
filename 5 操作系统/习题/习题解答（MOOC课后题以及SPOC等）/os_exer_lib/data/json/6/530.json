@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"通道把通道程序执行情况记录在______________ 中；通道完成一次输入输出操作后，以______________ 方式请求中央处理器进行干预。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":530
+}

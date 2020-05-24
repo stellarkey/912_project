@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"用户要在程序一级获得系统帮助，必须通过 。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.进程调度",
+        "B.作业调度",
+        "C.键盘命令",
+        "D.系统调用"
+    ],
+    "q_number":1001
+}

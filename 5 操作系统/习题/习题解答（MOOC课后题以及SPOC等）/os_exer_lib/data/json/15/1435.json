@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"关于进程管理的COW(Copy On Write)机制叙述正确的是（）s6\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"multi_answer",
+    "options":[
+        "A.父进程创建子进程需要复制父进程的内存空间",
+        "B.父进程创建子进程需要给子进程分配内核堆栈",
+        "C.父进程创建子进程需要给子进程分配用户堆栈",
+        "D.父进程创建子进程需要创建子进程的页表,但不复制父进程内存空间"
+    ],
+    "q_number":1435
+}

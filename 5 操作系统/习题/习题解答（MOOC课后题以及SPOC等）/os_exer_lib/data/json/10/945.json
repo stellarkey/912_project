@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"F\n",
+    "question":"按逻辑结构划分，文件主要有两类，UNIX中的文件系统采用﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"F",
+    "type":"single_answer",
+    "options":[
+        "A.网状文件",
+        "B.只读文件",
+        "C.读写文件",
+        "D.记录式文件",
+        "E.索引文件",
+        "F.流式文件"
+    ],
+    "q_number":945
+}

@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "简述中断装置的主要职能。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "中断装置的职能主要有三点： ① 检查是否有中断事件发生； ② 若有中断发生，保护好被中断进程的断点及现场信息，以便进程在适当时候能恢复执行； ③", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"通道具有﹎﹎﹎﹎能力。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.执行I/O指令集",
+        "B.执行CPU指令集",
+        "C.传输I/O命令",
+        "D.运行I/O进程"
+    ],
+    "q_number":917
+}

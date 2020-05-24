@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统有多种类型：允许多用户将若干个作业提交给计算机系统集中处理的操作系统称为﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.批处理操作系统",
+        "B.分时操作系统",
+        "C.实时操作系统",
+        "D.网络操作系统"
+    ],
+    "q_number":746
+}

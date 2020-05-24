@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "\"试述段页式存贮管理系统地址变换机构和地址变换过程。\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "(2)地址变换过程 在段页式系统中必需同时配置段表和页表，段表中的内容是页表始址和页表长度。", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"设有一个包含1000个记录的索引文件，每个记录正好占用一个物理块。一个物理块可以存放10个索引表目。建立索引时，一个物理块应有一个索引表目，试问该文件至少应\n该建立( )级索引〔假定一级索引占用一个物理块〕？\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.1",
+        "B.2",
+        "C.3",
+        "D.7"
+    ],
+    "q_number":955
+}

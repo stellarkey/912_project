@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "\"什么是动态链接\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "指用户程序中的各程序段，不是在程序开始运行前就链接好，而是在程序装入或运行过程中，当发现要调用的程序段未链接时，才进行链接。", "type": "4\r\n", "options": "  \r\n"}

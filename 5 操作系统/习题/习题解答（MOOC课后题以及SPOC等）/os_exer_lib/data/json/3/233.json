@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程控制块是描述进程状态和特性的数据结构，一个进程_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.可以有多个进程控制块",
+        "B.可以和其他进程共用一个进程控制块",
+        "C.可以没有进程控制块",
+        "D.只能有惟一的进程控制块"
+    ],
+    "q_number":233
+}

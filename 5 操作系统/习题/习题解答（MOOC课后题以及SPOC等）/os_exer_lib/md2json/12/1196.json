@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "x86-32 CPU（即80386）有多种运行模式，ucore lab中碰到和需要处理哪些模式()\r\n\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "AB", "type": "2\r\n", "options": " A.实模式\r\n B.保护模式\r\n C.SMM模式\r\n D.虚拟8086模式\r\n"}

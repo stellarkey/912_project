@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于父进程而言，fork()成功执行后的返回值是0。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1579
+}

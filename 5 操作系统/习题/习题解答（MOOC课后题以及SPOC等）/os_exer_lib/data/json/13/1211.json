@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"Linux的系统调用有哪些？大致的功能分类有哪些？ \n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1211
+}

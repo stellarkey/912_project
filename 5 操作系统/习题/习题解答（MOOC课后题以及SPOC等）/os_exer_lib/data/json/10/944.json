@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"文件系统的主要目的是( )。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.实现对文件的按名存取",
+        "B.实现虚拟存贮器",
+        "C.提高外围设备的输入输出速度",
+        "D.用于存贮系统文档"
+    ],
+    "q_number":944
+}

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于父进程而言，fork()的返回值只能是子进程的pid号。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016年期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1539
+}

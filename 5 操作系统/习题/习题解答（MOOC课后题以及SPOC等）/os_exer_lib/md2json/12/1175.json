@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "请分析 [list.h](https://github.com/chyyuu/ucore_lab/blob/master/labcodes/lab2/libs/list.h)内容中大致的含义，并能include这个文件，利用其结构和功能编写一个数据结构链表操作的小C程序 \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

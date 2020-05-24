@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)从静态角度看，进程由程序、数据和﹎﹎﹎﹎三部分组成。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.JCB",
+        "B.DCB",
+        "C.PCB",
+        "D.PMT"
+    ],
+    "q_number":763
+}

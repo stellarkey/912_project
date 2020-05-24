@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)分时系统中，当用户数目为100时，为保证响应不超过2秒；此时的时间片最大应为﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.10ms",
+        "B.20ms",
+        "C.50ms",
+        "D.100ms",
+        "E.200ms"
+    ],
+    "q_number":758
+}

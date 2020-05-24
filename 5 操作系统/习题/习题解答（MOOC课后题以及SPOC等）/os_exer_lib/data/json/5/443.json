@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"并发进程之间存在着_________ 和___________ 两种关系。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":443
+}

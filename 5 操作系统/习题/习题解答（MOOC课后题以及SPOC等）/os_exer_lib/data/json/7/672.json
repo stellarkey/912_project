@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列选项中，能引起外部中断的事件是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.键盘输入",
+        "B.除数为0",
+        "C.浮点运算下溢",
+        "D.访存缺页"
+    ],
+    "q_number":672
+}

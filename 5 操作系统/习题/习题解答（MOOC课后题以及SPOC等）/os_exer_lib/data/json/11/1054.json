@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"Program ito; var BufI,BufO:buffer; (信号量)﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎:SEMAPHORE:=\n(信号量初值)﹎﹎﹎﹎﹎﹎﹎﹎；\nbegin\nparbegin\nprocedure P\nbegin\nrepeat\ninput from IO; ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎ Add to BufI; ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nuntil false end; procedure Q; begin\nrepeat ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nRemove from BufI;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\ntransform;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nAdd to BufO;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎ until false end;\nprocedure R; begin\nrepeat ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nRemove from BufO;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nOutput ...;\nuntil false end;parend\nend\n",
+    "question":"有三个并发进程P、Q和R以及一对供存储数据的缓冲BufI和BufO，P进程把数据输入BufI，R进程输出BufO中的数据。Q地把BufI中的数据变换后送入B\nufO，在上述假定之下,使三个进程实现最大并行性。试在下述类PASCAL程序中虚线位置分别填上信号量、信号量初值和P、V操作实现三个进程正确的并发执行。\n![](files/attach/images/content/20150326/14273426168784.png)\n",
+    "source":"网络",
+    "answer":"Program ito; var BufI,BufO:buffer; (信号量)﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎:SEMAPHORE:=\n(信号量初值)﹎﹎﹎﹎﹎﹎﹎﹎；\nbegin\nparbegin\nprocedure P\nbegin\nrepeat\ninput from IO; ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎ Add to BufI; ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nuntil false end; procedure Q; begin\nrepeat ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nRemove from BufI;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\ntransform;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nAdd to BufO;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎ until false end;\nprocedure R; begin\nrepeat ﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nRemove from BufO;\n﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎﹎\nOutput ...;\nuntil false end;parend\nend\n",
+    "type":"question_answer",
+    "q_number":1054
+}

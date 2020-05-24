@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列程序中（　　　）程序不是spool系统的组成部分。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.预输入",
+        "B.缓输出",
+        "C.通道",
+        "D.井管理"
+    ],
+    "q_number":296
+}

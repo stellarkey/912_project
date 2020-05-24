@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "简述死锁的防止与死锁的避免的区别。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "死锁的防止是系统预先确定一些资源分配策略，进程按规定申请资源，系统按预先规定的策略进行分配从而防止死锁的发生。", "type": "4\r\n", "options": "  \r\n"}

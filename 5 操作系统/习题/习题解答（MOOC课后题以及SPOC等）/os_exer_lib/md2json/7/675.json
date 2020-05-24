@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "某计算机系统中有8台打印机，有K个进程竞争使用，每个进程最多需要3台打印机。该系统可能会发生死锁的K的最小值是（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.2 \r\n B.3 \r\n C.4 \r\n D.5\r\n"}

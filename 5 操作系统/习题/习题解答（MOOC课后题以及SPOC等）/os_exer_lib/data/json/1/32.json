@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"最短CPU执行期优先算法一定是剥夺式的。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":32
+}

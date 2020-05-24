@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "共享设备允许多个作业同时使用，这里的“同时使用”的含义是什么？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "“同时使用”的含义是多个作业可以交替地启动共享设备，在某一时刻仍只有一个作业占有。", "type": "4\r\n", "options": "  \r\n"}

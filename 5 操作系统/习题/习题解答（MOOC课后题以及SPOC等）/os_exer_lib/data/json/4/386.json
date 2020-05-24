@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"多道批处理\n",
+    "question":"___________________________ 系统的出现，标志着操作系统的形成。\n",
+    "source":"网络",
+    "answer":"多道批处理\n",
+    "type":"fill_in_the_blank",
+    "q_number":386
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"不属于I/O控制方式的是\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.程序查询方式",
+        "B.复盖方式",
+        "C.DMA方式",
+        "D.中断驱动方式"
+    ],
+    "q_number":1026
+}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"请给出你觉得的更准确的操作系统的定义？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1178
+}

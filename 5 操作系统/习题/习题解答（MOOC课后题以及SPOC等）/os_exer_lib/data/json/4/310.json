@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"单机操作系统的共享资源主要是指_____ 。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.内存、CPU和基本软件",
+        "B.键盘、鼠标、显示器",
+        "C.打印机、扫描仪",
+        "D.软盘、硬盘、光盘"
+    ],
+    "q_number":310
+}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "物理内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在存储分配时，产生外零头的主要原因为_________________________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":366
+}

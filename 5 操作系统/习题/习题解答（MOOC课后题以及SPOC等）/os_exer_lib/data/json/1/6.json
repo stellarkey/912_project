@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"启动外设的工作必须在管态下由操作系统完成。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":6
+}

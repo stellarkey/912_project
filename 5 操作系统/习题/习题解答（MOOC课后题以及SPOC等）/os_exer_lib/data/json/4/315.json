@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在一个分页存储管理的系统中，页长为4KB，某一作业的页表如右所示，虚拟地址3000对应物理地址____________\n，12000对应____________ 。\n    ```\n\t    页号 页帧号\n\t    ==== =====\n\t    0    3\n\t    1    4\n\t    2    6\n\t    ```\n    \n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":315
+}

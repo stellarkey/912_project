@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"Bakery算法(Lamport 1979)是一种解决n个线程访问临界区（Critical\nSection）问题的软件同步算法。该算法定义了两个共享数组如下：\n    ```\n\t    boolean choosing[n];\n\t    int       number[n]; //ticket\n\t    ```\n\t所有choosing[i]的初始值为false，而number[i]的初始值为0。进程i访问临界区的伪代码如下。\n\t    ```\n\t    do {\n\t        choosing[i] = true;\n\t        number[i] = max(number[0], number[1], …, number [n – 1])+1;\n\t        choosing[i] = false;\n\t        for (j = 0; j < n; j++) {\n\t           while (choosing[j]) ; //（A）\n\t           while ((number[j] != 0) && (  (number[j],j) < (number[i],i)  ) ) ;\n\t        }\n\t        critical section\n\t        number[i] = 0;\n\t        remainder section\n\t    } while (1);\n\t    ```\n请完成如下任务。 1）删除（A）行的代码，算法还能正确控制对临界区的访问吗？ 2）如果能，请说明理由；如果不能，请给出一个出现错误的情形，并解释原因。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":654
+}

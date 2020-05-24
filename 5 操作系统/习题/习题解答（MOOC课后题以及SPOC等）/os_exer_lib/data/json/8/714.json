@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)可以实现内存和设备之间直接交换数据的数据传送控制方有：_____方式和DMA方式。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":714
+}

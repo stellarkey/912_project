@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"请简要描述物理内存分配算法“伙伴系统（buddy system）”的工作原理，即它是如何维护物理内存的分配状态，以及物理内存分配和物理内存释放操作过程。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"暂无",
+    "type":"question_answer",
+    "q_number":1527
+}

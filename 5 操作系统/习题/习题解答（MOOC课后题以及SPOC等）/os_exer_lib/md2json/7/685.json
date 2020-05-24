@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "(20150309_操作系统试题_doc)在进程管理中，当【 】时，进程从阻塞状态变为就绪状态。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.进程调度 \r\n B.等待的事件发生 \r\n C.等待某一事件 \r\n D.时间片用完\r\n"}

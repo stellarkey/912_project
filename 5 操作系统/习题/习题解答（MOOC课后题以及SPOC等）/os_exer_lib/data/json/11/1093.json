@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"每个状态一分，错一个扣一分，对一个加一分；每错一个变迁扣1分（最多扣5分）；\n![](files/attach/images/content/20150326/14273446268113.jpg)\n",
+    "question":"试用图示描述五状态进程模型，要求给出状态描述和各状态间的变迁。\n",
+    "source":"网络",
+    "answer":"每个状态一分，错一个扣一分，对一个加一分；每错一个变迁扣1分（最多扣5分）；\n![](files/attach/images/content/20150326/14273446268113.jpg)\n",
+    "type":"question_answer",
+    "q_number":1093
+}

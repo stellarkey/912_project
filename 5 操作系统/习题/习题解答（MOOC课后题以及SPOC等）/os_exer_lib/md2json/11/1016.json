@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "设备分配问题中，算法实现时，同样要考虑安全性问题，防止在多个进程进行设备请求时，因相互等待对方释放所占设备所造成的()现象\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.瓶颈 \r\n B.碎片 \r\n C.系统抖动 \r\n D.死锁\r\n"}

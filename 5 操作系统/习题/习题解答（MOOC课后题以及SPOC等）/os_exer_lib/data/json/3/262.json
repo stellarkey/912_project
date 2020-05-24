@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程和程序的一个最本质的区别是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.分时使用或独占使用计算机",
+        "B.顺序或非顺序执行机器指令",
+        "C.全部或部分拥有计算机系统资源",
+        "D.动态或静态"
+    ],
+    "q_number":262
+}

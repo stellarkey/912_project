@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"UNIX系统是一个_____ 操作系统。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.单用户",
+        "B.单用户多任务",
+        "C.多用户多任务",
+        "D.多用户单任务"
+    ],
+    "q_number":168
+}

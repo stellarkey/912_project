@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "在ucore lab的实验环境搭建中，用来模拟一台PC机（即基于Intel 80386 CPU的计算机）的软件是()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.apt\r\n B.git\r\n C.meld\r\n D.qemu\r\n"}

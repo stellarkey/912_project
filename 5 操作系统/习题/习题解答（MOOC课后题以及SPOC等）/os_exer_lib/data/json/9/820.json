@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在可变分区存储管理方案中需要一对界地址寄存器，其中﹎﹎﹎﹎是作为存贮保护使用。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.逻辑地址寄存器",
+        "B.长度寄存器",
+        "C.物理地址寄存器",
+        "D.基址寄存器"
+    ],
+    "q_number":820
+}

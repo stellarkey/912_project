@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在实现进程通信时会导致调用Send原语的进程被设置成“等信箱”状态的原因是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.指定的信箱不存在",
+        "B.调用时没有设置参数",
+        "C.指定的信箱中无信件",
+        "D.指定的信箱中存满了信件"
+    ],
+    "q_number":281
+}

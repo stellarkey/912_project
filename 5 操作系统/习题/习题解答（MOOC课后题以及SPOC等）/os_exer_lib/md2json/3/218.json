@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "某进程由于需要从磁盘上读入数据而处于阻塞状态。当系统完成了所需的读盘操作后，此时该进程的状态将_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.从就绪变为运行 \r\n B.从运行变为就绪 \r\n C.从运行变为阻塞 \r\n D.从阻塞变为就绪\r\n"}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"为什么没有人用python，java来实现操作系统？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1183
+}

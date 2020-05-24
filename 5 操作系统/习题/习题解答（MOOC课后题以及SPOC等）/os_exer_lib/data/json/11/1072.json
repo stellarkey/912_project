@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    Int fork1=1,fork2=1,knife1=1,knife2=1;\n    Pa()\n    { while(1)\n      { p(knife1);\n        p(fork1);\n        进餐；\n        v(knife1);\n        v(fork1);\n      }\n    }\n    ```\n\n",
+    "question":"有4位哲学家围着一个圆桌在思考和进餐，每人思考时手中什么都不拿，当需要进餐时，每人需要用刀和叉各一把，餐桌上的布置如图2-12所示，共有2把刀和2把叉，每把\n刀或叉供相邻的两个人使用。请用信号量及PV操作说明4位哲学家的同步过程。\n",
+    "source":"网络",
+    "answer":"    ```\n    Int fork1=1,fork2=1,knife1=1,knife2=1;\n    Pa()\n    { while(1)\n      { p(knife1);\n        p(fork1);\n        进餐；\n        v(knife1);\n        v(fork1);\n      }\n    }\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1072
+}

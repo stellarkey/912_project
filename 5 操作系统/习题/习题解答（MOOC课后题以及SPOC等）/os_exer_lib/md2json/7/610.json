@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "某进程在运行过程中需要等待从磁盘上读入数据，此时该进程的状态是（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.从就绪态变为运行态 \r\n B.从运行态变为就绪态 \r\n C.从运行态变为阻塞态 \r\n D.从阻塞态变为就绪态\r\n"}

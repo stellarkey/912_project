@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"在计算机系统中，控制和管理各种资源、有效地组织多道程序运行的系统软件称作_____ 。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.文件系统",
+        "B.操作系统",
+        "C.网络管理系统",
+        "D.数据库管理系统"
+    ],
+    "q_number":230
+}

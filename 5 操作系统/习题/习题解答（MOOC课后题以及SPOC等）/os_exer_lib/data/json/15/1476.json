@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABC\n",
+    "question":"ucore实现的文件系统抽象包括（） s1 总体介绍\n",
+    "source":"网络",
+    "answer":"ABC",
+    "type":"multi_answer",
+    "options":[
+        "A.文件",
+        "B.目录项",
+        "C.索引节点",
+        "D.安装点"
+    ],
+    "q_number":1476
+}

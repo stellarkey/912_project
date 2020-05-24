@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于采用段页式的x86-32 CPU而言，CPU在保护模式下访问一个虚拟地址时，如TLB访问缺失，则需先通过页表，再通过段表才能找到对应的物理地址。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1583
+}

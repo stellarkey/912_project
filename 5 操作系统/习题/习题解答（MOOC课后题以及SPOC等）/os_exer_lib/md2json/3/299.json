@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "涉及某一资源造成与时间有关的错误的原因，正确的是（　　　）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.一个进程多次申请，释放该资源 \r\n B.若干并发进程互斥使用该资源 \r\n C.若干并发进程同时使用该资源 \r\n D.以上说法均不对\r\n"}

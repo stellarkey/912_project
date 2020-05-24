@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"关于进程的生命周期的描述正确的是（） s3\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.内核选择一个就绪态的进程，让它占用处理机并执行，此时进程处于运行态",
+        "B.进程请求并等待系统服务，无法马上完成，此时进程处于等待态",
+        "C.进程执行的当前时间片用完了，此时进程处于就绪态",
+        "D.进程退出了，但还没被父进程回收，此时进程处于zombie态"
+    ],
+    "q_number":1407
+}

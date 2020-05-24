@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"操作系统中的工作集模型与_____ 有关。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.合并存储区中的空白块",
+        "B.将CPU分配给进程",
+        "C.一个进程访问的页面集合",
+        "D.为进程分配I/O资源"
+    ],
+    "q_number":185
+}

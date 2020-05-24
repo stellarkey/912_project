@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在采用位示图管理文件存储空间时，二进制串的一位对应一个_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.物理文件",
+        "B.逻辑文件",
+        "C.物理块",
+        "D.缓冲区"
+    ],
+    "q_number":202
+}

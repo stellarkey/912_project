@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "请分析函数调用和系统调用的区别,请从代码编写和执行过程来说明。说明int、iret、call和ret的指令准确功能.\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

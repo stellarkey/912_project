@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"批处理系统、分时系统和实时系统\n",
+    "question":"操作系统通常可分为三种基本类型，即______________ 、______________ 和______________ 。\n",
+    "source":"网络",
+    "answer":"批处理系统、分时系统和实时系统\n",
+    "type":"fill_in_the_blank",
+    "q_number":462
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n     var full,empty,mutex:semaphore;\n         full=0;\n         empty=1;\n         mutex=1;\n       cobegin\n         procedure A_i(i=1,...,n)           procedure  B:\n           begin                              begin\n             P(empty);                          P(full);\n             P(mutex);                          P(mutex);\n             // put message to the buffer;      // Get the message;\n             V(mutex);                          V(mutex);\n             V(full);                           V(empty);\n         end                                end\n       coend\n    ```\n\n",
+    "question":"有n+1个进程A1，A2，... ,An和B：\n   A1,A2,... ,An通过同一个缓冲池各自不断地向B发送消息，B不断地取消息，它必须取走 发来的每个消息，刚开始时缓冲区为空，使用P,V操作实现之。\n   若缓冲区个数增至M个，试用P,V实现正确通讯。\n",
+    "source":"网络",
+    "answer":"    ```\n     var full,empty,mutex:semaphore;\n         full=0;\n         empty=1;\n         mutex=1;\n       cobegin\n         procedure A_i(i=1,...,n)           procedure  B:\n           begin                              begin\n             P(empty);                          P(full);\n             P(mutex);                          P(mutex);\n             // put message to the buffer;      // Get the message;\n             V(mutex);                          V(mutex);\n             V(full);                           V(empty);\n         end                                end\n       coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":638
+}

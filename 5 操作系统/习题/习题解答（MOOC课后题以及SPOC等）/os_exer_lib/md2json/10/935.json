@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "SPOOLing是对脱机I/O工作方式的模拟，SPOOLing系统中的输出进程是对脱出输出中的( )进行模拟。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.内存输入缓冲区 \r\n B.磁盘 \r\n C.外围控制机 \r\n D.输入设备\r\n"}

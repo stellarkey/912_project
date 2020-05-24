@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理实验。\r\n", "question": "在一个分段存储管理的系统中，某一作业的段表如右所示，虚拟地址1 | 300对应物理地址____________ ，2 | 120对应____________\r\n。\r\n    ```\r\n\t    段号 段长 始址\r\n\t    ===  ===  ====\r\n\t    0 2K 2K\r\n\t    1 4K 6K\r\n\t    2 12K 20K\r\n\t    ```\r\n    \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "5\r\n", "options": "  \r\n"}

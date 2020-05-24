@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)计算机操作系统中有3个用户进程，若P、V操作的信号量S初值为2，当前值为-1，则表示当前有\n﹎﹎﹎﹎进程在等待。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.1个",
+        "B.2个",
+        "C.3个",
+        "D.0个"
+    ],
+    "q_number":776
+}

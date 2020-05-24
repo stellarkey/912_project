@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "在ucore OS的管理下，如果CPU在ring3特权级执行访存指令，读属于ring0特权级的数据段中的内存单元，将出现的情况是（） s1\r\n\r\n", "degree_of_difficulty": "1 \r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.产生外设中断\r\n B.产生访存异常\r\n C.CPU继续正常执行\r\n D.系统重启\r\n"}

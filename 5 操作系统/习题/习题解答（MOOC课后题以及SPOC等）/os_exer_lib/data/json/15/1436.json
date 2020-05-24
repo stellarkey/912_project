@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"若当前进程因时间片用完而让出处理机时，该进程应转变为（）状态。 s1\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.就绪",
+        "B.等待",
+        "C.运行",
+        "D.完成"
+    ],
+    "q_number":1436
+}

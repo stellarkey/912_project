@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"你的ucore实验代码git库链接？\n（例如：http://172.16.13.236/username/repo.git）",
+    "explain":"无标准答案",
+    "degree_of_difficulty":1,
+    "source":"问卷调查",
+    "answer":"无标准答案",
+    "type":"fill_in_the_blank",
+    "q_number":1491
+}

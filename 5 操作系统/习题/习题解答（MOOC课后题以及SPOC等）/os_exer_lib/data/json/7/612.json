@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"若P、V操作的信号量S初值为3，当前值为-2，则表示有（ ）等待进程。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.0个",
+        "B.1个",
+        "C.2个",
+        "D.3个"
+    ],
+    "q_number":612
+}

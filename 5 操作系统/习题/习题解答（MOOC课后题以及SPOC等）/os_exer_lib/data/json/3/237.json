@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"引入缓冲技术的主要目的是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.改善用户编程环境",
+        "B.提高CPU的处理速度",
+        "C.提高CPU与设备之间的并行程度",
+        "D.降低计算机的硬件成本"
+    ],
+    "q_number":237
+}

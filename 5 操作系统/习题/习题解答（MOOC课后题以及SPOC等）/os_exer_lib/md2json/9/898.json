@@ -1,0 +1,1 @@
+{"knowledge": "置换算法。\r\n", "question": "在请求分页存储管理中，从主存中刚刚移走某一页面后，根据请求马上又调进该页，这种反复调进调出的现象，称为系统颠簸，也叫系统抖动\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "3\r\n", "options": " A.对 \r\n B.错\r\n"}

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于应用程序而言，编译器生成的程序地址是虚拟地址，由操作系统建立段/页表完成虚实地址转换。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期中",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1542
+}

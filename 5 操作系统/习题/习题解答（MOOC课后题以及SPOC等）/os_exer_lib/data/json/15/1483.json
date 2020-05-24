@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABC 网盘在模拟实现上应该算块设备\n",
+    "question":"网络设备包括（） s1\n",
+    "source":"网络",
+    "answer":"ABC",
+    "type":"multi_answer",
+    "options":[
+        "A.以太网卡",
+        "B.wifi网卡",
+        "C.蓝牙设备",
+        "D.网盘设备"
+    ],
+    "q_number":1483
+}

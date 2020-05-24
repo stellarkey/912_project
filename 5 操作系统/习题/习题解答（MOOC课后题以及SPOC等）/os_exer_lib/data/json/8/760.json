@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在操作系统中进程是一个具有一定独立功能程序在某个数据集合上的一次﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.并发活动",
+        "B.运行活动",
+        "C.单独操作",
+        "D.关联操作"
+    ],
+    "q_number":760
+}

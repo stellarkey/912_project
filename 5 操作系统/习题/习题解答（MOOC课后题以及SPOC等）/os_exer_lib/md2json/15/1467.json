@@ -1,0 +1,1 @@
+{"knowledge": "进程间通信。\r\n", "question": "关于信号和管道的进程通信机制的阐述正确的是（） s6\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.信号（signal）是一种进程间的软件中断通知和处理机制\r\n A.信号的接收处理方式包括：捕获(catch)，忽略(Ignore)，屏蔽（Mask）\r\n A.管道（pipe）是一种进程间基于内存文件（或内存缓冲区 ）的通信机制\r\n 管道（pipe）的实现需要在磁盘文件系统上创建一个文件\r\n"}

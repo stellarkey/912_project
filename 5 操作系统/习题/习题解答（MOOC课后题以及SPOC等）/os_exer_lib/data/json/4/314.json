@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"分页系统的页长为1KB，虚拟地址0x3C8F对应的页号为____________ ，页内地址为____________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":314
+}

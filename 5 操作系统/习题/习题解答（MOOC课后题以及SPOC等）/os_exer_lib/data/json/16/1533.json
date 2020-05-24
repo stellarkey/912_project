@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"3）有一台只有页机制的简化80386的32bit计算机，有地址范围位0~256MB的物理内存空间（physical memory），可表示大小为256MB，范围为0xC0000000~0xD0000000的虚拟地址空间（virtual address space）,页大小（page size）为4KB，采用二级页表，一个页目录项（page directory entry ，PDE）大小为4B,一个页表项（page-table entries PTEs）大小为4B，1个页目录表大小为4KB，1个页表大小为4KB。\n\nPTE格式（32 bit） :　高地址位.....低地址位\n  PFN19 ... PFN0|NOUSE9 ... NOUSE0|WRITABLE|VALID\nPDE格式（32 bit） :　高地址位.....低地址位\n  PT19 ... PT0|NOUSE9 ... NOUSE0|WRITABLE|VALID\n\n其中：\nNOUSE9 ... NOUSE0为保留位，要求固定为0\nWRITABLE：1表示可读写，0表示只读\nVLAID：1表示有效，0表示无效\n\n假设ucore OS为可读写的两个虚拟地址（即如下所示的两个va）设置好了虚拟地址<-->物理地址映射（及如下所示的两个va...,pa...）的二级页表，设置了页目录基址寄存器（page directory base register，PDBR）保存了页目录表的物理地址（按页对齐），其值为0。已经建立好了从物理地址0x1000\\~0x41000的第二级页表，且页目录表的index为0x300\\~0x363的页目录项的(PT19 ... PT0)的值=(index-0x300+3)。 请针对如下所示的<虚拟地址, 物理地址>对，给出对应的页目录项的index值,页目录项内容的值，页表项的index值，页表项内容的值，即(pde_idx, pde_ctx, pte_idx, pte_cxt)。\n\n```\nva 0xc7384bac, pa 0x07141bac\nva 0xcaeded27, pa 0x07919d27\n```",
+    "explain":"1.pdeidx=0x31c pdectx=0x1f003 pteidx=0x07141 ptecxt=0x07141003\n2.pdeidx=0x32b pdectx=0x2e003 pteidx=0x07919 ptecxt=0x07919003",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"1.pdeidx=0x31c pdectx=0x1f003 pteidx=0x07141 ptecxt=0x07141003\n2.pdeidx=0x32b pdectx=0x2e003 pteidx=0x07919 ptecxt=0x07919003",
+    "type":"question_answer",
+    "q_number":1533
+}

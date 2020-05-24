@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "question":"常用移臂调度算法包括（）",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.先来先服务（FIFO）算法",
+        "B.最短寻道时间优先（SSTF）算法",
+        "C.电梯调度（SCAN）算法",
+        "D.单向扫描（C-SCAN）算法"
+    ],
+    "q_number":1536
+}

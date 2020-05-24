@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)一个执行的进程时间片用完后，它的状态变为【 】。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.就绪",
+        "B.等待",
+        "C.挂起",
+        "D.不确定"
+    ],
+    "q_number":686
+}

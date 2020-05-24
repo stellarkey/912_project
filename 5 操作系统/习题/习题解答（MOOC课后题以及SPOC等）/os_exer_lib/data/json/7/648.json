@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"这是一个汇合机制，有两类进程：顾客进程和车辆进程，需要进行汇合、即顾客要坐进车辆后才能游玩，开始时让车辆进程进入等待状态\n解答:\n    ```\n    var sc1 , sck , sc ，Kx,xc ，mutex : semaphore ;\n    sck:=kx:=sc:=xc:=0；\n    sc1:=n ；mutex : = 1 ;\n    sharearea ：一个登记车辆被服务乘客信息的共享区；\n    cobegin\n    \tprocess 顾客i ( i = 1 , 2 ，… ）\n    \tbegin\n    \t\tP (sc1) ; /车辆最大数量信号量\n    \t\tP (mutex) ; /封锁共享区，互斥操作\n    \t\t在共享区sharearea登记被服务的顾客的信息：\n    \t\t起始和到达地点，行驶时间\n    \t\tV (sck) ; / 释放一辆车 ,即顾客找到一辆空车\n    \t\tP(Kx); / 待游玩结束之后，顾客等待下车\n    \t\tV(sc1) ; /空车辆数加1\n    \tEnd\n    \tProcess 车辆j(j=1,2,3…)\n    \tBegin\n    \t\tL:P(sck); /车辆等待有顾客来使用\n    \t\t在共享区sharearea登记一辆车被使用，并与顾客进程汇合；\n    \t\tV(mutex); /这时可开放共享区，让另一顾客雇车\n    \t\tV(kx); /允许顾客用此车辆\n    \t\t车辆载着顾客开行到目的地；\n    \t\tV(xc); /允许顾客下车\n    \t\tGoto L;\n    \tEnd\n    coend\n    ```\n\n",
+    "question":"博物馆-公园问题\nJurassic公园有一个恐龙博物馆和一个花园，有m 个旅客租卫辆车，每辆车仅能乘\n一个一旅客。旅客在博物馆逛了一会，然后，排队乘坐旅行车，挡一辆车可用喊飞它载 入一个旅客，再绕花园行驶任意长的时间。若n 辆车都己被旅客乘坐游玩，则想坐车的\n旅客需要等待。如果一辆车己经空闲，但没有游玩的旅客了，那么，车辆要等待。试用 信号量和P 、V 操作同步m 个旅客和n 辆车子。\n",
+    "source":"网络",
+    "answer":"这是一个汇合机制，有两类进程：顾客进程和车辆进程，需要进行汇合、即顾客要坐进车辆后才能游玩，开始时让车辆进程进入等待状态\n解答:\n    ```\n    var sc1 , sck , sc ，Kx,xc ，mutex : semaphore ;\n    sck:=kx:=sc:=xc:=0；\n    sc1:=n ；mutex : = 1 ;\n    sharearea ：一个登记车辆被服务乘客信息的共享区；\n    cobegin\n    \tprocess 顾客i ( i = 1 , 2 ，… ）\n    \tbegin\n    \t\tP (sc1) ; /车辆最大数量信号量\n    \t\tP (mutex) ; /封锁共享区，互斥操作\n    \t\t在共享区sharearea登记被服务的顾客的信息：\n    \t\t起始和到达地点，行驶时间\n    \t\tV (sck) ; / 释放一辆车 ,即顾客找到一辆空车\n    \t\tP(Kx); / 待游玩结束之后，顾客等待下车\n    \t\tV(sc1) ; /空车辆数加1\n    \tEnd\n    \tProcess 车辆j(j=1,2,3…)\n    \tBegin\n    \t\tL:P(sck); /车辆等待有顾客来使用\n    \t\t在共享区sharearea登记一辆车被使用，并与顾客进程汇合；\n    \t\tV(mutex); /这时可开放共享区，让另一顾客雇车\n    \t\tV(kx); /允许顾客用此车辆\n    \t\t车辆载着顾客开行到目的地；\n    \t\tV(xc); /允许顾客下车\n    \t\tGoto L;\n    \tEnd\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":648
+}

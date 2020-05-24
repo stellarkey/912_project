@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "通过破坏死锁必要条件之一来防止死锁产生，这种策略属于：\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.预防死锁 \r\n B.避免死锁 \r\n C.检测死锁 \r\n D.解除死锁\r\n"}

@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在请求调页系统中有着多种置换算法：选择自上次访问以来所经历时间最长的页面予以淘汰的算法称为\n﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.FIFO算法",
+        "B.OPT算法",
+        "C.LRU算法",
+        "D.NRU算法",
+        "E.LFU算法"
+    ],
+    "q_number":832
+}

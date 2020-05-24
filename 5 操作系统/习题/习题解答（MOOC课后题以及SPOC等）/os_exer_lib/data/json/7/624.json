@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"软硬件资源\n",
+    "question":"操作系统是计算机系统的一种系统软件，它以尽量合理、有效的方式组织和管理计算机 的________，并控制程序的运行，使整个计算机系统能高效地运行。\n",
+    "source":"网络",
+    "answer":"软硬件资源\n",
+    "type":"fill_in_the_blank",
+    "q_number":624
+}

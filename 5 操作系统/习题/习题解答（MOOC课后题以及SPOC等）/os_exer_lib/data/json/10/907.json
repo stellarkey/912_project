@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"4.99865ms\n",
+    "question":"\"某系统使用请求分页存储管理，若页在内存中，满足一个内存请求需要150ns。若缺页率是10%，为使有效访问时间达到0.5ms,求不在内存的页面的平均访问时间\n。\"\n",
+    "source":"网络",
+    "answer":"4.99865ms\n",
+    "type":"question_answer",
+    "q_number":907
+}

@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "(操作系统之PV金典)设有一个可以装A、B两种物品的仓库,其容量有限(分别为N),但要求仓库中A、B两种物品的数量满足下述不等式: -M≤A物品数量-\r\nB物品数量≤N 其中M和N为正整数。另外,还有一个进程消费A,B,一次取一个A,B组装成C。 试用信号量和PV操作描述A、B两种物品的入库过程。  \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "    ```", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可变分区存储管理中用链表记录分区使用情况，为应用最差适应法(WF)分配空闲分区，链表中应该按照下列哪种方法排列？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.按分区起始地址递增排列",
+        "B.按分区起始地址递减排列",
+        "C.按分区大小递增排列",
+        "D.按分区大小递减排列"
+    ],
+    "q_number":98
+}

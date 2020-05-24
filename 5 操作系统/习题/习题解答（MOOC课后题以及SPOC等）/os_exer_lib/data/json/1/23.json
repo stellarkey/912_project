@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程发出I/O请求后将被阻塞，直至I/O操作完成。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":23
+}

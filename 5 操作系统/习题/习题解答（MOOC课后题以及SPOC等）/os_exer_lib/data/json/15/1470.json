@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"打开文件时，文件系统要维护哪些信息（） s２\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.文件指针",
+        "B.打开文件计数",
+        "C.文件访问权限",
+        "D.文件位置和数据缓存"
+    ],
+    "q_number":1470
+}

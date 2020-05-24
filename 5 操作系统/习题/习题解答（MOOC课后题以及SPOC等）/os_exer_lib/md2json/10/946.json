@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "通常，文件的逻辑结构可以分为两大类：无结构的( )和有结构的记录式文件。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.堆文件 \r\n B. 流式文件 \r\n C. 索引文件 \r\n D.直接（Hash）文件\r\n"}

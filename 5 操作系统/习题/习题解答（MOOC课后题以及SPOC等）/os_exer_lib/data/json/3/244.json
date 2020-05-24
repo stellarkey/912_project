@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"MS—DOS的存贮管理采用了(　　)\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.段式存贮管理",
+        "B.段页式存贮管理",
+        "C.单用户连续存贮管理",
+        "D.固定式分区存贮管理"
+    ],
+    "q_number":244
+}

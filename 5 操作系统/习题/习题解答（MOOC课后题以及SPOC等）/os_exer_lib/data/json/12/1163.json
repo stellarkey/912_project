@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"http://www.imada.sdu.dk/Courses/DM18/Litteratur/IntelnATT.htm inb一般应用程序用不到的指令等。\n",
+    "question":"能否读懂ucore中的AT&T格式的X86-32汇编语言？请列出你不理解的汇编语言。\n",
+    "source":"网络",
+    "answer":"http://www.imada.sdu.dk/Courses/DM18/Litteratur/IntelnATT.htm inb一般应用程序用不到的指令等。\n",
+    "type":"question_answer",
+    "q_number":1163
+}

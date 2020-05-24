@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"要求进程一次性申请所需的全部资源，是破坏了死锁必要条件中的哪一条？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.互斥",
+        "B.请求与保持",
+        "C.不剥夺",
+        "D.循环等待"
+    ],
+    "q_number":96
+}

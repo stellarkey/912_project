@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"处理器管理、 存储器管理、 设备管理\n",
+    "question":"(20150309_操作系统试题_doc)操作系统的五大主要功能：________、_______、__________、文件管理以及用户接口管理。\n",
+    "source":"网络",
+    "answer":"处理器管理、 存储器管理、 设备管理\n",
+    "type":"fill_in_the_blank",
+    "q_number":703
+}

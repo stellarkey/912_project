@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    begin\n    var mutex=1:semaphore;\n    amount =0:integer;\n    cobegin\n      process save\n        m1: integer;\n        begin\n        repeat\n        p(mutex);\n        m1= amount ;\n        m1 = m1 +10;\n        amout = m1;\n        v(mutex);\n        end\n      process take\n        m2: integer;\n        begin\n        repeat;\n        p(mutex);\n        m2= amount ;\n        m2 = m2 -10;\n        amout = m2;\n        v(mutex);\n        end\n    coend\n    ```\n\n",
+    "question":"两人公用一个账号，每次限存或取10元；\n",
+    "source":"网络",
+    "answer":"    ```\n    begin\n    var mutex=1:semaphore;\n    amount =0:integer;\n    cobegin\n      process save\n        m1: integer;\n        begin\n        repeat\n        p(mutex);\n        m1= amount ;\n        m1 = m1 +10;\n        amout = m1;\n        v(mutex);\n        end\n      process take\n        m2: integer;\n        begin\n        repeat;\n        p(mutex);\n        m2= amount ;\n        m2 = m2 -10;\n        amout = m2;\n        v(mutex);\n        end\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1061
+}

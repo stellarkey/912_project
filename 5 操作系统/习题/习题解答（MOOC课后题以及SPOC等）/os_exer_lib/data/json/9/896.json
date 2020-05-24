@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"执行系统调用时可以被中断\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":896
+}

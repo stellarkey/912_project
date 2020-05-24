@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B Scitools Understand 是非开源软件，主要可以用于分析代码，可免费试用一段时间。\n",
+    "question":"在ucore lab的实验环境搭建中，使用的非开源软件是()\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.eclipse CDT",
+        "B.Scitools Understand",
+        "C.gcc",
+        "D.qemu"
+    ],
+    "q_number":1192
+}

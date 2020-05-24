@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "(20150309_操作系统试题_doc)若P、V原语的信号量S的初值为5，当前值为-3，则表示有【 】个等待进程。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.0个 \r\n B.3个 \r\n C.5个 \r\n D.8个\r\n"}

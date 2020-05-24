@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"如何修改lab1, 实现一个可显示字符串\"THU LAB1\"且依然能够正确加载ucore OS的bootloader？如果不能完成实现，请说明理由。\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1244
+}

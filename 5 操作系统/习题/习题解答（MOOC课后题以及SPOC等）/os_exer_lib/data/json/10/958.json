@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"文件管理实际上是对﹎﹎﹎﹎的管理。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.主存空间",
+        "B.辅助存储空间",
+        "C.逻辑地址空间",
+        "D.物理地址空间"
+    ],
+    "q_number":958
+}

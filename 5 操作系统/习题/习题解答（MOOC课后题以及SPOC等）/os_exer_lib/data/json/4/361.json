@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"作业\n",
+    "question":"计算机系统按用户指定的步骤，为用户一次上机解题所完成的工作的总和称为______________ 。\n",
+    "source":"网络",
+    "answer":"作业\n",
+    "type":"fill_in_the_blank",
+    "q_number":361
+}

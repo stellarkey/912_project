@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"命令接口，系统调用\n",
+    "question":"用户与操作系统的接口有 ， 两种。\n",
+    "source":"网络",
+    "answer":"命令接口，系统调用\n",
+    "type":"fill_in_the_blank",
+    "q_number":990
+}

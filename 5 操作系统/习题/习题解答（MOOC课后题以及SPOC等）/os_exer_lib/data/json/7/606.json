@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可重定位内存分区分配目的是（ ）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.解决碎片",
+        "B.便于多作业共享内存",
+        "C.回收空白区方便",
+        "D.摆脱用户干预"
+    ],
+    "q_number":606
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"下面是SFS的磁盘索引节点数据结构定义。\n```\nstruct sfs_disk_inode {\n    uint32_t size;\n    uint16_t type;\n    uint16_t nlinks;\n    uint32_t blocks;\n    uint32_t direct[SFS_NDIRECT];\n    uint32_t indirect;\n};\n```\n假定ucore 里 SFS_NDIRECT的取值是16，而磁盘上数据块大小为1KB。请计算这时ucore支持的最大文件大小。请给出计算过程。（这样可给步骤分）",
+    "explain":"https://objectkuan.gitbooks.io/ucore-docs/content/lab8/lab8_3_3_2_inode.html\n\n磁盘索引节点\nucore 里 SFS_NDIRECT 是 16，即直接索引的数据页大小为 16 * 1k （2分）= 16k（2分）；当使用一级间接数据块索引时，ucore 支持最大的文件大小为 16* 1k + 256（2分） * 1k = 272k（2分）。数据索引表内，0 表示一个无效的索引，inode 里 blocks 表示该文件或者目录占用的磁盘的 block 的个数。indiret 为 0 时，表示不使用一级索引块。（因为 block 0 用来保存 super block，它不可能被其他任何文件或目录使用，所以这么设计也是合理的）。",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"https://objectkuan.gitbooks.io/ucore-docs/content/lab8/lab8_3_3_2_inode.html\n\n磁盘索引节点\nucore 里 SFS_NDIRECT 是 16，即直接索引的数据页大小为 16 * 1k （2分）= 16k（2分）；当使用一级间接数据块索引时，ucore 支持最大的文件大小为 16* 1k + 256（2分） * 1k = 272k（2分）。数据索引表内，0 表示一个无效的索引，inode 里 blocks 表示该文件或者目录占用的磁盘的 block 的个数。indiret 为 0 时，表示不使用一级索引块。（因为 block 0 用来保存 super block，它不可能被其他任何文件或目录使用，所以这么设计也是合理的）。",
+    "type":"question_answer",
+    "q_number":1570
+}

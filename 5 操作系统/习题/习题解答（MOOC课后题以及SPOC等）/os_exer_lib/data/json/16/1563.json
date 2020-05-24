@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"(接上题) 接下来，如果进程P1发出一个请求（0，4，2，0）。这个请求能否立刻被满足？",
+    "explain":"接下来，如果进程P1发出一个请求（0，4，2，0）。这个请求能立刻被满足。",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"接下来，如果进程P1发出一个请求（0，4，2，0）。这个请求能立刻被满足。",
+    "type":"question_answer",
+    "q_number":1563
+}

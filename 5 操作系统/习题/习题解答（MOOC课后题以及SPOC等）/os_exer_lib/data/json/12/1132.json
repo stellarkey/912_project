@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "question":"你的年龄\n",
+    "explain":"解释：统计学生的年龄组成情况。\n",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.19岁以下",
+        "B.20~29岁",
+        "C.30~39岁",
+        "D.40岁以上"
+    ],
+    "q_number":1132
+}

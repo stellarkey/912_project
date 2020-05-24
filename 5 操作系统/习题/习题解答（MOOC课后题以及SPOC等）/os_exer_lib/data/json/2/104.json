@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"基于用户（主体）记录存取权限的方法属于：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.存取控制表",
+        "B.用户目录表",
+        "C.存取控制矩阵",
+        "D.权能表"
+    ],
+    "q_number":104
+}

@@ -1,0 +1,1 @@
+{"knowledge": "虚拟存储：置换算法。\r\n", "question": "4.时钟置换算法 一、(10分) （1）试描述虚拟存储管理系统中的时钟置换算法（Clock Page Replacement）的工作原理；\r\n（2）假定在一个采用时钟置换算法的虚拟存储系统中某进程分配了4个物理页面，当进程按c, a, d, b, e, c, b, a, d, b, c, a,\r\nd的序列进行页面访问时，会出现多少次缺页？要求说明过程。如果需要，你可以补充假定条件。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "4\r\n", "options": "  \r\n"}

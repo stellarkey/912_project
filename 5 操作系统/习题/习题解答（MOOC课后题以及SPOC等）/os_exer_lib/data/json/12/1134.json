@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释：统计学生的地理位置分布情况。\n",
+    "question":"所在地区\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.北京",
+        "B.其他地区"
+    ],
+    "q_number":1134
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在操作系统中用户进程本身启动的唯一状态转换是：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.调度",
+        "B.阻塞",
+        "C.时间片到",
+        "D.唤醒"
+    ],
+    "q_number":196
+}

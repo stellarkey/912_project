@@ -1,0 +1,1 @@
+{"knowledge": "连续内存分配。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)在最佳适应算法中是按﹎﹎﹎﹎顺序形成空闲分区链。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.空闲区首址递增 \r\n B.空闲区首址递减 \r\n C.空闲区大小递增 \r\n D.空闲区大小递减\r\n"}

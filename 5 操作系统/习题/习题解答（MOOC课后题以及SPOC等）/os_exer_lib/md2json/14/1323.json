@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "CPU执行一条指令访问数据段时，硬件要做的特权级检查是（） s1\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.MAX(CPL, RPL) <= DPL[数据段]\r\n B.MIN(CPL, RPL) <= DPL[数据段]\r\n C.MAX(CPL, DPL) <= RPL[数据段]\r\n D.MIN(CPL, DPL) <= RPL[数据段]\r\n"}

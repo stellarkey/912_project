@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"下面是关于重定位的有关描述，其中错误的是\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.绝对地址是主存空间的地址编号",
+        "B.用户程序中使用的从0地址开始的地址编号是逻辑地址",
+        "C.动态重定位中装入主存的作业仍保持原来的逻辑地址",
+        "D.静态重定位中装人主存的作业仍保持原来的逻辑地址"
+    ],
+    "q_number":1032
+}

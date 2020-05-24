@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"虚拟存储器是利用操作系统产生的一个假想的特大存储器，是逻辑上扩充了内存容量，而物理内存的容量并未增加。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":603
+}

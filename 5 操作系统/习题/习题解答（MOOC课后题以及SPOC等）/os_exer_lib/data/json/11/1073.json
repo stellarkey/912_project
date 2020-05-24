@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    Int sp=1; sa=0;so=0;\n    Main()\n    { father(); son();daughter();}\n    Father()                                                 son()\n    {while(1)                                                {while(1)\n      {p(sp);                                                   {p(so);\n        将水果放入盘中；                                        从盘中取出桔子；\n       if (放入的是桔子)                                        v(sp);\n          v(so);                                                    吃桔子；\n       else  v(sa);                                             }\n      }                                                      }\n    }\n    ```\n\n",
+    "question":"桌上有一个空盘子，只允许放一个水果。爸爸可以向盘中放苹果，也可以向盘中放桔子，儿子专等吃盘中的桔子，女儿专等吃盘中的苹果。规定当盘空时，一次只能放一只水果，\n请用PV操作实现爸爸、儿子、女儿3个并发进程的同步。\n",
+    "source":"网络",
+    "answer":"    ```\n    Int sp=1; sa=0;so=0;\n    Main()\n    { father(); son();daughter();}\n    Father()                                                 son()\n    {while(1)                                                {while(1)\n      {p(sp);                                                   {p(so);\n        将水果放入盘中；                                        从盘中取出桔子；\n       if (放入的是桔子)                                        v(sp);\n          v(so);                                                    吃桔子；\n       else  v(sa);                                             }\n      }                                                      }\n    }\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1073
+}

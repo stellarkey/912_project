@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "question":"计算机操作系统的功能是 。\n",
+    "explain":"答案 D\n",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.把源程序代码转换为目标代码",
+        "B.实现计算机用户之间的相互交流",
+        "C.完成计算机硬件与软件之间的转换",
+        "D.控制、管理计算机系统的资源和程序的执行"
+    ],
+    "q_number":1005
+}

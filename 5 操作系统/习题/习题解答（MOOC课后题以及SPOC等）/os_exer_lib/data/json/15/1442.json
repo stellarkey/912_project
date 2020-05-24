@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCDE\n",
+    "question":"lab6的调度过程包括() s2\n",
+    "source":"网络",
+    "answer":"ABCDE",
+    "type":"multi_answer",
+    "options":[
+        "A.触发：trigger scheduling",
+        "B.入队：‘enqueue’",
+        "C.选取：pick up",
+        "D.出队：‘dequeue’",
+        "E.切换：process switch"
+    ],
+    "q_number":1442
+}

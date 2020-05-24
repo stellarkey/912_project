@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进入输入井的作业其状态处于\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.提交状态",
+        "B.完成状态",
+        "C.执行状态",
+        "D.后备状态"
+    ],
+    "q_number":118
+}

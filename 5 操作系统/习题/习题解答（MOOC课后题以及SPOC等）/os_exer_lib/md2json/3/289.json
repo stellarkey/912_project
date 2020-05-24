@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "操作系统中同时存在着多个进程，它们（　　　）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.不能共享系统资源 \r\n B.不能调用同一段程序代码 \r\n C.可以共享所有的系统资源 \r\n D.可以共享允许共享的系统资源\r\n"}

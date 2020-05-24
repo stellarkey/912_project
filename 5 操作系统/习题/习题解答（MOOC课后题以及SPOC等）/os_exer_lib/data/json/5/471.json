@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"稳定性与安全性\n",
+    "question":"通用操作系统的衡量指标为______________ 。\n",
+    "source":"网络",
+    "answer":"稳定性与安全性\n",
+    "type":"fill_in_the_blank",
+    "q_number":471
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"某基于动态分区存储管理的计算机，其主存容量为55Mb(初始为空)，采用最佳适配(Best\nFit)算法，分配和释放的顺序为:分配15Mb，分配30Mb，释放15Mb，分配6Mb，此时主存中最大空闲分区的大小是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.7Mb",
+        "B.9Mb",
+        "C.10Mb",
+        "D.15Mb"
+    ],
+    "q_number":667
+}

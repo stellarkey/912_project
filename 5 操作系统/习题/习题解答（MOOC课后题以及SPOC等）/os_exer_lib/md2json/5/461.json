@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "有２个同类临界资源，被５个并发进程访问，使用信号量机制实现互斥，则初值为＿＿，信号量值的变化范围为＿＿。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "5\r\n", "options": "  \r\n"}

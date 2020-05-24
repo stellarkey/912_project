@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"等待当前磁道上的某指定扇区旋转到磁头下所需的时间称为_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.寻找时间",
+        "B.启动时间",
+        "C.延迟时间",
+        "D.传送时间"
+    ],
+    "q_number":277
+}

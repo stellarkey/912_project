@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在可变式分区存储管理中的拼接技术可以（ ）。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.集中空闲区",
+        "B.增加主存容量",
+        "C.缩短访问周期",
+        "D.加速地址转换"
+    ],
+    "q_number":607
+}

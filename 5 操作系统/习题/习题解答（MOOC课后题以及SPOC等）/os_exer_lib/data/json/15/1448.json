@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"操作系统中，两个或多个并发进程各自占有某种资源而又都等待别的进程释放它们所占有的资源的现象叫做什么（） s２\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.饥饿",
+        "B.死锁",
+        "C.死机",
+        "D.死循环"
+    ],
+    "q_number":1448
+}

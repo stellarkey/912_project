@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "现代操作系统中，文件系统都有效地解决了重名（即允许不同用户的文件可以具有相同的文件名）问题。系统是通过_____ 来实现这一功能的。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.重名翻译机构 \r\n B.建立索引表 \r\n C.建立指针　　 \r\n D.多级目录结构\r\n"}

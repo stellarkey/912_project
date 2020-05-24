@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"lab6中涉及到的调度点包括（） s3\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.proc.c:do_exit　户线程执行结束，主动放弃CPU",
+        "B.proc.c:do_wait　用户线程等待子进程结束，主动放弃CPU",
+        "C.proc.c::cpu_idle　idleproc内核线程选取一个就绪进程并切换",
+        "D.ｔrap.c::trap　　若时间片用完，则设置need_resched为1，让当前进程放弃CPU"
+    ],
+    "q_number":1443
+}

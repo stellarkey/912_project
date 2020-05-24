@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"执行一次磁盘输入输出操作所花费的时间包括\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.寻道时间、旋转延迟时间、传送时间和等待时间",
+        "B.寻道时间、等待时间、传送时间",
+        "C.等待时间、寻道时间、旋转延迟时间和读写时间",
+        "D.寻道时间、旋转延迟时间、传送时间"
+    ],
+    "q_number":880
+}

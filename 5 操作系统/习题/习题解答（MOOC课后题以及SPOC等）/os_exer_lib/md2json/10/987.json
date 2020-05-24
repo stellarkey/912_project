@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "\"什么是文件共享？试述UNIX系统中文件共享的实现方法和命令的使用。\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "文件共享是允许不同的用户使用不同的名字名存取同一文件。 UNIX的文件共享方式有二种： (1)基于索引节点的共享方式--文件硬连接 UNIX系统将文件控制块", "type": "4\r\n", "options": "  \r\n"}

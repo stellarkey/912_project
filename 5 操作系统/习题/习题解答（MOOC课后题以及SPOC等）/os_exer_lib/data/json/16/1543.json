@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于采用段页式的x86而言，CPU访问一个虚拟地址时，如TLB访问缺失，则需先通过页表，再通过段表才能找到对应的物理地址。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1543
+}

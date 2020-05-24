@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"系统调用是（ ）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.一条机器指令",
+        "B.提供编程人员的接口",
+        "C.中断子程序",
+        "D.用户子程序"
+    ],
+    "q_number":614
+}

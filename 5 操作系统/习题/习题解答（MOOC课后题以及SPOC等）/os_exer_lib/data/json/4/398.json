@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"从物理意义上讲，信号量的值大于>0时，其值表示____________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":398
+}

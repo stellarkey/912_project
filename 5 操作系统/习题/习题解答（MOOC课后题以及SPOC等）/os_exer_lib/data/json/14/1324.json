@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"AB 是保存ring 0的SS和ESP\n",
+    "question":"对于Task State Segment（TSS）而言，uCore OS可以利用它做（） s2\n",
+    "source":"网络",
+    "answer":"AB",
+    "type":"multi_answer",
+    "options":[
+        "A.保存ring 0的SS",
+        "B.保存ring 0的ESP",
+        "C.保存中断描述符表的基址",
+        "D.保存全局描述符表的基址"
+    ],
+    "q_number":1324
+}

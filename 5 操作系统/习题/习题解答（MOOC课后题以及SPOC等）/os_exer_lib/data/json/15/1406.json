@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"关于进程控制块的描述正确的是（） s2\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.操作系统用进程控制块来描述进程的基本情况以及运行变化的过程",
+        "B.进程控制块是进程存在的唯一标志",
+        "C.每个进程都在操作系统中有一个对应的进程控制块",
+        "D.操作系统管理控制进程运行所用的信息集合是进程控制块"
+    ],
+    "q_number":1406
+}

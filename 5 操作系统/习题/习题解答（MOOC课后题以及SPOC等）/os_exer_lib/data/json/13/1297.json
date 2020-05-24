@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"动态链接如何使用？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1297
+}

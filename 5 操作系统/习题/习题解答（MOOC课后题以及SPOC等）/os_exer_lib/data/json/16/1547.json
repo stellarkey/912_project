@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于实时系统中的优先级反转（反置）问题，可通过优先级继承算法或优先级天花板算法来解决。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1547
+}

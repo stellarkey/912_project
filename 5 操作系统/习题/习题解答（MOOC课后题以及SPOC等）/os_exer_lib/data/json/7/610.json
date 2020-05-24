@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"某进程在运行过程中需要等待从磁盘上读入数据，此时该进程的状态是（）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.从就绪态变为运行态",
+        "B.从运行态变为就绪态",
+        "C.从运行态变为阻塞态",
+        "D.从阻塞态变为就绪态"
+    ],
+    "q_number":610
+}

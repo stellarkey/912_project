@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"资源预先分配策略可以实现死锁的_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.预防",
+        "B.避免",
+        "C.检测",
+        "D.恢复"
+    ],
+    "q_number":224
+}

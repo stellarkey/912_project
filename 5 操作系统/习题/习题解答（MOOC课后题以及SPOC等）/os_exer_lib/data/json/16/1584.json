@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"通过操作系统页表机制，多个不同的应用程序运行时可共用一个库函数（如strcpy等）的代码实现。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1584
+}

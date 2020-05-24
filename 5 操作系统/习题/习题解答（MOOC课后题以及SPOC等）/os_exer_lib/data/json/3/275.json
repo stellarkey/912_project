@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX中对可分配磁盘存储空间采用_____ 方法管理。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.位示图",
+        "B.空闲块成组链",
+        "C.空闲块单向链",
+        "D.空闲块表"
+    ],
+    "q_number":275
+}

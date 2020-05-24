@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n    semaphore mutex=1,a,empty1=m,b,empty2=N,full1,full2=0;\n    cobegin\n        process(A);\n        process(B);\n        process(C)\n    coend\n    // A物品入库\n    process A\n    begin\n        while(TRUE)\n        begin\n            p(empty1);\n            P(a);\n            p(mutex);\n            A物品入库;\n            v(mutex);\n            V(b);\n            v(full1);\n        end\n    end\n    // B物品入库：\n    process B\n    begin\n        while(TRUE)\n        begin\n            p(empty2);\n            P(b);\n            p(mutex);\n            B物品入库;\n            v(mutex);\n            V(a);\n            p(full2);\n        end\n    end\n    // process C\n    begin\n        while(TRUE)\n        begin\n            p(full1);\n            p(full2);\n            p(a);\n            P(b);\n            组装;\n            V(a);\n            v(b);\n            v(empty1);\n            v(empty2);\n        end\n    end\n    ```\n\n",
+    "question":"(操作系统之PV金典)设有一个可以装A、B两种物品的仓库,其容量有限(分别为N),但要求仓库中A、B两种物品的数量满足下述不等式: -M≤A物品数量-\nB物品数量≤N 其中M和N为正整数。另外,还有一个进程消费A,B,一次取一个A,B组装成C。 试用信号量和PV操作描述A、B两种物品的入库过程。  \n",
+    "source":"网络",
+    "answer":"    ```\n    semaphore mutex=1,a,empty1=m,b,empty2=N,full1,full2=0;\n    cobegin\n        process(A);\n        process(B);\n        process(C)\n    coend\n    // A物品入库\n    process A\n    begin\n        while(TRUE)\n        begin\n            p(empty1);\n            P(a);\n            p(mutex);\n            A物品入库;\n            v(mutex);\n            V(b);\n            v(full1);\n        end\n    end\n    // B物品入库：\n    process B\n    begin\n        while(TRUE)\n        begin\n            p(empty2);\n            P(b);\n            p(mutex);\n            B物品入库;\n            v(mutex);\n            V(a);\n            p(full2);\n        end\n    end\n    // process C\n    begin\n        while(TRUE)\n        begin\n            p(full1);\n            p(full2);\n            p(a);\n            P(b);\n            组装;\n            V(a);\n            v(b);\n            v(empty1);\n            v(empty2);\n        end\n    end\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":860
+}

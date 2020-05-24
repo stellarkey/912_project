@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"AB ucore需要碰到和处理16位的实模式和32位的保护模式\n",
+    "question":"x86-32 CPU（即80386）有多种运行模式，ucore lab中碰到和需要处理哪些模式()\n",
+    "source":"网络",
+    "answer":"AB",
+    "type":"multi_answer",
+    "options":[
+        "A.实模式",
+        "B.保护模式",
+        "C.SMM模式",
+        "D.虚拟8086模式"
+    ],
+    "q_number":1196
+}

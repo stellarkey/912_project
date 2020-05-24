@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "独占设备采用哪种分配方式？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "独占设备通常采用静态分配方式。 即在一个作业执行前，将作业要使用的这类设备分配给作业，在作业执行期间均归该作业占用，直到作业执行结束才归还。", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"任何两个并发进程之间(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.一定存在互斥关系",
+        "B.一定存在同步关系",
+        "C.一定彼此独立无关",
+        "D.可能存在同步或互斥关系"
+    ],
+    "q_number":251
+}

@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "关于ucore实现的Virtual FS（简称VFS）阐述正确的是() s4 Virtual File System分析\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "AB", "type": "2\r\n", "options": " A.已支持磁盘文件系统\r\n B.已支持设备文件系统\r\n C.已支持网络文件系统\r\n D.已支持系统状态文件系统\r\n"}

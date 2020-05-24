@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在消息缓冲通信方式中通信的基本方式是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.文件",
+        "B.消息",
+        "C.记录",
+        "D.字段"
+    ],
+    "q_number":174
+}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"已知有一10 6个记录的顺序文件，每100个记录为一组，建立顺序文件的低级索引，然后再以100个索引表项为一组，建立低级索引的高级索引，则查找一个记录的平均\n查找次数为（采用顺序查找法）______________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":525
+}

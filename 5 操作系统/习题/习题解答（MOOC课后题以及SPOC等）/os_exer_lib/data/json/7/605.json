@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"（ ）不是分时系统的基本特征\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.同时性",
+        "B.独立性",
+        "C.多路性",
+        "D.交互性"
+    ],
+    "q_number":605
+}

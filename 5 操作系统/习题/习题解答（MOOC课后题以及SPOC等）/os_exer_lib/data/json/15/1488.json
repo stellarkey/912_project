@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "知识点"
+    ],
+    "question":"这里时题干",
+    "explain":"sdf",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.sdf",
+        "B.sd",
+        "C.sdf",
+        "D.sdf"
+    ],
+    "q_number":1488
+}

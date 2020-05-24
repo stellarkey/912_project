@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"lab3中用于描述“合法”虚拟页的数据结构是（）s3\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.vma_struct",
+        "B.trapframe",
+        "C.gatedesc",
+        "D.segdesc"
+    ],
+    "q_number":1369
+}

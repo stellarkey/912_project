@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"上述管程实现是哪种类型的管程？",
+    "explain":"上述管程实现是hoare类型；（1分）",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"上述管程实现是hoare类型；（1分）",
+    "type":"question_answer",
+    "q_number":1573
+}

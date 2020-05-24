@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)分时操作系统的主要特征之一是提高﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.计算机系统的可靠性",
+        "B.计算机系统的交互性",
+        "C.计算机系统的实时性",
+        "D.计算机系统的安全性"
+    ],
+    "q_number":752
+}

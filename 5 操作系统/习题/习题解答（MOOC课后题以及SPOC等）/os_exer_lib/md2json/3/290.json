@@ -1,0 +1,1 @@
+{"knowledge": "连续内存分配。\r\n", "question": "存储管理中地址重定位必须在CPU中设置专门寄存器，而（　　　）不是此类寄存器。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.基址寄存器 \r\n B.界限寄存器 \r\n C.页表控制寄存器 \r\n D.程序计数器\r\n"}

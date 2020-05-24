@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"程序访问的局部性原理决定应使用_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.中断",
+        "B.DMA",
+        "C.高速缓存",
+        "D.虚拟存储器"
+    ],
+    "q_number":172
+}

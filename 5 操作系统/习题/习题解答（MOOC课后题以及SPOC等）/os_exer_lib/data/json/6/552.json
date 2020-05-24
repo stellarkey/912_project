@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"操作系统是计算机系统的一种系统软件，它统一管理计算机系统的资源和控制程序的执行。\n",
+    "question":"简述操作系统的定义。\n",
+    "source":"网络",
+    "answer":"操作系统是计算机系统的一种系统软件，它统一管理计算机系统的资源和控制程序的执行。\n",
+    "type":"question_answer",
+    "q_number":552
+}

@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "在实现进程通信时会导致调用Send原语的进程被设置成“等信箱”状态的原因是_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.指定的信箱不存在 \r\n B.调用时没有设置参数 \r\n C.指定的信箱中无信件 \r\n D.指定的信箱中存满了信件\r\n"}

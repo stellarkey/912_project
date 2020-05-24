@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理:"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABC 前三个是对的。\n",
+    "question":"描述伙伴系统(Buddy System)特征正确的是()\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.多个小空闲空间可合并为大的空闲空间",
+        "B.会产生外碎片",
+        "C.会产生内碎片",
+        "D.都不对"
+    ],
+    "q_number":1290
+}

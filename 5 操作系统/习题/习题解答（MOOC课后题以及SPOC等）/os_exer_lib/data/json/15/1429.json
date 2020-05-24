@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"关于创建新进程的描述正确的是（） s2\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.fork() 创建子进程中，会复制父进程的所有变量和内存",
+        "B.子进程的fork()返回0",
+        "C.父进程的fork()在创建子进程成功后，返回子进程标识符",
+        "D.fork() 创建子进程中，会复制父进程的页表"
+    ],
+    "q_number":1429
+}

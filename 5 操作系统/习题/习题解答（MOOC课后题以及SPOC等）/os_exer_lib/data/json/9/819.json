@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)使每道程序能在不受干扰的环境下运行，主要是通过﹎﹎﹎﹎功能实现的。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.内存分配",
+        "B.内存保护",
+        "C.地址映射",
+        "D.对换",
+        "E.内存扩充"
+    ],
+    "q_number":819
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n     Int Free=1;                  // 设备状态标志\n     semaphore mutex=1;\n     semaphore qa=qb=qc=0;         // 各组等待队列\n     Int counta=countb=countc= 0; // 等待队列长度\n    ```\nA组申请： P(mutex); if Free==1 then begin Free=0; V(mutex); end else begin\ncounta++; V(mutex); P(qa); end\nA组释放： if countb>0 then begin countb--; V(qb); end else begin if countc>0 then\nbegin countc--; V(qc); end else begin if counta > 0 then begin counta--;\nV(qa); end else begin Free=1; end end end\nA组进程活动可以给出B组和C组进程活动。\n",
+    "question":"设有A、B、C三组进程，它们互斥地使用某一独占型资源R，使用前申请，使用后释放。资源 分配原则如下：\n   当只有一组申请进程时，该组申请进程依次获得R；\n   当有两组申请进程时，各组申请进程交替获得R，组内申请进程交替获得R；\n   当有三组申请进程时，各组申请进程轮流获得R，组内申请进程交替获得R。\n试用信号灯和PV操作分别给出各组进程的申请活动程序段和释放活动程序段。\n",
+    "source":"网络",
+    "answer":"    ```\n     Int Free=1;                  // 设备状态标志\n     semaphore mutex=1;\n     semaphore qa=qb=qc=0;         // 各组等待队列\n     Int counta=countb=countc= 0; // 等待队列长度\n    ```\nA组申请： P(mutex); if Free==1 then begin Free=0; V(mutex); end else begin\ncounta++; V(mutex); P(qa); end\nA组释放： if countb>0 then begin countb--; V(qb); end else begin if countc>0 then\nbegin countc--; V(qc); end else begin if counta > 0 then begin counta--;\nV(qa); end else begin Free=1; end end end\nA组进程活动可以给出B组和C组进程活动。\n",
+    "type":"question_answer",
+    "q_number":632
+}

@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "应用程序中的C函数调用中不需要用到()指令\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.push\r\n B.ret\r\n C.iret\r\n D.call\r\n"}

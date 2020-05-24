@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"软件共享的必要性是为了\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.节约内存空间",
+        "B.缩短运行时间",
+        "C.减少内外存对换信息量",
+        "D.A和C"
+    ],
+    "q_number":888
+}

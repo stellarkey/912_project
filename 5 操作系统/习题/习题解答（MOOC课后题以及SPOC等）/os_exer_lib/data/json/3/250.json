@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"已知，作业的周转时间=作业完成时间－作业的到达时间。现有三个同时到达的作业J1，J2和J3，它们的执行时间分别是T1，T2和T3，且T1<T2< p>\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.T1＋T2＋T3",
+        "B.(T1＋T2＋T3)",
+        "C.T1＋　T2＋　T3",
+        "D.T1＋　T2＋T3"
+    ],
+    "q_number":250
+}

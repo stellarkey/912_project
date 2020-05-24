@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"什么是内碎片、外碎片？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1298
+}

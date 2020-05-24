@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理。\r\n", "question": "物理页帧数量为4，虚拟页访问序列为 0,3,2,0,1,3,4,3,1,0,3,2,1,3,4 ，请问采用CLOCK置换算法（用1个bit表示存在时间）的缺页次数为（） s3\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.8\r\n B.9\r\n C.10\r\n D.11\r\n"}

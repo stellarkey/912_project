@@ -1,0 +1,18 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABC\n",
+    "question":"常见的线程种类有() s7\n",
+    "source":"网络",
+    "answer":"ABC",
+    "type":"multi_answer",
+    "options":[
+        "A.用户线程",
+        "B.内核线程",
+        "C.轻量级进程"
+    ],
+    "q_number":1410
+}

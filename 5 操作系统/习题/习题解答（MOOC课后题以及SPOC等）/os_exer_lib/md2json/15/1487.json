@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "在设备管理子系统中，引入缓冲区的目的主要有() s5 缓冲区\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.缓和CPU与I/O设备间速度不匹配的矛盾\r\n B.减少对CPU的中断频率，放宽对CPU中断响应时间的限制\r\n C.解决基本数据单元大小（即数据粒度）不匹配的问题\r\n D.提高CPU和I/O设备之间的并行性\r\n"}

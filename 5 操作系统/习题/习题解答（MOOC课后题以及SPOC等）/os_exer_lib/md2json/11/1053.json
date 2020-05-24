@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "\"假设缓冲区buf1和缓冲区buf2无限大，进程p1向buf1写数据，进程p2向buf2写数据，\r\n要求buf1数据个数和buf2数据个数的差保持在(m,n)之间(m<n,m,n都是正数).\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "题中没有给出两个进程执行顺序之间的制约关系，只给出了一个数量上的制约 关系，即m≤|buf1数据个数－buf2数据个数≤n．不需要考虑缓冲区的大小，只需要考", "type": "4\r\n", "options": "  \r\n"}

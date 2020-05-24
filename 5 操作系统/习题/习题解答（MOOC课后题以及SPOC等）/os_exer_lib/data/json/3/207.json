@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下哪种存储管理不可用于多道程序系统中？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.固定式区存储管理",
+        "B.单一连续区存储管理",
+        "C.可变分区存储管理",
+        "D.段式存储管理"
+    ],
+    "q_number":207
+}

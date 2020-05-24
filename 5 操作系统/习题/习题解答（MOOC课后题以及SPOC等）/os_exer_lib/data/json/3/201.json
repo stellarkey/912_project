@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"流式文件内部没有记录的概念，可将其看作是_____ 的有序集合。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.数组",
+        "B.记录",
+        "C.字符串",
+        "D.页面"
+    ],
+    "q_number":201
+}

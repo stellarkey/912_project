@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"(spoc)设计一个简化的进程管理子系统，可以管理并调度如下简化进程.给出了[参考代码](\"https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab4/process-concept-homework.py)，请理解代码，并完成＂YOUR CODE\"部分的内容．　可２个人一组\n## 进程的状态\n```\n    RUNNING - 进程正在使用CPU\n    READY - 进程可使用CPU\n    DONE - 进程结束\n```\n## 进程的行为\n```\n    使用CPU,\n    发出YIELD请求,放弃使用CPU\n```\n## 进程调度\n```\n    使用FIFO/FCFS：先来先服务,\n        先查找位于proc_info队列的curr_proc元素(当前进程)之后的进程(curr_proc+1..end)是否处于READY态，\n        再查找位于proc_info队列的curr_proc元素(当前进程)之前的进程(begin..curr_proc-1)是否处于READY态\n        如都没有，继续执行curr_proc直到结束\n```\n## 关键模拟变量\n```\n    进程控制块\n    PROC_CODE = 'code_'\n    PROC_PC = 'pc_'\n    PROC_ID = 'pid_'\n    PROC_STATE = 'proc_state_'\n```\n   * 当前进程 curr_proc\n   * 进程列表：proc_info是就绪进程的队列（list），\n   * 在命令行（如下所示）需要说明每进程的行为特征：（１）使用CPU ;(2)等待I/O\n```\n    -l PROCESS_LIST, --processlist= X1:Y1,X2:Y2,...\n    X 是进程的执行指令数; \n    Ｙ是执行CPU的比例(0..100) ，如果是100，表示不会发出yield操作\n```\n    进程切换行为：系统决定何时(when)切换进程:进程结束或进程发出yield请求\n\n## 进程执行\n```\ninstruction_to_execute = self.proc_info[self.curr_proc][PROC_CODE].pop(0)\n```\n## 关键函数\n```\n    系统执行过程：run\n    执行状态切换函数:　move_to_ready/running/done　\n    调度函数：next_proc\n```\n## 执行实例\n例１\n```\n$./process-simulation.py -l 5:50\nProcess 0\n  yld\n  yld\n  cpu\n  cpu\n  yld\n\nImportant behaviors:\n  System will switch when the current process is FINISHED or ISSUES AN YIELD\nTime     PID: 0 \n  1     RUN:yld \n  2     RUN:yld \n  3     RUN:cpu \n  4     RUN:cpu \n  5     RUN:yld\n```\n例２\n```\n$./process-simulation.py  -l 5:50,5:50\nProduce a trace of what would happen when you run these processes:\nProcess 0\n  yld\n  yld\n  cpu\n  cpu\n  yld\n\nProcess 1\n  cpu\n  yld\n  cpu\n  cpu\n  yld\n\nImportant behaviors:\n  System will switch when the current process is FINISHED or ISSUES AN YIELD\nTime     PID: 0     PID: 1 \n  1     RUN:yld      READY \n  2       READY    RUN:cpu \n  3       READY    RUN:yld \n  4     RUN:yld      READY \n  5       READY    RUN:cpu \n  6       READY    RUN:cpu \n  7       READY    RUN:yld \n  8     RUN:cpu      READY \n  9     RUN:cpu      READY \n 10     RUN:yld      READY \n 11     RUNNING       DONE\n```\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1412
+}

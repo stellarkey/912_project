@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B 每个实验i依赖前面所有的实验(0～i-1)，即完成了lab i，才能完成lab i+1\n",
+    "question":"ucore lab实验中8个实验是否可以不按顺序完成\n",
+    "source":"ucore",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.是",
+        "B.否"
+    ],
+    "q_number":1194
+}

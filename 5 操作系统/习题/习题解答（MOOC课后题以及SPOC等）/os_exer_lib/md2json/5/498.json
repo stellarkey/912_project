@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "并发进程中涉及到___________ 的程序段称为临界区，两个进程同时进入相关的临界区会造成___________ 的错误。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "5\r\n", "options": "  \r\n"}

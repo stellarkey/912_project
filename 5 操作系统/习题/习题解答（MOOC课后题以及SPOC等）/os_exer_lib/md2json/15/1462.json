@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "死锁产生的必要条件包括（） s1\r\n\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.互斥\r\n A.持有并等待\r\n A.非抢占\r\n A.循环等待\r\n"}

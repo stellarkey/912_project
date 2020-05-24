@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"数据和作业说明书\n",
+    "question":"(20150309_操作系统试题_doc)从系统的角度看，作业由程序、_____和_____组成。\n",
+    "source":"网络",
+    "answer":"数据和作业说明书\n",
+    "type":"fill_in_the_blank",
+    "q_number":704
+}

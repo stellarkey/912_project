@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"什么是进程？什么是程序？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1413
+}

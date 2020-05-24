@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "以下关于系统调用和常规调用的说法中，错误的是（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.系统调用一般比常规函数调用的执行开销大\r\n B.系统调用需要切换堆栈 \r\n C.系统调用可以引起特权级的变化\r\n D.常规函数调用和系统调用都在内核态执行\r\n"}

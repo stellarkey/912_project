@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"P、V操作是 （ ）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.两条低级进程通信原语",
+        "B.两组不同的机器指令",
+        "C.两条系统调用命令",
+        "D.两条高级进程通信原语"
+    ],
+    "q_number":619
+}

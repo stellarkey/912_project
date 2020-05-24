@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可以使用银行家算法_____ 死锁。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.预防",
+        "B.检测",
+        "C.解除",
+        "D.避免"
+    ],
+    "q_number":175
+}

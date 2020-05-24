@@ -1,0 +1,20 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"涉及PV操作的正确说法是（　　　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"multi_answer",
+    "options":[
+        "A.PV操作只能解决进程互斥问题",
+        "B.PV操作只能解决进程同步问题",
+        "C.PV操作能用于解决进程互斥问题，也能解决进程同步问题",
+        "D.PV操作不能解决进程通信问题",
+        "E.PV操作是一种只交换少量信息的低级通信方式"
+    ],
+    "q_number":551
+}

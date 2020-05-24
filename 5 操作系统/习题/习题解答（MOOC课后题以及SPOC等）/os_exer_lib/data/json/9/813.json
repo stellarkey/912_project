@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)当存储器采用段页式管理时，主存被划分为定长的﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.段",
+        "B.页",
+        "C.区域",
+        "D.块"
+    ],
+    "q_number":813
+}

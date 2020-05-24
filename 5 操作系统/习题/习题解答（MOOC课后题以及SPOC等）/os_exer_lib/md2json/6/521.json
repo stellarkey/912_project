@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述。\r\n", "question": "程序的并发执行和顺序执行相比，表现出一些新的特征即：间断性、失去封闭性、 ______________ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "不可再现性", "type": "5\r\n", "options": "  \r\n"}

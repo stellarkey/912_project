@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"当发生缺页中断时必须从内存中淘汰一页。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":18
+}

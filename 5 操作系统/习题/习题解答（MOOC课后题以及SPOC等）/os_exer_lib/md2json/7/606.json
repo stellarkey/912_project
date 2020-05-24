@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "可重定位内存分区分配目的是（ ）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.解决碎片 \r\n B.便于多作业共享内存 \r\n C.回收空白区方便 \r\n D.摆脱用户干预\r\n"}

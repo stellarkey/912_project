@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"独占、共享、虚拟设备\n",
+    "question":"按资源分配的方式可将外设分为_________________________________________ 。\n",
+    "source":"网络",
+    "answer":"独占、共享、虚拟设备\n",
+    "type":"fill_in_the_blank",
+    "q_number":343
+}

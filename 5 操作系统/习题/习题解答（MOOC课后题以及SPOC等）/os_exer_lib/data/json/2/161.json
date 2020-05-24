@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在页式存储管理方案中，进行主存分配的单位是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.段",
+        "B.块",
+        "C.作业",
+        "D.不一定"
+    ],
+    "q_number":161
+}

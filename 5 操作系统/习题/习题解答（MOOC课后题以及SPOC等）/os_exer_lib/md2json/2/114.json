@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "分页存储管理系统中引入“快表”，是为了：\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.保存最近访问的数据 \r\n B.保存最近用过的页表项 \r\n C.保存最近用过的物理地址 \r\n D.保存最近用过的虚拟地址\r\n"}

@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "关于段页式存储管理系统中的页表数，下面哪种说法比较准确？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.整个系统有一个 \r\n B.整个系统有多个 \r\n C.每个进程有一个 \r\n D.每个进程有多个\r\n"}

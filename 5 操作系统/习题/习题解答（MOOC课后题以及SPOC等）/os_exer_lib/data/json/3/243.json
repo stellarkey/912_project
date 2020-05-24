@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"操作系统是一种(　　)\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.系统软件",
+        "B.系统硬件",
+        "C.应用软件",
+        "D.支援软件"
+    ],
+    "q_number":243
+}

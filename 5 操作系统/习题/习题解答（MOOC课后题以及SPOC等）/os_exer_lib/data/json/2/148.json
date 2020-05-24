@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那个不是程序顺序执行的特性\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.封闭性",
+        "B.顺序性",
+        "C.无关性",
+        "D.不可再现性"
+    ],
+    "q_number":148
+}

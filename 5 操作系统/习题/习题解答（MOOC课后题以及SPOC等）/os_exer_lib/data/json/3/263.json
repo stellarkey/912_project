@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在分时系统中，当用户程序要在显示器上输出一行字符时，使用操作系统提供的_____ 接口。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.作业控制语言",
+        "B.系统调用",
+        "C.原语",
+        "D.键盘命令"
+    ],
+    "q_number":263
+}

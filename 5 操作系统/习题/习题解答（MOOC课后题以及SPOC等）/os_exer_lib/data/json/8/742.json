@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)多道程序设计系统中，让多个计算问题同时装入计算机系统的主存储器﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.并发执行",
+        "B.顺序执行",
+        "C.并行执行",
+        "D.同时执行"
+    ],
+    "q_number":742
+}

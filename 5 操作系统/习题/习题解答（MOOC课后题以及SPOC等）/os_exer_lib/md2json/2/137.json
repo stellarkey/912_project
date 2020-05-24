@@ -1,0 +1,1 @@
+{"knowledge": "处理机调度。\r\n", "question": "当某个作业被作业调度程序选中，进入内存开始运行时，作业的状态为\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.提交状态 \r\n B.完成状态 \r\n C.执行状态 \r\n D.后备状态\r\n"}

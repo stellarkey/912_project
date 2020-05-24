@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"设与某资源相关联的信号量初值为3，当前值为1，若M表示该资源的可用个数，N表 示等待该资源的进程数，则M，N分别是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.0，1",
+        "B.1，0",
+        "C.1，2",
+        "D.2，0"
+    ],
+    "q_number":663
+}

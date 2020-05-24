@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D ring0-ring3\n",
+    "question":"80386 CPU保护模式下的特权级个数是() s1\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.1",
+        "B.2",
+        "C.3",
+        "D.4"
+    ],
+    "q_number":1317
+}

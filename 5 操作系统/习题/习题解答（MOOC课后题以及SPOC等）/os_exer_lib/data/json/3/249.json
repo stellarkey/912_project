@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在以下存贮管理方案中，不适用于多道程序设计系统的是(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.单用户连续分配",
+        "B.固定式分区分配",
+        "C.可变式分区分配",
+        "D.页式存贮管理"
+    ],
+    "q_number":249
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)实现不同的作业处理方式（如：批处理、分时处理、实时处理等），主要是基于操作系统对\n管理采用了不同的策略。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.处理机",
+        "B.存储器",
+        "C.设备",
+        "D.文件"
+    ],
+    "q_number":739
+}

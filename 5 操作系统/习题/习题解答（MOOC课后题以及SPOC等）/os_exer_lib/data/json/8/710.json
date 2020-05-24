@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)一段时间内只允许一个进程访问的资源称为_____。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":710
+}

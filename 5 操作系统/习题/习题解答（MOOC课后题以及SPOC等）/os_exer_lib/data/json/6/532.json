@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"死锁的形成，除了与资源的______________ 有关外，也与并发进程的______________ 有关。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":532
+}

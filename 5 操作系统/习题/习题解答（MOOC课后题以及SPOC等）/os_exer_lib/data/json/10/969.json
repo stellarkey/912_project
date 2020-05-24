@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"在linux/Unix中对文件有条件的共享是指：( )\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.给不同身份的用户赋予不同的访问权限",
+        "B.给不同身份的用户赋予相同的访问权限",
+        "C.给不同身份的用户赋予相同或不同的访问权限",
+        "D.给相同身份的用户赋予不同的访问权限"
+    ],
+    "q_number":969
+}

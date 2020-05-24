@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"允许多个用户同时使用同一个共享文件时，下列( )做法是不对的。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.允许多个用户同时打开共享文件执行读操作",
+        "B.允许读者和写者同时使用共享文件",
+        "C.不允许读者和写者同时使用共享文件",
+        "D.不允许多个写者同时对共享文件执行写操作"
+    ],
+    "q_number":967
+}

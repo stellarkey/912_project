@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"I/O请求完成会导致哪种进程状态演变？\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.就绪 → 执行",
+        "B.阻塞 → 就绪",
+        "C.阻塞 → 执行",
+        "D.执行 → 阻塞"
+    ],
+    "q_number":106
+}

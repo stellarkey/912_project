@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "如下表所示，虚拟段页式存储管理方案的特性为() 地址空间 空间浪费 存储共享 存储保护 动态扩充 动态连接\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.一维 大 不易 易 不可 不可 \r\n B.一维 小 易 不易 可以 不可 \r\n C.二维 大 不易 易 可以 可以 \r\n D.二维 小 易 易 可以 可以\r\n"}

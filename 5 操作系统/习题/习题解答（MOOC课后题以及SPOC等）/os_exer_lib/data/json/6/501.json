@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"存储管理 进程管理\n",
+    "question":"无论哪种操作系统都执行同样的资源管理功能，它们的构架是一样的，都由____________ 、____________ 、设备管理和文件系统组成。\n",
+    "source":"网络",
+    "answer":"存储管理 进程管理\n",
+    "type":"fill_in_the_blank",
+    "q_number":501
+}

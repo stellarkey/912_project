@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "如何修改lab1, 实现一个可显示字符串\"THU LAB1\"且依然能够正确加载ucore OS的bootloader？如果不能完成实现，请说明理由。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

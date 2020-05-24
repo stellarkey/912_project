@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"位示图方法可用于(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.盘空间的管理",
+        "B.盘的驱动调度",
+        "C.文件目录的查找",
+        "D.页式虚拟存贮管理中的页面调度"
+    ],
+    "q_number":247
+}

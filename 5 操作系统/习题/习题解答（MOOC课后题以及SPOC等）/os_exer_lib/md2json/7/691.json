@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "(20150309_操作系统试题_doc)不可行的死锁预防策略是【 】。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.破坏互斥条件 \r\n B.破坏不可剥夺条件 \r\n C.破坏请求和保持条件 \r\n D.破坏环路等待条件\r\n"}

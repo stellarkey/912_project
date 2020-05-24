@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量与管程"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABD\n",
+    "question":"管程的主要特点有（） s3\n",
+    "source":"网络",
+    "answer":"ABD",
+    "type":"multi_answer",
+    "options":[
+        "A.局部数据变量只能被管程的过程访问",
+        "B.一个进程通过调用管程的一个过程进入管程",
+        "C.不会出现死锁",
+        "D.在任何时候，只能有一个进程在管程中执行"
+    ],
+    "q_number":1457
+}

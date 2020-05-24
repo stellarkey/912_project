@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ACD 段映射机制不直接需要\n",
+    "question":"lab3中虚存管理需要直接借助的机制包括() s1\n",
+    "source":"网络",
+    "answer":"ACD",
+    "type":"multi_answer",
+    "options":[
+        "A.页映射机制",
+        "B.段映射机制",
+        "C.中断异常处理机制",
+        "D.IDE硬盘读写机制"
+    ],
+    "q_number":1367
+}

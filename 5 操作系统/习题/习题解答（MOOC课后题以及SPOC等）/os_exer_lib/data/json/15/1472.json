@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"虚拟文件系统可支持的具体文件系统包括（） s4\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.磁盘文件系统",
+        "B.设备文件系统",
+        "C.网络文件系统",
+        "D.系统状态文件系统（proc...）"
+    ],
+    "q_number":1472
+}

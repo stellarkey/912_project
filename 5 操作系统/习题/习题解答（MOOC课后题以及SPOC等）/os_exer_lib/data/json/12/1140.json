@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"你对实验抄袭现象如何看？你愿意如实报告是否独立完成实验任务？我问这个问题的目的是，希望对同学实验的情况进行真实的评价，处罚抄袭者，奖励独立完成者。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":1140
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统试题_doc)操作系统中采用多道程序设计技术提高CPU和外设的【 】。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.可靠性",
+        "B.兼容性",
+        "C.利用率",
+        "D.稳定性"
+    ],
+    "q_number":683
+}

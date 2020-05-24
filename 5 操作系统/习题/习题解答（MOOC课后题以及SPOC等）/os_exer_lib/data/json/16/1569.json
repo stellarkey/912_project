@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"试以图示描述ucore操作系统中的SFS文件系统的文件组织方式。",
+    "explain":"回答磁盘布局（5分）\nsuperblock、inode、free bitmap、layout(dir、file)\n\n回答文件组织（7分）\n直接索引（3分）\n间接索引（4分）\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"回答磁盘布局（5分）\nsuperblock、inode、free bitmap、layout(dir、file)\n\n回答文件组织（7分）\n直接索引（3分）\n间接索引（4分）\n",
+    "type":"question_answer",
+    "q_number":1569
+}

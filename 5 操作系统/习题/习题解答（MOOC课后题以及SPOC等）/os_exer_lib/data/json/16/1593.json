@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"通过COW（Copy On Write）机制，可以减少父进程创建子进程的运行开销。 ",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1593
+}

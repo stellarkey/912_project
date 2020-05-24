@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "作业在系统中有哪几种状态？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "一个作业进入系统到运行结束，一般要经历进入、后备、运行和完成四个阶段，相应地，作业亦有进入、后备、运行和完成四种状态。 ①", "type": "4\r\n", "options": "  \r\n"}

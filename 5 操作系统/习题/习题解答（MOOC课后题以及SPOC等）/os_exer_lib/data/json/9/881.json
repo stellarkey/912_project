@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"在下列操作系统的各个功能组成部分中,哪一个不需要有硬件的支持\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.进程调度",
+        "B.时钟管理",
+        "C.地址映射",
+        "D.中断系统"
+    ],
+    "q_number":881
+}

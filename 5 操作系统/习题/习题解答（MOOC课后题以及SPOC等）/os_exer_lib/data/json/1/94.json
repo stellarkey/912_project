@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"使用一个信号量协调5个进程对3个同类临界资源的访问，下列哪个信号量值不应该出现？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.3",
+        "B.0",
+        "C.–1",
+        "D.–3"
+    ],
+    "q_number":94
+}

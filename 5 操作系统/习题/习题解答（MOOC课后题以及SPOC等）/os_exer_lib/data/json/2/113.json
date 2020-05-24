@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"哪种设备属于块设备？\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.键盘",
+        "B.磁盘",
+        "C.显示器",
+        "D.打印机"
+    ],
+    "q_number":113
+}

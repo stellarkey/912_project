@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "ucore实现的文件系统抽象包括（） s1 总体介绍\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABC", "type": "2\r\n", "options": " A.文件\r\n B.目录项\r\n C.索引节点\r\n D.安装点\r\n"}
