@@ -1,4 +1,6 @@
 > 以下内容是考研群（Tsinghua IIIS,CS,MSE,INSC,TBSI，**418861856**）中上岸同学之贡献，欢迎希望报考/上岸TBSI的有心人参与以后的更新/维护/整理。在此一并谢过。
+>
+> > TBSI交流群：**238490203**。
 
 [TOC]
 
@@ -59,6 +61,14 @@
 <img src="https://i.loli.net/2020/05/22/nH8gm145Afk7jLV.jpg" alt="33D0D7C7CEF62A00C9F3864EDDEEA33A" style="zoom:33%;" />
 
 
+
+> 根据TBSI群中讨论进行的注释：（来自知乎上的一个回答？疑似保研相关）
+
+![image-20200525113612789](README/image-20200525113612789.png)
+
+> 以前的毕业生去向：
+
+![image-20200525113738641](README/image-20200525113738641.png)
 
 # FAQ
 
