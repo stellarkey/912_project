@@ -1,6 +1,10 @@
 > 以下内容是考研群（Tsinghua IIIS,CS,MSE,INSC,TBSI，**418861856**）中上岸同学之贡献，欢迎希望报考/上岸TBSI的有心人参与以后的更新/维护/整理。在此一并谢过。
 >
 > > TBSI交流群：**238490203**。
+> >
+> > [2020清华伯克利招生宣讲](https://www.bilibili.com/video/BV1z54y1X7sg)
+> >
+> > [清华伯克利深圳学院宣传片](https://www.bilibili.com/video/BV1Wx411E7gJ)
 
 [TOC]
 
