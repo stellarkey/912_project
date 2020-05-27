@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>什么是自顶向下的语法分析？</b><br>
+      　　可形象地对该程序自顶向下构造一棵倒挂着的语法分析树，其构造方法是：<br>
+      　　（1） 由开始符号非终结符'程序'作为分析树的根结点，由非终结符'程序'规则的右部为子结点。<br>
+      　　（2） 对分析树中的每个非终结符结点，选择它规则的一个右部为子结点构造分析树的下一层。<br>
+      　　（3） 重复（2）直到分析树中的末端结点只有终结符。<br>
+      　　（4） 若分析树中的末端结点从左到右连接的终结符号串刚好是输入的程序终结符号串，则说明所给程序在语法上是正确的。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF">可用下面简单的PL/0程序为例构造其语法分析树</font> 
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="450" height="320">
+              <param name=movie value="f2-4-1.swf">
+              <param name=quality value=high>
+              <embed src="f2-4-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="450" height="320">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　粗略地说：自顶向下的递归子程序法就是对应每个非终结符语法单元，编一个独立的处理过程(或子程序)。语法分析从读入第一个单词开始由非终结符'程序'即开始符号出发，沿语法描述图箭头所指出的方向进行分析。当遇到非终结符时，则调用相应的处理过程，从语法描述图看也就进入了一个语法单元，再沿当前所进入的语法描述图的箭头方向进行分析，当遇到描述图中是终结符时，则判断当前读入的单词是否与图中的终结符相匹配，若匹配，则执行相应的语义程序(就是翻译程序)。再读取下一个单词继续分析。遇到分支点时将当前的单词与分支点上的多个终结符逐个相比较，若都不匹配时，可能是进入下一非终结符语法单位或是出错。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

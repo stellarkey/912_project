@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent">　　以上讨论了线性判别函数加权向量W的确定方法，并讨论了使Fisher准则函数极大的d维向量<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle"> 
+        的计算方法，但是判别函数中的另一项w<sub>0</sub>尚未确定，一般可采用以下几种方法确定w<sub>0</sub>如<br>
+        　　<img src="../../images/image_content/3/3_2_4_024.gif" width="132" height="50" align="middle">　　　　　(3-33)<br>
+        　　或<img src="../../images/image_content/3/3_2_4_025.gif" width="186" height="52" align="absmiddle"> 
+        　　　　　(3-34)<br>
+        　　或当<img src="../../images/image_content/3/3_2_4_026.gif" width="38" height="27" align="absmiddle">与<img src="../../images/image_content/3/3_2_4_027.gif" width="36" height="15" align="absmiddle">已知时可用<br>
+        　　<img src="../../images/image_content/3/3_2_4_028.gif" width="248" height="67" align="absmiddle">　　　　　(3-35)<br>
+        　　<span class="spe">为了确定具体的分界面，还要指定线性方程的常数项。在实际工作中还可以对W<sub>0</sub>进行逐次修正的方式，选择不同的W<sub>0</sub>值，计算其对训练样本集的错误率，找到错误率较小的W<sub>0</sub>值。</span><br>
+        　　其中(3-33)算式中只考虑采用均值连线中点作为阈值点，相当于贝叶斯决策中先验概率<br>
+        <img src="../../images/image_content/3/3_2_4_026.gif" width="38" height="27" align="absmiddle">与<img src="../../images/image_content/3/3_2_4_027.gif" width="36" height="15" align="absmiddle">相等的情况，而(3-34)与(3-35)则是以不同方式考虑<img src="../../images/image_content/3/3_2_4_026.gif" width="38" height="27" align="absmiddle">与<img src="../../images/image_content/3/3_2_4_027.gif" width="36" height="15" align="absmiddle">不等的影响，以减小先验概率不等时的错误率。其中(3-34)以样本的不同数量N<sub>1</sub>与N<sub>2</sub> 
+        来估计<img src="../../images/image_content/3/3_2_4_026.gif" width="38" height="27" align="absmiddle">与<img src="../../images/image_content/3/3_2_4_027.gif" width="36" height="15" align="absmiddle">。<br>
+        　　当W<sub>0</sub>确定之后，则可按以下规则分类，<br>
+        　　<img src="../../images/image_content/3/3_2_4_029.gif" width="167" height="58" align="absmiddle">　　　　　(3-36)<br>
+        　　<span class="spe">使用Fisher准则方法确定最佳线性分界面的方法是一个著名的方法，尽管提出该方法的时间比较早，仍见有人使用。但是与这一节要讨论的感知器准则函数方法相比，感知器准则函数方法的影响要大的多，它采用类似于人认知错误、纠正错误、通过自学习改善自己认识实物本领的过程，使用这种方法的分类器称为感知器，它是人工神经元网络中应用最广泛，影响最大的一种网络雏形，要在本章重点学习。<br>
+        </span> </p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

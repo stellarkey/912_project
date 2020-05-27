@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"不能正确实现互斥.考虑如下情况:process0先执行到flag[0]\n=true,process1开始执行,进入内循环时,将turn设置为1;此时进程调度转到process0,\nprocess0可以进入内循环,由于flag[1]的值为true,所以process0再次将turn的值设置为0,重复上述操作,两个进程谁也不能进入临界区.\n    ```\n    var flag:array[0..1] of boolean;//初值为false\n    \tturn:0 1\n    cobegin\n    \tprocess 0\n    \t\twhile true\n    \t\tdo begin\n    \t\tflag[0] =true;\n    \t\tturn = 1\n    \t\twhile flag[1]==true and turn = 1\n    \t\tdo skip;//skip为空语句\n    \t\t临界区;\n    \t\tflag[0] = false;\n    \t\t出临界区;\n    \t\tend\n    \tprocess 1\n    \t\twhile true\n    \t\tdo begin\n    \t\tflag[1] =true;\n    \t\tturn = 0\n    \t\twhile flag[0]==true and turn = 0\n    \t\t第四章 福尔摩斯探案之网络搜捕 73\n    \t\tdo skip;//skip为空语句\n    \t\t临界区;\n    \t\tflag[1] = false;\n    \t\t出临界区;\n    \t\tend\n    coend\n    ```\n容易证明这种方法保证了互斥,对于进程0,一旦它设置flag[0]为true,进程1就不能进入其临界段.若进程1已经在其临界段中，那么flag [1]=tru\ne并且进程0被阻塞进入临界段.另一方面,防止了相互阻塞,假设进程0阻塞于while循环,这意味着flag[1]为true,而且turn=1,当flag[1]\n为false或turn为0时,进程0就可进入自己的临界段了.\n",
+    "question":"知错能改\n进程p0,p1共享变量flag,turn;他们进入临界区的算法如下:\n    ```\n\t    var flag:array[0..1] of boolean;//初值为false\n\t    turn:01\n\t    process i (0或1)\n\t    \twhile true\n\t    \tdo begin\n\t    \t\tflag[i] =true;\n\t    \t\twhile turn!=i\n\t    \t\tdo begin\n\t    \t\t\twhile flag[j]==false\n\t    \t\t\tdo skip;//skip为空语句\n\t    \t\t\tturn = i\n\t    \t\tend\n\t    \t\t临界区;\n\t    \t\tflag[i] = false;\n\t    \t\t出临界区;\n\t    \tend\n\t    ```\n该算法能否正确地实现互斥?若不能,应该如何修改(假设flag,turn单元内容的修改和访问 是互斥的).\n",
+    "source":"网络",
+    "answer":"不能正确实现互斥.考虑如下情况:process0先执行到flag[0]\n=true,process1开始执行,进入内循环时,将turn设置为1;此时进程调度转到process0,\nprocess0可以进入内循环,由于flag[1]的值为true,所以process0再次将turn的值设置为0,重复上述操作,两个进程谁也不能进入临界区.\n    ```\n    var flag:array[0..1] of boolean;//初值为false\n    \tturn:0 1\n    cobegin\n    \tprocess 0\n    \t\twhile true\n    \t\tdo begin\n    \t\tflag[0] =true;\n    \t\tturn = 1\n    \t\twhile flag[1]==true and turn = 1\n    \t\tdo skip;//skip为空语句\n    \t\t临界区;\n    \t\tflag[0] = false;\n    \t\t出临界区;\n    \t\tend\n    \tprocess 1\n    \t\twhile true\n    \t\tdo begin\n    \t\tflag[1] =true;\n    \t\tturn = 0\n    \t\twhile flag[0]==true and turn = 0\n    \t\t第四章 福尔摩斯探案之网络搜捕 73\n    \t\tdo skip;//skip为空语句\n    \t\t临界区;\n    \t\tflag[1] = false;\n    \t\t出临界区;\n    \t\tend\n    coend\n    ```\n容易证明这种方法保证了互斥,对于进程0,一旦它设置flag[0]为true,进程1就不能进入其临界段.若进程1已经在其临界段中，那么flag [1]=tru\ne并且进程0被阻塞进入临界段.另一方面,防止了相互阻塞,假设进程0阻塞于while循环,这意味着flag[1]为true,而且turn=1,当flag[1]\n为false或turn为0时,进程0就可进入自己的临界段了.\n",
+    "type":"question_answer",
+    "q_number":650
+}

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　④ <b>符号的作用域及可视性</b> 一个符号变量在程序中起作用的范围，称谓它的作用域。一般来说，定义该符号的位置及存储类关键字决定了该符号的作用域。C语言中一个外部变量的作用域是整个程序，因此一个外部变量符号的定义在整个程序中只能出现一次，同名变量的说明可以出现多次那是为了使用和编译的方便，而Fortran语言中的COMMON变量与此不同，通常这些公共变量仅在定义说明这个COMMON块的函数或过程中起作用。也就是说Fortran中的公共变量的作用域并不是整个语言程序，而仅是那些定义说明了它所在公共块的函数及过程。除非程序中所有函数及过程中全部说明了该公共块时，该公共变量的作用域才是整个程序。C语言中，在函数外说明的定义的静态变量的作用域是定义该静态变量的文件，而在函数内部定义的静态变量与Fortran的SAVE变量一样，其作用域仅仅是该变量定义所在的函数或过程中。与局部量不同的是，这些内部静态量在其作用域之外，仍然保持存在。<br>
+      　　一般来说一个变量的作用域就是该变量可以出现的场合，也就是说在某个变量作用域范围内该变量是可引用的，这就是变量可视性的作用域规则。但是变量可视性不仅仅取决于它的作用域，还有两种情况影响到一个变量的可视性。<br>
+      　　⑴　函数的形式参数：影响变量可视性的举例<br>
+      　　int a； // 外部定义的整型变量a<br>
+      　　int func(a,b)<br>
+      　　float a； // 函数内部定义的局部整型变量a, 屏闭了外部定义的整型变量a<br>
+      　　int b；<br>
+      　　{<br>
+      　　　…<br>
+      　　　…a… // 引用的是函数内部定义(此处是形参)的局部整型变量a<br>
+      　　　… <br>
+      　　}<br>
+      　　其中int a与float a重名，而函数体都是它们的作用域，但在函数中可看到的a是float a，看不到int a。通常函数的形式参数是作为函数的内部变量处理的。函数的形式参数可以和该函数外层定义的变量（包括外部变量）重名，这时两个重名的变量其类型定义可以是完全不同的。而该函数同时都是这两个变量的作用域，这样为了避免在函数中对于两个同名变量产生二义性，目前大多数语言中规定该函数中仅能引用作为该函数形式参数的那个变量。</td>
+  </tr>
+</table>
+</body>
+</html>

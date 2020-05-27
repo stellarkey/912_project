@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① 当生成某变量的目标代码时，尽量让变量的值或计算结果保留在寄存器中 直到寄存器不够分配时为止，这样引用变量值时可减少对内存的存取次数，以提高运行速度。<br>
+      　　② 当到基本块出口时，将变量的值存放在内存中，因为一个基本块可能有多个后继结点或多个前驱结点，同一个变量名在不同前驱结点的基本块内出口前存放的R可能不同，或没有定值，所以应在出口前把寄存器的内容放在内存中，这样从基本块外入口的变量值都在内存中。<br>
+      　　③ 对于在一个基本块内后边不再被引用的变量所占用的寄存器应尽早释放，以提高寄存器的利用效率。<br>
+      　　对基本块的划分可按基本块的划分算法(见11.2.1)在生成四元式的目标代码时进行，以区分基本块的入口和出口。</td>
+  </tr>
+</table>
+</body>
+</html>

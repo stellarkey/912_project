@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"><b>C.4.4 语法分析中的错误处理</b><br>
+      　　当进行语法分析时发现输入串有语法错误，最好能在报告出错信息以后继续进行语法分析，以便发现更多的错误。<br>
+      　　YACC处理错误的方法是:当发现语法错误时，YACC丢掉那些导致错误的符号适当调整状态栈。然后从出错处的后一个符号处或跳过若干符号直到遇到用户指定的某个符号时开始继续分析。<br>
+      　　YACC内部有一个保留的终结符error，把它写在某个产生式的右部，则YACC就认为这个地方可能发生错误，当语法分析的确在这里发生错误时，YACC就用上面介绍的方法处理，如果没有用到error的产生式，则YACC打印出&quot;Syntax 
+      error&quot;，就终止语法分析。<br>
+      　　下面看两个使用error的简单例子<br>
+      　　1) 下面的产生式<br>
+      　　stat∶error<br>
+      　　　　;<br>
+      使YACC在分析stat推导出的句型时，遇到语法错误时跳过出错的部分，继续分析(也会打印语法错信息)<br>
+      　　2) 下面的产生式<br>
+      　　stat∶error ';'<br>
+      　　　　;<br>
+      使YACC碰到语法错时，跳过输入串直到碰到下一个分号才继续开始语法分析。<br>
+      　　如果语法分析的输入串是从键盘上输入的(即交互式)，那么某一行出错后，希望重新输入这一行，并使YACC立即开始继续分析，这只要在语义动作中使用语句yyerror即可，如下例<br>
+      　　input∶error '\n'<br>
+      　　　　　　　{ yyerror;<br>
+      　　　　　　　　　printf(″Reenter last line∶″);}<br>
+      　　　　　input　　<br>
+      　　　　　　　{$$=$4;}<br>
+      　　　　　; <br>
+      关于错误处理请参看本附录C.6的例子。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"Semaphore：一共需要2个Semaphore，A、B各一个，表示A、B在差值满足要求的情况下各还可以放入多少个。同时用depot保证往仓库里面放置物品\n是互斥的。\nMonitor：首先用1个变量表示A与B的差值，然后判断A-\nB是否满足-M<=A-B<=N。在达到右临界值时就开始等待条件变量，在B往仓库里面加的时候就发送signal。\n",
+    "question":"(操作系统之PV金典)设有一个可以装A、B两种物品的仓库，其容量无限大，但要求仓库中A、B两种物品的数量满足下述不等式： -M≤A物品数量-B物品数量≤N\n其中M和N为正整数。试用信号量和PV操作描述A、B两种物品的入库过程。  \n",
+    "source":"网络",
+    "answer":"Semaphore：一共需要2个Semaphore，A、B各一个，表示A、B在差值满足要求的情况下各还可以放入多少个。同时用depot保证往仓库里面放置物品\n是互斥的。\nMonitor：首先用1个变量表示A与B的差值，然后判断A-\nB是否满足-M<=A-B<=N。在达到右临界值时就开始等待条件变量，在B往仓库里面加的时候就发送signal。\n",
+    "type":"question_answer",
+    "q_number":859
+}

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　前面我们介绍了句型、推导等概念，现在介绍一种描述上下文无关文法的句型推导的直观方法，即语法树，也称推导树。<br>
+      　　给定文法G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)，对于G的任何句型都能构造与之关联的语法树(推导树)。<br>
+      　　这棵树满足下列4个条件：<br>
+      　　① 每个结点都有一个标记，此标记是V的一个符号。<br>
+      　　② 根的标记是S。<br>
+      　　③ 若一结点n至少有一个它自己除外的子孙，并且有标记A，则A肯定在V<sub><font size="-2">n</font></sub>中。<br>
+      　　④ 如果结点n的直接子孙，从左到右的次序是结点n<sub><font size="-2">1</font></sub>，n<sub><font size="-2">2</font></sub>，…，n<sub><font size="-2">k</font></sub>，其标记分别为A<sub><font size="-2">1</font></sub>，A<sub><font size="-2">2</font></sub>，…，A<sub><font size="-2">k</font></sub>，那么A→A<sub><font size="-2">1</font></sub>A<sub><font size="-2">2</font></sub>，…，A<sub><font size="-2">k</font></sub>一定是P中的一个产生式。</td>
+  </tr>
+</table>
+</body>
+</html>

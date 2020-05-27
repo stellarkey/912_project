@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程最基本的特性是______________ 和______________ ；每个进程都有惟一的__________________\n，系统对进程的管理就是利用____________________ 实现的。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":488
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>3.4.3.3 压缩近邻法</strong><br>
+            　　<span class="spe">从上述讨论中可以看出，剪辑近邻法所得到的剪辑样本集在样本数量的压缩方面并不十分明显，它的作用在于将原样本集中处于边界处的样本删除掉，但靠近两类中心的大部分样本仍被保留下来。然而按近邻规则来看，这些样本中的大多数对分类决策没什么用处，如能在剪辑的基础上再去掉一部分这样的样本，将有助于进一步缩短计算时间与压缩存储量，这种方法称为压缩近邻法。</span><br>
+            　　压缩近邻法压缩样本的思想很简单，它利用现有样本集，逐渐生成一个新的样本集。使该样本集在保留最少量样本的条件下, 仍能对原有样本的全部用最近邻法正确分类，那末该样本集也就能对待识别样本进行分类, 
+            并保持正常识别率。该算法的作法也十分简单，它定义两个存储器，一个用来存放即将生成的样本集，称为Store；另一存储器则存放原样本集，称为Grabbag。其算法是：<br>
+            　　1.［初始化］Store是空集，原样本集存入Grabbag；从Grabbag中任意选择一样本放入Store中作为新样本集的第一个样本。<br>
+            　　2.［样本集生成］在Grabbag中取出第i个样本用Store中的当前样本集按最近邻法分类。若分类错误，则将该样本从Grabbag转入Store中，若分类正确，则将该样本放回Grabbag中，对Grabbag中所有样本重复上述过程。<br>
+            　　3.［结束过程］若Grabbag中所有样本在执行第二步时没有发生转入Store的现象，或Grabbag已成空集，则算法终止，否则转入第二步。<br>
+            　　<font color="#FF0000">设计动画</font><br></td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="400" height="375">
+              <param name="movie" value="../../swf/f3.4.1.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/f3.4.1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="375"></embed></object> 
+            <br>
+            图3补1</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　在算法终止后，Store中的样本集作为压缩样本集，可用来对待识别样本按最近邻法分类。图3.26与图3.27显示了用压缩近邻法得到的样本集及其分界决策面。其中图3.26所示为一个两类别问题用剪辑近邻法得到的样本集。图中虚线表示贝叶斯决策面，实线为最近邻法相应的决策域边界。图3.27则是图3.26中的剪辑样本经压缩近邻法生成的压缩样本集。从中可看出样本的数量极大地减少了。图中还画出了贝叶斯分界面与压缩后的近邻法决策面，它虽然比剪辑样本的近邻产生的决策面偏离贝叶斯决策面要大些，但所需样本数量却大大减少了，因此可以大大节省存储量。</td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="380" height="360">
+              <param name="movie" value="../../swf/add7.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/add7.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="380" height="360"></embed></object></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　<span class="spe">　从图3.22至3.25可以看出来，其实处于同一类样本密集区的测试样本并不一定要全部保留，几乎绝大部分都可去掉，只要保留若干个训练样本即可。问题是保留哪些好。压缩近邻法采用了用测试集测试的办法，采用只要分类有错，在出错处添加一个训练样本的做法。<br>
+            试想一下压缩近邻法的思想与3.3.3错误修正算法有什么相似与不同之处?<br>
+            　　答：其实两者的想法还是很像的。压缩近邻法是用测试样本找一些各类的代表点，用近邻原则计算，而错误修正法是找一些代表性增广权向量，其参数由错分类修正。具体计算的机制不一样，一是计算相似度，而错误修正法的a<sup>T</sup>y严格意义上讲不是相似度。<br>
+            </span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

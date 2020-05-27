@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"计算机系统产生死锁的根本原因是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.资源有限",
+        "B.进程推进顺序不当",
+        "C.系统中进程太多",
+        "D.A和B"
+    ],
+    "q_number":238
+}

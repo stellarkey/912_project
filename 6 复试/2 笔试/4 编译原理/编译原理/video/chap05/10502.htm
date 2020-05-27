@@ -1,0 +1,314 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=gb2312">
+<meta http-equiv="imagetoolbar" content="no">
+<style>
+<!--
+body,td,a{
+font-size:9pt;
+text-decoration:none;
+color:#ffffff;
+cursor:default;
+}
+a:hover{
+color:#ffff33;
+}
+-->
+</style>
+<script language="JScript">
+<!--
+/*===========================================================================
+
+===========================================================================*/
+
+/*------------------------------------------------------------------------------------------------*/T_lit=new Array(0,236,284,395,528,731,1056,1663,1849,2021,2161,2252,2315,2591,2789,2931,3283,3408);
+I_lit=new Array("1050201.jpg","1050202.jpg","1050203.jpg","1050204.jpg","1050205.jpg","1050206.jpg","1050207.jpg","1050208.jpg","1050209.jpg","1050210.jpg","1050211.jpg","1050212.jpg","1050213.jpg","1050214.jpg","1050215.jpg","1050216.jpg","1050217.jpg","1050218.jpg");
+PageLit=new Array("语法分析（回顾）","LL（1）文法的定义","LL（1）分析程序实现");
+PageUrl=new Array("10501.htm","10502.htm","10503.htm");
+PageRm="rm/10502.rm";
+PageSo=2;
+title="编译原理";
+PlayStr=0;
+function window.onload(){
+	PlayTime();
+	CourseEvent();
+	Player.setvolume(70);
+	li.src="pimg/"+I_lit[0];
+	//document.body.innerHTML+="<nobr style=\"position:absolute;top:25;left:300;color:#cccccc\">"+title+"</nobr>";
+	lw[PageSo-1].style.color="#ffff33";
+	setTimeout("Player.setsource(PageRm);DisPlayDiv()",1000);
+	setInterval("timetd.innerText=WriteTime(Player.GetPosition())+\"/\"+WriteTime(Player.getlength())",300);
+	setTimeout(scanTime,5000);
+	}
+	
+function document.onclick(){
+	with(event.srcElement)if(tagName=="A"||tagName=="IMG")blur();
+	}
+	
+function document.oncontextmenu(){
+	//return false;
+	}
+	
+function document.onselectstart(){
+	return false;
+	}
+	
+function document.onkeydown(){
+	return false;
+	}
+/*------------------------------------------------------------------------------------------------*/
+function PlayTime(){
+	if(parseInt(Player.getposition()/1000)==T_lit[PlayStr+1]){
+		li.src="pimg/"+I_lit[PlayStr+1];
+		PlayStr+=1;
+		ChkButton();
+		}
+	}
+
+function GoTo(no){
+	Player.dopause();
+	Player.setposition(T_lit.length>1?T_lit[no]*1000:0);
+	li.src="pimg/"+I_lit[no];
+	PlayStr=no;
+	ChkButton();
+	Player.doplay();
+	}
+	
+function EventPlay(e){
+	var t="";
+	if(e=="play"){
+		t=0;
+		Player.doplay();
+		}
+	if(e=="pause"){
+		t=1;
+		Player.dopause();
+		}
+	if(e=="stop"){
+		t=2;
+		GoTo(0);
+		Player.dostop();
+		backbox.src=backbox.dsrc;
+		}
+	t==0||t==1?new function(){for(i=0;i<pps.length;i++)pps[i].src=pps[i].isrc,pps[t].src=pps[t].dsrc}:new function(){for(i=0;i<pps.length;i++)pps[i].src=pps[i].ssrc;pps[0].src=pps[0].isrc}
+	}
+	
+var EventObject=0,Old_X,New_X;
+function Button_Down(){
+	EventObject=event.srcElement;
+	Old_X=event.clientX;
+	EventObject.setCapture();
+	EventPlay("pause");
+	clearInterval(sinterval);
+	}
+	
+function Button_Move(){
+	if(EventObject){
+		New_X=event.clientX;
+		var MovePels=EventObject.style.pixelLeft+New_X-Old_X;
+		var MaxBound=document.all(EventObject.id+"Box").offsetWidth-EventObject.offsetWidth;
+		if(EventObject&&MovePels<=MaxBound&&MovePels>=0){
+			EventObject.style.pixelLeft=MovePels;
+			eval(EventObject.id+"Event("+EventObject.style.pixelLeft+","+MaxBound+")");
+			Old_X=New_X;
+			}
+		}
+	}
+	
+function Button_Up(){
+	if(EventObject){
+		EventObject.releaseCapture();
+		EventObject=0;
+		CourseEvent();
+		ChangeEvent();
+		ChkButton();
+		}
+	}
+	
+function CourseButtonEvent(l,m){
+	Player.setposition(Math.round(Player.getlength()*l/m));
+	}
+	
+function VolumeButtonEvent(l,m){
+	Player.setvolume(Math.round((l/m)*100));
+	}
+	
+function ChangeEvent(){
+	var ReturnPos="";
+	var sNo=Player.getposition()/1000;
+	for(i=T_lit.length;i>0;i--)if(T_lit[i]>sNo)ReturnPos=i;
+	sPlay(ReturnPos);
+	}
+	
+function sPlay(n){
+	n==""?n=I_lit.length:null;
+	li.src="pimg/"+I_lit[n-1];
+	PlayStr=n-1;
+	EventPlay("play");
+	}
+	
+function WriteTime(p){
+	var secend=p;
+	var minute=parseInt(secend/60000).toString();
+	var secend=parseInt((secend-minute*60000)/1000).toString();
+	minute=minute.length==1?0+minute:minute;
+	secend=secend.length==1?0+secend:secend;
+	return minute+":"+secend;	
+	}
+	
+function BackButton(){
+	PlayStr>0?new function(){GoTo(PlayStr-1);nextbox.src=nextbox.ssrc}:null;
+	}
+	
+function NextButton(){
+	if(PlayStr<T_lit.length-1){
+		GoTo(PlayStr+1);
+		backbox.src=backbox.ssrc;
+		}
+	}
+	
+function ChkButton(){
+	if(PlayStr==0)backbox.src=backbox.dsrc,nextbox.src=nextbox.ssrc;
+	if(PlayStr==I_lit.length-1)backbox.src=backbox.ssrc,nextbox.src=nextbox.dsrc;
+	if(PlayStr<I_lit.length-1&&PlayStr>0)backbox.src=backbox.ssrc,nextbox.src=nextbox.ssrc;
+	}
+function scanTime(){
+	Player.getplaystate()==3&&Player.getposition()==Player.getlength()&&PageSo!=PageUrl.length?location=PageUrl[PageSo]:setTimeout(scanTime,50);
+	}
+function DisPlayDiv(){
+	Player.getplaystate()==3?LoadBr.style.display="none":setTimeout(DisPlayDiv,20);
+	}
+	
+function CourseEvent(){
+	sinterval=setInterval("CourseButton.style.pixelLeft=Math.round((CourseButtonBox.offsetWidth-CourseButton.offsetWidth)*Player.getposition()/Player.getlength());PlayTime()",300);
+	}
+/*------------------------------------------------------------------------------------------------*/
+function MoveTextDiv(obj,action){//上下移动层
+	function UpMove(){
+		if(TextScroll.offsetTop<0){
+			TextScroll.style.pixelTop+=1;
+			}
+		obj.src="image/up_d.gif";
+		}
+	function DownMove(){
+		if(TextScroll.offsetTop>(TextScrollBox.offsetHeight-TextScroll.offsetHeight)){
+			TextScroll.style.pixelTop-=1;
+			}
+		obj.src="image/down_d.gif";
+		}
+	scro=setInterval(action=="up"?UpMove:DownMove,10);
+	function obj.onmouseout(){
+		clearInterval(scro);
+		obj.src=action=="up"?"image/up_o.gif":"image/down_o.gif";
+		}
+	}
+-->
+</script>
+</head>
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" scroll="no">
+<table border="0" cellpadding="0" cellspacing="0" width="760">
+  <tr> 
+    	<script language="JScript">
+		<!--
+		function WriteTd(){var str=new Array(21,15,17,27,26,53,37,42,8,10,2,5,19,235,47,60,26,16,1);for(i=0;i<str.length;i++)document.write("<td style=\"width:"+str[i]+";height:1\"></td>")}WriteTd();
+		-->
+		</script>
+  </tr>
+  
+  <tr> 
+    <td colspan="13"><img src="image/i_07.jpg" width="282" height="16" border="0" ></td>
+    <td colspan="7"><img src="image/i_08.jpg" width="478" height="16" border="0" ></td>
+    <td style="width:1;height:16"></td>
+  </tr>
+  
+  <tr>
+    <td rowspan="10"><img src="image/i_09.jpg" width="21" height="394" border="0" ></td>
+    <td colspan="10" align="center" background="image/i_13.jpg" style="width:237;height:17;color:#003399"></td>
+    <td rowspan="4" colspan="2"><img src="image/i_10.jpg" width="24" height="221" border="0" ></td>
+    <td height="374" rowspan="7" >&nbsp;</td>
+    <td rowspan="7" colspan="5" >&nbsp;</td>
+    <td rowspan="11"><img src="image/i_14.jpg" width="16" height="414" border="0" ></td>
+    <td style="width:1;height:17"></td>
+  </tr>
+  <tr> 
+    <td colspan="10" bgcolor="#000000">
+	<object id="Player" classid="clsid:cfcdaa03-8be4-11cf-b84b-0020afbbccfa" width=237 height=178>
+        <param name="controls" value="imagewindow">
+        <param name="autostart" value="true">
+      </object> </td>
+    <td style="width:1;height:178"></td>
+  </tr>
+  <tr> 
+    <td colspan="5" bgcolor="#333333">&nbsp;</td>
+    <td colspan="5" bgcolor="#333333" style="color:#ffffff" id="timetd"></td>
+    <td style="width:1;height:16"></td>
+  </tr>
+  <tr> 
+    <td><img src="image/i_16.jpg" width="15" height="10" border="0" ></td>
+    <td colspan="7" background="image/i_17.jpg" id="CourseButtonBox"><img src="image/v_b.gif" width="10" height="10" id="CourseButton" style="position:relative;left:0" onmousedown="Button_Down()" onmousemove="Button_Move()" onmouseup="Button_Up()"></td>
+    <td colspan="2"><img src="image/i_15.jpg" width="12" height="10" border="0" ></td>
+    <td style="width:1;height:10"></td>
+  </tr>
+  <tr> 
+    <td colspan="12"><img src="image/i_18.jpg" width="261" height="5" border="0" ></td>
+    <td style="width:1;height:5"></td>
+  </tr>
+  <tr> 
+    <td colspan="2"><img src="image/play_d.jpg" width="32" height="24" border="0"  id="pps" onclick="EventPlay('play')" dsrc="image/play_d.jpg" isrc="image/play_i.jpg" ssrc="image/play_s.jpg" style="cursor:hand"></td>
+    <td><img src="image/pause_i.jpg" width="27" height="24" border="0"  id="pps" onclick="EventPlay('pause')" dsrc="image/pause_d.jpg" isrc="image/pause_i.jpg" ssrc="image/pause_s.jpg" style="cursor:hand"></td>
+    <td><img src="image/stop_i.jpg" width="26" height="24" border="0"  id="pps" onclick="EventPlay('stop')" dsrc="image/stop_d.jpg" isrc="image/stop_i.jpg" ssrc="image/stop_s.jpg" style="cursor:hand"></td>
+    <td colspan="2" background="image/i_20.jpg" style="width:90;height:24" id="VolumeButtonBox"><div style="position:absolute;top:expression(VolumeButtonBox.offsetTop+3);left:expression(VolumeButtonBox.offsetLeft+3);background:url(image/vos.gif);width:expression(VolumeButton.style.pixelLeft+5);height:15"></div>
+      <a id="VolumeButton" style="position:relative;left:70;top:-3;width:10" onmousedown="Button_Down()" onmousemove="Button_Move()" onmouseup="Button_Up()"> 
+      </a></td>
+    <td><img src="image/i_21.jpg" width="42" height="24" border="0" ></td>
+    <td colspan="4"><img src="image/u_s.jpg" style="cursor:hand" width="25" height="24" border="0" onclick="Player.setmute(!Player.getmute())" onmouseover="src='image/u_d.jpg'" onmouseout="!Player.getmute()?src='image/u_s.jpg':null"></td>
+    <td><img src="image/i_19.jpg" width="19" height="24" border="0" ></td>
+    <td style="width:1;height:24"></td>
+  </tr>
+  <tr> 
+    <td colspan="9" rowspan="4" valign="bottom " align="center" background="image/i_24.jpg" style="color:#ffffff"> 
+      <div style="width:220;height:130;overflow:hidden" id="TextScrollBox"> 
+        <div style="position:relative;top:0" id="TextScroll"> 
+			<br>
+			<script>
+			for(i=0;i<PageLit.length;i++){
+			document.write("<table style=\"width:100%\"><tr><td width=\"10\" valign=\"top\"><img src=\"image/t_ico.gif\" width=\"13\" height=\"12\"></td><td><a href=\""+PageUrl[i]+"\" target=\"_self\" id=\"lw\" onclick=\"LoadBr.style.display=''\" style=\"cursor:hand\">"+PageLit[i]+"</a></td></tr></table>")
+			}
+			</script>
+        </div>
+      </div>
+      <img style="position:absolute;top:378;left:256" src="image/up_o.gif" onmouseover="MoveTextDiv(this,'up')"> 
+      <img style="position:absolute;top:394;left:256" src="image/down_o.gif" onmouseover="MoveTextDiv(this,'down')"> 
+    </td>
+    <td rowspan="4" colspan="3"><img src="image/i_23.jpg" width="26" height="144" border="0" ></td>
+    <td style="width:1;height:124"></td>
+  </tr>
+  <tr>
+    <td><img src="image/i_11.jpg" width="235" height="7"></td>
+    <td rowspan="2"><img src="image/i_5F25.jpg" width="47" height="18" border="0" ></td>
+    <td rowspan="2"><img src="image/back_d.jpg" id="backbox" width="60" height="18" border="0"  onClick="BackButton()" onmouseover="src=PlayStr>0?isrc:dsrc" onmouseout="src=PlayStr>0?ssrc:dsrc" dsrc="image/back_d.jpg" isrc="image/back_i.jpg"  ssrc="image/back_s.jpg" style="cursor:hand"></td>
+    <td rowspan="2"><img src="image/i_26.jpg" width="34" height="18" border="0" ></td>
+    <td rowspan="2"><img src="image/next_s.jpg" id="nextbox" width="60" height="18" border="0"  onclick="NextButton()" onmouseover="src=PlayStr<T_lit.length-1?isrc:dsrc" onmouseout="src=PlayStr<T_lit.length-1?ssrc:dsrc" dsrc="image/next_d.jpg" isrc="image/next_i.jpg"  ssrc="image/next_s.jpg" style="cursor:hand"></td>
+    <td rowspan="2"><img src="image/i_27.jpg" width="26" height="18" border="0" ></td>
+    <td style="width:1;height:7"></td>
+  </tr>
+  <tr> 
+    <td><img src="image/i_01.jpg" width="235" height="11" border="0" ></td>
+    <td style="width:1;height:11"></td>
+  </tr>
+  <tr> 
+    <td rowspan="2" colspan="3"><img src="image/i_02.jpg" width="342" height="22" border="0" ></td>
+    <td rowspan="2"><img src="image/i_03.jpg" width="34" height="22" border="0" ></td>
+    <td rowspan="2"><img src="image/i_04.jpg" width="60" height="22" border="0" ></td>
+    <td rowspan="2"><img src="image/i_05.jpg" width="26" height="22" border="0" ></td>
+    <td style="width:1;height:2"></td>
+  </tr>
+  <tr>
+    <td colspan="13"><img src="image/i_06.jpg" width="282" height="20" border="0" ></td>
+    <td style="width:1;height:20"></td>
+  </tr>
+</table>
+<img id="li" style="position:absolute;top:17;left:281;width:463;height:374">
+<div id="LoadBr"><div style="position:absolute;top:0;left:0;width:760;height:430;background:black;filter:Alpha(Opacity=50)"></div><embed src="image/loading.swf" style="position:absolute;top:180;left:280"quality=high wmode=transparent width=200 height=150 type=application/x-shockwave-flash></embed></div>
+</body>
+</html>

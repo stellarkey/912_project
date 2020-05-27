@@ -1,0 +1,1 @@
+{"knowledge": "lab7 同步互斥。\r\n", "question": "关于ucore实现的管程和条件变量的阐述正确的是（） s4 管程和条件变量设计实现\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A. 管程中采用信号量用于互斥操作\r\n B. 管程中采用信号量用于同步操作\r\n C. 管程中采用条件变量用于同步操作\r\n D. 属于管程的共享变量访问的函数需要用互斥机制进行保护\r\n"}

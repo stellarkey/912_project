@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"单块、层次、微内核、层次\n",
+    "question":"一般说来，操作系统有三种结构，它们分别是___________ 结构,_____________ 结构和_______________\n结构。传统的UNIX系统核心就采用_____________ 结构。\n",
+    "source":"网络",
+    "answer":"单块、层次、微内核、层次\n",
+    "type":"fill_in_the_blank",
+    "q_number":486
+}

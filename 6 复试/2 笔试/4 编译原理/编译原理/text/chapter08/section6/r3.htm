@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　如果goto L是一个向上转移的语句，那么，当编译程序碰到这个语句时，L必是已定义了的。通过对L查找符号表获得它的定义地址p，编译程序可立即产生出相应于这个goto 
+        L的四元式如（j，－，－，p）。<br>
+        　　如果goto L是一个向下转移的语句，也就是说，标号L尚未定义，那么，若L是第一次出现，则把它填进符号表中并标志上&quot;未定义&quot;。由于L尚未定义，对goto 
+        L只能产生一个不完全的四元式（goto　－），它的转移目标须待L定义时再回填进去。在这种情况下，必须把所有那些以L为转移目标的四元式的地址全都记录下来，以便一旦L定义时就可对这些四元式进行回填。我们将采用如图8.13所示的拉链办法，把所有以L为转移目标的四元式串在一起。链的首地址放在符号表中L的&quot;地址&quot;栏中。建链的方法是：若goto 
+        L中的标号L尚未在符号表中出现，则把L填入表中，置L的&quot;定义否&quot;标志为&quot;未&quot;，把nextstat填进L的地址栏中作为新链首，然后，产生四元式（goto 
+        0），其中0为链尾标志。若L已在符号表中出现（但&quot;定义否&quot;标志为&quot;未&quot;），则把它的地址栏中的编号（记为q）取出，把nextstat填进该栏作新链首，然后，产生四元式（goto 
+        q）。
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

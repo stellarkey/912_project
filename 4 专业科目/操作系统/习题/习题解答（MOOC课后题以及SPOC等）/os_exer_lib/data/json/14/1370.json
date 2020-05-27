@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A 页表项的P bit为0，表示此页不存在\n",
+    "question":"lab3中访问“合法”虚拟页产生缺页异常的原因是（）s4\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.页表项的P bit为0",
+        "B.页目录项的I/D bit为0",
+        "C.页表项的U/S bit为0",
+        "D.页目录项的W/R bit位0"
+    ],
+    "q_number":1370
+}

@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="0" topmargin="0">
+<center>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class=text> 
+        <p><b>三、 问答题答案</b></p>
+        <p><font color="#FF0000">第1题</font><br>
+          答： </p>
+        <p><img src="../../images/t3.gif" width="262" height="166"></p>
+        <p><img src="../../images/t4.gif" width="345" height="162"></p>
+        <p><img src="../../images/t5.gif" width="349" height="183"></p>
+        <p><img src="../../images/t6.gif" width="349" height="246"></p>
+        <p><img src="../../images/t7.gif" width="349" height="251"></p>
+        <p>得解图：</p>
+        <p><img src="../../images/t8.gif" width="347" height="240"><br>
+          <font color="#FF0000">第2题</font></p>
+        <p><img src="../../images/t9.gif" width="395" height="250"></p>
+        <p><font color="#FF0000">第3题</font><br>
+          答： 综合数据库：<br>
+          　　(m1, m5, m9, b) 设从河的左岸到右岸，其中m1, m5,m9分别表示过河时间需要1分钟，5分钟和9分钟的人，在河左岸的人数。b＝1表示船在左岸，b＝0表示船在右岸。 
+          规则集： </p>
+        <p><img src="../../images/exam4.gif" width="275" height="295"></p>
+        <p>初始状态：<br>
+          (2, 1, 1, 1)<br>
+          结束状态<br>
+          (0, 0, 0, 0)<br>
+          h函数：<br>
+          h(n) = m - b，其中m为在左岸的人数，b为船是否在左岸。<br>
+          对于任意两个节点ni和nj，其中nj是ni的子节点。<br>
+          当ni中b＝1时，则nj中b＝0，因此：max(h(ni)-h(j))=(m-1)-(m-1)=0, 而C(ni, nj)最小为1，因此h(ni)-h(nj)&lt;C(ni, 
+          nj);<br>
+          当ni中b＝0时，则nj中b＝1，因此：max(h(ni)-h(j))=m-m=0, 而C(ni, nj)最小为1，因此h(ni)-h(nj)&lt;C(ni, 
+          nj)。<br>
+          而对于目标节点t，h(t)=0。<br>
+          因此该h函数满足单调性条件。所以h满足A*条件。<br>
+          <br>
+          <font color="#FF0000">第4题</font><br>
+          答： 对事实和规则进行skolem化：<br>
+          （1）(<img src="../../images/exam3.gif" width="7" height="11">s)<br>
+          　　~P(a) <br>
+          （2）(<img src="../../images/exam1.gif" width="12" height="12">s)(P(g(s)))<br>
+          　　　P(g(s)) <br>
+          （3）(<img src="../../images/exam3.gif" width="7" height="11">x)(<img src="../../images/exam1.gif" width="12" height="12">s)(<img src="../../images/exam3.gif" width="7" height="11">y)((P(s)∧Q(b，x，s))→H(y)<br>
+          　　　(P(s)∧Q(b，c，s))→H(f(s)) <br>
+          （4）(<img src="../../images/exam1.gif" width="12" height="12">x)(<img src="../../images/exam1.gif" width="12" height="12">s)(Q(b，x，s)→Q(b，x，g(s)))<br>
+          　　　Q(b，x，s)→Q(b，x，g(s)) <br>
+          （5）(<img src="../../images/exam1.gif" width="12" height="12">x)(<img src="../../images/exam1.gif" width="12" height="12">s)(<img src="../../images/exam3.gif" width="7" height="11">y)(~P(s)→Q(b，x，y))<br>
+          　　　~P(s)→Q(b，x，h(x, s)) <br>
+          经变量换名后，有事实和规则如下：<br>
+          　~P(a)<br>
+          　P(g(s1)) <br>
+          r1: (P(s2)∧Q(b，c，s2))→H(f(s2))<br>
+          r2: Q(b，x3，s3)→Q(b，x3，g(s3))<br>
+          r3: ~P(s4)→Q(b，x4，h(x4, s4)) <br>
+          用对偶形式对目标skolem 化：<br>
+          (<img src="../../images/exam3.gif" width="7" height="11">x)H(x)<br>
+          H(x)<br>
+          演绎图如下图(这里只给出了一个一致解图)。</p>
+        <p><img src="../../images/t10.gif" width="360" height="550"></p>
+        <p> 由置换集构造U1和U2：<br>
+          U1 = (x, s2, x3, s2, x4, s3, s4)<br>
+          U2 = (f(s2), g(s1), c, g(s3), c, h(x4, s4), a) <br>
+          由于U1和U2是可合一的，因此该解图是一致解图。合一复合为：<br>
+          {f(g(h(c, a)))/x, g(h(c, a))/s2, c/x3, h(c, a)/s3, c/x4, h(c, a)/s1, 
+          a/s4}} 将该合一复合带入目标中，得到解答：<br>
+          x = f(g(h(c, a))) <br>
+          <br>
+          <font color="#FF0000">第5题</font><br>
+          答：<br>
+          　1、由于修正的A*算法对与OPEN表中f值小于fm的节点按照g值的大小排序，优先扩展g值小的节点。对于这部分节点来说，相当于h＝0。而h＝0满足单调条件，因此至少对于这部分节点来说，减少了重复扩展节点的可能性。因此修正的A*算法有可能减少重复节点的扩展。 
+        </p>
+        <p>2、由于A*扩展的节点，其f值总是小于等于f*(s)，而fm是到目标为止扩展过的节点的最大f值，因此必有fm小于等于f*(s)。又由于OPEN表中f值小于f*(s)的节点，总是被A*扩展的，因此从OPEN表中选择那些f值小于fm的节点（这些节点的f值也必然小于f*(s)），按照g值的大小优先扩展，只是改变了部分节点的扩展次序，不会多扩展节点。 
+          <br>
+          <br>
+          <br>
+          　</p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

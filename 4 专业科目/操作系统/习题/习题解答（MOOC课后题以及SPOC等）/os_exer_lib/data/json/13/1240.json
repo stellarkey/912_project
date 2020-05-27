@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"+ 采分点：说明了cprintf函数用到的3个外设\n- 答案没有涉及如下3点；（0分）\n- 说明了串口（1分）\n- 除第二点外，进一步说明了并口（2分）\n- 除上述两点外，进一步说明了CGA（3分）\n",
+    "question":"lab1中的cprintf函数最终通过哪些外设完成了对字符串的输出？ (w2l2)\n",
+    "source":"网络",
+    "answer":"+ 采分点：说明了cprintf函数用到的3个外设\n- 答案没有涉及如下3点；（0分）\n- 说明了串口（1分）\n- 除第二点外，进一步说明了并口（2分）\n- 除上述两点外，进一步说明了CGA（3分）\n",
+    "type":"question_answer",
+    "q_number":1240
+}

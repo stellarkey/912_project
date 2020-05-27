@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>小结：</b><br>
+      　　一个高级程序设计语言编译程序的代码生成部分在编译中起着关键性的作用，而它又与计算机硬件的结构乃致细节紧密相关，这导致了代码生成的可移植性及自动生成算法的研究，无论在理论上还是在实践上都相当困难。因此，本章介绍的仅是一些一般性的考虑原则问题。在目前实际应用中大多数高级程序设计语言编译程序的前端用编译程序的构造工具（将在第13章介绍）实现，后端的代码生成按选好的中间代码作为输入，但是中间语言的选择希望既满足各种高级程序设计语言的特性又要反映不同计算机的特点，也是一个相当困难的问题。实际应用中中间代码的选择如12.4节中给出的限定条件下解决的3种情况。<br>
+      　　(1) 限定几种高级语言和几种计算机<br>
+      　　把共性较多、特性较接近的高级语言作为几种限定的语言，同样把特点较接近的各种计算机归为限定的几种计算机。<br>
+      　　(2) 在计算机限定情况下的中间语言<br>
+      　　限定某种计算机时，而高级语言为多种情况下所设计的中间语言，能充分反映限定计算机的特点。<br>
+      　　(3) 高级语言限定情况下的中间语言<br>
+      　　这种中间语言是针对某种特定的高级语言设计的，它可以充分反映特定高级语言的特性，只要把这特定的高级语言翻译成中间语言LSIL，然后对不同的计算机只要编写从LSIL到相应目标机的代码生成器，便可实现这特定高级语言的编译程序。其LSIL的设计要求与具体计算机无关。而LSIL到目标机的代码生成一般来说不难实现，这种编译程序的实现途径可移植性强。</td>
+  </tr>
+</table>
+</body>
+</html>

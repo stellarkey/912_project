@@ -1,0 +1,101 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> <a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　在学完了信息熵、熵编码的理论概念的基础上，我们将向同学们介绍熵编码中的最佳编码方法--霍夫曼编码。霍夫曼编码方法于1952年问世, 
+        是D.A.Huffman在他的论文&quot;最小冗余度代码的构造方法（A Method for the Construnction of 
+        Minimum Redundancy Codes）&quot;中提出来的。迄今为止, 仍经久不衰, 广泛应用于各种数据压缩技术中, 且仍不失为熵编码中的最佳编码方法。<br>
+        　　霍夫曼编码就是依据是变字长最佳编码定理。</div>
+      <br>
+      <span class="zhongdian"><font color="#000000">　　</font>1．变字长最佳编码定理</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　该定理的内容是&quot;在变长码中，对于概率大的符号，编以短字长的码；对于概率小的符号，编以长字长的码；如果码制长度严格按照符号概率的大小的相反顺序排列，则平均码字长一定小于按任何其它符号顺序排列方式得到的码字长。 
+      </div>
+      <br>
+      <span class="zhongdian">　　在变长码中，对于概率大的符号，编以短字长的码；对于概率小的符号，编以长字长的码；如果码制长度严格按照符号概率的大小的相反顺序排列，则平均码字长一定小于按任何其它符号顺序排列方式得到的码字长。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　下面我们来证明该定理。根据该定理我们已知条件为已知 
+        P(ai)是信源ai出现的概率，n<sub>i</sub>是符号a<sub>i</sub>的编码长度，P(ai)≥P(as)，n i＜n s。要证明的是：<img src="../../../../images/chatp/chap04/017.gif" width="103" height="45" align="absmiddle">为最佳幔子长度。 
+      </div>
+      <br>
+      <span class="zhongdian">　　2．已知 P(a<sub>i</sub>)是信源ai出现的概率，n<sub>i</sub>是符号a<sub>i</sub>的编码长度，P(a<sub>i</sub>)≥P(a<sub>i</sub>)，n<sub>i</sub>＜n<sub>i</sub>。<br>
+      　　证明：最佳的平均码字长度为： <br>
+      　　证明：如果将a<sub>i</sub>的码字与a<sub>i</sub>的码字互换，</span><br>
+      <span class="zhongdian">　　<img src="../../../../images/chatp/chap04/018.gif" width="328" height="56"> 
+      <br>
+      　　因为：<img src="../../../../images/chatp/chap04/019.gif" width="48" height="24" align="absmiddle"> 
+      <img src="../../../../images/chatp/chap04/020.gif" width="93" height="24" align="absmiddle"><br>
+      　　所以：<img src="../../../../images/chatp/chap04/021.gif" width="49" height="23" align="absmiddle"></span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide04Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　以上已经证明了霍夫曼编码是熵编码中的最佳编码，接下来学习霍夫曼编码的具体实现步骤。其具体步骤如下：<br>
+        　　① 概率统计（如对一幅图像，或m幅同种类型图像作灰度信号统计），得到n个不同概率的信息符号。<br>
+        　　② 将n个信源信息符号的n个概率，按概率大小排序。<br>
+        　　③ 将n个概率中，最后两个小概率相加，这时概率个数减为n-1个。<br>
+        　　④ 将n-1个概率，按大小重新排序。<br>
+        　　⑤ 重复③，将新排序后的最后两个小概率再相加，相加和与其余概率再排序。<br>
+        　　⑥ 如此反复重复n-2次，得到只剩两个概率序列。<br>
+        　　⑦ 以二进制码元(0.1)赋值，构成霍夫曼码字。编码结束。</div>
+      <br>
+      <span class="zhongdian">　　霍夫曼编码的具体步骤归纳如下:<br>
+      　　① 概率统计（如对一幅图像，或m幅同种类型图像作灰度信号统计），得到n个不同概率的信息符号。<br>
+      　　② 将n个信源信息符号的n个概率，按概率大小排序。<br>
+      　　③ 将n个概率中，最后两个小概率相加，这时概率个数减为n-1个。<br>
+      　　④ 将n-1个概率，按大小重新排序。<br>
+      　　⑤ 重复③，将新排序后的最后两个小概率再相加，相加和与其余概率再排序。<br>
+      　　⑥ 如此反复重复n-2次，得到只剩两个概率序列。<br>
+      　　⑦ 以二进制码元(0.1)赋值，构成霍夫曼码字。编码结束。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide05Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　下面举一个具体的例子，来理解加深对霍夫曼编码的理解。<br>
+        　　例如：已知信源符号的概率分别为： <br>
+        　　<img src="../../../../images/chatp/chap04/022.gif" width="323" height="37"> 
+        <br>
+        　　请对该信源序列做霍夫曼编码。</div>
+      <br>
+      <span class="zhongdian">　　例如：已知信源符号的概率分别为： <br>
+      　　<img src="../../../../images/chatp/chap04/023.gif" width="323" height="38"> 
+      </span> <br>
+      　　<span class="zhongdian">请对该信源序列做霍夫曼编码。</span><br>
+      　
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="460" height="280">
+        <param name=movie value="../../../../swf/4-3-2.swf">
+        <param name=quality value=high>
+        <embed src="../../../../swf/4-3-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="460" height="280">
+        </embed> 
+      </object><br>
+      　
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="460" height="320">
+        <param name=movie value="../../../../swf/4-3-2(2).swf">
+        <param name=quality value=high>
+        <embed src="../../../../swf/4-3-2(2).swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="460" height="320">
+        </embed> 
+      </object></td>
+  </tr>
+</table>
+</body>
+</html>

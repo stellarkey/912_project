@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "程序员利用系统调用打开I/O设备时，通常使用的设备标识是\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.逻辑设备名 \r\n B.物理设备名 \r\n C.主设备号 \r\n D.从设备号\r\n"}

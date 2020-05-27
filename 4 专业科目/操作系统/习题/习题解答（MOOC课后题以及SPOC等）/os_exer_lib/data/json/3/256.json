@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"文件系统采用多级目录结构后，对于不同用户的文件，其文件名(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.应该相同",
+        "B.应该不同",
+        "C.可以相同，也可以不同",
+        "D.受系统约束"
+    ],
+    "q_number":256
+}

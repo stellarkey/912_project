@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"动态重定位是在进行_____ 的重定位。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.作业执行前",
+        "B.作业执行过程中",
+        "C.作业装入过程中",
+        "D.A，B，C均不对"
+    ],
+    "q_number":163
+}

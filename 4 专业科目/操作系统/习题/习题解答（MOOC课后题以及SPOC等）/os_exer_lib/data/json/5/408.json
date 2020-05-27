@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"人机矛盾\n",
+    "question":"在手工操作阶段，操作员在进行装卸卡和磁带等手工操作时，ＣＰＵ处于空闲等待，我们称这种现象为_________________________________\n___________________ 。\n",
+    "source":"网络",
+    "answer":"人机矛盾\n",
+    "type":"fill_in_the_blank",
+    "q_number":408
+}

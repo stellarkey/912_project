@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"虚拟存储系统可以在每一台计算机上实现\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1034
+}

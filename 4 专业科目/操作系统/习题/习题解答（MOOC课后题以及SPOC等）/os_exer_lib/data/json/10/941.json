@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"( )调度算法总是从等待访问者中挑选等待时间最短的那个请求先执行。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.先来先服务",
+        "B.最短寻找时间优先",
+        "C.电梯",
+        "D.单向扫描"
+    ],
+    "q_number":941
+}

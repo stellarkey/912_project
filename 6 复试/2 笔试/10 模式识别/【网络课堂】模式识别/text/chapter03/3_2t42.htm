@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　　最佳W值的确定实际上就是对(3-26)求取其达极大值时的<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">。对于这个问题可以采用拉格朗日乘子算法解决，譬如保持(3-26)式分母为一非零常数c的条件下,求其分子项的极大值。<br>
+            　　为此可设计一拉格朗日函数<br>
+            　　<img src="../../images/image_content/3/3_2_4_002.gif" width="251" height="31" align="absmiddle">(3-27)<br>
+            　　</span><span class="spe">拉格朗日乘子法是用来求带约束条件的极值问题的，这是把<img src="../../images/image_content/3/3_2_4_003.gif" width="50" height="22" align="absmiddle">作为要求极值的目标函数，而保持<img src="../../images/image_content/3/3_2_4_004.gif" width="57" height="23" align="absmiddle">为一常数c，因此按拉格朗日乘子标准方法构造拉格朗日函数得(3-27)。然后通过对拉格朗日函数分别对W及乘子λ求导并置为0来求W的解。<br>
+            　　这里对向量的求导(或偏导)的定义是：<br>
+            　　如<img src="../../images/image_content/3/3_2_4_005.gif" width="91" height="17" align="absmiddle"><br>
+            　　则 <img src="../../images/image_content/3/3_2_4_006.gif" width="135" height="162" align="middle"> 
+            </span> 
+            <p><span class="FCcontent">　　其中λ为拉格朗日乘子，按拉格朗日算法对(3-27)式求对W的偏导数，且令其在<img src="../../images/image_content/3/3_2_4_007.gif" width="56" height="24" align="absmiddle">时为零，得<br>
+              　　<img src="../../images/image_content/3/3_2_4_008.gif" width="224" height="46" align="absmiddle"><br>
+              　　则有<br>
+              　　<img src="../../images/image_content/3/3_2_4_009.gif" width="119" height="34" align="absmiddle">(3-28)<br>
+              　　由于S<sub>w</sub>非奇异，将(3-28)两边乘以S<sub>w</sub><sup>-1</sup>得<br>
+              　　<img src="../../images/image_content/3/3_2_4_010.gif" width="116" height="33" align="absmiddle"> 
+              (3-29)<br>
+              　　</span><span class="spe">矩阵非奇异即该矩阵可逆，(3-29)是个典型的特征值问题。如不明白要复习一下为好。</span><span class="FCcontent"><br>
+              　　这是一个求矩阵<img src="../../images/image_content/3/3_2_4_011.gif" width="40" height="31" align="absmiddle">的特征值问题，但在此可利用(3-18)式对<img src="../../images/image_content/4/4_6088.gif" width="19" height="26" align="absmiddle">的定义，而得到<br>
+              　　<img src="../../images/image_content/3/3_2_4_012.gif" width="233" height="35" align="absmiddle">(3-30)<br>
+              　　其中<img src="../../images/image_content/3/3_2_4_013.gif" width="108" height="34" align="absmiddle">是一个数量，可用数值R表示，则(3-30)式可写成<br>
+              　　<img src="../../images/image_content/3/3_2_4_014.gif" width="143" height="35"><br>
+              　　代入(3-29)式可得<br>
+              　　<img src="../../images/image_content/3/3_2_4_015.gif" width="153" height="46" align="absmiddle">(3-31)<br>
+              　　实际上我们关心的只是向量<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">的方向，其数值大小对分类器没有影响。因此在忽略了数值因子<img src="../../images/image_content/3/3_2_4_016.gif" width="20" height="43" align="absmiddle">后，可得<br>
+              　　<img src="../../images/image_content/3/3_2_4_017.gif" width="135" height="32" align="absmiddle">(3-32)<br>
+              　　</span><span class="spe">(3-32)是使用Fisher准则求最佳法线向量的解，该式比较重要。另外，(3-32)式这种形式的运算，我们称为线性变换，其中(m<sub>1</sub>-m<sub>2</sub>)式一个向量，S<sub>w</sub><sup>-1</sup>是S<sub>w</sub>的逆矩阵，如(m<sub>1</sub>-m<sub>2</sub>)是d维，S<sub>w</sub>和S<sub>w</sub><sup>-1</sup>都是d×d维，得到的<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">也是一个d维的向量。</span><span class="FCcontent"><br>
+              　　向量<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">就是使Fisher准则函数<img src="../../images/image_content/3/3_2_4_018.gif" width="47" height="26" align="absmiddle">达极大值的解，也就是按Fisher准则将d维X空间投影到一维Y空间的最佳投影方向，该向量<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">的各分量值是对原d维特征向量求加权和的权值。<br>
+              </span> </p></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="368" height="260">
+              <param name="movie" value="../../swf/add9.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/add9.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="368" height="260"></embed></object>
+            <br>
+            <span class="FCcontent">图3.4 </span></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　由(3-32)表示的最佳投影方向是容易理解的，因为其中一项<span class="FCcontent">(m<sub>1</sub>-m<sub>2</sub>)</span>是一向量，显然从两类均值在变换后距离最远这一点看，对与<span class="FCcontent">(m<sub>1</sub>-m<sub>2</sub>)</span>平行的向量投影可使两均值点的距离最远。但是如从使类间分得较开，同时又使类内密集程度较高这样一个综合指标来看，则需根据两类样本的分布离散程度对投影方向作相应的调整，这就体现在对<img src="../../images/image_content/3/3_2_4_020.gif" width="66" height="27" align="absmiddle">向量按<span class="FCcontent"><img src="../../images/image_content/3/3_2_4_021.gif" width="27" height="31" align="absmiddle"></span>作一线性变换，从而使Fisher准则函数达到极值点。图3.4表示了二维特征空间的两类样本分布及最佳投影方向。图中由于样本沿两类均值点连线向量分布较分散，因此由均值连线决定的向量作为线性加权向量并不能获得Fisher准则函数的极值，而图中向量<img src="../../images/image_content/3/3_2_4_001.gif" width="23" height="23" align="absmiddle">所体现的方向可预期有更好的分类效果。<br>
+            　　<span class="spe">其实与(3-32)式很相似的一个式子在第二章中已经看到，它就是(2-63)式<img src="../../images/image_content/3/3_2_4_022.gif" width="78" height="23" align="absmiddle">。该式是在两类正态分布但具有相同的协方差矩阵Σ时，按最小错误率的贝叶斯决策得到的结果。回顾式(2-64),如果两类先验概率P(ω<sub>i</sub>)=P(ω<sub>j</sub>)，则最佳分界线就是两类概率密度函数值相等的点的集合，见式(2-58)。如果说两类样本的离散矩阵相近，也就是说两类分布的形式很相近，按Fisher准则，错分率就应比较小，Fisher准则的合理性可以在这里体现。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

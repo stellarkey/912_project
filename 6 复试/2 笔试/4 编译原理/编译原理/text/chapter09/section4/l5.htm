@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> <b>(1) 分表结构</b><br>
+      　　分表结构的组织管理，其基本思想是，每当编译程序扫描到一个分程序结构开始时，为该分程序建立一张符号表，在该分程序中定义的标识符，都被登录在该符号表中。而当编译程序扫描到一个分程序的结束时，编译程序释放为该分程序所建立的符号表。这种符号表的分表结构与源程序的分程序层次结构是完全一致的，这种层次结构是编译过程中动态建立和动态消亡的。根据分程序作用域和可视规则。编译程序扫描到某个分程序时，符号的登录是在为该分程序所建立的符号表中进行，而符号的查找是首先在该分程序符号表中进行；若没有查到，再根据分程序的层次结构，逐层向外地依次查找各层符号表。一直到查到为止。若所有符号表都已查完仍未找到，则表示有词法错误。</td>
+  </tr>
+</table>
+</body>
+</html>

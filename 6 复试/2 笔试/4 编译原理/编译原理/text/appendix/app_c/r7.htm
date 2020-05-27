@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.3.8 运算符优先级及结合性定义</b><br>
+      　　请看下面的关于表达式的文法：<br>
+      　　%token NAME<br>
+      　　expr：expr '+' expr<br>
+      　　　　　|expr '-' expr<br>
+      　　　　　|expr '*' expr<br>
+      　　　　　|NAME<br>
+      　　　　　; <br>
+      这个文法有二义性，例如句子<br>
+      　　a+b-c<br>
+      可以解释成(a+b)-c也可以解释成a+(b-c)，虽然这两种解释都合理但造成了二义性，如果将句子<br>
+      　　a+b*c<br>
+      解释为(a+b)*c就在语义上错了。<br>
+      　　YACC允许用户规定运算符的优先级和结合性，这样就可以消除上述文法的二义性。例如规定'+''-'具有相同的优先级，而且都是左结合的，这样a+b-c就唯一地解释为(a+b)-c。再规定'*'的优先级大于'+''-'，则a+b*c就正确地解释为a+(b*c)了，因此上述文法的正确形式应是： 
+      <br>
+      　　%token NAME<br>
+      　　%left '+' '-' <br>
+      　　%left '*' <br>
+      　　%%<br>
+      　　　　expr：expr '+' expr<br>
+      　　　　　　| expr '-' expr<br>
+      　　　　　　| expr '*' expr<br>
+      　　　　　　| NAME<br>
+      　　　　　　; <br>
+      在说明部分中以%left开头的行就是定义算符的结合性的行。%left表示其后的算符是遵循左结合的;%right表示右结合性，而%nonassoc则表示其后的算符没有结合性。优先级是隐含的，在说明部分中，排在前面行的算符较后面行的算符的优先级低；排在同一行的算符优先级相同，因此在上述文法中，'+'和'-'优先级相同，而它们的优先级都小于'*'，三个算符都是左结合的。<br>
+      　　在表达式中有时要用到一元运算符，而且它可能与某个二元运算符是同一个符号，例如一元运算符负号'-'就与减号'-'相同，显然一元运算符的优先级应该比相应的二元运算符的优先级高。至少应该与'*'的优先级相同，这可以用YACC的%prec子句来定义，请看下面的文法： 
+      <br>
+      　　%token NAME<br>
+      　　%left '-''+'<br>
+      　　%left '*''/'<br>
+      　%%<br>
+      　　expr：expr　'+' expr<br>
+      　　　　| expr　'-' expr<br>
+      　　　　| expr　'*' expr<br>
+      　　　　| expr　'/' expr<br>
+      　　　　| 　'-' expr %prec　'*' <br>
+      　　　　| NAME<br>
+      　　　　; <br>
+      在上述文法中，为使一元'-'的优先级与'*'相同，我们使用了子句<br>
+      　　%prec <br>
+      它说明它所在的语法规则中最右边的运算符或终结符的优先级与%prec后面的符号的优先级相同，注意%prec子句必须出现在某语法规则结尾处分<br>
+      号之前，%prec子句并不改变'-'作为二元运算符时的优先级。<br>
+      　　上面介绍的8项定义，没有必要的部分都可以省去。</td>
+  </tr>
+</table>
+</body>
+</html>

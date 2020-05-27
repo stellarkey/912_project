@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>文法的直观概念</b><br>
+      　　在给出文法和语言的形式定义之前，我们先直观地认识一下文法的概念。<br>
+      　　当我们表述一种语言时，无非是说明这种语言的句子，如果语言只含有有穷多个句子，则只需列出句子的有穷集就行了，但对于含有无穷句子的语言来讲，存在着如何给出它的有穷表示的问题。<br>
+      　　以自然语言为例，人们无法列出全部句子，但是人们可以给出一些规则，用这些规则来说明(或者定义)句子的组成结构，比如：&quot;我是大学生&quot;是汉语的一个句子。汉语句子可以是由主语后随谓语而成，构成谓语的是动词和直接宾语，我们采用第2章所介绍的EBNF来表示这种句子的构成规则：<br>
+      　　〈句子〉∷=〈主语〉〈谓语〉<br>
+      　　〈主语〉∷=〈代词〉|〈名词〉<br>
+      　　〈代词〉∷= 我 | 你 | 他<br>
+      　　〈名词〉∷= 王明 | 大学生 | 工人 | 英语<br>
+      　　〈谓语〉∷=〈动词〉〈直接宾语〉<br>
+      　　〈动词〉∷= 是 | 学习<br>
+      　　〈直接宾语〉∷=〈代词〉|〈名词〉<br>
+      　　“我是大学生”的构成符合上述规则，而“我大学生是”不符合上述规则，我们说它不是句子。这些规则成为我们判别句子结构合法与否的依据，换句话说，这些规则看成是一种元语言，用它描述汉语。这里仅仅涉及汉语句子的结构描述。这样的语言描述称为文法。</td>
+  </tr>
+</table>
+</body>
+</html>

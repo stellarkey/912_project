@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　属性文法(也称属性翻译文法)是Knuth在1968年首先提出的。它是在上下文无关文法的基础上，为每个文法符号(终结符或非终结符)配备若干相关的&quot;值&quot;（称为属性）。这些属性代表与文法符号相关信息，例如它的类型、值、代码序列、符号表内容等等。属性与变量一样，可以进行计算和传递。属性加工的过程即是语义处理的过程。对于文法的每个产生式都配备了一组属性的计算规则，称为语义规则。形式上讲，一个属性文法是一个三元组，A＝（G，V，F），一个上下文无关文法G；一个属性的有穷集V和关于属性的断言或谓词的有穷集F。每个断言与文法的某产生式相联。如果对G中的某一输入串而言（句子），A中的所有断言对该输入串的语法树结点的属性全为真，则该串也是A语言中的句子。编译程序的静态语义审查工作就是验证关于所编译的程序的断言是否全部为真。 
+        <br>
+        比如，有文法G为：<br>
+        　　E→T<sup><font size="-2">1</font></sup> + T<sup><font size="-2">2</font></sup>|T<sup><font size="-2">1</font></sup> or T<sup><font size="-2">2</font></sup><br>
+        　　T→num|true|false<br>
+        　　（因为T在同一个产生式里出现了两次，使用上角标将它们区分开。）<br>
+        　　对输入串3+4的语法树如图8．1（A）
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图8．1 静态语义审查</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle/p8_1%20copy.gif" width="396" height="187"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

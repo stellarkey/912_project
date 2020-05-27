@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　Fisher线性判别函数是研究这类判别函数中最有影响的方法之一。对线性判别函数的研究就是从R.A.Fisher在1936年发表的论文开始的。<br>
+            <strong>3.2.4.1 Fisher准则函数</strong><br>
+            　　如上所述，设计线性分类器首先要确定准则函数，然后再利用训练样本集确定该分类器的参数，以求使所确定的准则达到最佳。在使用线性分类器时，样本的分类由其判别函数值决定，而每个样本的判别函数值是其各分量的线性加权和再加上一阈值w<sub>0</sub>。如果我们只考虑各分量的线性加权和，则它是各样本向量与向量W的向量点积。如果向量W的幅度为单位长度，则线性加权和又可看作各样本向量在向量W上的投影。显然样本集中向量投影的分布情况与所选择的W向量有关，图3.3表示了在一个二维空间两个类别样本在两个不同的向量<span class="FCcontent">w<sub>1</sub></span>与<span class="FCcontent">w<sub>2</sub></span>上投影分布的情况。其中用红点及蓝点分别表示不同类别的样本。显然对 
+            向量的投影能使这两类有明显可分开的区域，而对向量 的投影，则使两类数据部分交迭在一起，无法找到一个能将它们截然分开的界面。Fisher准则的基本原理，就是要找到一个最合适的投影轴，使两类样本在该轴上投影的交迭部分最少，从而使分类效果为最佳。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="400" height="209">
+              <param name="movie" value="../../swf/f3.2.1.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/f3.2.1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="209"></embed></object>
+            <br>
+            <span class="FCcontent"> 图3.3</span></td>
+        </tr>
+        <tr>
+          <td><span class="FCcontent">　　</span><span class="spe">如果同学对上面叙述的这一步还不太明白，问题大概出在对线性方程的理解上。前面已经说过二维空间中一条直线的特点是任何一点到空间某一单位向量<img src="../../images/image_content/3/3_2_41_032.gif" width="33" height="49" align="absmiddle">投影值相同，为<img src="../../images/image_content/3/3_2_41_033.gif" width="39" height="51" align="absmiddle">，换句话说，该直线是到这个向量投影值相同的点的集合。因此空间上不在该直线上的点到该向量的投影值不是大于就是小于<img src="../../images/image_content/3/3_2_41_033.gif" width="39" height="51" align="absmiddle">。所有大于该值的点在直线的一侧，小于的在另一侧。<br>
+            　　因此如果在二维空间中一条直线能将两类样本分开，或者错分类很少，则同一类别样本数据在该直线的单位法向量上的投影的绝大多数都应该超过某一值。而另一类数据的投影都应该小于(或绝大多数都小于)该值，则这条直线就有可能将两类分开。Fisher就是利用了这一点。下面是一些数学推导，对同学理解如何得到结论有好处。但学习这一部分最重要是把上述讲解搞清楚，并会用(3-32)式的结论，数学推导的理解不作基本要求。</span><span class="FCcontent"><br>
+            　　分析w<sub>1</sub>方向之所以比w<sub>2</sub>方向优越，可以归纳出这样一个准则，即向量W的方向选择应能使两类样本投影的均值之差尽可能大些，而使类内样本的离散程度尽可能小。这就是Fisher准则函数的基本思路。为了将这个思路变为可计算的函数值，我们先对一些基本参量下定义。<br>
+            　　1 样本在d维特征空间的一些描述量。<br>
+            　　(1) 各类样本均值向量m<sub>i</sub><br>
+            　　<img src="../../images/image_content/3/3_2_41_034.gif" width="181" height="56" align="absmiddle">　　　　　(3-15)<br>
+            　　(2) 样本类内离散度矩阵S<sub>i</sub>与总类内离散度矩阵S<sub>w</sub><br>
+            　　<img src="../../images/image_content/3/3_2_41_035.gif" width="250" height="44" align="absmiddle">　　　　　(3-16)<br>
+            　　<img src="../../images/image_content/3/3_2_41_036.gif" width="102" height="37" align="absmiddle">　　　　　(3-17)<br>
+            　　(3) 样本类间离散度矩阵S<sub>b</sub><br>
+            　　<img src="../../images/image_content/3/3_2_41_037.gif" width="189" height="38" align="absmiddle">　　　　　　(3-18)<br>
+            　　</span><span class="spe">类内离散矩阵S<sub>i</sub>在形式上与协方差矩阵很相似，但协方差矩阵是一种期望值，而类内离散矩阵只是表示有限个样本在空间分布的离散程度。对我们来说不一定要在这一方面细究。</span><span class="FCcontent"><br>
+            　　2 在一维Y空间<br>
+            　　(1) 各类样本均值<img src="../../images/image_content/3/3_2_41_049.gif" width="22" height="23" align="absmiddle"><br>
+            　　　<img src="../../images/image_content/3/3_2_41_050.gif" width="190" height="49">　　　　(3-19)<br>
+            　　(2) 样本类内离散度<img src="../../images/image_content/3/3_2_41_051.gif" width="19" height="30" align="absmiddle">和总类内离散度<img src="../../images/image_content/3/3_2_41_052.gif" width="25" height="31" align="absmiddle"> 
+            <br>
+            　　<img src="../../images/image_content/3/3_2_41_053.gif" width="203" height="39" align="absmiddle">　　　　　(3-20)<br>
+            　　<img src="../../images/image_content/3/3_2_41_054.gif" width="109" height="34" align="absmiddle">　　　　　(3-21)<br>
+            　　</span><span class="spe">在这里定义一维空间两类数据的分布是为了描述空间样本点到一向量投影的分散情况的，因此也就是对某向量W的投影在W上的分布。<img src="../../images/image_content/3/3_2_41_038.gif" width="21" height="33" align="absmiddle">的定义与随机变量方差相类似。</span><span class="FCcontent"><br>
+            　　在定义了上述一系列描述量后，可以用这些量给出Fisher准则的函数形式。根据Fisher选择投影方向W的原则，即使原样本向量在该方向上的投影能兼顾类间分布尽可能分开，类内样本投影尽可能密集的要求，用以评价投影方向W的函数为： 
+            </span> 
+            <p class="FCcontent"> 　　<img src="../../images/image_content/3/3_2_41_039.gif" width="163" height="56" align="absmiddle">　　　(3-22)</p>
+            <p><span class="FCcontent">　　这个函数称为Fisher准则函数。但是(3-22)并不是W的显函数，需进一步化为W的显函数。为此需对<img src="../../images/image_content/3/3_2_41_040.gif" width="42" height="27" align="middle"> 
+              等项进一步演化：<br>
+              　　<img src="../../images/image_content/3/3_2_41_041.gif" width="322" height="59" align="absmiddle">　　　　　(3-23)<br>
+              　　因而(3-23)分子项又可写成<br>
+              　　<img src="../../images/image_content/3/3_2_41_042.gif" width="290" height="70" align="absmiddle">　　　　　(3-24)<br>
+              　　同样<img src="../../images/image_content/3/3_2_41_051.gif" width="19" height="30" align="absmiddle">也可推出与W的关系<br>
+              　　<img src="../../images/image_content/3/3_2_41_044.gif" width="272" height="56"><br>
+              　　<img src="../../images/image_content/3/3_2_41_045.gif" width="296" height="67"> 
+              <br>
+              　　因此<img src="../../images/image_content/3/3_2_4_030.gif" width="253" height="35" align="absmiddle">　　　　　(3-25)<br>
+              　　则<img src="../../images/image_content/3/3_2_4_031.gif" width="48" height="27" align="absmiddle">可表示成<br>
+              　　<img src="../../images/image_content/3/3_2_4_032.gif" width="138" height="56" align="absmiddle">　　　　　(3-26)<br>
+              　</span><span class="spe">　这一数学推导的思路是,由于一个样本到一向量上的投影是一维实数空间，因此先定义在一维空间分布的表示方法(从(3-19)到(3-21))然后将Fisher的思想用到(3-22)式定义的准则上。接着将投影运算代入(3-22)式中各个量，经过(3-23)至(3-25)式最后得到(3-26)，(3-26)式是一个相对重要的结论，有了它才能解出所需的W。</span><br>
+            </p></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

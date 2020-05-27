@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"进程切换会修改cr3寄存器的值，以实现页表切换，而同一进程中的线程切换不会。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1580
+}

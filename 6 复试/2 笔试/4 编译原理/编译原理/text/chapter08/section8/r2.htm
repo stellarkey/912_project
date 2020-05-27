@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　考虑下面文法，文法定义的是类-Pascal文法的变量说明语句和简单赋值语句，程序分为声明块和语句块，语句块使用的变量必须在声明块中先声明过。<br>
+      　　P → DS<br>
+      　　D → var V；D|ε <br>
+      　　S → V:=e；S|ε <br>
+      　　V → x|y|z<br>
+      　　该文法定义的句子的例子：<br>
+      　　var x；<br>
+      　　var y；<br>
+      　　x:=e；<br>
+      　　y:=e；<br>
+      　　现在使用两个属性，name和dl，每当一个新的变量声明时，就把它的name属性附给它，name属性是综合属性。<br>
+      　　如声明的变量为x，使用的产生式为V → x，计算name属性的语义描述则表示为：<br>
+      　　V → x {V.name='x'}<br>
+      　　将所声明的变量都放到一个变量名字清单中（用语义函数addlist实现），用属性dl综合声明块中声明的所有变量。<br>
+      　　D<sup><font size="-2">1</font></sup> → var V； D<sup><font size="-2">2</font></sup>{D<sup><font size="-2">1</font></sup>.dl=addlist(V.name，D<sup><font size="-2">2</font></sup>.dl)}<br>
+      　　D<sup><font size="-2">1</font></sup> →ε {D<sup><font size="-2">1</font></sup>.dl=null}<br>
+      　　然后这个dl属性又作为继承属性传到后面的语句部分，每个语句用到的变量都要进行审查，看它是否在变量名字清单中（用语义函数check 实现）。下面给出语义描述，看看我们如何利用继承属性dl去保持变量清单以进行类型审查。<br>
+      　　P → DS {S.dl=D.dl}<br>
+      　　D<sup><font size="-2">1</font></sup> → var V； D<sup><font size="-2">2</font></sup> 
+      {D<sup><font size="-2">1</font></sup>.dl=addlist(V.name，D<sup><font size="-2">2</font></sup>.dl)}<br>
+      　　　　　|ε　　{D<sup><font size="-2">1</font></sup>.dl=null}<br>
+      　　S<sup><font size="-2">1</font></sup> → V:=e； S<sup><font size="-2">2</font></sup> 
+      {check(V.name，S<sup><font size="-2">1</font></sup>.dl)；<br>
+      　　　　　　　 　S<sup><font size="-2">2</font></sup>.dl=S<sup><font size="-2">1</font></sup>.dl}<br>
+      　　|ε <br>
+      　　V → x {V.name='x'}<br>
+      　　|y {V.name='y'}<br>
+      　　|z {V.name='z'}<br>
+      　　例：<br>
+      　　var x；<br>
+      　　var y；<br>
+      　　x:=e；<br>
+      　　y:=e；是该文法定义的句子，图8.15和图8.16是这个句子的带有属性信息的语法树。其中图8.15只给出了左分支的属性信息。图8.16只给出了右分支的属性信息。从右分支很清楚地看到dl属性的传递情况 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 4.4 NFA N </font> 
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p4_4%20copy.gif" width="430" height="282"></td>
+        </tr>
+      </table>
+      　　ε-closure(0)=｛0，1，2，4，7｝<br>
+      　　即｛0，1，2，4，7｝中的任一状态都是从状态0经任意条ε弧可到达的状态，令｛0，1，2，4，7｝=A，则 move(A,a)=｛3，8｝，因为在状态0，1，2，4和7中，只有状态2和7有a弧射出，分别到达状态3和8。<br>
+      　　而ε-closure(｛3，8｝)=｛1，2，3，4，6，7，8｝。<br>
+      <br>
+      　　再看一个例子，对下图所示NFA的状态集合I的运算<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 4.5</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/chap03/3_3_7.gif" width="267" height="135"></td>
+        </tr>
+      </table>
+      　　I={1},ε-closure(I)={1,2}；<br>
+      　　I={5},ε-closure(I)={5,6,2}；<br>
+      　　move({1,2},a)={5,3,4}<br>
+      　　ε-closure({5,3,4})={2,3,4,5,6,7,8}； </td>
+  </tr>
+</table>
+</body>
+</html>

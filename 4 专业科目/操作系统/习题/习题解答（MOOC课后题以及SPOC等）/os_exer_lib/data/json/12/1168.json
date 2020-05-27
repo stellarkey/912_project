@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"clone 仓库 gitclone http://www.github.com/chyyuu/ucore_lab\n",
+    "question":"熟悉基本的git命令行操作命令，从github上 的 http://www.github.com/chyyuu/ucore_lab 下载 ucore lab实验\n",
+    "source":"网络",
+    "answer":"clone 仓库 gitclone http://www.github.com/chyyuu/ucore_lab\n",
+    "type":"question_answer",
+    "q_number":1168
+}

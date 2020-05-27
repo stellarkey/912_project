@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>5.3 确定的自顶向下分析方法 </b> <br>
+      <b>5.3.1 递归子程序法 </b> <br>
+      　　递归子程序法是比较简单直观易于构造的一种语法分析方法。在第2章中介绍的PL/0编译程序的语法分析部分就是采用的递归子程序法。它要求文法满足LL(1)文法。它的实现思想是对应文法中每个非终结符编写一个递归过程，每个过程的功能是识别由该非终结符推出的串，当某非终结符的产生式有多个候选时能够按LL(1)形式可唯一地确定选择某个候选进行推导。具体的实现方式，识别过程在第2章PL/0的编译程序中已介绍，读者可参考和回顾PL/0编译程序语法分析方法在每个过程中如何识别及各个过程之间的调用关系。<br>
+      　　由于递归子程序法对每个过程可能存在直接或间接递归调用，所以对某个过程在退出之前可能又被调用，因此有些信息需要保留，通常在入口时需保留某些信息，出口时需恢复。由于递归过程是遵循先进后出规律，所以通常开辟先进后出栈来处理。</td>
+  </tr>
+</table>
+</body>
+</html>

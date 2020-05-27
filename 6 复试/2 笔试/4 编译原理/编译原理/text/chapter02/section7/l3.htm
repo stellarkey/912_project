@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　在图2.10中我们可以看到当例中程序执行进入到C过程后，在C过程中又调用B过程时，数据区栈中的状况，这时过程B的静态链是指向过程A的基地址，而不是指向过程C的基地址。因为过程B是由过程A定义的，它的名字在A层的名字表中，当在C过程中调用B过程时，层次差为2，所以这时应沿C过程数据的静态链，跳过两个数据段的基地址值，才是当前被调用的B过程的静态链之值。这里也可看出不管B过程在何时被调用，它的数据段静态链总是指向定义它的A过程的最新数据段基地址。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <p> 　　候选删除算法分为四个步骤：<br>
+        　　1) 把H初始化为整个规则空间。这是G仅包含空描述，可描述所有条件的描述，如TURE；S包含所有最特殊的概念。实际上，为了避免S集合过大，有时把S初始化为仅包含第一个示教正例。<br>
+        　　2) 接受一个新的示教例子。如果这个例子是正例，则从G中删除不包含新例的概念，然后修改S为由新正例和S原有元素共同归纳出的最特殊的结果（这个过程称为对集合S的修改过程）。如果这个例子是反例，则从S中删去包含新例的概念，再对G作尽量小的特殊化，使之不包含新反例（这个过程称为集合G的修改过程）。<br>
+        　　3) 重复步骤②，直到G=S，且使这两个集合都只含有一个元素为止。<br>
+        　　4) 输出H中的概念（即输出G或S）。</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

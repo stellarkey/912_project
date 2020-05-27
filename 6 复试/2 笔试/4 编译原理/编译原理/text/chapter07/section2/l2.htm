@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>7.2.1 可归前缀和子前缀 </b> <br>
+      　　为了在以后的LR分析中不致引起混淆，现对原文法进行拓广。若原文法G的开始符号为S，在G中加产生式S′→S后得新的文法G′，则称G′为原文法G的拓广文法，而S′为拓广后文法G′的开始符号。对文法进行拓广的目的是为了对某些右部含有开始符号的文法，在归约过程中能分清是否已归约到文法的最初开始符，还是在文法右部出现的开始符号，拓广文法的开始符号S′只在左部出现，这样确保了不会混淆。 
+      <br>
+      　　我们可以形式地定义活前缀如下：<br>
+      <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+      定义7.1</b> 若S′<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">αAω<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　　　　　　　　　R　　　 R <br>
+      αβω是文法G′中的一个规范推导，G′是G的拓广文法，符号串γ是αβ的前缀，则称γ是G的，也是G′的一个活前缀。<br>
+      　　实际上γ是规范句型αβω的前缀，但它的右端不超过该句型句柄的末端（其中A→β是一产生式，ω∈V<sub><font size="-2">T</font></sub><sup><font size="-2">*</font></sup>； 
+      α、β、γ∈V<sup><font size="-2">*</font></sup>）。<br>
+      　　由以上分析我们很容易理解，在LR分析过程中，实际上是把αβ的前缀列出放在符号栈中，一旦在栈中出现αβ，即句柄已经形成，则用产生式A→β进行归约。</td>
+  </tr>
+</table>
+</body>
+</html>

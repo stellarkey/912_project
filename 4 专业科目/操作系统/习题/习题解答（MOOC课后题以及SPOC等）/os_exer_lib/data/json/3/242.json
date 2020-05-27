@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"如果进程PA对信号量S执行P操作，则信号量S的值应_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.加1",
+        "B.减1",
+        "C.等于0",
+        "D.小于0"
+    ],
+    "q_number":242
+}

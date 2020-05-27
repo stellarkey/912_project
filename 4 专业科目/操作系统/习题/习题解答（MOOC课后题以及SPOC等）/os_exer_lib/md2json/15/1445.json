@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "lab6调度算法支撑框架中与时钟中断相关的函数指针有（）s4\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "D", "type": "2\r\n", "options": " A.(enqueue)(struct run_queue rq, …);\r\n B.(dequeue)(struct run_queue rq, …);\r\n C.(pick_next)(struct run_queue rq);\r\n D.(proc_tick)(struct run_queue rq, …);\r\n"}

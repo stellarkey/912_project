@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>删除无用赋值</b><br>
+      　　在图11.5中，（6）对T<sub><font size="-2">4</font></sub>赋值，但T<sub><font size="-2">4</font></sub>未被引用；另外，（2）和（11）对I赋值，但只有（11）引用I。所以，只要程序中其它地方不需要引用T<sub><font size="-2">4</font></sub>和I，则（6），（2）和（11）对程序的运行结果无任何作用。我们称之为无用赋值，无用赋值可以从程序中删除，如图11.6所示（设（6）（2）（11）为无用赋值）。<br>
+      　　比较图11.2和图11.6可看出，经过优化后的代码的执行效率提高了很多。当然，实现这些优化的一系列工作是非常复杂的，代价也是很大的。</td>
+  </tr>
+</table>
+</body>
+</html>

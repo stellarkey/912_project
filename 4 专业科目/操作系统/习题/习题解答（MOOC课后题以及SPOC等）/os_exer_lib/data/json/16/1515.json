@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"CPU一直通过直接访问位于内存中页表完成虚实地址转换。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1515
+}

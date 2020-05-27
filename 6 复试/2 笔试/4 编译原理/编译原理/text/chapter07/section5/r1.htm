@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>
+      　　例如：我们分析图7.12中的项目集可发现同心集如下：<br>
+      　　I<sub><font size="-2">3</font></sub>： B→a·B,a/b 　　　　I<sub><font size="-2">6</font></sub>： 
+      B→a·B,#<br>
+      　　　　 B→·aB,a/b 　　　 　　 B→·aB,#<br>
+      　　　　 B→·b,a/b 　　　　　　 B→·b,#<br>
+      　　I<sub><font size="-2">4</font></sub>： B→b·,a/b 　　　　 I<sub><font size="-2">7</font></sub>： 
+      B→b·,#<br>
+      　　I<sub><font size="-2">8</font></sub>： B→aB·,a/b 　　　　I<sub><font size="-2">9</font></sub>： 
+      B→aB·,#<br>
+      　　即I<sub><font size="-2">3</font></sub>和I<sub><font size="-2">6</font></sub>，I<sub><font size="-2">4</font></sub>和I<sub><font size="-2">7</font></sub>，I<sub><font size="-2">8</font></sub>和I<sub><font size="-2">9</font></sub>分别为同心集，将同心集合并后为：<br>
+      　　I<sub><font size="-2">3</font></sub>,I<sub><font size="-2">6</font></sub>： 
+      B→a·B,a/b/#<br>
+      　　　　　　B→·aB,a/b/#<br>
+      　　　　　　B→·b,a/b/#<br>
+      　　I<sub><font size="-2">4</font></sub>,I<sub><font size="-2">7</font></sub>： 
+      B→b·，a/b/#<br>
+      　　I<sub><font size="-2">8</font></sub>,I<sub><font size="-2">9</font></sub>： 
+      B→aB·，a/b/#<br>
+      　　同心集合并后仍不包含冲突，因此该文法满足LALR(1) 要求。<br>
+      　　合并同心集有几个问题需要说明。<br>
+      　　(1) 同心集是指心相同的项目集合并在一起，因此同心集合并后心仍相同，只是超前搜索符集合为各同心集超前搜索符集合的和集。</td>
+  </tr>
+</table>
+</body>
+</html>

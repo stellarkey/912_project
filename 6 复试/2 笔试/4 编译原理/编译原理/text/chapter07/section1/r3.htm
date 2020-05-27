@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../img/index/bg1.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　分析器的动作就是由栈顶状态和当前输入符号所决定(LR(0)分析器不需向前查看输入符号)。LR分析器工作过程示意图如图7.1所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#FF0000"> <font color="#0000FF">图 
+            7.1 LR分析器工作过程示意图</font></font></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap07/f7-1-1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/f7-1-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　其中SP为栈指针，S[i]为状态栈，X[i]为文法符号栈。状态转换表用GOTO[S<sub><font size="-2">i</font></sub>,X]＝S<sub><font size="-2">j</font></sub> 
+      表示，规定当栈顶状态为S<sub><font size="-2">i</font></sub>遇到当前文法符号为X时应转向状态S<sub><font size="-2">j</font></sub>。X为终结符或非终结符，状态的含义将在后面介绍。</td>
+  </tr>
+</table>
+</body>
+</html>

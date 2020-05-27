@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "假定磁盘块的大小为1KB，对于540MB的硬盘，其文件分配表FAT需要占用多少存储空间？当硬盘容量为1.2GB时，FAT需要占用多少空间？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "硬盘总块数为：540M/1K＝540K个；因为：220>540K，即文件分配表的每个表目为20/8＝2.5字节，则FAT占用：2.5540＝1350K", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"通过_____ 表示磁盘上每一磁盘块的唯一地址。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.柱面号、扇区号",
+        "B.磁头号、扇区号",
+        "C.柱面号、磁头号",
+        "D.柱面号、磁头号、扇区号"
+    ],
+    "q_number":274
+}

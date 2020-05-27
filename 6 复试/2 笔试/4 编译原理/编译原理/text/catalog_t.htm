@@ -1,0 +1,362 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var bV=parseInt(navigator.appVersion);
+var NS4=(document.layers) ? true : false;
+var IE4=((document.all)&&(bV>=4))?true:false;
+var ver4 = (NS4 || IE4) ? true : false;
+
+function expandIt(){return}
+function expandAll(){return}
+function nomsg(){self.status="";}
+
+if(ver4){
+  document.write("<SCR"+"IPT LANGUAGE=\"JavaScript\" SRC=\"rsmenu1.js\"></SCR"+"IPT>");
+}
+//-->
+</SCRIPT>
+<link rel="stylesheet" href="../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../img/index/first_bg.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body text="#000000">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" height="100%" class=text align="right">
+  <tr>
+    <td width="８%" valign="top">&nbsp;</td>
+    <td width="92%" valign="top"> 
+      <!---------- begin OUTLINE ----------->
+      <!-- <span style="background: #00FFFF; color: black">展开/关闭全部</span> -->
+      <!-- <BLOCKQUOTE> -->
+      <!-- 第一级父菜单 -->
+      <div id="elOneParent" class=parent style="margin-left: 0.5em"> <a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elOne'); return false"> 
+        <font color="#000000"><span class="pt9-black"><font color="#0000CC">◇ 
+        第一章 编译程序概述</font></span></font></a></div>
+      <span class="pt9-black"> 
+      <!-- 第一级子菜单 -->
+      </span> 
+      <div id="elOneChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter01/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter01/section1/index2.htm" target="_parent"><font color="#000000">- 
+        1.1 什么是编译程序</font></a><br>
+        <a href="chapter01/section2/index1.htm" target="_parent"><font color="#000000">- 
+        1.2 编译过程概述和编译程序的结构</font></a><br>
+        <a href="chapter01/section3/index1.htm" target="_parent"><font color="#000000">- 
+        1.3 高级语言解释系统</font></a><br>
+        <a href="chapter01/section4/index1.htm" target="_parent"><font color="#000000"> 
+        - 1.4 编译技术的发展和应用</font></a><br>
+        <a href="chapter01/section4/index3.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter01/section4/index4.htm" target="_parent"><font color="#000000">- 
+        思考题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第二级父菜单 -->
+      </span> 
+      <div id="elTwoParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elTwo'); return false"><font color="#0000CC">◇ 
+        第二章 PL/0编译程序的实现</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第二级子菜单 -->
+      </span> 
+      <div id="elTwoChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter02/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter02/section1/index2.htm" target="_parent"><font color="#000000">- 
+        2.1 PL/0语言和类pcode的描述</font></a><br>
+        <a href="chapter02/section2/index1.htm" target="_parent"><font color="#000000">- 
+        2.2 PL/0编译程序的结构</font></a><br>
+        <a href="chapter02/section3/index1.htm" target="_parent"><font color="#000000">- 
+        2.3 PL/0编译程序的词法分析</font></a><br>
+        <a href="chapter02/section4/index1.htm" target="_parent"><font color="#000000">- 
+        2.4 PL/0编译程序的语法分析</font></a> <br>
+        <a href="chapter02/section5/index1.htm" target="_parent"><font color="#000000">- 
+        2.5 PL/0编译程序的目标代码结构和代码生成</font></a><br>
+        <a href="chapter02/section6/index1.htm" target="_parent"><font color="#000000">- 
+        2.6 PL/0编译程序的语法错误处理</font></a><br>
+        <a href="chapter02/section7/index1.htm" target="_parent"><font color="#000000">- 
+        2.7 PL/0编译程序的目标代码解释执行时的存储分配</font></a><br>
+        <a href="chapter02/section7/index5.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter02/section7/index6.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第三级父菜单 -->
+      </span> 
+      <div id="elThreeParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elThree'); return false"><font color="#0000CC">◇ 
+        第三章 词法分析程序</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第三级子菜单 -->
+      </span> 
+      <div id="elThreeChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter03/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter03/section1/index3.htm" target="_parent"><font color="#000000">- 
+        3.1 词法分析程序</font></a><br>
+        <a href="chapter03/section2/index1.htm" target="_parent"><font color="#000000"> 
+        - 3.2 正规表达式与正规集（正规语言）</font></a><br>
+        <a href="chapter03/section3/index1.htm" target="_parent"><font color="#000000">- 
+        3.3 有穷自动机</font></a><br>
+        <a href="chapter03/section4/index1.htm" target="_parent"><font color="#000000">- 
+        3.4词法分析程序的自动构造</font></a><br>
+        <a href="chapter03/section4/index4.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter03/section4/index5.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第四级父菜单 -->
+      </span> 
+      <div id="elFourParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elFour'); return false"><font color="#0000CC">◇ 
+        第四章 文法和语言</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第四级子菜单 -->
+      </span> 
+      <div id="elFourChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter04/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter04/section1/index2.htm" target="_parent"><font color="#000000">- 
+        4.1 引言和预备知识</font></a><br>
+        <a href="chapter04/section2/index1.htm" target="_parent"><font color="#000000">- 
+        4.2 文法和语言的形式定义</font></a><br>
+        <a href="chapter04/section3/index1.htm" target="_parent"><font color="#000000">- 
+        4.3 文法的类型</font></a><br>
+        <a href="chapter04/section4/index1.htm" target="_parent"><font color="#000000">- 
+        4.4 上下文无关文法及其语法树</font></a><br>
+        <a href="chapter04/section5/index1.htm" target="_parent"><font color="#000000">- 
+        4.5 上下文无关文法的句型分析</font></a><br>
+        <a href="chapter04/section6/index1.htm" target="_parent"><font color="#000000">- 
+        4.6 有关文法实用中的一些说明</font></a><br>
+        <a href="chapter04/section6/index3.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter04/section6/index4.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第五级父菜单 -->
+      </span> 
+      <div id="elFiveParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elFive'); return false"><font color="#0000CC">◇ 
+        第五章 自顶向下语法分析方法</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第五级子菜单 -->
+      </span> 
+      <div id="elFiveChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter05/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter05/section1/index3.htm" target="_parent"><font color="#000000">- 
+        5.1 确定的自顶向下分析思想</font></a><br>
+        <a href="chapter05/section2/index1.htm" target="_parent"><font color="#000000">- 
+        5.2 LL(1) 文法的定义和判别</font></a><br>
+        <a href="chapter05/section3/index1.htm" target="_parent"><font color="#000000">- 
+        5.3 确定的自顶向下分析方法</font></a><br>
+        <a href="chapter05/section3/index5.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter05/section3/index6.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第六级父菜单 -->
+      </span> 
+      <div id="elSixParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elSix'); return false"><font color="#0000CC">◇ 
+        第六章 算符优先分析法</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第六级子菜单 -->
+      </span> 
+      <div id="elSixChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter06/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter06/section1/index2.htm" target="_parent"><font color="#000000">- 
+        6.1 自底向上分析概述</font></a><br>
+        <a href="chapter06/section2/index1.htm" target="_parent"><font color="#000000">- 
+        6.2 算符优先分析法</font></a><br>
+        <a href="chapter06/section2/index12.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter06/section2/index13.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第7级父菜单 -->
+      </span> 
+      <div id="elsevenParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elseven'); return false"><font color="#0000CC">◇ 
+        第七章 LR分析法</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第7级子菜单 -->
+      </span> 
+      <div id="elsevenChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter07/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter07/section1/index3.htm" target="_parent"><font color="#000000">- 
+        7.1 LR分析概述</font></a><br>
+        <a href="chapter07/section2/index1.htm" target="_parent"><font color="#000000">- 
+        7.2 LR(0)分析</font></a><br>
+        <a href="chapter07/section3/index1.htm" target="_parent"><font color="#000000">- 
+        7.3 SLR(1)分析</font></a><br>
+        <a href="chapter07/section4/index1.htm" target="_parent"><font color="#000000">- 
+        7.4 LR(1) 分析</font></a><br>
+        <a href="chapter07/section5/index1.htm" target="_parent"><font color="#000000">- 
+        7.5 LALR(1) 分析</font></a><br>
+        <a href="chapter07/section6/index1.htm" target="_parent"><font color="#000000">- 
+        7.6 二义性文法在LR分析中的应用</font></a><br>
+        <a href="chapter07/section6/index3.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter07/section6/index4.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第８级父菜单 -->
+      </span> 
+      <div id="eleightParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('eleight'); return false"><font color="#0000CC">◇ 
+        第八章 语法制导翻译和中间代码生成</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第８级子菜单 -->
+      </span> 
+      <div id="eleightChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter08/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter08/section1/index3.htm" target="_parent"><font color="#000000">- 
+        8.1 属性文法</font></a><br>
+        <a href="chapter08/section2/index1.htm" target="_parent"><font color="#000000">- 
+        8.2 语法制导翻译</font></a><br>
+        <a href="chapter08/section3/index1.htm" target="_parent"><font color="#000000">- 
+        8.3 中间代码的形式</font></a><br>
+        <a href="chapter08/section4/index1.htm" target="_parent"><font color="#000000">- 
+        8.4 简单赋值语句的（四元式）翻译</font></a><br>
+        <a href="chapter08/section5/index1.htm" target="_parent"><font color="#000000">- 
+        8.5 布尔表达式的翻译</font></a><br>
+        <a href="chapter08/section6/index1.htm" target="_parent"><font color="#000000">- 
+        8.6 控制语句的翻译<br>
+        </font></a> <a href="chapter08/section7/index1.htm" target="_parent"><font color="#000000">- 
+        8.7 简单说明语句的翻译</font></a><br>
+        <a href="chapter08/section8/index1.htm" target="_parent"><font color="#000000">- 
+        8.8 Yacc和语法制导翻译</font></a> <br>
+        <a href="chapter08/section8/index4.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter08/section8/index5.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第９级父菜单 -->
+      </span> 
+      <div id="elnineParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elnine'); return false"><font color="#0000CC">◇ 
+        第九章 符号表</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第９级子菜单 -->
+      </span> 
+      <div id="elnineChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter09/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter09/section1/index2.htm" target="_parent"><font color="#000000">- 
+        9.1 符号表的作用和地位</font></a><br>
+        <a href="chapter09/section2/index1.htm" target="_parent"><font color="#000000">- 
+        9.2 符号的主要属性及作用</font></a><br>
+        <a href="chapter09/section3/index1.htm" target="_parent"><font color="#000000">- 
+        9.3 符号表的组织<br>
+        </font></a><a href="chapter09/section4/index1.htm" target="_parent"><font color="#000000">- 
+        9.4 符号表的管理</font></a><br>
+        <a href="chapter09/section4/index7.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter09/section4/index8.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a></span></div>
+      <span class="pt9-black"> 
+      <!-- 第10级父菜单 -->
+      </span> 
+      <div id="eltenParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elten'); return false"><font color="#0000CC">◇ 
+        第十章 目标程序运行时的存储组织</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第10级子菜单 -->
+      </span> 
+      <div id="eltenChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter10/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter10/section1/index3.htm" target="_parent"><font color="#000000">- 
+        10.1 数据空间的三种不同使用方法和管理方法</font></a><br>
+        <a href="chapter10/section2/index1.htm" target="_parent"><font color="#000000">- 
+        10.2 栈式存储分配的实现</font></a><br>
+        <a href="chapter10/section3/index1.htm" target="_parent"><font color="#000000">- 
+        10.3 参数传递</font></a><br>
+        <a href="chapter10/section4/index1.htm" target="_parent"><font color="#000000"> 
+        - 10.4 过程调用、过程进入和过程返回</font></a><br>
+        <a href="chapter10/section4/index2.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter10/section4/index3.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级父菜单 -->
+      </span> 
+      <div id="elelvenParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elelven'); return false"><font color="#0000CC">◇ 
+        第十一章 代码优化</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级子菜单 -->
+      </span> 
+      <div id="elelvenChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter11/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter11/section1/index3.htm" target="_parent"><font color="#000000">- 
+        11.1 什么是代码优化</font></a><br>
+        <a href="chapter11/section2/index1.htm" target="_parent"><font color="#000000"> 
+        - 11.2 局部优化</font></a><br>
+        <a href="chapter11/section3/index1.htm" target="_parent"><font color="#000000">- 
+        11.3 控制流程分析和循环优化</font></a><br>
+        <a href="chapter11/section3/index8.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a><br>
+        <a href="chapter11/section3/index9.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a> <font color="#000000"><br>
+        </font></span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级父菜单 -->
+      </span> 
+      <div id="eltwelveParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('eltwelve'); return false"><font color="#0000CC">◇ 
+        第十二章 代码生成</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级子菜单 -->
+      </span> 
+      <div id="eltwelveChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter12/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter12/section1/index2.htm" target="_parent"><font color="#000000">- 
+        12.1 代码生成概述</font></a><br>
+        <a href="chapter12/section2/index1.htm" target="_parent"><font color="#000000">- 
+        12.2 一个计算机模型</font></a><br>
+        <a href="chapter12/section3/index1.htm" target="_parent"><font color="#000000">- 
+        12.3 一个简单的代码生成器</font></a><br>
+        <a href="chapter12/section4/index1.htm" target="_parent"><font color="#000000">- 
+        12.4 中间语言的选择</font></a><br>
+        <a href="chapter12/section4/index4.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a> <br>
+        <a href="chapter12/section4/index5.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a> <br>
+        </span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级父菜单 -->
+      </span> 
+      <div id="elthirteenParent" class=parent style="margin-left: 0.5em"> <span class="pt9-black"><a href="#" style="color:#C000FF; text-decoration:none;" onClick="expandIt('elthirteen'); return false"><font color="#0000CC">◇ 
+        第十三章 编译程序实现的途径</font></a> </span></div>
+      <span class="pt9-black"> 
+      <!-- 第11级子菜单 -->
+      </span> 
+      <div id="elthirteenChild" class=child style="margin-left: 1em"> <span class="pt9-black"><a href="chapter13/section1/index1.htm" target="_parent"><font color="#000000">- 
+        课前索引</font></a><br>
+        <a href="chapter13/section1/index2.htm" target="_parent"><font color="#000000">- 
+        13.1 编译程序的书写语言与T型图</font></a><br>
+        <a href="chapter13/section2/index1.htm" target="_parent"><font color="#000000"> 
+        - 13.2 编译程序的自展技术</font></a><br>
+        <a href="chapter13/section3/index1.htm" target="_parent"><font color="#000000">- 
+        13.3 交叉编译与编译程序的移植<br>
+        </font></a><a href="chapter13/section4/index1.htm" target="_parent"><font color="#000000">- 
+        13.4 编译程序的构造工具</font></a><br>
+        <a href="chapter13/section4/index3.htm" target="_parent"><font color="#000000">- 
+        本章小结</font></a><br>
+        <a href="chapter13/section4/index4.htm" target="_parent"><font color="#000000"> 
+        - 课后习题</font></a> <font color="#000000"><br>
+        </font></span></div>
+      <span class="pt9-black"> 
+      <!-- </BLOCKQUOTE> -->
+       </span> <span class="pt9-black"> 
+      <!---------- end OUTLINE ----------->
+      <script language="JavaScript1.2">
+<!--
+if(NS4){
+  firstEl = "elOneParent";
+  firstInd = getIndex(firstEl);
+  showAll();
+  arrange();
+}
+//-->
+</script>
+      </span> <img src="../img/index/1x1pixel.gif" width="6" height="15"><a href="appendix/app_a/index1.htm" target="_parent"><font color="#0000CC"> 
+      【附录A】</font></a><a href="appendix/app_b/index1.htm" target="_parent"><font color="#0000CC">【附录B】</font></a><a href="appendix/app_c/index1.htm" target="_parent"><font color="#0000CC">【附录C】</font></a><a href="appendix/app_d/index1.htm" target="_parent"><font color="#0000CC">【附录D】<br>
+      </font></a></td>
+  </tr>
+</table>
+</body>
+</html>

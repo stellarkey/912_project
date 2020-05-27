@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "常用移臂调度算法包括（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "﻿2\r\n", "options": " A.先来先服务（FIFO）算法\r\n B.最短寻道时间优先（SSTF）算法\r\n C.电梯调度（SCAN）算法\r\n D.单向扫描（C-SCAN）算法\r\n"}

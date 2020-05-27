@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　为了求<img src="../../../img/chap06/symbol01.gif" width="18" height="20">和<img src="../../../img/chap06/symbol02.gif" width="18" height="20">关系 
+      ，需先由定义6.2计算每个非终结符的FIRSTVT集合和LASTVT集合，结果为：<br>
+      　　FIRSTVT(E′)={#}<br>
+      　　FIRSTVT(E)={+，*，↑，(，i}<br>
+      　　FIRSTVT(T)={*，↑，(，i}<br>
+      　　FIRSTVT(F)={↑,(，i}<br>
+      　　FIRSTVT(P)={(，i}<br>
+      　　LASTVT(E′)={#}<br>
+      　　LASTVT(E)={+，*，↑，)，i}<br>
+      　　LASTVT(T)={*，↑，)，i}<br>
+      　　LASTVT(F)={↑，)，i}<br>
+      　　LASTVT(P)={)，i}<br>
+      　　在计算每个非终结符的FIRSTVT集合和LASTVT集合时，可先考虑文法中含有E→T，T→F ，F→P形式的产生式，由定义6.2的推论可知P的FIRSTVT集合和LASTVT集合也属于F的FIRSTVT集合和LASTVT集合，同样F的也属于T的，T的也属于E的。集合中的其它元素可根据定义由产生式直接计算。<br>
+      　　然后逐条扫描产生式寻找终结符在前非终结符在后的相邻符号对和非终结符在前终结符在后的相邻符号对，即产生式右部有形如<br>
+      　　A→…aB… 和 A→…Bb… 的产生式。</td>
+  </tr>
+</table>
+</body>
+</html>

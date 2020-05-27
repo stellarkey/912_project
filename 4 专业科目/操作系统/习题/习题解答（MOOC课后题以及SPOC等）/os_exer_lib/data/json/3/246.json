@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"MS—DOS中用于软盘整盘复制的命令是(　　)\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.COMP",
+        "B.DISKCOPY",
+        "C.SYS",
+        "D.BACKUP"
+    ],
+    "q_number":246
+}

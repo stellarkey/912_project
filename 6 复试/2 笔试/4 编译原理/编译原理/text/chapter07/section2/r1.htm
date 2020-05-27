@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　对表7.1的构造原理和表7.2分析过程的实现思想将在下面详细介绍。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表 7.1 例6.1文法的LR(0)分析表</font> 
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">&nbsp;</td>
+                <td align="center" colspan="6">ACTION</td>
+                <td align="center" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">a</td>
+                <td align="center" valign="top">c</td>
+                <td align="center" valign="top">e</td>
+                <td align="center" valign="top">b</td>
+                <td align="center" valign="top">d</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">A</td>
+                <td align="center" valign="top">B</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9</td>
+                <td align="center" valign="top">S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  S9<br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  S6<br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2<br>
+                  S8<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r1</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  3 </td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  7 </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    　　表 7.1符号说明：<br>
+      　　S<sub><font size="-1">i</font></sub>：移进，将状态i和输入符进栈<br>
+      　　r<sub><font size="-1">i</font></sub>：归约，用第i个产生式归约，同时状态栈与符号栈退出相应个符号，并把GOTO表相应状态和第i个产生式的左部非终结符入栈。</td>
+  </tr>
+</table>
+</body>
+</html>

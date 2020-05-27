@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　在上一个问题中我们介绍了变换编码的思想，在变换编码方法中我们认为最好的就是K-L变换，也就是说K-L变换是最佳的。因为K-L变换使矢量信号的各个分量互不相关，在均方误差准则下，它是失真最小的一种变换。所以称它为最佳变换。下面就给大家讲解K-L变换。K-L变换<br>
+      　　1．K-L变换的定义<br>
+      　　是以统计特性为基础，变换核由图像矩阵的协方差矩阵的特征值和特征向量所决定，也称特征向量变换。其表达式可写为：Y=A(X-Mx) 。其中：<br>
+      　　<i><font face="Times New Roman, Times, serif" size="3">Y</font></i> 向量是K-L变换的结果，<br>
+      　　<i><font face="Times New Roman, Times, serif" size="3">A</font></i> 是变换核矩阵，<br>
+      　　<i><font face="Times New Roman, Times, serif" size="3">X </font></i>是中心化图像向量<br>
+      　　<i><font face="Times New Roman, Times, serif">X</font></i>-<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x为原数据输入向量， 
+      <br>
+      　　<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x是<i><font face="Times New Roman, Times, serif" size="3">X</font></i>的平均向量<br>
+      　　2．K-L变换的特点<br>
+      　　它是<br>
+      　　最优的正交变换--特征向量矩阵向量指向数据变化最大的方向<br>
+      　　去除相关性和能量集中为最佳<br>
+      　　缺点：计算过程复杂，变换速度慢。<br>
+      　　K-L变换虽然是最佳的的，但是它没有通用的变换核矩阵（<i><font face="Times New Roman, Times, serif">A</font></i>），因此对于每一个图像数据都要计算相应的变换矩阵，其计算量相当的大。所以说它计算复杂。<br>
+      　　由于计算复杂，我认为先从总体上理解，再各个部分去理解就比较容易。<br>
+      　　K-L变换的目的是完成输入图像数据X（矩阵）变换成（具有最小相关性的）Y（矩阵），那么如何完成这一变换呢？需要一个变换核矩阵。根据已学过的线性代数有关矩阵的知识，知道存在一个正交矩阵<i><font face="Times New Roman, Times, serif">A</font></i>（其行向量是X的协方差矩阵的特征向量的转置）使X变换成对角阵（即X各分量间的相关全被去除）。这个对角阵就是<i><font face="Times New Roman, Times, serif">Y</font></i>，正交矩阵A就是我们需要的变换核。K-L变换的关键就是求解变换核矩阵<i><font face="Times New Roman, Times, serif">A</font></i>。<br>
+      　　下面学习K-L变换思路是：从K-L变换的表达式<i><font size="3" face="Times New Roman, Times, serif">Y</font></i>=<i><font face="Times New Roman, Times, serif" size="3">A</font></i>(<i><font face="Times New Roman, Times, serif" size="3">X</font></i>-<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x)出发，先分别理解（求出）<i><font face="Times New Roman, Times, serif">A</font></i>、<i><font face="Times New Roman, Times, serif">X</font></i> 
+      、<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x的含义与计算方法，并将其分别求出，再带回原表达式，最终理解掌握K-L变换。<br>
+      　　老师归纳的掌握K-L变换思路图如下：<br>
+      　　3．K-L变换的过程<br>
+      　　  
+      <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap04/125.gif" width="300" height="184" border="0"></a> 
+      <br>
+      　　为了理解K-L变换，我们举例做一个K-L变换，也就是求<i><font size="3" face="Times New Roman, Times, serif">Y</font></i>=<i><font face="Times New Roman, Times, serif" size="3">A</font></i>(<i><font face="Times New Roman, Times, serif" size="3">X</font></i>-<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x)，再证明其是最佳的变换。 
+      <br>
+      　　4．例如 ：假定对某幅N×N的图像<img src="../../../../images/chatp/chap04/126.gif" width="249" height="21" align="absmiddle"> 
+      <br>
+      　　在通信干线上做M次传送，在接收端所接收的图像集合为：<br>
+      　　<img src="../../../../images/chatp/chap04/127.gif" width="348" height="21">。<br>
+      　　写成M个N<sup>2</sup>维的向量。<br>
+      <font color="#003399">　　 </font>4.5-2 第一个子块f0(x,y)<br>
+      　　　<img src="../../../../images/chatp/chap04/129.gif" width="211" height="166"> 
+      <br>
+      <font color="#003399">　　</font> 4.5-3 分成M个子块的模式（列堆叠）<br>
+      　　<img src="../../../../images/chatp/chap04/128.gif" width="237" height="235"> 
+      <br>
+      　　一幅N×N的图像<img src="../../../../images/chatp/chap04/126.gif" width="249" height="21" align="absmiddle">是说一幅图像有N×N个像素，每一行有N个像素：0 
+      -（N－1），共有N个列（每一列也有N个像素：0 -（N－1）），每一行的像素值可以对应一个一维向量。<br>
+      　　例如，传送的第一幅图f0(x,y)（显示图4.5-2）它的第一行对应的一维向量可写为：X<sub>00</sub>＝{ f<sub>0</sub>(0,0)，f<sub>1</sub>(0,1)，……　f<sub>0</sub>(0,N-1)}（显示画出图4.5-2的第一行向量）第二行对应的一维向量可写为：X<sub>01</sub>＝{ 
+      f<sub>0</sub>(1,0)，f<sub>1</sub>(1,1)，……　f<sub>0</sub>(1,N-1)}，依此类推第N行的一维向量可写为：X<sub>0N</sub>＝{ f<sub>0</sub>(N-1,0)，f<sub>1</sub>(N-1,1)，……　f<sub>0</sub>(N-1,N-1)} 
+      （显示画出图4.5-2的第N行向量）。则由X<sub>00</sub>、X<sub>01</sub>……X<sub>0N</sub>构成第一幅图f<sub>0</sub>(x,y) 的向量集合，我们用X<sub>0</sub>表示，即<br>
+      　　<img src="../../../../images/chatp/chap04/130.gif" width="95" height="99" align="absmiddle">按列堆叠的方法就生成如下表述的N2维的向量。（显示画出下面的N方向 
+      <br>
+      <font color="#003399">　　 </font><img src="../../../../images/chatp/chap04/131.gif" width="364" height="413"><br>
+      　　依此类推，传送M次得到的M个子块对应M个N2维的向量。M个子块按列（行）堆叠构成一幅图像如图4.5-2。<br>
+      　　以上我们说的是M个N<sup>2</sup>维向量的生成。即有了K-L变换的&quot;X&quot;。这是第一步得到了需要变换的数据。<br>
+      　　下一步将想办法求得变换核&quot;A&quot;，这也是K-L变换最关键的一步。<br>
+      　　我们知道&quot;A&quot;由&quot;X&quot;的协方差矩阵的特征值按减序排列所对应的特征向量作为行向量。因此，第一个要求的就是&quot;X&quot;的协方差矩阵，由协方差矩阵的定义可知&quot;X&quot;的协方差矩阵为：<br>
+      　　<img src="../../../../images/chatp/chap04/132.gif" width="203" height="29" align="absmiddle"> 
+      （1）<br>
+      　　<img src="../../../../images/chatp/chap04/133.gif" width="192" height="424"> 
+      <br>
+      　　<b>(4.5-2) </b><font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t2.htm" target="_blank"><img src="../../../../images/chatp/chap04/134.gif" width="298" height="150" border="0"></a> 
+      <br>
+      <b>　　(4.5-3)</b> <br>
+      　　（1）式中，<img src="../../../../images/chatp/chap04/135.gif" width="81" height="25" align="absmiddle"> 
+      <br>
+      　　是X的平均值向量，E是期望值。M个向量的平均值向量可用下式（2）确定。<br>
+      　　<img src="../../../../images/chatp/chap04/136.gif" width="104" height="45" align="absmiddle">　　(3) 
+      <br>
+      　　X向量的协方差矩阵<br>
+      　 <img src="../../../../images/chatp/chap04/137.gif" align="absmiddle">（4）<br>
+      　　（4）式中，平均向量<i><font face="Times New Roman, Times, serif" size="3">m</font></i>x是N<sup>2</sup>向量，协方差矩阵CX是N<sup>2</sup>×N<sup>2</sup>方阵。<br>
+      到此，我们得到了X的协方差矩阵 。下一步就是要求该矩阵的特征值和特征向量。特征值和特征向量的求法，在线性代数中已经学过了，但有可能一些同学忘记了，为了你现在根好的理解　　K-L变换，我们来复习一下特征值和特征向量的求法。<br>
+      　　特征值和特征向量的定义：<br>
+      　　设A是n阶方阵，如果有数λ和n维非零向量X，使得<br>
+      　　A<sub>X</sub>=λ<sub>X</sub><br>
+      　　则称λ为A的特征值，X为A对应与特征值λ的特征向量。<br>
+      　　求法：<br>
+      　　 <img src="../../../../images/chatp/chap04/138.gif" width="57" height="19" align="absmiddle">→<img src="../../../../images/chatp/chap04/139.gif" width="80" height="19" align="absmiddle"> 
+      →<img src="../../../../images/chatp/chap04/140.gif" width="93" height="23" align="absmiddle"> 
+      → <img src="../../../../images/chatp/chap04/141.gif" width="80" height="27" align="absmiddle"><br>
+      　　这样就可求得λ 。<br>
+      　　例如：<img src="../../../../images/chatp/chap04/142.gif" width="88" height="48" align="absmiddle">求A的特征方程。利用上面的公式有：<br>
+      　　<img src="../../../../images/chatp/chap04/143.gif" width="268" height="48"><br>
+      　　求的A的特征值为<img src="../../../../images/chatp/chap04/144.gif" width="41" height="23" align="absmiddle"> 
+      <img src="../../../../images/chatp/chap04/145.gif" width="45" height="23" align="absmiddle"><br>
+      　　当<img src="../../../../images/chatp/chap04/144.gif" width="41" height="23" align="absmiddle">时，对应的特征向量应满足方程<br>
+      　　<img src="../../../../images/chatp/chap04/146.gif" width="236" height="51"><br>
+      　　所以：<img src="../../../../images/chatp/chap04/147.gif" width="75" height="23" align="absmiddle"><br>
+      　　　　　<img src="../../../../images/chatp/chap04/148.gif" width="75" height="23"> 
+      <br>
+      　　　　　<img src="../../../../images/chatp/chap04/149.gif" width="57" height="23"> 
+      <br>
+      　　其基础解系：<img src="../../../../images/chatp/chap04/150.gif" width="71" height="48" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/151.gif" width="75" height="48"> 
+      <br>
+      　　当<img src="../../../../images/chatp/chap04/145.gif" width="45" height="23" align="absmiddle">时，对应的特征向量应满足方程<br>
+      　　<img src="../../../../images/chatp/chap04/152.gif" width="224" height="51"><br>
+      　　所以：<img src="../../../../images/chatp/chap04/153.gif" width="103" height="23" align="absmiddle"><br>
+      　　　　　<img src="../../../../images/chatp/chap04/154.gif" width="75" height="23" align="absmiddle"> 
+      <br>
+      　　　　　<img src="../../../../images/chatp/chap04/155.gif" width="49" height="23"><br>
+      　　其基础解系：<img src="../../../../images/chatp/chap04/156.gif" width="56" height="48" align="absmiddle"><br>
+      　　<img src="../../../../images/chatp/chap04/157.gif" width="60" height="48"><br>
+      　　以上复习特征值、特征向量的求法，目的是帮助大家更好的理解K-L变换中协方差矩阵<img src="../../../../images/chatp/chap04/158.gif" width="24" height="21" align="absmiddle">的特征值和对应的特征向量的求解。由于协方差矩阵<img src="../../../../images/chatp/chap04/158.gif" width="24" height="21" align="absmiddle">的复杂性，无法具体求出它的特征值和对应的特征向量，但我们相信若是一个具体的协方差矩阵，就一定能求出它的特征值和对应的特征向量。假定一求出协方差矩阵<img src="../../../../images/chatp/chap04/158.gif" width="24" height="21" align="absmiddle">的特征值为<img src="../../../../images/chatp/chap04/159.gif" width="19" height="21" align="absmiddle">，<img src="../../../../images/chatp/chap04/160.gif" width="141" height="23" align="absmiddle"> 
+      ，<img src="../../../../images/chatp/chap04/161.gif" width="15" height="21" align="absmiddle"> 
+      是与之相对应的特征向量。并将特征值按减序排列，即 <br>
+      　　<img src="../../../../images/chatp/chap04/162.gif" width="217" height="29"> 
+      <br>
+      　　与每个特征值相对应，有一个<img src="../../../../images/chatp/chap04/163.gif" width="25" height="20" align="absmiddle">维特征向量。其对应关系如下：<br>
+      　　特征值<img src="../../../../images/chatp/chap04/165.gif" width="20" height="21" align="absmiddle">对应的特征向量 
+      <img src="../../../../images/chatp/chap04/164.gif" width="76" height="91" align="absmiddle"><br>
+      　　特征值<img src="../../../../images/chatp/chap04/166.gif" width="21" height="21" align="absmiddle">对应的特征向量<img src="../../../../images/chatp/chap04/167.gif" width="79" height="91" align="absmiddle"><br>
+      　　特征值<img src="../../../../images/chatp/chap04/159.gif" width="19" height="21" align="absmiddle">对应的特征向量<img src="../../../../images/chatp/chap04/168.gif" width="76" height="91" align="absmiddle"> 
+      <br>
+      　　以此类推<br>
+      　　特征值<img src="../../../../images/chatp/chap04/169.gif" width="29" height="24" align="absmiddle">对应的特征向量<img src="../../../../images/chatp/chap04/170.gif" width="93" height="112" align="absmiddle"> 
+      <br>
+      　　以上求得了协方差矩阵<img src="../../../../images/chatp/chap04/158.gif" width="24" height="21" align="absmiddle">的特征向量，接下来就可以得到变换核A。<br>
+      <font color="#003300">　　</font>以特征向量<img src="../../../../images/chatp/chap04/242.gif" width="12" height="13" align="absmiddle">作为K-L变换的基向量，令其作为K-L变换核矩阵的行，共N<sup>2</sup>个基向量，构成N<sup>2</sup>×N<sup>2</sup>方阵，称之为K-L变换核矩阵，即<font color="#003300"><font color="#993366"><br>
+      　　<img src="../../../../images/chatp/chap04/243.gif" width="223" height="123"><br>
+      　　</font></font>有了K=L变换的核和 就可以求的K-L变换的结果。<br>
+      　　用K-L变换核矩阵A与X向量减去平均值向量mx相乘，可得到一个新的向量Y，Y向量就是K-L变换的结果。其表达式如下 <br>
+      　　<img src="../../../../images/chatp/chap04/244.gif" width="107" height="23" align="absmiddle"> 
+      （6） <br>
+      　　式中，<img src="../../../../images/chatp/chap04/245.gif" width="63" height="28" align="absmiddle">是中心化图像向量。 
+      <br>
+      　　以上我们讲了K-L变换的求解方法，的到了K-L变换的结果，那么着个结果是不是最佳的那？下一步我们来证明K-L变换是最佳变换。<br>
+      　　证明K-L变换是最佳变换，就是证明以下两个结论成立：<br>
+      　　（1）K-L变换后Y向量的平均向量<img src="../../../../images/chatp/chap04/246.gif" width="48" height="24" align="absmiddle">；<img src="../../../../images/chatp/chap04/246.gif" width="48" height="24" align="absmiddle">说明Y的直流分量为零。<br>
+      　　（2）Y向量的协方差矩阵是对角阵。并且方差按降幂排列。协方差矩阵是对角阵说明Y向量中各元素相关性很小。<br>
+      　　先来证明第一点--Y向量的平均向量 。<br>
+      　　由协方差矩阵定义出发，可得到K-L变换结果向量Y的协方差矩阵为<br>
+      　　<img src="../../../../images/chatp/chap04/171.gif" width="187" height="29" align="absmiddle">　　（7） 
+      <br>
+        　　式中，<br>
+        　　<img src="../../../../images/chatp/chap04/172.gif" width="114" height="32"> 
+        <br>
+        　　可见，经过K-L变换后，所得的Y向量是一个平均向量为零的向量集，其座标原点已移到中心位置。<br>
+        　　证明了结论的第一点成立，在此基础上，来证明结论的第二点。<br>
+      　　将 代入式（7），则<br>
+        　　<img src="../../../../images/chatp/chap04/173.gif" width="245" height="185"> 
+        <br>
+        　　由变换核矩阵A的推导过程可知，A矩阵由协方差矩阵CX的特征向量ei的转置构成，即<br>
+        　　<img src="../../../../images/chatp/chap04/174.gif" width="69" height="131" align="absmiddle"> 
+        　　（10） <br>
+        　　且<img src="../../../../images/chatp/chap04/175.gif" width="136" height="29" align="absmiddle">　　<b> 
+        (11)</b><br>
+        　　由于A矩阵是正交矩阵，所以<br>
+        　　<img src="../../../../images/chatp/chap04/176.gif" width="61" height="20" align="absmiddle">　　<b>(12)</b><br>
+        　　同时，<img src="../../../../images/chatp/chap04/158.gif" width="24" height="21" align="absmiddle">矩阵与其特征值<img src="../../../../images/chatp/chap04/177.gif" width="19" height="21" align="absmiddle">和特征向量<img src="../../../../images/chatp/chap04/178.gif" width="15" height="21" align="absmiddle">应符合以下关系<br>
+        　　<img src="../../../../images/chatp/chap04/179.gif" width="80" height="21" align="absmiddle">（由特征值特征向量的定义得） 
+        （13）<br>
+        　　<img src="../../../../images/chatp/chap04/180.gif" width="125" height="23"> 
+        <br>
+        　　将以上关系代入公式（9），则得<br>
+        　　<img src="../../../../images/chatp/chap04/181.gif" width="258" height="306"> 
+        <br>
+        　　<img src="../../../../images/chatp/chap04/182.gif" width="351" height="240"> 
+        <br>
+        <b>　　 (4.5-21)</b> <br>
+        　　以上结果说明，Y向量的协方差矩阵CY是对角矩阵。<i><font face="Times New Roman, Times, serif" size="3">C</font></i><sub>Y</sub>对角线的元素，是Y向量的方差，其值是<i><font face="Times New Roman, Times, serif" size="3">C</font></i><sub>X</sub>矩阵的特征值，左上角上的<img src="../../../../images/chatp/chap04/183.gif" width="20" height="21" align="absmiddle">值最大，<img src="../../../../images/chatp/chap04/184.gif" width="29" height="24" align="absmiddle">最小；<i><font face="Times New Roman, Times, serif" size="3">C</font></i><sub>Y</sub>矩阵非对角线上的元素是协方差，而协方差为零，说明Y向量之间的相关性甚小。原始图像向量的协方差矩阵<i><font face="Times New Roman, Times, serif" size="3">C</font></i><sub>X</sub>的非对角上元素不为零，说明其相关性强，这就是采用K-L变换进行编码，数据压缩比大的原因。<br>
+        　　以上我们讲了K-L变换的求解方法并证明了K-L变换为最佳变换。但同时也体会到K-L变换计算的复杂程度，因为没有通用的变换核矩阵，对于每一个图像数据都要求它的协方差矩阵和协方差矩阵的特征值、特征向量，当矩阵阶数叫高时就很难满足实时处理的要求。所以在实际中很少用K-L变换对图像进行压缩，人们&quot;退而求其次&quot;，寻找一些虽不是最佳，但也有较好的去相关性与能量集中性能，并且容易实现的压缩方法，而K-L变换常作为这些变换性能的评价。在对众多的正交变换技术做比较后，人们发现离散余弦变换编码DCT与K-L变换性能最为接近，而该算法的计算复杂度适中，是K-L变换的最佳替代者。下面就向大家介绍次最优正交变换--DCT变换。<br>
+
+      </td>
+  </tr>
+</table>
+</body>
+</html>

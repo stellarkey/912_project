@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "question":"1）描述伙伴系统（Buddy System）中对物理内存的分配和回收过程。\n2）假定一个操作系统内核中由伙伴系统管理的物理内存有1MB，试描述按下面顺序进行物理内存分配和回收过程中，每次分配完成后的分配区域的首地址和大小，或每次回收完成后的空闲区域队列（要求说明，每个空闲块的首地址和大小）。建议给出分配和回收的中间过程。\n    a) 进程A申请50KB；\n    b) 进程B申请100KB；\n    c) 进程C申请40KB；\n    d) 进程D申请70KB；\n    e) 进程B释放100KB；\n    f) 进程E申请127KB；\n    g) 进程D释放70KB；\n    h) 进程A释放50KB；\n    i) 进程E释放127KB；\n    j) 进程C释放40KB；\n",
+    "explain":" 整个空间被分成2U大小；（2分）  分配：找到2U大小的块，  满足2U-1 < s <= 2U（2分）  如果比它大，就划分成两个等大小的块（2分） 释放：相邻且大小相同2U-1的两块中第一块起始地址为2U倍数（2分）时，合并（2分）； a) 进程A申请50KB；Addr:0,Size:64KB b) 进程B申请100KB；Addr:128K,Size:128KB c) 进程C申请40KB；Addr:64K,Size:64KB d) 进程D申请70KB；Addr:256K,Size:128KB e) 进程B释放100KB；Addr:128K,Size:128KB f) 进程E申请127KB；Addr:128K,Size:128KB g) 进程D释放70KB；Addr:256K,Size:512KB h) 进程A释放50KB；Addr:0,Size:64KB i) 进程E释放127KB；Addr:128K,Size:128KB j) 进程C释放40KB；Addr:0,Size:1024KB\n",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":" 整个空间被分成2U大小；（2分）  分配：找到2U大小的块，  满足2U-1 < s <= 2U（2分）  如果比它大，就划分成两个等大小的块（2分） 释放：相邻且大小相同2U-1的两块中第一块起始地址为2U倍数（2分）时，合并（2分）； a) 进程A申请50KB；Addr:0,Size:64KB b) 进程B申请100KB；Addr:128K,Size:128KB c) 进程C申请40KB；Addr:64K,Size:64KB d) 进程D申请70KB；Addr:256K,Size:128KB e) 进程B释放100KB；Addr:128K,Size:128KB f) 进程E申请127KB；Addr:128K,Size:128KB g) 进程D释放70KB；Addr:256K,Size:512KB h) 进程A释放50KB；Addr:0,Size:64KB i) 进程E释放127KB；Addr:128K,Size:128KB j) 进程C释放40KB；Addr:0,Size:1024KB\n",
+    "type":"question_answer",
+    "q_number":1009
+}

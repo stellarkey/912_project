@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"下面是采用银行家算法的操作系统在某一时刻的资源分配状态。\n\n```\n       Allocation              Max          Available\n       A  B  C  D        A  B  C  D         A  B  C  D\nP0    0  0   1  2       0  0  1  2        1  5   2  0\nP1    1  0   0  0       1  7  5  0       \nP2    1  3   5  4       2  3  5  6\nP3    0  6   3  2       0  6  5  2\nP4    0  0   1  4       0  6  5  6\n```\n请写出当前时刻的Need矩阵的内容",
+    "explain":"当前时刻的Need矩阵的内容（2.5分：每错一个扣0.5分）\nNeed\n0 0 0 0\n0 7 5 0\n1 0 0 2\n0 0 2 0\n0 6 4 2\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"当前时刻的Need矩阵的内容（2.5分：每错一个扣0.5分）\nNeed\n0 0 0 0\n0 7 5 0\n1 0 0 2\n0 0 2 0\n0 6 4 2\n",
+    "type":"question_answer",
+    "q_number":1561
+}

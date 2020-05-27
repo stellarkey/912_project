@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　按上述方法构造SLR(1)分析表时，若进一步分析，我们可以发现如下事实，例如在状态I<sub><font size="-2">3</font></sub>中，只有一个归约项目T→F·，按照SLR(1)方法，在该项目中没有冲突，所以保持原来LR(0)的处理方法，不论当前面临的输入符号是什么都将用产生式T→F进行归约。但是很显然T的后跟符没有'('符号，如果当前面临输入符是'('，也进行归约显然是错误的，只不过是把错误的发现推迟到下一步而已。 
+      <br>
+      　　如果对所有归约项目都采取SLR(1)的处理思想，即对所有非终结符都求出其FOLLOW集合，这样凡是归约项目仅对面临输入符号包含在该归约项目左部非终结符的FOLLOW集合中，才采取用该产生式归约的动作。这种处理的好处是对某些不该归约的动作可提前发现错误。对于这样构造的SLR(1)分析表我们不访称它为改进的SLR(1)分析表。改进的SLR(1)分析表的构造方法如下：<br>
+      　　下面所有的SLR(1)都指改进的SLR(1)。</td>
+  </tr>
+</table>
+</body>
+</html>

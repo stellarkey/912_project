@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在Linux中，存在不需要把数据保存到磁盘上的文件系统，比如\"/proc\"文件系统，其作用是给应用程序提供一种内核信息的访问通道",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1552
+}

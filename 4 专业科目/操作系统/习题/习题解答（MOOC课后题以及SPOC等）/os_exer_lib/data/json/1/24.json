@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"动态分页管理中，对任一种页面置换算法，分配给一个进程的页帧数越多，发生缺页的次数越少。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":24
+}

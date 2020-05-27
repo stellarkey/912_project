@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"单级中断系统中，中断服务程序执行顺序是 I.保护现场 II.开中断 III.关中断 IV.保存断点 V.中断事件处理 VI.恢复现场 VII.中断返回\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.I->V->VI->II->VII",
+        "B.III->I->V->VII",
+        "C.III->IV->V->VI->VII",
+        "D.IV->I->V->VI->VII"
+    ],
+    "q_number":660
+}

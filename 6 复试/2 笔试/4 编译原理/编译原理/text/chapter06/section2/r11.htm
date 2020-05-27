@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如，下述文法是一个算符优先文法，其产生式为：<br>
+      　　S→S;D|D<br>
+      　　D→D(T)|H<br>
+      　　H→a|(S)<br>
+      　　T→T+S|S<br>
+      　　其中V<sub><font size="-2">N</font></sub>＝{S，D，T，H}，V<sub><font size="-2">T</font></sub>＝{；,(,),a,+}，S为开始符号。<br>
+      　　对应的算符优先关系矩阵为表6.14。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 表 6.14 算符优先关系矩阵表</font> 
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=table>
+              <tr> 
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">;</td>
+                <td align="center">(</td>
+                <td align="center">)</td>
+                <td align="center">a</td>
+                <td align="center">+</td>
+                <td align="center">#</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="5"><br>
+                  ;<br>
+                  (<br>
+                  )<br>
+                  a<br>
+                  +<br>
+                  #</td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol03.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">. </font></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">. </font><br>
+                  <font color="#FFFFFF">. </font><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">. </font> </td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">. </font><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">. </font><br>
+                  <img src="../../../img/chap06/symbol03.gif" width="18" height="20"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　请读者以表6.14 算符优先关系矩阵表，用算符优先分析法对输入串(a+a)#<br>
+      　　进行分析，不难发现它可以完全正确地进行归约，然而(a+a)#却不是该文法能推导出的句子。<br>
+      　　此外，通常一个适用语言的文法也很难满足算符优先文法的条件，因而致使算符优先分析法仅适用于表达式的语法分析。</td>
+  </tr>
+</table>
+</body>
+</html>

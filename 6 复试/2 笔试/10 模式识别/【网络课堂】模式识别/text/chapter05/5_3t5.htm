@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent"><strong>5.3.1.4 样本非球体分布的动态聚类算法</strong><br>
+            　　<span class="spe">数据聚类的目的是寻找数据集内的规律性，c－均值算法的准则函数值以控制数据到子集均值的欧氏距离为准则，因而比较适合数据以球星状态聚集的情况。然而实际的数据子集分布往往呈现复杂的分布，因此准则函数的设计方法要与c-均值算法有所不同。一种方法使改变距离度量的计算方法，如将欧氏距离改成Maharanobis距离的方法，这是5.3.1.4中第一点中讨论的方法，即利用某种核函数来代替欧氏距离。另一种方法则取消以均值或某代表点为子集核心的做法，这是5.3.1.4中第二点讨论的方法，这种方法直接计算数据间的近邻3关系，为连接数据子集的纽带。这种方法特别适用图5.8所示的情况。学习时以第二点为重点。</span><br>
+            　　前面提到C—均值算法及ISODATA算法都是欧氏距离作为度量，因而当样本处于超球体分布时，该种算法取得好的结果。然而当样本在特征空间中的分布非超球体时，例如图5.7表示样本在特征空间以超椭球分布。其中本属<img src="../../images/image_content/5/5_5F4006.gif" width="21" height="20" align="absmiddle">的A点，如从最小欧氏距离度量来看，则与m<sub>2</sub>的距离为最短，就会被错误地划分到<img src="../../images/image_content/5/w2.gif" width="21" height="23" align="absmiddle">中去。对于非超球体分布的情况，需要采用其它方法来度量，下面讨论两种方法。<br>
+            1　基于相似性度量的动态聚类算法<br>
+            　　图5.7所示样本在特征空间的分布具有方向性，或说非各向同性，因此各聚类就不再能以一个代表点来表示了，而必须用一种分类模型表示。</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/5/5_3034.gif" width="312" height="264"><br> 
+            <span class="FCcontent">图 5.7 </span></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　为此可将每类<img src="../../images/image_content/5/5_3037.gif" width="20" height="27" align="absmiddle">表示成<img src="../../images/image_content/5/5_3038.gif" width="96" height="32" align="absmiddle">，<br>
+            　　其中<img src="../../images/image_content/5/5_3039.gif" width="18" height="24" align="absmiddle">是一个定义<img src="../../images/image_content/5/5_3037.gif" width="20" height="27" align="absmiddle">的参数集，而<img src="../../images/image_content/5/5_3037.gif" width="20" height="27" align="absmiddle">可以用一个函数、一个点集或一分类模型表示。此外还需确定一个样本与各类的核之间的度量<img src="../../images/image_content/5/5_3040.gif" width="58" height="31" align="absmiddle">，以此判断样本应当属于哪一类。<br>
+            　　为了说明<img src="../../images/image_content/5/5_3041.gif" width="125" height="30" align="absmiddle">可能采用的形式，我们举正态核函数来说明。图5.7就是这种正态分布，对它需用一种正态函数作为核函数，即<br>
+            　　<img src="../../images/image_content/5/5_3042.gif" width="388" height="59" align="absmiddle">　　　　　(5-23)<br>
+            　　其中<img src="../../images/image_content/5/5_3043.gif" width="22" height="25" align="absmiddle">为样本的协方差矩阵，<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">为其均值向量，而参数集,<img src="../../images/image_content/5/5_3045.gif" width="20" height="30" align="absmiddle">也就是<br>
+            　　<img src="../../images/image_content/5/5_3044.gif" width="92" height="34" align="absmiddle"> 
+            <br>
+            <img src="../../images/image_content/5/5_3046.gif" width="276" height="48" align="absmiddle"> 
+            (5-24)<br>
+            　　根据正态分布的贝叶斯决策规则，可定义相似性度量为<br>
+             <img src="../../images/image_content/5/5_3047.gif" width="321" height="41" align="absmiddle">　　　　　(5-25)<br>
+            　　在有了相应的相似性度量函数后，就可采用类似于C—均值算法的方法定义准则函数为<br>
+             <img src="../../images/image_content/5/5_3048.gif" width="145" height="60" align="absmiddle">　　　　(5-26)<br>
+            　　利用这个准则函数，进行迭代运算，使<img src="../../images/image_content/5/5_3049.gif" width="23" height="20" align="absmiddle">值达最小。相应的算法步骤如下：<br>
+            　　步骤1 选择初始划分，即将样本集划分为C类，并确定每类的初始核K<sub>j</sub>,j＝1,2,…，c<br>
+            　　步骤2 按照下列关系<br>
+            <img src="../../images/image_content/5/5_3051.gif" width="304" height="61" align="absmiddle"><br>
+            　　将样本分到相应的聚类中去。<br>
+            　　步骤3 重新修正核K<sub>j</sub>,j＝1,2,…，c，若核保持不变，则算法终止，否则转步骤2。至于这种算法是否收敛，有相应的定理可证明其收敛性。如果把样本集分类后的聚类集合表示成<img src="../../images/image_content/5/5_3056.gif" width="14" height="18" align="absmiddle">，其核集合为K，修正后的核集合为<img src="../../images/image_content/5/5_3053.gif" width="16" height="24" align="absmiddle">，其相应的修正聚类集合为<img src="../../images/image_content/5/5_3054.gif" width="15" height="24" align="absmiddle">，即<img src="../../images/image_content/5/5_3055.gif" width="255" height="32" align="absmiddle">，则收敛条件为： 
+            对于聚类集合<img src="../../images/image_content/5/5_3056.gif" width="14" height="18" align="absmiddle">，如果通过把核K修正为<img src="../../images/image_content/5/5_3053.gif" width="16" height="24" align="absmiddle">，能使准则函数J值减小，而用修正的核<img src="../../images/image_content/5/5_3053.gif" width="16" height="24" align="absmiddle">重新对样本集进行聚类得到<img src="../../images/image_content/5/5_3054.gif" width="15" height="24" align="absmiddle">其相应的J会进一步减小。用式子表示为：<br>
+            　　只要准则函数J满足下列条件<br>
+            　　如果<img src="../../images/image_content/5/5_3057.gif" width="120" height="28" align="absmiddle"><br>
+            　　则有<img src="../../images/image_content/5/5_3058.gif" width="123" height="26" align="absmiddle"><br>
+            　　那么算法将会收敛。<br>
+            　　由此可以看出C—均值算法实际上是基于核K<sub>j</sub>的动态聚类算法的特例，在C—均值算法中只是用<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">来代替核 
+            ，C—均值算法用基于核K<sub>j</sub>的算法表示为<br>
+            　　<img src="../../images/image_content/5/5_3059.gif" width="132" height="35" align="absmiddle"><br>
+            　　<img src="../../images/image_content/5/5_3060.gif" width="123" height="30" align="absmiddle"><br>
+            　　式中<img src="../../images/image_content/5/5_3061.gif" width="274" height="37" align="absmiddle"> 
+            (5-27)<br>
+            　　而修正后的核集<br>
+            <img src="../../images/image_content/5/5_3062.gif" width="130" height="39" align="absmiddle"> 
+            <br>
+            　　式中<br>
+            <img src="../../images/image_content/5/5_3063.gif" width="202" height="53" align="absmiddle"> 
+            (5-28)<br>
+            　　重新调整后的聚类集合为<br>
+            <img src="../../images/image_content/5/5_3064.gif" width="120" height="35" align="absmiddle"> 
+            <br>
+            　　其中<br>
+            　　<img src="../../images/image_content/5/5_3065.gif" width="277" height="41" align="absmiddle">　　(5-29)<br> </td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

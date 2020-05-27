@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量与管程"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"关于管程的叙述正确的是（） s3\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.管程中的局部数据变量可以被外部直接访问",
+        "B.当一个进程在管程中执行时，调用管程的其他进程都不会被阻塞",
+        "C.在管程中的signal()与信号量中的signal()操作实现及意义完全相同",
+        "D.管程通过使用条件变量提供对同步的支持，这些条件变量包含在管程中，并且只有管程才能访问"
+    ],
+    "q_number":1458
+}

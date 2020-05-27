@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　设有下列两个数组<br>
+      　　array1(subscrip1,subscrip2)<br>
+      　　array2(subscrip3,subscrip4,subscrip5,subscrip6)<br>
+      　　数组符号在符号表项中可以设立一个指向内情向量空间的指针，而在内情向量空间记录关于该数组的维数个数和每一维的元素个数，图913表示了array1及array2两个数组在符号表中内情向量的组织。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 9.13 数组内情向量属性表达</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_13.gif" width="336" height="570"></td>
+        </tr>
+      </table>
+      
+    　　内情向量空间最后一行&quot;0&quot;值用来表示下标到此为止，当然也可以将维数个数给出在符号表中或内情向量空间中。这可由设计者自定。<br>
+      　　上面是从数组内情向量属性的基本性质出发所考虑的符号表相关组织。但对Ｃ语言程序中的数组，有它不同的语义定义。一个数组在C语言中被定义为（具有n维时）<br>
+      　　type array[subscrip1][subscrip2]…[subscripn]<br>
+      它是元素为type定义的类型的一个N维数组,它的下标界分别为<br>
+      　　subscrip1,subscrip2,…,subscripn。<br>
+      在C语言中array符号可以看成是指向该数组整体的一个指针出现在程序中，该指针指向的目标是数组，其长度是整个数组的长度。C语言中除了<br>
+      　　array [numb1] [numb2]…[numbn]<br>
+      是表示为一个数组元素外。其它的表示方法<br>
+      　　array[numb1],array[numb1][numb2],…, <br>
+      　　　　　　　　 array[numb1]…[numbn-1]。<br>
+      都认为是一个数组名，在程序中被作为指针。<br>
+      　　array[numb1]是指向n-1维的数组的指针，其目标长为：<br>
+      　　　subscrip2 * … * subscripn * sizeof(type)<br>
+      　　array[numb1][numb2]是指向n-2维的数组的指针，其目标长为:<br>
+      　　　subscrip3 *…* subscripn* sizeof(type)<br>
+      　　　　…<br>
+      　　array[numb1][numb2]…[numbn-1]是指向一维数组的指针,其目标长为:<br>
+      　　　subscripn * sizeof(type) </td>
+  </tr>
+</table>
+</body>
+</html>

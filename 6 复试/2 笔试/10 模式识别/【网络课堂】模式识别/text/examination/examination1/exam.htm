@@ -1,0 +1,248 @@
+<html>
+<head>
+<title>模式识别试题一</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000">
+
+<center>
+  <span class="icon"><br>
+  </span><span class="part">模式识别　试卷一</span><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b> 问答题</b><br>
+            <br>
+            　　一、 试从模式类与模式概念分析以下词之间的关系： 王老头，王老太，王明（清华大学本科生），周强（年轻教师），老年人，老头，老太，年青人。 
+            <br>
+            <textarea name=textarea cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　二、 已知A类与B类样本在空间的分布为离散分布<img src="../../../images/image_content/chormeless/exa0001.gif" width="70" height="24" align="absmiddle">及<img src="../../../images/image_content/chormeless/exa0002.gif" width="67" height="22" align="absmiddle">，<br>
+            其中<img src="../../../images/image_content/chormeless/exa0003.gif" width="361" height="53" align="absmiddle">，<br>
+            　　试问：按Fisher准则设计线性分类器的法线向量。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　三、 对一副道路图像，希望把道路部分划分出来，可以采用以下两种方法：<br>
+            　　1． 在该图像中分别在道路部分与非道路部分画出一个窗口，把在这两个窗口中的象素数据作为训练集，用Fisher准则方法求得分类器参数，再用该分类器对整幅图进行分类。 
+            <br>
+            　　2． 将整幅图的每个象素的属性记录在一张数据表中，然后用某种方法将这些数据按它们的自然分布状况划分成两类。因此每个象素就分别得到相应的类别好，从而实现了道路图像的分割。 
+            试问以上两种方法哪一种是监督学习，哪个是非监督学习？ <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　四、 知一数据集的协方差矩阵是一个对角阵，数据集的维数为3，试问该协方差矩阵中每个元素的含义，并说明Mahalanobis距离为常数的数据点的轨迹的特点。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　五、 为什么说近邻法的分类器是线性分类器,试以以下样本数据集说明,并画出用近邻法得到的分类器 <br>
+            　　第一类样本：(0,1)<sup>T</sup>，(0,1)<sup>T</sup> <br>
+            　　第二类样本：(0,0)<sup>T</sup>，(-1,0)<sup>T</sup> <br>
+            　　<img src="../../../images/image_content/chormeless/exa0008.gif" width="307" height="245"> 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　六、设在二维特征空间中有三个线性分类器，其分界面方程分别为 X<sub>1</sub>=0.5 X<sub>2</sub>=0.5 
+            X<sub>1</sub>+X<sub>2</sub>=0 现欲由该三个线性方程构造两个分类器，分别如下图(a)与(b)所示 <br>
+            　　<img src="../../../images/image_content/chormeless/exa0009.gif" width="198" height="169"><br>
+            <img src="../../../images/image_content/chormeless/exa0010.gif" width="218" height="190"> 
+            <br>
+            　　试设计两个多层感知器，分别实现这两个分类器，神经元网络采用域值函数，即输出函数<br>
+            　　y=f(h)为<img src="../../../images/image_content/chormeless/exa0011.gif" width="94" height="55" align="absmiddle"><br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            　　七、现欲利用离散Hopfield模型存储两个四维的数据 （-1 1 1 -1）及（-1 1 -1 1）<br>
+            　　试求该Hopfield模型的联接参数，并求 <br>
+            　　1． 触发信号为（-1,1,1,1）撤销后的输出状态<br>
+            　　2． 触发信号为（1,-1,1,1）撤销后的输出状态 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('examination_a1.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+          </form>
+        </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

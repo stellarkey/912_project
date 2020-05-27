@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <hr size="1">
+      【课前思考】 <br>
+      　　◇ 回顾第一章介绍编译过程时提到的代码优化, 代码优化阶段的任务是什麽？<br>
+      　　◇ 第一章介绍的PL/0编译程序有没有进行代码优化？<br>
+      　　◇ 你有没有使用过和比较过同一个编译系统选择其进行优化和不进行优化的编译速度？<br>
+      【学习目标】<br>
+      　　通过本章学习<br>
+      　　◇ 理解所谓代码优化是指什麽？<br>
+      　　◇ 知道最常用的代码优化技术有哪些？<br>
+      　　◇ 知道实现代码优化要进行哪些工作？ <br>
+      【学习指南】<br>
+      　　所谓代码优化是指对程序代码进行等价变换。程序代码可以是中间代码(如四元式代码)，也可以是目标代码。等价的含义是使得变换后的代码运行结果与变换前代码运行结果相同。优化的含义是最终生成的目标代码短(而运行速度快)，时空效率优化。 
+      编译过程中可进行的优化可按阶段划分：优化可在编译的不同阶段进行，分为中间代码一级和目标代码一级的优化。可按优化涉及的程序范围划分：对同一阶段，分为局部优化,循环优化和全局优化. 
+      进行优化所需要的基础是对代码进行数据流分析和控制流分析。如划分DAG，查找循环，分析变量的定值点和引用点等等。最常用的代码优化技术有删除多余运算，循环不变代码外提，强度削弱，变换循环控制条件，合并已知量与复写传播，以及删除无用赋值等等。 
+      <br>
+      【难重点】<br>
+      　　从概念上理解什么是代码优化，编译过程中可进行哪些优化，以及进行优化所需要的基础都没有难点，但在实现上是有相当复杂的工作。 <br>
+      【知识结构】 <br>
+      <img src="../../../img/chap11/11_1_1.gif" width="367" height="202"> 
+      <hr size="1">
+    </td>
+  </tr>
+</table>
+</body>
+</html>

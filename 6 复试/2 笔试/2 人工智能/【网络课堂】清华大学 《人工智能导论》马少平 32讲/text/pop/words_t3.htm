@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" bgproperties="fixed" background="images/bg.gif" leftmargin="6" topmargin="6" marginwidth="6" marginheight="6">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td align="left" valign="top"> 
+      <p class="tt"><font color="#CC0000">41，β剪枝:</font><br>
+        在博弈树搜索中，若任一极大值层节点的α值大于或等于它任一先辈极小值层节点的β值，即α（后继层）≥β（先辈层），则可以中止该极大值层中这个MAX节点以下的搜索过程。这个MAX节点的最终倒推值就确定为这个α值。</p>
+      <p class="tt"> <font color="#CC0000">42，α－β剪枝搜索（α－β搜索）:</font><br>
+        采用α剪枝、β剪枝的博弈树搜索方法，称为α－β剪枝搜索。</p>
+      <p class="tt"> <font color="#CC0033">43，合取范式:</font><br>
+        合取范式具有如下的形式： （Q1x1）…（Qnxn）A1∧A2∧A3∧……∧An 其中（Q1x1）…（Qnxn）为前束，代表各种量词的约束关系；Ai（i=1，2，……n）是由原子公式或者原子公式的否定组成的析取项。如： 
+        ( x)( y)[(P(x, y)∨～Q(x, y))∧(～P(x, y)∨U(x)∨V(y))∧(Q(x, y)∨～U(y))] 就是一个合取范式。</p>
+      <p class="tt"> <font color="#CC0000">44，析取范式:</font> <br>
+        析取范式具有如下的形式： （Q1x1）…（Qnxn）A1∨A2∨A3∨……∨An 其中（Q1x1）…（Qnxn）为前束，代表各种量词的约束关系；Ai（i=1，2，……n）是由原子公式或者原子公式的否定组成的合取项。如： 
+        ( x)( y)[(P(x, y)∧～Q(x, y))∨(～P(x, y)∧U(x)∧V(y))∨(Q(x, y)∧～U(y))] 就是一个析取范式。</p>
+      <p class="tt"> <font color="#CC0000">45，归结:</font><br>
+        对于子句C1∨L1和C2∨L2，其中L1、L2是单文字。如果L1与～L2可合一，且s是其合一者，则(C1∨C2)s是其归结式。这一过程称作归结。</p>
+      <p class="tt"> <font color="#CC0000">46，置换:</font><br>
+        通常用有序对的集合s＝{t1/v1，t2/v2，…，tn/vn}来表示任一置换，置换集的元素ti/vi的含义是表达式中的变量vi处处以项ti来替换，用s对表达式E作置换后的例简记为Es。 
+        一般来说，置换是不可交换的，即两个置换合成的结果与置换使用的次序有关。 </p>
+      <p class="tt"> <font color="#CC0000">47，合一、合一者:</font><br>
+        若存在一个置换s使得表达式集{Ei}中每个元素经置换后的例有：E1s＝E2s＝E3s＝…，则称表达式集{Ei}是可合一的，这个置换s称作{Ei}的合一者。</p>
+      <p class="tt"> <font color="#CC0000">48，归结树（证明树）:</font><br>
+        将归结过程用树的形式表示出来，称为归结树。归结树又可以称为证明树。</p>
+      <p class="tt"> <font color="#CC0000">49，修改证明树:</font><br>
+        将结论的否定所对应的子句s在归结树中的位置，用重言式s ~s代替s，并参予归结树中所有的置换，所得到的树称为修改证明树。基于归结的问答系统通过修改证明树得到问题回答。</p>
+      <p class="tt"> <font color="#CC0000">50，合一复合:</font> <br>
+        设有置换集S，首先根据S构造U1、U2两个表达式，其中U1由置换集S中的所有被置换的变量组成，U2由与U1中的变量所对应的置换项组成。当U1、U2可以合一时，它们的mgu就是该置换集的合一复合。</p>
+      <p class="tt"> <font color="#CC0000">51，一致置换:</font><br>
+        当一个置换集的合一复合存在时，则该置换集称为一致置换。</p>
+      <p class="tt"> <font color="#CC0000">52，猴子摘香蕉问题:</font><br>
+        在天花板上吊有一串香蕉的房间里，有一个可移动的箱子，问一只猴子如何规划自己的行动使得其能摘到香蕉。该问题称为猴子摘香蕉问题。</p>
+      <p class="tt"> <font color="#CC0000">53，一致解图:</font><br>
+        在基于规则的演绎系统中，如果一个解图中所有涉及的置换构成的置换集是一致的，该解图称为一致解图。</p>
+      <p class="tt"> <font color="#CC0000">54，人工智能语言:</font> <br>
+        经常用于建立人工智能系统的计算机语言，称为人工智能语言。一般特指LISP语言、PROLOG语言等。</p>
+      <p class="tt"> <font color="#CC0000">55，梵塔问题:</font><br>
+        相传古代某处一庙宇中，有三根立柱，柱子上可套放直径不等的N个圆盘，开始时所有圆盘都放在第一根柱子上，且小盘处在大盘之上，即从下向上直径是递减的。和尚们的任务是把所有圆盘一次一个地搬到另一个柱子上去（不许暂搁地上等），且小盘只许在大盘之上。问和尚们如何搬法最后能完成将所有的盘子都移到第三根柱子上。该问题称为梵塔问题。 
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

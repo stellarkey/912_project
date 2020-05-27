@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "ucore实现的simple FS（简称SFS）采用的文件分配机制是（） s2 ucore 文件系统架构\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.连续分配\r\n B.链式分配\r\n C.索引分配\r\n D.位图分配\r\n"}

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="113"> 　　图10.11的PASCAL程序中过程定义的嵌套情况如下：<br>
+      　　sort<br>
+      　　　readarray<br>
+      　　　exchange<br>
+      　　　quicksort<br>
+      　　　　partition<br>
+      　　这里不妨将整个程序sort看成最外层的过程。过程readarray,exchange和partition中引用的a均不是它们的局部变量，而是过程sort的局部变量。假如过程sort激活(调用)了过程quicksort,这时存储栈中的情形示意如图10.12，其中在quicksort过程活动记录中有一(或一些)存储单元(用斜线描绘)用以记录过程quicksort可以引用sort中定义的变量a和x。也就是说，为了解决对非局部量的存取问题，必须设法跟踪每个外层过程的最新活动记录的位置。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.12存储栈布局</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_12.gif" width="380" height="163"></td>
+        </tr>
+      </table>
+    　　实现对非局部量的存取的方法-跟踪每个外层过程的最新活动记录AR的位置。<br>
+      　　跟踪办法：<br>
+      　　① 用静态链（如PL/0的SL）。<br>
+      　　② 用DISPLAY表。 </td>
+  </tr>
+</table>
+</body>
+</html>

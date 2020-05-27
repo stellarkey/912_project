@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 6.8 句型T+T*F+i的语法树</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle3/p6_8-copy.gif" width="108" height="168"></td>
+        </tr>
+      </table>
+      　　若有句型#T+T*F+i#，它的语法树如图6.8。其短语有：<br>
+      　　T+T*F+i 相对于非终结符E的短语<br>
+      　　T+T*F 相对于非终结符E的短语<br>
+      　　T 相对于非终结符E的短语<br>
+      　　T*F 相对于非终结符T的短语<br>
+      　　i 相对于非终结符P,F,T的短语<br>
+      　　由定义6.5知i和T*F为素短语，T*F为最左素短语。也为算符优先分析的可归约串。由6.2.4(1)可知一个算符优先文法的最左素短语满足如下条件：<br>
+      　　a<font size="-2"><sub>i-1</sub></font> <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      a<font size="-2"><sub>i</sub></font> <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      a<font size="-2"><sub>i+1</sub></font> <img src="../../../img/chap06/symbol03.gif" width="18" height="20">... 
+      <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> a<font size="-2"><sub>j</sub></font> 
+      <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> a<font size="-2"><sub>j+1</sub></font><br>
+      　　上述句型#T+T*F+i#写成算符分析过程的形式为：<br>
+      　　#N<font size="-2"><sub>1</sub></font>a<font size="-2"><sub>1</sub></font>N<font size="-2"><sub>2</sub></font>a<font size="-2"><sub>2</sub></font>N<font size="-2"><sub>3</sub></font>a<font size="-2"><sub>3</sub></font>a<font size="-2"><sub>4</sub></font>#其中a<font size="-2"><sub>1</sub></font> 
+      = +, a<font size="-2"><sub>2</sub></font> = *, a<font size="-2"><sub>3</sub></font> 
+      = +, a<font size="-2"><sub>4</sub></font> = i<br>
+      　　a<font size="-2"><sub>1</sub></font> <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      a<font size="-2"><sub>2</sub></font> (因+ <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      *)<br>
+      　　a<font size="-2"><sub>2</sub></font> <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      a<font size="-2"><sub>3</sub></font> (因* <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      +)<br>
+      　　由此 N<font size="-2"><sub>2</sub></font>a<font size="-2"><sub>2</sub></font>N<font size="-2"><sub>3</sub></font> 
+      即T*F为可归约串，也就是前面分析的最左素短语。<br>
+      　　在实际分析过程中不必考虑非终结符名是T还是F或是E，而只要知道是非终结符即可，具体在表达式文法中的T还是F或是E都为运算对象。<br>
+      　　上述句型#T+T*F+i#的归约过程由于去掉了单非终结符E→T，T→F的归约，所以得不到真正的语法树，而只是构造出语法树的框架如图6.9。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 6.9 算符优先分析时语法树的框架</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle3/p6_9-copy.gif" width="108" height="130"></td>
+        </tr>
+      </table>
+      　　特别要注意在算符优先分析过程中，因去掉了单非终结符之间的归约，非终结符的名字没有任何意义。所以在归约过程中所有的非终结符都用同一个名字。 </td>
+  </tr>
+</table>
+</body>
+</html>

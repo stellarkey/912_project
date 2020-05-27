@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　procedure interpret;<br>
+      　　const stacksize = 500;<br>
+      　　var p,b,t:integer; (*program base topstack registers*)<br>
+      　　　i:instruction;<br>
+      　　　s:array[1..stacksize] of integer; (*datastore*) 
+      <p>　　function base(l:integer): integer;<br>
+        　　　var b1:integer;<br>
+        　　　　begin<br>
+        　　　　　b1∶=b; (*find base l level down*)<br>
+        　　　　　while l&gt;0 do<br>
+        　　　　　　begin<br>
+        　　　　　　　b1∶=s[b1];<br>
+        　　　　　　　l∶=l-1<br>
+        　　　　　　end;<br>
+        　　　　　base∶=b1<br>
+        　end (*base*);</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

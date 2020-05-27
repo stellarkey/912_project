@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"在汽车行驶过程中,司机活动与售票员活动之间的同步关系为:售票员关车门后, 向司机发开车信号,司机接到开车信号后启动车辆,在汽车正常行驶过程中售票员售\n票,到站时司机停车,售票员在车停后开门让乘客上下车。因此,司机启动车辆的动作 必须与售票员关车门的动作取得同步;售票员开车门的动作也必须与司机停车取得同\n步。应设置两个信号量:S1 、S2 ;\nS1表示是否允许司机启动汽车(其初值为0 )\nS2表示是否允许售票员开门(其初值为0 )\n    ```\n    var S1,S2 : semaphore ;\n      S1=0;S2=0;\n    cobegin\n    Procedure driver             Procedure Conductor\n    begin                        begin\n     while  TRUE                  while TRUE\n     begin                        begin\n       P(S1);                       关车门;\n       Start;                       V(s1);\n       Driving;                     售票;\n       Stop;                        P(s2);\n       V(S2);                       开车门;\n     end                            上下乘客;\n    end                           end\n    coend\n    ```\n\n",
+    "question":"设公共汽车上,司机和售票员的活动分别如下:司机的活动:启动车辆:正常行\n车;到站停车。售票员的活动:关车门;售票;开车门。在汽车不断地到站、停车、行驶过程中,这两个活动有什么同步关系?用信号量和P 、V 操作实现它们的同步\n",
+    "source":"网络",
+    "answer":"在汽车行驶过程中,司机活动与售票员活动之间的同步关系为:售票员关车门后, 向司机发开车信号,司机接到开车信号后启动车辆,在汽车正常行驶过程中售票员售\n票,到站时司机停车,售票员在车停后开门让乘客上下车。因此,司机启动车辆的动作 必须与售票员关车门的动作取得同步;售票员开车门的动作也必须与司机停车取得同\n步。应设置两个信号量:S1 、S2 ;\nS1表示是否允许司机启动汽车(其初值为0 )\nS2表示是否允许售票员开门(其初值为0 )\n    ```\n    var S1,S2 : semaphore ;\n      S1=0;S2=0;\n    cobegin\n    Procedure driver             Procedure Conductor\n    begin                        begin\n     while  TRUE                  while TRUE\n     begin                        begin\n       P(S1);                       关车门;\n       Start;                       V(s1);\n       Driving;                     售票;\n       Stop;                        P(s2);\n       V(S2);                       开车门;\n     end                            上下乘客;\n    end                           end\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1117
+}

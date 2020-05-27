@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　这些信息是：<br>
+      　　① 在基本块外被定值并在基本块内被引用的所有标识符，就是作为叶子结点上标记的那些标识符。<br>
+      　　② 在基本块内被定值且该值能在基本块后被引用的所有标识符，就是DAG各结点上的那些附加标识符。<br>
+      　　前面我们所删除的无用赋值只是其中一种情况，在这里，我们利用这些信息，根据有关变量在基本块后被引用的情况，可以进一步删除基本块中的其它情况的无用赋值。<br>
+      　　上例中，假设T<sub><font size="-2">0</font></sub>，T<sub><font size="-2">1</font></sub>，…，T<sub><font size="-2">6</font></sub>在基本块的后面都没有被引用，则可将G′重写为如下代码序列：<br>
+      　　(1) S<sub><font size="-2">1</font></sub>∶=R+r<br>
+      　　(2) A∶=6.28*S<sub><font size="-2">1</font></sub><br>
+      　　(3) S<sub><font size="-2">2</font></sub>∶=R-r<br>
+      　　(4) B∶=A *S<sub><font size="-2">2</font></sub><br>
+      　　其中S<sub><font size="-2">1</font></sub>和S<sub><font size="-2">2</font></sub>用于存放中间临时变量。整个序列中，没有生成对T<sub><font size="-2">0</font></sub>，T<sub><font size="-2">1</font></sub>，…T<sub><font size="-2">6</font></sub>赋值的代码。</td>
+  </tr>
+</table>
+</body>
+</html>

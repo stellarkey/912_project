@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"目标程序存在于\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.名空间",
+        "B.逻辑地址空间",
+        "C.储存空间",
+        "D.物理地址空间"
+    ],
+    "q_number":122
+}

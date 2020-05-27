@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例 8.2</font></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　描述说明语句中各种变量的类型信息的语义规则，这个例子里，继承属性在说明中为各个标识符提供类型信息。<br>
+            　　产生式 　　　　　　语义规则<br>
+            　　（1）D→TL 　　　　{L.in∶＝T.type}<br>
+            　　（2）T→int　　　　{ T.Type∶＝integer}<br>
+            　　（3）T→real　　　 { T.Type∶＝real}<br>
+            　　（4）L→L<sup><font size="-2">1</font></sup>，id　　 { L<sup><font size="-2">1</font></sup>.in∶＝L.in<br>
+            　　　　　　　　　　　　addtype（id.entry，L.in）}<br>
+            　　（5）L→id 　　　　{addtype（id.entry，L.in）} </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

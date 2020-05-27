@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "页表项标志位包括() s4\r\n \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.存在位(resident bit)\r\n B.修改位(dirty bit)\r\n C.引用位(clock/reference bit)\r\n D.只读位(read only OR read/write bit)\r\n"}

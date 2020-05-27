@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">1．深度优先</font><br>
+        过程DEPTH－FIRST－SEARCH<br>
+        ①G:=<img src="../images/015.gif" width="15" height="14">（<img src="../images/015.gif" width="15" height="14">=s），OPEN:=（s），CLOSED:=（ 
+        ）；<br>
+        ②LOOP：IF OPEN＝（ ）THEN EXIT（FAIL）；<br>
+        ③n:＝FIRST（OPEN）；<br>
+        ④IF GOAL（n）THEN EXIT（SUCCESS）；<br>
+        ⑤REMOVE（n，OPEN），ADD（n，CLOSED）；<br>
+        ⑥EXPAND（n）→{<img src="../images/016.gif" width="17" height="12">}；<br>
+        G:＝ADD（<img src="../images/016.gif" width="17" height="12">，G）；<br>
+        ⑦ADD（<img src="../images/017.gif" width="15" height="13">，OPEN），并标记mj到n的指针；把不在OPEN或CLOSED中的节点放在OPEN表的最前面，使深度大的节点可优先扩展。<br>
+        ⑧GO LOOP；</p>
+      <p><br>
+        　　<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

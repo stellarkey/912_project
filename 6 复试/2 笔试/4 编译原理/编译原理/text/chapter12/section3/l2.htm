@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>12.3.2 待用信息链表法 </b><br>
+      　　为了在一个基本块内的目标代码中，寄存器得到充分利用，我们需把基本块内还要被引用的变量值尽可能保存在寄存器中，而把基本块内不再被引用的变量所占的寄存器尽早释放。当由四元式生成相应机器指令时，每翻译一个四元式，如：A∶ 
+      =B op C时，则需知道在本基本块内今后还有哪些四元式要对变量A，B，C进行引用。也就是说若在一个基本块中，变量A在四元式i中被定值，在i后面的四元式j中要引用A值，且从i到j之间没有其它对A的定值点，这时我们称j是四元式i中对变量A的待用信息或称下次引用信息，同时也称A是活跃的，若A被多处引用则可构成待用信息链与活跃信息链。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"循环扫描算法(C-SCAN)对硬盘访问带来的好处在U盘上不存在。",
+    "explain":"在U盘上没有机械运动，磁头移动的时间开销不存在了，所以C-SCAN针对磁头移动的优化就没有意义了。",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1555
+}

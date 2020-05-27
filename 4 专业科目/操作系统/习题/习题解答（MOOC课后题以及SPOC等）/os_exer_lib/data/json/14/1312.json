@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"500=0.9*150+0.1*x\n",
+    "question":"(spoc) 某系统使用请求分页存储管理，若页在内存中，满足一个内存请求需要150ns (10^-9s)。若缺页率是10%，为使有效访问时间达到0.5us(10^-6s),求不在内存的页面的平均访问时间。请给出计算步骤。 \n",
+    "source":"网络",
+    "answer":"500=0.9*150+0.1*x\n",
+    "type":"question_answer",
+    "q_number":1312
+}

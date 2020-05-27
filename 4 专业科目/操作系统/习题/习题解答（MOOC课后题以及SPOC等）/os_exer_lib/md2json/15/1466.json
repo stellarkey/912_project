@@ -1,0 +1,1 @@
+{"knowledge": "进程间通信。\r\n", "question": "关于进程通信原理的阐述正确的是（） s5\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.进程通信是进程进行通信和同步的机制\r\n A.进程通信可划分为阻塞（同步）或非阻塞（异步）\r\n A.进程通信可实现为直接通信和间接通信\r\n A.进程通信的缓冲区是有限的\r\n"}

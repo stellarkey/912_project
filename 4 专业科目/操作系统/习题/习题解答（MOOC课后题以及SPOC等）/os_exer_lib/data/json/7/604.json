@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"计算机操作系统是一个（ ）\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.应用软件",
+        "B.硬件的扩展",
+        "C.用户软件",
+        "D.系统软件"
+    ],
+    "q_number":604
+}

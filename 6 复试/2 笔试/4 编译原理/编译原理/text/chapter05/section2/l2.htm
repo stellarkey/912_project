@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>5.2.1 LL(1) 文法的定义</b> <br>
+      　　一个文法符号串的开始符号集合定义如下：<br>
+      <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" alt="定义" align="absmiddle"> 
+      定义5.1</b> 设G=(V<sub><font size="-2">T</font></sub>，V<sub><font size="-2">N</font></sub>，S，P)是上下文无关文法<br>
+      　　FIRST(α)={a|α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aβ,a∈V<sub><font size="-2">T</font></sub>，α,β∈V<sup><font size="-2">*</font></sup>}<br>
+      　　若α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则规定ε∈FIRST(α)．<br>
+      　　不难求出在例5.2文法G2中<br>
+      　　FIRST(Ap)={a,c}<br>
+      　　FIRST(Bq)={b,d}<br>
+      　　因此有 FIRST(α)∩(FIRST(β)=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><br>
+      　　这样文法G2中，关于S的两个产生式的右部虽然都以非终结符开始，但它们右部的符号串可能推导出的首符号集合不相交，因而可以根据当前的输入符号是属于哪个产生式右部的首符号集合而决定选择相应产生式进行推导，因此仍能构造确定的自顶向下分析。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "可以实现虚拟存储器的方案是_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.固定分区方式 \r\n B.可变分区方式 \r\n C.纯分页方式 \r\n D.请求页式\r\n"}

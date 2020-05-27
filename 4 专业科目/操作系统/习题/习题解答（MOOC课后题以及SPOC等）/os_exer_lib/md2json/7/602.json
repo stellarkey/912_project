@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "SPOOLing系统实现设备管理的虚拟技术，即：将独占设备改造为共享设备，它由专门负责I/O的常驻内存的进程以及输入、输出井组成。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "3\r\n", "options": " A.对 \r\n B.错\r\n"}

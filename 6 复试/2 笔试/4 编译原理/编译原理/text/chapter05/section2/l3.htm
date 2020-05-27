@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　当一个文法中相同左部非终结符的右部存在能<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε的情况则必须知道该非终结符的后跟符号的集合中是否含有其它右部开始符号集合的元素。 
+      <br>
+      为此，我们定义一个文法非终结符的后跟符号的集合如下： <br>
+      <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+      定义5.2 </b>设 G=(V<sub><font size="-2">T</font></sub>，V<sub><font size="-2">N</font></sub>，S，P)是上下文无关 
+      文法，A∈V<sub><font size="-2">N</font></sub>，S是开始符号<br>
+      　FOLLOW(A)=｛a|S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">μAβ,且a∈V<sub><font size="-2">T</font></sub>，a∈FIRST(β),μ∈V<sub><font size="-2">T</font></sub><sup><font size="-2">*</font></sup> 
+      ,β∈V<sup><font size="-2">+</font></sup>｝<br>
+      　　若S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">μAβ,且β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε, 
+      则#∈FOLLOW(A)。<br>
+      　　也可定义为：FOLLOW(A)={a|S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      …Aa…,a ∈V<sub><font size="-2">T</font></sub>}<br>
+      　　若有S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      …A，则规定#∈FOLLOW(A)<br>
+      　　这里我们用'#'作为输入串的结束符，或称为句子括号，如：#输入串#。<br>
+      　　因此当文法中含有形如：<br>
+      　　A→α<br>
+      　　A→β<br>
+      　　的产生式时，其中A∈V<sub><font size="-2">N</font></sub>，α,β∈V<sup><font size="-2">*</font></sup>，当α,β不同时推导出空时，设α<img src="../../../img/chap04/symbol06.gif" width="15" height="15">ε,β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则当FIRST(α)∩( 
+      FIRST(β)∪FOLLOW(A))=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">时，对于非终结符A的替换仍可唯一地确定候选。<br>
+      　　综合以上情况可定义选择集合SELECT如下：<br>
+      <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" alt="定义" align="absmiddle"> 
+      定义5.3 </b>给定上下文无关文法的产生式A→α, A∈V<sub><font size="-2">N</font></sub>,α∈V<sup><font size="-2">*</font></sup>, 
+      若α<img src="../../../img/chap04/symbol06.gif" width="15" height="15">ε,则SELECT(A→α)=FIRST(α)<br>
+      　　如果α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε，则SELECT(A→α)=FIRST(α\ε)∪FOLLOW(A)。 
+      <br>
+      　　FIRST(α\ε)表示FIRST(α)的非{ε}元素。<br>
+      　　更进一步可以看出能够使用自顶向下分析技术必须使文法满足如下条件，我们称满足条件的文法为LL(1)文法，其定义为：<br>
+      <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" alt="定义" align="absmiddle"> 
+      定义5.4</b> 一个上下文无关文法是LL(1)文法的充分必要条件是：对每个非终结符A的两个不同产生式，A→α, A→β,满足<br>
+      　　SELECT(A→α)∩SELECT(A→β)=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　其中α，β不同时能<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε</td>
+  </tr>
+</table>
+</body>
+</html>

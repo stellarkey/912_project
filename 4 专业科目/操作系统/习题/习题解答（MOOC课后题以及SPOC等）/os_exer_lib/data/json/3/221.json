@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在分页存储管理系统中，从页号到物理块号的地址映射是通过_____ 实现的。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.段表",
+        "B.页表",
+        "C.PCB",
+        "D.JCB"
+    ],
+    "q_number":221
+}

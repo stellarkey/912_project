@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如，有文法的产生式为：<br>
+      　　(1) S→Qc|c<br>
+      　　(2) Q→Rb|b<br>
+      　　(3) R→Sa|a<br>
+      　　该文法的每个非终结符为间接左递归，按上述方法消除该文法的一切左递归。<br>
+      　　若非终结符排序为S、Q、R, 左部为S的产生式(1)无直接左递归，(2)中右部不含S，所以把(1)右部代入(3)得：<br>
+      　　(4) R→Qca|ca|a<br>
+      　　再将(2)的右部代入(4)得：<br>
+      　　(5) R→Rbca|bca|ca|a<br>
+      　　对(5)消除直接左递归得：<br>
+      　　R→(bca|ca|a)R′<br>
+      　　R′→bcaR′|ε<br>
+      　　最终文法变为：<br>
+      　　S→Qc|c<br>
+      　　Q→Rb|b<br>
+      　　R→(bca|ca|a)R′<br>
+      　　R′→bcaR′|ε<br>
+      　　若非终结符的排序为R、Q、S, 则把(3)代入(2)得：<br>
+      　　Q→Sab|ab|b<br>
+      　　再将此代入(1)得：<br>
+      　　S→Sabc|abc|bc|c<br>
+      　　消除该产生式的左递归后，最终文法变为：<br>
+      　　S→(abc|bc|c)S′<br>
+      　　S′→abcS′|ε<br>
+      　　Q→Rb|b<br>
+      　　R→Sa|a<br>
+      　　由于Q、R为不可到达的非终结符，所以以Q、R为左部及包含Q、R的产生式应删除。当非终结符的排序不同时，最后结果的产生式形式不同，但它们是等价的。</td>
+  </tr>
+</table>
+</body>
+</html>

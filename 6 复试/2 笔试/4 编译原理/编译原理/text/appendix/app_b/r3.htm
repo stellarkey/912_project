@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.3 LEX用的正规式</b><br>
+        　　一个正规式表示一个字符串的集合。正规式由正文字符与正规式运算符组成。正文字符组成基本的正规式，表示某一个符号串;正规式运算符则将基本的正规式组合成为复杂的正规式，表示字符串的集合。<br>
+        　　例如<br>
+        　　ab<br>
+        仅表示字符串ab，而<br>
+        　　(ab)+<br>
+        表示字符串的集合:<br>
+        　　{ab，abab，ababab，…}。<br>
+        　　LEX中的正规式运算符有下列十六种:<br>
+        　　&quot;\[]∧-。·+|()/{}%&lt;&gt;<br>
+        　　上述运算符需要作为正文字符出现在正规式中时，必须借助于双引号&quot;或反斜线\，具体用法是：<br>
+        　　xyz&quot;++&quot;或xyz\+\+<br>
+        表示字符串 xyz++ <br>
+        　　为避免死记上述十多个运算符，建议在使用非数字或字母字符时都用双引号或反斜线。<br>
+        　　要表示双引号本身可用\&quot;，要表示反斜线用&quot;\&quot;或\\<br>
+        　　前面说过，在识别规则中空格表示正规式的结束，因此要在正规式中引进空格必须借助双引号或反斜线，但出现在方括号[]之内的空格是例外。<br>
+        　　几个特殊符号:<br>
+        　　\n是回车换行(newline)<br>
+        　　\t是tab<br>
+        　　\b是退格(back space)</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"是的，这使得可编出更加灵活的操作系统功能模块和数据结构\n",
+    "question":"ucore lab实验中在C语言中采用了面向对象的编程思想，包括函指针表和通用链表结构\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.是",
+        "B.否"
+    ],
+    "q_number":1195
+}

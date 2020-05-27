@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"XNEIX文件存取控制的方法为\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.存取控制矩阵",
+        "B.存取控制表",
+        "C.用户权限表",
+        "D.口令"
+    ],
+    "q_number":155
+}

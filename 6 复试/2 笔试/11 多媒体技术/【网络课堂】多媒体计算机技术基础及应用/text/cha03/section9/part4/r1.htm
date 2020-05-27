@@ -1,0 +1,117 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699"><font color="#003399"><b>　　(1) 音频的准备</b></font><a name="01"></a><br>
+      　　把音乐和语音加到多媒体应用中，是我们研究音频处理技术的目的。当我们为多媒体增加音频时，首先要做的音频的准备工作。音频的准备包括：选择音源、录制数字音频、音频的编辑和存储，以及选择音频播放的硬件。
+      <br>
+      <font color="#003399">　　A. 选择音源</font><br>
+        　　选择音源的途径有：使用预先录制的音乐或声音效果，如购买现成的音频库。这种方法成果低，又可获得高质量音频。但供选配的音频内容有限，不一定能满足设计的需求。<br>
+      　　选择音源的另一种方法是自行创作，自行录制音频文件。这样做，需要请专业创作人员，音响工程师，还需租用录音设备，显然投资会大得多。 <br>
+      　　选择音源的一个考虑是音频的质量。一般来讲，CD或DAT的质量高于模拟录音带。如果需高质量的数字音频，应选择采样率高，量化位数高，立体声的音频数据。当然，它的数据率也高。实用中，需在质量和数据率中进行综合考虑。
+<br>
+      <font color="#003399">　　B. 录制数字音频</font><br>
+        　　录制数字音频时，首先是选择采样率，量化位数和通道数。然后是选择录制软件和硬件，最后需确定存储格式。<br>
+        　　Windows下常用的三种采样率是44.1kHz、22.05kHz和11.025kHz。对应的量化位数是16位、8位和4位。当存储量不是足够大时，可选较低的采样率。注意这时也应选择频带相对较窄的音频源。即音源中不包括很亮或音调很高的声音。<br>
+        　　对于量化位数，如果不是特别需要，可以采用8位，这样不但节省存储容量，而且也会节省一些投次(目前8位音频卡便宜一些)。比如语音配音、可视电话中的声音，采用8位分辨率是可以接受的。<br>
+        　　如果硬件条件较好，如具备实时压缩/解压的硬件能力，量化位数可以选得大一些，压缩后存储(16位变4位),恢复出声音质量会比8位的好。<br>
+        　　数字音频的录制过程中应避免录音失真。产生失真人的原因及解决方法如下：<br>
+        　　·信号频带宽，而采样频率不够高，数字音频信号发生混叠。解决的办法是选择与信号相匹配的采样率。 <br>
+        　　最好的方法是以尽可能高的采样频率来记录数字音频(如采样频率选为44.1kHz。每个样值用16位表示)，需要低频带数字音频时，再经数字滤波得到。<br>
+        　　·模拟音频信号幅度太大，超过了量化器范围。解决的办法是调整音源的输出幅度，或调节采集卡输入放大器的增益，或选用音频卡的line输入端(而不用micmphone输入端)。<br>
+        　　Windows提供了一系列函数或软件工具，音频卡的生产者也提供了软件工具，可以方便地录制数字音频，好：<br>
+        　　·Windows的音频低层服务的函数。<br>
+        　　·waveEdit工具的Rec命令。<br>
+        　　·Sound Blaster卡的VEdit 2软件。<br>
+        　　·Microsoft Sound System卡的Quick Recorder软件。<br>
+      　　·CoolEdit 软件。 
+      <br>
+      　　CoolEdit 是一个功能齐全、使用方便的软件。用它可以实现录音、放音、编辑、分析等。显示波形、共振峰、基频。还可以对语音进行处理，如放大缩小、改变基频、改变放音效果。其界面如图3.54。<br>
+      <font color="#003399">　　图3.54 CoolEdit 软件的界面</font> <br>
+      　　<img src="../../../../images/chatp/chap03/214.gif" width="337" height="208"><br>
+      <font color="#003399">　　C. 编辑波形文件</font><br>
+      　　在获得数字音频文件后，需要对它们进行编辑。编辑工作包括剪切掉不需要的部分，调整音量、制作音频效果等。<br>
+      　　有多种用于音乐创作、音响效果和数字混响的软件包。这些软件可让用户编辑音频文件，然后生成完好的产品。如：<br>
+      　　·Sound Blaster卡的VEdit 21软件。<br>
+      　　·Microsoft Sound System卡的Quick Recorder软件。<br>
+      　　·Wave Edit工具:
+      <br>
+      　　WaveEdit可用于编辑波形文件、录制、产生简单的声音效果，下面简介其功能：<br>
+        　　·WaveEdit可编辑下列格式的波形文件:<br>
+      　　AIF(AppleT和AIFF)和Microsoft Waverorm格式文件(仅作源文件),WAVE (Mirosopt waveform)格式文件(可作源或目的文件)。<br>
+        　　·WaveEdit的编辑功能：<br>
+        　　使用Edit菜单中的命令可以剪裁板裁取数据，或往剪裁板中帖贴波形数据。Edit菜单下的命令如下：<br>
+        　　命令　　　　说明<br>
+        　　Undo 　　　废除上次的编辑操作。<br>
+      　　Cut 　　　 删除波形中选择的区域，并将其放入剪裁板内。<br>
+      　　Copy 　　　将选择的波形区域复制到剪裁板内。<br>
+      　　Paste 　　 将剪裁板中的内容与波形的内容混合起来。在编辑区域内，若选 择了某个波形部分，则将其内容与剪裁板的内容混合真情为，若 无选择部分，WaeEdit将剪裁板的内容贴在光标处。<br>
+      　　Delete 　　删除选择的波形区域。被删除的区域不放在前裁板内。<br>
+        　　Select All 选择整个波形进行编辑。在编辑区的任何地方按两下鼠标键的功 能相同。<br>
+        　　·WaveEdit的效果功能<br>
+        　　使用效果(Effects)菜单中的命令可以改变波形的内容。Effects菜单下的命令如下:<br>
+      　　命令 　　　　　　　　　　　说明<br>
+      　　Change Characteristics 改变单/双声道特性、采样频率样值的分辨率(位 数)。<br>
+      　　InsertSilence 　　　　 将无声段插入波形。当选择某一区域时，命令各 　　 改为Silence。<br>
+      　　Fade Down 　　　　　　 将当前所选区域的振幅从100%减到0%(无声)。<br>
+      　　Fade Dp 　　　　　　　 将当前所选区域的振幅从0%增到100%。<br>
+      　　Amplify 　　　　　　　 按指定的百分比将文件振幅或当前所选区域的振 幅增加或减少。<br>
+        　　·Wave Edit的视域功能<br>
+      　　使用视域(View)菜单中的命令可改变Wave Edit屏幕的显示。View菜单下命令如下：<br>
+        　　　　命令　　 说明<br>
+      　　Left Channel 　显示立体声波形文件的左声道。 <br>
+      　　Right Channel　显示立体皮形文件的右声道。<br>
+      　　Milliseconds 　使Wave Edit全部以毫秒为单位显示。<br>
+      　　Samples 　　　 使Wav Edit全部以采样数为单位显示。<br>
+      　　Zoom 　　　　　调整缩放控制，放大当前所选的波形区段。<br>
+        　　·Wave Edit的文件管理功能<br>
+      　　用户可使用文件(File)菜单中的命令将波形文件装入到Wave Edit中或存入磁盘。File菜单中的命令如下:<br>
+      　　命令 　　说明<br>
+      　　New 　　创建空的波形文件。<br>
+      　　Open 　 打开已有的波形文件。<br>
+      　　Close 　关闭打开的波形文件,但不退出Wave Edit。<br>
+      　　Save 　 保存修改过的波形文件。<br>
+        　　Save as 用新文件各保存文件，<br>
+        　　Run Wawe Edit 打开另一个Wave Edit窗口。<br>
+      　　Exit 　 退出Wave Edit。 <br>
+      <b><font color="#003399">　　(2) 音频的播放</font></b><a name="02"></a><br>
+      　　Windows提供了不同层次的音频服务，用户可根据应用程序的需求及自己的编程能力，选择适当的服务层次。<br>
+        　　*高层音频服务仅需一个函数调用就能播放和录制音频文件。与低层音频服务相比，高层音频服务容易使用，需要的编程量少。<br>
+        　　高层音频服务提供了两个播放波形音频的函数： <br>
+        　　MessageBeep--这个函数播放给定的系统报警的声音。因此函数发声很简单，使用时只须采用如下调用：<br>
+        　　message Beep(WAlert)<br>
+      　　WAlert是一个Word型参数, 它在文件mmsystem.h中定义。如：<br>
+        　　MB-OK发出 systemdefault声音<br>
+      　　MB-ICONQUES+ION发出SystemQuestlon声音。<br>
+        　　(这里不一一列出)<br>
+      　　调用MessageBeep函数时，实际发出的声音在文件WIN.INI的[Sounds]一节中给出。如：<br>
+        　　[Sounds]<br>
+      　　SystemDefanlt=ding·wav, Default Beep (默认警告声音)<br>
+      　　SystemQuestion=chord.wav,Question (有问题时发出的声音)<br>
+      　　可以看出, Message是在系统运行过程中发出的一些提示性声音。通常这些·WAV文件较短, 仅用来引起用户注意。当然，你也可以修改[Sounds]一节中指定的.WAV文件名, 
+      以改变这些提示声音。也可以通过修改main主组群中的Chanal中的Sound来改变它。<br>
+        　　高层音频服务的另一个函数是：<br>
+        　　Sndplay Sound--播放给定文件名<br>
+      　　它的调用格式如下:<br>
+      　　SndPlay Sound(lpsz Sound,WFlags)<br>
+        　　lpsz Sound参数指明波形文件名,如Bells.WAV。如果指定的文件不存在或无法装入有效实际内存，则SndPlay Sound就播放的WIN.INI中[Sounds]段中SystemDefault指定的系统隐含声音。<br>
+        　　WFlags是一个可参标志,它决定如何播放声音, 如:<br>
+      　　SND-ASYNC: 异步播放,即播的一开始, SndPlagSound就返回。<br>
+        　　SND_SYC: 同步播放,即直到播放完成,SndPlagSound才返回。<br>
+      　　此为默认播放方式。
+     <br>
+　　用Message Beep和sndplagSound函数播放波形声音时,所有的数据必须位于有效的实际内存。声音文件必须符合已安装的音频设备驱动程序规定的数据格式。另一个要求是波形文件要小于100K字节。<br>
+        　　* Windows的媒体控制接口(MCI)提供了一个高层接口来控制内部和外部媒体设备。MCI支持播放波形,MIDI和光盘音频, 并支持录制波形音频。<br>
+        　　MCI利用设备驱动程序来解释和执行高层MCI命令。MCI设备驱动程序能够直接音频数据从存储设备传到适当的驱动设备，允许应用程序播放无法一次装入物理内存的大文件。这样的数据传输可在后台进行，应用程序只需建立MCI, 
+        并告之开始播放或录制。MCI提供两类接口, 命令消息(command-message)接口和命令字符串(command-string)接口。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

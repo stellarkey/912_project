@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　C语言的结构量中结构标志与成员之间也有上述函数与形参之间的相似关系，也可以在符号表中设立一个&quot;结构-成员&quot;指针域。对于结构标志符号，在该属性域中存放指向该结构第一个成员的符号在符号表中的位置的指针，而对于成员符号，在该属性域中存放指向它的下一个成员的符号在符号表中位置的指针。若某个成员是一个结构量的最后一个成员，则该成员符号项中&quot;结构成员&quot;属性域值为空。举例如下：设有一个结构<br>
+      　　struct tag1 {… memb1; //第一层结构定义, tag1的第一个成员<br>
+      　　　　　　　 　… memb2; //tag1的第二个成员<br>
+      　　　　 　　　　struct tag2{… memb3; //第二层结构定义, <br>
+      　　　　　　　　　　　　　　　　　　　//tag2的第一个成员<br>
+      　　　　　　　　　　　　　 　… memb4; //tag2的第二个成员<br>
+      　　　　　　　　　　　　　 　…<br>
+      　　　　　　　　　　　　　 　… memb5;}//tag2的第n个成员<br>
+      　 　　　　　　　　　　　　　　　　　　memb6; //tag1的第三个成员 <br>
+      　　　　　　　 　…<br>
+      　　　　　　　 　… memb7;} //tag1的第m个成员<br>
+      　 　　　　　　　　　　　　stv; //定义的结构变量 <br>
+      它在符号表中如图9.12所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.12 结构成员链属性表达</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_12.gif" width="374" height="470"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

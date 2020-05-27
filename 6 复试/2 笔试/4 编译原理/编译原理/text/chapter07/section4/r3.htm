@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　现给出直接由产生式构造识别活前缀的DFA <br>
+      　　LR（1）项目集的闭包CLOSURE的算法，<br>
+      　　function CLOSURE (I); /* I 是项目集*/<br>
+      　　　{ J:= I;<br>
+      　　repeat for J 中的每个项目A→α·Bβ,a<br>
+      　　　　　　　　　　和产生式 B→γ; <br>
+      　　　　　　　　　　　α，β，γ ∈V<sup><font size="-2">*</font></sup>；b ∈FIRST(β a),<br>
+      　　　　　　　　　　若B→·γ, b 不在J中<br>
+      　　　　　　Do 将 B→·γ, b 加到J中 <br>
+      　　until 再没有项目加到J中<br>
+      　　return J<br>
+      　　　};<br>
+      　　对项目[A→α·Bβ,a]，计算B的向前搜索符时，应为FIRST(βa)，这是因为<br>
+      　　β∈V<sup><font size="-2">*</font></sup>，即β可能为ε，而a是用产生式A→αBβ归约时的向前搜索符，而现在β为ε，就等于用A→αB归约，向前搜索符为a 
+      ，那么用A→αB归约前，必须先用产生式B→γ归约成B，因此，B的向前搜索符时也应为a。<br>
+      　　对文法G′的LR(1)项目集族的构造仍以[S′→·S,#]为初态集的初始项目，然后对其求闭包和转换函数，直到项目集不再增大。<br>
+      　　也就是对状态I经过符号X后转向状态J，求出J的核后，对核求闭包即为CLOSURE(J)。</td>
+  </tr>
+</table>
+</body>
+</html>

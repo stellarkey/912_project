@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent">　　另外一种基于熵的概念，称为相对熵，它用来判别某一种分布<img src="../../images/image_content/4/4_5F4055.gif" width="41" height="30" align="absmiddle"> 
+      偏离给定<img src="../../images/image_content/4/4_5F4056.gif" width="45" height="28" align="absmiddle">的程度，表示成：<br>
+       <img src="../../images/image_content/4/4_5F4057.gif" width="215" height="74" align="absmiddle"> 
+      (4-44)<br>
+      　　其中求和在该特征所有可能的取值范围内进行。相对熵越小，这两类概率分布的差别越大。因此可以利用相对熵概念设计对两类概率的判别熵<br>
+      　　<img src="../../images/image_content/4/4_5F4058.gif" width="183" height="34" align="absmiddle">　　　　　(4-45) 
+      <br>
+      　　而在多类的情况下则可用<br>
+      　　<img src="../../images/image_content/4/4_5F4059.gif" width="132" height="42" align="absmiddle">　　　　　(4-46)<br>
+      　　但是为了计算方便，也可采用以下函数<br>
+      　　<img src="../../images/image_content/4/4_5F4060.gif" width="195" height="42" align="absmiddle">　　　　　(4-47)<br>
+      　　代替w(p,q)，其中p<sub>i</sub>与q<sub>i</sub>表示两类同一特征分布的函数，显然当两类特征向量各分量的分布都相等时，U(p,q)等于零。<br>
+      然而(4-47)并不一定用于概率分布的差异度量，实际上我们可以对样本的特征向量在空间的分布借用概率分布的形式而利用(4-47)式。<br>
+      　　例如我们将样本值归一化，即<br>
+      　　<img src="../../images/image_content/4/4_5F4061.gif" width="113" height="57" align="absmiddle">　　　　　(4-48)<br>
+      　　其中<img src="../../images/image_content/4/4_5F4062.gif" width="30" height="30" align="absmiddle">表示第一类别中第k个样本的第i个特征值，按此定义，每个样本经归一化后其模都为1。<br>
+      　　在此基础上，我们定义一种“概率分布函数”：<br>
+      　　<img src="../../images/image_content/4/4_5F4063.gif" width="152" height="56" align="absmiddle">　　　　　(4-49)<br>
+      　　其中<img src="../../images/image_content/4/4_5F4064.gif" width="26" height="31" align="absmiddle">表示为第l类i特征值的“概率”，N<sub>l</sub>为第l类别的个数。根据这种定义应有<br>
+      　　<img src="../../images/image_content/4/4_5F4065.gif" width="90" height="57" align="absmiddle"> 
+      <br>
+      　　满足概率函数总和为1的要求。下面我们讨论两类别问题中如何利用(4-47)进行特征提取。<br>
+      　　首先我们定义这两类样本的协方差矩阵<img src="../../images/image_content/4/4_5F4066.gif" width="28" height="31" align="absmiddle">与<img src="../../images/image_content/4/4_5F4067.gif" width="28" height="30" align="absmiddle"> 
+      。协方差矩阵<img src="../../images/image_content/4/4_5F4068.gif" width="29" height="27" align="absmiddle">的第i行第j列元素为<br>
+      　　<img src="../../images/image_content/4/4_5F4069.gif" width="251" height="50" align="absmiddle">　　　(4-50)<br>
+      　　其中n表示类别号，N<sub>n</sub>为该类样本数。利用这两个协方差矩阵，定义一个矩阵A，有<br>
+       <img src="../../images/image_content/4/4_5F4070.gif" width="103" height="29" align="absmiddle"> 
+      (4-51)<br>
+      　　A就是这两个协方差矩阵之差，利用(4-48)到(4-51)这一系列定义，(4-47)定义的判据函数U(p,q)(在此可写为<img src="../../images/image_content/4/4_5F4071.gif" width="81" height="25" align="absmiddle"> 
+      与矩阵A的关系是<br>
+      　　<img src="../../images/image_content/4/4_5F4072.gif" width="102" height="56" align="absmiddle">　　　　　(4-52)<br>
+      　　其中A<sub>ii</sub>表示矩阵A的主对角线元素。因此特征提取的问题，就是如何对特征空间进行某种变换，得到样本分布在新的坐标系统中能有最小的不确定性的问题。换句话说是使两者分布有尽可能大的差异的问题。这个问题也是利用矩阵的特征值矩阵与特征向量矩阵实现的。我们将矩阵A的特征值表示成<img src="../../images/image_content/4/4_5F4073.gif" width="24" height="28" align="absmiddle">，相应的特征向量为<img src="../../images/image_content/4/4_5F4074.gif" width="99" height="31" align="absmiddle"> 
+      。并将A矩阵在由U<sub>k</sub>组成的坐标系统中的对应矩阵表示成A<sub>0</sub>，则在新的坐标系统中差别函数<br>
+      　　<img src="../../images/image_content/4/4_5F4075.gif" width="116" height="49" align="absmiddle">　　　(4-53)<br>
+      　　其中A<sub>0ii</sub>表示A<sub>0</sub>矩阵的主对角线元素。由于A<sub>0</sub>矩阵是A的特征值矩阵，是一个对角矩阵，因此有<br>
+      <img src="../../images/image_content/4/4_5F4078.gif" width="177" height="63" align="absmiddle"> 
+      (4-54)<br>
+      　　剩下的问题是如果能证明(4-52)中的U值确实不小于(4-54)的U<sub>0</sub>值。为此将(4-52)式右端表示成：<br>
+      　　<img src="../../images/image_content/4/4_5F4080.gif" width="297" height="122" align="absmiddle"><br>
+      <br>
+      　　其中利用A矩阵是对称矩阵的特点，即<img src="../../images/image_content/4/4_5F4081.gif" width="59" height="30" align="absmiddle">，故求和式中只需用i＞k的项。该式表明：<br>
+      　　<img src="../../images/image_content/4/4_5F4082.gif" width="103" height="49" align="absmiddle">　　(4-55)<br>
+      　　U大于等于A矩阵的平方矩阵的主对角元素之和。<br>
+      　　由于A矩阵是样本在原X坐标系中定义的，而A<sub>0</sub>则是在<img src="../../images/image_content/4/4_5F4083.gif" width="23" height="26" align="absmiddle">坐标系统中定义的，这两个坐标系统之间存在一种旋转关系T，旋转矩阵表示由<img src="../../images/image_content/4/4_5F4083.gif" width="23" height="26" align="absmiddle">坐标系到X坐标系的转换，<br>
+      　　<img src="../../images/image_content/4/4_5F4084.gif" width="208" height="31" align="absmiddle">　　(4-56)<br>
+      　　T是正交归一矩阵，因此有<br>
+      　　<img src="../../images/image_content/4/4_5F4085.gif" width="149" height="71" align="absmiddle">　　(4-57)<br>
+      　　而<br>
+      　　<img src="../../images/image_content/4/4_5F4086.gif" width="222" height="155"><br>
+      　　故有<br>
+      　　<img src="../../images/image_content/4/4_5F4087.gif" width="120" height="49" align="absmiddle">　　(4-58)<br>
+      　因此如将矩阵A的特征值排列成<br>
+      　　<img src="../../images/image_content/4/4_5F4088.gif" width="124" height="35" align="absmiddle"><br>
+      　　则取前d个特征值所对应的特征向量构成坐标系统，可使判别熵最小。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

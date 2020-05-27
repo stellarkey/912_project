@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列进程调度算法中，综合考虑进程等待时间和执行时间的是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.时间片轮转调度算法",
+        "B.短进程优先调度算法",
+        "C.先来先服务调度算法",
+        "D.高响应比优先调度算法"
+    ],
+    "q_number":674
+}

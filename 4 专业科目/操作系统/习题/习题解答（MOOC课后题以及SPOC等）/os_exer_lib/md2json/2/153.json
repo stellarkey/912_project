@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "通常以下那种分区分配算法产生的外零头最小\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.首次适应 \r\n B.最佳适应 \r\n C.最坏适应 \r\n D.下次适应\r\n"}

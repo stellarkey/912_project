@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　下面通过一个简化的问题来说明这个推理的过程：两个聪明人的版本。这里两个聪明人分别定义为A和B，所需的信息保含在下面的假设中，这些假设由如下的语句推导出来：<br>
+      　　1． A和B都知道每个人能看到另一个的前额<br>
+      　　1a) 如果A没有白点，B就会知道A没有白点<br>
+      　　1b) A知道1a)<br>
+      　　2． A 和B都知道他们中至少有一个人有白点，而且他们都知道对方知道这个事实。<br>
+      　　2a) A知道B知道或者A或者B有一个白点。<br>
+      　　3. B说他不知道自己是否有白点，A因此知道B不知道。<br>
+      　　语句（1b）、（2a）和（3）是下面对Κ(A, White(A))证明的前3条语句：<br>
+      　　1． Κ<sub>A</sub>[～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κ<sub>B</sub>(～White(A))]， 
+      给定的条件(1b)<br>
+      　　2． Κ<sub>A</sub>[Κ<sub>B</sub>(～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">White(B))]， 
+      给定的条件(2a)<br>
+      　　3． Κ<sub>A</sub>(～Κ<sub>B</sub>(White(B)))， 给定的条件(3)<br>
+      　　4． ～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κ<sub>B</sub>(～White(A))， 
+      （1 和公理3）<br>
+      　 　 　条件为Κ<sub>A</sub>[～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κ<sub>B</sub>(～White(A))]<br>
+      　　　　引用的公理为：Κa(φ)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">φ，这里φ为～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κ<sub>B</sub>(～White(A))<br>
+      　　5． ΚB[～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">White(B)]， 
+      （2 和公理3）<br>
+      　　　　条件为Κ<sub>A</sub>[Κ<sub>B</sub>(～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">White(B))]<br>
+      　　　　引用的公理为：Κa(φ)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">φ，这里φ为Κ<sub>B</sub>(～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">White(B))<br>
+      　　6． Κ<sub>B</sub>(～White(A))<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κ<sub>B</sub>(White(B))， 
+      （5和公理2）<br>
+      　　　　条件为：Κ<sub>B</sub>[～White(A)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">White(B)]<br>
+      　　　　引用的公理为：Κa(φ<img src="../../../img/chap08/symbol02.gif" width="12" height="16">ψ)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">[Κa(φ)<img src="../../../img/chap08/symbol02.gif" width="12" height="16">Κa(ψ)]，这里φ为～White(A)，ψ为White(B)</td>
+  </tr>
+</table>
+
+</body>
+</html>

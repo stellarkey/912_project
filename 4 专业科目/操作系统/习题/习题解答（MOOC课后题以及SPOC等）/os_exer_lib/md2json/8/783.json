@@ -1,0 +1,1 @@
+{"knowledge": "进程间通信。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)在直接通信时，用send(N,M)原语发送信件，其中N表示﹎﹎﹎﹎。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.发送信件的进程名 \r\n B.接收信件的进程名 \r\n C.信箱名 \r\n D.信件内容\r\n"}

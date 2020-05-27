@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　再进行复写传播和删除无用赋值等变换后得到：<br>
+      　　t<sub><font size="-2">3</font></sub> := a * 1<br>
+      　　t<sub><font size="-2">4</font></sub> := t<sub><font size="-2">3</font></sub> 
+      * 2<br>
+      　　t<sub><font size="-2">5</font></sub> := b + t<sub><font size="-2">4</font></sub><br>
+      　　c := t<sub><font size="-2">5</font></sub> * t<sub><font size="-2">5</font></sub><br>
+      　　接着使用代数变换后有：<br>
+      　　t<sub><font size="-2">3</font></sub> := a<br>
+      　　t<sub><font size="-2">4</font></sub> := t<sub><font size="-2">3</font></sub> 
+      * 2<br>
+      　　t<sub><font size="-2">5</font></sub> := b + t<sub><font size="-2">4</font></sub><br>
+      　　c := t<sub><font size="-2">5</font></sub> * t<sub><font size="-2">5</font></sub><br>
+      　　使用复写传播和删除无用赋值变换后又有：<br>
+      　　t<sub><font size="-2">4</font></sub> := a * 2<br>
+      　　t<sub><font size="-2">5</font></sub> := b + t<sub><font size="-2">4</font></sub><br>
+      　　c := t<sub><font size="-2">5</font></sub> * t<sub><font size="-2">5</font></sub><br>
+      　　再使用代数变换：<br>
+      　　t<sub><font size="-2">4</font></sub> := a + a<br>
+      　　t<sub><font size="-2">5</font></sub> := b + t<sub><font size="-2">4</font></sub><br>
+      　　c := t<sub><font size="-2">5</font></sub> * t<sub><font size="-2">5</font></sub><br>
+      　　重新命名临时变量：<br>
+      　　t<sub><font size="-2">1</font></sub> := a + a<br>
+      　　t<sub><font size="-2">5</font></sub> := b + t<sub><font size="-2">1</font></sub><br>
+      　　c := t<sub><font size="-2">5</font></sub> * t<sub><font size="-2">5</font></sub><br>
+      　　还可减少临时变量：<br>
+      　　t<sub><font size="-2">1</font></sub> := a + a<br>
+      　　t<sub><font size="-2">1</font></sub> := b + t<sub><font size="-2">1</font></sub><br>
+      　　c := t<sub><font size="-2">1</font></sub> * t<sub><font size="-2">1</font></sub></td>
+  </tr>
+</table>
+</body>
+</html>

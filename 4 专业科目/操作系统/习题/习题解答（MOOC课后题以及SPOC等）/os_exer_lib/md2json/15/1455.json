@@ -1,0 +1,1 @@
+{"knowledge": "信号量与管程。\r\n", "question": "多个进程对信号量S进行了6次P操作，2次V操作后，现在信号量的值是-3，与信号量S相关的处于阻塞状态的进程有几个（） s2\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.1个\r\n B.2个\r\n C.3个\r\n D.4个\r\n"}

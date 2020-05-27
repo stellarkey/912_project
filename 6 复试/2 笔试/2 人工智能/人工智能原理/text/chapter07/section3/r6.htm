@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　首先一点应该明白我们寻求的是使下式 PROB( C<sub>1</sub>,C<sub>2</sub>,……,C<sub>T</sub> 
+      ∣ W<sub>1</sub>,W<sub>2</sub>,……,W<sub>T</sub> )<br>
+      的概率最大的词性链。 <br>
+      　　根据Bayes概率公式，有<br>
+      　　<img src="../../../img/chap07/formula07.gif" width="325" height="59"><br>
+      　　由于，句子（词串）出现的概率对于任何词性来说是不变的，因此上式的优化求解问题的讨论将转化为其分子部分因素的讨论，即，问题成为寻找C<sub>1</sub>,C<sub>2</sub>,……,C<sub>T</sub>使下式（1）最大。 
+      <br>
+      　　PROB(C<sub>1</sub>,C<sub>2</sub>,...,C<sub>T</sub>)×PROB(W<sub>1</sub>,W<sub>2</sub>,...,W<sub>T</sub>|C<sub>1</sub>,C<sub>2</sub>,...,C<sub>T</sub>) (1)<br>
+      　　式（1）中第一项可以改写为： <br>
+      　　PROB(C<sub>1</sub>,...,C<sub>T</sub>)<br>
+      　　= PROB(C<sub>1</sub>,...,C<sub>T-1</sub>)×PROB(C<sub>T</sub>|C<sub>1</sub>,...,C<sub>T-1</sub>)<br>
+      　　= PROB(C<sub>1</sub>,...,C<sub>T-2</sub>)×PROB(C<sub>T-1</sub>|C<sub>1</sub>,...,C<sub>T-2</sub>)×PROB(C<sub>T</sub>|C<sub>1</sub>,...,C<sub>T-1</sub>)<br>
+      　　= .......<br>
+      　　= PROB(C<sub>1</sub>C<sub>2</sub>)×PROB(C<sub>3</sub>|C<sub>1</sub>C<sub>2</sub>)×...×PROB(C<sub>T</sub>|C<sub>1</sub>,...,C<sub>T-1</sub>)<br>
+      　　= PROB(C<sub>1</sub>)×PROB(C<sub>2</sub>|C<sub>1</sub>)×PROB(C<sub>3</sub>|C<sub>2</sub>C<sub>1</sub>)×...×PROB(C<sub>T</sub>|C<sub>1</sub>,...,C<sub>T-1</sub>)<br>
+      　　语言模型为n-gram模型时，我们考虑最简单的情况，使用二元模型bigram，那么： <br>
+      　　PROB(C<sub>1</sub>,...,C<sub>T</sub>)<br>
+      　　≌ PROB(C<sub>1</sub>|C<sub>0</sub>)×PROB(C<sub>2</sub>|C<sub>1</sub>)×...×PROB(C<sub>T</sub>|C<sub>T-1</sub>)<br>
+      　　= ∏<sub>i=1,...,T</sub>PROB(C<sub>i</sub>|C<sub>i-1</sub>)<br>
+      　　计算句子开始时，使用<img src="../../../img/chap07/symbol01.gif" width="12" height="11"><img src="../../../img/chap07/1x1pixel.gif" width="1" height="17">代替，此时的概率为PROB(C0)。例： 
+      <br>
+      　　<img src="../../../img/chap07/formula10.gif" width="333" height="36"></td>
+  </tr>
+</table>
+</body>
+</html>

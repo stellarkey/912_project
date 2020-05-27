@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　统计方法把语料库引入词性标注中，利用词性之间的同现频率以及马尔可夫（Markov）语言模型来消除歧义。对于由n个词组成的文本W<sub>1</sub>W<sub>2</sub>…W<sub>n</sub>，如果W<sub>i</sub>对应有M<sub>i</sub>个兼类，即W<sub>i</sub>可能的词性为Tagi<sub>1</sub>, 
+      … , Tagi<sub>Mi</sub>。在排歧前有形式：<br>
+      　　W<sub>1</sub>(Tag1<sub>1</sub>, … Tag1<sub>M1</sub>) W<sub>2</sub>(Tag2<sub>1</sub>, 
+      …, Tag2<sub>M2</sub>) … W<sub>n</sub>(TagN<sub>1</sub>, … TagN<sub>M n</sub>)<br>
+      　　马尔可夫过程是一个随机过程{ x(t): t∈T }，它具备这样的性质，即已知t时刻过程所处的状态x<sub>t</sub> = x(t)，在t时刻以后过程将要到达的状态与t时刻以前过程所处的状态无关，这个性质也称为过程的无后效性或马尔可夫性。本节后续的讨论都是在马尔科夫过程的这个性质上进行的。<br>
+      　　若认为W<sub>1</sub>为起点，W<sub>n</sub>为终点，则可以用一有向图表示词的语法范畴在此文本中体现的关系。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图7-18 词串中词性关系的有向图</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap07/7-18.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/7-18.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　图中的顶点表示词性，弧表示在一个句子中，该词对此词性次序(前后次序)的出现的同现概率。这样的统计方法实际上包含了一定上下文关系，选择一条从W<sub>1</sub>到W<sub>n</sub>的最佳路径，即概率最大的路径。它所利用的数学模型是Markov模型，使用的计算方法通常为动态规划的方法。动态规划方法中最常用的是Viterbi算法。该算法对每个时间点上的各个状态，计算解码状态序列对观察序列的后验概率，保留概率最大的路径，并对每个节点记录下相应的状态信息以便最后反向获取词解码序列。<br>
+      　　<b>动态规划</b>：动态规划算法通常用于求解具有某种最优性质的问题。在这类问题中，可能会有许多可行解。每一个解都对应于一个值，我们希望找到具有最优值的解。动态规划算法与分治法类似，其基本思想也是将待求解问题分解成若干个子问题，先求解子问题，然后从这些子问题的解得到原问题的解。与分治法不同的是，适合于用动态规划求解的问题，经分解得到子问题往往不是互相独立的。若用分治法来解这类问题，则分解得到的子问题数目太多，有些子问题被重复计算了很多次。如果我们能够保存已解决的子问题的答案，而在需要时再找出已求得的答案，这样就可以避免大量的重复计算，节省时间。例如，Viterbi算法就是一种动态规划的方法。<br>
+      　　例如：如果没有上下文，&quot;flies&quot;作为动词（V）的概率只有PROB(0.076)，而作为名词（N）的概率为PROB(0.025)。但是，在前面加上&quot;the&quot;，&quot;flies&quot;'就是名词（N）。因为冠词ART与动词V的相关概率几乎为零，而冠词ART与名词N的相关概率却很大，因此the 
+      flies只能是冠词+名词，即&quot;flies&quot;的词性是名词。 </td>
+  </tr>
+</table>
+</body>
+</html>

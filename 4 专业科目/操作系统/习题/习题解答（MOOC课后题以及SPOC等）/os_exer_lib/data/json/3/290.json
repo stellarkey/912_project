@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"存储管理中地址重定位必须在CPU中设置专门寄存器，而（　　　）不是此类寄存器。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.基址寄存器",
+        "B.界限寄存器",
+        "C.页表控制寄存器",
+        "D.程序计数器"
+    ],
+    "q_number":290
+}

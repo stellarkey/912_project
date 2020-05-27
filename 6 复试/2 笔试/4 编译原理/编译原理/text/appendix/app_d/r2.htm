@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>pl0c.c</b>
+      <p>　　#include &lt;stdio.h&gt;<br>
+        　　#include &quot;pl0c.h&quot;<br>
+        　　#include &quot;string.h&quot;</p>
+      <p>　　/* 解释执行时使用的栈 */<br>
+        　　#define stacksize 500 </p>
+      <p></p>
+      <p></p>
+      <p><br>
+        　　int main()<br>
+        　　{<br>
+        　　　bool nxtlev[symnum];<br>
+        　　　init(); /* 初始化 */<br>
+        　　　fas=fopen(&quot;fas.tmp&quot;,&quot;w&quot;);<br>
+        　　　fa1=fopen(&quot;fa1.tmp&quot;,&quot;w&quot;);<br>
+        　　　printf(&quot;Input file? &quot;);<br>
+        　　　fprintf(fa1,&quot;Input file? &quot;);<br>
+        　　　scanf(&quot;%s&quot;,fname); /* 输入文件名 */<br>
+        　　　fin=fopen(fname,&quot;r&quot;);<br>
+        　　　if(fin)<br>
+        　　{<br>
+        　　　fprintf(fa1,&quot;%s\n&quot;,fname);<br>
+        　　　printf(&quot;List object code?(Y/N)&quot;); /* 是否输出虚拟机代码 */<br>
+        　　　scanf(&quot;%s&quot;,fname);<br>
+        　　　listswitch=(fname[0]=='y'||fname[0]=='Y');<br>
+        　　　printf(&quot;List symbol table?(Y/N)&quot;); /* 是否输出名字表 */<br>
+        　　　scanf(&quot;%s&quot;,fname);<br>
+        　　　tableswitch=(fname[0]=='y'||fname[0]=='Y');<br>
+        　　　err=0;<br>
+        　　　cc=cx=ll=0;<br>
+        　　　ch=' ';<br>
+        　　　kk=al-1;</p>
+      <p> 　　　if(-1!=getsym())<br>
+        　　{<br>
+        　　　fa=fopen(&quot;fa.tmp&quot;,&quot;w&quot;);<br>
+        　　　fa2=fopen(&quot;fa2.tmp&quot;,&quot;w&quot;);<br>
+        　　　addset(nxtlev,declbegsys,statbegsys,symnum);<br>
+        　　　nxtlev[period]=true;<br>
+        　　　if(-1==block(0,0,nxtlev)) /* 调用编译程序 */<br>
+        　　　{<br>
+        　　　　fclose(fa);<br>
+        　　　　fclose(fa1);<br>
+        　　　　fclose(fin);<br>
+        　　　　printf(&quot;\n&quot;);<br>
+        　　　　return 0;<br>
+        　　　}<br>
+        　　　fclose(fa);<br>
+        　　　fclose(fa1);<br>
+        　　　if(sym!=period)error(9);<br>
+        　　　if(err==0)interpret(); /* 调用解释执行程序 */<br>
+        　　　else<br>
+        　　　{<br>
+        　　　　printf(&quot;Errors in pl/0 program&quot;);<br>
+        　　　}　<br>
+        　　}<br>
+        　　fclose(fin);<br>
+        　}<br>
+        　else<br>
+        　{<br>
+        　　printf(&quot;Can't open file!\n&quot;);<br>
+        　　fprintf(fa1,&quot;Can't open file!\n&quot;);<br>
+        　　fclose(fa1);<br>
+        　}<br>
+        　fclose(fas);<br>
+        　printf(&quot;\n&quot;);<br>
+        　return 0;<br>
+        }</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

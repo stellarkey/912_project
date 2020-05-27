@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　本建公布于1988年。它给出50-7000Hz音频编码系统的特性，可用于各种高质量语音应用。编码系统采用子带自适应差分脉冲编码(SB-ADPCM)，比特率为64kbit/s。称为64kbit/s(7kHz)音频编码。应用SB-ADPCM技术，整个频带被分成两个子带(高和低)，用ADPCM分别对每个子带编码。系统有三个基本工作模式，相应的比特率是64、56和48kbit/s。<br>
+      　　图3.10给出了64kbit/s(7kHz)音频编解码主要功能块。<br>
+      　　发送器将音频信号转换成数字序列，抽样率为16kHz，每个样值14位。SB-ADPCM编码器将其降低到64kbit/s。<br>
+      　　解码器执行编码器的逆操作。由操作方式决定，它可对64,56或48kbit/s音频编码进行解码。接收器从14位的16kHz抽样序列重构音频信号。<br>
+      　　当64kbit/s内要有辅助数据通道时，需要增加数据插入装置和数据分解装置。数据插入装置在发送端，它为每8位增加1或2位音频数据，以提供8或16kbit/s的辅助数据通道。<br>
+      <font color="#003399">　图3.10 64kbit/s 音频编解码框图</font> <br>
+      　　<img src="../../../../images/chatp/chap03/088.gif" width="352" height="223"> 
+      <br>
+      <font color="#003399">　图3.11 音频配置</font> <br>
+      　　<img src="../../../../images/chatp/chap03/089.gif"> <br>
+      　　图3.11表示了G.722音频部分的可能配置。麦克风、预放大器、功率放大器和音箱画在本图中，但在这个建议中不做进一步考虑。测试点A和B用于测量传输特性。音频发送器就包括输入电平调节装置、防混叠输入滤波器、工作频率为16kHz的采样装置和14位分辨率、16kHz的模数据转换器。音频接收器应包括：数模转换器、带x/sinx校正的重构滤波器和输出电平调节装置。<br>
+      　　图3.12是SB-ADPCM编码器框图。发送正交镜像滤波器(QMF)由两个线性相位、非递归数字滤波器组成。它把0-8000Hz频率范围分成两个子带:低子带(0-4000Hz)和高子带(4000-8000Hz)。输入到QMF的信号xin来自音频发送器。总抽样率为16kHz，从低、高带通的输出信号xH和xL抽样率都为8kHz。<br>
+      <font color="#003399">　图3.12　编码器框图</font> <br>
+      　　<img src="../../../../images/chatp/chap03/090.gif" width="354" height="128"><br>
+      　　子带编码是一种高压缩比、高信噪比的编码方法。它的优点是可以把噪声限制在各自的子带内，并防止了子带间噪声的相互干扰。还可以根据不同子带的信息量独立设计预测编码器、分配不同的量化比特数，从而使编码数据率最低。<br>
+      　　采用正交镜像滤波器分裂子带是避免信号失真的有效方法。若采用一般的数学滤波器来分裂子带，由于存在过渡带，恢复出的信号将出现失真。若正交镜像滤波器在分裂子带时出现混叠，它可以在接收端用另一组正交镜像滤波器来消除。<br>
+      　　图3.13a是低子带ADPCM编码器。它的输入信号x<sub>L</sub>减去估计信号S<sub>L</sub>, 产生差值信号e<sub>L</sub>:<br>
+      　　　　　e<sub>L</sub>=x<sub>L</sub>-s<sub>L</sub><br>
+      　　60阶自适应非线性量化器为差值赋予6位二进制数, 得到48kbit/s的信号I<sub>L</sub>。使用60阶量化器确保了脉冲密度的需求。<br>
+      　　在反馈环，IL的最低两个有效位被删除，得到4位I<sub>L</sub>。I<sub>L</sub>用作量化器自适应的输入，同时送入15阶自适应逆量化器。由此，量化器的自适应、自适应预测器均以4位码字来控制。这样做带来的益处是：当接收端丢失码字最低2位时，不会影响预测和自适应。<br>
+      <font color="#003399">　图3.13 子带编码器框图 (a) 低子带 (b) 高子带</font> <br>
+      　　<img src="../../../../images/chatp/chap03/091.gif"> <br>
+      　　　　　　　(a)　　　　　　　　　　　　　　(b)<br>
+      <font color="#003399">　图3.14 解码器框图</font><br>
+      　　<img src="../../../../images/chatp/chap03/092.gif"><br>
+      <font color="#003399">　 图3.15 子带解码器框图 (a) 低子带译码器 (b) 高子带译码器</font><br>
+      <br>
+      <img src="../../../../images/chatp/chap03/093.gif"> <br>
+      　　15阶自适应逆量化器产生最化差值信号d<sub>L</sub>t, d<sub>L</sub>t加上估计信号S<sub>L</sub>产生低子带输入信号的重构信号r<sub>L</sub>t:<br>
+      　　　r<sub>L</sub>t=d<sub>L</sub>t+s<sub>L</sub><br>
+      　　d<sub>L</sub>t和r<sub>L</sub>t信号通过自适应预测器产生输入信号的估计信号s<sub>L</sub>。从而完成了一个反馈环。<br>
+      　　高子带ADPCM编码器的原理框图与低子带相似。不同之处有：量化器和逆量化器的阶次为4;4阶自适应量化器把差值信号eH量化为2位二进制数, 得到了16kbit/s信号IH。<br>
+      　　图3.14是SB-ADPCM解码器框图。多路解码器(DMUX)分解收到的64kbit/s8位格式的信号Ir, 将其分成IL和IH两个码字，分别送入低和高子带解码器。正交镜像接收滤波器QMF也是两个线性相位、非递归数字滤波器。它把低和高子带ADPCM解码器输出rL和rH交插输出,得到采样率为16kHz的输出信号xout,送到音频接收器。<br>
+      　　图3.15(a)是低子带ADPCM解码器方框图。这个解码器根据收到的操作方式指示，能够工作在3种方式下。产生估计信号dL,6或dL,5或dL,4产生。量化差值信号的选择由收到的操作方式指示决定。<br>
+      　　图3.15(b)是高子带ADPCM解码器。这个解码器与高子带ADPCM编码器的反馈部分相同，它的输出是重构信号rH。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

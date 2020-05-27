@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"线程切换功能可以实现在用户态。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1586
+}

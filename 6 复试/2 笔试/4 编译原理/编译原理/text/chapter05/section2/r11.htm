@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td>练习</td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若文法G1的产生式为：<br>
+            　　(1) S→aSb<br>
+            　　(2) S→aS<br>
+            　　(3) S→ε<br>
+            　　请提取文法中的左公因子。<br>
+            参考答案：<br>
+            　　对产生式(1)、(2)提取左公因子后得：<br>
+            　　S→ aS(b|ε)<br>
+            　　S→ε<br>
+            　　进一步变换为文法G′1：<br>
+            　　S→aSA<br>
+            　　A→b<br>
+            　　A→ε<br>
+            　　S→ε</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><sub>练习</sub></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若文法G2的产生式为：<br>
+            　　(1) A→ad<br>
+            　　(2) A→Bc<br>
+            　　(3) B→aA<br>
+            　　(4) B→bB<br>
+            　　请提取文法中的隐式左公因子。<br>
+            参考答案：<br>
+            　　产生式(2)的右部以非终结符开始，因此左公共因子可能是隐式的，所以这种情况下对右部以非终结符开始的产生式，用其相同左部而右部以终结符开始的产生式进行相应替换，对文法G2分别用(3)、(4)的右部替换(2)中的B，可得：<br>
+            　　(1) A→ad<br>
+            　　(2) A→aAc<br>
+            　　(3) A→bBc<br>
+            　　(4) B→aA<br>
+            　　(5) B→bB<br>
+            　　提取产生式(1)、(2)的左公共因子得：<br>
+            　　A→a(d|Ac)<br>
+            　　A→bBc<br>
+            　　B→aA<br>
+            　　B→bB<br>
+            　　引进新非终结符A′，去掉'('，')'后得G′2为：<br>
+            　　(1) A→aA′<br>
+            　　(2) A→bBc<br>
+            　　(3) A′→d<br>
+            　　(4) A′→Ac<br>
+            　　(5) B→aA<br>
+            　　(6) B→bB<br>
+            　　不难验证经提取左公共因子后文法G′1仍不是LL(1)文法。而文法G′2变成LL(1)文法，因此文法中不含左公共因子只是LL(1)文法的必要条件。<br>
+            　　值得注意的是对文法进行提取左公共因子变换后，有时会使某些产生式变成无用产生式，在这种情况下必须对文法重新压缩(或化简)。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　有了上述对寄存器和地址的描述，可给出寄存器分配和代码生成的具体算法为： <br>
+      　　设GETREG是一个函数过程，它的参数是一个形如i: A:=B op C的四元式，每次调用GETREG(i: A:=B op C)则返回一个寄存器R，用以存放A的结果值。对如何给出寄存器R，要用到四元式i上的待用信息，以使寄存器分配合理，对每个四元式的代码生成都要调用函数GETREG。GETREG分配寄存器的算法为：<br>
+      　　① 如果B的现行值在某寄存器R<sub><font size="-1">i</font></sub>中，且该寄存器只包含B的值，或者B与A是同一标识符，或B在该四元式后不会再被引用，则可选取R<sub><font size="-1">i</font></sub>作为所需的寄存器R，并转(4)。<br>
+      　　② 如果有尚未分配的寄存器，则从中选用一个R<sub><font size="-1">i</font></sub>为所需的寄存器R，并转(4)。<br>
+      　　③ 从已分配的寄存器中选取一个R<sub><font size="-1">i</font></sub>作为所需寄存器R，其选择原则为：占用该寄存器的变量值同时在主存中，或在基本块中引用的位置最远，这样对寄存器R<sub><font size="-1">i</font></sub>所含的变量和变量在主存中的情况必须先做如下调整：即对RVALUE[R<sub><font size="-1">i</font></sub>]中的每一变量M，如果M不是A且AVALUE[M]不包含M，则需完成以下处理。<br>
+      　　a) 生成目标代码ST R<sub><font size="-1">i</font></sub>,M;即把不是A的变量值由R<sub><font size="-1">i</font></sub>中送入内存中。<br>
+      　　b) 如果M不是B，则令AVALUE[M]={M}，否则，令AVALUE[M]={M, R<sub><font size="-1">i</font></sub>}。<br>
+      　　c) 删除RVALUE[R<sub><font size="-1">i</font></sub>]中的M。<br>
+      　　④ 给出R，返回。</td>
+  </tr>
+</table>
+</body>
+</html>

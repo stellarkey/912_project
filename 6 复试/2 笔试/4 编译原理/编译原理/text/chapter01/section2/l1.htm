@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>1.2编译过程概述和编译程序的结构</b><br>
+      　　编译程序完成从源程序到目标程序的翻译工作，是一个复杂的整体的过程。从概念上来讲，一个编译程序的整个工作过程是划分成阶段进行的，每个阶段将源程序的一种表示形式转换成另一种表示形式，各个阶段进行的操作在逻辑上是紧密连接在一起的。一般一个编译过程划分成词法分析、语法分析、语义分析、中间代码生成，代码优化和目标代码生成六个阶段,这是一种典型的划分方法。事实上，某些阶段可能组合在一起，这些阶段间的源程序的中间表示形式就没必要构造出来了。我们将分别介绍各阶段的任务。另外两个重要的工作：表格管理和出错处理与上述六个阶段都有联系。编译过程中源程序的各种信息被保留在种种不同的表格里，编译各阶段的工作都涉及到构造、查找或更新有关的表格，因此需要有表格管理的工作；如果编译过程中发现源程序有错误，编译程序应报告错误的性质和错误发生的地点，并且将错误所造成的影响限制在尽可能小的范围内，使得源程序的其余部分能继续被编译下去，有些编译程序还能自动校正错误，这些工作称之为出错处理。图1.3表示了编译的各个阶段。 
+      <br>
+      　　下面，我们从源程序在不同阶段所被转换成的表示形式来介绍各个阶段的任务。 </td>
+  </tr>
+</table>
+</body>
+</html>

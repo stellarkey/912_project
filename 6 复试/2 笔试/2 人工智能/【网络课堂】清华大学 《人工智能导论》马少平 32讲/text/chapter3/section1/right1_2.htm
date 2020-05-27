@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >下面就解图及其耗散值的概念和定义、能解不能解节点的定义作些说明。</p>
+      <p><font color="#000099">在第二章中介绍的从初始节点到目标节点的解路径，在与或图中表现为一个解图。图3.2给出了图3.1的三个解图。当然图3.1不只是这三个解图，还有其他的解图，这里只是给出了其中的三个。<br>
+        在普通图中，目标用一个节点表达，而在与或图中，目标则表现为一个节点的集合，该集合中由一些子目标节点组成。值得指出的是，解图不一定要求到达目标集中的每一个子目标节点，而只要求解图的端节点是目标集中的节点即可。也就是说，解图中的端节点是目标集的子集即可。</font></p>
+      <p>与或图中某一个节点n到节点集N的一个解图类似于普通图中的一条解路径。解图的求法是：从节点n开始，正确选择一个外向连接符，再从该连接符所指的每一个后继节点出发，继续选一个外向连接符，如此进行下去直到由此产生的每一个后继节点成为集合N中的一个元素为止。图3.2给出n0→{n7，n8}的三个解图。<br>
+      </p>
+      <p align="center" ><a href="picture1_2.htm" target="_blank"><img src="../../chapter1/images/t1_8.gif" width="72" height="97" border="0"></a></p>
+      <p align="center" ><font color="#FF0000">图3.2三个解图</font> </p>
+      <p >在与或图是无环（即不存在这样的节点---其后继节后同时又是它的祖先）的假定下，解图可递归定义如下：<br>
+        定义：一个与或图G中，从节点n到节点集N的解图记为<img src="../images/004.gif" width="17" height="14" align="top"> 
+        ，<img src="../images/004.gif" width="17" height="14" align="top">是G的子图。<br>
+        ①若n是N的一个元素，则<img src="../images/004.gif" width="17" height="14" align="top">由单一节点组成；<br>
+        ②若n有一个指向节点{n1，…，nk}的外向连接符K，使得从每一个ni到N有一个解图（i=1，…，k），则<img src="../images/004.gif" width="17" height="14" align="top">由节点n，连接符K，及{n1，…，nk}中的每一个节点到N的解图所组成；<br>
+        ③否则n到N不存在解图。<br>
+        同样我们可以递归定义局部图：<br>
+        定义：<br>
+        ①单一节点是一个局部图；<br>
+        ②对于一个局部图的任意叶节点n，选择一个n的外向连接符K，则该局部图、外向连接符K，以及K所连接的n的后继节点一起组成的图，仍然组成一个局部图。<br>
+      </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.6 LEX源程序中的辅助定义部分</b><br>
+        　　LEX源程序的第一部分是辅助定义，到目前为止我们只涉及到怎样写第二部分，即识别规则部分的写法，现在来看第一部分的写法。<br>
+        　　在LEX源程序中，用户为方便起见，需要一些辅助定义，如用一个名字代表一个复杂的正规式。辅助定义必须在第一个%%之前给出，并且必须从第一列开始写，辅助定义的语法是：<br>
+        　　name　translation<br>
+        例如用名字IDENT来代表标识符的正规式的辅助定义为<br>
+        　　IDENT　[a-zA-Z][a-zA-Z0-9]<br>
+        辅助定义在识别规则中的使用方式是用运算符{}将name括起来，LEX自动地用translation去替换它，例如上述标识符的辅助定义的使用为：<br>
+        　　{IDENT}　action for identifier<br>
+        　　…<br>
+        下面我们用辅助定义的手段来写一段识别FORTRAN语言中整数和实数的LEX源程序：<br>
+        　　D[0-9]<br>
+        　　E[DEde][-+]。{D}+<br>
+        　　%%<br>
+        　　{D}+printf(&quot;integer&quot;);<br>
+        　　{D}+&quot;·&quot;{D}({E})。|<br>
+        　　{D}&quot;·&quot;{D}+({E})。|<br>
+        　　{D}+{E}printf(&quot;real&quot;);<br>
+        　　请注意在辅助定义部分中可以使用前面的辅助定义。例如，定义E时使用了D，但所用的辅助定义必须是事先已定义过的，不能出现循环定义。上面的规则只是说明辅助定义的用法，并不是识别FORTRAN中数的全部规则，因为它不能处理类似35.EQ.I这样的问题，即会把35.EQ.I中的35<br>
+        .E当作实数，怎么解决这种问题请读者思考。<br>
+        　　除了上面介绍的辅助定义之外，用户还需要在LEX源程序中使用变量，还需要有一些自己写的子程序。前面已经见过两个常用的变量即yytext和yylong，也介绍过几个LEX提供的子程序yymore，yyless和yywrap，现在介绍用户如何自己定义变量和写子程序。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

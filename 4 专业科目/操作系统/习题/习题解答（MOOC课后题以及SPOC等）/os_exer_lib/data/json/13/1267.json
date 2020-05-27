@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"在函数print_stackframe中要调用函数print_debuginfo(uintptr_t eip)来打印函数源码位置信息，\n```\n   print_stackframe(void)\n   eip = read_eip();\n   #option 1\n   print_debuginfo(eip - 1);\n   #option 2\n   print_debuginfo(eip );\n```\n请问option1和 option2 的结有何区别？请说明。\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1267
+}

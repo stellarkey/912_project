@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　类似DFA, 对NFA N=(K，∑，f，S，Z)也有如下定义<br>
+      　　<b>∑<sup><font size="-2">*</font></sup>上的符号串t在NFA N上运行</b><br>
+      　　一个输入符号串t，（我们将它表示成Tt1的形式，其中T∈∑，t1∈∑<sup><font size="-2">*</font></sup>）在NFA 
+      N上运行的定义为：<br>
+      　　f（Q， Tt1）=f（f（Q，T），t1） 其中Q∈K.<br>
+      　　<b>∑<sup><font size="-2">*</font></sup>上的符号串t被NFA N接受</b><br>
+      　　若t∈∑<sup><font size="-2">*</font></sup>，f(S，t)=P，其中S为 N的开始状态，P∈Z，Z为终态集。<br>
+      　　则称t为NFA N所接受（识别）<br>
+      　　∑<sup><font size="-2">*</font></sup>上的符号串t被NFA N接受也可以这样理解：对于Σ<sup><font size="-2">*</font></sup>中的任何一个串t，若存在一条从某一初态结到某一终态结的道路，且这条道路上所有弧的标记字依序连接成的串(不理采那些标记为ε的弧)等于t，则称t可为NFA 
+      M所识别(读出或接受)。若M的某些结既是初态结又是终态结，或者存在一条从某个初态结到某个终态结的ε道路，那么空字可为M所接受。<br>
+      　　NFA N所能接受的符号串的全体记为L(N)</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释：统计学生的性别组成情况\n",
+    "question":"性别\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.男",
+        "B.女"
+    ],
+    "q_number":1133
+}

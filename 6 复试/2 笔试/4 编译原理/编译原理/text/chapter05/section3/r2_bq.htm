@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　图中符号说明如下：<br>
+      　　&quot;#&quot;句子括号即输入串的括号<br>
+      　　&quot;S&quot;文法的开始符号<br>
+      　　&quot;X&quot;存放当前栈顶符号的工作单元<br>
+      　　&quot;a&quot;存放当前输入符号a的工作单元<br>
+      　　预测分析程序的算法可为：<br>
+      　　BEGIN<br>
+      　　首先把'#'和文法开始符号推入 STACK 栈；<br>
+      　　把第一个输入符号读进a;<br>
+      　　FLAG：=TRUE；<br>
+      　　WHILE FIAG DO<br>
+      　　　BEGIN<br>
+      　　　把STACK栈顶符号上托出去并放在Ｘ中；<br>
+      　　　　IF X ∈ V<sub><font size="-2">T</font></sub> THEN<br>
+      　　　　　IF X=a THEN<br>
+      　　　　　　把下一个输入符号读进a<br>
+      　　　　　ELSE ERROR<br>
+      　　　　ELSE IF X='#' THEN<br>
+      　　　　　IF X=a THEN FLAG:=FALSE<br>
+      　　　　　ELSE ERROR<br>
+      　　　　ELSE <br>
+      　　　　　IF M[X,a]={X→X<sub><font size="-2">1</font></sub>X<sub><font size="-2">2</font></sub>...X<sub><font size="-2">K</font></sub>} 
+      THEN<br>
+      　　　　　　把X<sub><font size="-2">K</font></sub>，X<sub><font size="-2">K-1</font></sub>，…X<sub><font size="-2">1</font></sub>一一推 
+      进 STACK <br>
+      　　　　　　/*若X<sub><font size="-2">1</font></sub>X<sub><font size="-2">2</font></sub>…X<sub><font size="-2">K</font></sub>=ε 
+      ,不推什么进栈*/<br>
+      　　　　　ELSE　ERROR<br>
+      　　END OF WHILE;<br>
+      　　STOP/*分析成功，过程完毕*/</td>
+  </tr>
+</table>
+</body>
+</html>

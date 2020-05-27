@@ -1,0 +1,242 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 8.5 扩充的分析栈 
+            </font></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">S<font size="-2">m</font></td>
+                <td align="center">y,Val</td>
+                <td align="center">y</td>
+              </tr>
+              <tr> 
+                <td align="center">S<font size="-2">m-1</font></td>
+                <td align="center">x,Val</td>
+                <td align="center">x</td>
+              </tr>
+              <tr> 
+                <td align="center"><b><font size="-2">.<br>
+                  .<br>
+                  .</font></b><br>
+                </td>
+                <td align="center"><b><font size="-2">.<br>
+                  .<br>
+                  .</font></b></td>
+                <td align="center"><b><font size="-2">.<br>
+                  .<br>
+                  .</font></b></td>
+              </tr>
+              <tr> 
+                <td align="center">S<font size="-2">0</font></td>
+                <td align="center">-</td>
+                <td align="center">#</td>
+              </tr>
+              <tr> 
+                <td align="center">状态栈</td>
+                <td align="center">语义值</td>
+                <td align="center">符号栈</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 8.6 LR分析表 </font></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2" width="14%">状态</td>
+                <td align="center" colspan="6">ACTION（动作）</td>
+                <td align="center" colspan="3">GOTO（转换）</td>
+              </tr>
+              <tr> 
+                <td align="center" width="7%">d</td>
+                <td align="center" width="8%">+</td>
+                <td align="center" width="7%">*</td>
+                <td align="center" width="7%">(</td>
+                <td align="center" width="7%">)</td>
+                <td align="center" width="7%">#</td>
+                <td align="center" width="14%">E</td>
+                <td align="center" width="14%">T</td>
+                <td align="center" width="15%">F</td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">0</td>
+                <td align="center" width="7%">s5</td>
+                <td align="center" width="8%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">s4</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%">1</td>
+                <td align="center" width="14%">2</td>
+                <td align="center" width="15%">3</td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">1</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">s6</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">acc</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">2</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r2</td>
+                <td align="center" width="7%">s7</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r2</td>
+                <td align="center" width="7%">r2</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">3</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r4</td>
+                <td align="center" width="7%">r4</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r4</td>
+                <td align="center" width="7%">r4</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">4</td>
+                <td align="center" width="7%">s5</td>
+                <td align="center" width="8%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">s4</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%">8</td>
+                <td align="center" width="14%">2</td>
+                <td align="center" width="15%">3</td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">5</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r6</td>
+                <td align="center" width="7%">r6</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r6</td>
+                <td align="center" width="7%">r6</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">6</td>
+                <td align="center" width="7%">s5</td>
+                <td align="center" width="8%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">s4</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%">9</td>
+                <td align="center" width="15%">3</td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">7</td>
+                <td align="center" width="7%">s5</td>
+                <td align="center" width="8%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">s4</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%">10</td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">8</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r6</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">s11</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">9</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r1</td>
+                <td align="center" width="7%">s7</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r1</td>
+                <td align="center" width="7%">r1</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td align="center" width="14%">10</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r3</td>
+                <td align="center" width="7%">r3</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r3</td>
+                <td align="center" width="7%">r3</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr>
+                <td align="center" width="14%">11</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="8%">r5</td>
+                <td align="center" width="7%">r5</td>
+                <td align="center" width="7%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="7%">r5</td>
+                <td align="center" width="7%">r5</td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="14%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" width="15%"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

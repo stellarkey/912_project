@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　<font color="#003399">1. 黑白全电视信号</font><br>
+      　　电视摄像机把一幅图像信号转变成的输出信号就是全电视信号。全电视信号主要由图像信号（视频信号）、复合消隐信号和复合同步信号组成。这两种信号加在一起称为全电视信号，其波形如图2.7所示。<br>
+      　　<img src="../../../../images/chatp/chap02/022.gif" width="222" height="181"> 
+      <br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="390" height="290">
+          <param name="movie" value="../../../../swf/1-1.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/1-1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="390" height="290"></embed></object>
+      </center> <br>
+      　　全电视信号的幅度是：以同步信号作为100%，黑电平和消隐电平为70%，白电平为0%，图像信号介于白电平和黑电平之间，根据图像的灰度而变化。在标准的1V全电视信号中，同步信号为0.3V±9mV，图像信号为0.7V±20mV。 
+      <br>
+      　　从幅度上看全电视信号<br>
+      　　峰--峰值为1伏 <br>
+      　　以同步信号为100%，黑电平和消隐电平为70%，白电平为0%，图像信号介于白平和黑电平之间根据图像的灰度而变化。<br>
+      　　在标准的1V黑电信号中：<br>
+      　　同步信号：0.7v~1v 0.3v±9mv<br>
+      　　图像信号：0v~0.7v 0.7v±2.mv<br>
+      　　如下图所示：<br>
+      　　<img src="../../../../images/chatp/chap02/023.gif" width="289" height="215"> 
+      <br>
+      　　从时间上看，每一行的周期为64μs，其中，图像占52.2μs，行消隐占11.8μs±250ns。行同步信号的带宽为4.7μs±100ns，它比行消隐信号延迟1.3μs±250ns。每一场的周期为312.5H=20ms，其中，场消隐信号占25H+1行消隐信号，即等于1600μs+11.8μs。均衡脉冲的宽度是2.35μs±100ns，周期为半行，共12个（前六个，后六个）。场同步脉冲有6个槽脉冲，其宽度为4.7μs±100ns。 
+      <br>
+      　　从时间上看全电视信号：<br>
+      　　每行时间为64μs，正程52.2μs，逆程11.8μs，行同步为4.7μs，行延迟为1.3μs<br>
+      　　一帧=奇数场+偶数场=40ms<br>
+      　　626行=312.5行+312.5行=29ms+20ms<br>
+      　　场消隐=25×64+11.8<br>
+      　　　　　=1611.8μs<br>
+      　　场同步=3×64=192μs<br>
+      　　场延迟=192μs<br>
+      　　如下图所示：<br>
+      　　<img src="../../../../images/chatp/chap02/024.gif" width="289" height="220"> 
+      <br>
+      　　给定一张下述黑白图像，我们可以画出一行的黑白电视信号示意图，如下图所示： <br>
+      　　<img src="../../../../images/chatp/chap02/025.gif" width="317" height="235"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/026.gif" width="237" height="182"> 
+      <br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="399" height="292">
+          <param name="movie" value="../../../../swf/1-3.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/1-3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="399" height="292"></embed></object>
+      </center> 
+      <center>
+      </center>
+      <br>
+      　　在全电视信号中，把奇数场同步信号的前沿作为一场的起点，第1、2、3行是场同步信号，第4、5、6行是后均衡脉冲，7~22行还是场消隐信号，该场消隐信号从前场623行开始，因此，整个消隐信号是25行加一个行消隐时间。图像信号从23行起到309.5行止，共287.5行，这就是第一场或称奇数场。从309.5行开始又是下一场的场消隐信号及前均衡脉冲，在312.5行出现下一个偶数场的场同步脉冲，奇数场到此结束。偶数场开始，图像信号及偶数场结束，如图2.7所示。奇数场加上偶数场称为一帧。<br>
+      <font color="#990000">　　（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap02/027.gif" width="289" height="130" border="0"></a> 
+      <br>
+      <font color="#990000">　　<a href="t2.htm" target="_blank">（点击查看大图）</a></font> 
+      <a href="t2.htm"><br>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="395" height="336">
+        <param name="movie" value="../../../../swf/1-2.swf">
+        <param name="quality" value="high">
+        <embed src="../../../../swf/1-2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="395" height="336"></embed></object>
+      </a><br>
+      <br>
+      　<font color="#003399">　2. 彩色全电视信号</font> <br>
+      　　在现代彩色电视系统中，通常采用YUV彩色空间或YIQ彩色空间，Y为亮度信号，它可以与黑白全电视信号兼容，U和V用载波频率ωSC调制加到亮度Y上，最后形成彩色全电视信号，如下式所示：<br>
+      　　CVBS = Y + UcosωSCt + S(t)sinωSCt （2.15）<br>
+      　　在NTSC制系统中，U信号调制在副载波的零相位上，而V信号是固定地调制在90。的相位上的。在PAL制系统中，调制情况略有差别。U信号的调制与NTSC制相同，而V信号的调制是：第一行调制在90。的相位上（与NTSC制相同，称为NTSC行）；下一行（同隔行扫描是下面的第三行）调制在270。的相位上（称为PAL行）；再下一行又回到90。的相位上。按此顺序，V信号调制相位逐行倒相180。。图2.8示出了PAL制的平衡正交调制的倒相原理。<br>
+      　　<img src="../../../../images/chatp/chap02/028.gif" width="215" height="261"> 
+      <br>
+      <font color="#003399">　　　图2.8 PAL制平衡正交调制中的倒相原理</font> <br>
+      　　根据图2.8的矢量图，可写出PAL制色度信号Ch的表达式<br>
+      　　Ch = UcosωSCt + S(t)sinωSCt （2.16）<br>
+      　　式中，S(t)称为PAL开关函数，它是双极性矩形脉冲，其重复周期为行周期Th的两倍，幅度为+1和-1。PAL开关函数S(t)代表PAL制系统的根本特征，它的引入相当有效地克服了NTSC制系统中对信道微分相位敏感的缺点，这是PAL制取得成功的原因。<br>
+      　　最后将亮度、复合消隐信号与色度信号、复合同步信号混合放大，形成PAL制彩色全电视信号。以100%幅度和100%饱和度（简写为100/100）的彩条信号为例的彩色全电视信号如图2.9所示，图中标出了各部分的标准电平数值。<br>
+      　　图2.9 在75Ω负载上，100/100彩条的彩色全电视信号各部分的电平标准（输入信号R、G、B幅度为0.7V时）<br>
+      <br>
+      　　<img src="../../../../images/chatp/chap02/029.gif"> <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

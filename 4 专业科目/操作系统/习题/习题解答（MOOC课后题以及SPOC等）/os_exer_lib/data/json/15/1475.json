@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"AB RAID-0提高并行性，RAID-1提高可靠性\n",
+    "question":"关于冗余磁盘阵列(RAID, Redundant Array of Inexpensive Disks)的阐述正确的是（） s7\n",
+    "source":"网络",
+    "answer":"AB",
+    "type":"multi_answer",
+    "options":[
+        "A.采用RAID机制可提高磁盘IO的吞吐量(通过并行)",
+        "B.采用RAID机制可提高磁盘IO的可靠性和可用性 (通过冗余)",
+        "C.采用RAID-0可提高磁盘IO的可靠性和可用性",
+        "D.采用RAID-1可提高磁盘IO的吞吐量"
+    ],
+    "q_number":1475
+}

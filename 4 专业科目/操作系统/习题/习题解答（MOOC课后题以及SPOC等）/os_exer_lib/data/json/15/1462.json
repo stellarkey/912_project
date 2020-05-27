@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"死锁产生的必要条件包括（） s1\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.互斥",
+        "B.持有并等待",
+        "C.非抢占",
+        "D.循环等待"
+    ],
+    "q_number":1462
+}

@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 10.20 带有过程swap的PASCAL程序</font></td>
+        </tr>
+        <tr>
+          <td valign="top">　　(1) program reference(input, output);<br>
+            　　　　　　//reference过程定义头<br>
+            　　(2) var a, b: integer;<br>
+            　　(3) procedure swap(var x, y: integer);<br>
+            　　　　　　//reference过程内定义的swap的过程<br>
+            　　(4) 　var temp∶ integer;<br>
+            　　(5) 　begin //swap的过程体<br>
+            　　(6)　　temp∶=x;<br>
+            　　(7)　　　 x∶=y;<br>
+            　　(8) 　　　y∶=temp<br>
+            　　(9)　 end;<br>
+            　　(10) begin //reference的过程体<br>
+            　　(11)　a∶=1; b∶=2;<br>
+            　　(12)　swap(a,b);<br>
+            　　(13)　writeln(a=,a); writeln(b=,b)<br>
+            　　(14) end.</td>
+        </tr>
+      </table>
+      　　有关键字var时，PASCAL语言的参数传递使用的方式是传地址；去掉var，则使用的方式是传值。<br>
+      　　PASCAL语言的变量参数是在参数前加关键字var。这种参数的传递方式是传地址<br>
+      　　例如：过程 swap(var x,y:integer);<br>
+      　　　　　swap(a,b)；(a,b为调用时的实参)调用结果：a,b的值被改变。<br>
+      　　在参数前不加关键字var时是值调用。这种参数的传递方式是传值。<br>
+      　　例如：过程 swap(x,y:integer);<br>
+      　　　　　swap(a,b)；其结果：a,b调用前的值不被改变。</td>
+  </tr>
+</table>
+</body>
+</html>

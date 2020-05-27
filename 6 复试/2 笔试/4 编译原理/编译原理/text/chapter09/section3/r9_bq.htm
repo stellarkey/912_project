@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　图9.18表达了扫描到最内层的分程序（第7行）时，得到的符号i的下推链结构。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.18 符号表项下推链结构</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/p9_18.gif" width="232" height="255"></td>
+        </tr>
+      </table>
+      　　具体下推的过程是，当编译扫描到（1）行时，符号表中建立第0层的int i表项。扫描遇到（2）行的func()函数定义，则程序进入第1层，因此扫描到（3）行时，遇到符号i的重名项，这时int 
+      i的表项被下推到下推链中，而符号表中原int i表项处登录float i表项。编译继续扫描遇到（4）行时，&quot;｛&quot;表示进入一个分程序块，则程序进入第2层，因此扫到（5）行时，定义了具有5个整型元素的数组i，这时符号表中的float 
+      i表项被下推到下推链中，而符号表中原float i表项处登录整型数组int i[5]表项。扫描到（6）行时，进入新的嵌套块中，程序进入第3层，（7）行中定义的int 
+      i替换int i[5]，而后者被下推到下推链中。当逐个退出分程序时，下推链被逐次回推到符号表项中，其具体结构如下（图9.18所示为扫描进入最内层分程序块的情况）。在下推链的每一个项中可以不要符号，因为符号在符号表项中已经保留了。关于下推链的具体运行情况，在符号表的管理中再详细讨论。</td>
+  </tr>
+</table>
+</body>
+</html>

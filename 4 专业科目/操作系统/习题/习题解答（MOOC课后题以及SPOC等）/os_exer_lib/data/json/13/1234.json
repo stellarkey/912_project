@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C 是调到BIOS去执行\n",
+    "question":"80386机器加电启动后，CPU立刻跳转到()执行\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.ucore第一条指令",
+        "B.bootloader第一条指令",
+        "C.BIOS的第一条指令",
+        "D.GRUB的第一条指令"
+    ],
+    "q_number":1234
+}

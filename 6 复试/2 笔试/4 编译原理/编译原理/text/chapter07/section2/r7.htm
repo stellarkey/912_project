@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　· 移进项目，形如A→α·aβ,其中α，β∈V<sup><font size="-2">*</font></sup>，a ∈V<sub><font size="-2">T</font></sub>，即圆点后面为终结符的项目为移进项目，对应状态为移进状态。分析时把a移进符号栈。<br>
+      　　· 待约项目，形如A→α·Bβ，其中α,β∈V<sup><font size="-2">*</font></sup> ，B∈V<sub><font size="-2">N</font></sub>，即圆点后面为非终结符的项目称待约项目，它表明所对应的状态等待着分析完非终结符B所能推出的串归约成B，才能继续分析A右部的B后面部分。<br>
+      　　· 归约项目，形如A→α·其中α∈V<sup><font size="-2">*</font></sup> ，即圆点在最右端的项目，称归约项目，它表明一个产生式的右部已分析完，句柄已形成可以归约。<br>
+      　　· 接受项目，形如S′→S·，其中S∈V<sub><font size="-2">N</font></sub> ，S′→S为拓广文法的产生式，S′为左部的产生式只有一个，因而它是归约项目的特殊情况，对应状态称为接受状态，表明已分析成功。我们规定S′→·S 
+      为初态。<br>
+      　　对于图7.7识别活前辍的NFA我们可以利用第4章讲过的子集法将其确定化。对确定化后的DFA如果把每个子集中所含状态集对应的项目写在新的状态中，结果如图7.8所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#FF0000"> <font color="#0000FF">图 
+            7.7 识别活前缀的NFA</font></font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle3/p7_7-copy.gif" width="283" height="269"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

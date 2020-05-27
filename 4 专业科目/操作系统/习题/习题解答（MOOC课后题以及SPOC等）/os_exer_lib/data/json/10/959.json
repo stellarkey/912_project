@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"E\n",
+    "question":"在文件系统中设置一张( )表，它是利用二进制的一位来表示磁盘中一个块的使用情况。\n",
+    "source":"网络",
+    "answer":"E",
+    "type":"single_answer",
+    "options":[
+        "A.文件描述符表",
+        "B.链接指针表",
+        "C.文件表",
+        "D.空闲区表",
+        "E.位示图"
+    ],
+    "q_number":959
+}

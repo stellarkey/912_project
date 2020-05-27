@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent">　　<span class="spe">例题：<br>
+            　　“异或”运算的人工神经元网络设计</span></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/6/6_5F4001.gif" width="266" height="230"><br>
+            <img src="../../images/image_content/6/6_5F4002.gif" width="264" height="235"><br>
+            <img src="../../images/image_content/6/6_5F4003.gif" width="268" height="239"><br>
+            <img src="../../images/image_content/6/6_5F4004.gif" width="278" height="256"><br>
+            <img src="../../images/image_content/6/6_5F4005.gif" width="268" height="255"><br>
+            <img src="../../images/image_content/6/6_5F4006.gif" width="236" height="255"> 
+          </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">假设有两个变量x<sub>1</sub>和x<sub>2</sub>分别可取值+1与-1，那么一个“异或”计算则要求当x<sub>1</sub>和x<sub>2</sub>取值不同时，计算结果输出为+1，反之为0。对于这样一种运算，可以形象化的用一个二维空间表示，x<sub>1</sub>和x<sub>2</sub>分别为其两个变量，而A,B,C,D四点分别表示x<sub>1</sub>与x<sub>2</sub>分别取+1,-1时的四种情况。按异或运算的要求，对应于B与D的情况，“异或”输出为+1，而对应于A,C两种情况，则要求“异或”结果为0。与这个问题等价的另一个问题可以表示成图(b)所示，在该图中有两根直线f<sub>1</sub>(x)=0和f<sub>2</sub>(x)=0将该空间划分成三个区，而A,B,C,D这四个点分别处于这三个区中，A在一个区，C在另一个区，B与D则在同一个区。因此如果我们就设计一个分类器，将B与D所在的区划分成一类(用输出“1”表示)，将A与C所在区域划分成另一类，则“异或”计算也就可以实现了。为此我们可以先采用两个McCulloch-Pitts模型，一个用来实现以f<sub>1</sub>(x)=0为界的划分，另一个实现以f<sub>2</sub>(x)=0的划分，在此我们令<br>
+            　　f<sub>1</sub>(x)=x<sub>1</sub>+x<sub>2</sub>-1=0<br>
+            　　f<sub>2</sub>(x)=x<sub>1</sub>+x<sub>2</sub>+1=0<br>
+            　　按照这种定义，对应于f<sub>1</sub>(x)函数的神经元参数为(c)所示，而对应与f<sub>2</sub>(x)函数的神经元参数如(d)所示。在这种设计下，由f<sub>1</sub>(x)=0与f<sub>2</sub>(x)=0所包围的带状区域的y<sub>1</sub>与y<sub>2</sub>值分别为0与1,而其它两个区域的y<sub>1</sub>与y<sub>2</sub>值分别为(1,1)和(0,0)。这样一来我们又可将问题转化为：对一个二维向量<img src="../../images/image_content/6/6_5F4008.gif" width="62" height="61" align="absmiddle">，要求实现将<img src="../../images/image_content/6/6_5F4009.gif" width="55" height="59" align="absmiddle">与另两个向量<img src="../../images/image_content/6/6_5F4010.gif" width="52" height="59" align="absmiddle">，<img src="../../images/image_content/6/6_5F4011.gif" width="56" height="58" align="absmiddle">划分开的问题，这可用另一特征空间表示。显然任一根能将(0,1)划在(1,1)及(0,0)另一边的直线满足此要求。显然如令f(Y)=-2y<sub>1</sub>+2y<sub>2</sub>-1，设计第二个神经元的参数，并将这三个神经元连接成图(f)所示，该网络的最终输出(d)就可实现对x<sub>1</sub>与x<sub>2</sub>两个量的异或运算。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

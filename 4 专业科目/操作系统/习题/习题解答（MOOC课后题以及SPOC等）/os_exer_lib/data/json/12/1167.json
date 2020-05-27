@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"困难：在virtualbox中设置虚拟机的时候找不到Linux的64位选项。 解决：需要通过BIOS设置将电脑的虚拟化功能打开\n本电脑LenovoY480的VT功能是锁的，需要打开）。开始时选择了UBUNTU 32位，不能启动，后来换成64位就能顺利运行\n",
+    "question":"搭建好实验环境，请描述碰到的困难和解决的过程。\n",
+    "source":"网络",
+    "answer":"困难：在virtualbox中设置虚拟机的时候找不到Linux的64位选项。 解决：需要通过BIOS设置将电脑的虚拟化功能打开\n本电脑LenovoY480的VT功能是锁的，需要打开）。开始时选择了UBUNTU 32位，不能启动，后来换成64位就能顺利运行\n",
+    "type":"question_answer",
+    "q_number":1167
+}

@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td width="49%"><font face="Arial, Helvetica, sans-serif">Run p10<br>
+            Input file?TEST<br>
+            List object code?Y<br>
+            　　consta=10；<br>
+            　　varb,c;<br>
+            　　procedure p;<br>
+            　　　begin<br>
+            　　　　c∶=b+a<br>
+            　　　end；</font></td>
+          <td width="4%"><font face="Arial, Helvetica, sans-serif"></font></td>
+          <td width="47%"><font face="Arial, Helvetica, sans-serif">.</font></td>
+        </tr>
+        <tr> 
+          <td width="49%" align="center"><font face="Arial, Helvetica, sans-serif"> 
+            </font> 
+            <table width="50%" border="0" cellspacing="0" cellpadding="0"class=text>
+              <tr>
+                <td width="18%"><font face="Arial, Helvetica, sans-serif">1 <br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7 </font></td>
+                <td width="22%"><font face="Arial, Helvetica, sans-serif">int<br>
+                  lod <br>
+                  lit<br>
+                  opr<br>
+                  sto<br>
+                  opr </font></td>
+                <td width="19%"><font face="Arial, Helvetica, sans-serif">0<br>
+                  1<br>
+                  0<br>
+                  0<br>
+                  1<br>
+                  0 </font></td>
+                <td width="41%"><font face="Arial, Helvetica, sans-serif">3<br>
+                  3 <br>
+                  0<br>
+                  2<br>
+                  4<br>
+                  0 </font></td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="4%"><font face="Arial, Helvetica, sans-serif">┐<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            ┘ </font></td>
+          <td width="47%"><font face="Arial, Helvetica, sans-serif">The object 
+            code of procedure p</font></td>
+        </tr>
+        <tr> 
+          <td width="49%"><font face="Arial, Helvetica, sans-serif">　　begin<br>
+            　　　read(b);<br>
+            　　　while b＃0 do<br>
+            　　　　begin<br>
+            　　　　　call p; write(2*c); read(b)<br>
+            　　　　end<br>
+            　　end. </font></td>
+          <td width="4%"><font face="Arial, Helvetica, sans-serif"></font></td>
+          <td width="47%"><font face="Arial, Helvetica, sans-serif"></font></td>
+        </tr>
+        <tr> 
+          <td width="49%" align="center"> 
+            <table width="50%" border="0" cellspacing="0" cellpadding="0"class=text>
+              <tr>
+                <td>8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                  12<br>
+                  13<br>
+                  14<br>
+                  15<br>
+                  16<br>
+                  17<br>
+                  18<br>
+                  19<br>
+                  20<br>
+                  21<br>
+                  22<br>
+                  23<br>
+                  24 </td>
+                <td><font face="Arial, Helvetica, sans-serif">int<br>
+                  opr <br>
+                  sto <br>
+                  llod<br>
+                  lit<br>
+                  opr <br>
+                  jpc <br>
+                  cal <br>
+                  lit<br>
+                  lod<br>
+                  opr<br>
+                  opr<br>
+                  opr <br>
+                  opr<br>
+                  sto<br>
+                  jmp<br>
+                  opr</font></td>
+                <td> 
+                  <p>0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0 </p>
+                  </td>
+                <td>5<br>
+                  16<br>
+                  3<br>
+                  3<br>
+                  0<br>
+                  9<br>
+                  24<br>
+                  2<br>
+                  2<br>
+                  4<br>
+                  4<br>
+                  14<br>
+                  15<br>
+                  16<br>
+                  3<br>
+                  11<br>
+                  0</td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="4%"><font face="Arial, Helvetica, sans-serif">┐<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            │<br>
+            ┘ </font></td>
+          <td width="47%"><font face="Arial, Helvetica, sans-serif"> The object 
+            code of main program</font></td>
+        </tr>
+        <tr> 
+          <td width="49%"><font face="Arial, Helvetica, sans-serif">start p10<br>
+            ? 2　24<br>
+            ? 4　28<br>
+            ? 0<br>
+            end p10</font></td>
+          <td width="4%"><font face="Arial, Helvetica, sans-serif"></font></td>
+          <td width="47%"><font face="Arial, Helvetica, sans-serif"></font></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

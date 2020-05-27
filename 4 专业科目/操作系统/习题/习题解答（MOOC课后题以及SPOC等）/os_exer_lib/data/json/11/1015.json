@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"对于下列文件的物理结构，()只能采用顺序存取方式\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.顺序文件",
+        "B.链接文件",
+        "C.索引文件",
+        "D.Hash文件"
+    ],
+    "q_number":1015
+}

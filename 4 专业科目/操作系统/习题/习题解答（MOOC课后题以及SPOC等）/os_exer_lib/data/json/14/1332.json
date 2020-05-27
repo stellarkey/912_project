@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"对于lab2的输出信息，请说明数字的含义\n```\ne820map:\n  memory: 0009fc00, [00000000, 0009fbff], type = 1.\n  memory: 00000400, [0009fc00, 0009ffff], type = 2.\n  memory: 00010000, [000f0000, 000fffff], type = 2.\n  memory: 07ee0000, [00100000, 07fdffff], type = 1.\n  memory: 00020000, [07fe0000, 07ffffff], type = 2.\n  memory: 00040000, [fffc0000, ffffffff], type = 2.\n```\n修改lab2，让其显示type=\"some string\" 让人能够读懂，而不是不好理解的数字1,2 (easy) \n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1332
+}

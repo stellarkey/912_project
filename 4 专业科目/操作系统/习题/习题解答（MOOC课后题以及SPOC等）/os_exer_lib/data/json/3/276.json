@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"属共享型设备的是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.打印机",
+        "B.磁带机",
+        "C.磁盘机",
+        "D.输入机"
+    ],
+    "q_number":276
+}

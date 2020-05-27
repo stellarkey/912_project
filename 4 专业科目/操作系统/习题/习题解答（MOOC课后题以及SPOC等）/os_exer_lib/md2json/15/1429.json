@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "关于创建新进程的描述正确的是（） s2\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.fork() 创建子进程中，会复制父进程的所有变量和内存\r\n B.子进程的fork()返回0\r\n C.父进程的fork()在创建子进程成功后，返回子进程标识符\r\n D.fork() 创建子进程中，会复制父进程的页表\r\n"}

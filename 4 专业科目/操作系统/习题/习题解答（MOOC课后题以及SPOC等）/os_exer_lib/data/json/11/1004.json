@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"在Pascal程序中调用的sin（x）是 。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.系统调用",
+        "B.标准子程序",
+        "C.操作系统命令",
+        "D.进程"
+    ],
+    "q_number":1004
+}

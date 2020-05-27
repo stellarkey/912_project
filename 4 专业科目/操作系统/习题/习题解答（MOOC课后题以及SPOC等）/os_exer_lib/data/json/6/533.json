@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在现代Unix 系统（如System V）中，存贮管理大多采用______________ 存贮机制，把______________ 作为一种辅助手段。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":533
+}

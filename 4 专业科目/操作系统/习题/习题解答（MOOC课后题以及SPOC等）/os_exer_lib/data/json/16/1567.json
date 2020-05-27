@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在上述伪码中，如果有3个线程a,b,c需要访问管程，并会使用管程中的2个条件变量`cv[0]`,`cv[1]`。\n1. 请问`cv[i]->count`含义是什么？`cv[i]->count`是否可能<0, 是否可能>1？请举例或说明原因。\n2. 请问`mt->next_count`含义是什么？`mt->next_count`是否可能<0, 是否可能>1？请举例或说明原因。",
+    "explain":"1）cv[i]->count含义是：等待队列长度；（1分）\ncv[i]->count不可能<0（1分）\n原因是，count的修改一定是先加1，后减1，并且是成对出现；（1分）\ncv[i]->count可能>1（1分）\n原因是，可能有多个进程同时暂停在等待队列中。（1分） \n2）请问mt->next_count含义是：紧急等待队列长度；（1分）\nmt->next_count不可能<0（1分）\n原因是，mt->next_count的修改一定是先加1，后减1，并且是成对出现；（1分）\nmt->next_count可能>1（1分）\n原因是，下面是反例。（1分） \n\n关于ucore管程实现中next_count的想法\n在完成lab7的时候突然考虑到ucore实现中一种情况可能会导致管程`next_count`大于1，但课上课下老师和同学说`next_count`不会大于1（我之前也一直认为不会大于1）\n构造这种情况需要使用3个线程a,b,c、2个条件c1,c2，对应函数大概如下\n\n```\nfunc_a(): wait(c1)\nfunc_b(): wait(c2) signal(c1)\nfunc_c(): signal(c2）\n```\n\n假设abc依次执行。\n1. 线程a遇到条件c1阻塞，于是在wait中关闭互斥锁。\n2. 线程b进入，遇到条件c2阻塞，并在wait中关闭互斥锁。\n3. 线程c进入，在signal函数中up条件c2的信号量，并down信号量next阻塞（Hoare机制），`next_count`为1\n4. 线程b继续执行，在signal函数中由于c1被线程a需求，于是线程b会up条件c1的信号量，并down信号量next阻塞，此时，next被down了两次，对应`next_count`为2\n5. 线程a结束，结束时唤醒线程b，唤醒后`next_count`减为1\n6. 线程b结束，结束时唤醒线程c，唤醒后`next_count`为0\n7. 线程c结束，关闭互斥锁\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"1）cv[i]->count含义是：等待队列长度；（1分）\ncv[i]->count不可能<0（1分）\n原因是，count的修改一定是先加1，后减1，并且是成对出现；（1分）\ncv[i]->count可能>1（1分）\n原因是，可能有多个进程同时暂停在等待队列中。（1分） \n2）请问mt->next_count含义是：紧急等待队列长度；（1分）\nmt->next_count不可能<0（1分）\n原因是，mt->next_count的修改一定是先加1，后减1，并且是成对出现；（1分）\nmt->next_count可能>1（1分）\n原因是，下面是反例。（1分） \n\n关于ucore管程实现中next_count的想法\n在完成lab7的时候突然考虑到ucore实现中一种情况可能会导致管程`next_count`大于1，但课上课下老师和同学说`next_count`不会大于1（我之前也一直认为不会大于1）\n构造这种情况需要使用3个线程a,b,c、2个条件c1,c2，对应函数大概如下\n\n```\nfunc_a(): wait(c1)\nfunc_b(): wait(c2) signal(c1)\nfunc_c(): signal(c2）\n```\n\n假设abc依次执行。\n1. 线程a遇到条件c1阻塞，于是在wait中关闭互斥锁。\n2. 线程b进入，遇到条件c2阻塞，并在wait中关闭互斥锁。\n3. 线程c进入，在signal函数中up条件c2的信号量，并down信号量next阻塞（Hoare机制），`next_count`为1\n4. 线程b继续执行，在signal函数中由于c1被线程a需求，于是线程b会up条件c1的信号量，并down信号量next阻塞，此时，next被down了两次，对应`next_count`为2\n5. 线程a结束，结束时唤醒线程b，唤醒后`next_count`减为1\n6. 线程b结束，结束时唤醒线程c，唤醒后`next_count`为0\n7. 线程c结束，关闭互斥锁\n",
+    "type":"question_answer",
+    "q_number":1567
+}

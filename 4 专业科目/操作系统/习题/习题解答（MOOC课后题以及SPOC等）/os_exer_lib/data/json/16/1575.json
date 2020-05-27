@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"函数调用时的动作pushl %ebp和movl %esp,%ebp是必须的，否则程序无法正确运行。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1575
+}

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　注意!元符号和源符号的概念<br>
+      　　文法中使用的元符号：<br>
+      　　→或 ∷= 表示左部由右部定义<br>
+      　　| 表示定义同一个左部的几个可选择的右部 <br>
+      　　<b>源符号</b><br>
+      　　文法定义的语言中的符号，全部由文法的终结符构成。<br>
+      　　例4.3设G=(V<sub><font size="-2">n</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)， 
+      V<sub><font size="-2">n</font></sub>={S,B,E}， V<sub><font size="-2">T</font></sub>={a,b,e}，P由下列产生式组成：<br>
+      　　(1) S→aSBE<br>
+      　　(2) S→aBE<br>
+      　　(3) EB→BE<br>
+      　　(4) aB→ab<br>
+      　　(5) bB→bb<br>
+      　　(6) bE→be<br>
+      　　(7) eE→ee<br>
+      　　例4.1和例4.2都是较简单的文法的例子，比较容易确定哪些符号串可以从文法推导出来，哪些符号串不能从文法推导出来。一般说来，确定文法将产生什么可能是很困难的。如现在的例子(例4.3)就较为困难。<br>
+      　　看出，使用产生式(1)一次，可得到句型aSBE，接下去再使用产生式（1）一次可得到句型aaSBEBE，得到推导序列S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaSBEBE, 
+      若接下去使用产生式（2）一次，便得到句型aaaBEBEBE。接着，使用产生式（3）一次，形成的推导序列为：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaSBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBEBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaBBEEBE，再使用产生式（3）一次，形成的推导序列为：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaSBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBEBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBEEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaBBEBEE，再使用产生式（3）一次，形成的推导序列为：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaSBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBEBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBEEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBEBEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBBEEE 
+      即 a<sup><font size="-2">3</font></sup>B<sup><font size="-2">3</font></sup>E<sup><font size="-2">3</font></sup><br>
+      　　下面，依次使用产生式（4）一次，产生式（5）二次，产生式（6）一次，产生式（7）二次，形成的推导序列为：<br>
+      S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaSBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBEBEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBEEBE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaaBBEBEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      aaaBBBEEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabBBEEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabbBEEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabbbEEE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabbbeEE<br>
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabbbeeE<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aaabbbeee 
+      ，即 a<sup><font size="-2">3</font></sup>b<sup><font size="-2">3</font></sup>e<sup><font size="-2">3</font></sup></td>
+  </tr>
+</table>
+</body>
+</html>

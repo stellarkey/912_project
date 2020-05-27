@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "关于冗余磁盘阵列(RAID, Redundant Array of Inexpensive Disks)的阐述正确的是（） s7\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "AB", "type": "2\r\n", "options": " A.采用RAID机制可提高磁盘IO的吞吐量(通过并行)\r\n B.采用RAID机制可提高磁盘IO的可靠性和可用性 (通过冗余)\r\n C.采用RAID-0可提高磁盘IO的可靠性和可用性\r\n D.采用RAID-1可提高磁盘IO的吞吐量\r\n"}

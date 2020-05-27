@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> (3) 算符优先分析归约过程的算法<br>
+      　　自底向上的算符优先分析法，也为自左向右归约，我们已经知道它不是规范归约。规范归约的关键问题是如何寻找当前句型的句柄，而算符优先分析归约的关键是如何找最左素短语。最左素短语 
+      N<font size="-2"><sub>i</sub></font>a<font size="-2"><sub>i</sub></font>N<font size="-2"><sub>i+1</sub></font>a<font size="-2"><sub>i+1</sub></font> 
+      … a<font size="-2"><sub>j</sub></font>N<font size="-2"><sub>j+1</sub></font> 
+      应满足：<br>
+      　　a<font size="-2"><sub>i-1</sub></font><img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      a<font size="-2"><sub>i</sub></font><br>
+      　　a<font size="-2"><sub>i</sub></font> <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      a<font size="-2"><sub>i+1</sub></font> <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      …<img src="../../../img/chap06/symbol03.gif" width="18" height="20"> a<font size="-2"><sub>j</sub></font><br>
+      　　a<font size="-2"><sub>j</sub></font> <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      a<font size="-2"><sub>j+1</sub></font><br>
+      　　在文法的产生式中存在右部符号串的符号个数与该素短语的符号个数相等，非终结符号对应 N<font size="-2"><sub>k</sub></font>,(k=i，…，j+1)不管其符号名是什么。终结符对应a<font size="-2"><sub>i</sub></font>，…，a<font size="-2"><sub>j</sub></font>，其符号名要与a<font size="-2"><sub>i</sub></font>，…，a<font size="-2"><sub>j</sub></font>的实际名相一致，相应位置也一致，才有可能形成素短语。由此，我们在分析过程中可以设置一个符号栈S，用以寄存归约或待形成最左素短语的符号串，用一个工作单元a存放当前读入的终结符号，归约成功的标志是当读到句子结束符#时，S栈中只剩#N，即只剩句子最左括号'#'和一非终结符N。下面给出分析过程的示意图如图6.10。<br>
+      　　在归约时要检查是否有对应产生式的右部与S[j+1]…S[k]相符，若有才可归约，否则出错。在这个分析过程中把'#'也放在终结符集中。</td>
+  </tr>
+</table>
+</body>
+</html>

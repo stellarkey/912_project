@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      　　下图表示了一个规则空间偏序关系的一部分。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-7 规则空间偏序关系</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap05/5-6.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/5-6.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+
+        　　图中，TRUE表示没有任何条件，这是最一般的概念。概念 表示至少有一张梅花牌，它比TRUE要特殊些。而概念 表示至少有一张梅花牌且至少有一张红心牌，它比前两个概念更特殊。图中的箭头用来指向从特殊概念到一般概念。图中最下面一行的各点是正例直接对应的概念，每一个点的概念只符合一个正例。现在一手牌，例子是每张牌c的花色和点数，比如：<br>
+      　　<img src="../../../img/chap05/pic005.gif" width="179" height="16"><br>
+      这是一个正例，一个最特殊的概念。而概念RANK(c,7)是规则空间中的点，它比没有描述要特殊，比示教正例要一般。示教例子应该是有具体花色、具体点数的某一张或一组牌。 
+      <br>
+      　　规则空间结构图如下：
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图5-8 规则空间的结构</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="250" height="250">
+              <param name=movie value="../../../flash/chap05/P5_4_3_2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/P5_4_3_2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="250" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　如图所示，规则空间中最一般的元素构成子集G；规则空间中最特殊的元素构成的子集为S。在假设规则集合H是以G为上确界和以S为下确界的一段。因此，可以用G和S来表示集合H。学习过程就是G向下、S向上变化的过程，也就是说学习时规则空间的形状在发生变化，所以称为变形空间法。最后，H成为一个点，学习结束。<br>
+      　　上图中规则空间初始时，最上边是一般规则（概念），没有描述、没有条件的一个点。满足所有例子，如TRUE。最下面一行是各个具体的正例直接对应的概念。如扑克牌的某一张或一组牌。<br>
+      　　下面要讨论的就是如何修改规则空间，降低G，提升S，使H缩小成一点的方法。</td>
+  </tr>
+</table>
+</body>
+</html>

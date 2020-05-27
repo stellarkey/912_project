@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表 7.15 LALR(1)分析表 </font></td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="4">ACTION</td>
+                <td align="center" valign="top" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">=</td>
+                <td align="center" valign="top">*</td>
+                <td align="center" valign="top">i</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">L</td>
+                <td align="center" valign="top">R</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                </td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  r5</td>
+                <td align="center" valign="top">S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4</td>
+                <td align="center" valign="top">S5<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  r5<br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  r5<br>
+                  r1</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top">2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  8<br>
+                  <font color="#FFFFFF">.</font><br>
+                  8</td>
+                <td align="center" valign="top">3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  7<br>
+                  <font color="#FFFFFF">.</font><br>
+                  9</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　现再给出文法G<sub><font size="-2">2</font></sub>(S')为LR(1)文法而不是LALR(1)文法的例子，说明LR(1)文法强于LALR(1)文法。<br>
+      　　G<sub><font size="-2">2</font></sub>(S')的产生式如下：<br>
+      　　(0) S'→S<br>
+      　　(1) S→aAd<br>
+      　　(2) S→bBd<br>
+      　　(3) S→aBe<br>
+      　　(4) S→bAe<br>
+      　　(5) A→c<br>
+      　　(6) B→c</td>
+  </tr>
+</table>
+</body>
+</html>

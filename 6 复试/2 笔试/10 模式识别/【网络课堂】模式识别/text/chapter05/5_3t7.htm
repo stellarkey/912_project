@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">我们在日常生活中经常需要把杂乱无章的复杂世界变得有头绪，例如你到超市去买东西。如果买酱油，你就可能先找食品这一类在哪，然后副食又在哪里，这就是因为按这样分类，你便于理出头绪。你到医院看病，也往往先弄清楚，你要看得病是外科还是内科。到图书馆借书也要分门别类地去找，才能方便地找到你要找的书。这就是分类学的方法，把各种事物按其相似性，或内在联系组织起来，组成有层次的结构, 
+            这就是分级聚类方法要解决的问题。各种事物相似，或本质上最接近的划归一类，然后把相近的几个类再合并成一个类。从这些例子可以看出，这种聚类实际上将复杂的事物组织与管理起来，因此从其用途来看与动态聚类方法是不同的。学习这种方法首先要理解分级聚类的目的与用途。而具体的技术问题只有一个，就是相似性如何定义的问题。</span><br>
+            　　以上讨论的是各种具有迭代过程的动态聚类算法，这一节讨论非迭代的分级聚类算法。<br>
+            　　分级聚类方法的目的并不把N个样本分成某一个预定的类别数C，而是把样本集按不同的相似程度要求分成不同类别的聚类，最极端的情况是每个样本各自为一类，N个样本共有N类，没有任何聚类，另一极端则是将所有样本归一类。在这两个极端之间的是类别数从N逐渐减少，每类的数量相应增加，而类内样本的相似程度要求也随之下降。这种聚类就是分级聚类，它可以用一树形结构表示。图5.10是一棵具有6个样本的分类树。图中左边表示分级层次，第一层次各样本自成一类，其类内相似度自然是百分之百，在第二层次y<sub>3</sub>与y<sub>5</sub>合成一类，第三层次y<sub>1</sub>与y<sub>4</sub>也合并成一类，依次下去。一经合并成一类的样本不再分裂，类别数也随之逐渐减少，类内相似程度逐渐降低。<br>
+            　　这种聚类方法在科学技术领域中得到了广泛的应用，如生物分类就是分级聚类应用的一个例子。<br>
+            　　<span class="spe">分级聚类方法的关键问题是相似度如何定义的问题。我们可以重新联想一下分类学中如何确定相似程度的例如动物学中有哺乳动物与非哺乳动物，有猫科动物与犬科动物之分。从中我们可以体会到区分是建立在一些本质的区别上的。再如日用品与工业用零部件有区别。日用品又有食品与非食用品，食品中又有人吃的东西与给宠物吃的东西之分。分类都有明确的应用背景或本质上的差别。然而我们这里讲的分级聚类是对数据集进行划分，在这些数据之间只有度量值之间的差别，因此只能按度量值之间的差异来定义相似度。这样一来就产生三种不同的相似性度量方法，对聚类也因而会有不同效果。</span><br>
+            　　分级聚类方法的算法是比较简单的，关键是聚类的相似性度量方法。对于两个聚类r<sub>i</sub>与r<sub>i</sub>之间的相似性度量，用<img src="../../images/image_content/5/5_3094.gif" width="59" height="25" align="absmiddle">表示。<img src="../../images/image_content/5/5_3094.gif" width="59" height="25" align="absmiddle">有以下几种<br>
+            　　1.最近距离<br>
+            　　　　<img src="../../images/image_content/5/5_3095.gif" width="169" height="48" align="absmiddle"><br>
+            　　2.最远距离<br>
+            　　　　<img src="../../images/image_content/5/5_3096.gif" width="171" height="45" align="absmiddle"><br>
+            　　3.均值距离<br>
+            　　　　<img src="../../images/image_content/5/5_3097.gif" width="147" height="44" align="absmiddle"> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_3098.gif" width="297" height="377"><br>
+            图 5.10 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　其中<img src="../../images/image_content/5/mi.gif" width="20" height="22" align="absmiddle">与<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">是这两个聚类的质心，<img src="../../images/image_content/5/5_3099.gif" width="68" height="29" align="absmiddle">可以是任何一种距离度量。采用最远，最近或均值来衡量相似性会产生各自不同的聚类效果。<br>
+            　　在确定了相似性度量后，分级聚类算法可以按以下步骤进行：<br>
+            　　初始时设置<img src="../../images/image_content/5/5_3100.gif" width="180" height="34" align="absmiddle">。<img src="../../images/image_content/5/5_3101.gif" width="19" height="28" align="absmiddle">表示各个聚类集合，N是样本数，初始时每个样本自成一类。<br>
+            　　步骤1 在集合<img src="../../images/image_content/5/5_3102.gif" width="60" height="28" align="absmiddle">中找到一对满足条件<br>
+            　　<img src="../../images/image_content/5/5_3103.gif" width="189" height="36" align="absmiddle"><br>
+            的聚类集合<img src="../../images/image_content/5/5_3105.gif" width="16" height="26" align="absmiddle">与<img src="../../images/image_content/5/5_3106.gif" width="15" height="25" align="absmiddle">。其中<img src="../../images/image_content/5/5_3104.gif" width="63" height="27" align="absmiddle">是该两聚类的相似性度量。<br>
+            　　步骤2 把<img src="../../images/image_content/5/5_3105.gif" width="16" height="26" align="absmiddle">并入<img src="../../images/image_content/5/5_3106.gif" width="15" height="25" align="absmiddle">，并去掉<img src="../../images/image_content/5/5_3105.gif" width="16" height="26" align="absmiddle">。<br>
+            　　步骤3 把i从指标集I中除掉，若I的基数仅等于2时，则终止计算，否则转向步骤1。<br>
+            　　前面指出不同的相似性度量对聚类结果可能有较大影响，下面举一些例子说明其效果。下面着重讨论最近距离与最远距离的不同效果。假设有三种如图5.11(a)、(b)和(c)所示的两维点集。在采用最近距离作相似性度量时聚成两类的结果表示在5.12中。而使用最远距离的聚类结果表示在5.13中。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_3107.gif" width="275" height="398"><br>
+            图 5.11 <br>
+            <img src="../../images/image_content/5/5_3108.gif" width="273" height="400"> 
+            <br>
+            图 5.12</td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　从图5.12与5.13的比较中可以看出，使用最近距离与最远距离在样本不同的分布中可能得出不同的结果，图5.11(a)与(b)不同在于(b)中两个密集的分布中间多了两个干扰点y<sub>1</sub>与y<sub>2</sub>。在使用最短距离时，它对聚类产生了明显的影响，在图5.12中(a)与(b)是两种很不相同的聚类结果，然而在图5.13的(a)与(b)中可以看出两个干扰点对聚类没有明显的影响，这说明采用最近距离对两个密集区的相邻区中的干扰点十分敏感，而用最远距离则可防止两个密集区通过某个路经聚为一类的可能性。</td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/5/5_3109.gif" width="246" height="136"><br>
+            <img src="../../images/image_content/5/5_3110.gif" width="266" height="130"> 
+            <br>
+            <img src="../../images/image_content/5/5_3111.gif" width="258" height="206"> 
+            <br>
+            图 5.13 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　但是如果我们再对比图5.11中(c)的点集分布情况及使用最近距离与最远距离的聚类结果，可以看出最近距离对这种长条形分布是比较适合的，而最远距离不能检出具有长条形状的聚类。显然使用最远距离将使个别的远离点对聚类结果产生明显的影响至于使用均值距离的效果，将介乎于上述两者之间，读者可自行分析。为了适应各种点集的数据构造可以有其它的相似性度量和相应的聚类算法，这里不再讨论。在第六章模糊模式识别中将从模糊集合的观点讨论分级聚类方法。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

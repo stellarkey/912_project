@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　几条特殊指令的解释执行：（见PL/0文本的interpret过程中相关操作的解释执行）<br>
+      　　调用过程指令格式 ： cal l a<br>
+      　　cal: begin (*generat new block mark*)<br>
+      　　　　　　　　s[t+1]:=base(l); 填写静态链<br>
+      　　　　　　　　s[t+2]:=b; 填写动态链<br>
+      　　　　　　　　s[t+3]:=p; 填写返回地址<br>
+      　　　　　　　　b:=t+1; 被调用过程的基地址<br>
+      　　　　　　　　p:=a 过程入口地址a送p<br>
+      　　　　　end;<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">调用过程指令的解释执行示意图</font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="450" height="320">
+              <param name=movie value="../../../flash/chap02/f2-7-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap02/f2-7-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="450" height="320">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　过程入口指令格式 ： int 0 a 在栈顶开辟a个单元（进栈）<br>
+      　　int: t:=t+a; （t是当前栈顶值）<br>
+      　　过程出口指令格式 ： opr 0 0 释放数据段（退栈） <br>
+      　　opr: case a of (*operator*)<br>
+      　　　　　　　　0: begin (*return*)<br>
+      　　　　　　　　t:=b-1; 恢复调用前栈顶<br>
+      　　　　　　　　p:=s[t+3]; 送返回地址到p<br>
+      　　　　　　　　b:=s[t+2] 恢复调用前基地址<br>
+      　　　　　end;</td>
+  </tr>
+</table>
+</body>
+</html>

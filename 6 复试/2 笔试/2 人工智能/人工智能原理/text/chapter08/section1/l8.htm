@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFDE5" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>8.1.4.2 智能体程序的设计 </b><br>
+      　　智能体程序的设计有一个一般的框架：接收对环境的感知并产生相应的动作。一个原始的智能体程序可以采用如下的形式：<br>
+      function Skeleton-Agent(percept) returns action<br>
+      　static: memory, the agent's memory of the world <br>
+      　memory UPDATE-MEMORY(memory, percept)<br>
+      　action CHOOSE-BEST-ACTION(memory)<br>
+      　memoryUPDATE-MEMORY(memory , action) <br>
+      　return action<br>
+      end function <br>
+      　　用上述形式描述的智能体都有自己的内部数据结构，当新的感知到来时，内部数据结构进行更新。这些数据结构在智能体决策过程的操作下，产生动作的候选，并传送到智能体结构中执行。</td>
+  </tr>
+</table>
+</body>
+</html>

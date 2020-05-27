@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "在单处理器的多进程系统中，进程什么时候占用处理器和能占用多长时间，取决于（） s4\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.进程相应的程序段的长度\r\n B.进程总共需要运行时间多少\r\n C.进程自身和进程调度策略\r\n D.进程完成什么功能\r\n"}

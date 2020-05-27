@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#000099">k－连接符的耗散值可以根据具体的问题定义不同的计算方法。比方说k个人分别从a出发到b点去，要求k个人可以分别采用不同的方法到达b点，但必须都要到达。所以可以认为k个人是&quot;与&quot;的关系。如果问题求k个人从a点到达b点所需要的费用，则耗散值可以计算为k个人所用费用的总和。如果是求所需要的时间，则耗散值可以用最晚到达b点的那个人所用的时间计算。等等。这里给出的耗散值的计算方法是一种一般的表达。</font></p>
+      <p>在搜索解图的过程中，还须要进行耗散值的计算。若<font color="#CC0000">解图的耗散值记</font>为k（n，N），则可递归计算如下：<br>
+        ①若n是N的一个元素，则k（n，N）＝0；<br>
+        ②若n是一个外向连接符指向后继节点{n1，…，ni}，并设该连接符的耗散值为Cn，则<br>
+        k（n，N）＝Cn+ k（<img src="../images/007.gif" width="14" height="12">，N） + 
+        … + k（<img src="../images/006.gif" width="11" height="12">，N）<br>
+        根据这个定义，在假定k连接符的耗散值为k的情况下，图3.2三个解图的耗散值计算结果分别为8、7和5。具有最小耗散值的解图称为最佳解图，其值也用<img src="../images/005.gif" width="16" height="12">（n）标记，上例中<img src="../images/005.gif" width="16" height="12">（n0）＝5。<br>
+        同样，也可以计算一个局部图的耗散值。如果我们同样将<font color="#CC0000">局部图的耗散值记</font>为k（n，N），则：<br>
+        ①若n是局部图的一个叶节点，则k（n，N）＝h(n)；<br>
+        ②若n是一个外向连接符指向后继节点{n1，…，<img src="../images/006.gif" width="11" height="12">}，并设该连接符的耗散值为Cn，则<br>
+        k（n，N）＝Cn+ k（<img src="../images/007.gif" width="14" height="12">，N） + 
+        … + k（<img src="../images/006.gif" width="11" height="12">，N）<br>
+        其中，h(n)表示节点n到目标节点集的<font color="#CC0000">最佳解图</font>耗散值的估计。<br>
+        此外搜索过程还要标记能解节点（SOLVED），为此给出如下定义：<br>
+        能解节点（SOLVED）<br>
+        ①终节点是能解节点；<br>
+        ②若非终节点有&quot;或&quot;子节点时，当且仅当其子节点至少有一能解，该非终节点才能解；<br>
+        ③若非终节点有&quot;与&quot;子节点时，当且仅当其子节点均能解，该非终节点才能解。<br>
+        不能解节点（UNSOLVED）；<br>
+        ①没有后裔的非终节点是不能解节点；<br>
+        ②若非终节点有&quot;或&quot;子节点时，当且仅当所有子节点均不能解时，该非终节点才不能解；<br>
+        ③若非终节点有&quot;与&quot;子节点时，当至少有一子节点不能解时，该非终节点才不能解。 <br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

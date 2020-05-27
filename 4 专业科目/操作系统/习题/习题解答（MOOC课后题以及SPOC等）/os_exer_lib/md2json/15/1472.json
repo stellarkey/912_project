@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "虚拟文件系统可支持的具体文件系统包括（） s4\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.磁盘文件系统\r\n B.设备文件系统\r\n C.网络文件系统\r\n D.系统状态文件系统（proc...）\r\n"}

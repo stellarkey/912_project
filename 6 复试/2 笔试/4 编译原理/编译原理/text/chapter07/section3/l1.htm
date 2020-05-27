@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>7.3 SLR(1)分析 </b><br>
+      　　由于大多数适用的程序设计语言的文法不能满足LR(0)文法的条件，即使是描述一个实数变量说明这样简单的文法也不一定是LR(0)文法。因此本节将介绍对于LR(0)规范族中有冲突的项目集(状态)用向前查看一个符号的办法进行处理，以解决冲突。这种办法将能满足一些文法的需要，因为只对有冲突的状态才向前查看一个符号，以确定做那种动作，因而称这种分析方法为简单的LR(1)分析法，用SLR(1)表示。<br>
+      　　实际上大多数适用的程序设计语言的文法也不能满足SLR(1)文法的条件，但是SLR(1) 分析法是为了解LR(1)分析法做准备的，如果没有SLR(1) 
+      分析法的思想基础，那么理解LR(1)分析法是很困难的。<br>
+      　　现举实型变量说明文法为例：<br>
+      　　＜实型变量说明＞→ real＜标识符表＞<br>
+      　　＜标识符表＞→＜标识符表＞，i<br>
+      　　＜标识符表＞→i<br>
+      　　将该文法缩写后并拓广为G′如下：<br>
+      　　(0) S′→S<br>
+      　　(1) S→rD<br>
+      　　(2) D→D,i<br>
+      　　(3) D→i </td>
+  </tr>
+</table>
+</body>
+</html>

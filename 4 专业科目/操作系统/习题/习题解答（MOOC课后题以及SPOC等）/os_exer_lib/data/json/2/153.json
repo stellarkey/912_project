@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"通常以下那种分区分配算法产生的外零头最小\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.首次适应",
+        "B.最佳适应",
+        "C.最坏适应",
+        "D.下次适应"
+    ],
+    "q_number":153
+}

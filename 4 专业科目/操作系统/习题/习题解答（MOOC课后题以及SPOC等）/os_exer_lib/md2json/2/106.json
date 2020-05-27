@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述。\r\n", "question": "I/O请求完成会导致哪种进程状态演变？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.就绪 → 执行 \r\n B.阻塞 → 就绪 \r\n C.阻塞 → 执行 \r\n D.执行 → 阻塞\r\n"}

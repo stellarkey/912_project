@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"下列N线程互斥机制的伪码实现是否有误？请给出原因分析，如果有错请给出反例。\n\n```\nINITIALIZATION:\n\n    typedef char boolean;\n    ...\n    shared int num[n];\n    ...\n    for (j=0; j < n; j++) {\n        num[j] = 0;\n    }\n    ...\nENTRY PROTOCOL (for Thread i):\n    /* choose a number */\n    num[i] = max(num[0], ..., num[n-1]) + 1;\n\n    /* for all other Threads */\n    for (j=0; j < n; j++) {\n\n        /* wait if the Thread has a number and comes ahead of us */\n        if ((num[j] > 0) &&\n          ((num[j] < num[i]) ||\n          (num[j] == num[i]) && (j < i))) {\n            while (num[j] > 0) {}\n        }\n    }\n\nEXIT PROTOCOL (for Thread i):\n    /* clear our number */\n    num[i] = 0;\n```\n",
+    "explain":"有错。（2分）\n分析原因：可能两个进程同时进入临界区。（1分）\n一种反例：假定j<i，1）进程i读取num[]；2）进程j读取num[]；3）进程i给num[i]赋值，并通过条件判断（num[j]这时还没有赋值），进入临界区；4）进程j给num[j]赋值，并通过条件判断（这时j<i），进入临界区；至此，有两个进程同时进入临界区。（2分）",
+    "degree_of_difficulty":1,
+    "source":"2016期中",
+    "answer":"有错。（2分）\n分析原因：可能两个进程同时进入临界区。（1分）\n一种反例：假定j<i，1）进程i读取num[]；2）进程j读取num[]；3）进程i给num[i]赋值，并通过条件判断（num[j]这时还没有赋值），进入临界区；4）进程j给num[j]赋值，并通过条件判断（这时j<i），进入临界区；至此，有两个进程同时进入临界区。（2分）",
+    "type":"question_answer",
+    "q_number":1565
+}

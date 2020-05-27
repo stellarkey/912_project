@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 　　对(b)中β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε时，则把FOLLOW(A)也加入FOLLOW(B)中的解释：<br>
+      　　因为当有形如：<br>
+      　　D→α<sub><font size="-2">1</font></sub>Aβ<sub><font size="-2">1</font></sub><br>
+      　　A→αBβ<br>
+      　　的产生式时，A，B，D∈V<sub><font size="-2">N</font></sub>，α<sub><font size="-2">1</font></sub>,β<sub><font size="-2">1</font></sub>,α,β∈V<sup><font size="-2">*</font></sup>，在推导过程中可能出现句型序列如：S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      …α<sub><font size="-2">1</font></sub>Aβ<sub><font size="-2">1</font></sub>… 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">…α<sub><font size="-2">1</font></sub>αBββ<sub><font size="-2">1</font></sub>…<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">…α<sub><font size="-2">1</font></sub>αBβ<sub><font size="-2">1</font></sub>… 
+      ；（因有β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε）由定义5.2可知FIRST(β<sub><font size="-2">1</font></sub>) 
+      ∈FOLLOW(A)和FIRST(β<sub><font size="-2">1</font></sub>)∈FOLLOW(B)，所以也就有FOLLOW(A)<img src="../../../img/chap05/symbol02.gif" width="12" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">FOLLOW(B)。<br>
+      　　用关系图法求非终结符的FOLLOW集。<br>
+      　　(a) 文法G中的每个符号和&quot;#&quot;对应图中的一个结点，对应终结符和&quot;#&quot;的结点用符号本身标记。对应非终结符的结点(如A∈V<sub><font size="-2">N</font></sub>)则用FOLLOW(A)或FIRST(A)标记。<br>
+      　　(b) 从开始符号S的FOLLOW(S)结点到&quot;#&quot;号的结点连一条箭弧。<br>
+      　　(c) 如果文法中有产生式A→αBβX, 且β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则从FOLLOW(B)结点到FIRST(X)结点连一条弧，当X∈V<sub><font size="-2">T</font></sub>时，则与X相连。<br>
+      　　(d) 如果文法中有产生式A→αBβ, 且β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε，则从FOLLOW(B)结点到FOLLOW(A)结点连一条箭弧。<br>
+      　　(e) 对每一FIRST(A)结点如果有产生式A→αXβ, 且α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε, 
+      则从FIRST(A)到FIRST(X)连一条箭弧。 </td>
+  </tr>
+</table>
+</body>
+</html>

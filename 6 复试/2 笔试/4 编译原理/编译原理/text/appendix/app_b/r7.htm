@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　<b>1) yymore()</b><br>
+        　　当需下一次被匹配的字符串被添加在当前识别出的字符串后面，即不使下一次的输入替换yytext中已有的内容而是接在它的内容之后，必须在当前的动作中调用yymore()<br>
+        　　例　假设一个语言规定它的字符串括在两个双引号之间，如果某字符串中含有双引号，则在它前面加上反斜线\。用一个正规式来表达该字符串的定义很不容易，不如用下面较简明的正规式与yymore()配合来识别：<br>
+        　　\&quot;[∧&quot;]{<br>
+        　　　　　　　if (yytext[yyleng-1]==′\\′yy<br>
+        　　　　　　　more();<br>
+        　　　　　　　else<br>
+        　　　　　　　　…normal user processing<br>
+        　　　　　　　}<br>
+        　　当输入串为&quot;abc\&quot;def&quot;时，上述规则首先与前5个字符&quot;abc\匹配，然后调用yymore()使余下部分&quot;def被添加在前一部分之后，注意作为字符串结尾标志的那个双引号由&quot;normal 
+        user processing&quot;部分负责处理<br>
+        　　<b>2) yyless(n)</b><br>
+        　　如果当前匹配的字符串的末尾部分需要重新处理，那么可以调用yyless(n)将这部分子串&quot;退回&quot;给输入串，下次再匹配处理。yyless(n)中的n是不退回的字符个数，即退回的字符个数是yyleng-n。<br>
+        　　例　在C语言中。=-a&quot;具有二义性，假定要把它解释为&quot;=-a&quot;，同时给出信息，可用下面的识别规则：<br>
+        　　=-[a-zAZ]{<br>
+        　　　　　　　　printf(&quot;Operator (=-)<br>
+        　　　　　　　　ambiguous\n&quot;);<br>
+        　　　　　　　　yyless(yyleng-1);<br>
+        　　　　　　　　…action for =-…<br>
+        　　　　　　　　}<br>
+        上面的规则先打印出一条说明出现二义性的信息，将运算符后面的字母退回给输入串，最后将运算符按&quot;=-&quot;处理。另外，如果希望把&quot;=-a&quot;解释为″=-a″，这只需要把负号与字母一起退回给输入串等候下次处理，用下面的规则即可：<br>
+        　　=-[a-zAZ]{<br>
+        　　　　　　　　printf(&quot;Operator (=-)<br>
+        　　　　　　　　ambiguous\n&quot;);<br>
+        　　　　　　　　yyless (yyleng-1);<br>
+        　　　　　　　　…action for =…<br>
+        　　　　　　　　}<br>
+        　　<b>3) yywrap()</b><br>
+        　　当LEX处理到输入串的文件尾时，自动地调用yywrap()，如果yywrap()返回值是1，那么LEX就认为对输入的处理完全结束，如果yywrap()返回的值是0，LEX就认为有新的输入串等待处理。<br>
+        　　LEX自动提供一个yywrap()，它总是返回1，如果用户希望有一个返回0的yywrap()，那么就可以在&quot;用户子程序部分&quot;自己写一个yywrap()，它将取代LEX自动提供的那个yywrap()，在用户自己写的yywrap()中，用户还可以作其它的一些希望在输入文件结束处要作的动作，如打印表格。输出统计结果等，使用yywrap()的例子在后面举出。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A 是MAX(CPL, RPL) <= DPL[数据段]\n",
+    "question":"CPU执行一条指令访问数据段时，硬件要做的特权级检查是（） s1\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.MAX(CPL, RPL) <= DPL[数据段]",
+        "B.MIN(CPL, RPL) <= DPL[数据段]",
+        "C.MAX(CPL, DPL) <= RPL[数据段]",
+        "D.MIN(CPL, DPL) <= RPL[数据段]"
+    ],
+    "q_number":1323
+}

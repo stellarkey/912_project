@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"本地用户通过键盘登陆系统是，首先获得键盘输入信息的程序时\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.命令解释程序",
+        "B.中断处理程序",
+        "C.系统调用程序",
+        "D.用户登录程序"
+    ],
+    "q_number":671
+}

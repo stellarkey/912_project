@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　6）CF(B)的更新计算：<br>
+      　　已知证据A 的可信度CF（A），结论B的原有可信度CF（B），求A通过规则A→B，作用到B后，B的可信度的更新值CF（B|A）。<br>
+      　　由于，证据A不是必然发生的，是具有一定可信度的，所以必须对可信度的情况进行讨论。<br>
+      　　当CF（A）=1时，即A必然发生时：<br>
+      　　<img src="../../../img/chap03/pic03.gif" width="346" height="93"><br>
+      　　当0&lt;CF（A）≤1时，即A可能发生时：<br>
+      　　由于A是否发生是不确定的，因此，CF（B|A）一定比A必然发生时要小。此时取CF（A）* CF（B，A）代替上式中的规则可信度CF（B，A）即可。即更新后的可信度公式为：<br>
+      <img src="../../../img/chap03/pic04.gif" width="394" height="99"> <br>
+      当CF（A）&lt;0时，即A不可能发生时：<br>
+      　　规则A→B不使用，即认为不可能发生的事件（A为假的事件）对结果B没有影响。<br>
+      　　<font color="#0000FF">注意：</font>以上公式不满足组合交换性。<br>
+      　　在MYCIN系统规定CF（A）&lt;0.2就认为规则不可使用。而且，EMYCIN系统（MYCIN的修正版）对于CF（B），CF（B，A）符号不同时（一个为正，一个为负），采用下面的公式来计算：<br>
+      　　<img src="../../../img/chap03/pic05.gif" ><br>
+      修改后的公式克服了原来的组合不可交换的缺点。 </td>
+  </tr>
+</table>
+</body>
+</html>

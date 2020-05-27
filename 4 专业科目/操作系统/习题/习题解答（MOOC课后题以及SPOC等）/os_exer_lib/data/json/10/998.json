@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"UNIX属于一种 操作系统。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.分时系统",
+        "B.批处理系统",
+        "C.实时系统",
+        "D.分布式系统"
+    ],
+    "q_number":998
+}

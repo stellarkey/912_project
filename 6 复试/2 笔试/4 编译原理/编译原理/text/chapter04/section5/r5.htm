@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　我们举一些例子来理解&quot;短语&quot;，&quot;直接短语&quot;和&quot;句柄&quot;的概念。<br>
+      　　让我们考虑例4.14中的文法G[E]的一个句型i*i+i。为了叙述方便，我们将句型写作i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>。因为有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">F* 
+      i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub> 
+      且F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>则称i1是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于非终结符F的短语，也是相对于规则F→i的直接短语。又有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*F+i<sub><font size="-2">3</font></sub> 
+      且F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">2</font></sub>则i<sub><font size="-2">2</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于F的短语，也是相对于规则F→i的直接短语，还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+F 
+      且F<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">3</font></sub>则i<sub><font size="-2">3</font></sub>也是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于F的短语，也是相对于规则F→i的直接短语。<br>
+      　　还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">T*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>， 
+      且T<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>则i<sub><font size="-2">1</font></sub>是句型i<sub></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于T的短语。<br>
+      　　还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+T 
+      且T<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">3</font></sub>则i<sub><font size="-2">3</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于T的短语。<br>
+      　　还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">T+i<sub><font size="-2">3</font></sub> 
+      且T<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>则i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于T的短语。<br>
+      　　还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E+i<sub><font size="-2">3</font></sub> 
+      且E<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>则i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的相对于E的短语。<br>
+      　　还有：<br>
+      　　E<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E 
+      且E<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>则i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>相对于E的短语。<br>
+      　　即i<sub><font size="-2">1</font></sub>，i<sub><font size="-2">2</font></sub>，i<sub><font size="-2">3</font></sub>，i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>和i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>都是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的短语，而且i<sub><font size="-2">1</font></sub>，i<sub><font size="-2">2</font></sub>，i<sub><font size="-2">3</font></sub>均为直接短语，其中i<sub><font size="-2">1</font></sub>是最左直接短语，即句柄。<br>
+      　　虽然i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>是句型i<sub><font size="-2">1</font></sub>*i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>的一部分，并不是它的短语，因为尽管有E 
+      i<sub><font size="-2">2</font></sub>+i<sub><font size="-2">3</font></sub>，但不存在从文法开始符号E到i<sub><font size="-2">1</font></sub>*E的推导。 <br>
+      　　再讨论例4.13的文法的句型aabbaa，为区别其中的a和b，把它写作a<sub><font size="-2">1</font></sub>a<sub><font size="-2">2</font></sub>b<sub><font size="-2">1</font></sub>b<sub><font size="-2">2</font></sub>a<sub><font size="-2">3</font></sub>a<sub><font size="-2">4</font></sub>。它的直接短语有a<sub><font size="-2">2</font></sub>，b<sub><font size="-2">2</font></sub>a<sub><font size="-2">3</font></sub>和a<sub><font size="-2">4</font></sub>，a<sub><font size="-2">2</font></sub>即是句柄；它的短语有a<sub><font size="-2">2</font></sub>，b<sub><font size="-2">2</font></sub>a<sub><font size="-2">3</font></sub>，a<sub><font size="-2">4</font></sub>，a<sub><font size="-2">2</font></sub>b<sub><font size="-2">1</font></sub>b<sub><font size="-2">2</font></sub>a<sub><font size="-2">3</font></sub>和a<sub><font size="-2">1</font></sub>a<sub><font size="-2">2</font></sub>b<sub><font size="-2">1</font></sub>b<sub><font size="-2">2</font></sub>a<sub><font size="-2">3</font></sub>a<sub><font size="-2">4</font></sub>。</td>
+  </tr>
+</table>
+</body>
+</html>

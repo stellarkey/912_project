@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　注意：SLR(1)与LR(0) 分析表的构造区别仅仅是步骤中的b)<br>
+      　　若项目A→α·属于I<sub><font size="-2">k</font></sub>，则对a为任何终结符或'#'，且满足a∈FOLLOW(A)时，置ACTION[I<sub><font size="-2">k</font></sub>,a]= 
+      r<sub><font size="-2">j</font></sub>，j为产生式A→α在文法G′中的编号。<br>
+      　　例对表达式构造改进的SLR(1)分析表如表7.8。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.8 表达式文法的SLR(1)分析表</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="6">ACTION</td>
+                <td align="center" valign="top" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">i</td>
+                <td align="center" valign="top">+</td>
+                <td align="center" valign="top">*</td>
+                <td align="center" valign="top">(</td>
+                <td align="center" valign="top">)</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">E</td>
+                <td align="center" valign="top">T</td>
+                <td align="center" valign="top">F</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                </td>
+                <td align="center" valign="top">S5<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  S5</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  S6<br>
+                  r2<br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r6<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.<br>
+                  </font> <font color="#FFFFFF">.</font><br>
+                  S6<br>
+                  r1<br>
+                  r3<br>
+                  r5</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S7<br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S7<br>
+                  r3<br>
+                  r5</td>
+                <td align="center" valign="top">S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  S4</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2<br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S11<br>
+                  r1<br>
+                  r3<br>
+                  r5</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  r2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  r6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r3<br>
+                  r5</td>
+                <td align="center" valign="top">1<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  8 </td>
+                <td align="center" valign="top">2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  9</td>
+                <td align="center" valign="top">3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  3<br>
+                  10</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　按上述算法构造的含有ACTION和GOTO两部分的分析表，如果每个入口不含多重定义，则称它为文法G的一张SLR(1)分析表。具有SLR(1)分析表的文法G称为一个SLR（1）文法。<br>
+      　　SLR(1)文法是无二义的。若G是SLR(1)文法,也是 LR(1)、LALR(1)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

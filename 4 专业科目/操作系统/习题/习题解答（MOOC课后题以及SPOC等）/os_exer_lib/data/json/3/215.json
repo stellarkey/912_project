@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"一个完整的计算机系统是由组成的。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.硬件",
+        "B.软件",
+        "C.硬件和软件",
+        "D.用户程序"
+    ],
+    "q_number":215
+}

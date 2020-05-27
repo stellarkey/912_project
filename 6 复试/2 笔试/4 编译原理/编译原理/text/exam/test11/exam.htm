@@ -1,0 +1,298 @@
+<html>
+<head>
+<title>编译原理第十一章习题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  <b>编译原理第十一章习题</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+            <form>
+          <b>一、 问答题</b><br>
+            <br>
+          <b>问答第1题</b><br>
+          　　图11.17是图11.16的C代码的部分四元式代码序列? <br>
+          　　(1) 请将图11.17的四元式代码序列划分为基本块并做出其流图? <br>
+          　　(2) 将每个基本块的公共子表达式删除?<br>
+          　　(3) 找出流图中的循环,将循环不变量计算移出循环外? <br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr> 
+              <td>　　<font color="#0000FF">图11.16</font></td>
+            </tr>
+            <tr>
+              <td>　　void quicksort(m,n)<br>
+                　　int m,n; <br>
+                　　{ int i,j; <br>
+                　　　int v,x; if (n<=m) return; <br>
+                　　　/* fragment begins here */ <br>
+                　　　i = m-1;<br>
+                　　　j = n;<br>
+                　　　v = a[n];<br>
+                　　　while(1) { <br>
+                　　　　do i = i+1;while (a[i]&lt;v);<br>
+                　　　　do j = j-1; while (a[j]&gt;v);<br>
+                　　　　if (i>=j) break;<br>
+                　　　　　x = a[i]; <br>
+                　　　　　a[i] = a[j];<br>
+                　　　　　a[j] = x; <br>
+                　　　} <br>
+                　　　x = a[i]; <br>
+                　　　a[i] = a[n]; <br>
+                　　　a[n] = x; <br>
+                　　　/* fragment ends here */ <br>
+                　　　quicksort (m,j);<br>
+                　　　quicksort(i+1,n); <br>
+                　　} </td>
+            </tr>
+          </table>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr> 
+              <td>　　<font color="#0000FF">图11.17</font></td>
+            </tr>
+            <tr> 
+              <td>
+                <table width="90%" border="0" cellspacing="0" cellpadding="0"class=text>
+                  <tr>
+                    <td>(1) 　i:=m-1<br>
+                      (2)　 j:=n<br>
+                      (3) 　t<sub>1</sub>:=4*n<br>
+                      (4) 　v:=a[t<sub>1</sub>]<br>
+                      (5) 　i:=i+1<br>
+                      (6) 　t<sub>2</sub>:=4*i<br>
+                      (7) 　t<sub>3</sub>:=a[t<sub>2</sub>]<br>
+                      (8) 　<b>if</b> t<sub>3</sub>&lt; v <b>goto</b> (5)<br>
+                      (9) 　j:=j-1<br>
+                      (10)　t<sub>5</sub>:=4*j<br>
+                      (11)　t<sub>5</sub>:=a[t4]<b><br>
+                      </b>(12)<b>　if t<sub>5</sub>&gt; v goto</b> (9)<br>
+                      (13)　<b>if</b> i &gt;= j <b>goto</b> (23)<br>
+                      (14)　t<sub>6</sub>:=4*i<br>
+                      (15)　x:=a[t<sub>6</sub>]</td>
+                    <td>(16) t<sub>7</sub>:=4*i<br>
+                      (17) t<sub>6</sub>:=4*j<br>
+                      (18) t<sub>9</sub>:=a[t<sub>8</sub>]<br>
+                      (19) a[t<sub>7</sub>]:=t<sub>9</sub><br>
+                      (20) t<sub>10</sub>:=4*j<br>
+                      (21) a[t<sub>10</sub>]:=x<br>
+                      (22) <b>goto</b> (5)<br>
+                      (23) t<sub>11</sub>:=4*i<br>
+                      (24) x:=a[t<sub>11</sub>]<br>
+                      (25) t<sub>12</sub>:=4*i<br>
+                      (26) t<sub>13</sub>:=4*n<br>
+                      (27) t<sub>14</sub>:=a[t<sub>13</sub>]<br>
+                      (28) a[t<sub>12</sub>]:=t<sub>14</sub><br>
+                      (29) t<sub>15</sub>:=4*n<br>
+                      (30) a[t<sub>15</sub>]:=x</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第2题</b><br>
+          　　如下程序流图(图11.18)中，B3中的i∶=2是循环不变量，可以将其提到前置结点吗?你还能举出一些例子说明循环不变量外移的条件吗? 
+          <br>
+          　　<font color="#0000FF">图11.18 <br>
+          　　<img src="../../../img/totle/pic11_31.gif" width="400" height="418"></font><br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          <b>问答第3题</b><br>
+          　　对图11.19的流图：<br>
+          　　(1) 求出流图中各结点n的必经结点集D(n)； <br>
+          　　(2) 求出流图中的回边；<br>
+          　　(3) 求出流图中的循环。<br>
+          　　<font color="#0000FF">图11.19 </font><br>
+          　　<img src="../../../img/totle/p11_32.gif" width="161" height="331"><br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <!--czp-wenda-timu-->
+          <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "使用一个信号量协调6个进程对2个同类临界资源的访问，下列哪个信号量值不应该出现？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.3 \r\n B.0 \r\n C.–1 \r\n D.–3\r\n"}

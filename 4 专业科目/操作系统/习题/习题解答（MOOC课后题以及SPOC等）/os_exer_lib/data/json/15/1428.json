@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABC\n",
+    "question":"关于进程切换描述正确的是（） s1\n",
+    "source":"网络",
+    "answer":"ABC",
+    "type":"multi_answer",
+    "options":[
+        "A.进程切换会暂停当前运行进程，使其从运行状态变成就绪等其他状态",
+        "B.进程切换要保存当前进程的上下文",
+        "C.进程切换要恢复下一个进程的上下文",
+        "D.进程切换的进程上下文不包括CPU的寄存器等硬件信息"
+    ],
+    "q_number":1428
+}

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　例如<br>
+      　　{a/x，c/y，f(b)/z}是一个置换。<br>
+      　　{g(y)/x，f(x)/y}不是一个置换，原因是它在x和y之间出现了循环置换现象。置换的目的是要将某些变量用另外的变量、常量或函数取代，使其不在公式中出现。但在{g(y)/x，f(x)/y}中，它用g(y)置换x，用f(g(y))置换y，既没有消去x，也没有消去y。若改为{g(a)/x，f(x)/y}就可以了。 
+      <br>
+      　　通常，置换用希腊字母θ、σ、α、λ来表示的。 <br>
+      　　定义：置换的合成<br>
+      　　设θ＝{t<sub>1</sub>/x<sub>1</sub>, t<sub>2</sub>/x<sub>2</sub>, …, t<sub>n</sub>/x<sub>n</sub>}，λ＝{u<sub>1</sub>/y<sub>1</sub>, 
+      u<sub>2</sub>/y<sub>2</sub>, …, u<sub>n</sub>/y<sub>n</sub>}，是两个置换。则q与l的合成也是一个置换，记作θ·λ。它是从集合<br>
+      　　{t<sub>1</sub>·λ/x<sub>1</sub>, t<sub>2</sub>·l/x<sub>2</sub>, …, t<sub>n</sub>·λ/x<sub>n</sub>, 
+      u<sub>1</sub>/y<sub>1</sub>, u<sub>2</sub>/y<sub>2</sub>, …, u<sub>n</sub>/y<sub>n</sub>}<br>
+      　　即对ti先做λ置换然后再做θ置换，置换xi<br>
+      　　中删去以下两种元素：<br>
+      　　i. 当t<sub>i</sub>λ＝x<sub>i</sub>时，删去t<sub>i</sub>λ/x<sub>i</sub> (i = 
+      1, 2, …, n);<br>
+      　　ii. 当y<sub>i</sub>∈{x<sub>1</sub>,x<sub>2</sub>, …, x<sub>n</sub>}时，删去u<sub>j</sub>/y<sub>j</sub> 
+      (j = 1, 2, …, m)<br>
+      　　最后剩下的元素所构成的集合。 <br>
+      　　<font color="#0000FF">例：</font><br>
+      　　设θ＝{f(y)/x, z/y}，λ＝{a/x, b/y, y/z}，求θ与λ的合成。<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　先求出集合<br>
+      　　{f(b/y)/x, (y/z)/y, a/x, b/y, y/z}＝{f(b)/x, y/y, a/x, b/y, y/z}<br>
+      　　其中，f(b)/x中的f(b)是置换l作用于f(y)的结果；y/y中的y是置换λ作用于z的结果。在该集合中，y/y满足定义中的条件i，需要删除；a/x，a/y满足定义中的条件ii，也需要删除。最后得<br>
+      　　θ·λ＝{f(b)/x，y/z}</td>
+  </tr>
+</table>
+</body>
+</html>

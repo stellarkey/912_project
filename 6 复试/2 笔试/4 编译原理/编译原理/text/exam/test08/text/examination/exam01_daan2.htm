@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          　　给出下面表达式的逆波兰表示(后缀式)：<br>
+          　　(1) a*(-b+c) <br>
+          　　答案：ab-c+* <br>
+          　　(2) if(x+y)*z=0 then s∶=(a+b)*c else s∶=a*b*c <br>
+          　　答案：xy+z*0=sab+c*:=sab*c*:=￥（注：￥表示if-then-else运算）<br>
+          <br>
+          <b>问答第2题</b><br>
+          　　请将表达式-(a+b)*(c+d)-(a+b)分别表示成三元式、间接三元式和四元式序列。<br>
+          　　答案：三元式 <br>
+          　　(1) (+ a, b) <br>
+          　　(2) (+ c, d) <br>
+          　　(3) (* (1), (2)) <br>
+          　　(4) (- (3), /)<br>
+          　　(5) (+ a, b)<br>
+          　　(6) (- (4), (5)) <br>
+          　　间接三元式<br>
+          　　间接三元式序列 　　间接码表<br>
+          　　(1) (+ a, b)　　　　(1)<br>
+          　　(2) (+ c, d)　　　　(2) <br>
+          　　(3) (* (1), (2))　　(3) <br>
+          　　(4) (- (3), /) 　 　(4)<br>
+          　　(5) (- (4), (1))　　(1) <br>
+          　　　　　　　　　　　　(5)<br>
+          　　四元式<br>
+          　　(1) (+, a, b, t1)<br>
+          　　(2) (+, c, d, t2)<br>
+          　　(3) (*, t1, t2, t3) <br>
+          　　(4) (-, t3, /, t4) <br>
+          　　(5) (+, a, b, t5)<br>
+          　　(6) (-, t4, t5, t6) <br>
+          <br>
+          <b>问答第3题</b><br>
+          　　采用语法制导翻译思想，表达式E的"值"的描述如下：<br>
+          　　产生式　　　　　　语义动作<br>
+          　　(0) S′→E　　　　{print E.VAL} <br>
+          　　(1) E→E1+E2 　　 {E.VAL∶=E1.VAL+E2.VAL} <br>
+          　　(2) E→E1*E2 　　 {E.VAL∶=E1.VAL*E2.VAL}<br>
+          　　(3) E→(E1) 　　　{E.VAL∶=E1.VAL} <br>
+          　　(4) E→n 　　　　 {E.VAL∶=n.LEXVAL}<br>
+          　　假如终结符n可以是整数或实数，算符+和*的运算对象类型一致，语义处理增加"类型匹配检查"，请给出相应的语义描述。<br>
+          　　答案： <br>
+          　　(0) S′→E { if error≠1 then print E.VAL} <br>
+          　　(1) E→E<sup><font size="-2">1</font></sup>+E<sup><font size="-2">2</font></sup> 
+          { if E<sup><font size="-2">1</font></sup>.TYPE=int AND E<sup><font size="-2">2</font></sup>.TYPE=int 
+          then<br>
+          　　　　　　　　　　　begin<br>
+          　　　　　　　　　　　　E.VAL:=E<sup><font size="-2">1</font></sup>.VAL + E<sup><font size="-2">2</font></sup>.VAL;<br>
+          　　　　　　　　　　　　E.YTPE:=int;<br>
+          　　　　　　　　　　　end <br>
+          　　　　　　　　　else if E<sup><font size="-2">1</font></sup>.TYPE=real AND 
+          E<sup><font size="-2">2</font></sup>.TYPE=real then <br>
+          　　　　　　　　　　　　　begin <br>
+          　　　　　　　　　　　　　　E.VAL:=E<sup><font size="-2">1</font></sup>.VAL + E<sup><font size="-2">2</font></sup>.VAL;<br>
+          　　　　　　　　　　　　　　E.YTPE:=real; <br>
+          　　　　　　　　　　　　　end <br>
+          　　　　　　　　　　　else error=1 <br>
+          　　　　　　　　　} <br>
+          　　(2) E→E<sup><font size="-2">1</font></sup>*E<sup><font size="-2">2</font></sup> 
+          { if E<sup><font size="-2">1</font></sup>.TYPE=int AND E<sup><font size="-2">2</font></sup>.TYPE=int 
+          then <br>
+          　　　　　　　　　　　begin<br>
+          　　　　　　　　　　　　E.VAL:=E<sup><font size="-2">1</font></sup>.VAL * E<sup><font size="-2">2</font></sup>.VAL;; 
+          <br>
+          　　　　　　　　　　　　E.YTPE:=int; <br>
+          　　　　　　　　　　　end <br>
+          　　　　　　　　　else if E<sup><font size="-2">1</font></sup>.TYPE=real AND 
+          E<sup><font size="-2">2</font></sup>.TYPE=real then<br>
+          　　　　　　　　　　　　begin<br>
+          　　　　　　　　　　　　　E.VAL:=E<sup><font size="-2">1</font></sup>.VAL * E<sup><font size="-2">2</font></sup>.VAL;; 
+          <br>
+          　　　　　　　　　　　　　E.YTPE:=real;<br>
+          　　　　　　　　　　　　end <br>
+          　　　　　　　　　　　else error=1<br>
+          　　　　　　　　　} <br>
+          　　(3) E→(E<sup><font size="-2">1</font></sup>) { E.VAL:=E<sup><font size="-2">1</font></sup>.VAL; 
+          <br>
+          　　　　　　　　E.TYPE:=E<sup><font size="-2">1</font></sup>.TYPE } <br>
+          　　(4) E→n { E.VAL:=n.LEXVAL;<br>
+          　　　　　　　　E.TYPE:=n.LEXTYPE }<br>
+          <br>
+          <b>问答第4题</b><br>
+          　　请将下列语句<br>
+          　　while (A&lt;B do if (C&gt;D) then X:=Y+Z <br>
+          　　翻译成四元式<br>
+          　　答案:<B goto 102
+101 107 if C><br>
+          　　</b>假定翻译的四元式序列从（100）开始：<B goto 102
+101 107 if C><br>
+          </b> 　　（100）　if A&lt;B goto （102）<br>
+          　　（101）　goto （107）<br>
+          　　（102）　if C&lt;D got （104）<br>
+          　　（103）　goto （100）<br>
+          　　（104）　T∶=Y+Z<br>
+          　　（105）　X∶=T<br>
+          　　（106）　goto （100）<br>
+          　　（107<B goto 102
+101 107 if C>）<br>
+          <!--czp-wenda-daan-->
+          </b></p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

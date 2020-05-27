@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>三、 问答题答案</b></p>
+        <p><font color="#CC0000">第1题</font><br>
+          答：当问题有解时，A*算法总是找到问题的最优解结束。如果h函数定义的不合理，则当扩展一个节点时，不一定就找到了从初始节点到该节点的最优路径，对于这样的节点，就有可能被多次扩展。特别是如果这样的节点处于问题的最优解路径上时，则一定会被多次扩展。解决的方法一是对h函数的定义给出限制，使得h满足单调性。对于满足单调性条件的h，则一定不会出现重复扩展节点问题。二是对A*算法加以改进，使用修正的A*算法进行搜索，则可以减少重复扩展节点问题。<br>
+          <br>
+          <font color="#CC0000">第2题</font><br>
+          答：回溯搜索策略与深度有限搜索策略最大的不同是深度有限搜索策略属于图搜索，而回溯搜索则不是图搜索。在回溯搜索中，只保留了从初始节点到当前节点的搜索路径。而深度优先搜索，则保留了所有的已经搜索过的路径。<br>
+          <br>
+          <font color="#CC0000">第3题</font><br>
+          答： 化子句集如下：</p>
+        <p><img src="../../images/exam4.gif" width="249" height="434"></p>
+        <p> 归结树如下： </p>
+        <p><img src="../../images/t3.gif" width="378" height="445"></p>
+        <p>修改证明树：</p>
+        <p><img src="../../images/t4.gif" width="367" height="481"></p>
+        <p>得到问题的解答：R(h(f(g(c, a))))<br>
+          <font color="#CC0000">第4题</font></p>
+        <p><img src="../../images/t5.gif" width="390" height="218"></p>
+        <p><font color="#CC0000">第5题</font><br>
+          答：搜索图如图所示，其中括号内标出的是节点的f值，圆圈内的数字是扩展的次序。F(16)</p>
+        <p><img src="../../images/t7.gif" width="373" height="349"></p>
+        <p>得到的解路径为：S-B-F-J-T<br>
+          <font color="#CC0000">第6题</font><br>
+          答：如下的知识可以帮助求解该问题：<br>
+          （1）序列中，偶数在偶数位置，奇数在奇数位置；<br>
+          （2）第五个数为5。<br>
+          综合数据库：<br>
+          用一个1到9的序列表示：N = {x}，其中x为1到9的数字之一。<br>
+          规则集：<br>
+          r1: IF len(N)=4 THEN {x}∪{5}<br>
+          r2: IF len(N)为偶数and n=In(1, 3, 7, 9) THEN {x}∪{n}<br>
+          r3: IF len(N)为奇数and n=In(2, 4, 6, 8) THEN {x}∪{n}<br>
+          其中len(N)为求序列的长度，In(a, b, c, d)为取a、b、c、d之一。<br>
+          初始状态：{}<br>
+          结束条件：得到的序列N前i个数组成的整数能被i整除。<br>
+          <br>
+          <br>
+          <br>
+          <br>
+          　</p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　LEX是一个广泛使用的词法分析程序的自动构造工具，UNIX系统中使用lex命令调用。它用于构造各种各样语言的词法分析程序。我们称这个工具为LEX编译系统，它的源语言称为LEX语言，LEX编译程序的作用如图4.13所示。<br>
+      　　图4.13表明，LEX编译系统(在不致引起混淆的情况下，称为LEX)，读入LEX语言的程序(该程序是对一个词法分析程序的说明或描述)，产生一个词法分析程序。在UNIX环境中，Lex.l为LEX的源程序，Lex.yy.c为LEX的目标程序，Lex.yy.c是一个C程序，它包括从正规式构造的表格形式表示的转换图，以及使用该表格识别单词的标准子程序。在Lex.l中有一些C代码段，它们是与正规式相联系的动作，比如登录名字表等，是词法分析程序需要执行的动作。 
+      <br>
+      　　Lex.yy.c程序经由C编译生成目标文件a.out，这是词法分析程序，它可以将输入字符流变换成单词流。使用LEX生成词法分析程序的过程如图4.14所示。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

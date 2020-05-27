@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>解释程序还定义了4个寄存器。</b><br>
+      　　(1) I：指令寄存器。存放着当前正在解释的一条目标指令。<br>
+      　　(2) P：程序地址寄存器。指向下一条要执行的目标程序的地址(相当目标程序CODE数组的下标)。<br>
+      　　(3) T：栈顶寄存器。由于每个过程当它被运行时，给它分配的数据空间(下边称数据段)可分成两部分。<br>
+      　　静态部分：包括变量存放区和三个联系单元(联系单元的作用见后)。<br>
+      　　动态部分：作为临时工作单元和累加器用。需要时随时分配，用完后立即释放。栈顶寄存器T指出了当前栈中最新分配的单元(T也是数组S的下标)。<br>
+      　　(4) B：基址寄存器。指向每个过程被调用时，在数据区S中给它分配的数据段起始地址，也称基地址。 <br>
+      　　为了实现对每个过程调用时给它分配数据段，也就是对即将运行的过程所需数据段进栈；过程运行结束后释放数据段，即该数据段退栈；以及嵌套过程之间对标识符引用的寻址问题。每个过程被调用时，在栈顶分配三个联系单元，这三个单元存放的内容分别为：<br>
+      　　(1) SL：静态链：它是指向定义该过程的直接外过程(或主程序)运行时最新数据段的基地址。<br>
+      　　(2) DL：动态链：它是指向调用该过程时正在运行过程的数据段基地址。<br>
+      　　(3) RA：返回地址：记录调用该过程时目标程序的断点，即当时的程序地址寄存器P的值。也就是调用过程指令的下一条指令的地址。</td>
+  </tr>
+</table>
+</body>
+</html>

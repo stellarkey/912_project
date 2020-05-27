@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"请描述stride调度算法的思路？",
+    "explain":"stride调度算法的思路（4分）\n步进大小计算公式\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"stride调度算法的思路（4分）\n步进大小计算公式\n",
+    "type":"question_answer",
+    "q_number":1568
+}

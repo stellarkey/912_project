@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="113"> 　　这种语言若含有可变数组，则其过程活动记录的内容可如图10.9所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图10.9无嵌套定义的过程活动记录内容</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_9.gif" width="281" height="195"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图10.10分配了数组区之后的运行栈</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle3/p10_10.gif" width="277" height="123"></td>
+        </tr>
+      </table>
+      　　这里把控制链也称作老SP，即调用该过程的那个过程的最新活动记录的起点。<br>
+      　　假定图10.9所示为图10.8（a）中现行过程R的活动记录，SP为此过程活动记录的起点，TOP指向为此过程创设的活动记录的顶端，并假定R含有可变数组，则在分配了数组区之后TOP就指向数组区（整个运行栈）的顶端。图10.10表明分配数组区之后的运行栈情况，可以与图10.8（a）对照。<br>
+      　　在过程段中对任何局部变量x的引用可表示为变址访问x[SP]，此处x代表变量x的相对数，也就是相对于活动记录起点的地址。这个相对数在编译时可完全确定下来。过程的局部数组的内情向量的相对地址在编译时也同样可确定下来。数组空间分配之后，对数组元素的引用也就容易用变址访问的方式来实现。</td>
+  </tr>
+</table>
+</body>
+</html>

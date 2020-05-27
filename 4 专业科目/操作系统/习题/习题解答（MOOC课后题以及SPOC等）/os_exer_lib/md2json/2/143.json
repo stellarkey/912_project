@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "以下那种存储管理会产生内零头\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.固定分区存储管理 \r\n B.可变分区存储管理 \r\n C.可重定位分区存储管理 \r\n D.段式存储管理\r\n"}

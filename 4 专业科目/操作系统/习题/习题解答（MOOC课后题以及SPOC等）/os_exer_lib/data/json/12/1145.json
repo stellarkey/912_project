@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"请总结你认为操作系统应该具有的特征有什么？并对其特征进行简要阐述。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":1145
+}

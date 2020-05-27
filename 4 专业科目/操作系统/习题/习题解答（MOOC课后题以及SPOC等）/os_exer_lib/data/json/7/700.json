@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)设备管理程序借助一些数据结构实现对设备的管理，下面的【 】不属于设备管理数据结构。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.DCT",
+        "B.COCT",
+        "C.CHCT",
+        "D.JCB"
+    ],
+    "q_number":700
+}

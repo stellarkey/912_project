@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"下面关于SPOOL的叙述错误的是()\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.SPOOL又称“斯普林”，是Simultaneous Peripheral Operation On Line的缩写",
+        "B.SPOOL处理方式只是方便操作员，不能直接提高系统效率",
+        "C.SPOOL是把磁盘作为巨大缓冲器的技术",
+        "D.SPOOL处理方式不仅方便操作员，而且还提高系统效率"
+    ],
+    "q_number":875
+}

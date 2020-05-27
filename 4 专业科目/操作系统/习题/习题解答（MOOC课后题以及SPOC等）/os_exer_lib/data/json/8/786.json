@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统主要性能参数:\n﹎﹎﹎﹎指的是在一个给定的时间内，系统的一个指定成份被使用的时间比例。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.周转时间",
+        "B.处理时间",
+        "C.消逝时间",
+        "D.利用率",
+        "E.生产率",
+        "F.吞吐量"
+    ],
+    "q_number":786
+}

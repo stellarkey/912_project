@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B 两者共同点是均可共享资源及相互通信，主要区别在于分布式操作系统还能够共享运算处理能力。\n",
+    "question":"网络操作系统和分布式操作系统的主要区别是（　　　）\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.是否连接多台计算机",
+        "B.各台计算机有没有主次之分",
+        "C.计算机之间能否通信",
+        "D.网上资源能否共享"
+    ],
+    "q_number":286
+}

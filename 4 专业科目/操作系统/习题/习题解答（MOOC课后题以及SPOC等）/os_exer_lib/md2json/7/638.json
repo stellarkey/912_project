@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "有n+1个进程A1，A2，... ,An和B：\r\n   A1,A2,... ,An通过同一个缓冲池各自不断地向B发送消息，B不断地取消息，它必须取走 发来的每个消息，刚开始时缓冲区为空，使用P,V操作实现之。\r\n   若缓冲区个数增至M个，试用P,V实现正确通讯。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "    ```", "type": "4\r\n", "options": "  \r\n"}

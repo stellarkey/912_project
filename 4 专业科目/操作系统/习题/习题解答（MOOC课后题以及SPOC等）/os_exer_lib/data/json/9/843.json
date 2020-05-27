@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"信号量和变量：（6分，信号量数组，每个2分，其他每个量1分）\ni取值范围为0～2\nm[3]是三个信号量，初始值为1,用于保护对count[i]的读写。\nsem_g是一个信号量，初始值为1,代表当前是否可以播放视频\ncount[3]是三个统计值，初始值为0,代表看视频i的人数\n代码：（9分，其中三个PV对，每个2分；两个计数修改，每个计数1分；条件1分；）\n    ```\n    Procedure student(i)\n    {\n        down(m[i]);\n        if count[i]==0 {\n            down（sem_g);\n        }\n        count[i]++;\n        up(m[i]);\n        // into Critical Section\n        // watch video\n        // out Critical Section\n        down(m[i]);\n        count[i]--;\n        if count[i]==0{\n            up(sem_g);\n        }\n        up(m[i]);\n    }\n    ```\n\n",
+    "question":"(20140606-期末考试试题&参考答案.docx)信号量应用\n(15分)假设一个MOOC网站有1、2、3三种不同的课程视频可由学生选择学习，网站播放课程视频的规则为：\n1）任一时刻最多只能播放一种课程视频，正在播放的课程视频是自动循环播放的，最后一个学生主动离开时结束当前课程视频的播放；\n2）选择当前正在播放的课程视频的学生可立即进入播放页面，允许同时有多位选择同一种课程视频的学生观看，同时观看的学生数量不受限制；\n3）等待观看其它课程视频的学生按到达顺序排队，当一种新的课程视频开始放映时，所有等待观看该课程视频的学生可依次序进入播放页面同时观看。\n用一个进程代表一个学生，要求：用信号量的P、V操作实现上述规则，并给出信号量的定义和初始值。  \n",
+    "source":"网络",
+    "answer":"信号量和变量：（6分，信号量数组，每个2分，其他每个量1分）\ni取值范围为0～2\nm[3]是三个信号量，初始值为1,用于保护对count[i]的读写。\nsem_g是一个信号量，初始值为1,代表当前是否可以播放视频\ncount[3]是三个统计值，初始值为0,代表看视频i的人数\n代码：（9分，其中三个PV对，每个2分；两个计数修改，每个计数1分；条件1分；）\n    ```\n    Procedure student(i)\n    {\n        down(m[i]);\n        if count[i]==0 {\n            down（sem_g);\n        }\n        count[i]++;\n        up(m[i]);\n        // into Critical Section\n        // watch video\n        // out Critical Section\n        down(m[i]);\n        count[i]--;\n        if count[i]==0{\n            up(sem_g);\n        }\n        up(m[i]);\n    }\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":843
+}

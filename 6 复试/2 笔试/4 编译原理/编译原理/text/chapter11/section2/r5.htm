@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 11.9四元式与DAG结点</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+              <tr align="center"> 
+                <td>四元式</td>
+                <td>DAG结点</td>
+              </tr>
+              <tr> 
+                <td>（0）A：=B （：=，B，-，A）</td>
+                <td><img src="../../../img/chap11/pic11_9a.gif" width="200" height="57"></td>
+              </tr>
+              <tr> 
+                <td>（1）A：=op B （op，B，-，A）</td>
+                <td><img src="../../../img/chap11/pic11_9b.gif" width="200" height="110"></td>
+              </tr>
+              <tr> 
+                <td>（2）A：=B op C （op，B，C，A）</td>
+                <td><img src="../../../img/chap11/pic11_9c.gif" width="200" height="110"></td>
+              </tr>
+              <tr> 
+                <td>（3）A：=B[C] （=[]，B[C]，-，A）</td>
+                <td><img src="../../../img/chap11/pic11_9d.gif" width="200" height="117"></td>
+              </tr>
+              <tr> 
+                <td>（4）<b>if</b> B rop C <b>goto</b> （s） （jrop，B，C，（s））</td>
+                <td><img src="../../../img/chap11/pic11_9e.gif" width="200" height="115"></td>
+              </tr>
+              <tr> 
+                <td>（5）D[C]：=B （[]=，B，-，D[C]）</td>
+                <td><img src="../../../img/chap11/pic11_9f.gif" width="200" height="119"></td>
+              </tr>
+              <tr>
+                <td>（6）<b>goto</b> （s） （j，-，-，（s））</td>
+                <td><img src="../../../img/chap11/pic11_9g.gif" width="200" height="51"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

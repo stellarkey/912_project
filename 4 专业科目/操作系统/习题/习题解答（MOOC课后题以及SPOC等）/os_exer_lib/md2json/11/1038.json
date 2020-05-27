@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "通道程序解决了I／O操作的独立性和各部件工作的并行性，采用通道技术后，能实现CPU与通道的并行操作\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "3\r\n", "options": " A.对 \r\n B.错\r\n"}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"通常，用户编写的程序中所使用的地址是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.逻辑地址",
+        "B.物理地址",
+        "C.绝对地址",
+        "D.内存地址"
+    ],
+    "q_number":235
+}

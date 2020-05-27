@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"2）以图示方式（方框/线条/箭头等+加上必要的属性和转化过程表述的注释）给出页面大小为4KB时X86-32页式存储系统（不考虑段机制）上的页表结构和虚拟地址到物理地址的转换过程。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"暂无",
+    "type":"question_answer",
+    "q_number":1532
+}

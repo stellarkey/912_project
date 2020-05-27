@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.3 YACC源程序说明部分的写法</b><br>
+      　　YACC源程序的说明部分定义语法规则中要用的终结符号，语义动作中使用的数据类型。变量、语义值的联合类型以及语法规则中运算符的优先级等。这些内容的组织方式如下：<br>
+      　　%{<br>
+      　　头文件表宏定义<br>
+      　　数据类型定义<br>
+      　　全局变量定义<br>
+      　　%}<br>
+      　　语法开始符定义<br>
+      　　语义值类型定义<br>
+      　　终结符定义<br>
+      　　运算符优先级及结合性定义<br>
+      <br>
+      <b>C.3.1头文件表</b><br>
+      　　YACC直接把这部分定义抄到所生成的C语言程序y.tab.c中去的，所以要按C语言的语法规定来写。头文件表是一系列C语言的#include语句，要从每行的第一列开始写，例如<br>
+      　　%{#include &lt;stdio.h&gt;<br>
+      　　#include &lt;math.h&gt;<br>
+      　　#include &lt;ctype.h&gt;<br>
+      　　$include ″header.h″<br>
+      　　…<br>
+      　　%} </td>
+  </tr>
+</table>
+</body>
+</html>

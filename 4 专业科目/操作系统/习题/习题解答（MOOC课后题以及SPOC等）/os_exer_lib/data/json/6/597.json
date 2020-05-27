@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程间的相互制约关系体现为进程的互斥和同步\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":597
+}

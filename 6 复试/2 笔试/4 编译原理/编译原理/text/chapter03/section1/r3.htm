@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="151"> <b>实现词法分析（lexical analysis）的程序</b><br>
+      　　逐个读入源程序字符并按照构词规则切分成一系列单词。 单词是语言中具有独立意义的最小单位，包括保留字、标识符、运算符、标点符号和常量等。 词法分析是编译过程中的一个阶段，在语法分析前进行 
+      。也可以和语法分析结合在一起作为一遍，由语法分析程序调用词法分析程序来获得当前单词供语法分析使用。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF">词法分析程序和语法分析程序的关系 
+            </font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="450" height="250">
+              <param name=movie value="f3-1-1.swf">
+              <param name=quality value=high>
+              <embed src="f3-1-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="450" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　词法分析程序的主要功能是从字符流的源程序中识别单词，它要从左至右逐个字符地扫描源程序，因此它还可完成其它一些任务。比如，滤掉源程序中的注释和空白(由空格，制表或回车换行字符引起的空白)；又比如，为了使编译程序能将发现的错误信息与源程序的出错位置联系起来，词法分析程序负责记录新读入的字符行的行号，以便行号与出错信息相联；再有，在支持宏处理功能的源语言中，可以由词法分析程序完成其预处理等等。 
+      <b> </b></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"用户请求使用一个已存在的文件时，其操作次序为( )\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.读／写→关闭",
+        "B.打开→读／写",
+        "C.打开→读／写→关闭"
+    ],
+    "q_number":971
+}

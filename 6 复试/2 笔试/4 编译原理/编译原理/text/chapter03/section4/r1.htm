@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　下面介绍从Σ上的一个正规式R构造Σ上的一个NFA M，使得L(M)=L(R)的方法。<br>
+      　　我们所介绍的方法称为&quot;语法制导&quot;的方法，即按正规式的语法结构指引构造过程，首先将正规式分解成一系列子表达式，然后使用如下规则为R构造NFA，对R的各种语法结构的构造规则具体描述如下：<br>
+      　　①(a)对于正规式 <img src="../../../img/chap03/symbol06.gif" width="12" height="11">，所构造的NFA为： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page60a.gif" width="258" height="74"></td>
+        </tr>
+      </table>
+      　　　(b) 对于正规式ε，所构造的NFA为： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page60b.gif" width="246" height="106"></td>
+        </tr>
+      </table>
+      　　　(c) 对于正规式a，a∈Σ，所构造的NFA为： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page60c.gif" width="256" height="104"></td>
+        </tr>
+      </table>
+      　　② 若s，t为Σ上的正规式，相应的NFA分别为N(s)和N(t),则<br>
+      　　　(a) 对正规式R=s|t，所构造的NFA(R)如下： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page60d.gif" width="368" height="170"></td>
+        </tr>
+      </table>
+      　　其中x是NFA(R)的初态，y是NFA(R)的终态，x到N(s)和N(t)的初态各有一ε弧，从N(s)和N(t)的终态各有一ε弧到y，现在N(s)和N(t)的初态或终态已不作为N(R)的初态和终态了。 
+      <br>
+      　　　(b) 对正规式R=st，所构造的NFA(R)为： 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/page60e.gif" width="368" height="104"></td>
+        </tr>
+      </table>
+      　　其中N(s)的初态成了N(R)的初态，N(t)的终态成了N(R)的终态。N(s)的终态与N(t)的初态合并为N(R)的一个既不是初态也不是终态的状态。</td>
+  </tr>
+</table>
+</body>
+</html>

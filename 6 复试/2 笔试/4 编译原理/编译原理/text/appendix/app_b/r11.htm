@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.7 怎样在UNIX系统中使用LEX</b><br>
+        　　假定已经写好了一个LEX源程序。怎样在UNIX系统中从它得到一个词法分析器呢。LEX自动地把LEX源程序转换成一个C语言的可运行的程序，<br>
+        这个可运行的程序放在叫lex.yy.c的文件中，这个C语言程序再经过C编译，即可运行。<br>
+        　　例　有一名叫source的LEX源程序，第一步用下面的命令将它转换成 lex.yy.c:<br>
+        　$ lex source<br>
+        　　($是UNIX的提示符)。lex.yy.c再用下面的命令编译即得到可运行的目标代码a.out:<br>
+        　$ cc lex.yy.c -ll<br>
+        上面的命令行中的-ll是调用LEX的库，是必须使用的。<br>
+        　　LEX可以很方便地与YACC配合使用，这将在下面附录C中介绍。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

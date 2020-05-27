@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="FCcontent"><strong>6.2.2.4 能量函数</strong><br>
+        　　<span class="spe">一个事物有相应的稳态，如在一个碗内的小球会停留在碗底，即使受到扰动偏离了碗底，在扰动消失后，它会回到碗底。学过物理的人都知道，稳态是它势能最低的状态。因此稳态对应与某一种能量的最低状态。将这种概念引用到Hopfield网络中去，Hopfield构造了一种能量函数的定义。这是他所作的一大贡献。通过能量函数，我们可以证明，联接权值wij按(6-6)与(6-8)式定义的必然性。引进能量函数概念可以进一步加深对这一类动力系统性质的认识，可以把求稳态变成一个求极值与优化的问题，从而为Hopfield网络找到一个解优化问题的应用。一个应用例子在6.2.4节中讨论。</span><br>
+        　　Hopfield的文章所作的最大贡献是他将一种能量函数引入到人工神经网络理论中。对Hopfield模型，能量函数定义为<br>
+        　　<img src="../../images/image_content/6/6_2024.gif" width="146" height="49" align="absmiddle">　　　(6-12)<br>
+        　　Hopfield引入能量函数概念是借助于物理学上的概念，具体说来是借助于物理学中磁系统中的概念。以上述方式定义的能量函数有这样一个特性，即当系统按其内动力规则进行演变时，其能量函数总是朝减少的方向变化，或停留在某一固定值，而所存储的模式所对应的状态则是能量函数的局部最小值。因此该网络无论从什么状态开始，它总是朝使能量函数减少的方向变动，直至达到一个局部极小值。<br>
+        　　以上结论也可以从系统状态变化过程中看到。例如某一结点ｉ的状态发生了变化，按照(6-3)确定的动力规则，它的新状态<img src="../../images/image_content/6/6_2025.gif" width="17" height="25" align="absmiddle">为<br>
+        　　<img src="../../images/image_content/6/6_2026.gif" width="124" height="45" align="absmiddle">　　　(6-13)<br>
+        　　如果<img src="../../images/image_content/6/6_2025.gif" width="17" height="25" align="absmiddle">与原状态<img src="../../images/image_content/6/6_2027.gif" width="15" height="27" align="absmiddle">相同，则系统的能量函数值不变。如果两者不相同，则新老状态能量函数之差为<br>
+        　　<img src="../../images/image_content/6/6_2028.gif" width="258" height="69" align="absmiddle">　　　(6-14)<br>
+        　　由于<img src="../../images/image_content/6/6_2025.gif" width="17" height="25" align="absmiddle">与<img src="../../images/image_content/6/6_2027.gif" width="15" height="27" align="absmiddle">不相同，则应有<img src="../../images/image_content/6/6_2029.gif" width="58" height="30" align="absmiddle">，因此上式应为<br>
+        　　<img src="../../images/image_content/6/6_2030.gif" width="261" height="46" align="absmiddle">　　　(6-15)<br>
+        　　显然根据(6-13)上式的值为负。其中<img src="../../images/image_content/6/6_2031.gif" width="23" height="26" align="absmiddle">按Hebb规则必为正，因而在上式中对应项必为负。实际上自耦合项<img src="../../images/image_content/6/6_2031.gif" width="23" height="26" align="absmiddle">对所存储模式<img src="../../images/image_content/6/6_2032.gif" width="25" height="29" align="absmiddle">的稳定性，在N数值大时是没有影响的，但它的存在确实对系统的动力学与虚假状态的数目有影响。根据分析将其略去则更好。因此在Hepfield模型中不再考虑结点的自耦合联接。<br>
+        　　在这里需要指出的是，<img src="../../images/image_content/6/6_2031.gif" width="23" height="26" align="absmiddle">具有对称性是上述能量函数存在的前提，而以Hebb规则设置权值自然具有对称性。引入能量函数使我们对神经网络的动力特性有了更深的了解，同时它也使神经网络得到了更广泛的应用。利用使所存储模式能量值为最小的思想，我们可以从另一角度考虑存储单个模式与多个模式的问题。对于存单个模式而言，我们希望网络的状态与所存模式具有尽可能的一致性，因而可定义能量函数为<br>
+        　　<img src="../../images/image_content/6/6_2034.gif" width="136" height="58" align="absmiddle">　　　(6-16)<br>
+        　　而存多个模式，则可将对应于每个模式的能量函数求和<br>
+        　　<img src="../../images/image_content/6/6_2035.gif" width="162" height="59" align="absmiddle">　　　(6-17)<br>
+        　　将上式改写就可得到<br>
+        　　<img src="../../images/image_content/6/6_2036.gif" width="393" height="61" align="absmiddle">　　　(6-18)<br>
+        　　显然如果<img src="../../images/image_content/6/6_2031.gif" width="23" height="26" align="absmiddle">按Hebb规则给定的话，(6-18)与(6-12)就完全一样了。<br>
+        　　从这种角度定义能量函数的方法可以推广到许多问题的求解中去。譬如对一个要求解的问题，定义一种能量函数，使所求的解对应于所定义的能量函数的局部极小值，则就可以利用该网络的动态演变进行求解。<br>
+      </p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

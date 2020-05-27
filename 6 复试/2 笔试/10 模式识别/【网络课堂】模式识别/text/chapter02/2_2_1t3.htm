@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　由于统计判别方法是基于统计参数作出决策，因此错误率也只能从平均的意义上讲，表示为在观测值可能取值的整个范围内错识率的均值。在连续条件下，平均错误率，以P(e)表示，应有<br>
+            　　<img src="../../images/image_content/2/2_1_1x.gif" width="266" height="34" align="absmiddle">(2-6)<br>
+            　　<span class="spe">其中p(e,x)表示错误率为e观测值为x的联合概率密度，P(e|x)是观测值为x时的条件错误概率密度函数，P(x)为x值出现的概率，而积分运算则表示为在整个d维特征空间上的总和。在此一维情况下，x取从－∞到+∞的整个范围。</span></font><br>
+            　　在两类别问题中，按(2-2)式给出的决策规则，当P(w<sub>2</sub>|x)＞p(w<sub>1</sub>|x)时决策为w<sub>2</sub>。显然这个决策意味着，对观测值x有P(w<sub>1</sub>|x)概率的错误率。例如在上例中所作的w<sub>1</sub>决策，实际上包含有P(w<sub>2</sub>|x)=0.182的错误概率。在两类别的情况下，可以将p(e|x)表示成当<br>
+            　　<img src="../../images/image_content/2/2_1_1s.gif" width="300" height="60" align="absmiddle">(2-7)<br>
+            　　如果我们把作出w<sub>1</sub>决策的所有观测值区域称为R<sub>1</sub>，则在R<sub>1</sub>区内的每个x值，条件错误概率为p(w<sub>2</sub>|x)。另一个区R<sub>2</sub>中的x,条件错误概率为p(w<sub>1</sub>|x)。因此平均错误率P(e)可表示成<br>
+            　　<img src="../../images/image_content/2/2_1_1t.gif" width="312" height="41" align="absmiddle">(2-8)<br>
+            　　由于在R<sub>1</sub>区内任一个x值都有P(w<sub>2</sub>|x)＜P(w<sub>1</sub>|x)，同样在R<sub>2</sub>区内任一个x值都有P(w<sub>1</sub>|x)＜P(w<sub>2</sub>|x)错误率在每个x值处都取小者，因而平均错误率P(e)也必然达到最小，这就证明了按(2-2)式作出的决策，其平均错误率为最小。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_1_1u.gif" width="400" height="279"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　<span class="spe">　为了形象地说明以上证明，图2.3表示了在某种概率分布下R1与R2区的分布情况，该图分别画出p(x｜ω1)P(ω1)及p(x｜ω2)P(ω2)的分布情况，由于P(e)也可以(2-8)式写成</span><br>
+            　　<img src="../../images/image_content/2/2_1_1v.gif" width="332" height="38" align="absmiddle">(2-9)<br>
+            　　<span class="spe">因此错误率为图中两个划线部分之和，显而易见只有这种划分才能使对应的错误率区域面积为最小。</font></span><br>
+            　　以上讨论的是两类别问题情况，在C类别情况下，很容易写成相应的最小错误率贝叶斯决策规则：<br>
+            　　如果 ,则<img src="../../images/image_content/2/2_1_1w.gif" width="181" height="35" align="absmiddle"> 
+            (2-10)<br>
+            　　也可将其写成用先验概率与类条件概率密度相联系的形式，得：<br>
+            　　如果<br>
+            　　<img src="../../images/image_content/2/2_1_1r.gif" width="338" height="33" align="absmiddle"> 
+            (2-11)<br>
+            　　至于计算多类别决策过程中的错误率，需把特征空间分割成R1，R2，…，Rc个区域，在每个区域Ri统计将所有其它类错误划为该区域对应的i类的概率，则每个区域共有c-1项错误率，总共有c(c-1)计算项，计算是很繁琐的。为此，可以改成计算平均正确分类概率P(c)即<br>
+            　　<img src="../../images/image_content/2/2_1_1y.gif" width="215" height="49" align="absmiddle">(2-12)<br>
+            　　由于上式中只有c项，计算要简单得多。然后通过式子P(e)=1-P(c)，就可计算出平均错误率。<br>
+            　　<span class="example">例 应用贝叶斯决策的肤色提取</span><br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_1_1z.gif" width="400" height="245"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="example">利用贝叶斯原理，可以建立简单的肤色模型，并用来从图像中提取手部、脸部肤色，进而得到人的身体姿势。<br>
+            　　我们使用的方法是：<br>
+            　　1．先在一副训练图象中手工描绘出肤色区域，<br>
+            　　2．然后统计每种颜色点在肤色区域中出现的次数和在区域外出现的次数的比值，作为这种颜色是肤色的概率<br>
+            　　3．这样就得到了一张查找表，表中的每个元素是这个点是肤色的概率。我们就得到了一个点是不是肤色的概率分布。以上的“颜色训练结果窗口”就是这样一张表的直观显示。实际表格是三维的(HSI颜色空间，32×32×8)把这个条形区域分成八块以后，每一块是个32×32的正方形，表示HS空间下的概率分布，颜色越亮，说明这种颜色是肤色的概率越大。<br>
+            　　4．再加上域值限制之后，认为只有概率大于一定域值的才是肤色。<br>
+            这样，对图中任意一点，查找表中对应的概率，就可以很快的知道它是不是肤色了。</font><br>
+            </span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

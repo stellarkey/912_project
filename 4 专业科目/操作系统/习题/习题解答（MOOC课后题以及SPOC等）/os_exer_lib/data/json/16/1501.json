@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"Lab2实验报告在git代码库中的路径\n（例如：/lab2/report.md）",
+    "explain":"无标准答案",
+    "degree_of_difficulty":1,
+    "source":"调查问卷",
+    "answer":"无标准答案",
+    "type":"fill_in_the_blank",
+    "q_number":1501
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在UNIX系统中，对换空间的管理采用得是_____ 适应算法。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.首次",
+        "B.最佳",
+        "C.最坏",
+        "D.下次"
+    ],
+    "q_number":191
+}

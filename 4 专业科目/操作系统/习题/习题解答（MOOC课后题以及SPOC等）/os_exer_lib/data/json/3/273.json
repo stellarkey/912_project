@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"虚拟存储系统中，完成地址转换工作的是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.硬件",
+        "B.地址转换程序",
+        "C.装入程序和地址转换程序",
+        "D.装入程序"
+    ],
+    "q_number":273
+}

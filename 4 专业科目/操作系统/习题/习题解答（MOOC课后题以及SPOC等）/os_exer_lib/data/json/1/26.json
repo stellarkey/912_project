@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B 批处理操作系统不具有交互性，它是为了提高CPU的利用率而提出的一种操作系统。\n",
+    "question":"交互性是批处理系统的一个特征。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":26
+}

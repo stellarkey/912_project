@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"操作系统核心部分的主要特点是_____ 。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.一个程序模块",
+        "B.主机不断电时常驻内存",
+        "C.有头有尾的程序",
+        "D.串行顺序执行"
+    ],
+    "q_number":305
+}

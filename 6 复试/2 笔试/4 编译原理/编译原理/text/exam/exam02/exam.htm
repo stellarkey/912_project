@@ -1,0 +1,565 @@
+<html>
+<head>
+<title>Java期末考试题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="B";mykeys[1]="A";mykeys[2]="B";mykeys[3]="A";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <b><br>
+  编译原理试卷二</b><br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b>一、 选择</b><br>
+            <br>
+            1.下面说法正确的是：<br>
+            <input type="radio" name="1" value="A">
+            A 一个正规式只能对应一个确定的有限状态自动机；<br>
+            <input type="radio" name="1" value="B">
+            B 一个正规语言可能对应多个正规文法； <br>
+            <br>
+            2.算符优先分析与规范归约相比的优点是：<br>
+            <input type="radio" name="2" value="A">
+            A 归约速度快<br>
+            <input type="radio" name="2" value="B">
+            B 对文法限制少<br>
+            <br>
+            3.一个LR（1）文法合并同心集后若不是LALR（1）文法： <br>
+            <input type="radio" name="3" value="A">
+            A 则可能存在移进/归约冲突<br>
+            <input type="radio" name="3" value="B">
+            B 则可能存在归约/归约冲突<br>
+            <input type="radio" name="3" value="B">
+            C 则可能存在移进/归约冲突和归约/归约冲突<br>
+            <br>
+            4.下面说法正确的是：<br>
+            <input type="radio" name="4" value="A">
+            A Lex是一个词法分析器的生成器<br>
+            <input type="radio" name="4" value="B">
+            B Yacc是一个语法分析器<br>
+            <!--czp-select-timu-->
+            <br>
+            <input type=button name=Button2 value=答案 交 onClick=MM_openBrWindow('text/examination/exam01_pop1.htm','','width=471,height=384') class=pbox>
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck(this.form)" class=pbox>
+        </form>      
+          <form>
+          <b>二、 问答题</b><br>
+            <br>
+          <b>问答第1题</b><br>
+          (5分) 将文法G[S] 改写为等价的G'[S]，使G'[S]不含左递归和左公共因子。<br>
+          　　G[S]： S→SAe|Ae <br>
+          　　　　　 A→dAbA|dA|d <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第2题</b><br>
+          (10分) 判断下面文法是否为LL(1)文法，若是，请构造相应的LL(1)分析表。<br>
+          　　S→aD <br>
+          　　D→STe|ε<br>
+          　　T→bH|H <br>
+          　　H→d|ε <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          <b>问答第3题</b><br>
+          (5分) 给出与正规式R＝（(ab)<sup><font size="-1">*</font></sup>|b）<sup><font size="-1">*</font></sup>（a|(ba)<sup><font size="-1">*</font></sup>）a 
+          等价的NFA。<br>
+          <textarea name=textarea cols=50 rows=5></textarea>
+          <br>
+          <br>
+          <b>问答第4题</b><br>
+          解：根据所给的PL/0示意程序完成下列要求。<br>
+          （1）(4分) 给出 当程序执行到A过程体的write(c) 语句时的栈式存储分配布局和用Display 显示表时A过程最新活动记录的内容； 
+          <br>
+          （2）(2分) 说明在过程D中，当执行c:=b*a；语句时，变量c和b的存取位置是如何确定的（请填在下面的相应括号内）。<br>
+          　　c的存取位置=（ ） <br>
+          　　b的存取位置=（ ）<br>
+          PL/0示意程序为：<br>
+          　　var c;<br>
+          　　procedure M; <br>
+          　　　　procedure A;<br>
+          　　　　begin (* A *) <br>
+          　　　　　write(c);<br>
+          　　　　end (* A *) <br>
+          　　　procedure Z; <br>
+          　　　　var a,b;<br>
+          　　　　procedure D <br>
+          　　　　　begin (* D *) <br>
+          　　　　　　c:=b*a；<br>
+          　　　　　　call A; <br>
+          　　　　　end ；(* D *)<br>
+          　　　　begin (* Z *) <br>
+          　　　　　call D; <br>
+          　　　　end ；(* Z *) <br>
+          　　　begin (*M *) <br>
+          　　　　call Z; <br>
+          　　　end ；(* M *) <br>
+          　　begin (*main *) <br>
+          　　　call M; <br>
+          　　end. (* main *) <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <b><br>
+          问答第5题</b><br>
+          （6分）试对 while (a&gt;b and a&lt;c) or a=d do S:=a;的四元式序列给出第四区段应回填的指令地址，并指出真假链和链头及回填的次序。 
+          <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+            <tr> 
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>应回填的值</td>
+              <td>回填的次序</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr> 
+              <td>(1)</td>
+              <td>if a&gt;b goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>真链头 E.true= </td>
+            </tr>
+            <tr> 
+              <td>(2)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>真出口链( 　 )</td>
+            </tr>
+            <tr> 
+              <td>(3)</td>
+              <td>if a&lt;c goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr> 
+              <td>(4)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>假链头 E.false= </td>
+            </tr>
+            <tr> 
+              <td>(5)</td>
+              <td>if a=d goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>假出口链( 　 )</td>
+            </tr>
+            <tr> 
+              <td>(6)</td>
+              <td>goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr> 
+              <td>(7)</td>
+              <td>s:=a</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr> 
+              <td>(8)</td>
+              <td> goto</td>
+              <td>( 　 )</td>
+              <td>( 　 )</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr> 
+              <td>(9)</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <b><br>
+          问答第6题</b><br>
+          (10分) 某语言的文法G为： E → aTd|ε <br>
+          　　　　　　　　　　　　 T → Eb|a <br>
+          证明G不是LR(0)文法而是SLR(1)文法，请给出该文法的SLR(1)分析表。 <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第7题</b><br>
+          (5分) 给出文法G[S]的LR(1)项目集规范族中I<sub>0</sub>项目集的全体项目。<br>
+          　　G[S]为： S →D;D|D<br>
+          　　　　　 　D →DB|B<br>
+          　　　　　　 B →a|b <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第8题</b><br>
+          (5分) 文法G[S]及其LR分析表如下，请给出对输入串da;aoa#的分析过程。<br>
+          　　G[S]: 0) S′→S 　　　1) S→dSoS<br>
+          　　　　　2) S →dS 　　　3) S →S;S <br>
+          　　　　　4) S →a <br>
+          <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+            <tr> 
+              <td align="center" rowspan="2">name</td>
+              <td align="center" colspan="5">ACTION</td>
+              <td align="center">GOTO</td>
+            </tr>
+            <tr> 
+              <td align="center"> 
+                <p>d</p>
+              </td>
+              <td align="center">a</td>
+              <td align="center">;</td>
+              <td align="center">a</td>
+              <td align="center">#</td>
+              <td align="center">S</td>
+            </tr>
+            <tr> 
+              <td align="center">0</td>
+              <td align="center">S2</td>
+              <td align="center">S3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">1</td>
+            </tr>
+            <tr> 
+              <td align="center">1</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S4</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">acc</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+            <tr> 
+              <td align="center">2</td>
+              <td align="center">S2</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">5</td>
+            </tr>
+            <tr> 
+              <td align="center">3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r4</td>
+              <td align="center">r4</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r4</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+            <tr> 
+              <td align="center">4</td>
+              <td align="center">S2</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">6</td>
+            </tr>
+            <tr> 
+              <td align="center">5</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S7</td>
+              <td align="center">S4</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r2</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+            <tr> 
+              <td align="center">6</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r3</td>
+              <td align="center">r3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r3</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+            <tr> 
+              <td align="center">7</td>
+              <td align="center">S2</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">S3</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">8</td>
+            </tr>
+            <tr> 
+              <td align="center">8</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r1</td>
+              <td align="center">S4</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">r1</td>
+              <td align="center">&nbsp;</td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第9题</b><br>
+          （5分）文法G[S]为：<br>
+          　　S→V <br>
+          　　V→T | ViT <br>
+          　　T→F| T+F<br>
+          　　F→)V* |( <br>
+          试给出句型ViFi( 的短语，简单(直接)短语,句柄和最左素短语。 <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <br>
+          <b>问答第10题</b><br>
+          （5分） 下列语言或文法确切属于按乔姆斯基（Chomsky）分类的哪种类型,请填在（ ）内。<br>
+          （1） L1={ a0<sup>n</sup>1<sup>n</sup>bd<sup>m</sup> | n>0，m >0} ( ) <br>
+          （2） L2={ a<sup>n</sup>b<sup>n</sup>c<sup>n</sup>b<sup>m</sup> | n≥0,m>0 
+          } ( ) <br>
+          （3） L3={ a<sup>n</sup>b<sup>m</sup>c| n≥0,m>0 } ( ) <br>
+          （4） G[A]:A→aB|ε B→Ab|a ( )<br>
+          （5） G[E]:E→E+E|E*E|(E)|i ( ) <br>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第11题</b><br>
+          （5分）已知PL/0语言的<当型循环语句>的语法图和EBNF如下： <br>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+            <tr> 
+              <td width="47%">语法图: 当型循环语句 →(while)→</td>
+              <td width="8%"><img src="img/pic04.gif" width="51" height="26"></td>
+              <td width="16%">→(do)→</td>
+              <td width="7%"><img src="img/pic05.gif" width="50" height="23"></td>
+              <td width="22%">→ </td>
+            </tr>
+          </table>
+          EBNF为： <当型循环语句>：：= while <条件> do <语句> <br>
+          试在方框中填入相应程序（或用文字说明）以完成它的语法语义处理程序。 <br>
+          if sym = whilesym<br>
+          　then <br>
+          　　begin <br>
+          　　　<img src="img/pic02.gif" width="124" height="44"> <br>
+          　　　getsym;<br>
+          　　　condition([dosym] + fsys); <br>
+          　　　<img src="img/pic03.gif" width="125" height="68"> <br>
+          　　　if sym = dosym<br>
+          　　　　then getsym else error(×××)；<br>
+          　　　statement(fsys);<br>
+          　　　<img src="img/pic03.gif" width="125" height="68"> <br>
+          　　end;<br>
+          <textarea name=jianda cols=50 rows=5></textarea><br><br>
+          <b>问答第12题</b><br>
+          (4分) 下面矩阵中列元素所指的数据对象在PL/0编译时，是在哪几个过程（参考行 元素所列）中生成或使用的,请在矩阵表中行列对应的空格中画"√"。 
+          <br>
+          <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+            <tr align="center"> 
+              <td><font color="#FFFFFF">.</font></td>
+              <td>词法分析</td>
+              <td>语法分析</td>
+              <td>代码生成</td>
+              <td>解释执行</td>
+            </tr>
+            <tr align="center"> 
+              <td>目标代码 CODE ( )<br>
+              </td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr align="center"> 
+              <td>符号表 TABLE ( )</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr align="center"> 
+              <td>数据栈 S ( )</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr align="center"> 
+              <td>关键字表 WORD ( )</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+          <textarea name=jianda cols=50 rows=5></textarea><br>
+          <!--czp-wenda-timu-->
+          <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"一个从键盘输入到打印机输出的数据处理流程图如下所示。其中键盘输入进程\n（input_process）通过缓冲区Buffer1把数据传送给计算进程（calculation_process），\n计算进程把处理结果通过Buffer2传送给打印进程（output_process）。键盘输入进程、计\n算进程及打印进程对缓冲区Buffer1和Buffer2的访问满足下列条件。\n    ```\n\t    Input ===> [ Buffer1 ] ===> Calculation ===> [ Buffer2 ] ===> Output\n\t    ```\n  1. 任何时刻只有一个进程在对缓冲区Buffer1进行数据读写操作；只有一个进程在对缓冲区 Buffer2进行数据读写操作；允许进程对Buffer1和Buffer2的同时读写操作。\n  2. 两个缓冲区的大小是无限大。\n请用信号量（semaphore）机制实现键盘输入进程input_process()、计算进程\ncalculation_process()和打印进程output_process()。要求：用信号量方法（不允许使用\n信号量集），并给出信号量定义和初始值；在代码中要有适当的注释，以说明信号量定义的 作用和代码的含义；用类C语言描述共享变量和函数。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":653
+}

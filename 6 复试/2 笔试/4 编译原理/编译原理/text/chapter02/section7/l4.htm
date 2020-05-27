@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　具体的过程调用和结束，对上述寄存器及三个联系单元的填写和恢复由下列目标指令完成。<br>
+      <b>(1) INT 0 A</b><br>
+      　　每个过程目标程序的入口都有这样一条指令，用以完成开辟数据段的工作。A域的值指出数据段的大小，即为局部变量个数+3(联系单元个数为3)。由编译程序的代码生成给出。开辟数据段的结果是改变栈顶寄存器T的值，即T∶=T+A；。<br>
+      <b>(2) OPR 0 0</b><br>
+      　　是每个过程出口处的一条目标指令。用以完成该过程运行结束后释放数据段的工作，即退栈工作。恢复调用该过程前正在运行的过程(或主程序)的数据段基地址寄存器的值，和栈顶寄存器T的值，并将返回地址送到指令地址寄存器P中，以使调用前的程序从断点开始继续执行。<br>
+      <b>(3) CAL L A；</b><br>
+      　　为调用过程的目标指令，其中<br>
+      　　L： 为层次差，它是寻找静态链的依据。在解释程序中由BASE(L)函数来计算，L为参数，实参为所给层差。<br>
+      　　A： 为被调用过程的目标程序入口。<br>
+      　　CAL指令还完成填写静态链、动态链、返回地址，给出被调用过程的基地址值，送入基址寄存器B中，目标程序的入口地址A的值送指令地址寄存器P中，使指令从A开始执行。</td>
+  </tr>
+</table>
+</body>
+</html>

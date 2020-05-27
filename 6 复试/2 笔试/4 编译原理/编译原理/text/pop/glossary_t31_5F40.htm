@@ -1,0 +1,82 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=GB2312">
+<title>词法分析</title>
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+<body lang=ZH-CN class="Normal" bgcolor="#FFFFFF">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+    <tr>
+      
+    <td><b>　<br>
+      31．符号表（symbol table）<br>
+      </b> 　　在编译程序中符号表用来存放源程序中出现的有关标识符的属性信息，这些信息集中反映了标识符的语义特征属性,为进行上下文语义审查和进一步的翻译使用。 
+      <br>
+      <b><br>
+      32．静态存储分配（Static storage allocation）<br>
+      </b> 　　如果在编译时能确定目标程序运行中所需的全部数据空间的大小，编译时安排好目标程序运行时的全部数据空间，确定每个数据对象的存储位置，称这种分配策略为静态存储分配。<br>
+      <b><br>
+      33．动态存储分配（Dynamic storage allocation）<br>
+      </b> 　　如果一个程序设计语言允许递归过程、可变数组或允许用户自由申请和释放空间，那么，就需要采用动态存储管理技术。因为对于这种程序在编译时无法知道它在运行时需要多大的存储空间，它所需要的数据空间的大小需待程序运行时动态地确定。有两种动态存储分配方式：栈式（stack）和堆式（heap）。<br>
+      <b><br>
+      34．过程的活动记录AR(Activation Record)</b><br>
+      　　过程的活动记录是一段连续的存储区，用以存放过程的一次执行所需要的信息，<br>
+      　　一般有如下信息：<br>
+      　　1． 临时工作单元，比如计算表达式过程中需存放中间结果用的临时值单元。<br>
+      　　2． 局部变量，一个过程的局部变量。<br>
+      　　3． 保存机器状态，容纳该过程执行前关于机器状态的信息，诸如程序计数器、寄存器的值，这些值都需要在控制从该过程返回时给予恢复。<br>
+      　　4． 存取链，用以存取非局部变量，这些变量存放于其它过程活动记录中。并不是所有语言需要该信息。<br>
+      　　5． 控制链，指向调用该过程的那个过程的活动记录，这也不是所有语言都需要的。<br>
+      　　6． 实参，也称形式单元，由调用过程向该被调过程提供实参的值（或地址）。当然在实际编译程序中，也常常使用机器寄存器传递实参。<br>
+      　　7． 返回地址，保存该被调过程返回后的地址。 <br>
+      <b><br>
+      35．Display表</b> <br>
+      　　为能存取非局部变量而纪录外包过程的活动记录地址的数组。即每进入一个过程后，在建立它的活动记录的同时建立一张嵌套层次显示表display。这里所提到的“嵌套层次”，是指过程定义的层数，始终假定主程序的层数为0，因此主程序称为0层过程。如某过程p是在层次为i的过程q内定义的，并且q是包围p的直接外层，那么p的过程层数为i+1。display是一个指针数组d，也可看做是一个小栈，自顶向下每个单元依次存放着现行层，直接外层，……直至最外层（0层，主程序层）等每一层过程的最新活动记录的地址。 
+      <br>
+      <b><br>
+      36．</b><b>活前缀(viable prefixes)</b> <br>
+      　　若<sub><img align="absmiddle" 
+src="chb.files/image277.gif" v:shapes="_x0000_i1474"></sub>是文法G中的一个规范推导。<br>
+      　　如果符号串<sub><img align="absmiddle" 
+src="chb.files/image278.gif" v:shapes="_x0000_i1475"></sub>是<sub><img align="absmiddle" 
+src="chb.files/image280.gif" v:shapes="_x0000_i1476"></sub>的前缀，则称<sub><img align="absmiddle" 
+src="chb.files/image281.gif" v:shapes="_x0000_i1477"></sub>是G的一个活前缀。也就是说<sub><img align="absmiddle" 
+src="chb.files/image282.gif" v:shapes="_x0000_i1478"></sub>是规范句型<sub><img align="absmiddle" 
+src="chb.files/image284.gif" v:shapes="_x0000_i1479"></sub>的前缀，但它的右端不超过该句型句柄的末端。这里S为对原文法G加了产生式S′→Ｓ，S为原文法G的开始符号，S′为拓广后文法G′的开始符号。 
+      <br>
+      <b><br>
+      37．代码优化（Code Optimization）<br>
+      </b>　　所谓代码优化，实质上是对代码进行等价变换，使得变换后的代码运行结果与变换前代码运行结果相同，而运行速度加大或占用存储空间少，或两者都有。 
+      <br>
+      <b><br>
+      38．基本块（Basic block）和DAG</b> <br>
+      　　所谓基本块，是指程序中一顺序执行的语句序列，其中只有一个入口语句和一个出口语句。执行时只能从其入口语句进入，从其出口语句退出。如果有向图中任一通路都不是环路，则称该有向图为无环路有向图，简称ＤＡＧ。基本块的DAG表示可用于代码优化。 
+      <br>
+      <b><br>
+      39．控制流程图（流图）（Control flow graph）<br>
+      </b> 　　一个控制流程图就是具有唯一首结点的有向图。所谓首结点，就是从它开始到控制流程图中任何结点都有一条通路的结点。 我们可以把一个控制流程图表示成一个三元组Ｇ＝（Ｎ，Ｅ，<sub><img align="absmiddle" 
+src="chb.files/image286.gif" v:shapes="_x0000_i1480"></sub>），其中，Ｎ代表图中所有结点集，Ｅ代表图中所有有向边集，<sub><img align="absmiddle" 
+src="chb.files/image287.gif" v:shapes="_x0000_i1481"></sub>代表首结点。控制流程图简称为流图。 
+      <br>
+      <b><br>
+      40．循环（Loop）</b> <br>
+      　　在程序流图中，称具有下列性质的结点序列为一个循环：<br>
+      　　１． 它们是强连通的。也即，其中任意两个结点之间，必有一条通路，而且该通路上各结 点都属于该结点序列。如果序列只包含一个结点，则必有一有向边从该结点引到其自身。<br>
+      　　２． 它们中间有且只有一个是入口结点。<br>
+      　　因此，我们定义的循环就是程序流图中具有唯一入口结点的强连通子图，从循环外要进入循 环，必须首先经过循环的入口结点。<br>
+      　　所谓入口结点，是指序列中具有下述性质的结点：从序列外某结点，有一有向边引到它，或者它就是程序流图的首结点。 <br>
+      　</td>
+    </tr>
+  </table>
+    
+
+</body></html>

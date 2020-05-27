@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 　　堆式动态储分配的实现通常有如下三种途径：<br>
+      　　<b>1 定长块管理</b><br>
+      　　堆式动态储分配最简单的实现是按定长块进行。初始化时，将堆存储空间分成长度相等的若干块，每块中指定一个链域，按照邻块的顺序把所有块链成一个链表，用指针available指向链表中的第一块。<br>
+      　　分配时每次都分配指针available所指的块，然后available指向相邻的下一块。归还时，把所归还的块插入链表。考虑插入方便，可以把所归还的块插在available所指的块之前，然后available指向新归还的块。<br>
+      　　<b>2 变长块管理</b><br>
+      　　除了按定长块进行分配之外，还可以根据需要分配长度不同的存储块，可以随要求而变。按这种方法，初始化时存储空间是一个整块。按照用户的需要，分配时先是从一个整块里分割出满足需要的一小块，以后，归还时，如果新归还的块能和现有的空间能合并，则合并成一块；如果不能和任何空闲块合并，则可以把空闲块链成一个链表。再进行分配时，从空闲块链表中找出满足需要的一块，或者整块分配出去，或者从该块上分割一小块分配出去。若空闲块表中有若干个满足需要的空闲块时，该分配哪一块呢？通常有三种不同的分配策：</td>
+  </tr>
+</table>
+</body>
+</html>

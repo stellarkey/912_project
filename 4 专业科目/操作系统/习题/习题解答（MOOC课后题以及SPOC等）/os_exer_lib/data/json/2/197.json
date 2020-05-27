@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"“拼接”技术是用来解决：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.内零头",
+        "B.外零头",
+        "C.页内零头",
+        "D.页表零头"
+    ],
+    "q_number":197
+}

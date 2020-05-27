@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在设备分配中，什么时刻的设备状态为等待状态？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.设备本身忙",
+        "B.与设备连接的所有控制器和通道都忙",
+        "C.设备出故障",
+        "D.部分通道和控制器忙"
+    ],
+    "q_number":200
+}

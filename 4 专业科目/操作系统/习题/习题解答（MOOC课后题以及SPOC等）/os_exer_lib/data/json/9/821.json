@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在分页式存储管理中用作存贮保护的是﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.页表长度",
+        "B.页表始址",
+        "C.页长(大小)",
+        "D.重定位寄存器"
+    ],
+    "q_number":821
+}

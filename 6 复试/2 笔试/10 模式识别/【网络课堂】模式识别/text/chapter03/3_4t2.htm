@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>3.4.2.1 最近邻法错误率分析<a name="1" id="1"></a><br>
+            </strong>　　<span class="spe">其实近邻法的错误率是比较难算的，因为训练样本集的数量总是有限的，有时多一个少一个训练样本对测试样本分类的结果影响很大。譬如图中 
+            </span> </td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5F4006.gif" width="249" height="272"></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　<span class="spe">红点表示A类训练样本，蓝点表示B类训练样本，而绿点O表示待测样本。假设以欧氏距离来衡量，O的最近邻是A<sub>3</sub>，其次是B<sub>1</sub>，因此O应该属于A类，但若A<sub>3</sub>被拿开，O就会被判为B类。这说明计算最近邻法的错误率会有偶然性，也就是指与具体的训练样本集有关。同时还可看到，计算错误率的偶然性会因训练样本数量的增大而减小。因此人们就利用训练样本数量增至极大，来对其性能进行评价。这要使用渐近概念，以下都是在渐近概念下来分析错误率的。</span></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5F4005.gif" width="459" height="326"><br> 
+            <span class="FCcontent">图 3.17 </span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"> 　　当最近邻法所使用的训练样本数量N不是很大时，其错误率是带有偶然性的。为了说明这一点我们拿图3.17所示一个在一维特征空间的两类别情况来讨论。图中X表示一特测试样本，而X'是所用训练样本集中X的最邻近者，则错误是由X与X'分属不同的类别所引起的。由于X'与所用训练样本集有关，因此错误率有较大偶然性。但是如果所用训练样本集的样本数量N极大，即N→∞时，可以想像X'将趋向于X，或者说处于以X为中心的极小邻域内，此时分析错误率问题就简化为在X样本条件下X与一个X(X'的极限条件)分属不同类别的问题。如果样本X的两类别后验概率分别为P(ω<sub>1</sub>|X)与P(ω<sub>2</sub>|X)，那么对X值，在N→∞条件下，发生错误决策的概率为：<br>
+            　　<img src="../../images/image_content/3/3_5F4010.gif" width="219" height="45" align="absmiddle">　　　　　(3-64)<br>
+            　　<span class="spe">当训练样本数量无限增多时，一个测试样本X的最近邻在极限意义上讲就是X本身。如果在X处对某一类的的后验概率为P(ω<sub>1</sub>|X)，则另一类为1- 
+            P(ω<sub>1</sub>|X)。那么当前测试样本与它的最近邻都属于同一类才能分类正确，故正确分类率为<img src="../../images/image_content/3/3_5F4011.gif" width="96" height="47" align="absmiddle"> 
+            ，故有(3-64)式。</span><br>
+            　　而在这条件下的平均错误率<br>
+            　　<img src="../../images/image_content/3/3_5F4012.gif" width="382" height="80" align="absmiddle">　　　　　(3-65)<br>
+            <span class="spe">　　P称为渐近平均错误率，是P<sub>N</sub>(e)在N→∞的极限。</span><br>
+            　　为了与基于最小错误率的贝叶斯决策方法对比，下面写出贝叶斯错误率的计算式。<br>
+            　　<span class="spe">基于最小错误率贝叶斯决策的错误率是出错最低限，因此要与它作比较。</span><br>
+            　　<img src="../../images/image_content/3/3_5F4013.gif" width="171" height="36" align="absmiddle">　　　　　(3-66)<br>
+            　　其中<img src="../../images/image_content/3/3_5F4014.gif" width="164" height="34" align="absmiddle"> 
+            　　　　　(3-67)<br>
+            　　而<img src="../../images/image_content/3/3_5F4015.gif" width="195" height="33" align="absmiddle"> 
+            　　　　　(3-68)<br>
+            　　如果用图3.17中的例子，则从(3-67)可得<br>
+            　　<img src="../../images/image_content/3/3_5F4016.gif" width="151" height="26" align="absmiddle"> 
+            　　　　　(3-69)<br>
+            　　而从(3-64)得<br>
+            　　<img src="../../images/image_content/3/3_5F4017.gif" width="290" height="37" align="absmiddle">　　　　　(3-70)<br>
+            　　如果用(3-70)减去(3-69)，并写成△P，则有<br>
+            　　<img src="../../images/image_content/3/3_5F4019.gif" width="350" height="42" align="absmiddle"> 
+            　　　　　(3-71)<br>
+            　　从(3-71)式可见在一般情况下△P是大于零的值，只要P(ω<sub>1</sub>|X)＞P(ω<sub>2</sub>|X)＞0。有以下两种例外情况△P＝0，这两种情况是P(ω<sub>1</sub>|X)＝1的情况或P(ω<sub>1</sub>|X)＝P(ω<sub>2</sub>|X)＝1/2。 
+            <br>
+            　　<span class="spe">请想一下，什么情况下P(ω<sub>1</sub>|X)＝1或P(ω<sub>2</sub>|X)=1? 
+            P(ω<sub>1</sub>|X)= P(ω<sub>2</sub>|X)会出现什么什么情况？<br>
+            　　答：一般来说，在某一类样本分布密集区，某一类的后验概率接近或等于1。此时，基于最小错误率贝叶斯决策基本没错，而近邻法出错可能也很小。而后验概率近似相等一般出现在两类分布的交界处，此时分类没有依据，因此基于最小错误率的贝叶斯决策也无能为力了，近邻法也就与贝叶斯决策平起平坐了。<br>
+            　　从以上讨论可以看出，当N→∞时，最近邻法的渐近平均错误率的下界是贝叶斯错误率，这发生在样本对某类别后验概率处处为1的情况或各类后验概率相等的情况。</span><br>
+            　　在其它条件下，最近邻法的错误率要高于贝叶斯错误率，可以证明以下关系式成立<br>
+            　　<img src="../../images/image_content/3/3_5F4027.gif" width="179" height="43" align="absmiddle">　　　(3-72)</td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5F4028.gif" width="355" height="324"><br> 
+            <span class="FCcontent">图 3.18</span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"><br>
+            　　即最近邻法的渐近平均错误率的上下界分别为贝叶斯错误率<img src="../../images/image_content/3/3_5F4029.gif" width="20" height="25" align="absmiddle">及<img src="../../images/image_content/3/3_5F4030.gif" width="111" height="42" align="absmiddle">。图3.18表示了这种关系。由于一般情况下<img src="../../images/image_content/3/3_5F4029.gif" width="20" height="25" align="absmiddle">很小，因此(3-72)又可粗略表示成<br>
+            　　<img src="../../images/image_content/3/3_5F4031.gif" width="66" height="25" align="absmiddle"><br>
+            　　<span class="spe">因此可以说最近邻法的渐近平均错误率在贝叶斯错误率的两倍之内。从这点说最近邻法是优良的，因此它是模式识别重要方法之一。 
+            </span> 
+            <p class="FCcontent"><strong>3.4.2.2 
+              k-近邻法错误率分析</strong><a name="2"></a><br>
+              　　这一节不作基本要求。<br>
+              　　以上我们从定性分析的角度讨论了最近邻法错误率问题，下面以同样的方法更简略地讨论k-近邻法的渐近平均错误率。对于两类别问题，式(3-64)可以改写成<br>
+              　　<img src="../../images/image_content/3/3_5F4032.gif" width="367" height="40" align="absmiddle">　　　　　(3-73)<br>
+              　　推广到k-邻域的情况，则错误出现在k个邻域样本中，正确的类别所占样本未过半数，得到<br>
+              　　<img src="../../images/image_content/3/3_5F4033.gif" width="364" height="92" align="absmiddle">　　　　　(3-74)<br>
+              　　其中<img src="../../images/image_content/3/3_5F4034.gif" width="102" height="49" align="absmiddle"><br>
+              　　<span class="spe">k邻域出错是指某类样本的k近邻中同类训练样本占少数，仅占一个两个，至多(k-1)/2个，因此这些情况都要考虑，计算就相当复杂了。<br>
+              　　将(3-74)与(3-73)相比较，(3-73)相当于(3-74)中k＝1的情况，而在(3-74)中当k增大时<img src="../../images/image_content/3/3_5F4035.gif" width="80" height="39" align="absmiddle"> 
+              是单调递减的。因此可以得出结论，在N→∞的条件下，k-近邻法的错误率要低于最近邻法，图3-19图示了不同k值时的错误率情况。</span><br>
+              　　<br>
+            </p></td>
+        </tr>
+        <tr>
+          <td align="center" class="FCcontent"><img src="../../images/image_content/3/3_5F4036.gif" width="343" height="329"><br>
+            图 3.18 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent"> 　　<span class="spe">从图中也可看出，无论是最近邻法，还是k-近邻法，其错误率的上下界都是在一倍到两倍贝叶斯决策方法的错误率范围内。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

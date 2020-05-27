@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "阅读[slab](http://en.wikipedia.org/wiki/Slab_allocation)分配算法，尝试在应用程序中实现slab分配算法，给出设计方案和测试用例。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

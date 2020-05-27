@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　程序设计语言的单词都能用正规式来定义。请看下面两个例子：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例3.1</font> </td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　　令Σ={l，d}，则Σ上的正规式 r=l(l|d)<sup><font size="-2">* </font></sup>定义的正规集为：{l,ll,ld,ldd,……}，其中l代表字母，d代表数字，正规式，即是字母(字母|数字)<sup><font size="-2">*</font></sup>，它表示的正规集中的每个元素的模式是“字母打头的字母数字串”，就是Pascal和多数程序设计语言允许的的标识符的词法规则。</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例3.2</font></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　　Σ={d，·，ε，+，-},则Σ上的正规式d<sup><font size="-2">*</font></sup>(·dd<sup><font size="-2">*</font></sup> 
+            |ε)( ε(+| -ε|)dd<sup><font size="-2">*</font></sup> |ε)表示的是无符号数的集合。其中d为0~9的数字。 
+          </td>
+        </tr>
+      </table>
+      
+      <br>
+      <font color="#0000FF">外文教材中常常遇到的术语 </font> <br>
+      　- Token 单词,词标，符号<br>
+      　- lexeme 词素，词位<br>
+      　- pattern 模式，式样<br>
+      　　这段话帮你理解外文教材中常常遇到的术语In general，there is a set of strings in the input for 
+      which the same <font color="#0000FF">token</font> is produced as output. 
+      This set of strings is described by a rule called a <font color="#0000FF">pattern</font> 
+      associated with the token. The pattern is said to match each string in the 
+      set. A <font color="#0000FF">lexeme</font> is a sequence of characters in 
+      the source program that is matched by the pattern for a token. 例如：<br>
+      　　源程序语句Const pi=3.14159，x1=10；中的pi和x1是token “identifier”的lexeme，其pattern为字母开头，后面跟有字母和/或数字的字符序列。</td>
+  </tr>
+</table>
+</body>
+</html>

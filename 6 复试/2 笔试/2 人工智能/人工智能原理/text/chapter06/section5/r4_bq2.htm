@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <b>网络设计：</b><br>
+      　　1. 从进行了预处理的样本集中选择适当的训练样张进行标注，即，表明每一个样张的标准答案，生成教师向量集合。<br>
+      　　其过程可用如下表达式表示：<br>
+      　　如果 样张S ∈C<sub>i</sub>，C<sub>i</sub> 为第i个数字类 <br>
+      　　则教师向量T<sup>s</sup><sub></sub>= {t<sup>s</sup><sub>j</sub>}, j = 0, 1, 
+      ….9，为t<sup>s</sup><sub></sub><sub>i</sub> = 1 及 t<sup>s</sup><sub></sub><sub>j</sub> 
+      = 0 j ≠ i<br>
+      　　<font color="#0000FF">教师提示</font>：系统的误差计算是根据教师向量进行的。当分类数较多，训练样本数量也较多时，系统误差难以收敛到一个理想的极小值，学习无法结束。此时可以放宽收敛条件，设教师向量的取值为0.1和0.9。 
+      <br>
+      　　2. 设计网络结构。选择网络层数为3，输入层的神经元数目N<sub>1</sub>与输入特征向量维数相等。输出层神经元数目N<sub>3</sub>与待分类数目相当，即10，中间层神经元数目N<sub>2</sub>取决于待分类样本的复杂性，与样本种类的数目和输入向量的维数有关。在此建议取50-100。<br>
+      　　当问题复杂时中间层的个数是可以增加到2，甚至3的。但是在数字识别这个具体问题上没有必要。 <br>
+      　　3. 初始化网络参数，使网络权重为绝对值小于1的随机数。即，|W<sub>ij</sub>| &lt; 1。<br>
+      　　权重的初始值是很重要的，从神经元输出计算公式我们可以看到，神经元的转移函数是非线性的，但函数变量达到一定的取值范围后，函数可能产生饱和。同时，转移函数的输入是神经元的所有输入的加权和。因此，如果权重的绝对值较大可能引起饱和。所以，在输入维数较高的情况下，需要进一步减小权重的初始绝对值。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在32位计算机系统中，因为4GB内存普遍存在，导致虚拟内存管理已经不再有存在的必要。",
+    "explain":"在32位系统中，因为现在4GB内存普遍存在，因此虚拟内存管理已经不再有存在的必要。",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1546
+}

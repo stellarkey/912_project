@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在没有MMU和TLB的计算机系统中，操作系统无法有效实现页表机制。",
+    "explain":"",
+    "degree_of_difficulty":null,
+    "source":"",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1587
+}

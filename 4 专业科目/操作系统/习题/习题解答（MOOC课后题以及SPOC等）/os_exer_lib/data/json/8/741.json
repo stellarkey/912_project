@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)为了实现多道程序设计，计算机需要有﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.更大的内存",
+        "B.更快的外部设备",
+        "C.更快的CPU",
+        "D.更先进的终端"
+    ],
+    "q_number":741
+}

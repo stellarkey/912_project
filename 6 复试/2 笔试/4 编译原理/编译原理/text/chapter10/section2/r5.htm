@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　display是一个指针数组d，也可看做是一个小栈，自顶向下每个单元依次存放着现行层，直接外层，……直至最外层（0层，主程序层）等每一层过程的最新活动记录的地址。也即，嵌套层次i的过程的局部变量a是在由display元素d[i]所指的那个活动记录中存放的。也就是说，嵌套层次i+1过程中的非局部变量可能在i,i-1,…,0层，对它的存取是通过display元素d[i],d[i-],…,d[0]而获得的。<br>
+      　　假定现在进入的过程的层数为i，则它的display表含有i+1个元素，依次指向现行层、直接外层……直至最外层（0层）等每一层过程的最新活动记录的地址。例如图10.11的程序，假定有如下四种调用情况：(a)sort→quicksort…;(b)sort→quicksort→quicksort…;(c)sort→quicksort→quicksort→partition…;(d)sort→quicksort→quicksort→partition→exchange…。则图10.16的（a），（b），（c），（d）分别说明了上述四种情形的运行栈和display。确实看出，display显示了存取链的信息。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.16 display表</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_16.gif" width="430" height="407"></td>
+        </tr>
+      </table>
+      　　display本身的体积在编译时可确定。至于display本身作为单独的表分配存储，还是作为活动记录的一部分，比如置于实参（形式单元）的上端（如图10.17所示），则取决于编译程序的设计者。<br>
+      　　假定将display作为活动记录的一部分，由于每个过程的形式单元数目在编译时是知道的，那么display的相对地址d（相对于活动记录起点）在编译时也是完全确定的。因此，若现行过程中引用了某一外层过程的变量，则很容易生成相应的存取指令。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"把资源按类型排序编号，并要求进程严格按虚申请资源，这种方法摒弃了下述哪一个条件？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.互斥条件",
+        "B.不剥夺条件",
+        "C.部分分配条件",
+        "D.环路等待条件"
+    ],
+    "q_number":212
+}

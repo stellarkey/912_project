@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.4 YACC源程序中语法规则部分的写法</b><br>
+      　　语法规则部分是YACC源程序的核心部分，这一部分定义了要处理的语言的语法及要采用的语义动作。下面介绍语法规则的书写格式。语义动作的写法以及YACC解决二义性和冲突的具体措施。最后介绍错误处理。<br>
+      <b>C.4.1 语法规则的书写格式</b><br>
+      　　每条语法规则包括一个左部和一个右部，左右部之间用冒号'∶'来分隔，规则结尾处要用分号'；'标记，所以一条语法规则的格式如下：<br>
+      　　nonterminal ∶ BODY；<br>
+      　　或<br>
+      　　nonterminal ∶ BODY<br>
+      　　　　　　　　；<br>
+      其中nonterminal是一个非终结符，右部的BODY是一个由终结符和非终结符组成的串，可以为空，请看几个例子：<br>
+      　　stat∶ WHILE bexp DO stat<br>
+      　　　　；<br>
+      　　stat∶ IF bexp THEN stat<br>
+      　　　　；<br>
+      　　stat∶ /* empty */<br>
+      　　　　； <br>
+      上面的第三条语法规则的右部为空，用'/*'和'*/'括起来的部分是注解。<br>
+      　　可以把左部非终结符相同的语法规则集中在一起，规则间用短竖线'|'分隔，最后一条规则之后才用分号，例如 <br>
+      　　stat∶ WHILE bexp DO stat<br>
+      　　　　　| IF bexp THEN stat<br>
+      　　　　　| /* empty */；<br>
+      　　对语法规则部分的书写有几条建议：<br>
+      　　1) 用小写字母串表示非终结符，用大写字母串表示终结符。<br>
+      　　2) 将左部相同的产生式集中在一起，像上例一样。<br>
+      　　3) 各条规则的右部尽量对齐，例如都从第一个tab处开始。<br>
+      　　按这样的风格写Yacc源程序，清晰可读性强而且易修改和检查错误。<br>
+      　　4) 如果产生式(语法规则)需要递归，尽可能使用左递归方式。例如 <br>
+      　　seq ∶ item<br>
+      　　　　| seq ， item<br>
+      　　　　； <br>
+      因为用左递归方式可以使语法分析器尽可能早地进行归约，不致使状态栈溢出。</td>
+  </tr>
+</table>
+</body>
+</html>

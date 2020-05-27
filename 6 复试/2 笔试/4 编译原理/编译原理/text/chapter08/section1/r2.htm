@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　<b>静态语义分析</b>通常包括：<br>
+        　　① 类型检查。验证程序中执行的每个操作是否遵守语言的类型系统的过程.，编译程序必须报告不符合类型系统的信息。<br>
+        　　② 控制流检查。控制流语句必须使控制转移到合法的地方。例如，在C语言中break语句使控制跳离包括该语句的最小while、for或switch语句。如果不存在包括它的这样的语句，则就报错。<br>
+        　　③ 一致性检查。在很多场合要求对象只能被定义一次。例如Pascal语言规定同一标识符在一个分程序中只能被说明一次，同一case语句的标号不能相同，枚举类型的元素不能重复出现等等。<br>
+        　　④ 相关名字检查。有时，同一名字必须出现两次或多次。例如，Ada 语言程序中，循环或程序块可以有一个名字，出现在这些结构的开头和结尾，编译程序必须检查这两个地方用的名字是相同的。<br>
+        　　⑤ 名字的作用域分析 <br> <br>
+        　　所谓<b>中间代码</b>，也称中间语言，是复杂性介于源程序语言和机器语言的一种表示形式。为什么有的编译程序直接生成目标代码，有的编译程序采用中间代码。一般，快速编译程序直接生成目标代码，没有将中间代码翻译成目标代码的额外开销。但是为了使编译程序结构在逻辑上更为简单明确，常采用中间代码，这样可以将与机器相关的某些实现细节置于代码生成阶段仔细处理，并且可以在中间代码一级进行优化工作使得代码优化比较容易实现。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

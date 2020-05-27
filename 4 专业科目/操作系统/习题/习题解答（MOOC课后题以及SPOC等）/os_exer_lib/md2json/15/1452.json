@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "一个进程由阻塞队列进入就绪队列，可能发生了哪种情况（） s5\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "A", "type": "2\r\n", "options": " A一个进程释放一种资源\r\n B.系统新创建了一个进程\r\n C.一个进程从就绪队列进入阻塞队列\r\n D.一个在阻塞队列中的进程被系统取消了\r\n"}

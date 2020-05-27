@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.8 LEX源程序例子</b><br>
+        　　这一节举两个例子看看LEX源程序的写法<br>
+        　　1) 将输入串中所有能被7整除的整数加3，其余部分照原样输出，先看下面的LEX源程序：<br>
+        　　%%<br>
+        　　　int k;<br>
+        　　[0-9]+{<br>
+        　　　scanf(-1，yytext，&quot;%d&quot;，&amp;k);<br>
+        　　　if(k%7==0)<br>
+        　　　　printf(&quot;%d&quot;，k+3);<br>
+        　　　else<br>
+        　　　　printf(&quot;%d&quot;，k);<br>
+        　　　}<br>
+        上面的程序还有不足的地方，如对负整数，只是将其绝对值加上3，而且像X7，4963这样的项也做了修改，现在只要对上面的源程序稍作修改就避免了这些问题。<br>
+        　　%%<br>
+        　　　int k;<br>
+        　　-。[0-9]+{ <br>
+        　　　　　　　scanf(-1，yytext，&quot;%d&quot;，&amp;k);<br>
+        　　　　　　　printf(&quot;%d&quot;，k%7==0。k+3;k);<br>
+        　　　　　　　}<br>
+        　　-。[0-9]+ECHO;<br>
+        　　[A-Za-z][A-Za-z0-9]+ECHO;<br>
+        　　2) 下一个例子统计输入串中各种不同长度的单词的个数，统计结果在数组lengs中，单词定义为由字母组成的串，源程序如下：<br>
+        　　　int lengs[100];<br>
+        　　%%<br>
+        　　[a-z]+lengs[yyleng]++;<br>
+        　　　·　　|<br>
+        　　　＼　　n;<br>
+        　　%%<br>
+        　　yywrap()<br>
+        　　{<br>
+        　　int i;<br>
+        　　printf(&quot;Length No.words ＼。);<br>
+        　　for (i=0;i&lt;100;i++)<br>
+        　　　if (lengs[i]&gt;0)<br>
+        　　　　printf (&quot;%5d%10d＼n&quot;，i，<br>
+        　　　　　lengs[i]);<br>
+        　　return(1);<br>
+        　　}<br>
+        在上面的源程序中，当LEX读入输入串时，它只统计而不输出，到输入串读入完毕后，才在调用yywrap()时输出统计结果，为此用户自己提供了yywrap()，注意yywrap()的最后一个语句是返回值1。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

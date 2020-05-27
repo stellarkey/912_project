@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"以下著名的操作系统中，属于多用户、分时系统的是_____ 。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.DOS系统",
+        "B.Windows NT系统",
+        "C.UNIX系统",
+        "D.OS/2系统"
+    ],
+    "q_number":231
+}

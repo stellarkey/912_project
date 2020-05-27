@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例5.5所对应数组X[ ]的内容如表5.1。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表5.1非终结符能否推出空的表 </font></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr bgcolor="#DAE1BB"> 
+                <td align="center">非终结符</td>
+                <td align="center">S</td>
+                <td align="center">A</td>
+                <td align="center">B</td>
+                <td align="center">C</td>
+                <td align="center">D</td>
+              </tr>
+              <tr> 
+                <td align="center">初值<br>
+                  第一次扫描<br>
+                  第二次扫描</td>
+                <td align="center">未定<br>
+                  <br>
+                  是</td>
+                <td align="center">未定<br>
+                  是<br>
+                  <br>
+                </td>
+                <td align="center">未定<br>
+                  是<br>
+                  <br>
+                </td>
+                <td align="center">未定<br>
+                  <br>
+                  否</td>
+                <td align="center">未定<br>
+                  否<br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　计算能推出ε的非终结符步骤如下：<br>
+      　　① 将数组X[ ]中对应每一非终结符的标记置初值为&quot;未定&quot;。<br>
+      　　② 扫描文法中的产生式。<br>
+      　　(a) 删除所有右部含有终结符的产生式，若这使得以某一非终结符为左部的所有产生式都被删除，则将数组中对应该非终结符的标记值改为&quot;否&quot;，说明该非终结符不能推出ε。<br>
+      　　(b) 若某一非终结符的某一产生式右部为ε，则将数组中对应该非终结符的标志置为&quot;是&quot;，并从文法中删除该非终结符的所有产生式。例中对应非终结符A、B的标志改为&quot;是&quot;。<br>
+      　　③ 扫描产生式右部的每一符号。<br>
+      　　(a) 若所扫描到的非终结符号在数组中对应的标志是&quot;是&quot;，则删去该非终结符，若这使产生式右部为空，则对产生式左部的非终结符在数组中对应的标志改&quot;是&quot;，并删除该非终结符为左部的所有产生式。<br>
+      　　(b) 若所扫描到的非终结符号在数组中对应的标志是&quot;否&quot;，则删去该产生式，若这使产生式左部非终结符的有关产生式都被删去，则把在数组中该非终结符对应的标志改成&quot;否&quot;。<br>
+      　　④ 重复③，直到扫描完一遍文法的产生式，数组中非终结符对应的特征再没有改变为止。<br>
+      　　由②中(a) 、(b)得知例中对应非终结符D的标志改为&quot;否&quot;，对应非终结符A、B的标志改为&quot;是&quot;。<br>
+      　　经过上述②中(a)、(b)两步后文法中的产生式只剩下：S→AB和C→AD ，也就是只剩下右部全是非终结符串的产生式。<br>
+      　　再由③中的(a)步扫描到产生式S→AB时，在数组中A、B对应的标志都为&quot;是&quot;，删去后S的右部变为空，所以S对应标志置为&quot;是&quot;。<br>
+      　　最后由③中的(b)扫描到产生式C→AD时，其中，A对应的标志为&quot;是&quot;，D对应的标志是&quot;否&quot;，删去该产生式后，再无左部为C的产生式，所以C的对应标志改为&quot;否&quot;。 
+      <br>
+      　　请学员自己写一个含有两个以上ε产生式的文法为例，用1中的算法计算能推出ε的非终结符。</td>
+  </tr>
+</table>
+</body>
+</html>

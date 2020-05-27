@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"临界资源是指：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.通过SPOOLING技术提供的虚拟设备资源",
+        "B.只能被特定用户使用，不能共享的资源",
+        "C.可同时被多个进程访问的可共享资源",
+        "D.一次仅允许一个进程访问的可共享资源"
+    ],
+    "q_number":211
+}

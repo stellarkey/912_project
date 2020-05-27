@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　由上面的定理，我们对SG的讨论，可以用较为简单的S<sub>1</sub> ∪ S<sub>2</sub> ∪ 
+      S<sub>3</sub> ∪ …∪ S<sub>n</sub>来代替。为方便起见，也称S<sub>1</sub> ∪ S<sub>2</sub> 
+      ∪ S<sub>3</sub> ∪ …∪ S<sub>n</sub>为G的子句形，即：<br>
+      　　S<sub>G</sub>＝S<sub>1</sub> ∪ S<sub>2</sub> ∪ S<sub>3</sub> ∪ …∪ S<sub>n</sub>。根据以上定理可对一个谓词表达式分而治之，化整为零，大大减少了计算复杂度。 
+      <br>
+      　　<font color="#0000FF">例2－3</font><br>
+      　　对所有的x,y,z来说，如果y是x的父亲，z又是y的父亲，则z是x的祖父。又知每个人都有父亲，试问对某个人来说谁是它的祖父？<br>
+      　　用一阶逻辑表示这个问题，并建立子句集。<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　这里我们首先引入谓词：<br>
+      　　P(x, y) 表示x是y的父亲<br>
+      　　Q(x, y) 表示x是y的祖父<br>
+      　　ANS(x) 表示问题的解答<br>
+      　　于是有：<br>
+      　　对于第一个条件，&quot;如果y是x的父亲，z又是y的父亲，则z是x的祖父&quot;，一阶逻辑表达式如下：<br>
+      　　A<sub>1</sub>：(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)(<img src="../../../img/chap02/icon1.gif" width="19" height="18">z)(P(x, 
+      y)∧P(y, z)→Q(x, z))<br>
+      　　则把A<sub>1</sub>化为合取范式，进而化为Skolem标准形，表示如下：<br>
+      　　S <sub>A<sub>1</sub></sub>：～P(x ,y)∨～P(y, z)∨Q(x, z)<br>
+      　　对于第二个条件：&quot;每个人都有父亲&quot;，一阶逻辑表达式如下：<br>
+      　　A<sub>2</sub>：(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x)P(x, 
+      y)<br>
+      　　化为Skolem标准形，表示如下：<br>
+      　　S <sub>A<sub>2</sub></sub>：P(f(y), x)<br>
+      　　结论：某个人是它的祖父<br>
+      　　B：(<img src="../../../img/chap02/icon2.gif" width="18" height="22">x)(<img src="../../../img/chap02/icon2.gif" width="18" height="22">y)Q(x, 
+      y)<br>
+      　　否定后得到子句：<br>
+      　　S<sub>～B</sub>：～Q(x, y)∨ANS(x)<br>
+      　　则得到的相应的子句集为：{ S <sub>A<sub>1</sub></sub>，S <sub>A<sub>2</sub></sub>，S<sub>～B</sub> 
+      }<br>
+      　　解毕。</td>
+  </tr>
+</table>
+</body>
+</html>

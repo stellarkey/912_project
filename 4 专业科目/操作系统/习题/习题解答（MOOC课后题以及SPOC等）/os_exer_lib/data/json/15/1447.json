@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"临界资源是什么类型的共享资源（） s2\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.临界资源不是共享资源",
+        "B.用户共享资源",
+        "C.互斥共享资源",
+        "D.同时共享资源"
+    ],
+    "q_number":1447
+}

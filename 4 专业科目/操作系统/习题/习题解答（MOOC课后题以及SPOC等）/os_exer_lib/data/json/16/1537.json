@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"在进程控制块数据结构中，必须为进程建立内核栈结构，确保进程可以得到操作系统的可靠服务和管理等支持。",
+    "explain":"在进程控制块数据结构中，必须为进程建立内核栈结构，确保进程可以得到操作系统的可靠服务和管理。\n",
+    "degree_of_difficulty":1,
+    "source":"2016年期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1537
+}

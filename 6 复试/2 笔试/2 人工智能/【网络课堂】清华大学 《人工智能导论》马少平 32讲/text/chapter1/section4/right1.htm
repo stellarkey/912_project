@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><b>1.4 问题的表示</b> </p>
+      <p ><font color="#CC0000">1．旅行商问题</font></p>
+      <p><font color="#000099">旅行商问题是一个经典的人工智能问题。对于5城市的旅行商问题，如果用s表示当前状态，L(s)表示已经走过的城市数，Goto(x)表示走向城市x，则其规则可以表示为：<br>
+        1，IF L(s)=5 THEN Goto(A)<br>
+        2，IF L(s)&lt;5 THEN Goto(B)<br>
+        3，IF L(s)&lt;5 THEN Goto(C)<br>
+        4，IF L(s)&lt;5 THEN Goto(D)<br>
+        5，IF L(s)&lt;5 THEN Goto(E)</font></p>
+      <p>　　一个推销员要到几个城市去办理业务，城市间里程数已知，问题的提法是：从某个城市出发，每个城市只允许访问一次，最后又回到原来的城市，求一条最短距离的路径。<br>
+        　　图1.9表示出五城市旅行商问题的地图，求从A出发经B、C、D、E再回到A的最短路径。<br>
+        　　若每个城市用一个字母表示，则综合数据库可用一个字母组成的表或字符串来表示，如（A）表示初始状态，（A××××A）表示目标状态，（A××）表示访问两个城市后的当前状态。<br>
+        　　规则集相当于一系列决策；（1）下一步走向城市A；（2）下一步走向城市B；……（5）下一步走向城市E。对当前的状态，只要某一条规则作用之后能生成出合法的新状态，那么这一条规则就是可应用规则。例如下一步走向城市A这条规则就不适用于所有城市尚未完全出现的综合数据库。<br>
+        　　图1.10表示出求解该问题时，用图搜索控制方式可能生成的部分搜索树，树枝上的数字是里程增量，由此可计算出整个旅程的距离来。<br>
+      </p>
+      <p align="center" ><img src="../images/F1-3.jpg" width="301" height="195"></p>
+      <p align="center" ><font color="#FF0000">图1.9旅行商问题的地图</font></p>
+      <p align="center" ><img src="../images/1.10.gif" width="389" height="414"></p>
+      <p align="center" ><font color="#FF0000">图1.10五城市旅行商问题的部分搜索树</font></p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"如何从用户方式（用户态）转入特权方式（核心态）？\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.使用特权指令",
+        "B.发生子程序调用",
+        "C.使用共享代码",
+        "D.进行系统调用"
+    ],
+    "q_number":117
+}

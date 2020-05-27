@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那个不是程序并发执行的特性：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.与速度无关性",
+        "B.不可再现性",
+        "C.相互制约性",
+        "D.通信性"
+    ],
+    "q_number":130
+}

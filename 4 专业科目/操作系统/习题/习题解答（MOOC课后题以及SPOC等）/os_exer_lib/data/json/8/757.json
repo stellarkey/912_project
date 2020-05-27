@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"E\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)实时系统的响应时间则是由﹎﹎﹎﹎确定的。\n",
+    "source":"网络",
+    "answer":"E",
+    "type":"single_answer",
+    "options":[
+        "A.时间片大小",
+        "B.用户数目",
+        "C.计算机运行速度",
+        "D.用户所能接受的等待时间",
+        "E.控制对象所能接受的时延"
+    ],
+    "q_number":757
+}

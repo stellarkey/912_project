@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　<font color="#0000FF">归结式的注意事项：</font><br>
+      　　·谓词的一致性，P()与Q()， 不可以归结<br>
+      　　·常量的一致性，P(a, …)与P(b,….)， 不可以归结<br>
+      　　·变量，P(a, ….)与P(x, …)， 可以通过置换归结<br>
+      　　　变量与函数，P(a, x, ….)与P(x, f(x), …)，不可以归结；<br>
+      　　　但P(a, x, …)与P(x, f(y), …)，可以通过对两式分别做{f(y)/x}置换和{a/x}，再归结。<br>
+      　　·不能同时消去两个互补对，形如P∨Q与～P∨～Q得空，是不正确的<br>
+      　　·对子句集中的元素先进行内部简化（置换、合并） <br>
+      　　<font color="#0000FF">例：</font><br>
+      　　设C<sub>1</sub>＝P(y)∨P(f(x))∨Q(g(x))，C<sub>2</sub>＝～P(f(g(a)))∨Q(b)，求C1和C2的归结式。<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　对C<sub>1</sub>，取最一般合一σ＝{f(x)/y}，得C1的因子<br>
+      　　C<sub>1</sub>σ＝P(f(x))∨Q(g(x))<br>
+      　　对C<sub>1</sub>的因子和C<sub>2</sub>进行归结，可得到C1和C2的归结式：Q(g(g(a)))∨Q(b) 
+      <p></p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

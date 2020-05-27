@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"关于进程加载执行的描述正确的是（） s3\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.系统调用exec( )加载新程序取代当前运行进程",
+        "B.系统调用exec( )允许进程“加载”一个完全不同的程序，并从main开始执行",
+        "C.exec调用成功时，它是相同的进程，但是运行了不同的程序",
+        "D.exec调用成功时，代码段、堆栈和堆(heap)等完全重写了"
+    ],
+    "q_number":1430
+}

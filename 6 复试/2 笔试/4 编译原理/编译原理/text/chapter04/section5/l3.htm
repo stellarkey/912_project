@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>自下而上的分析方法</b><br>
+      　　仍使用例4.15中的文法来为输入符号串cabd构造推导或语法树，所采用的是自下而上的方法。<br>
+      　　首先从输入符号串开始。扫描cabd，从中寻找一个子串，该子串与某一产生式的右端相匹配。子串a和子串ab都是合格的，假若我们选用了ab，用产生式(2)的左端A去替代它，即把ab归约到了A，得到了串cAd。构造了一个直接推导cAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cabd，即从cabd叶子开始向上构造语法树，如图4.7的(b)所示。接下去，在得到的串cAd中又找到了子串cAd与产生式(1)的右端相匹配，则用S替代cAd，或称将cAd归约到S，得到了又一直接推导S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cAd，形成了图4.7的(c)所示的语法树，符号串cabd的推导序列为：<br>
+      　　S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cabd。</td>
+  </tr>
+</table>
+</body>
+</html>

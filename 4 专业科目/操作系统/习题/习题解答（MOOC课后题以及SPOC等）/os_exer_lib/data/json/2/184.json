@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"当发生缺页中断时，_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.应淘汰一页",
+        "B.应淘汰多页",
+        "C.应装入一页",
+        "D.将淘汰页写盘"
+    ],
+    "q_number":184
+}

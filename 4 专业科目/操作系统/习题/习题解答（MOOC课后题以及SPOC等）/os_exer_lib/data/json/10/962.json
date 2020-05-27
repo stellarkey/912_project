@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"文件系统的按名存取主要是通过( )实现的。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.存储空间管理",
+        "B.目录管理",
+        "C.文件安全性管理",
+        "D.文件读写管理"
+    ],
+    "q_number":962
+}

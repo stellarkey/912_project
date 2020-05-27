@@ -1,0 +1,355 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　这个建议是1984年公布。1986年作了进一步修订。它用于64kbit/s的A律或μ律PCM到32kbit/s 
+      ADPCM之间的转换,实现了对PCM信道的扩容。<br>
+      　　图3.9是32Kbit/s ADPCM编码器和解码器简化框图。编码器的输入信号是64Kbit/s A律或 μ律PCM编码。首先将其转换为标准PCM编码。从中减去估计值，得到差值信号d(k)。15阶自适应量化器将d(k)量化成4位二进制值I(k)。逆量化器从这4位二进制数中产生量化的差值信号dq(k)。dq(k)和估计信号Sq(k)相加得到重构信号Sr(k)。自适应预测器利用dq(k)和Sr(k)生成输入信号的估计值。<br>
+      　　解码器包括一个与编码器反馈部分相同的结构，还有A律或μ律的转换器，以及同步编码调节器。同步编码器用于防止同步级联编码(ADPCM-PCM-ADPCM)在某些情况下产生累积失真。用试图消除下一个ADPCM编码的量化失真的方式调节PCM输出，以实现同步编码调节。<br>
+      <font color="#003399">　图3.9 G.721简化框图</font> <br>
+      　<img src="../../../../images/chatp/chap03/063.gif"><br>
+      <font color="#003399">　　（1） 自适应量化</font><br>
+      　　在差值信号d(k)被量化之前，需将d(h)标准化，并转换成以2为底的对数。量化器的输入d'(k)为：d'(k)=log2|<img src="../../../../images/chatp/chap03/064.gif" width="37" height="44" align="absmiddle">|= 
+      log2|d(k)| -y(k)<br>
+      　　y(k)=log2|D△(k)|<br>
+      　　D为标准化阶距，y(k)为缩放因子。<br>
+      　　自适应量化器是一个15阶非均匀自适应量化器。它将d'(k) 量化为四位二进制码I(k),其中一位表示符号，三位表示幅度。由于采样率为8KHz,故I(k) 
+      形成了32Kb/s编码输出。表3.8 列出了量化器输入输出特性。<br>
+      <font color="#003399"> 　表3.8 量化器输入输出特性</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">量化器归一化输入<br>
+                    <img src="../../../../images/chatp/chap03/065.gif" width="117" height="27"> 
+                  </div>
+                </td>
+                <td class="text"> 
+                  <div align="center">|I(k)|</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">量化器归一化输出<br>
+                    <img src="../../../../images/chatp/chap03/066.gif" width="121" height="29"> 
+                  </div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[3.12 +∞]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3.32</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[2.72 3.12]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.91</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[2.34 2.72]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">5</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.52</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[1.91 2.34]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.13</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[1.38 1.91]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1.66</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[0.62 1.38]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1.05</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[-0.98 0.62]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.031</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">[-∞ -0.98]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-∞</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　当需要求解逆量化器输出<img src="../../../../images/chatp/chap03/067.gif" width="40" height="25" align="absmiddle">时，先从表3.8的第三列查出 
+      I(k) 所对应的值，设<img src="../../../../images/chatp/chap03/068.gif" width="177" height="29" align="absmiddle"> 
+      , 则<img src="../../../../images/chatp/chap03/069.gif" width="91" height="31" align="absmiddle"> 
+      <br>
+      <font color="#003399">　　（2） 缩放因子y(k) 和速度控制</font><br>
+      　　G. 721中采用抗扰因子自适应算法计算缩放因子，并适当调整适应速度。自适应速度由快速和慢速缩放因子共同控制。阶距抗扰因子自适应算法为：<br>
+      　　△(k) = M [I(k-1)]△<sup>β</sup>(k-1) M[I(k-1)]是个乘子，β是衰减因子。<br>
+      　　两边取对数<br>
+      　　log<sub>2</sub>△(k)=βlog<sub>2</sub> △(k-1) +log<sub>2</sub>M[I (k-1)]<br>
+      　　G. 721中，对于快速控制，可表示成：<br>
+      　　yu (k) = (1-2-5) y (k) +2-5W [ I (k) ]<br>
+      　　其中10.00≥ yu(k)≥1.06 ,则 2.0849&lt;△(k)&lt;1024 <br>
+      　　W(I)的定义如下：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">|I(k)|</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">5</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">W(I)</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">70.13</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">22.19</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">12.38</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7.00</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4.00</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.56</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1.13</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-0.75</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　对于慢速变化信号，缩放因子y<sub>l</sub>(k) 是由 y<sub>u</sub>(k)经低通滤波后得到的：<br>
+      　　　y<sub>l</sub>(k) = (1-2<sup>-6</sup>)y<sub>l</sub>(k-1) + 2<sup>-6</sup>y<sub>u</sub>(k)　 <br>
+      　　快速缩放因子和慢速缩放因子组合成我们所需的缩放因子：<br>
+      　　y(k)=a<sub>l</sub>(k-1) y<sub>u</sub>(k-1) + [1-a<sub>l</sub>(k) yl(k-1)<br>
+      　　式中al(k)是自适应控制参数，取值范围为[0, 1]。当信号为语音时，a<sub>l</sub>(k) 趋近于1，y(k)近似为yu(k-1)。对于平稳信号，a<sub>l</sub>(k) 
+      趋近于0，y(k) 近似于y<sub>l</sub>(k-1)。<br>
+      　　I(k)的平均幅度有两种方法计算：短时平均幅度dms,长时平均幅度dml。<br>
+      　　　d<sub>ms</sub>(k) = (1-2<sup>-5</sup>) d<sub>ms</sub>(k-1) + 2<sup>-5</sup> F[I (k)]<br>
+      　　　d<sub>ml</sub>(k) = (1-2<sup>-5</sup>) d<sub>ml</sub>(k-1) + 2<sup>-7</sup> F[I (k)]<br>
+      　　其中 F[I(k)] 的定义如下：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">|I(k)|</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">5</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">F[I(k)]</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　<br>
+      　　根据d<sub>ms</sub> 和 d<sub>ml</sub>计算中间参数ap(k) <br>
+      　　<img src="../../../../images/chatp/chap03/070.gif"> <br>
+      　　<img src="../../../../images/chatp/chap03/071.gif" width="277" height="61"> 
+      <br>
+      　　可以看出，差值信号较大时，d<sub>ms</sub> 与 d<sub>ml</sub>的差也大，ap(k)趋近于2；反之，ap(k)趋于0。信号较小时 ( y(k)&lt;3 )，ap(k)也趋于2。对ap(k-1) 
+      进行限幅，得到量化器自适应控制参数al(k) <br>
+      　　<img src="../../../../images/chatp/chap03/072.gif" width="169" height="41"> 
+      <br>
+      <font color="#003399">　　（3） 自适应预测</font><br>
+      　　自适应预测器的主要任务是计算估值Se(k)。它是一个六阶零点、二阶极点的预测器，这种结构可以有效地适应输入信号的多样性。Se(k)的计算如下<br>
+      　　<img src="../../../../images/chatp/chap03/073.gif" width="233" height="47"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/074.gif" width="187" height="45"> 
+      <br>
+      　　重构信号定义为：<img src="../../../../images/chatp/chap03/075.gif" width="204" height="24" align="absmiddle"> 
+      <br>
+      　　各组预测系数都用一种简化梯度算法来修正。预测系数的计算如下：<br>
+      　　<img src="../../../../images/chatp/chap03/076.gif" width="381" height="28"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/077.gif" width="326" height="48"><br>
+      　　其中<img src="../../../../images/chatp/chap03/078.gif" width="140" height="24" align="absmiddle"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/079.gif" width="195" height="53"><br>
+      　　<img src="../../../../images/chatp/chap03/080.gif" width="181" height="21"> 
+      <br>
+      　　稳定性约束为：<img src="../../../../images/chatp/chap03/081.gif" width="241" height="27" align="absmiddle"><br>
+      　　如果　t<sub>r</sub> (k)=1，则 a<sub>1</sub>(k)=a<sub>2</sub>(k)=0<br>
+      　　对于六阶预测器：<br>
+      　　b<sub>i</sub>(k)=(1-2<sup>-8</sup>)b<sub>i</sub>(k-1)+2<sup>-7</sup>Sgn[dq(k)]Sgn[dq(k-I)] I=1…6<br>
+      　　如果t<sub>r</sub>(k)=1,那么b<sub>i</sub>(k)=b<sub>2</sub>(k)…=b<sub>6</sub>(k)=0<br>
+      　　与上面类似，Sgn[0]=1,除bq(k-1)=0且I=0,Sgn[dq(k-1)]定义为 0。注意b<sub>i</sub>(k)被限幅在±2范围内。<br>
+      　　一些 Modem 使用移频键控信号(FSK), 由于FSK是能量平稳信号，量化器处于慢速自适应状态。为了改善 FSK 调制解调器所产生信号的性能，定义了一个两级检测过程。首先进行单频信号检测。如果是，控制量化器向快速自适应状态转化， 
+      的赋值如下：<br>
+      　　<img src="../../../../images/chatp/chap03/082.gif" width="199" height="48"><br>
+      　　然后检测是否有窄带信号瞬变，这里依据 a<sub>2</sub>(K) 和 d<sub>q</sub>(K) 的大小；<br>
+      　　<img src="../../../../images/chatp/chap03/083.gif" width="325" height="53"> 
+      <br>
+      　　当t<sub>r</sub>（k）=1，表示发生了频率瞬变，则强制量化器处于快速自适应状态。 <br>
+      <font color="#003399">　　（4）ADPCM 解码器原理</font><br>
+      　　图3.9(b) 是G.721解码器框图。它的大部分框与编码器中相应框的原理相同。附加说明如下：<br>
+      　　输出PCM格式转换：这个框转换重构的PCM信号Sr(K)为所需要的A律或m律信号Sp(K)。<br>
+      　　同步编码调整：用以防止同步转换编码（ADPCM-PCM-ADPCM）中发生误差累积。它具有以下功能：<br>
+      　　·保证传输 32kb/s ADPCM、转接 64k/s PCM 比特流信号不发生错误。<br>
+      　　·保证传输 32kb/s ADPCM、转接 64k/s PCM 比特流不被数字信号处理设备所干扰。<br>
+      　　如果编码器和解码器的初始条件不同，那么在刚开机时，就需要花时间建立同步转接特性。而且，如果这种特性被破坏，或在初始未被建立，它可由200~3400HZ频带内的足够幅度的信号来恢复。<br>
+      　　当编码器和解码器已同步工作时，同步编码调整模块将估计编码器的量化特性。假如编码器和解码器的所有状态变量都有确定的值，并且没有传输错误，对所有的 
+      k 值，强制确定量化器4位输出编码，确保了没有累积失真。<br>
+      　　在进行上述工作之前，先将A律或m律的信号 Sp(k) 转换为 PCM 信号 Sex(k)，并计算差值信号：<br>
+      　　　<img src="../../../../images/chatp/chap03/084.gif" width="137" height="24"><br>
+      　　然后比较量化的差值信号 dx(K) 与 I(K) 是否相同，以此确定解码器的实际输出Sa(k), Sa(k)信号的定义如下：<br>
+      　　<img src="../../../../images/chatp/chap03/085.gif" width="223" height="77"> 
+      <br>
+      　　其中，Sa(k) 为解码器输出的 PCM 码字。<br>
+      　　<img src="../../../../images/chatp/chap03/086.gif" width="40" height="27" align="absmiddle">代表下一个更正的PCM输出电平（当Sa(k)表示正的更大电平时，<img src="../../../../images/chatp/chap03/086.gif" width="40" height="27" align="absmiddle">被限制为Sa(k)的值）。<br>
+      　　<img src="../../../../images/chatp/chap03/087.gif" width="40" height="27" align="absmiddle">代表下一个更负的PCM 
+      输出电平（当Sa(k)表示负的更大电平时，<img src="../../../../images/chatp/chap03/087.gif" width="40" height="27" align="absmiddle">被限制为Sa(k)的值。 
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

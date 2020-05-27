@@ -1,0 +1,78 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　begin(*statement*)<br>
+      　　if sym=ident<br>
+      　　　then<br>
+      　　　　begin<br>
+      　　　　　i∶=position(id);<br>
+      　　　　　if i=0<br>
+      　　　　　　then error(11)<br>
+      　　　　　　else<br>
+      　　　　　　　if table[i].kind&lt;&gt;variable<br>
+      　　　　　　　　then<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　error(12);<br>
+      　　　　　　　　　　i∶=0<br>
+      　　　　　　　　　end;<br>
+      　　　　　　getsym;<br>
+      　　　　　　if sym=becomes<br>
+      　　　　　　　then getsym<br>
+      　　　　　　　else error(13);<br>
+      　　　　　　expression(fsys);<br>
+      　　　　　　if i&lt;&gt;0<br>
+      　　　　　　　then<br>
+      　　　　　　　with table[i] do gen(sto,lev-level,adr)<br>
+      　　　　end<br>
+      　　　else<br>
+      　　　　if sym=readsym<br>
+      　　　　　then<br>
+      　　　　　　begin<br>
+      　　　　　　　getsym;<br>
+      　　　　　　　if sym&lt;&gt;lparen<br>
+      　　　　　　　　then error(34)<br>
+      　　　　　　　　else<br>
+      　　　　　　　　　repeat<br>
+      　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　if sym=ident<br>
+      　　　　　　　　　　then i∶=position(id)<br>
+      　　　　　　　　　　else i∶=0;<br>
+      　　　　　　　　　if i=0<br>
+      　　　　　　　　　　then error(35)<br>
+      　　　　　　　　　　else<br>
+      　　　　　　　　　　　with table[i] do<br>
+      　　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　　gen(opr,0,16);<br>
+      　　　　　　　　　　　　　gen(sto,lev-level,adr)<br>
+      　　　　　　　　　　　　end;<br>
+      　　　　　　　　　getsym<br>
+      　　　　　　　　until sym&lt;&gt;comma;<br>
+      　　　　　　　if sym&lt;&gt;rparen<br>
+      　　　　　　　　then<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　error(33);<br>
+      　　　　　　　　　　while not(sym in fsys) do getsym<br>
+      　　　　　　　　　end<br>
+      　　　　　　　　else getsym<br>
+      　　　　　　end</td>
+  </tr>
+</table>
+</body>
+</html>

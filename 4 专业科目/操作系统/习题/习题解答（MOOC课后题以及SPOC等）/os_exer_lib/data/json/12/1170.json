@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"每一个filed(域，成员变量)在struct(结构)中所占的位数; 也称“位域”，用于表示这个成员变量占多少位(bit)。\n",
+    "question":"对于如下的代码段，请说明”：“后面的数字是什么含义\n```\n/* Gate descriptors for interrupts and traps */\n struct gatedesc {\n    unsigned gd_off_15_0 : 16;        // low 16 bits of offset in segment\n    unsigned gd_ss : 16;            // segment selector\n    unsigned gd_args : 5;            // # args, 0 for interrupt/trap gates\n    unsigned gd_rsv1 : 3;            // reserved(should be zero I guess)\n    unsigned gd_type : 4;            // type(STS_{TG,IG32,TG32})\n    unsigned gd_s : 1;                // must be 0 (system)\n    unsigned gd_dpl : 2;            // descriptor(meaning new) privilege level\n    unsigned gd_p : 1;                // Present\n    unsigned gd_off_31_16 : 16;        // high bits of offset in segment\n };\n ```\n",
+    "source":"网络",
+    "answer":"每一个filed(域，成员变量)在struct(结构)中所占的位数; 也称“位域”，用于表示这个成员变量占多少位(bit)。\n",
+    "type":"question_answer",
+    "q_number":1170
+}

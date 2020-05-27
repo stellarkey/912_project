@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#000099">（3）目标公式含有全称量词量化变量的情况</font><br>
+        　　在这种情况下，目标否定式出现存在量词，因而化简后目标否定式有Skolem函数，我们用下面的例子来说明这种情况下的处理办法。<br>
+        例3：已知For all x， x is the child of p（x）. For all x and y， if x is the child 
+        of y， then y is the parent of x.<br>
+        询问：For any x ， who is the parent of x?<br>
+        事实公式集：<br>
+        （<img src="../images/001.gif" width="11" height="12">x）C（x，p（x））<br>
+        （<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">y）（C（x，y）→P（y，x））<br>
+        目标公式：（<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/002.gif" width="8" height="12">y）P（y，x）<br>
+        基本子句集S为<br>
+        {C（x1，P（x1）），~C（x2，y1）∨P（y1，x2），~P（y2，A）}<br>
+        　　这个例子很简单，得到的修改证明树如图4.14所示，回答语句是P（P（A），A），其中A是化简目标否定式消去存在量词时引进的Skolem函数（常量）。可以证明在回答提取过程中，可以用一个新变量取代目标否定式子句中任一Skolem函数是正确的，这些新变量经过替换过程仍会出现在回答的语句中，下面再举两个例子说明这个替换过程。 
+      </p>
+      <p align="center" ><img src="../images/rl4.14.gif" width="361" height="244"></p>
+      <p align="center" ><font color="#FF0000">图4.14例3的修改证明树</font></p>
+      <p align="center" ><img src="../images/rl4.15.gif" width="374" height="304"></p>
+      <p align="center" ><font color="#FF0000">图4.15 例4反演树和修改证明树</font></p>
+      <p >&nbsp;</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

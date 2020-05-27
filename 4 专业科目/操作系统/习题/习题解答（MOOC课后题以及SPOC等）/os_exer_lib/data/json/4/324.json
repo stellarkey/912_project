@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"Sa、Sb、Sc是已定义信号量，初值分别为1、0、0；x、y、z是公共变量。下面三个并发程序段执行结束后，x=_____ ，y=_____ ，z=_____\n。\n    ```\n\t    prA() {\n\t        P(Sc);\n\t        z=x+y;\n\t        V(Sb);\n\t    }\n\t    prB() {\n\t        P(Sa);\n\t        x=8;\n\t        V(Sb);\n\t        P(Sa);\n\t        x=z-9;\n\t    }\n\t    prC() {\n\t        y=20;\n\t        P(Sb);\n\t        V(Sc);\n\t        P(Sb);\n\t        y=z-y;\n\t        V(Sa);\n\t    }\n\t    ```\n    \n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":324
+}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"从井中取水并放入水缸是一个连续的动作可以视为一个进程，从缸中取水为另一个进程。\n设水井和水缸为临界资源，引入mutex1,mutex2；三个水桶无论从井中取水还是放入水缸中都一次一个，应该给他们一个信号量count，抢不到水桶的进程只好\n为等待，水缸满了时，不可以再放水了。设empty控制入水量，水缸空了时，不可取水设full。\n    ```\n    var mutex1,mutex2,empty,full,count:semaphore;\n    mutex1:=mutex2:=1;\n    empty:=10;\n    full:=0;\n    count:=3;\n    cobegin\n      Procedure Fetch_Water     Procedure Drink_Water\n        begin                     begin\n        while true                  while true\n          p(empty);                   p(full);\n          P(count);                   p(count);\n          P(mutex1);                  p(mutex2);\n            Get Water;                  Get water and\n          v(mutex1);                    Drink water;\n          P(mutex2);                  p(mutex2);\n          pure water into the jar;    v(empty);\n          v(mutex2);                  v(count);\n          v(count);                 end\n          v(full);\n        end\n    coend\n    coend\n    ```\n\n",
+    "question":"某寺庙，有小和尚、老和尚若干．庙内有一水缸，由小和尚提水入缸，供老和尚饮用。水缸可容纳10桶水，每次入水、取水仅为1桶，不可同时进行。水取自同一井中，水井径\n窄，每次只能容纳一个水桶取水。设水桶个数为3个，试用信号灯和PV操作给出老和尚和小和尚的活动。\n",
+    "source":"网络",
+    "answer":"从井中取水并放入水缸是一个连续的动作可以视为一个进程，从缸中取水为另一个进程。\n设水井和水缸为临界资源，引入mutex1,mutex2；三个水桶无论从井中取水还是放入水缸中都一次一个，应该给他们一个信号量count，抢不到水桶的进程只好\n为等待，水缸满了时，不可以再放水了。设empty控制入水量，水缸空了时，不可取水设full。\n    ```\n    var mutex1,mutex2,empty,full,count:semaphore;\n    mutex1:=mutex2:=1;\n    empty:=10;\n    full:=0;\n    count:=3;\n    cobegin\n      Procedure Fetch_Water     Procedure Drink_Water\n        begin                     begin\n        while true                  while true\n          p(empty);                   p(full);\n          P(count);                   p(count);\n          P(mutex1);                  p(mutex2);\n            Get Water;                  Get water and\n          v(mutex1);                    Drink water;\n          P(mutex2);                  p(mutex2);\n          pure water into the jar;    v(empty);\n          v(mutex2);                  v(count);\n          v(count);                 end\n          v(full);\n        end\n    coend\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1059
+}

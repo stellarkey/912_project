@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"Spool 是在一个计算问题开始之前，把计算所需要的程序和数据从输入设备上预输入到______________\n中存放。对于输出的结果，是从______________ 中依次输出。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":527
+}

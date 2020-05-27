@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="FCcontent"> 　　前一章曾讨论过正态分布条件下，两类别问题在各特征统计独立、同方差、且先验概率相等情况下，最小错误率决策可按最小距离决策，即<br>
+            　　<img src="../../images/image_content/3/3_3117.gif" width="226" height="44" align="absmiddle"> 
+            　　　　　(3-50)<br>
+            <br>
+            　　其中<img src="../../images/image_content/3/3_3118.gif" width="18" height="18" align="middle">与<img src="../../images/image_content/3/3_3119.gif" width="19" height="21" align="middle">为各类的均值。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/3/3_3120.gif" width="366" height="371"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　尽管这是在一种很特殊的情况下得到的，但是按距离分类的原理是可以推广的，即把各类别样本特征向量的均值作为各类的代表点，而样本的类别按它到各类别代表点的最小距离划分。在这种判别函数中，决策面是两类别均值连线的垂直平分面。图3.11表示了一个二维特征空间的最小距离分类器。显然这种判别方法只有在各类别密集地分布在其均值附近时才有效。对于图3.12所示情况，若企图再用每类一个均值代表点产生最小距离分类器，就会产生很明显的错误率。在这种情况下，可以将各类别划分成相对密集的子类，每个子类以它们的均值作为代表点，然后按最小距离分类，在图3.12所示情况下可以有比较满意的效果。<br>
+            　　归纳起来，如果对于ω<sub>i</sub>有l<sub>i</sub>个子类，则有l<sub>i</sub>个代表点，或者说把属于ω<sub>i</sub>的决策域R<sub>i</sub>分成l<sub>i</sub>个子域，即<img src="../../images/image_content/3/3_3121.gif" width="166" height="24" align="absmiddle">，对每个子区域R<sub>i</sub>l均值用m<sub>il</sub>表示，并以此作为该子区域的代表点，则判别函数定义为：<br>
+            　　<img src="../../images/image_content/3/3_3122.gif" width="164" height="38" align="absmiddle">　　　　　(3-51)<br>
+            　　相应的判别规则是：<br>
+            　　如果<img src="../../images/image_content/3/3_3123.gif" width="209" height="36" align="absmiddle"> 
+            ，则X∈ω<sub>i</sub> 　　　　　(3-52)<br>
+            　　这种分类器称为分段线性距离分类器。<br>
+            　　显然对样本进行子类的合适划分是分段线性距离分类器性能好坏的一个关键问题。如对图3.13所示的情况按最小距离计算，就会将原来ω<sub>2</sub>类的X决策成ω<sub>1</sub>类，如不对ω<sub>2</sub>类进行子类划分，或采用别的决策就不会取得好的效果。<br></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

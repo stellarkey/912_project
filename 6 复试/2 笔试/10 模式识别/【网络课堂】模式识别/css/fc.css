@@ -1,0 +1,74 @@
+.FCcontent {
+	font-family: "宋体";
+	font-size: 12px;
+	line-height: 26px;
+	color: #000000;
+}
+.FCtitle1 {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #330066;
+	font-weight: normal;
+	font-style: normal;
+
+}
+a:link {
+	text-decoration: none;
+	color: #3366FF;
+}
+a:visited {
+	color: #FF99CC;
+	text-decoration: none;
+}
+a:hover {
+	color: #CC6666;
+}
+.FCtitle2 {
+	font-family: "宋体";
+	font-weight: bold;
+	color: #CC0000;
+}
+a:active {
+	color: #FF0000;
+}
+.FCtitle3 {
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight: bold;
+	color: #000000;
+}
+.chapterName {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #CC3333;
+	font-weight: normal;
+}
+.spe {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #006666;
+	line-height: 26px;
+
+}
+.example {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #996699;
+	line-height: 26px;
+
+}
+.columetitle {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #3399FF;
+}
+.columetitile1 {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #3399CC;
+}
+.questiontitle {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #660033;
+}

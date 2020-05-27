@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　1. 选择可能的状态列表中的第一个状态（并且把它删除出列表）。<br>
+        　　2. 根据各种可能的选择产生新的状态。（如果我们在一条错误路径上，则可能无法产生任何新的状态）。<br>
+        　　3. 把第2步产生的状态序列加入到可能的状态列表中。<br>
+        　　对于深度优先策略，可能的状态列表为一个堆栈。也就是说，第1步总是取出列表中的第一个状态，而第3步总是把新的状态放到列表的前面，即后入先出策略（LIFO，last-in 
+        first-out）。<br>
+        　　相反，如果采用宽度优先策略，可能的状态列表为一个队列，第3步把新产生的状态加入到列表的后面，即先入先出策略（FIFO，first-in 
+        first-out）。
+    </td>
+  </tr>
+</table>
+</body>
+</html>

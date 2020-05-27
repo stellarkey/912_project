@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理。\r\n", "question": "(spoc) 请参考lab3_result的代码，思考如何在lab3_results中实现clock算法，并给出你的概要设计方案，可4人一个小组，说明你的方案中clock算法与LRU算法上相比，潜在的性能差异性。并进一说明LRU算法在lab3实现的可能性评价（给出理由）。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "", "type": "4\r\n", "options": "  \r\n"}

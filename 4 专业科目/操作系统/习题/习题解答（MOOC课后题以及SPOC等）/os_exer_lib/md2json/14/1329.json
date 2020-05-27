@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "请描述ucore OS建立页机制的准备工作包括哪些步骤？ (w4l1)\r\n\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "+ 采分点：说明了ucore OS在让页机制正常工作的主要准备工作", "type": "4\r\n", "options": "  \r\n"}

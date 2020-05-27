@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"实存的存储分配算法用来决定输入的程序和数据放到主存中的位置，采用“总是把程序装入主存中最大的空闲区域”的算法称为_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.最优适应算法",
+        "B.最坏适应算法",
+        "C.最先适应算法",
+        "D.循环最先适应算法"
+    ],
+    "q_number":272
+}

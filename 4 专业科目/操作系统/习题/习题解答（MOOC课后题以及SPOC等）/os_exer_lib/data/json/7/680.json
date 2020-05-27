@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"文件系统中，文件访问控制信息存储的合理位置是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.文件控制块",
+        "B.文件分配表",
+        "C.用户口令表",
+        "D.系统注册表"
+    ],
+    "q_number":680
+}

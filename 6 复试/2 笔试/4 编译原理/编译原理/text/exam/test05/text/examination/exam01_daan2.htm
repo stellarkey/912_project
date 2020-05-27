@@ -1,0 +1,573 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          　　文法<br>
+          　　S→a|<font size="-2">∧</font>|(T) <br>
+          　　T→T,S|S <br>
+          (1) 对(a,(a,a)的最左推导为：<br>
+          　　S<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,S) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(S,S) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,S) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(T)) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(T,S)) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(S,S))<br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(a,S))<br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(a,(a,a)) 
+          <br>
+          　　对(((a,a),<font size="-2">∧</font>,(a)),a) 的最左推导为：<br>
+          　　S<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(T,S)　<br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(S,S) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">((T),S)<br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">((T,S),S) 
+          <br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">((T,S,S),S)<br>
+          　 　<img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">((S,S,S),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((T),S,S),S)<br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((T,S),S,S),S)<br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((S,S),S,S),S)<br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,S),S,S),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),S,S),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),<font size="-2"><font size="-2">∧</font></font>,S),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),<font size="-2">∧</font>,(T)),S)<br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),<font size="-2">∧</font>,(S)),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),<font size="-2">∧</font>,(a)),S) 
+          <br>
+          　　 <img src="symbol01.gif" width="15" height="9"><img src="1x1pixel.gif" width="1" height="16">(((a,a),<font size="-2">∧</font>,(a)),a)<br>
+          (2) 改写文法为： <br>
+          　　0) S→a <br>
+          　　1) S→<font size="-2">∧</font> <br>
+          　　2) S→( T ) <br>
+          　　3) T→S N<br>
+          　　4) N→, S N<br>
+          　　5) N→ε 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRST集</td>
+            <td align="center">FOLLOW集</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">{a,<font size="-2">∧</font>,(}</td>
+            <td align="center">{#,,,)}</td>
+          </tr>
+          <tr> 
+            <td align="center">T</td>
+            <td align="center">{a,<font size="-2">∧</font>,(}</td>
+            <td align="center">{)}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">{,,ε}<font color="#FFFFFF">.</font></td>
+            <td align="center">{)}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+        </table>
+         对左部为N的产生式可知：<br>
+        　　FIRST （→, S N）={，}<br>
+        　　FIRST （→ε）={ε}<br>
+        　　FOLLOW （N）={)} <br>
+        　　由于SELECT(N →, S N)∩SELECT(N →ε) ={，}∩ { )}=<img src="symbol07.gif" width="12" height="11"><br>
+        　　所以文法是LL(1)的。 <br>
+        预测分析表（Predicting Analysis Table）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center"><font size="-2">∧</font></td>
+            <td align="center">(</td>
+            <td align="center">)</td>
+            <td align="center">,</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">→a</td>
+            <td align="center">→<font size="-2">∧</font></td>
+            <td align="center">→(T)</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">T</td>
+            <td align="center">→S N</td>
+            <td align="center">→S N</td>
+            <td align="center">→S N</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+            <td align="center">→, S N</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+        </table>
+        也可由预测分析表中无多重入口判定文法是LL(1)的。<br>
+        (3) 对输入串（a,a）#的分析过程为：<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">栈（STACK）</td>
+            <td align="center">当前输入符（CUR_CHAR）</td>
+            <td align="center">剩余输入符（INOUT_STRING）</td>
+            <td align="center">所用产生式（OPERATION）</td>
+          </tr>
+          <tr> 
+            <td>#S <br>
+              #)T(<br>
+              #)T <br>
+              #)NS <br>
+              #)Na<br>
+              #)N<br>
+              #)NS,<br>
+              #)NS <br>
+              #)Na<br>
+              #)N<br>
+              #)<br>
+              #</td>
+            <td align="center">(<br>
+              (<br>
+              a<br>
+              a<br>
+              a<br>
+              ,<br>
+              ,<br>
+              a<br>
+              a<br>
+              )<br>
+              )<br>
+              #</td>
+            <td align="right" valign="top">a,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              ,a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              a)#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              )#<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              #<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+            </td>
+            <td align="center" valign="top"><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+              S→(T)<br>
+              <font color="#FFFFFF">.</font><br>
+              T→SN<br>
+              S→a<br>
+              <font color="#FFFFFF">.</font><br>
+              N→,SN<br>
+              <font color="#FFFFFF">.</font><br>
+              S→a<br>
+              <font color="#FFFFFF">.</font><br>
+              N→ε</td>
+          </tr>
+        </table>
+        可见输入串（a,a）#是文法的句子。<br>
+        <br>
+        <b>
+        问答第2题</b><br>
+        　　文法：<br>
+        　　S→MH|a<br>
+        　　H→LSo|ε <br>
+        　　K→dML|ε<br>
+        　　L→eHf<br>
+        　　M→K|bLM <br>
+        　　展开为：<br>
+        　　0） S→M H<br>
+        　　1） S→a<br>
+        　　2） H→L S o <br>
+        　　3） H→ε <br>
+        　　4） K→d M L <br>
+        　　5） K→ε<br>
+        　　6） L→e H f <br>
+        　　7） M→K <br>
+        　　8） M→b L M <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRST集</td>
+            <td align="center">FOLLOW集</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">{a,d,b,ε,e}</td>
+            <td align="center">{#,o}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">M</td>
+            <td align="center">{d,ε,b}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{e,#,o}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">H</td>
+            <td align="center">{ε,e}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{#,f,o}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">L</td>
+            <td align="center">{e}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{a,d,b,e,o,#}</td>
+          </tr>
+          <tr>
+            <td align="center">K</td>
+            <td align="center">{d,ε}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{e,#,o}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+        </table>
+        对相同左部的产生式可知： <br>
+        SELECT(S→M H)∩SELECT(S→a) ={ d,b ,e，#,o }∩ { a }=<img src="symbol07.gif" width="12" height="11"><br>
+        SELECT(H→L S o)∩SELECT(H→ε) ={ e }∩ { #,f,o }=<img src="symbol07.gif" width="12" height="11"><br>
+        SELECT(K→d M L)∩SELECT(K→ε) ={ d }∩ { e,#,o }=<img src="symbol07.gif" width="12" height="11"><br>
+        SELECT(M→K)∩SELECT(M→b L M) ={ d，e,#,o }∩ { b }=<img src="symbol07.gif" width="12" height="11"><br>
+        所以文法是LL(1)的。<br>
+        预测分析表（Predicting Analysis Table）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center">o</td>
+            <td align="center">d</td>
+            <td align="center">e</td>
+            <td align="center">f</td>
+            <td align="center">b</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">→a</td>
+            <td align="center">→MH</td>
+            <td align="center">→MH</td>
+            <td align="center">→MH</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→MH</td>
+            <td align="center">→MH</td>
+          </tr>
+          <tr> 
+            <td align="center">M</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→K</td>
+            <td align="center">→K</td>
+            <td align="center">→K</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→bLM</td>
+            <td align="center">→K</td>
+          </tr>
+          <tr> 
+            <td align="center">H</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→LSo</td>
+            <td align="center">→ε</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+          </tr>
+          <tr> 
+            <td align="center">L</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→eHf</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">K</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+            <td align="center">→dML</td>
+            <td align="center">→ε</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+          </tr>
+        </table>
+        由预测分析表中无多重入口也可判定文法是LL(1)的。<br>
+        <br>
+        <b>问答第3题</b><br>
+        （1） 文法： <br>
+        　　A→aABe|a <br>
+        　　B→Bb|d <br>
+        提取左公共因子和消除左递归后文法变为：<br>
+        　　0) A→a N<br>
+        　　1) N→A B e 　<br>
+        　　2) N→ε <br>
+        　　3) B→d N1<br>
+        　　4) N1→b N1<br>
+        　　5) N1→ε<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRST集</td>
+            <td align="center">FOLLOW集</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">{a}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{#,d}</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">{d}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{e}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">{a,ε}</td>
+            <td align="center">{#,d}</td>
+          </tr>
+          <tr> 
+            <td align="center">N1</td>
+            <td align="center">{b,ε}</td>
+            <td align="center">{e}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+          </tr>
+        </table>
+        对相同左部的产生式可知： <br>
+        SELECT(N→A B e)∩SELECT(N→ε) ={ a }∩ {#,d }=<img src="symbol07.gif" width="12" height="11"><br>
+        SELECT(N1→b N1)∩SELECT(N1→ε) ={ b }∩ { e }=<img src="symbol07.gif" width="12" height="11"><br>
+        所以文法是LL(1)的。<br>
+        预测分析表（Predicting Analysis Table）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center">e</td>
+            <td align="center">b</td>
+            <td align="center">d</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">→a N</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→d N1</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">N1</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+            <td align="center">→b N1</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">→ABe</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+            <td align="center">→ε</td>
+          </tr>
+        </table>
+        也可由预测分析表中无多重入口判定文法是LL(1)的。 <br>
+        （2）文法：<br>
+        　　S→Aa|b <br>
+        　　A→SB<br>
+        　　B→ab<br>
+        　　第1种改写：<br>
+        　　用A的产生式右部代替S的产生式右部的A得： <br>
+        　　S→SBa|b<br>
+        　　B→ab<br>
+        　　消除左递归后文法变为： <br>
+        　　0) S→b N<br>
+        　　1) N→B a N<br>
+        　　2) N→ε<br>
+        　　3) B→a b <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRST集</td>
+            <td align="center">FOLLOW集</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">{b}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{#}</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">{a}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{a}</td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">{ε,a}</td>
+            <td align="center">{#}</td>
+          </tr>
+        </table>
+        对相同左部的产生式可知： <br>
+        SELECT(N→B a N)∩SELECT(N→ε) ={ a }∩ {# }=<img src="symbol07.gif" width="12" height="11"><br>
+        所以文法是LL(1)的。<br>
+        预测分析表（Predicting Analysis Table）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center">b</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→b N</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">→a b</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">→B a N</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε</td>
+          </tr>
+        </table>
+        也可由预测分析表中无多重入口判定文法是LL(1)的。 <br>
+        　　第2种改写：<br>
+        　　用S的产生式右部代替A的产生式右部的S得： <br>
+        　　S→Aa|b<br>
+        　　A→AaB|bB<br>
+        　　B→ab <br>
+        　　消除左递归后文法变为： <br>
+        　　0) S→A a <br>
+        　　1) S→b <br>
+        　　2) A→b B N<br>
+        　　3) N→a B N<br>
+        　　4) N→ε <br>
+        　　5) B→a b<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">非终结符</td>
+            <td align="center">FIRST集</td>
+            <td align="center">FOLLOW集</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">{b}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{#}</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">{b}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{a}</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">{a}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+            <td align="center">{a}</td>
+          </tr>
+          <tr>
+            <td align="center">N</td>
+            <td align="center">{a,ε}</td>
+            <td align="center">{a}</td>
+          </tr>
+        </table>
+        对相同左部的产生式可知：<br>
+        SELECT(S→A a)∩SELECT(S→b) ={ b }∩ { b }={ b }≠<img src="symbol07.gif" width="12" height="11"><br>
+        SELECT(N→a B N)∩SELECT(N→ε) ={ a }∩ { a }={ a }≠<img src="symbol07.gif" width="12" height="11"><br>
+        所以文法不是LL(1)的。<br>
+        预测分析表（Predicting Analysis Table）<br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">a</td>
+            <td align="center">b</td>
+            <td align="center">#</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→A a<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font></td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→b<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font></td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">→b B N</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">→a b<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font></td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td align="center">N</td>
+            <td align="center">→a B N</td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+          <tr>
+            <td align="center">&nbsp;</td>
+            <td align="center">→ε<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font></td>
+            <td align="center">&nbsp;</td>
+            <td align="center">&nbsp;</td>
+          </tr>
+        </table>
+        也可由预测分析表中含有多重入口判定文法不是LL(1)的。<br>
+        <!--czp-wenda-daan-->
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

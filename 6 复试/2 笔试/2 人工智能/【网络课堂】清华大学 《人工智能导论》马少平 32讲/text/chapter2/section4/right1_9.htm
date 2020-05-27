@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="15" topmargin="10" marginwidth="15" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p >　　<font color="#000099">由推论2.1我们知道，OPEN表上任一具有f(n) &lt; f*(s)的节点n定会被扩展。所以，NEST中的节点，不管先扩展，还是后扩展，在A*结束前总归要被扩展，如果我们改变一下他们的扩展顺序，不会影响到算法扩展节点的个数。我们知道，如果h是单调的，就可以避免重复节点扩展问题。而如果h≡0的话，由于任何两个节点间的耗散值是大于0的，因此对于任何节点ni和nj，其中nj是ni的后继节点，有h(ni) 
+        - h(nj) = 0 - 0 &lt; C(ni, nj)，且h(t)＝0（t是目标节点），所以恒等于0的h是单调的。因此，如果对于NEST中的节点，我们令其h值为0的话，至少在它们之间不会引起重复扩展节点问题。由以上分析，如果我们这样改变算法，对于在NEST中出现的节点，我们令其h值为0，按照f(n)=g(n)进行扩展的话，既可以避免重复扩展节点问题，又不会增加扩展节点的个数，而且也没有增加什么计算工作量，是对A*算法一种很好的改进。当然这种改进并不是彻底的，它只是可能减少重复扩展节点问题，并不能保证完全避免，最坏情况下，与A*完全一样，在避免重复扩展节点这一点上没有任何改进。<br>
+        　　那么，由于在问题得到解决之前，f*(s)的值是未知的，如何得到NEST呢？我们可以用一种近似的方法，来得到一个NEST的子集。由推论3.1我们知道，A*选作扩展的任一节点，定有f(n)≤f*(s)，所以我们可以用到目前为止扩展过的节点中，最大的f值作为f*(s)的近似值，记做fm。fm是动态改变的，随着搜索的进行，越来越接近f*(s)值。这样，在实际使用时，不是直接用f*(s)对OPEN表进行划分，而是用fm对OPEN进行划分，从而得到NEST的子集。这样得到的NEST的子集，我们仍然称其为NEST。<br>
+        　　在算法中，由于要优先扩展NEST中的节点，由于NEST中存放的都是f值小于fm的节点，所以当NEST不空时，不会发生更新fm的情况，只有当NEST为空时，这时从OPEN表中取出节点进行扩展，而该节点的f值定会大于等于fm，所以，每次从OPEN表中取出节点进行扩展时，都要更新fm值。这里并不需要进行判断是否相等，因为如果相等的话，就相当于没有更新。</font></p>
+      <p>修正过程A<br>
+        ①OPEN：＝（s），f(s)=g(s)+h(s)=h(s)，fm:=0；<br>
+        ②LOOP： IF OPEN＝（ ）THEN EXIT（FAIL）；<br>
+        ③NEST：＝{ni∣f(ni)＜fm}；NEST给出OPEN中满足f＜fm的节点集合。<br>
+        IF NEST≠（ ）THEN n:＝n(min gi)<br>
+        ELSE n:＝FIRST（OPEN），fm:=f(n)；NEST不空时，取其中g最小者作为当前节点，否则取OPEN的第一个当前节点。<br>
+        ④－⑧同过程A<br>
+        现在看一下用修正A*搜索图2.12的情况： </p>
+      <p align="center"><img src="../images/026.gif" width="387" height="124"> 
+      </p>
+      <p>由OPEN表和CLOSED表中的状态看出，修正后的算法减少了重复扩展的次数。一般情况下，它比A*算法扩展节点的次数要少或相等。 </p>
+      
+      </td>
+  </tr>
+</table>
+</body>
+</html>

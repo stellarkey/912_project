@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+        定义4.6</b><br>
+        　　文法G所产生的<b>语言</b>定义为集合{x|S <img src="../../../img/chap04/symbol04.gif" width="15" height="15"> 
+        <img src="../../../img/index/1x1pixel.gif" width="1" height="16">x，其中S为文法识别符号，且x∈<i>V<sub><font size="-2">T</font></sub></i><sup><font size="-2">*</font></sup>}。可用L(G)表示该集合。<br>
+        　　从定义4.6看出两点：第一，符号串x可从识别符号推出，也即x是句型。第二，x仅由终结符号组成，即x是文法G的句子。也就是说，文法描述的语言是该文法一切句子的集合。<br>
+        　　考虑例4.1的文法G，有两条产生式(规则)：(1)S→0S1和(2)S→01，通过对第一个产生式使用n-1次，然后使用第2个产生式一次，得到：<br>
+        　　S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">0S1<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">00S11<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">…<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">0<sup><font size="-2">n-1</font></sup>S 
+        1<sup><font size="-2">n-1</font></sup><img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">0<sup><font size="-2">n</font></sup>1<sup><font size="-2">n</font></sup><br>
+        是不是L(G)中的元素仅是这样的串(0<sup><font size="-2">n</font></sup>1<sup><font size="-2">n</font></sup>)?是的，这可以由下面的讨论证明。在使用了第二个产生式后，发现句型中S的个数减少了一个。每次使用第一个产生式之后，S的左端多一个0，右端多一个1，S的个数不变。因此，使用了 
+        S→01之后，就再也没有S留在结果串中了。由于两个产生式都是以S为左端，所以为生成句子，仅能按下列次序使用产生式：即使用第一个产生式若干次，然后使用第二个产生式。因此L(G)={0<sup><font size="-2">n</font></sup>1<sup><font size="-2">n</font></sup> 
+        | n≥1}。<br>
+        　　例4.2的文法G的句子是字母字符打头的、字母字符和数字字符构成的串。这就是程序设计语言中用于表示名字的标识符。<br>
+        <b><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+        定义4.7</b><br>
+        　　若L(G1)=L(G2)，则称<b>文法</b>G1和G2是<b>等价</b>的。<br>
+        　　也就是说，如果两个文法定义的语言一样，则称这两个文法是等价的。<br>
+        　　例如文法G[A]：<br>
+        　　A→0R<br>
+        　　A→01<br>
+        　　R→A1<br>
+        　　和例4.1的文法等价。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

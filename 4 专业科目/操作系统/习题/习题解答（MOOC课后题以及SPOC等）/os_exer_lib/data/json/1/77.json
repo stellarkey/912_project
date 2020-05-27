@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"所谓请调策略指的是，在分页系统中，当发现用户程序所访问的页面不在主存时，由系统负责从辅存调入请求的页面。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":77
+}

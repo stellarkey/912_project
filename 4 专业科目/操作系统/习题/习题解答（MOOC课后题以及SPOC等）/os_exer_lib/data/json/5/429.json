@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        ""
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX/XENIX中将使用文件的人分为______ ，________ ，________ 三个等级。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":429
+}

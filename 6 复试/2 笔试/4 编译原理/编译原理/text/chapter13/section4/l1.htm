@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>13.4 编译程序的构造工具 </b><br>
+      　　70年代随着诸多种类的高级程序设计语言的出现和软件开发自动化技术的提高，编译程序的构造工具陆续诞生，如70年代Bell实验室推出的LEX、YACC至今甚为流行，在各种语言编译程序的实现中得到广泛应用。然而，这些早期的工具大都是用于开发编译程序的前端，即词法分析程序和语法分析程序，而对于编译程序的后端，即与目标机有关的代码生成和代码优化部分由于对语义和目标机形式化描述方面所存在的困难，虽有不少生成工具被研制，但还没有广泛应用。本节只简单介绍一种语法分析程序的自动生成工具即基于LALR(1)文法的自底向上分析程序的生成工具YACC和词法分析器的自动生成工具LEX。<br>
+      <b>13.4.1 基于LALR(1)的语法分析程序的生成器YACC<br>
+      </b>　　YACC(Yet Another Compiler-Compiler)是1975年由Johnson开发的一个用于语法分析器的生成器，它接受一个用BNF描述的上下文无关语言的语法规则，且语法满足LALR(1)文法的要求。它将自动生成相应语法的LALR(1)分析表，与它的驱动程序和分析栈结合构成一个LALR(1)分析器称yyparse。它与词法分析程序的接口称为yylex。其词法分析程序不管是手工编写还是自动生成工具构造，只要程序名为yylex即可与YACC配合工作，即由YACC生成的语法分析器需要单词符号(终结符)时调用yylex，其单词的属性值和自身值的存放，也有相应约定。其工作示意图如图13.13所示。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

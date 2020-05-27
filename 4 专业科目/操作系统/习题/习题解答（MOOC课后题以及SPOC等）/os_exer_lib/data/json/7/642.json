@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"公交车问题(2002)\n在一辆公共汽车上，司机和售票员各行其职，司机负责开车和到站停车；售票员负责售票和开、关门，当售票员关好车门后，司机才能继续开车行驶。试用P、V操作实现司机与\n售票员之间的同步。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":642
+}

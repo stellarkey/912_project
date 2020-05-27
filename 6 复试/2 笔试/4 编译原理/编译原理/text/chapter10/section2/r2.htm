@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td height="113"> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center" width="50">&nbsp;</td>
+          <td><font color="#0000FF">　　图 10.7过程定义不嵌套的程序结构</font></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+          <td>　　program main; 　 //主程序头<br>
+            　　全局变量或数组的说明；<br>
+            　　proc R; 　　　　 //过程R的头<br>
+            　　…　　　　　　　 //过程R的体<br>
+            　　end (R);　　　　 //过程R的尾<br>
+            　　proc Q;　　　 　 //过程Q的头<br>
+            　　… 　　　　 　　 //过程Q的体<br>
+            　　end (Q);　　　　 //过程Q的尾<br>
+            　　主程序执行语句　 //主程序体<br>
+            　　end.(main)　　　 //主程序尾</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><img src="../../../img/index/1x1pixel.gif" width="1" height="10"></td>
+        </tr>
+      </table>
+      　　这种情况下，采用栈式动态分配策略，即，运行时，每当进入一个过程，则为该过程分配一段存储区，当一个过程工作完毕返回时，它所占用的存储区可释放。程序运行时的存储空间(栈)中在某一时刻可能会包含某个过程的几个活动记录（某个过程递归调用的情况）；另外，同样的一个存储位置，在不同运行时刻可能分配给不同的数据对象。例如图10.7的程序结构中，若主程序调用了过程Q，Q又调用了R，在R进入运行后的存储结构如图10.8（a）所示。若主程序调用了过程Q，Q递归调用自己，在Q过程第二次进入运行后的存储结构如图10.8（b）所示。若主程序先调用过程Q，然后主程序接着调用R，且Q过程不调用Q和R，这时Q和R进入运行后的存储结构，先后分别如图10.8（c）和10.8（d）所示。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.8栈式存储分配</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_8.gif" width="420" height="145"> 
+          </td>
+        </tr>
+      </table>
+      　　常常使用两个指针指示栈最顶端的数据区，一个称为SP，一个称为TOP。SP总是指向现行过程活动记录的起点，TOP则始终指向已占用的栈顶单元。</td>
+  </tr>
+</table>
+</body>
+</html>

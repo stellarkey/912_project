@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"能使平均周转时间最小的作业调度算法是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.计算时间短的作业优先算法",
+        "B.响应比最高者优先算法",
+        "C.优先数调度算法",
+        "D.均衡调度算法"
+    ],
+    "q_number":279
+}

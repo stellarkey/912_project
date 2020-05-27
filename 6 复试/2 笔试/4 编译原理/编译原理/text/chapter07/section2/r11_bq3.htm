@@ -1,0 +1,183 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 对输入串abbcde#的分析过程 </font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" width="8%">步骤</td>
+                <td align="center" valign="top" width="15%">状态栈</td>
+                <td align="center" valign="top" width="19%">符号栈</td>
+                <td align="center" valign="top" width="24%">剩余输入串</td>
+                <td align="center" valign="top" width="20%">ACTION</td>
+                <td align="center" valign="top" width="14%">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="8%">1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                </td>
+                <td width="15%" valign="top"> 
+                  <p>0<br>
+                    02<br>
+                    024<br>
+                    023<br>
+                    0236<br>
+                    023<br>
+                    0235<br>
+                    02358<br>
+                    02357<br>
+                    023579<br>
+                    01 </p>
+                </td>
+                <td width="19%" valign="top">#<br>
+                  #a<br>
+                  #ab<br>
+                  #aA<br>
+                  #aAb<br>
+                  #aA<br>
+                  #aAc<br>
+                  #aAcd<br>
+                  #aAcB<br>
+                  #aAcBe<br>
+                  #S </td>
+                <td align="right" valign="top" width="24%">abbcde#<br>
+                  bbcde#<br>
+                  bcde#<br>
+                  bcde#<br>
+                  cde#<br>
+                  cde#<br>
+                  de#<br>
+                  e#<br>
+                  e#<br>
+                  #<br>
+                  #<br>
+                </td>
+                <td align="center" valign="top" width="20%">s2<br>
+                  s4<br>
+                  r2<br>
+                  s6<br>
+                  r3<br>
+                  s5<br>
+                  s8<br>
+                  r4<br>
+                  s9<br>
+                  r1<br>
+                  acc</td>
+                <td align="center" valign="top" width="14%"><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  3<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  3<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  7<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  1</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　说明abbcde#是例6.1 文法 G[S]的句子 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">对输入串abbce#的分析过程</font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" width="10%">步骤</td>
+                <td align="center" valign="top" width="16%">状态栈</td>
+                <td align="center" valign="top" width="20%">符号栈</td>
+                <td align="center" valign="top" width="26%">剩余输入串</td>
+                <td align="center" valign="top" width="18%">ACTION</td>
+                <td align="center" valign="top" width="10%">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                </td>
+                <td width="16%" valign="top"> 
+                  <p>0<br>
+                    02<br>
+                    024<br>
+                    023<br>
+                    0236<br>
+                    023<br>
+                    0235</p>
+                </td>
+                <td width="20%" valign="top">#<br>
+                  #a<br>
+                  #ab<br>
+                  #aA<br>
+                  #aAb<br>
+                  #aA<br>
+                  #aAc</td>
+                <td align="right" valign="top" width="26%">abbce#<br>
+                  bbce#<br>
+                  bce#<br>
+                  bce#<br>
+                  ce#<br>
+                  ce#<br>
+                  e#</td>
+                <td align="center" valign="top" width="18%">s2<br>
+                  s4<br>
+                  r2<br>
+                  s6<br>
+                  r3<br>
+                  s5<br>
+                  出错</td>
+                <td align="center" valign="top" width="10%"><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  3<br>
+                  <font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  3<br>
+                  <br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　说明abbce#不是例6.1 文法 G[S]的句子</td>
+  </tr>
+</table>
+</body>
+</html>

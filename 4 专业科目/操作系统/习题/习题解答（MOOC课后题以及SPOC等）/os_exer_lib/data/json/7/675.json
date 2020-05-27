@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"某计算机系统中有8台打印机，有K个进程竞争使用，每个进程最多需要3台打印机。该系统可能会发生死锁的K的最小值是（）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.2",
+        "B.3",
+        "C.4",
+        "D.5"
+    ],
+    "q_number":675
+}

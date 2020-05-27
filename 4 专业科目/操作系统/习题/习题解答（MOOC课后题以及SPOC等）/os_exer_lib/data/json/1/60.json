@@ -1,0 +1,17 @@
+{
+    "status":"error",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在请求页式存储管理中，页面淘汰所花费的时间不属于系统开销。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":60
+}

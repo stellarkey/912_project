@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          解答：代码生成器的设计要着重考虑目标代码的质量问题，而衡量目标代码的质量主要从占用空间和执行效率两个方面综合考虑。<br>
+          <br>
+          <b>问答第2题</b><br>
+          解答：决定目标代码的因素主要取决于具体的机器结构、指令格式、字长及寄存器的个数和种类，并与指令的语义和所用操作系统、存储管理等都密切相关。又由于目标代码的执行效率在很大程度上依赖于寄存器的使用，所以目标代码与寄存器的分配算法也有关。<br>
+          <br>
+          <b>问答第3题</b><br>
+          解答：因为当变量值存在寄存器时，引用的变量值可直接从寄存器中取，减少对内存的存取次数，这样便可提高运行速度。因此如何充分利用寄存器是提高目标代码运行效率的重要途径。<br>
+          <br>
+          <b>问答第4题</b><br>
+          解答：寄存器分配的原则是：<br>
+          　　(1) 当生成某变量的目标代码时，尽量让变量的值或计算结果保留在寄存器中，直到寄存器不够分配时为止。<br>
+          　　(2) 当到基本块出口时，将变量的值存放在内存中，因为一个基本块可能有多个后继结点或多个前驱结点，同一个变量名在不同前驱结点的基本块内出口前存放的R可能不同，或没有定值，所以应在出口前把寄存器的内容放在内存中，这样从基本块外入口的变量值都在内存中。<br>
+          　　(3) 对于在一个基本块内后边不再被引用的变量所占用的寄存器应尽早释放，以提高寄存器的利用效率。 对基本块的划分可按基本块的划分算法(见11.2.1)在生成四元式的目标代码时进行，以区分基本块的入口和出口。<br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

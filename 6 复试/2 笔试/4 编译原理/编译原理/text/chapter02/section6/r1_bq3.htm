@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　PL/0编译程序采用对语法分析程序入口和出口处都调用测试程序检查当前单词符号进入和退出该语法单位的合法性，可用下图形象地描述。<br>
+      　　<img src="../../../img/chap02/2_1_23.gif" width="308" height="47"> <br>
+      　　在进入某个语法单位时，调用TEST,检查当前符号是否属于该语法单位的开始符号集合。若不属于，则滤去开始符号和后继符号集合外的所有符号。<br>
+      　　在语法单位分析结束时，调用TEST,检查当前符号是否属于调用该语法单位时应有的后继符号集合。若不属于，则滤去后继符号和开始符号集合外的所有符号。<br>
+      　　TEST测试过程有三个参数，它们的含意是：<br>
+      　　① S1：当语法分析进入或退出某一语法单元时当前单词符号应属于的集合，它可能是一个语法单元开始符号的集合或后继符号的集合。<br>
+      　　② S2：在某一出错状态时，可恢复语法分析继续正常工作的补充单词符号集合。因为当语法分析出错时，即当前单词符号不在S1集合中，为了继续编译，需跳过后边输入的一些单词符号，直到当前输入的单词符号是属于S1或S2集合的元素。<br>
+      　　③ n:整型数，出错信息编号。 为了进一步明确S1，S2集合的含意，现以因子(FACTOR)的语法分析程序为例，在过程FACTOR的入口处调用了一次TEST过程，它的实参S1是因子开始符号的集合(文本中的FACBEGSYS)。S2是每个过程的形参FSYS调用时实参的传递值。当编译程序第一次调用BLOCK时，FSYS实参为[·]与说明开始符和语句开始符集合的和。以后随着调用语法分析程序层次的深入逐步增加。如调用语句时增加了[；]和[endsym],在表达式语法分析中调用项时又增加了[+]和[-]，而在项中调用因子时又增加了[*]和[/]，这样在进入因子分析程序时即使当前符号不是因子开始符，出错后只要跳过一定的符号，遇到当时输入的单词符号在FSYS中或在因子开始符号集合中，均可继续正常进行语法分析。而在因子过程的出口处也调用了测试程序，不过这时S1和S2实参恰恰相反。说明当时的FSYS集合的单词符号都是因子正常出口时允许的单词符号，而因子的开始符号为可恢复正常语法分析的补充单词符号。</td>
+  </tr>
+</table>
+</body>
+</html>

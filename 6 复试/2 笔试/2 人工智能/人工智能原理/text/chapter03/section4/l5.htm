@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFDE5" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p> <b>3.4.3 推理计算</b><br>
+        1）&quot;与&quot;的计算： <br>
+        　f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">1</font></sub>∧A<sub><font size="-2">2</font></sub>) 
+        = min { f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">1</font></sub>), 
+        f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">2</font></sub>)}<br>
+        2）&quot;或&quot;的计算：<br>
+        　f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">1</font></sub>∨A<sub><font size="-2">2</font></sub>) 
+        = max { f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">1</font></sub>), 
+        f<sub><font size="-2">1</font></sub> (A<sub><font size="-2">2</font></sub>)}<br>
+        3）&quot;非&quot;的计算：<br>
+        　CF(～A ) = －CF(A ) <br>
+        4）由f<sub><font size="-2">1</font></sub> (A)， A → B， (c<sub><font size="-2">1</font></sub>, 
+        c<sub><font size="-2">2</font></sub>, …, c<sub><font size="-2">k</font></sub>)。求f<sub><font size="-2">1</font></sub> 
+        (B)<br>
+        　m({b<sub><font size="-2">1</font></sub>}, {b<sub><font size="-2">2</font></sub>}, 
+        …,{b<sub><font size="-2">k</font></sub>}) ==(f<sub><font size="-2">1</font></sub> 
+        (A)c<sub><font size="-2">1</font></sub>, f<sub><font size="-2">1</font></sub> 
+        (A)c<sub><font size="-2">2</font></sub>, …, f<sub><font size="-2">1</font></sub> 
+        (A)c<sub><font size="-2">k</font></sub>)<br>
+        　m (U) = 1-∑f<sub><font size="-2">1</font></sub> (A)c<sub><font size="-2">i</font></sub>, 
+        i = 1, …, k<br>
+        5）证据的组合，m<sub><font size="-2">1</font></sub>, m<sub><font size="-2">2</font></sub>在U上的合成<br>
+        　对于同样的证据，由于来源不同，分别得到二个概率分配函数m<sub><font size="-2">1</font></sub>, m<sub><font size="-2">2</font></sub>。<br>
+        　定义：m = m<sub><font size="-2">1</font></sub>⊙ m<sub><font size="-2">2</font></sub><br>
+        　规定：<br>
+        　m(Φ) = 0;<br>
+        　m(A) = K∑m<sub><font size="-2">1</font></sub>(X)m<sub><font size="-2">2</font></sub>(Y), 
+        当X∩Y = A<br>
+        　其中K<sup><font size="-2">-1</font></sup> = 1 - ∑m<sub><font size="-2">1</font></sub>(X)m<sub><font size="-2">2</font></sub>(Y), 
+        当X∩Y =Φ<br>
+        　　　　　= ∑m<sub><font size="-2">1</font></sub>(X)m<sub><font size="-2">2</font></sub>(Y), 
+        当X∩Y ≠Φ<br>
+        　　　且K<sup><font size="-2">-1</font></sup> ≠ 0， <br>
+        　若K<sup><font size="-2">-1</font></sup> = 0， 认为m<sub><font size="-2">1</font></sub>, 
+        m<sub><font size="-2">2</font></sub>矛盾。没有联合基本概率分配函数。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

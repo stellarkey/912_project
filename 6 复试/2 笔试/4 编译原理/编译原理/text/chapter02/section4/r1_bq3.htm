@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　<font color="#0000FF">表达式的EBNF</font><br>
+      　　〈表达式〉∷=[+|-]〈项〉{（+|-）〈项〉}<br>
+      　　〈项〉∷=〈因子〉{（*|/）〈因子〉}<br>
+      　　〈因子〉∷=〈标识符〉|〈无符号整数〉|‘（’〈表达式〉‘）’ <br>
+      　　<b>〈表达式〉的递归子程序实现</b>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　　procedure expr;<br>
+            　　　begin<br>
+            　　　　if sym in [ plus, minus ] then<br>
+            　　　　　begin<br>
+            　　　　　　getsym; term; <br>
+            　　　　　end<br>
+            　　　　else term;<br>
+            　　　　while sym in [plus, minus] do<br>
+            　　　　　begin<br>
+            　　　　　　getsym; term;<br>
+            　　　　　end<br>
+            　　　end; </td>
+        </tr>
+      </table>
+      　　<b>〈项〉的递归子程序实现</b>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　　procedure term;<br>
+            　　begin<br>
+            　　　factor;<br>
+            　　　while sym in [ times, slash ] do<br>
+            　　　begin<br>
+            　　　　getsym; factor;<br>
+            　　　end<br>
+            　　end; </td>
+        </tr>
+      </table>
+      <br>
+      　　<b>〈因子〉的递归子程序实现</b>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_cxd.gif" width="30" height="27" alt="程序段"></td>
+          <td class="text">　　procedure factor;<br>
+            　　begin <br>
+            　　　if sym &lt;&gt; ident then<br>
+            　　　　begin<br>
+            　　　　　if sym &lt;&gt; number then<br>
+            　　　　　　begin<br>
+            　　　　　　　if sym = ‘(‘ then<br>
+            　　　　　　　　begin<br>
+            　　　　　　　　　getsym;<br>
+            　　　　　　　　　expr;<br>
+            　　　　　　　　　if sym = ‘)’ then <br>
+            　　　　　　　　　　getsym<br>
+            　　　　　　　　　else error<br>
+            　　　　　　　　end<br>
+            　　　　　　　else error<br>
+            　　　　　　end<br>
+            　　　　end<br>
+            　　end; </td>
+        </tr>
+      </table>
+      <br>
+      　　语法分析程序除总控外主要有两大部分的功能，即对说明部分的处理和对程序体部分的处理，也就是在语法单元中的分程序功能。在PL/0编译程序中对应的过程为BLOCK，其流程图如图2.8所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 2.8 程序BLOCK过程的流程图</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_8.gif" width="430" height="578"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

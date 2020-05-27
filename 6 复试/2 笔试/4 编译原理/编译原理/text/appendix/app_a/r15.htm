@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　begin (*block*)<br>
+      　　dx∶=3;<br>
+      　　tx0∶=tx;<br>
+      　　table[tx].adr∶=cx;<br>
+      　　gen(jmp,0,0);<br>
+      　　if lev&gt;levmax<br>
+      　　　then error(32);<br>
+      　　repeat<br>
+      　　　if sym=constsym<br>
+      　　　　then<br>
+      　　　　　begin<br>
+      　　　　　　getsym;<br>
+      　　　　　　repeat<br>
+      　　　　　　　constdeclaration;<br>
+      　　　　　　　while sym=comma do<br>
+      　　　　　　　　begin<br>
+      　　　　　　　　　getsym;<br>
+      　　　　　　　　　constdeclaration<br>
+      　　　　　　　　end;<br>
+      　　　　　　　if sym=semicolon<br>
+      　　　　　　　　then getsym<br>
+      　　　　　　　　else error(5)<br>
+      　　　　　　until sym&lt;&gt;ident<br>
+      　　　　　end;<br>
+      　　　if sym=varsym<br>
+      　　　　then<br>
+      　　　　　begin<br>
+      　　　　　　getsym;<br>
+      　　　　　　　repeat<br>
+      　　　　　　　　vardeclaration;<br>
+      　　　　　　　　while sym=comma do<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　vardeclaration<br>
+      　　　　　　　　　end;<br>
+      　　　　　　　　if sym=semicolon<br>
+      　　　　　　　　　then getsym<br>
+      　　　　　　　　　else error(5)<br>
+      　　　　　　　until sym&lt;&gt;ident;<br>
+      　　　　　end;<br>
+      　　　　while sym=procsym do<br>
+      　　　　　begin<br>
+      　　　　　　getsym;<br>
+      　　　　　　if sym=ident<br>
+      　　　　　　　then<br>
+      　　　　　　　　begin<br>
+      　　　　　　　　　enter(procedur);<br>
+      　　　　　　　　　getsym<br>
+      　　　　　　　　end<br>
+      　　　　　　　else error(4);<br>
+      　　　　　　if sym=semicolon<br>
+      　　　　　　　then getsym<br>
+      　　　　　　　else error(5);<br>
+      　　　　　　block(lev+1,tx,[semicolon]+fsys);<br>
+      　　　　　　if sym=semicolon<br>
+      　　　　　　　then<br>
+      　　　　　　　　begin<br>
+      　　　　　　　　　getsym;<br>
+      　　　　　　　　　test(statbegsys+[ident,procsym],fsys,6);<br>
+      　　　　　　　　end<br>
+      　　　　　　　else error(5)<br>
+      　　　　　end;<br>
+      　　　　test(statbegsys+[ident],declbegsys,7) <br>
+      　　　until not(sym in declbegsys);<br>
+      　　　code[table[tx0].adr].a∶=cx;<br>
+      　　　with table[tx0] do<br>
+      　　　　begin<br>
+      　　　　　adr∶=cx;<br>
+      　　　　　size∶=dx;<br>
+      　　　　end;<br>
+      　　　cx0∶=cx;<br>
+      　　　gen(int,0,dx);<br>
+      　　　statement([semicolon,endsym]+fsys);<br>
+      　　　gen(opr,0,0);<br>
+      　　　test(fsys,[],8);<br>
+      　　　listcode<br>
+      　end (*block*);</td>
+  </tr>
+</table>
+</body>
+</html>

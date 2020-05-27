@@ -1,0 +1,1 @@
+{"knowledge": "I/O子系统。\r\n", "question": "在具有通道处理机的系统中，用户进程请求启动外设时，由操作系统根据I/O要求构造通道程序及通道状态字，并将通道程序保存在( )，然后执行启动“I/O”命令。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.内存 \r\n B.硬盘 \r\n C.通道 \r\n D.外部设备\r\n"}

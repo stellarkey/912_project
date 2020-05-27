@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"由于安全岛M仅仅允许两辆车停留,本应该作为临界资源而要设置信号量, 但根据 题意,任意时刻进入安全岛的车不会超过两辆(两个方向最多各有一辆), 因此,不需要\n为M设置信号量,在路口s和路口t都需要设置信号量,以控制来自两个方向的车对路口资\n源的争夺.这两个信号量的初值都是1.此外,由于从s到t的一段路只允许一辆车通过,所\n以还需要设置另外的信号量用于控制,由于M的存在,可以为两端的小路分别设置一个互 斥信号量.\n    ```\n    var T2N, N2T,L,M,K:semaphore;\n    T2N:=1;\n    N2T:=1;\n    L:=1;\n    K:=1;\n    M:=2;\n    cobegin\n      Procedure Bike T2N\n      begin\n        p(T2N);\n        p(L);\n          go T to L;\n        p(M);\n          go into  M;\n        V(L);\n        P(k);\n         go K to s;\n        V(M);\n        V(k);\n        V(T2N);\n      end\n      Procedure Bike N2T\n      begin\n        P(N2T);\n        p(k);\n         go v to k;\n        p(M);\n          go into M;\n        V(k);\n        P(L);\n          go L to T;\n        V(M);\n        V(L);\n        V(N2T);\n      end\n    coend\n    ```\n\n",
+    "question":"在南开大学至天津大学间有一条弯曲的路,每次只允许一辆自行车通过,但中间\n有小的安全岛M(同时允许两辆车),可供两辆车在已进入两端小车错车,设计算法并使用P,V实现。\n",
+    "source":"网络",
+    "answer":"由于安全岛M仅仅允许两辆车停留,本应该作为临界资源而要设置信号量, 但根据 题意,任意时刻进入安全岛的车不会超过两辆(两个方向最多各有一辆), 因此,不需要\n为M设置信号量,在路口s和路口t都需要设置信号量,以控制来自两个方向的车对路口资\n源的争夺.这两个信号量的初值都是1.此外,由于从s到t的一段路只允许一辆车通过,所\n以还需要设置另外的信号量用于控制,由于M的存在,可以为两端的小路分别设置一个互 斥信号量.\n    ```\n    var T2N, N2T,L,M,K:semaphore;\n    T2N:=1;\n    N2T:=1;\n    L:=1;\n    K:=1;\n    M:=2;\n    cobegin\n      Procedure Bike T2N\n      begin\n        p(T2N);\n        p(L);\n          go T to L;\n        p(M);\n          go into  M;\n        V(L);\n        P(k);\n         go K to s;\n        V(M);\n        V(k);\n        V(T2N);\n      end\n      Procedure Bike N2T\n      begin\n        P(N2T);\n        p(k);\n         go v to k;\n        p(M);\n          go into M;\n        V(k);\n        P(L);\n          go L to T;\n        V(M);\n        V(L);\n        V(N2T);\n      end\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1115
+}

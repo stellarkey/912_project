@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text>　　用语义网络表示知识的问题求解系统主要有两大部分组成，一部分是由语义网络构成的知识库，另一部分是用于问题求解的推理机构。语义网络的推理过程主要有两种，一种是继承，另一种是匹配。 
+      <strong><br>
+      继承：<br>
+      </strong>　　继承是指把对事物的描述从抽象结点传递到具体结点。通过继承可以得到所需结点的一些属性值，它通常是沿着Is－a，A－Kind－of等继承弧进行的。<br>
+      　　继承的一般过程为： 
+      <ul>
+        <li >建立结点表，存放待求结点和所有以Is－a，A－Kind－of等继承弧与此结点相连的那些结点。初始情况下，只有待求解的结点 </li>
+        <li>检查表中的第一个是否有继承弧。如果有，就从该弧所指的所有结点放入结点表的末尾，记录这些结点的所有属性，并从结点表中删除第一个结点。如果没有，仅从结点表中删除第一个结点。</li>
+        <li> 重复检查表中的第一个是否有继承弧，直到结点表为空。记录下来的属性就是待求结点的所有属性。</li>
+      </ul> 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那种类型的文件不支持直接存取\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.连续文件",
+        "B.Hash文件",
+        "C.索引文件",
+        "D.串联文件"
+    ],
+    "q_number":154
+}

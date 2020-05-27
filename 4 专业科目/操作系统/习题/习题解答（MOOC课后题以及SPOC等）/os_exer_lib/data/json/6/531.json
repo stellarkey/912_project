@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"只要涉及相同变量的若干进程的______________ 互斥执行，就不会造成与____________ 有关的错误。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":531
+}

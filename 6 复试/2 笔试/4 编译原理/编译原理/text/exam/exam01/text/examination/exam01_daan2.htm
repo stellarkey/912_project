@@ -1,0 +1,570 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>二、问答题答案<br>
+          <br>
+          问答第1题</b><br>
+          　　文法G[S] 改写为等价的不含左递归和左公共因子的G'[S]为：<br>
+          　　S→bB <br>
+          　　B→SAe | A<br>
+          　　A→d A' <br>
+          　　A' →bA' | ε<br>
+          <b><br>
+          问答第2题</b><br>
+          　　首先计算文法的 FIRST集和FOLLOW集如下表。<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr>
+            <td align="center"><font color="#0000FF"> 文法的 FIRST集和FOLLOW集 </font></td>
+          </tr>
+          <tr>
+            <td align="center">
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center">非终结符</td>
+                  <td align="center">FIRST集</td>
+                  <td align="center">FOLLOW集</td>
+                </tr>
+                <tr> 
+                  <td align="center">S</td>
+                  <td align="center">{a}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                  <td align="center">{# }<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                </tr>
+                <tr> 
+                  <td align="center">H</td>
+                  <td align="center">{a ，d}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                  <td align="center">{# }<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                </tr>
+                <tr> 
+                  <td align="center">M</td>
+                  <td align="center">{a ，e ，ε}</td>
+                  <td align="center">{d ，b}</td>
+                </tr>
+                <tr> 
+                  <td align="center">A</td>
+                  <td align="center">{a ，e}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                  <td align="center">{b}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        由于select（H→aMd）∩select（H→d）={a}∩{d }=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        <br>
+        　　select（M→Ab）∩select（M→ε）={a ，e}∩{d ，b }=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        <br>
+        　　select（A→aM）∩select（A→e）={ a }∩{ e }=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"> 
+        <br>
+        所以该文法是LL(1)文法，LL(1)分析表如下表。 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF"> LL(1)分析表</font></td>
+          </tr>
+          <tr> 
+            <td align="center"> 
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center">&nbsp;</td>
+                  <td align="center">a</td>
+                  <td align="center">d</td>
+                  <td align="center">b</td>
+                  <td align="center">e</td>
+                  <td align="center">#</td>
+                </tr>
+                <tr> 
+                  <td align="center">S</td>
+                  <td align="center">→aH<font color="#FFFFFF"></font><font color="#FFFFFF">.</font></td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">H</td>
+                  <td align="center">→aMd</td>
+                  <td align="center">→d<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><br>
+                  </td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">M</td>
+                  <td align="center">→Ab<font color="#FFFFFF"></font><font color="#FFFFFF">.</font></td>
+                  <td align="center">→ε</td>
+                  <td align="center">→ε</td>
+                  <td align="center">→Ab<br>
+                  </td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">A</td>
+                  <td align="center">→aM<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font></td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">→e<font color="#FFFFFF">.</font></td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <b><br>
+        问答第3题</b><br>
+        　　与正规式R＝（ab）<sup><font size="-1">*</font></sup>（a|b<sup><font size="-1">*</font></sup>）ba 
+        等价的NFA如下图<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><img src="../../img/pic2_2.gif" width="350" height="116"></td>
+          </tr>
+        </table>
+        <b><br>
+        问答第4题</b><br>
+        　　用子集法确定化如下表<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">用子集法对所给图的确定化</font></td>
+          </tr>
+          <tr> 
+            <td align="center"> 
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center">I</td>
+                  <td align="center">Ia</td>
+                  <td align="center">Ib</td>
+                  <td align="center">状态</td>
+                </tr>
+                <tr> 
+                  <td align="center">{X,1,2}<br>
+                    {1,2}<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                    {1,2,3}<br>
+                    {1,2,Y}</td>
+                  <td align="center">{1,2}<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><br>
+                    {1,2}<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font><br>
+                    {1,2,Y}<br>
+                    {1,2}<font color="#FFFFFF"></font><font color="#FFFFFF">.</font><font color="#FFFFFF"></font><font color="#FFFFFF">.</font></td>
+                  <td align="center">{1,2,3}<br>
+                    {1,2,3}<br>
+                    {1,2,3}<br>
+                    {1,2,3}</td>
+                  <td align="center">X<br>
+                    1<br>
+                    2<br>
+                    3</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        确定化后如下图<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><img src="../../img/pic2_3.gif" width="206" height="203"></td>
+          </tr>
+        </table>
+        <br>
+        <b>问答第5题</b><br>
+        解：（1）当程序执行到X过程调用Z过程后（即执行Z过程 体时）的栈式存储分配布局和用Display显示表时Z过程最新活动记录的内容如下图。<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">当程序执行到Z过程时栈式存储分配布局<br>
+              和栈中过程最新活动记录的内容</font></td>
+          </tr>
+          <tr> 
+            <td align="center"><img src="../../img/pic3_1.gif" width="280" height="396"></td>
+          </tr>
+        </table>
+        解：（2）Display表和DL（老SP）,RA,TOP及全局Display的作用分别说明如下：<br>
+        　　·Display表的作用是对嵌套过程语言实现对非局部变量的引用而设置的，它依次存放着包围它的外过程的最新活动记录的基地址SP值，由于，嵌套层次为i+1过程中的非局部变量可能在i，i-1，…，0层，所以，对非局部变量的引用是通过它的display表元素d[i]，d[i-1]，…，d[0]而获得包围它的外过程的最新活动记录的基地址SP值，再加上变量在该过程（第i层）的偏移量。如若非局部变量a是在第i层，那么引用a时，首先从当前栈顶过程的display表中元素d[i]中取出存放的第i层最新活动记录基地址SP值，然后加上a所在过程（第i层）的偏移量，就得到a的存放地址。 
+        <br>
+        如Z过程的display表内容为：<br>
+        <table  width="80%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">d（2）</td>
+            <td align="center">Z的SP</td>
+          </tr>
+          <tr> 
+            <td align="center">d（1）</td>
+            <td align="center">X的SP</td>
+          </tr>
+          <tr> 
+            <td align="center">d（0）</td>
+            <td align="center"> Main的SP</td>
+          </tr>
+        </table>
+        　　·DL（老SP）： 也称动态链或控制链，指向调用该过程前正在运行过程的数据段基地址，用以过程执行结束释放数据空间时，恢复调用该过程前运行栈的状态。<br>
+        　　·RA：返回地址，记录调用该过程时目标程序的断点，即调用过程指令的下一条指令的地址，用以过程执行结束后返回调用过程时的下一条指令继续执行。<br>
+        　　·TOP：栈顶指针TOP指出了当前栈中最新分配的单元。<br>
+        　　·全局Display是存放本过程display表的起始地址，其作用是把display地址作为连接数据之一，如过程P1调用过程P2时，这时先从P1的全局Display找到P1的display表起始地址，然后从P1的display表中自底向上地抄录I<sub>2</sub>个单元（I<sub>2</sub>为P2的层数）再添上进入P2后新建立的P2的SP值，就构成了P2的display表。<br>
+        <br>
+        <b>问答第6题</b><br>
+        解：PL/0示意程序编译到Y过程体时TABLE表的内容如下表。<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">TABLE表的内容</font></td>
+          </tr>
+          <tr> 
+            <td align="center"> 
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center">name</td>
+                  <td align="center">kind</td>
+                  <td align="center">level</td>
+                  <td align="center">val</td>
+                  <td align="center">adr</td>
+                  <td align="center">size</td>
+                </tr>
+                <tr> 
+                  <td align="center">main<br>
+                    a<br>
+                    b<br>
+                    c<br>
+                    X<br>
+                    Y<br>
+                    f</td>
+                  <td align="center">procedure<br>
+                    constant<br>
+                    variable<br>
+                    variable<br>
+                    procedure<br>
+                    procedure<br>
+                    variable</td>
+                  <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                    <font color="#FFFFFF">.</font><br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    0<br>
+                    1</td>
+                  <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                    80</td>
+                  <td align="center" valign="top">0<br>
+                    <font color="#FFFFFF">.</font><br>
+                    dx<br>
+                    dx+1<br>
+                    过程X的入口<br>
+                    过程Y的入口<br>
+                    dx</td>
+                  <td align="center" valign="top">5<br>
+                    <font color="#FFFFFF">.</font><br>
+                    <font color="#FFFFFF">.</font><br>
+                    <font color="#FFFFFF">.</font><br>
+                    4<br>
+                    4</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        　　由于Y和X是并列过程，当编译到Y过程时X过程体已经编译结束，X所定义的标识符不会再被使用，所以X定义的标识符d 、Z及Z定义的e、g都被Y过程定义的标识符覆盖。<br>
+        <br>
+        <b>问答第7题</b><br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+          <tr>
+            <td width="53%">拓广文法G'，增加产生式S'→T <br>
+              在项目集I<sub><font size="-2">0</font></sub>中：<br>
+              有移进项目T →·aBd和归约项目T →· <br>
+              存在移进-归约冲突，所以G不是LR(0)文法。 </td>
+            <td width="47%"><img src="../../img/pic4_1a.gif" width="106" height="103"></td>
+          </tr>
+        </table>
+        若产生式排序为： <br>
+        (0) S'→T<br>
+        (1) T →aBd<br>
+        (2) T →ε <br>
+        (3) B →Tb <br>
+        (4) B →ε<br>
+        G'的LR(0)项目集族及识别活前缀的DFA如下图所示： <br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">识别G′活前缀的DFA</font></td>
+          </tr>
+          <tr> 
+            <td align="center"><img src="../../img/pic4_1.gif" width="349" height="234"></td>
+          </tr>
+        </table>
+        由产生式知：<br>
+        Follow(T)={#,b} <br>
+        Follow(B)= {d}<br>
+        在I<sub><font size="-2">0</font></sub>中： <br>
+        Follow(T) ∩{a}={# ，b} ∩{a}=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"><br>
+        在I<sub><font size="-2">2</font></sub>中：<br>
+        Follow(B) ∩{a}= {d} ∩{a}=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"><br>
+        Follow(T) ∩{a}={# ，b} ∩{a}=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"><br>
+        Follow(B) ∩ Follow(T) = {d}∩{# ，b}=<img src="../../img/symbol01.gif" width="12" height="11"><img src="../../../../../img/index/1x1pixel.gif" width="1" height="17"><br>
+        所以在I<sub><font size="-2">0</font></sub>，I<sub><font size="-2">2</font></sub>，中的移进-归约和归约-归约冲突可以由Follow集解决，所以G是SLR(1)文法。 
+        <br>
+        构造的SLR(1)分析表如下表。<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">SLR(1)分析表</font></td>
+          </tr>
+          <tr> 
+            <td align="center"> 
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center" rowspan="2">name</td>
+                  <td align="center" colspan="4">ACTION</td>
+                  <td align="center" colspan="2">GOTO</td>
+                </tr>
+                <tr> 
+                  <td align="center">a</td>
+                  <td align="center">b</td>
+                  <td align="center">d</td>
+                  <td align="center">#</td>
+                  <td align="center">T</td>
+                  <td align="center">B</td>
+                </tr>
+                <tr> 
+                  <td align="center">0</td>
+                  <td align="center">S2</td>
+                  <td align="center">r2</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">r2</td>
+                  <td align="center">1</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">1</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">acc</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">2</td>
+                  <td align="center">S2</td>
+                  <td align="center">r2</td>
+                  <td align="center">r4</td>
+                  <td align="center">r2</td>
+                  <td align="center">4</td>
+                  <td align="center">3</td>
+                </tr>
+                <tr> 
+                  <td align="center">3</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">S5</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">4</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">S6</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align="center">5</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">r1</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">r1</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center">6</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">r3</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <b>问答第8题</b><br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+          <tr>
+            <td valign="top" width="9%">解:I<sub>0</sub></td>
+            <td width="91%"><img src="../../img/pic4_2.gif" width="173" height="141"></td>
+          </tr>
+        </table>
+        <b><br>
+        问答第9题</b><br>
+        对串dbba#的分析过程如下表<br>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+          <tr> 
+            <td align="center"><font color="#0000FF">对输入串dbba#的分析过程</font></td>
+          </tr>
+          <tr> 
+            <td align="center"> 
+              <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+                <tr> 
+                  <td align="center">步骤</td>
+                  <td align="center">状态栈</td>
+                  <td align="center">文法符号栈</td>
+                  <td align="center">剩余输入符号</td>
+                  <td align="center"> 动作</td>
+                </tr>
+                <tr> 
+                  <td align="center">1<br>
+                    2<br>
+                    3<br>
+                    4<br>
+                    5<br>
+                    6<br>
+                    7<br>
+                    8<br>
+                    9</td>
+                  <td>0<br>
+                    03<br>
+                    02<br>
+                    024<br>
+                    0246<br>
+                    02467<br>
+                    024678<br>
+                    0246<br>
+                    01</td>
+                  <td valign="top">#<br>
+                    #d<br>
+                    #V<br>
+                    #Vb<br>
+                    #VbA<br>
+                    #VbAb<br>
+                    #VbAba<br>
+                    #VbA<br>
+                    #M</td>
+                  <td align="right" valign="top">dbba#<br>
+                    bba#<br>
+                    bba#<br>
+                    ba#<br>
+                    ba#<br>
+                    a#<br>
+                    #<br>
+                    #<br>
+                    #</td>
+                  <td align="center" valign="top">移进<br>
+                    用V →d归约<br>
+                    移进<br>
+                    用A →ε归约<br>
+                    移进<br>
+                    移进<br>
+                    用A →Aba 归约<br>
+                    用M →VbA 归约<br>
+                    接受</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <b>问答第10题</b><br>
+        解：短语有: (E+F)*i ，(E+F) ，E+F ，F ，i <br>
+        　　简单(直接)短语有: F ，i <br>
+        　　句柄是: F <br>
+        　　最左素短语是: E+F <br>
+        <b><br>
+        问答第11题</b><br>
+        (1) 解：描述L<sub>1</sub>语言的正规文法如下： <br>
+        　　S→ aS|A<br>
+        　　A → bA|bB <br>
+        　　B →c<br>
+        (2) 解：描述L<sub>2</sub>语言的二型文法如下：<br>
+        　　S→ AB <br>
+        　　A →aT <br>
+        　　T →0T1|01 <br>
+        　　B →bD <br>
+        　　D →dD|d <br>
+        <b><br>
+        问答第12题</b><br>
+        （6分）试对 if (ad) then s:=e else s:=f 的四元式序列给出第四区段应回填的指令地址，并指出真假出口链和链头及回填的次序。 
+        <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>应回填的值</td>
+            <td>回填的次序</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>(1)</td>
+            <td>if a&lt;b goto</td>
+            <td>( 3 )</td>
+            <td>( 1　 )</td>
+            <td>真链头 E.true= 3</td>
+          </tr>
+          <tr> 
+            <td>(2)</td>
+            <td>goto</td>
+            <td>( 7 )</td>
+            <td>( 4　 )</td>
+            <td>真出口链( 3 )</td>
+          </tr>
+          <tr> 
+            <td>(3)</td>
+            <td>if a&gt;d goto</td>
+            <td>( 5 )</td>
+            <td>( 2　 )</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>(4)</td>
+            <td>goto</td>
+            <td>( 7 )</td>
+            <td>( 3　 )</td>
+            <td>假链头 E.false= 4</td>
+          </tr>
+          <tr> 
+            <td>(5)</td>
+            <td>s:=e</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>假出口链( 4,2 )</td>
+          </tr>
+          <tr> 
+            <td>(6)</td>
+            <td>goto</td>
+            <td>( 8 )</td>
+            <td>( 5　 )</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>(7)</td>
+            <td> s:=f</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>(8)</td>
+            <td>...</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+       <!--czp-wenda-daan-->
+        
+</td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

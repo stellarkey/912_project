@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "面包店(2001)\r\n面包师有很多面包，由n个销售人员推销。每人顾客进店后先取一个号，并且等待叫号。当一个销售人员空闲下来时，就叫下一个号。试设计一个使销售人员和顾客同步的算法。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"swap_manager\n",
+    "question":"置换算法的接口数据结构？   \n",
+    "source":"网络",
+    "answer":"swap_manager\n",
+    "type":"question_answer",
+    "q_number":1402
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"引起一个进程从运行状态变为等待状态的原因可能是由于_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.有更高优先级的进程就绪",
+        "B.某外围设备完成了指定的操作",
+        "C.进程调用了P操作",
+        "D.进程调用了V操作"
+    ],
+    "q_number":280
+}

@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "在BFD和SFD分开的系统中，哪些信息应放在SFD中？\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.文件的符号名 \r\n B.文件长度 \r\n C.文件的存取权限 \r\n D.文件的物理入口地址\r\n"}

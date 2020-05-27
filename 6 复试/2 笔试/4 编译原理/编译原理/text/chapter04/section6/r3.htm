@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <hr size="1">
+      【本章小结】<br>
+      　　① 本章出现的概念较多,应重点理解文法,推导,句型句子及语言的定义等概念.语法分析有关内容在后面章节会详细讨论.<br>
+      　　② 文法作为程序语言的语法的描述工具,它用规则只能陈述的是:语言的所有句子以什麽样的符号串能出现.请记住文法和语言的形式定义中的 &quot;形式&quot;的含义-只涉及语言的语法不涉及语言的语义.<br>
+      　　③ 本章内容是形式语言理论的一部分.形式语言理论是对符号串集合的表示法、结构及其特性的研究。是程序设计语言语法分析研究的基础。 <br>
+      考察本章知识点最典型的题目是<br>
+      　　⑴ 已知文法G[A]，写出它定义的语言描述<br>
+      　　G[A]: A → 0B|1C<br>
+      　　　　　B → 1|1A|0BB<br>
+      　　　　　C → 0|0A|1CC<br>
+      　　答案:G[A]定义的语言由0、1符号串组成，串中0和1的个数相同.<br>
+      　　⑵ 给出语言描述，构造文法.<br>
+      　　构造一文法,其定义的语言是由算符+, *, (,)和运算对象a构成的算术表达式的集合.<br>
+      　　答案1: G[E] E→E+T|T<br>
+      　　　　　　　　T→T<sup><font size="-2">*</font></sup> F|F<br>
+      　　　　　　　　F→(E)|a<br>
+      　　答案2: G[E] E→E+E|E<sup><font size="-2">*</font></sup> E|(E)|a<br>
+      <hr size="1">
+    </td>
+  </tr>
+</table>
+</body>
+</html>

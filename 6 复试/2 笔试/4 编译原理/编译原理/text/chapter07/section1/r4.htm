@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① 移进：<br>
+      　　把S<sub><font size="-2">j</font></sub>=GOTO[S<sub><font size="-2">i</font></sub>，a]移入到状态栈，把a移入到文法符号栈。其中i，j表示状态号。<br>
+      　　② 归约：<br>
+      　　当在栈顶形成句柄为β时，则用β归约为相应的非终结符A，即文法中有A→β的产生式，若β的长度为r(即|β|=r)，则从状态栈和文法符号栈中自栈顶向下去掉r个符号，即栈指针SP减去r。并把A移入文法符号栈内，S<sub><font size="-2">j</font></sub>=GOTO[S<sub><font size="-2">i</font></sub>，A]移进状态栈，其中S<sub><font size="-2">i</font></sub>为修改指针后的栈顶状态。<br>
+
+      　　③ 接受acc:<br>
+      　　当归约到文法符号栈中只剩文法的开始符号S时，并且输入符号串已结束即当前输入符是'#'，则为分析成功。 <br>
+      　　④ 报错：<br>
+      　　当遇到状态栈顶为某一状态下出现不该遇到的文法符号时，则报错，说明输入串不是该文法能接受的句子。<br>
+      　　LR分析器的关键部分是分析表的构造，后边将针对每种不同的LR分析器详细介绍其构造思想及方法。<br>
+      　　回顾在第6章中曾给出的例6.1文法，现以此为例复习自底向上分析方法移进-归约过程。 </td>
+  </tr>
+</table>
+</body>
+</html>

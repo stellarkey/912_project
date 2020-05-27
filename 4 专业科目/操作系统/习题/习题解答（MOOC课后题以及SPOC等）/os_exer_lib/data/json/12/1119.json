@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"桥上可能没有人,也可能有一人,也可能有两人。\n两人同时过桥\n两人都到中间\n南(北)来者到北(南)段\nnp>共需要三个信号量,load用来控制桥上人数,初值为2,表示桥上最多有2人;north用\n来控制北段桥的使用,初值为1,用于对北段桥互斥;south用来控制南段桥的使用,初 值为1,用于对南段桥互斥。\n    ```\n    var load,north,south:semaphore;\n    load=2;\n    north=1;\n    south=1;\n    GO_South()\n    P(load);\n    P(north);\n    过北段桥;\n    到桥中间;\n    V(north);\n    P(south);\n    过南段桥;\n    到达南岸;\n    V(south);\n    V(load);\n    GO_North()\n    P(load);\n    P(south);\n    过南段桥;\n    到桥中间\n    V(south);\n    P(north);\n    过北段桥;\n    到达北岸\n    V(north);\n    V(load);\n    ```\n\n",
+    "question":"一座小桥(最多只能承重两个人)横跨南北两岸,任意时刻同一方向只允许一人过 桥,南侧桥段和北侧桥段较窄只能通过一人,桥中央一处宽敞,允许两个人通过或歇\n息。试用信号灯和PV操作写出南、北两岸过桥的同步算法。\n",
+    "source":"网络",
+    "answer":"桥上可能没有人,也可能有一人,也可能有两人。\n两人同时过桥\n两人都到中间\n南(北)来者到北(南)段\nnp>共需要三个信号量,load用来控制桥上人数,初值为2,表示桥上最多有2人;north用\n来控制北段桥的使用,初值为1,用于对北段桥互斥;south用来控制南段桥的使用,初 值为1,用于对南段桥互斥。\n    ```\n    var load,north,south:semaphore;\n    load=2;\n    north=1;\n    south=1;\n    GO_South()\n    P(load);\n    P(north);\n    过北段桥;\n    到桥中间;\n    V(north);\n    P(south);\n    过南段桥;\n    到达南岸;\n    V(south);\n    V(load);\n    GO_North()\n    P(load);\n    P(south);\n    过南段桥;\n    到桥中间\n    V(south);\n    P(north);\n    过北段桥;\n    到达北岸\n    V(north);\n    V(load);\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1119
+}

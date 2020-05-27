@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onclick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">在前面的学习中，同学们已经知道了多媒体技术的关键也是最大的难<span class="text">题是海量数</span>据存储与传送电视信号数字化后的数据量。本章将系统的讲述解决这一问题的思想和方法——数据压缩，重点讲述图象数据压缩的基本概念、经典算法和重要的国际标准。<br>
+        在本章的第一节概述中我们将分以下两个问题进行讨论和讲解：4.1.1 多媒体数据压缩的必要性和可能性 4.1.2 数据压缩技术的分类。<br>
+        我们讲述第一个问题：4.1.1 多媒体数据压缩的必要性和可能性，首先明确一个基本概念数据压缩，</div><br>
+      <span class="zhongdian">一． 数据压缩<br>
+      定义1：数据压缩就是以最少的数码表示信源所发的信号，减少容纳给定消息集合或数据采样集合的信号空间。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">&nbsp;理解这一概念的关键是要理解“信源”和“信号空间”以及“最少”的含义。“信源”可以是数据、静止图象、语音、电视或其他需要存储和传输的信号；“信号空间”是指信号集合所占的<a href="#nowhere" title="空域、时域和频域空间是指：1.物理空间：如存储器、磁盘、磁带、光盘等数据存储介质。2.时间区间：如传输给定信源所需的时间。3.电磁频谱区域：如传输给定信源所需的带宽。" class="explaination">空域、时域和频域空间</a>。“最少”是指在保证信源的一定质量或者说是有效的前提下的最少。<br>
+        <br>
+        数据压缩也可以简单地用定义为定义2：数据压缩就是信源的有效数字表示。</div>
+      <br>
+      <span class="zhongdian">定义2：数据压缩就是信源的有效数字表示。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide03Notice" class="Notice" style="visibility:hidden;display:none;">本章所用的概念数据压缩包括信源的有损压缩和无损压缩，有损压缩是指经过压缩后经解码再还原的信号与原信号不能严格一致，无损压缩是指压缩后经解码还原的信号与原信号严格一致。<br>
+        在明确了数据压缩的概念的后我们来将下一个问题：<br>
+        2.多媒体数据压缩的必要性<br>
+        多媒体数据压缩的必要性也就是说为什么要对多媒体数据进行压缩，主要原因就是多媒体数据的海量性，多媒体数据包括文本、声音、动画、图形、图象以及视频。我们可以举几个简单的例子来说明其海量性。</div>
+      <br>
+      <span class="zhongdian">1. 多媒体数据压缩的必要性<br>
+      （1） 多媒体数据包括文本、声音、动画、图形、图象以及视频。<br>
+      （2） 多媒体数据数字化后的海量性</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+
+      <div id="hide04Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;">一幅大小为512×512<span class="explaination"><a href="#nowhere" title="能独立地赋予颜色和亮度的最小单位。">（像素）</a></span>的黑白图像，<a href="#nowhere" title="也可以写成8bit/pel，pel是&#8220;pixel:picture+element&#8221;的简写">每像素用8bit表示</a>，其大小为多少呢？<br>
+        首先理解一下题目的含义，“512×512（像素）”的意思是图象的横向有512个像素点，纵向有512个像素点，图4.1.1所示。 
+        <center>
+          <img src="../../../../images/chatp/chap04/006.gif" alt="454353453" width="170" height="133" hspace="8" vspace="5"> 
+          <br>
+          图4.1.1 
+        </center>
+        “每像素用8bit表示” 的意思是每一个像素点的值，对于黑白图像来说就是每一个像素点的灰度值，在计算机存储器中用8位表示。<br>
+        那么，已知的图像就有512×512个点，有一个点就要存储一个8位，所以，该图像的存储空间大小为：512×512×8=262144bit=256kB。<br>
+        像素：能独立地赋予颜色和亮度的最小单位。<br>
+        每像素用8bit表示：也可以写成8bit/pel，pel是&quot;pixel:picture+element&quot;的简写。</div>
+      <br>
+        <span class="zhongdian">例如：<br>
+        ① 图象信号： <br>
+        一幅512×512（像素）的黑白图象，若每像素用8bit表示，则其大小为：<br>
+      512×512×8=262144bit=256kB</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide05Notice" name"hide05Notice" class="Notice" style="visibility:hidden;display:none;">在此顺便强调一下表示存储空间大小的单位：<br>
+        大写字母“B”表示字节（Byte）；小写字母“b”表示二进制位（bit），1kB=1024B。1M=1024′1024。<br>
+        同样一幅大小为512×512的彩色图像，每像素用8bit表示，其大小应为黑白图像的3倍。（彩色图像的像素不仅有亮度值Y，而且有两个色差值）。也就是512×512×8×3=629145bit≈6.3MB。<br>
+        上述彩色图象按NTSC制，每秒钟传送30帧，其每秒的数据量为：<br>
+        6.3Mbit×30帧/s =188M bit/s = 23.5MB/s<br>
+        那么，一个650MB的硬盘可以存储的图象为：650MB /23.5MB/s = 27.5s（秒）<br>
+        可见视频、图像所需的存储空间之大。</div>
+      <br>
+      <span class="zhongdian"> ●一幅512×512的彩色图像，每像素用8bit表示，则其大小为：<br>
+      512×512×8×3=629145bit≈6.3M bit=768kB<br>
+      ●上述彩色图象按NTSC制，每秒钟传送30帧，其每秒的数据量为：<br>
+      6.3Mbit×30帧/s =188M bit/s = 23.5MB/s<br>
+      ●一个650MB的硬盘可以存储的图象为：<br>
+      650MB /23.5MB/s = 27.5s（秒）</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide06Notice" name"hide06Notice" class="Notice" style="visibility:hidden;display:none;">再来看一下数字音频，双通道立体声激光唱盘（CD-A），<a href="#nowehere" title="是每秒钟采样的次数。采样频率的大小根据采样定理（采样频率应大于或等于被采样对象频率的2倍。）来确定。常用的音频采样频率为：44.1kHz、22.05 kHz、11.025 kHz。">采样频率</a>为44.1kHz，<a href="#nowhere" title="每采样一次得到的采样值称为样本，每一个样本在计算机中用16位表示">采样精度</a>为16位/样本，其1秒钟的音频数据量为：<br>
+        44.1×103×16×2 =1.41Mb/s。</div>
+      <br>
+      <span class="zhongdian">② 数字音频<br>
+      双通道立体声激光唱盘（CD-A），采样频率为44.1kHz，采样精度为16位/样本，其1秒钟的音频数据量为：44.1×103×16×2 =1.41Mb/s<br>
+      ●一个650MB的硬盘可以存储的约1小时的音乐。 </span><br>
+      <a href="#nowhere" onClick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide07Notice" name"hide07Notice" class="Notice" style="visibility:hidden;display:none;">由此可见如此大的数据量单纯靠扩大存储容量、增加通讯干线的传输速率是不现实的。<br>
+        因此数据压缩是必要的。</div>
+      <br>
+      <span class="zhongdian">总之：多媒体信息包括文本、声音、动画、图形、图像以及视频等多种媒体信息。经过数字化处理后其数据量是非常大的，如果不进行数据压缩处理，计算机系统就无法对它进行存储和交换。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide08Notice" name"hide08Notice" class="Notice" style="visibility:hidden;display:none;">多媒体数据压缩是必要的，那么能否对多媒体数据进行压缩呢？我们一起来探讨一下“多媒体数据压缩的可能性”。<br>
+        多媒体数据能不能被压缩关键是多媒体数据中存在不存在“数据冗余”。答案是肯定的。</div>
+      <br> <br>
+      </p></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"在操作系统管理中，面向用户的管理组织机构称为_____ 。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.用户结构",
+        "B.实际结构",
+        "C.物理结构",
+        "D.逻辑结构"
+    ],
+    "q_number":309
+}

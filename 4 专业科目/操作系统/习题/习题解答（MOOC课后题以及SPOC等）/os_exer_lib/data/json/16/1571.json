@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"stride算法的特征是什么？",
+    "explain":"stride算法的特征（2分）\n确定性\n公平性\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"stride算法的特征（2分）\n确定性\n公平性\n",
+    "type":"question_answer",
+    "q_number":1571
+}

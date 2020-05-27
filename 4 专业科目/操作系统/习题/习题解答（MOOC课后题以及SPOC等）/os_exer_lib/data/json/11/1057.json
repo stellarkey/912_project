@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"大家熟悉了生产-消费问题(PC)，这个问题很简单。题目较为新颖，但是本质非常简单即：生产-消费问题的简化或者说是两个进程的简单同步问题。答案如下：\n    ```\n    设信号量s1 和s2 分别表示可拣白子和黑子;\n    不失一般性，若令先拣白子。\n    var S1 , S2 : semaphore;\n    S1 : = l; S2 ：=0;\n    cobegin\n      process P1            process P2\n      begin                 begin\n        repeat                repeat\n          P(S1);                p(S2);\n          pick The white;       pick the black;\n          V(S2);                v(s1);\n        until false;          until false;\n      end                   end\n    coend\n    ```\n\n",
+    "question":"在一个盒子里，混装了数量相等的黑白围棋子·现在用自动分拣系统把黑子、白子分开，设分拣系统有二个进程P1 和P2 ，其中P1 拣白子；P2\n拣黑子。规定每个进程每次拣一子；当一个进程在拣时，不允许另一个进程去拣；当一个进程拣了一子时，必须让另一个进程去拣．试写出两进程P1 和P2\n能并发正确执行的程序。\n",
+    "source":"网络",
+    "answer":"大家熟悉了生产-消费问题(PC)，这个问题很简单。题目较为新颖，但是本质非常简单即：生产-消费问题的简化或者说是两个进程的简单同步问题。答案如下：\n    ```\n    设信号量s1 和s2 分别表示可拣白子和黑子;\n    不失一般性，若令先拣白子。\n    var S1 , S2 : semaphore;\n    S1 : = l; S2 ：=0;\n    cobegin\n      process P1            process P2\n      begin                 begin\n        repeat                repeat\n          P(S1);                p(S2);\n          pick The white;       pick the black;\n          V(S2);                v(s1);\n        until false;          until false;\n      end                   end\n    coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1057
+}

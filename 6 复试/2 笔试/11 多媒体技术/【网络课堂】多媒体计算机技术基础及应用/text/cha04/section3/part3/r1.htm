@@ -1,0 +1,131 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+ <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　 
+        与霍夫曼编码不同，<a href="#nowhere" title="早在1948年，香农就提出将信源符号依其概率降序排列，用符号序列累积概率的二进制表示作为信源的编码，并从理论上证明了它的优越性；1960年后，P.Elias发现无需排序，只要编、解码端使用相同的符号序列即可。但当时人们仍然认为算术编码需要无限精度的浮点运算，或随着符号的输入，所需的计算精度和时间也相应增加。
+1976年，R.Pasco和J.Rissanen分别用定长的寄存器实现了有限精度的算术编码，但仍无法实用，因为后者的方法是&#8220;后入先出（LIFO）&#8221;的，而前者的方法虽然是&#8220;先入先出（FIFO）&#8221;的，但却没有解决使用有限精度计算所固有的进位问题。1979年Rissanen和G.G.Langdon一起将算术编码系统化，并于1981年实现了二进制编码。1987年Witten等人发表了一个实用的算术编码程序，即CACM87（后用于ITU-T的H.263视频压缩标准）；同期IBM公司发表了著名的Q-编码器（后用于JPEG和JBIG图像压缩标准），从此算术编码迅速得到了广泛的注意。（JBIG--（Joint Bi-level Image Expert Group）联合双层图像 专家组，通常JBIG是指一种先进的传真标准）
+">算术编码（Arithmetic Coding）</a>跳出了分组编码的范畴，从全序列出发，采用递推形式的连续编码。它不是将单个的信源符号映射成一个码字，而是将整个输入符号序列映射为实数轴上[0，1]区间内的一个小区间，其长度等于该序列的概率；再在该小区间内选择一个代表性的二进制小数，作为实际的编码输出，从而达到了高效编码的目的。不论是否二元信源，也不论数据的概率分布如何，其平均码长均能逼近信源的熵。 
+        <br>
+        　　算术编码方法比霍夫曼编码等熵编码方法要复杂，但是它不需要传送像霍夫曼编码的霍夫曼码表，同时算术编码还有自适应能力的优点，所以算术编码是实现高效压缩数据中很有前途的编码方法。这也是我们学习算术编码的意义。<br>
+        　　下面讲第一个问题：算术编码基本原理 </div>
+      <br>
+      <span class="zhongdian"><font color="#003399">　　</font>1．算术编码基本原理<br>
+      　　算术编码方法是将被编码的信息表示成实数0和1之间的一个间隔。信息越长编码表示它的间隙就越小，表示这一间隙所须二进位就越多，大概率符号出现的概率越大对应于区间愈宽，可用长度较短的码字表示；小概率符号出现概率越小层间愈窄，需要较长码字表示。<br>
+      　　信息源中连续的符号根据某一模式生成概率的大小来减少间隔。可能出现的符号要比不太可能出现的符号减少范围少，因此只增加了较少的比特位。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　这样说完可能大家对算术编码的原理还不大理解，那我们来将以下算术编码的实现原理。</div>
+      <br>
+      <span class="zhongdian"><font color="#003399">　　</font>2．算术编码实现步骤<br>
+      　　设数据序列有两种符号组成，其概率各不相同（一大一小），称概率大的为大概率符号，以MPS(Most Probable Symbol)表示大概率符号，其概率用Pe代表；称概率小的为小概率符号，用LPS(Least 
+      Probable Symbol)表示小概率符号，其概率用Qe代表； </span><br>
+      　
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="460" height="200">
+        <param name=movie value="../../../../swf/4-3-3-2.swf">
+        <param name=quality value=high>
+        <embed src="../../../../swf/4-3-3-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="460" height="200">
+        </embed> 
+      </object><br>
+      <span class="zhongdian">　　3．算术编码算法的实现</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　下面我们介绍子区间起始位置（头）和子区间宽的计算方法，并通过例子说明其过程。</div>
+      <br>
+      <span class="zhongdian">　　设置两个专用寄存器，A寄存器和C寄存器，</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide04Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　设C寄存器内的数值为子区间的起始位置，A寄存器内的数值为子区间的宽度，初始化时C=0，A=1。</div>
+      <br>
+      <span class="zhongdian">　　初始化时：C=0，表示子区间[0，1]的起始点<br>
+      　　A=1。表示子区间的宽度<br>
+      　　当低概率符号LPS到来时 <br>
+      　　　<img src="../../../../images/chatp/chap04/024.gif" width="69" height="45"><br>
+      　　当高概率符号MPS到来时 <br>
+      　　<img src="../../../../images/chatp/chap04/025.gif" width="143" height="43"></span><br>
+      <a href="#nowhere" onClick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide05Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　C+A等于子区间的右端点，算术编码的结果落在子区间内。输入编码符号串中大概率的符号出现频率愈高，对应的子区间变宽，这时可用短的码字表示编码结果；相反输入符号串中小概率的符号出现频率增加，相应的子区间变窄，落入该区间的编码结果，需要一个长的码字表示。下面我们举一个简单的例子，加以具体说明编码过程。<br>
+        　　对一个&quot;1011&quot;符号串进行算术编码。<br>
+        　
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="460" height="200">
+          <param name=movie value="../../../../swf/4-3-3-3.swf">
+          <param name=quality value=high>
+          <embed src="../../../../swf/4-3-3-3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="460" height="200"> 
+          </embed> </object>
+      </div>
+      <br>
+        <br>
+      <span class="zhongdian">　　4．解码算法及举例</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide06Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　解码是编码的逆过程。在解码过程中同样设置两个寄存器C'和寄存器A。C'寄存器和A寄存器中的内容，要根据每次符号&quot;1&quot;--MPS或&quot;0&quot;--LPS按照以下公式修改。<br>
+        　　C'是已知的算术编码还原成小数的值，例如上面的算术数编码结果是&quot;011&quot;那么C'=0.011，A是区间长度，初始值为&quot;1&quot;。</div>
+      <span class="zhongdian"><br>
+      　　C'是已知的算术编码还原成小数的值，A=1<br>
+      　　当C'落在0~QeA子区间内，解码符号赋以&quot;0&quot;-LPS， <br>
+      　　<img src="../../../../images/chatp/chap04/026.gif" width="70" height="44"><br>
+      　　当C'落在QeA~A子区间内，解码符号赋以&quot;1&quot;--MPS，<br>
+      　　<img src="../../../../images/chatp/chap04/027.gif" width="112" height="44"></span><br>
+      <a href="#nowhere" onClick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide07Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　利用上述公式多次重复计算，求得与解码输入符号串所对应的解码输出。解码结果是由&quot;0&quot;、&quot;1&quot;构成的符号串。现在以上面编码结果&quot;011&quot;为例，对它进行解码。</div>
+      <br>
+      　　<span class="zhongdian">例题：已知算术编码结果为&quot;011&quot;，对其解码，求原信源序列符号。<br>
+      　　解：由编码过程可知，&quot;1&quot;为大概率符号，&quot;0&quot;为小概率符号；<br>
+      　　大概率Pe=3/4，小概率Qe=1/4；<br>
+      　　C'=0.011；A=1<br>
+      　　（1）QeA=1/4=（0.01）b<br>
+      　　C'=(0.011)b 落在QeA~A(0.01~1)子区间，解码符号赋以MPS--&quot;1&quot;<br>
+      　　&quot;1&quot;就是解码所得的第一个符号。<br>
+      　　<img src="../../../../images/chatp/chap04/028.gif" width="237" height="50"><br>
+      　　（2）QeA=0.01×0.11=(0.0010110)b<br>
+      　　C'=0.001 落在0~QeA(0~0.0010110)子区间，解码符号赋LPS以&quot;0&quot;<br>
+      　　<img src="../../../../images/chatp/chap04/030.gif" width="233" height="43"><br>
+      　　（3）QeA=0.01×0.0011=(0.000011)b<br>
+      　　C'=0.001 落在QeA~A(0.000011~1)子区间，解码符号赋以MPS——“1”<br>
+      　　<img src="../../../../images/chatp/chap04/image068.gif" width="286" height="43"><br>
+      　　（4）QeA=0.01×0.11101=(0.00001)b<br>
+      　　C'=(0.000101)b 落在QeA~A(0.00001~1)子区间，解码符号赋以MPS——“1”<br>
+      　　<img src="../../../../images/chatp/chap04/image069.gif" width="279" height="42"></span><br>
+      <a href="#nowhere" onClick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide08Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　以上进行4次分割，计算的结果是“1011”，与原编码完全相同。</div>
+      <br>
+      <span class="zhongdian">　　解码为：1011</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide09Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide09Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　以上我们讨论的都是假设大概率符号“MPS”恒定为“1”，小概率符号“LPS”恒定为“0”，而实际上应该随着它们在被编码符号串中出现的概率而自适应地改变。也就是说随着输入符号的变化，自动修改Qe和Pe的值。一说算术编码具有自适应的能力。<br>
+        　　当信源概率比较接近时，建议使用算术编码，因为此时霍夫曼编码的结果趋于定长码，效率不高。根据T.Bell等人对主要的统计编码方法的比较，算术编码具有最高的压缩效率。<br>
+        　　但实现上，算术编码比霍夫曼编码复杂，特别是硬件。<br>
+        　　算术编码也是变长编码，因此，算术编码也使用于分段信息。在误差扩散方面，比分组码要严重，因为它是从全序列出发来编码的，一旦有误码，就会一直延续下去。因而算术编码的传输要求高质量的信道，或采用检错反馈重发的方式。<br>
+        　　值得指出的是，实际上并不存在某种唯一的“算术码”，而是有一大类算术编码的方法。仅IBM公司便拥有数十项关于算术编码的专利。</div>
+      <br>
+      <br> <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　对上述分析过程也可看成自底向上构造语法树的过程，每步归约都是构造一棵子树，最后当输入串结束时刚好构造出整个语法树，图6.1(a)(b)(c)(d)给出构造过程，可与表中相应分析步骤对照。 
+      <br>
+      　　在上述移进-归约或自底向上构造语法树的过程中，我们怎么知道何时移进，何时归约，不能只简单地看成栈顶出现某一产生式的右部就可用相应产生式归约，例如在表6.1分析到第5)步时栈中的符号串是#aAb，栈顶符号串b和Ab分别是产生式(2)，(3)的右部，这时到底用(2)归约还是用(3)归约是自底向上分析要解决的关键问题。<br>
+      　　由于移进-归约是规范推导(最右推导)的逆过程，即规范归约(最左归约)。当一个文法无二义性时，那么它对一个句子的规范推导是唯一的，规范归约也必然是唯一的。因而每次归约时一定要按当前句型的句柄，也就是说，任何时候栈中的符号串和剩余的输入串组成一个句型，当句柄出现在栈顶符号串中时，则可用句柄归约，这样一直归约到输入串只剩结束符，文法符号栈中只剩开始符号。这时才能认为输入符号串是文法的句子。否则为出错。 
+      <br>
+      　　由此可见自底向上分析的关键问题是在分析过程中如何确定句柄，也就是说如何知道何时在栈顶符号串中已形成某句型的句柄，那么就可以确定何时可以进行归约。<br>
+      　　自底向上的分析算法很多，我们仅在本章和第7章介绍目前常用的算符优先分析和LR类分析法。<br>
+      　　<font color="#0000FF">小练习：</font>用PL/0的READ(A)语句为例构造自底向上的语法分析树,以体会自底向上的归约过程。下面为参考答案。
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图6.3 自底向上的语法分析</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle2/6_1_3.gif" width="417" height="290"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

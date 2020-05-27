@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在段页式存储管理系统中,当访问主存中的一条指令或数据时_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.需访问两次主存",
+        "B.需访问一次主存",
+        "C.至少访问三次主存",
+        "D.至少访问两次主存"
+    ],
+    "q_number":166
+}

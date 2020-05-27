@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> 　　本部分内容相当于预备知识）黑白视频信号获取器的作用：<br>
+      　　(1)把一维的黑白全电视信号中的图像信号数字化后，送到帧存贮器中保存；<br>
+      　　(2)把存贮在存贮器中的图像信号，还原为全电视信号输出到电视机或监视器，供操作者观看检查。<br>
+      　　黑白视频信号获取器的工作原理<br>
+      　　·同步分离电路<br>
+      　　·锁相和时序电路<br>
+      　　·A/D变换器<br>
+      　　·帧存贮器的设计<br>
+      　　·D/A变换及输出显示<br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="400" height="400">
+          <param name="movie" value="../../../../swf/2-1.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/2-1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="400"></embed></object>
+      </center> <br>
+      　　<img src="../../../../images/chatp/chap02/030.gif" width="332" height="213"> 
+      <br>
+      <font color="#003399"> 　　如果是彩色信号，则变为YUV,UV载在Y上。黑白视频信号获取器的工作过程如下图：</font><br>
+      　　<img src="../../../../images/chatp/chap02/031.gif" width="298" height="212"><br>
+      <b><font color="#003399">　　（一）同步分离电路</font></b><a name="01"></a><br>
+      　　将黑白全电视信号通过切头电路将同步信号和图像信号分开，通过微分和积分电路将行同步和场同步分开，再根据奇数场的场同步在一行的开始，偶数场的场同步信号在一行的中间这个规律，将奇数场和偶数场的场同步信号分开。<br>
+      　　<font color="#003399">1.同步分离电路</font><br>
+      　　同步分离电路的作用：将行同步、奇数场场同步和偶数场场同步信号分离出来。<br>
+      　　<img src="../../../../images/chatp/chap02/032.gif" width="293" height="195"><br>
+      　　找到行同步和场同步（奇数场和偶数场），从图2-7（下图）可以看到：同步信号在0.7V~1V之间。<br>
+      　　<font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap02/033.gif" width="337" height="146" border="0"></a><br>
+      　　<font color="#003399">我们可以使用限幅（切头电路）放大器，如下图所示：</font><br>
+      　　<img src="../../../../images/chatp/chap02/034.gif" width="292" height="204"><br>
+      <font color="#003399">　　经过限幅（切头）放大器后分离出来的行同步和场同步（奇数场和偶数场）如下图所示：</font><br>
+      　　<img src="../../../../images/chatp/chap02/035.gif" width="278" height="204"><br>
+      　　<font color="#003399">2.把场同步和行同步分开</font><br>
+      　　用积分器和微分器分离行同步和场同步信号 <br>
+      　　<img src="../../../../images/chatp/chap02/036.gif" width="280" height="195"><br>
+      　　为了减小Dt，加入均衡脉冲 <font color="#990000">（点击查看大图）</font><br>
+      　　 <a href="t2.htm" target="_blank"><img src="../../../../images/chatp/chap02/037.gif" width="363" height="153" border="0"></a><br>
+      <font color="#003399">　　3.奇数场和偶数场</font><br>
+      　　仔细观察下图，我们会发现奇数场的场同步同步信号的区别：奇数场的场同步的开始和行同步一致，偶数场场同步在行同步一半处开始。<br>
+      　　<img src="../../../../images/chatp/chap02/038.gif" width="276" height="206"><br>
+      　　找到奇数场和偶数场后，将数据保存在帧存储器（FB）时可以做相应的处理，比如：<br>
+      　　<img src="../../../../images/chatp/chap02/039.gif" width="285" height="210"><br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="390" height="400">
+          <param name="movie" value="../../../../swf/2-2-1.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/2-2-1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="390" height="400"></embed></object>
+      </center> <br>
+      <br>
+      <b><font color="#003399">　　（二）锁相和时序电路</font></b><a name="02"></a><br>
+      　　希望视频信号获取器的时序与摄像机输入频率一致，所以用上面分离出的行同步信号作为输入信号，经过锁相回路，得到与摄像机频率一致的时序电路。<br>
+      　　视频信号获取器的时序电路的振荡频率和摄像机行同步信号要一样。锁相和时序电路如下图所示：<br>
+      　　<img src="../../../../images/chatp/chap02/040.gif" width="282" height="214"><br>
+      　<font color="#003399">　1.检相器</font><br>
+      　　锁相系统保证相位差不变。如果相位差变化， 则调整振荡频率，以确保相位差不变。<br>
+      　　<img src="../../../../images/chatp/chap02/041.gif" width="286" height="215"><br>
+      　　检相器的任务：把行同步和时序电路产生的脉冲之间的相差变为电压，通过控制电压保持不变，以保证相差保持不变。<br>
+      　　<font color="#003399">2.压控振荡器</font><br>
+      　　用变容二极管，通过电压的变化控制电容改变，用电容控制振荡频率变化。振荡频率为10MHz。 <br>
+      　　<font color="#003399">3.分频器</font><br>
+      　　640分频， 640计数器。<br>
+      　　<font color="#003399">4.校正</font><br>
+      　　采用负反馈，锁相精度高。<br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="390" height="320">
+          <param name="movie" value="../../../../swf/2-2-2.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/2-2-2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="390" height="320"></embed></object>
+      </center> <br>
+      　　<font color="#003399">（三）A/D变换器</font><a name="03"></a><br>
+      　　将黑白全电视信号分离出的模拟同步信号，用上述的时序脉冲，数字化后，再存入帧存贮器中。采用A/D变换器进行数字化处理。<br>
+      　　A/D变换 的方法很多，用的比较多的是逐次比较法。<br>
+      　　A/D变换器工作原理（下图）逐次比较<br>
+      　　<img src="../../../../images/chatp/chap02/042.gif" width="271" height="198"><br>
+      　　逐次比较型A/D变换器工作原理的有关内容可以参考数字和模拟电路中的相关内容。<br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="390" height="260">
+          <param name="movie" value="../../../../swf/2-2-3.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/2-2-3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="390" height="260"></embed></object>
+      </center> <br>
+      　　<b><font color="#003399">（四）帧存贮器的设计</font></b><a name="04"></a><br>
+      　　帧存贮器FB(Frame Buffer)的设计要求：<br>
+      　　a) 0.1μs从摄像机读一个数据，存到帧存贮器中；<br>
+      　　b) 0.1μs从帧存贮器中读一个数据，经过D/A变换送给监视器；<br>
+      　　c) 0.8μs计算机随机读/写帧存贮器FB。<br>
+      　　选用器件DRAM读/写时间0.2μs(200ns)。<br>
+      　　解决办法：采用多体、并行及分时方案。<br>
+      　　用分时和多体并行的办法（如下图）<br>
+      　　<img src="../../../../images/chatp/chap02/043.gif" width="281" height="192"><br>
+      　　<img src="../../../../images/chatp/chap02/044.gif" width="292" height="193"><br>
+      　　<img src="../../../../images/chatp/chap02/045.gif" width="283" height="193"> 
+      <br>
+      　　<font color="#003399">VRAM（如下图）</font><br>
+      　　<img src="../../../../images/chatp/chap02/046.gif" width="281" height="201"> 
+      <br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="390" height="240">
+          <param name="movie" value="../../../../swf/2-2-4.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/2-2-4.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="390" height="240"></embed></object>
+      </center> </td>
+  </tr>
+</table>
+</body>
+</html>

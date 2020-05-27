@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"设有n个进程共享一个临界区，若最多允许m个进程（m<n）同时进入临界区，则所采用的信号量的初值应为__________\n,信号量值的变化范围为___________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":376
+}

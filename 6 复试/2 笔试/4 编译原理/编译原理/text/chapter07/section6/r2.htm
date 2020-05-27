@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　有兴趣的读者也可证明该二义性文法用LR(k)方法仍不能解决此冲突。可以用LR(1)方法检验该二义性文法不是LR(1)文法。<br>
+      　　然而我们用优先关系和结合性可以解决这类冲突，假如我们仍规定'*'号优先级高于'+'号，且它们都服从左结合，那么在I7中，由于'*' ·＞ '+'所以遇'*'移进，又因'+'服从左结合，所以遇'+'则用E→E＋E归约，在I8中，由'*' 
+      ·＞ '+'且'*'服从左结合，因此 不论遇到'+'、'*'或'#'号都应归约，该二义性文法的LR分析表如表7.17所示。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.17 对二义性表达式文法的LR分析表</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="4">ACTION</td>
+                <td align="center" valign="top" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">=</td>
+                <td align="center" valign="top">*</td>
+                <td align="center" valign="top">(</td>
+                <td align="center" valign="top">)</td>
+                <td align="center" valign="top">i</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">E</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                </td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  r1<br>
+                  r2<br>
+                  r3</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S5<br>
+                  S5<br>
+                  r2<br>
+                  r3</td>
+                <td align="center" valign="top">S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S2<br>
+                  S2</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S9<br>
+                  r1<br>
+                  r2<br>
+                  r3</td>
+                <td align="center" valign="top">S3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S3<br>
+                  S3</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r4<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r2<br>
+                  r3</td>
+                <td align="center" valign="top">1<br>
+                  <font color="#FFFFFF">.</font><br>
+                  6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  7<br>
+                  8</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

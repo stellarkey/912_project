@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"K<=M/N+1的取整； 说明：出现死锁时占用最多资源的情况是(K-1)N\n",
+    "question":"某计算机系统中有M个同类型共享资源，有N个进程竞争使用，每个进程最多需要K个共享资源。该系统不会发生死锁的K的最大值是多少？要求给出计算过程，并说明理由。\n",
+    "source":"网络",
+    "answer":"K<=M/N+1的取整； 说明：出现死锁时占用最多资源的情况是(K-1)N\n",
+    "type":"question_answer",
+    "q_number":656
+}

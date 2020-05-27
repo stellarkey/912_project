@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟存储"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"存储管理应实现的功能为\n____________________________________________________________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":337
+}

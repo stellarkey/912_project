@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"进程生命周期中的相关事件有些什么？它们对应的进程状态变化是什么？\n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":1417
+}

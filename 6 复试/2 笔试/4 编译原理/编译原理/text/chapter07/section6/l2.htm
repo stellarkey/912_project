@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在表7.16中可以看出状态I1，I7和I8中存在移进-归约冲突，现在逐个分析它们的冲突如何解决。在I1中，归约项目E′→E·实际上为接受项目。由于FOLLOW(E′)＝{#}也就是只有遇到句子的结束标志'#'号才能接受，因而与移进项目的移进符号'+'，'*'不会冲突，所以可用SLR(1)方法解决，即遇当前输入符为'#'时则接受，遇'+'或'*'号时则移进。<br>
+      　　在I7和I8中，由于归约项目[E→E＋E·]和[E→E*E·]的左部都为非终结符E，而FOLLOW(E)={#,＋，*，)}，而移进项目均有'+'和'*'也就存在FOLLOW(E)∩{＋，*}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　因而I7和I8中的冲突不能用SLR(1)的方法解决。</td>
+  </tr>
+</table>
+</body>
+</html>

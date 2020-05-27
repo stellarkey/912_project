@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程间的同步是指进程间在逻辑上的相互（ ）关系。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.联接",
+        "B.制约",
+        "C.继续",
+        "D.调用"
+    ],
+    "q_number":618
+}

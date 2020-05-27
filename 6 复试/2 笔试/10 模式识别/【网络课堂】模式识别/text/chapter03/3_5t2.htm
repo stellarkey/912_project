@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent"><strong>3.5.2 线性不可分条件下的广义最优线性分界面</strong><br>
+            　　以上讨论的是线性可分条件下的最优线性分界面的计算方法，对于线性不可分的情况下，如果仍要使用线性分界面，则必然有部分训练样本向量被错分。在线性分界面条件下，被错分的样本从本类别训练样本占主导的决策域，进入了对方的决策域。在这种条件下，严格意义上的隔离带已不存在，(3-92)或(3-93)式也对一些数据不适用。但是我们仍然可以保留求最宽隔离带的框架，但允许有些数据能进入隔离带，甚至到对方的决策域中。但是对这部分数据的数量要严加控制。为了实行控制，可以采用的一种方法是对(3-81)作一些改动，增加一种起缓冲作用的量，<img src="../../images/image_content/3/3_5030.gif" width="73" height="35" align="absmiddle"> 
+            )称为缓冲量，此时可将(3-81)式改成<br>
+            　　<img src="../../images/image_content/3/3_5031.gif" width="255" height="60" align="absmiddle">　　　　　(3-92)<br>
+            　　</span><span class="spe">对比(3-81)，注意有哪些不同<img src="../../images/image_content/3/3_5032.gif" width="227" height="64" align="absmiddle"></span><span class="FCcontent"> 
+            　　　　(3-81)<br>
+            　　或合并写成<img src="../../images/image_content/3/3_5033.gif" width="181" height="33" align="absmiddle">　　　　　(3-93)<br>
+            　　</span><span class="spe">对比(3-83)，看看有哪些不同<img src="../../images/image_content/3/3_5034.gif" width="153" height="30" align="absmiddle"> 
+            　　</span><span class="FCcontent">　　　(3-83)<br>
+            　　有了缓冲量的定义后，我们可以通过要求缓冲量的总和，或缓冲量平方的总和等为最小的方式，实现对错分类数量的控制。因此目标函数中除了包含使 
+            <img src="../../images/image_content/3/3_5035.gif" width="35" height="32" align="absmiddle">为极小这一目标外，还要包含<img src="../../images/image_content/3/3_5036.gif" width="35" height="37" align="absmiddle">或<img src="../../images/image_content/3/3_5037.gif" width="39" height="33" align="absmiddle">的项，下面讨论采用<img src="../../images/image_content/3/3_5036.gif" width="35" height="37" align="absmiddle">的方法，因此目标函数可写为<br>
+            　　<br>
+            　　其中c是一个人为确定的常数，而相应的拉格朗日函数可写成<br>
+            　　<img src="../../images/image_content/3/3_5040.gif" width="454" height="52" align="absmiddle">　　　　　　(3-94)<br>
+            　　</span><span class="spe">将(3-84)写在此，便于与(3-94)对比，看看差别在哪里</span><span class="FCcontent"><br>
+            　　<img src="../../images/image_content/3/3_5041.gif" width="318" height="50" align="absmiddle">　　　　　　(3-84)<br>
+            　　其中式最后一项是为了保证<img src="../../images/image_content/3/3_5042.gif" width="42" height="30" align="absmiddle">这一条件。<br>
+            </span><span class="spe">　　在线性</span><span class="FCcontent"><img src="../../images/image_content/3/3_5039.gif" width="108" height="53" align="absmiddle"></span><span class="spe">不可分条件下，在原目标函数中增加了<img src="../../images/image_content/3/3_5043.gif" width="45" height="37" align="absmiddle">这一项，体现出对错分类总数要加以控制。这是因为在增加了缓冲量ξi后，如对ξi的总量不加限制，就会使控制<img src="../../images/image_content/3/3_5011.gif" width="48" height="41" align="absmiddle"> 
+            最小没有意义，若对ξi总量没有限制，那么<img src="../../images/image_content/3/3_5011.gif" width="48" height="41" align="absmiddle">可以变得很小(原意义上的隔离带很宽)，但<img src="../../images/image_content/3/3_5035.gif" width="35" height="32" align="absmiddle">越小，则错分类的数量体现在<img src="../../images/image_content/3/3_5044.gif" width="38" height="39" align="absmiddle">上可以很大，因此必须对此加以考虑对错分类要加以惩罚。因而<img src="../../images/image_content/3/3_5045.gif" width="44" height="41" align="absmiddle">是一项惩罚项，合理地选择c值，可以使<img src="../../images/image_content/3/3_5035.gif" width="35" height="32" align="absmiddle">小与<img src="../../images/image_content/3/3_5044.gif" width="38" height="39" align="absmiddle">小这两者之间取得比较合适的平衡。 
+            </span> 
+            <p><span class="FCcontent">　　由于(3-94)仍满足KKT条件，因此其充要条件是<br>
+              　　<img src="../../images/image_content/3/3_5046.gif" width="219" height="51" align="absmiddle">　　　　　(3-95)<br>
+              　　<img src="../../images/image_content/3/3_5047.gif" width="178" height="56" align="absmiddle">　　　　　(3-96)<br>
+              　　<img src="../../images/image_content/3/3_5048.gif" width="186" height="50" align="absmiddle">　　　　　(3-97)<br>
+              　　以及<img src="../../images/image_content/3/3_5049.gif" width="186" height="38" align="absmiddle"> 
+              　　　　　(3-98)<br>
+              　　<img src="../../images/image_content/3/3_5050.gif" width="214" height="42" align="absmiddle">　　　　　(3-99)<br>
+              　　<img src="../../images/image_content/3/3_5051.gif" width="56" height="35" align="absmiddle">　　　　　　(3-100)<br>
+              　　<img src="../../images/image_content/3/3_5052.gif" width="59" height="30" align="absmiddle">　　　　　(3-101)<br>
+              　　<img src="../../images/image_content/3/3_5053.gif" width="72" height="33" align="absmiddle">　　　　　(3-102)<br>
+              　　问题：思考一下，这一堆式子与线性可分条件下的解相比，哪些式子是增加的？哪些式子略有改变？<br>
+              　　答： (3-97)是增加的，它对a<sub>i</sub>的值有了限制。<br>
+              　　(3-100)是增加的，(3-102)是增加的，它们都与ξi有关。<br>
+              　　(3-98)及(3-99)没有明显变化。<br>
+              　　<img src="../../images/image_content/3/3_5054.gif" width="202" height="53" align="absmiddle"></span><span class="spe">(3-85)<br>
+              　　<img src="../../images/image_content/3/3_5055.gif" width="163" height="54" align="absmiddle">(3-86)<br>
+              　　以及 <img src="../../images/image_content/3/3_5056.gif" width="154" height="31" align="absmiddle">(3-87)<br>
+              　　<img src="../../images/image_content/3/3_5057.gif" width="182" height="36" align="absmiddle">(3-88)<br>
+              　　<img src="../../images/image_content/3/3_5058.gif" width="69" height="33" align="absmiddle">　　　　　(3-89)</span><span class="FCcontent"><br>
+              　　很有意思的是(3-94)式的对偶形式按拉格朗日理论构造出来与(3-84)式完全一样，唯一的不同是由(3-97)式与(3-102)式联合的结果，应有<br>
+              　　<img src="../../images/image_content/3/3_5059.gif" width="84" height="30" align="absmiddle">　　　　　(3-103)<br>
+              　　</span><span class="spe">因此可以看到在线性不可分条件下，硬要用线性分类器，因此必然有的样本会被错分类，表现出来就是走到线性分界面另一类样本的区域。这样一来，对这些错误的总量要加以控制，目标函数就从<img src="../../images/image_content/3/3_5011.gif" width="48" height="41" align="absmiddle">变成增加缓冲项。目标函数变了，但使用拉各朗日乘子方法的框架不变，因此原理上两者没有什么不同，只是要控制的量增加了。一些细节不要求，只要弄清楚在线性不可分条件下的处理方法就行了。</span><br>
+            </p></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5060.gif" width="529" height="365"><br>
+            <span class="FCcontent">图3-30</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

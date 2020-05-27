@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释磁盘管理\n",
+    "question":"DOS系统是____________________ 类型的操作系统。\n",
+    "source":"网络",
+    "answer":"解释磁盘管理\n",
+    "type":"fill_in_the_blank",
+    "q_number":511
+}

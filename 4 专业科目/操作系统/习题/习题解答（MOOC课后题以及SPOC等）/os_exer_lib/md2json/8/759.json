@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)假设就绪队列中有10个进程，系统将时间片设为200ms，CPU进行进程切换要花费10ms。\r\n则系统开销所占的比率约为﹎﹎﹎﹎\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.0.5％ \r\n B.1％ \r\n C.5％ \r\n D.10％\r\n"}

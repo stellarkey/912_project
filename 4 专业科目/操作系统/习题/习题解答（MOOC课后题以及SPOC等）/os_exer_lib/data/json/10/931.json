@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"在采用SPOOLing技术的系统中，用户作业的打印输出结果首先被送到( )。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.磁盘固定区域",
+        "B.内存固定区域",
+        "C.终端",
+        "D.打印机"
+    ],
+    "q_number":931
+}

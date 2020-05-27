@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX系统中的磁盘文件物理结构属于：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.连续文件",
+        "B.链接文件",
+        "C.索引文件",
+        "D.散列文件"
+    ],
+    "q_number":116
+}

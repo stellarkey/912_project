@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　这些过程或函数的嵌套定义层次结构如图2.3所示。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图 2.3 PL/0编译程序过程与函数定义层次结构图 
+            </font> </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle3/p2_3.gif" width="286" height="455"></td>
+        </tr>
+      </table>
+      　　由于PL/0编译程序采用一趟扫描方法，所以语法分析过程BLOCK是整个编译过程的核心。下面我们将在图2.4中先给出编译程序的总体流程，以弄清BLOCK过程在整个编译程序中的作用。在流程图2.4中可以看出，主程序置初值后先调用读单词过程GETSYM取一个单词，然后再调用语法分析过程BLOCK，直到遇源程序的结束符&quot;．&quot;为止。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"  class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图 2.4 PL/0编译程序总体流程图</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle1/p2_4.gif" width="430" height="547"></td>
+        </tr>
+      </table>
+      　　语法分析过程BLOCK是整个编译过程的核心，是指开始由主程序调用GETSYM取一个单词，再调用语法分析过程BLOCK， BLOCK由当前单词根据语法规则再调用其它过程，如说明处理、代码生成或出错处理等过程进行分析，当分析完一个单词后，BLOCK再调用GETSYM取下一个单词，一直重复到当前单词为结束符&quot;．&quot;表明源程序已分析结束。若未取到结束符&quot;．&quot;，而源程序已没有输入符号，这时表明源程序有错误，无法再继续分析。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>4．6 有关文法实用中的一些说明</b><br>
+      　　我们引进文法的目的在于描述程序设计语言，在实际应用中，一方面，需要对文法提出一些限制条件，但这些限制并不真正限制由文法所能描述的语言，而另一方面，有时还需要对文法进行扩充，比如在上下文无关语言的许多说明和分析中允许有称作ε规则的产生式(即，对于任何非终结符A，允许A→ε的产生式)，本节将就这两方面的问题进行一些讨论。 
+      <br>
+      <b>4.6.1 有关文法的实用限制</b><br>
+      　　在实用中，我们将限制文法中不得含有有害规则和多余规则，所谓有害规则，是指形为U→U的产生式。它对描述语言显然是没有必要的。说它有害，是说它只会引起文法的二义性。所谓多余规则，是指文法中那些连一个句子的推导都用不到的规则，这类规则在文法中以两种形式出现。一种是文法中某些非终结符不在任何规则的右部出现，所以任何句子的推导中不可能用到它。如例4.16的文法G[S]中，非终结符D不在任何规则的右部出现，那么规则(7)则是多余规则，也称这种非终结符为不可到达的。另一种情况则是在文法中有那样的非终结符，不能够从它推出终结符号串来。也称这种非终结符为不可终止的。如例4.16中的文法G[S]的非终结符C则属这种情况，那么规则(6)也是在任何句子的推导中都不能使用的，是多余的。因而规则(2)也是多余的。</td>
+  </tr>
+</table>
+</body>
+</html>

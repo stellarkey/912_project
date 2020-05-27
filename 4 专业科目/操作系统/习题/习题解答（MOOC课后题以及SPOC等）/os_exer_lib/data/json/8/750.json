@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在设计分时操作系统时，首先要考虑的是﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.灵活性和可适应性",
+        "B.交互性和响应时间",
+        "C.周转时间和系统吞吐量",
+        "D.实时性和可靠性"
+    ],
+    "q_number":750
+}

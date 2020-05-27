@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "简述信号量S的物理含义。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "S＞0时，S表示可使用的资源数；或表示可使用资源的进程数； S＝0时，表示无资源可供使用；或表示不允许进程再进入临界区；", "type": "4\r\n", "options": "  \r\n"}

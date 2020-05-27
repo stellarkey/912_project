@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C 是CPL\n",
+    "question":"CS段寄存器中的最低两位保存的是（） s1\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.DPL",
+        "B.CPL",
+        "C.RPL",
+        "D.NPL"
+    ],
+    "q_number":1321
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"物理页帧数量为5，虚拟页访问序列为 4,3,0,2,2,3,1,2,4,2,4,0,3，请问采用工作集置换算法（工作集窗口T=4）的缺页次数为（） s5\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.2",
+        "B.3",
+        "C.4",
+        "D.5"
+    ],
+    "q_number":1349
+}

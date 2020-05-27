@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)多道程序环境下，操作系统分配资源以【 】为基本单位。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.程序",
+        "B.指令",
+        "C.作业",
+        "D.进程"
+    ],
+    "q_number":688
+}

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.3.5 语法开始符定义</b><br>
+      　　上下文无关文法的开始符是一个特殊的非终结符，所有的推导都从这个非终结符开始。在YACC中，语法开始符定义语句是：<br>
+      　　%start非终结符……<br>
+      　　如果没有上面的说明，YACC自动将语法规则部分中第一条语法规则左部的非终结符作为语法开始符。<br>
+      <br>
+      <b>C.3.6 语义值类型定义</b><br>
+      　　YACC生成的语法分析程序yyparse用的是LR分析方法，它在作语法分析时除了有一个状态栈外，还有一个语义值栈，存放它所分析到的非终结<br>
+      符和终结符的语义值，这些语义值有的是从词法分析程序传回的，有的是在语义动作中赋与的，这些在介绍语义动作时再详细说明。如果没有对语义值的类型做定义，那么YACC认为它是整型(int)的，即所有语法符号如果赋与了语义值，则必须是整型的，否则会出类型错，但是用户经常会希望语义值的类型比较复杂，如双精度浮点数，字符串或树结点的指针。这时就可以用语义值类型定义进行说明。因为不同的语法符号的语义值类型可能不同，所以语义值类型说明就是将语义值的类型定义为一个联合(union)，这个联合包括所有可能用到的类型(各自对应一个成员名)，为了使用户不必在存取语义值时每次都指出成员名，在语义值类型定义部分还要求用户说明每一个语法符号(终结符和非终结符)的语义值是哪一个联合成员类型。下面举例说明并请参看本附录C.6例2。<br>
+      　　%union {<br>
+      　　　　　　int ival;<br>
+      　　　　　　double dval;<br>
+      　　　　　　INTERVAL VVal;<br>
+      　　　　　　}<br>
+      　　%token &lt;ival&gt; DREG VREG<br>
+      　　%token &lt;dval&gt; CONST<br>
+      　　%type &lt;dval&gt; dexp<br>
+      　　%type &lt;vval&gt; vexp<br>
+      　　… <br>
+      在上述定义中，以%union开始的行定义了语义值的联合类型，共有三个成员类型分别取名为ival，dval，vval。<br>
+      　　以%token开始的行定义的是终结符(见本附录C.3.7)所以DREG，VREG和CONST都是终结符，尖括号中的名字就是这些终结符的语义值的具体<br>
+      类型。如DREG和VREG这两个终结符的语义值将是整型(int)的，成员名是ival。<br>
+      　　以%type开始的行是说明非终结符语义值的类型。如非终结符dexp的语义值将是双精度浮点类型，请注意，在YACC中非终结符不必特别声明，<br>
+      但是当说明部分有对语义值类型的定义，而且某非终结符的语义值将被存取，就必须用上面的方法定义它的类型。</td>
+  </tr>
+</table>
+</body>
+</html>

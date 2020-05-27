@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"主存储器是\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.以“字”为单位进行编址的",
+        "B.是中央处理机能够直接访问的惟一的存储空间",
+        "C.与辅助存储器相比速度快、容量大、价格低的一类存储器",
+        "D.只能被CPU访问的存储器"
+    ],
+    "q_number":1029
+}

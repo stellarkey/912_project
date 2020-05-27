@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例 3.3 </font>应用左面的算法对图4.4的NFA 
+            N构造子集，步骤如下：</td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　　① 首先计算ε-closure(0)，令T<sub><font size="-2">0</font></sub>=ε-closure(0)={0，1，2，4，7}，T<sub><font size="-2">0</font></sub>未被标记，它现在是子集族C的唯一成员。<br>
+            　　② 标记T<sub><font size="-2">0</font></sub>；令T<sub><font size="-2">1</font></sub>=ε-closure(move(T<sub><font size="-2">0</font></sub>,a))={1，2，3，4，6，7，8}，将T<sub><font size="-2">1</font></sub>加入C中，T<sub><font size="-2">1</font></sub>未被标记。<br>
+            　　令T<sub><font size="-2">2</font></sub>=ε-closure(move (T,b))={1，2，4，5，6，7}，将T<sub><font size="-2">2</font></sub>加入C中，它未被标记。<br>
+            　　③ 标记T<sub><font size="-2">1</font></sub>；计算ε-closure(move(T<sub><font size="-2">1</font></sub>,a))，结果为{1，2，3，4，6，7，8}，即T<sub><font size="-2">1</font></sub>，T<sub><font size="-2">1</font></sub>已在C中。<br>
+            　　计算ε-closure(move(T<sub><font size="-2">1</font></sub>,b))，结果为{1，2，4，5，6，7，9}，令其为T<sub><font size="-2">3</font></sub>，T<sub><font size="-2">3</font></sub>加至C中，它未被标记。<br>
+            　　④ 标记T<sub><font size="-2">2</font></sub>，计算ε-closure(move(T<sub><font size="-2">2</font></sub>,a))，结果为{1，2，3，4，6，7，8}，即T<sub><font size="-2">1</font></sub>，T<sub><font size="-2">1</font></sub>已在C中。<br>
+            　　计算ε-closure(move(T<sub><font size="-2">2</font></sub>,b))，结果为{1，2，4，5，6，7}，即T<sub><font size="-2">2</font></sub>，T<sub><font size="-2">2</font></sub>已在C中。<br>
+            　　⑤ 标记T<sub><font size="-2">3</font></sub>，计算ε-closure(move(T<sub><font size="-2">3</font></sub>,a))，结果为{1，2，3，4，6，7，8}，即T<sub><font size="-2">1</font></sub>。<br>
+            　　计算ε-closure(move(T<sub><font size="-2">3</font></sub>,b))，结果为{1，2，4，5，6，7，10}，令其为T<sub><font size="-2">4</font></sub>，加入C中，T<sub><font size="-2">4</font></sub>未被标记。<br>
+            　　⑦ 标记T<sub><font size="-2">4</font></sub>，计算ε-closure(move(T<sub><font size="-2">4</font></sub>,a))，结果为{1，2，3，4，6，7，8}，即T<sub><font size="-2">1</font></sub><br>
+            　　计算ε-closure(move(T<sub><font size="-2">4</font></sub>,b))结果为{1，2，4，5，6，7}，即T<sub><font size="-2">2</font></sub>。<br>
+            　　至此，算法终止共构造了五个子集：<br>
+            　　T<sub><font size="-2">0</font></sub>={0，1，2，4，7} T<sub><font size="-2">1</font></sub>={1，2，3，4，6，7，8}<br>
+            　　T<sub><font size="-2">2</font></sub>={1，2，4，5，6，7} T<sub><font size="-2">3</font></sub>={1，2，4，5，6，7，9}<br>
+            　　T<sub><font size="-2">4</font></sub>={1，2，4，5，6，7，10}</td>
+        </tr>
+      </table>
+      　　那么图4.4的NFA N构造的DFA M为<br>
+      　　① S={[T<sub><font size="-2">0</font></sub>]，[T<sub><font size="-2">1</font></sub>]，[T<sub><font size="-2">2</font></sub>]，[T<sub><font size="-2">3</font></sub>]，[T<sub><font size="-2">4</font></sub>]}<br>
+      　　② Σ={a,b}<br>
+      　　③ D([T<sub><font size="-2">0</font></sub>]，a)=[T<sub><font size="-2">1</font></sub>] 
+      D([T<sub><font size="-2">2</font></sub>]，a)=[T<sub><font size="-2">1</font></sub>]<br>
+      　　　 D([T<sub><font size="-2">0</font></sub>]，b)=[T<sub><font size="-2">2</font></sub>] 
+      D([T<sub><font size="-2">2</font></sub>]，b)=[T<sub><font size="-2">2</font></sub>]<br>
+      　　　 D([T<sub><font size="-2">1</font></sub>]，a)=[T<sub><font size="-2">1</font></sub>] 
+      D([T<sub><font size="-2">3</font></sub>]，a)=[T<sub><font size="-2">1</font></sub>]<br>
+      　　　 D([T<sub><font size="-2">1</font></sub>]，b)=[T<sub><font size="-2">3</font></sub>] 
+      D([T<sub><font size="-2">3</font></sub>]，b)=[T<sub><font size="-2">4</font></sub>]<br>
+      　　　 D([T<sub><font size="-2">4</font></sub>],a)=[T<sub><font size="-2">1</font></sub>]<br>
+      　　　 D([T<sub><font size="-2">4</font></sub>]，b)=[T<sub><font size="-2">2</font></sub>]<br>
+      　　④ S<sub><font size="-2">0</font></sub>=[T<sub><font size="-2">0</font></sub>]<br>
+      　　⑤ S<sub><font size="-2">t</font></sub>=[T<sub><font size="-2">4</font></sub>] 
+      <br>
+      　　不妨将[T<sub><font size="-2">0</font></sub>]，[T<sub><font size="-2">1</font></sub>]，[T<sub><font size="-2">2</font></sub>]，[T<sub><font size="-2">3</font></sub>]，[T<sub><font size="-2">4</font></sub>]重新命名，以利于书写，或用A，B，C，D，E或用0，1，2，3，4分别表示。若采用后者，该DFA 
+      M的状态转换图如图4.6所示。</td>
+  </tr>
+</table>
+</body>
+</html>

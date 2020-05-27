@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>小结：</b>LR(0)项目集规范族的构造(构成识别一个文法活前缀的DFA的状态的全体) <br>
+      　　根据定义对于任一G[S]:<br>
+      　　若S’<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">αAω<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">αβω 
+      <br>
+      　　　　　R 　 　R<br>
+      　　若γ<img src="../../../img/index/1x1pixel.gif" width="1" height="16">是αβ的前缀，则称γ是G的一个活前缀<br>
+      　　活前缀与句柄的关系：<br>
+      　　- <img src="../../../img/index/1x1pixel.gif" width="1" height="16">活前缀已含有句柄的全部符号，表明产生式A→β的 
+      右部β已出现在栈顶。<br>
+      　　- <img src="../../../img/index/1x1pixel.gif" width="1" height="16">活前缀只含句柄的一部分符号如β<sub><font size="-2">1</font></sub>表明A→β<sub><font size="-2">1</font></sub>β<sub><font size="-2">2</font></sub>的右部子串β<sub><font size="-2">1</font></sub>已出现在栈顶，当前期待从输入串中看到β<sub><font size="-2">2</font></sub>推出的符号。 
+      <br>
+      　　- 活前缀不含有句柄的任何符号，此时期望产生式A→β的右部所推出的符号串。<br>
+      　　为刻划这种分析过程中的文法G的每一个产生式的右部符号已有多大一部分被识别(出现在栈顶)，分别用标有圆点的产生式来指示位置，标有圆点的产生式称为项目。<br>
+      　　A→·β　　A→β<sub><font size="-2">1</font></sub>·β<sub><font size="-2">2</font></sub>　　A→β·<br>
+      　　对于A→ε的LR(0)项目为A→·是归约项目，绝对不能写成 A→·ε 和 A→ε·否则在构造分析表时会引起严重错误。<br>
+      　　根据圆点所在的位置和圆点后是终结符还是非终结符或为空把项目分为以下几种：<br>
+      　　移进项目，形如 A →α·aβ a是终结符,α,β∈V<sup><font size="-2">*</font></sup> 以下同<br>
+      　　待约项目，形如 A →α·Bβ<br>
+      　　归约项目，形如 A →α·<br>
+      　　接受项目，形如 S’→S ·<br>
+      　　直接由产生式构造识别活前缀的DFA算法为计算LR(0)项目集的闭包CLOSURE、GO 函数和项目集规范族。<br>
+      　　① 计算闭包CLOSURE函数<br>
+      　　function CLOSURE (I); /* I 是项目集*/<br>
+      　　{ J:= I;<br>
+      　　　repeat for J 中的每个项目A →α·Bβ和产生式<br>
+      　　　　B→γ，若B→·γ不在J中<br>
+      　　　　Do 将 B→·γ加到J中 <br>
+      　　　until 再没有项目加到J中<br>
+      　　return J<br>
+      　　};<br>
+      　　② 计算GO函数和LR（0）项目集规范族<br>
+      　　C={I<sub><font size="-2">0</font></sub> ，I<sub><font size="-2">1</font></sub> 
+      , ... ，I<sub><font size="-2">n</font></sub> }<br>
+      　　procedure itemsets(G’);<br>
+      　　　begin C := { CLOSURE ({S’→·S})}<br>
+      　　　　repeat<br>
+      　　　　　for C 中每一项目集I和每一文法符号x <br>
+      　　　　　do if GO(I,x) 非空且不属于C<br>
+      　　　　　　then 把 GO(I,x) 放入C中<br>
+      　　　　until C 不再增大<br>
+      　　　end;</td>
+  </tr>
+</table>
+</body>
+</html>

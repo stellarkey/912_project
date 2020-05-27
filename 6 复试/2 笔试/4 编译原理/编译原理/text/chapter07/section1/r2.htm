@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../img/index/bg1.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　LR(K)分析方法是1965年Knuth提出的，括号中的K表示向右查看输入串符号的个数。这种方法比起自顶向下的LL(K)分析方法和算符优先分析方法对文法的限制要少得多，也就是说对于大多数用无二义性上下文无关文法描述的语言都可以用相应的LR分析器进行识别，而且这种方法还具有分析速度快，能准确、即时地指出出错位置。它的主要缺点是对于一个实用语言文法的分析器的构造工作量相当大，K愈大构造愈复杂，实现相当困难。目前对于真正实用的编译程序，所采用的LR分析器都是借助于美国Bell实验室1974年推出的&quot;一个编译器的编译器-YACC&quot;来实现的。它能接受一个用BNF描述的满足LALR(1)的上下文无关文法并将自动构造LALR(1)语法分析器。<br>
+      　　本章将主要介绍LR分析的基本思想和当K≤1时LR分析器的基本构造原理和方法。其中LR(0)分析器是在分析过程中不需向右查看输入符号，因而它对文法的限制较大，对绝大多数高级语言的语法分析器是不能适用的，然而，它是构造其它LR类分析器的基础。当K=1时，已能满足当前绝大多数高级语言编译程序的需要。因此，我们将着重介绍LR(0)、SLR(1)、LALR(1)、LR(1)四种分析器的构造方法。其中SLR(1)和LALR(1)分别是LR(0)和LR(1)的一种改进。</td>
+  </tr>
+</table>
+</body>
+</html>

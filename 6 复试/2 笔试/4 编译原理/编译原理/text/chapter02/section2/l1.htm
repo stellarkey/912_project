@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>2.2 PL/0编译程序的结构</b> <br>
+      　　由2.1节可知，PL/0语言可看成是PASCAL语言的子集，它的编译程序是一个编译解释执行系统。PL/0的目标程序为假想栈式计算机的汇编语言，与具体计算机无关。PL/0的编译程序和目标程序的解释执行程序都是用PASCAL语言书写的，因此PL/0语言可在配备PASCAL语言的任何机器上实现。其编译过程采用一趟扫描方式，以语法分析程序为核心，词法分析程序和代码生成程序都作为一个独立的过程，当语法分析需要读单词时就调用词法分析程序，而当语法分析正确需生成相应的目标代码时，则调用代码生成程序。此外，用表格管理程序建立变量、常量和过程标识符的说明与引用之间的信息联系。用出错处理程序对词法和语法分析遇到的错误给出在源程序中出错的位置和错误性质。当源程序编译正确时，PL/0编译程序自动调用解释执行程序，对目标代码进行解释执行，并按用户程序要求输入数据和输出运行结果。其编译和解释执行的结构图如图2.2(a)和2.2(b)所示。</td>
+  </tr>
+</table>
+</body>
+</html>

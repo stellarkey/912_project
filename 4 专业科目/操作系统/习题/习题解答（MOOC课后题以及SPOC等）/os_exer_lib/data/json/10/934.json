@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"SPOOLing是对脱机I/O工作方式的模拟，SPOOLing系统中的输入井是对脱机输入中的( )进行模拟。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.内存输入缓冲区",
+        "B.磁盘",
+        "C.外围控制机",
+        "D.输入设备"
+    ],
+    "q_number":934
+}

@@ -1,0 +1,250 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　由于多媒体对象的同步定义描述了整个演示的时间相关性，所以它被认为是多媒体系统中的一个核心问题。同步定义由描述层的工具产生，用于对象层的接口。对于多媒体对象同步的复杂定义，还应包括用户交互，所以要使用的精细的定义方法。本小节将介绍4种同步定义方法。一般来讲，任何一种定义方法都要满足下面一些要求：<br>
+      　　·方法要支持对象的一致性和维护同步定义；媒体对象在定义中应保持为一个逻辑单元。<br>
+      　　·方法应提供对媒体对象内容的某种抽象机制，以允许按照媒体对象的一部分定义时间关系，但同时保持媒体对象为一个逻辑单元。<br>
+      　　·所有类型的同步关系应当方便描述。 <br>
+      　　·应支持时间相关、以及时间无关的媒体对象的集成。<br>
+      　　·定义方法应支持定义QoS需求；方法本身要能够直接表述。<br>
+      　　·要支持大型的复杂的同步场景的分层描述。<br>
+      <b><font color="#003399">　　1） 基于时间间隔的定义法</font></b><a name="01"></a><br>
+      　　在这种同步定义方法中，对象的演示时间称为间隔（interval）。给定两个时间间隔会有13种同步模式（或时间关系），图7-7(a)显示了其中的7种，另外6种为equals以外的对称关系。基本的基于时间间隔（Interval-based）的同步定义方法就是基于这7种关系，一种增强型的方法将这7种基本的时间关系分离为29种，并简化定义了这些关系上的10种操作，如图7-8所示。 
+      <br>
+      <b><font color="#003399">　　 7-7 
+      两个对象间的时间关系类型</font></b> <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap07/008.gif" width="311" height="300" border="0"></a> 
+      <br>
+      <b><font color="#003399">　　 7-8 
+      基于时间间隔的方法中的基本操作</font></b> <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t2.htm" target="_blank"><img src="../../../../images/chatp/chap07/009.gif" width="284" height="217" border="0"></a> 
+      <br>
+      　　例如，一段配有解说（Audio）的幻灯演示（Slidei,1&lt;=i&lt;=n）在这种方法中可以描述为：<br>
+      　　Slide1 cobegin(0) Audio<br>
+      　　Slidei before(0) Slidei+1 ,1&lt;=i&lt;=n<br>
+      　　这种方法的一个优势是容易控制用户交互。可以通过定义持续时间以及延时的间隔来定义其他不确定的时间关系。<br>
+      　　但这种方法不支持偏差的定义。尽管可以直接定义媒体对象间的时间关系，但不能够直接定义对象子单元间的时间关系，所以常常要将对象分裂为多个，或间接地定义延时。<br>
+      　　将操作分离还可以用来定义诸如&quot;不并行&quot;（not parallel）这样的演示关系，但是这种灵活性会造成运行时的不一致性。例如，定义两个视频A和B&quot;不并行&quot;，在运行时，A在运行时B有可能与一个用户交互的结束具有before(0)的关系。如果用户交互结束，那么B就应当启动，但另一方面它又与A有&quot;不并行&quot;的关系。因此，系统必须处理这种运行时的不一致性，或在定义中检查这种关系并加以拒绝。<br>
+      　　表7-4是基于时间间隔的同步定义方法的评价。<br>
+      <b><font color="#003399">　　 7-4 
+      基于时间间隔的同步方法的评价</font></b> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">优势</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">缺陷</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">可以保持逻辑对象</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">定义复杂</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">对媒体内容的较好抽象</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">对允许的偏差需要附加的定义</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">便于集成与时间无关的对象</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">能直接定义媒体对象间的时间关系，但不能面向媒体对象的子单元</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">便于集成交互对象</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">处理不确定问题会在运行时产生不一致性</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">支持定义不确定的时间关系</div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　<b><font color="#003399">2）基于时间轴的定义法</font></b><a name="02"></a><br>
+      　　基于时间轴（Timeline-based）的同步定义方法最为直观。其基本方法是，将媒体对象映射到一个时间轴上，每个对象的启动、结束、持续时间都表示在实践轴上，对象与轴关联，彼此之间互不影响，因此，加入或删除一个对象不会影响其他对象之间的时间关系。但是基于时间轴的同步描述的最大的缺陷就是，对于不定时的对象将无法表示，例如用户交互事件。图7-9是一个基于时间轴的同步描述的例子，表7-5是基于时间轴的同步方法的评价。<br>
+      <b><font color="#003399">　　 7-9基于时间轴的同步描述的例子</font></b><br>
+      　　<img src="../../../../images/chatp/chap07/010.gif" width="307" height="126"><br>
+      <b><font color="#003399">　　 7-5 
+      基于时间轴的同步方法的评价</font></b> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">优势</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">缺陷</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="left">　易于理解</div>
+                </td>
+                <td class="text"> 
+                  <div align="left">　不能集成持续时间未知的对象，因此需要扩展的定义</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="left">　便于实现分层</div>
+                </td>
+                <td class="text"> 
+                  <div align="left">　允许的偏差的定义不直接，必须另外给出QoS定义</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="left">　由于相互独立，便于管理</div>
+                </td>
+                <td class="text"> 
+                  <div align="left"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="left">　对媒体对象的较好抽象</div>
+                </td>
+                <td class="text"> 
+                  <div align="left"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="left">　便于集成与时间无关的媒体对象</div>
+                </td>
+                <td class="text"> 
+                  <div align="left"></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399"><b>　　3）基于控制流的定义法</b></font><a name="03"></a><br>
+      　　基于控制流（Control flow-based）的同步定义方法的基本思想是，将并行的演示线索流程在预定义的点上同步。具体的定义方法有分层模型、参考点模型和Timed 
+      Petri nets模型。 <br>
+      　　分层（Hierarchical）模型基于两个基本操作：串行同步和并行同步，多媒体演示就按照对象间的串行和并行关系构成一棵演示树，如图7-10的例子所示，图上以弧线连接的对象具有并行关系。这种方法便于理解，支持分层，也易于集成交互对象，但是不直接支持QoS描述，对与时间无关的对象要另外定义其演示时间，有时由于同步要求还要切分媒体对象，另外，这种模型不能描述有些媒体间的同步关系 
+      <br>
+      <b><font color="#003399">　　 7-10 
+      分层模型的例子</font></b><br>
+      　　<img src="../../../../images/chatp/chap07/011.gif" width="321" height="159"> 
+      <br>
+      　　参考点（Reference points）模型中媒体对象的开始、结束时间，以及时间相关媒体对象的子单元的开始时间都可以视为参考点，对象间的同步通过连接媒体对象的参考点来定义，这些相连接的参考点称为同步点。同步是通过在同步点上的发信号机制实现的，即每个到达一个同步点的线索给卷入此同步点的所有其他演示线索发信号，其他线索受到此信号后，在必要时作&quot;加速动作&quot;，使整个演示保持同步。图7-11是一个参考点同步的例子。这种方法也较直观易用，能够集成演示时间不确定的对象，但需要有检查不一致性的机制。 
+      <br>
+      <b><font color="#003399">　　 7-11 
+      参考点同步的例子</font></b> <font color="#990000">（点击查看大图）</font><br>
+      　　<a href="t3.htm" target="_blank"><img src="../../../../images/chatp/chap07/012.gif" width="287" height="126" border="0"></a> 
+      <br>
+      　　Petri nets是一种描述和分析实时系统的建模工具，其明显优势在于它能定义实时需求，Timed Petri Nets是一类Petri nets的扩展，用来定义多媒体同步关系的一个典型的模型是OCPN(Object 
+      Composition Petri Nets)。<br>
+      　　Petri nets是一有向二部图，它由位置节点(place)和变迁节点(transition)组成。在图上，位置节点用圆代表，变迁节点由一杆表示。一个带标记的Petri 
+      nets有一组标记 (token)，它们被赋给Petri nets中的位置节点，标记用一小圆点代表，标记的个数和位置在运行中不断变化。为了对时间驱动的系统进行建模，有人把时间概念引入Petri 
+      nets，给Petri nets的每个节点赋予不同的执行时间，得到Timed Petri Nets(TPN)。OCPN对TPN加以修改，增加了资源集，用来模拟并行和串行的合成活动，其定义是：<br>
+      　　<img src="../../../../images/chatp/chap07/013.gif" width="181" height="20"><br>
+      　　<img src="../../../../images/chatp/chap07/014.gif" width="124" height="21" align="absmiddle">变迁节点集合；<br>
+      　　<img src="../../../../images/chatp/chap07/015.gif" width="140" height="21" align="absmiddle">位置节点集合；<br>
+      　　<img src="../../../../images/chatp/chap07/016.gif" width="145" height="21" align="absmiddle">有向弧集合；<br>
+      　　<img src="../../../../images/chatp/chap07/017.gif" width="228" height="21" align="absmiddle">时间间隔集合；<br>
+      　　<img src="../../../../images/chatp/chap07/018.gif" width="159" height="21" align="absmiddle">资源集合；<br>
+      　　<img src="../../../../images/chatp/chap07/019.gif" width="21" height="16" align="absmiddle">，标记 
+      (token)集合。 <br>
+      　　OCPN的触发规则是：<br>
+      � 　　①当一个变迁节点<img src="../../../../images/chatp/chap07/020.gif" width="13" height="21" align="absmiddle">的每个输入位置节点都有解锁标记(unlocked 
+      token)时，该变迁节点立即触发；<br>
+      　　②一旦一个变迁节点<img src="../../../../images/chatp/chap07/020.gif" width="13" height="21" align="absmiddle">触发，即从其每个输入位置节点移出标记加到其输出位置节点上；<br>
+      　　③一个位置节点<img src="../../../../images/chatp/chap07/021.gif" width="20" height="24" align="absmiddle">得到一个标记后，在其运行时间<img src="../../../../images/chatp/chap07/022.gif" width="19" height="24" align="absmiddle">内处于活动状态，该标记处于加锁状态(locked)；<img src="../../../../images/chatp/chap07/022.gif" width="19" height="24" align="absmiddle">后或<img src="../../../../images/chatp/chap07/021.gif" width="20" height="24" align="absmiddle">变为非活动状态时，标记变为解锁状态。<br>
+      <font color="#003399"><b><font color="#003399"> 　　 </font>7-12 
+      &quot;心脏&quot;的多媒体演示</b></font><br>
+      　　<img src="../../../../images/chatp/chap07/023.gif" width="288" height="216"> 
+      <br>
+      <font color="#003399"><b><font color="#003399">　　 </font>7-13 
+      &quot;心脏&quot;演示的OCPN</b></font> <font color="#990000">（点击查看大图）</font><br>
+      　<a href="t4.htm" target="_blank"><img src="../../../../images/chatp/chap07/024.gif" width="293" height="129" border="0"></a> 
+      <br>
+      　　基本的构造多媒体演示的OCPN的原理是，按照图7-7（a）的基本时序关系，分别构造成图7-7(b)所示的Petri nets，即通过选择演示对象间成对的时间关系，逐层构造出复杂的Petri 
+      nets。图7-12是生理课心脏一节的演示，由文本、图形、音频、视频等信息组成，我们可以构造出图7-13的OCPN。然后可以根据OCPN建立演示树或构造演示播放时间表，按照OCPN定义的时间关系进行演示。为了在OCPN上增加用户交互的功能，又先后产生了一些扩充模型。<br>
+      　　基于控制流的同步定义最大的缺陷就是定义复杂，操作起来十分不便。例如，Timed Petri Net是很强大的描述工具，但是如何快速正确的生成这样的描述却是有待解决的问题。<br>
+      　　<b><font color="#003399">4）基于事件的定义法</font></b><a name="04"></a><br>
+      　　基于事件（Event-based）的同步定义方法中，演示动作由同步事件来初始化。典型的演示动作包括：<br>
+      　　·启动一个演示<br>
+      　　·停止一个演示<br>
+      　　·准备一个演示<br>
+      　　初始化演示动作的事件可以是外部的（如由计时器生成），也可以是由演示中与事件相关的媒体对象生成的内部事件（如媒体对象到达某一个LDU）。<br>
+      　　表7-6是用事件描述的一段多媒体演示。这种方法的最大缺陷是实现时不容易控制，其评价列于表7-7。第一节中著作工具Ark的同步方法就是基于事件原理的一个实现。<br>
+      <b><font color="#003399"> 　　 表7-6 
+      多媒体演示的基于事件的同步定义</font></b><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">
+                  <div align="center">优势</div>
+                </td>
+                <td class="text">
+                  <div align="center">缺陷</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">　易于集成交互对象</td>
+                <td class="text">　难以控制</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">　可以方便扩展新事件</td>
+                <td class="text">　定义复杂</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">　灵活</td>
+                <td class="text">　要通过使用附加的计时器来集成与时间无关的对象</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">&nbsp;</td>
+                <td class="text">　对允许偏差QoS的定义是分离的</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text">&nbsp;</td>
+                <td class="text">　难以实现分层</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　上面所述的几种同步定义方法的能力各不相同，用户的友好性也有很大的差别，但都从不同的角度表达了同一个问题。不同能力的定义方法决定了它们不能映射到同一子集上。选择合适的方法主要根据你的目标应用程序的需要和所运行的软硬件环境。很难绝对地谈哪个方法好哪个方法不好，对于没有用户交互的简单演示，基于时间轴的方法就很合适，而对于有用户交互的复杂结构，控制流模型就比较适合。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

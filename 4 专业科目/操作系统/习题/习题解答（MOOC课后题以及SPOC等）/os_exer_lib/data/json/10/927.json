@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"如果I/O所花费的时间比CPU处理时间短得多，则缓冲区( )。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.最有效",
+        "B.几乎无效",
+        "C.均衡",
+        "D.都不是"
+    ],
+    "q_number":927
+}

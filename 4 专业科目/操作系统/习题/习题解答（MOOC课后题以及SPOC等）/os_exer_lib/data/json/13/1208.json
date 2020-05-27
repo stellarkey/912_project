@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A 更合适的答案是1。根据对当前操作系统设计与实现的理解，系统调用是应用程序向操作系统发出服务请求并获得操作系统服务的唯一通道和结果。\n",
+    "question":"操作系统与用户的接口包括____\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.系统调用",
+        "B.进程调度",
+        "C.中断处理",
+        "D.程序编译"
+    ],
+    "q_number":1208
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下存储管理技术中，支持虚拟存储器的技术是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.动态分区法",
+        "B.可重定位分区法",
+        "C.请求分页技术",
+        "D.对换技术"
+    ],
+    "q_number":227
+}

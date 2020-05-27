@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那个叙述正确\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.使用静态重定位的系统用户的作业可不要求分配连续的存储空间",
+        "B.使用静态重定位的系统作业可在内存中移动",
+        "C.使用静态重定位的系统有可能为用户提供一个比内存大的多的地址空间",
+        "D.使用静态重定位的系统无需增加硬件地址变换机构"
+    ],
+    "q_number":131
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)CPU输出数据的速度远远高于打印机的打印速度，为解决这一矛盾，可采用【 】。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.并行技术",
+        "B.通道技术",
+        "C.虚存技术",
+        "D.缓冲技术"
+    ],
+    "q_number":699
+}

@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　<font color="#0000FF">例题2-4</font><br>
+      　　&quot;快乐学生&quot;问题：<br>
+      　　假设任何通过计算机考试并获奖的人都是快乐的，任何肯学习或幸运的人都可以通过所有的考试，张不肯学习但他是幸运的，任何幸运的人都能获奖。求证：张是快乐的。 
+      <br>
+      　　<font color="#0000FF">解：</font><br>
+      　　先将问题用谓词表示如下：<br>
+      　　R1:&quot;任何通过计算机考试并获奖的人都是快乐的&quot;<br>
+      　　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)((Pass(x, 
+      computer)∧Win(x, prize))→Happy(x))<br>
+      　　R2:&quot;任何肯学习或幸运的人都可以通过所有考试&quot;<br>
+      　　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(<img src="../../../img/chap02/icon1.gif" width="19" height="18">y)(Study(x)∨Lucky(x)→Pass(x, 
+      y))<br>
+      　　R3:&quot;张不肯学习但他是幸运的&quot;<br>
+      　　　～Study(zhang)∧Lucky(zhang)<br>
+      　　R4:&quot;任何幸运的人都能获奖&quot;<br>
+      　　　(<img src="../../../img/chap02/icon1.gif" width="19" height="18">x)(Luck(x)→Win(x,prize))<br>
+      　　　结论&quot;张是快乐的&quot;的否定<br>
+      　　　～Happy(zhang)<br>
+      　　将上述谓词公式转化为子句集并进行归结如下：<br>
+      　　首先将每一个表示逻辑条件的谓词子句转换为子句集可以接受的Skolem标准形。<br>
+      　　由R1及逻辑转换公式:P∧W→H = ～（P∧W）∨ H ，可得<br>
+      　　　(1) ～Pass(x, computer)∨～Win(x, prize)∨Happy(x)<br>
+      　　由R2可得<br>
+      　　　(2) ～Study(y)∨Pass(y,z)<br>
+      　　　(3) ～Lucky(u)∨Pass(u,v)<br>
+      　　由R3可得<br>
+      　　　(4) ～Study(zhang)<br>
+      　　　(5) Lucky(zhang)<br>
+      　　由R4可得<br>
+      　　　(6) ～Lucky(w)∨Win(w，prize)<br>
+      　　由结论可得<br>
+      　　　(7) ～Happy(zhang) 结论的否定<br>
+      　　根据以上7条子句，归结如下：<br>
+      　　　(8) ～Pass(w, computer)∨Happy(w)∨～Luck(w) (1)，(6)归结，{w/x}<br>
+      　　　(9) ～Pass(zhang, computer)∨～Lucky(zhang) (8)，(7)归结，{zhang/w}<br>
+      　　　(10) ～Pass(zhang, computer) (9)，(5)归结<br>
+      　　　(11) ～Lucky(zhang) (10),(3)归结,{zhang/u, computer/v}<br>
+      　　　(12)  (11),(5)归结 <br>
+      　　<b>结论</b><br>
+      　　1．归结法的实质：<br>
+      　　·归结法是仅有一条推理规则的推理方法。 <br>
+      　　·归结的过程是一个语义树倒塌的过程。<br>
+      　　2．归结法的问题<br>
+      　　·对于传统归结法，子句中有等号或不等号时，完备性不成立。即，传统的归结法不能处理相等的关系。<br>
+      　　Herbrand定理式归结原理的理论基础；而正是由于Herbrand定理的不实用性引出了可实用的归结法。</td>
+  </tr>
+</table>
+</body>
+</html>

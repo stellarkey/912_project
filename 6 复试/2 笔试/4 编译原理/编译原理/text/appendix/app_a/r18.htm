@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　begin (*main*)<br>
+      　　for ch∶=′ ′ to ′!′ do ssym[ch]∶=nul;<br>
+      　　(*changed because of different character set<br>
+      　　　note the typos below in the original where<br>
+      　　　the alfas were not given the correct space*) <br>
+      　　word[1]∶=′begin′; word[2]∶=′call ′;<br>
+      　　word[3]∶=′const′; word[4]∶=′do ′; <br>
+      　　word[5]∶=′end′; word[6]∶=′if ′; <br>
+      　　word[7]∶=′odd ′; word[8]∶=′procedur e ′;<br>
+      　　word[9]∶=′read′; word[10]∶=′then ′;<br>
+      　　word[11]∶=′var ′;word[12]∶=′while ′;<br>
+      　　word[13]∶=′write ′; 
+      <p>　　wsym[1]∶=beginsym; wsym[2]∶=callsym;<br>
+        　　wsym[3]∶=constsym; wsym[4]∶=dosym;<br>
+        　　wsym[5]∶=endsym; wsym[6]∶=ifsym;<br>
+        　　wsym[7]∶=oddsym; wsym[8]∶=procsym;<br>
+        　　wsym[9]∶=readsym;wsym[10]∶=thensym;<br>
+        　　wsym[11]∶=varsym;wsym[12]∶=whilesym;<br>
+        　　wsym[13]∶=writesym;</p>
+      <p>　　ssym[′+′]∶=plus; ssym[′-′]∶=minus;<br>
+        　　ssym[′*′]∶=times;ssym[′/′]∶=slash;<br>
+        　　ssym[′(′]∶=lparen; ssym[′)′]∶=rparen; <br>
+        　　ssym[′=′]∶=eql;ssym[′,′]∶=comma;<br>
+        　　ssym[′.′]∶=period; ssym[′#′]∶=neq;<br>
+        　　ssym[′;′]∶=semicolon;</p>
+      <p>　　mnemonic[lit]∶=′lit′; mnemonic[opr]∶ =′opr′;<br>
+        　　mnemonic[lod]∶=′lod′; mnemonic[sto]∶= ′sto′;<br>
+        　　mnemonic[cal]∶=′cal′; mnemonic[int]∶= ′int′;<br>
+        　　mnemonic[jmp]∶=′jmp′; mnemonic[jpc]∶= ′jpc′;</p>
+      <p>　　declbegsys∶=[constsym,varsym,procsym];<br>
+        　　statbegsys∶=[beginsym,callsym,ifsym,whilesym];<br>
+        　　facbegsys∶=[ident,number,lparen];</p>
+      <p>　　(*page(output)*)<br>
+        　　rewrite(fa1);<br>
+        　　write(′input file?′);<br>
+        　　write(fa1,′input file? ′);<br>
+        　　readln(fname);<br>
+        　　openf(fin,fname,′r′);<br>
+        　　write(′list object code?′);<br>
+        　　readln(fname);<br>
+        　　write(fa1,′list object code?′);<br>
+        　　listswitch∶=(fname[1]=′y′);<br>
+        　　err∶=0;<br>
+        　　cc∶=0; cx∶=0; ll∶=0;<br>
+        　　ch∶=′ ′; kk∶=al;<br>
+        　　getsym;<br>
+        　　rewrite(fa);<br>
+        　　rewrite(fa2);<br>
+        　　block(0,0,[period]+declbegsys+statbegsys);<br>
+        　　closef(fa);<br>
+        　　closef(fa1);<br>
+        　　if sym&lt;&gt;period<br>
+        　　then error(9);<br>
+        　　if err=0<br>
+        　　then interpret<br>
+        　　else write(′errors in pl/0 program′);<br>
+        　99:<br>
+        　　closef(fin);<br>
+        　　writeln<br>
+        　end.</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

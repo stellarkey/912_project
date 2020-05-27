@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"关于段页式存储管理系统中的页表数，下面哪种说法比较准确？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.整个系统有一个",
+        "B.整个系统有多个",
+        "C.每个进程有一个",
+        "D.每个进程有多个"
+    ],
+    "q_number":100
+}

@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　四元式和三元式的主要不同在于，四元式对中间结果的引用必须通过给定的名字，而三元式是通过产生中间结果的三元式编号。也就是说，四元式之间的联系是通过临时变量实现的。<br>
+        　　也许读者已经发现，四元式表示很类似于三地址指令，确实，有时把这类中间表示称为&quot;三地址代码&quot;，因为这种表示可看作一种虚拟三地址机的通用汇编码，即这种虚拟机的每条&quot;指令&quot;包含操作符和三个地址，两个是为运算对象的，一个是为结果的。这种表示对于代码优化和目标代码生成都较有利。<br>
+        　　有时，为了更直观，也把四元式的形式写成简单赋值形式或更易理解的形式。比如把上述四元式序列写成：<br>
+        　　（1）t<sub><font size="-2">1</font></sub>∶=b*c<br>
+        　　（2）t<sub><font size="-2">2</font></sub>∶=b*d<br>
+        　　（3）t<sub><font size="-2">3</font></sub>∶=t<sub><font size="-2">1</font></sub>+t<sub><font size="-2">2</font></sub><br>
+        　　（4）a∶=t<sub><font size="-2">3</font></sub><br>
+        　　把（jump，－，－，L）写成goto L<br>
+        　　把（jrop，B，C，L）写成if B rop C goto L<br>
+        　　本书中，为了叙述的方便，两种形式将同时使用。<br>
+        　　如何用四元式表示各种语句，以及翻译各种语句的语义描述，将在后面各节陆续讨论。<br>
+        　　为了复习与巩固一下前面所学习的几种中间代码的形式，下面举一个例子，分别用几种中间代码的形式来表示 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

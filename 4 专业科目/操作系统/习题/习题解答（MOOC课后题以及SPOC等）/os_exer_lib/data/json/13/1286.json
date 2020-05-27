@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理:"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B 用户进程访问的内存地址是虚拟地址\n",
+    "question":"在启动页机制的情况下，在CPU运行的用户进程访问的地址空间是()\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.物理地址空间",
+        "B.逻辑地址空间",
+        "C.外设地址空间",
+        "D.都不是"
+    ],
+    "q_number":1286
+}

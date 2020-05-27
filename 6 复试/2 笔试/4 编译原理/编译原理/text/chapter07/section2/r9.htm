@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　显然这两种方法都较为直观，但第一种方法先构造识别活前缀的NFA再确定化为DFA，工作量较大。第二种方法构造较简单不易出错。<br>
+      　　由本节(2)可知LR(0)项目集规范族的项目类型分为四种：<br>
+      　　a) 移进项目b) 归约项目c) 待约项目d) 接受项目<br>
+      　　一个项目集中可能包含以上四种不同的项目，但是一个项目集中不能有下列情况存在：<br>
+      　　a) 移进和归约项目同时存在：<br>
+      　　形如：A→α·aβ<br>
+      　　　　　B→γ·<br>
+      　　由于这时面临输入符号为a时不能确定移进a还是把γ归约为B，因为LR(0)分析是不向前看符号，所以对归约的项目不管当前符号是什么都应归约。对于在一个项目集中同时存在移进和归约项目时称该状态含有移进-归约冲突。<br>
+      　　b) 归约和归约项目同时存在。<br>
+      　　形如：A→β·<br>
+      　　　　　B→γ·<br>
+      　　因这时不管面临什么输入符号都不能确定归约为A，还是归约为B，对于在一个项目集中同时存在两个以上归约项目时称该状态含有归约-归约冲突。<br>
+      　　对一个文法的LR(0)项目集规范族不存在移进-归约，或归约-归约冲突时，称这个文法为LR(0)文法。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+hard和normal的难度是对标cf 的div1和div2

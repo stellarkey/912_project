@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"><b>C.4.3 YACC解决二义性和冲突的方法</b><br>
+      　　在附录C.3.8中已涉及到二义性和冲突的问题，这里再集中介绍一下，这在写YACC源程序时会经常碰到。<br>
+      　　二义性会带来冲突。在附录C.3.8中我们介绍了YACC可以用为算符确定优先级和结合规则解决由二义性造成的冲突，但是有一些由二义性造成的冲突不易通过优先级方法解决，如有名的例子： 
+      <br>
+      　　stat ∶ IF bexp THEN stat<br>
+      　　　　　| IF bexp THEN stat ELSE stat<br>
+      　　　　　; <br>
+      对于这样的二义性造成的冲突和一些不是由二义性造成的冲突，YACC提供了下面两条消除二义性的规则：<br>
+      　　1) 出现移进/归约冲突时，进行移进;<br>
+      　　2) 出现归约/归约冲突时，按照产生式在YACC源程序中出现的次序，用先出现的产生式归约。<br>
+      　　我们可以看出用这两条规则解决上面的IF语句二义性问题是合乎我们需要的。所以用户不必将上述文法改造成无二义性的。当YACC用上述两条规则消除了二义性，它将给出相应信息。<br>
+      　　下面再稍微严格地介绍一下YACC如何利用优先级和结合性来解决冲突的。<br>
+      　　YACC源程序中的产生式也有一个优先级和结合性。这个优先级和结合性就是该产生式右部最后一个终结符或文字字符的优先级和结合性，当使用了%prec子句时，该产生式的优先级和结合性由%prec子句决定。当然如果产生式右部最后一个终结符或文字字符没有优先级或结合性，则该产生式也没有优先级或结合性。<br>
+      　　根据终结符(或文字字符)和产生式的优先级和结合性，YACC又有两个解决冲突的规则：<br>
+      　　(1) 当出现移进/归约冲突或归约/归约冲突，而当时输入符号和语法规则(产生式)均没有优先级和结合性，就用1)和2)来解决这些冲突。<br>
+      　　(2) 当出现移进/归约冲突时，如果输入符号和语法规则(产生式)都有优先级和结合性，那么如果输入符号的优先级大于产生式的优先级就移进；如果输入符号的优先级小于产生式的优先级就归约。如果二者优先级相等，则由结合性决定动作，左结合则归约，右结合则移进，无结合性则出错。<br>
+      　　用优先级和结合性能解决的冲突，YACC不报告给用户。</td>
+  </tr>
+</table>
+</body>
+</html>

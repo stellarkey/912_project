@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "有关资源分配图中存在环路和死锁关系正确的说法是（　　　）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.图中无环路则系统可能存在死锁 \r\n B.图中有环路则系统肯定存在死锁 \r\n C.图中有环路则系统可能存在死锁，也可能不存在死锁 \r\n D.以上说法都不对\r\n"}

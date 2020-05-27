@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　(1) 构造文法G的LR(1)项目集族，C={I<sub><font size="-2">0</font></sub>，I<sub><font size="-2">1</font></sub>，…，I<sub><font size="-1">n</font></sub>}<br>
+      　　(2) 合并所有的同心集，使C变为C′={J<sub><font size="-2">0</font></sub>，J<sub><font size="-2">1</font></sub>，…，J<sub><font size="-1">m</font></sub>}，便是LALR(1)的项目集族。<br>
+      　　由于构造LALR(1)分析表，通常所采用的方法是首先构造它的LR(1)项目集族，若不含任何冲突，则合并同心集，若仍不产生归约-归约冲突，则该文法便是LALR(1)文法，再根据合并同心集后的项目集族构造该文法的LALR(1)分析表。所以LALR(1)分析表的构造除了步骤（2）外，其余步骤与LR(1)分析表的构造相同<br>
+      　　(3) 由C′构造动作(ACTION)表，其方法与LR(1)分析表的构造相同。<br>
+      　　a) 若[A→α·aβ,b]∈J<sub><font size="-1">k</font></sub>，且GO(J<sub><font size="-1">k</font></sub>,a)＝J<sub><font size="-2">j</font></sub>，其中a∈V<sub><font size="-2">T</font></sub>，则置ACTION[k,a]=&quot;S<sub><font size="-2">j</font></sub>&quot;，其S<sub><font size="-2">j</font></sub>的含义是把输入符号a和状态j分别移入文法符号栈和状态栈。<br>
+      　　b) 若项目[A→α·,a]属于J<sub><font size="-1">k</font></sub> ，则置ACTION[k,a]=&quot;r<sub><font size="-2">j</font></sub>&quot;，其中a∈V<sub><font size="-2">T</font></sub>，r<sub><font size="-2">j</font></sub>的含义是设A→α是文法的第j个产生式，此时为把栈顶符号串α归约为A。<br>
+      　　c) 若项目[S′→S·，#]属于I<sub><font size="-1">k</font></sub> 则置ACTION[k,#]=&quot;acc&quot;，表示分析成功、接受。<br>
+      　　d) GOTO表的构造，对于不是同心集的项目集，转换函数的构造与LR(1)的相同，对同心集项目，由于合并同心集后，新集的转换函数也为同心集，所以，转换函数的构造也相同。<br>
+      　　为了说明步骤d)，假定I<sub><font size="-1">i1</font></sub>,I<sub><font size="-1">i2</font></sub>，…，I<sub><font size="-1">in</font></sub>是同心集，合并后的新集为J<sub><font size="-2">k</font></sub>，转换函数GO(I<sub><font size="-1">i1</font></sub>,X)，GO(I<sub><font size="-1">i2</font></sub>,X)，…，GO(I<sub><font size="-1">in</font></sub>,X)也为同心集，将其合并后记作J<font size="-2"><sub><font size="-1">i</font></sub></font>，因此，有GO(J<sub><font size="-1">k</font></sub>,X)= 
+      J<sub><font size="-1">i</font></sub>，所以当X为非终结符时，GO(J<sub><font size="-1">k</font></sub>,X)=J<font size="-2"><sub><font size="-1">i</font></sub></font>，则置GOTO[k,X]=i，表示在k状态下遇非终结符X时，把X和i分别移到文法符号栈和状态栈，当X为终结符时，和ACTION表重合。<br>
+      　　e) 分析表中凡不能用(a)～(d)填入信息的空白均填&quot;出错标志&quot;。<br>
+      　　用上述步骤我们可以构造前文法的LALR(1)分析表如下：I<sub><font size="-2">3</font></sub>和I<sub><font size="-2">6</font></sub>合并后用I<sub><font size="-2">3,6</font></sub>表示，I<sub><font size="-2">4</font></sub>和I<sub><font size="-2">7</font></sub>合并后用I<sub><font size="-2">4,7</font></sub>表示，I<sub><font size="-2">8</font></sub>和I<sub><font size="-2">9</font></sub>合并后用I<sub><font size="-2">8,9</font></sub>表示，对文法合并同心集后的LALR(1)分析表如表7.12所示。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表 7.12 合并同心集后的LALR(1)分析表</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="3">ACTION</td>
+                <td align="center" valign="top" colspan="2">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">a</td>
+                <td align="center" valign="top">b</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">B</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3,6<br>
+                  4,7<br>
+                  5<br>
+                  8,9<br>
+                </td>
+                <td align="center" valign="top">S3,6<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S3,6<br>
+                  S3,6<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top">S4,7<br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4,7<br>
+                  S4,7<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r3<br>
+                  r1<br>
+                  r2</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top">2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  5<br>
+                  8,9</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

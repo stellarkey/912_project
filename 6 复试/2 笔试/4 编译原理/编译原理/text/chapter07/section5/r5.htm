@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　上述文法的LR(1)项目集族及转换函数为图7.13所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图 7.13 LR(1)项目集及转换函数</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap07/f7-5-1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/f7-5-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <font color="#0000FF">　</font>　分析所有这些项目集，可以发现每个项目集中都不含移进-归约冲突或归约-归约冲突。 <br>
+      　　在项目集I<sub><font size="-2">2</font></sub>中，因归约项目[R→L·,#]的搜索符为'#'，即当前输入符为'#'号时才用产生式R→L归约。而移进项目[S→L·=R,#]的移进符号为'='号，所以移进-归约的冲突可以由LR(1)方法得到了解决，也说明了LR(1)分析法的功能比SLR(1)分析法的功能要强。<br>
+      　　同时也可以发现下列同心集，即I<sub><font size="-2">4</font></sub>和I<sub><font size="-2">11</font></sub>，I<sub><font size="-2">5</font></sub>和I<sub><font size="-2">12</font></sub>，I<sub><font size="-2">7</font></sub>和I<sub><font size="-2">13</font></sub>，I<sub><font size="-2">8</font></sub>和I<sub><font size="-2">10</font></sub>，它们俩俩之间除了搜索符不同外，&quot;心&quot;是相同的，因此我们可以将这些同心集合并，合并同心集后的项目集分别是：<br>
+      　　I<sub><font size="-2">4</font></sub>和I<sub><font size="-2">11</font></sub>为：<br>
+      　　　{ L→*·R ,＝／#<br>
+      　　　　R→·L ,＝／#<br>
+      　　　　L→·I ,＝／#<br>
+      　　　　L→·*R ,＝／#}<br>
+      　　I<sub><font size="-2">5</font></sub>和I<sub><font size="-2">12</font></sub>为：<br>
+      　　　{ L→i·,＝／#}<br>
+      　　I<sub><font size="-2">7</font></sub>和I<sub><font size="-2">13</font></sub>为：<br>
+      　　　{ L→*R·,＝／#}<br>
+      　　I<sub><font size="-2">8</font></sub>和I<sub><font size="-2">10</font></sub>为：<br>
+      　　　{R→L·，＝／#}</td>
+  </tr>
+</table>
+</body>
+</html>

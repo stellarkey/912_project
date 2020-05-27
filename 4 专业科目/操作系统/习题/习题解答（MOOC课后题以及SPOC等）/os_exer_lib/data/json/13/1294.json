@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"http://en.wikipedia.org/wiki/Memory_management_unit\n",
+    "question":"MMU的工作机理？\n",
+    "source":"网络",
+    "answer":"http://en.wikipedia.org/wiki/Memory_management_unit\n",
+    "type":"question_answer",
+    "q_number":1294
+}

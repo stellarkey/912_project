@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent">　　在前面的讨论中，曾提到在两类别问题中，可能会出现两种错误分类的情况。利用(2-9)式，平均错误率P(e)可按下式计算<br>
+      　　<img src="../../images/image_content/2/2_2_3h.gif" width="333" height="37" align="absmiddle"><br>
+      　　如令<img src="../../images/image_content/2/2_2_3n.gif" width="314" height="33" align="absmiddle">及 
+      ,则上式又可写成<br>
+      　　<img src="../../images/image_content/2/2_2_3m.gif" width="262" height="23" align="absmiddle"> 
+      (2-19)<br>
+      　　由于先验概率P(ω<sub>1</sub>)与P(ω<sub>2</sub>)在具体问题中往往是确定的，因此一般称P<sub>1</sub>(e)，P<sub>2</sub>(e)为两类错误率。实际中，有时要求将其中某一类错误率限制在某个常数之下而使另一类错误率尽可能小。例如在癌细胞识别中，希望将异常细胞错判的概率P<sub>2</sub>(e)限制在很小的值，如P<sub>2</sub>(e)=ε<sub>0</sub>为一个很小的常数，同时又使P<sub>1</sub>(e)尽可能小。<br>
+      　　这种决策要求可看成是在P<sub>2</sub>(e)=ε<sub>0</sub>条件下，求P<sub>1</sub>(e)极小值的条件极值问题，因此可以用求条件极值的拉格朗日乘子法解决。为此我们写出如下算式<br>
+      　　<img src="../../images/image_content/2/2_2_3l.gif" width="186" height="23" align="absmiddle"> 
+      (2-20)<br>
+      　　其中λ为拉格朗日乘子，目的是求γ的极小值。按定义<br>
+      　　<img src="../../images/image_content/2/2_2_3k.gif" width="151" height="33" align="absmiddle">　　(2-21)<br>
+      　　<img src="../../images/image_content/2/2_2_3j.gif" width="156" height="34" align="absmiddle">　　2-22)<br>
+      　　其中R<sub>1</sub>与R<sub>2</sub>分别是ω<sub>1</sub>与ω<sub>2</sub>的决策域，而R<sub>1</sub>与R<sub>2</sub>组成整个特征空间R，且彼此互不交迭。因此如果被识别样本X落入R<sub>1</sub>中，就被判定为ω<sub>1</sub>，反之属ω<sub>2</sub>。由于R<sub>1</sub>与R<sub>2</sub>不相交并组成整个特征空间，应有<br>
+      　　<img src="../../images/image_content/2/2_2_3i.gif" width="97" height="21" align="absmiddle">　(2-23)<br>
+      　　将式(2-21)，(2-22)代入(2-20)，并考虑到(2-23)可得<br>
+      　　<img src="../../images/image_content/2/2_2_3o.gif" width="302" height="88" align="absmiddle">(2-24)<br>
+      　　将(2-24)式分别对X和λ求导，并令<img src="../../images/image_content/2/2_2_3f.gif" width="49" height="43" align="absmiddle">，及<img src="../../images/image_content/2/2_2_3g.gif" width="52" height="40" align="absmiddle"> 
+      ，可得<br>
+      　　<img src="../../images/image_content/2/2_2_5F3e.gif" width="151" height="85" align="absmiddle">(2-25)、(2-26)<br>
+      　　</span><span class="spe">(2-25)与(2-26)的方程式就决定了这样一个分界面λ，它使P<sub>2</sub>(e)=ε<sub>0</sub>，同时又在该条件下使P<sub>1</sub>(e)尽可能小。该分界面上X值具有这样一个特点，即它们的两类条件密度函数之比是一个常数，该比值就是拉格朗日乘子。</span><span class="FCcontent"><br>
+      　　这种决策规则可写成：<br>
+      　　如果<img src="../../images/image_content/2/2_2_3d.gif" width="149" height="28" align="absmiddle">,则<img src="../../images/image_content/2/2_2_5F3c.gif" width="49" height="25" align="absmiddle">(2－27)<br>
+      　　或<br>
+      　　如果 <img src="../../images/image_content/2/2_2_3b.gif" width="95" height="51" align="middle">，则<img src="../../images/image_content/2/2_2_5F3c.gif" width="49" height="25" align="middle"> 
+      (2－28)<br>
+      　　这种在限定某一类错误为常数而使另一类错误率最小的决策也称Neyman-Pearson决策规则。如果将(2-28)与最小错误率决策规则(2-24)相对比，可以看出Neyman-Pearson决策规则也是以似然比为基础的，但两者所使用的阈值不同。最小错误率决策使用<img src="../../images/image_content/2/2_2_5F3a.gif" width="46" height="48" align="absmiddle">为阈值，而Neyman-Pearosn决策则使用由(2-25)与(2-26)方程的解获得的一个常数λ。<br>
+      　　管(2-25)与(2-26)提供了该种决策的决策面方程，但在高维时，即d较大时，直接求解是不容易的。一般可利用P<sub>2</sub>(e)与λ值之间存在的单调函数关系，采用选择一些λ值的试探法，最终找到一合适的λ值，既能使P<sub>2</sub>(e)=ε<sub>0</sub>条件满足，又能使P<sub>1</sub>(e)尽可能小。</span><br>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　对于一已知流图，只要求出各结点的必经结点集，就可以求出流图中所有的回边。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　求图11.12中流图的所有回边。<br>
+            　　由流图可以看出，有向边6→6、7→4、4→2是回边。因为根据前例的结果有6 DOM 6，4 DOM 7，2 DOM 4，其它有向边都不是回边。</td>
+        </tr>
+      </table>
+      　　对于图11.12流图中的例子，我们很容易看出。由回边6→6组成的循环就是｛6｝,由回边7→4组成的循环是｛4，5，6，7｝；由回边4→2组成的循环是｛2，3，4，5，6，7｝。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>8.3.3 四元式</b><br>
+      　　四元式是一种比较普遍采用的中间代码形式。四元式的四个组成成分是：算符op，第一和第二运算对象ARG1和ARG@及运算结果RESULT。运算对象和运算结果有时指用户自己定义的变量，有时指编译程序引进的临时变量。例如a∶=b*c+b*d的四元式表示如下：<br>
+      （1）（*，　b，　c，　t<sub><font size="-2">1</font></sub>）<br>
+      （2）（*，　b，　d，　t<sub><font size="-2">2</font></sub>）<br>
+      （3）（+， t<sub><font size="-2">1</font></sub>， t<sub><font size="-2">2</font></sub>， 
+      t<sub><font size="-2">3</font></sub>）<br>
+      （4）（∶=，t<sub><font size="-2">3</font></sub>， －， a）</td>
+  </tr>
+</table>
+</body>
+</html>

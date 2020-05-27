@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在这儿我们可以看到subscrip1并不关系到数组的内情向量，而仅关系到该数组分配存储时的空间尺寸。在C语言程序中可以如下定义一个数组:<br>
+      　　type array[][subscrip2]…[subscripn]<br>
+      　　对于C语言中一个一般形式定义的数组:<br>
+      　　type array[s1][s2]…[sn]<br>
+      　　是具有下标界为s1,s2,…sn的一个n维数组，s1,s2,…,sn作为n个内情向量可用来计算程序中出现的引用该数组的元素地址及有关的指针值？<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td>　　array </td>
+          <td>指针值addr</td>
+          <td>目标长l1</td>
+        </tr>
+        <tr> 
+          <td> 　　array[0] </td>
+          <td>指针值addr</td>
+          <td>目标长l2 </td>
+        </tr>
+        <tr> 
+          <td>　　array[0][0] </td>
+          <td>指针值addr</td>
+          <td>目标长l3</td>
+        </tr>
+        <tr> 
+          <td>　　…</td>
+          <td>…</td>
+          <td>…</td>
+        </tr>
+        <tr> 
+          <td> 　　<img src="../../../img/chap09/symbol02.gif" width="104" height="37"></td>
+          <td>指针值addr<br>
+            <font color="#FFFFFF">. </font> </td>
+          <td>目标长ln<br>
+            <font color="#FFFFFF">. </font> </td>
+        </tr>
+      </table>
+      　　其中: addr是数组分配的地址 <br>
+      　　l<sub><font size="-2">k</font></sub>=s<sub><font size="-2">k</font></sub> 
+      * s<sub><font size="-2">k+1</font></sub> * … * s<sub><font size="-2">n</font></sub>* 
+      sizeof(type) k=1,2,…,n<br>
+      　　而array[0][0]…[0] 是该数组的第1个元素。<br>
+      　　有关指针值的计算是：<br>
+      　　array[i<sub><font size="-2">1</font></sub>]=array[0]+i<sub><font size="-2">1</font></sub><br>
+      　　array[i<sub><font size="-2">1</font></sub>][i<sub><font size="-2">2</font></sub>]=array[0][0]+(i<sub><font size="-2">1</font></sub>*s<sub><font size="-2">2</font></sub>+i<sub><font size="-2">2</font></sub>)<br>
+      　　array[i<sub><font size="-2">1</font></sub>][i<sub><font size="-2">2</font></sub>][i<sub><font size="-2">3</font></sub>]=array[0][0][0]+((i<sub><font size="-2">1</font></sub>*s<sub><font size="-2">2</font></sub>+i<sub><font size="-2">2</font></sub>)*s<sub><font size="-2">3</font></sub>+i<sub><font size="-2">3</font></sub>)<br>
+      　　…<br>
+      <table width="80%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td>　　array[i<sub><font size="-2">1</font></sub>][i<sub><font size="-2">2</font></sub>]…[i<sub><font size="-2">k</font></sub>]=<br>
+            
+            <font color="#FFFFFF">. </font>
+          </td>
+          <td><img src="../../../img/chap09/symbol03.gif" width="89" height="36"></td>
+          <td>+(…(i<sub><font size="-2">1</font></sub>*s<sub><font size="-2">2</font></sub>+i<sub><font size="-2">2</font></sub>)*s<sub><font size="-2">3</font></sub>…+i<sub><font size="-2">k</font></sub>)<br>
+            <font color="#FFFFFF">. </font></td>
+        </tr>
+      </table>
+      　　(k=1,2,…n-1) <br>
+      　　以上的等式右边都是指针加常数，目标长为lk。<br>
+      　　数组元素的地址计算<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td>　　array[i<sub><font size="-2">1</font></sub>][i<sub><font size="-2">2</font></sub>]…[i<sub><font size="-2">n</font></sub>]=<br>
+            <font color="#FFFFFF">. </font> </td>
+          <td><img src="../../../img/chap09/symbol04.gif" width="87" height="36"></td>
+          <td>+(…(i<sub><font size="-2">1</font></sub>*s<sub><font size="-2">2</font></sub>+i<sub><font size="-2">2</font></sub>)*s<sub><font size="-2">3</font></sub>…+i<sub><font size="-2">n</font></sub>)*sizeof(type)<br>
+            <font color="#FFFFFF">. </font></td>
+        </tr>
+      </table>
+      　　这儿<img src="../../../img/chap09/symbol05.gif" width="87" height="32">是第一个元素地址,因此等式右边是作地址值相加。<br>
+      　　我们用(图9.14)表示一个具体数组int abc [3][4][2];的排列及各种指针所指向的位置。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.14 数组元素排列</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_14.gif" width="421" height="400"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

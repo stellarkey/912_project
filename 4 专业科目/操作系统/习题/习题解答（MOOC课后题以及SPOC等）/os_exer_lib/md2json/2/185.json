@@ -1,0 +1,1 @@
+{"knowledge": "缺页中断。\r\n", "question": "操作系统中的工作集模型与_____ 有关。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.合并存储区中的空白块 \r\n B.将CPU分配给进程 \r\n C.一个进程访问的页面集合 \r\n D.为进程分配I/O资源\r\n"}

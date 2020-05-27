@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"F\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统的主要性能参数：﹎﹎﹎﹎指的是单位时间内系统处理的作业量。\n",
+    "source":"网络",
+    "answer":"F",
+    "type":"single_answer",
+    "options":[
+        "A.周转时间",
+        "B.处理时间",
+        "C.消逝时间",
+        "D.利用率",
+        "E.生产率",
+        "F.吞吐量"
+    ],
+    "q_number":784
+}

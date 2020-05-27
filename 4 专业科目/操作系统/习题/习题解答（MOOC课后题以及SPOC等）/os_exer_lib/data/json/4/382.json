@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "实验环境准备实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX/XENIX中文件和目录创建时的存取权为_______________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":382
+}

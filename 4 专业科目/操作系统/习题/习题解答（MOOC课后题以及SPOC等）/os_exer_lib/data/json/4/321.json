@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "虚拟内存管理实验"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在一个分段存储管理的系统中，某一作业的段表如右所示，虚拟地址1 | 300对应物理地址____________ ，2 | 120对应____________\n。\n    ```\n\t    段号 段长 始址\n\t    ===  ===  ====\n\t    0 2K 2K\n\t    1 4K 6K\n\t    2 12K 20K\n\t    ```\n    \n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":321
+}

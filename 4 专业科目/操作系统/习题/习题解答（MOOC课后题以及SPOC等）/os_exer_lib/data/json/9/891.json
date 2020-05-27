@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"特权指令\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.是可能影响系统安全的一类指令",
+        "B.既允许操作系统程序使用，又允许用户程序使用",
+        "C.是管态和目态运行的基本单位",
+        "D.是一种存储保护方法"
+    ],
+    "q_number":891
+}

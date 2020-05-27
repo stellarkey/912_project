@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"计算时间短的作业优先的调度算法会使（　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.每个作业等待时间较短",
+        "B.平均周转时间最短",
+        "C.系统效率最高",
+        "D.长作业等待时间较短"
+    ],
+    "q_number":298
+}

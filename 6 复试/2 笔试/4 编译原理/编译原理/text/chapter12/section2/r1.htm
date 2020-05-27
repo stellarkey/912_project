@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr align="center"> 
+          <td width="35">&nbsp;</td>
+          <td><font color="#0000FF">表12.1(a)</font></td>
+        </tr>
+        <tr> 
+          <td align="center">&nbsp;</td>
+          <td align="center"> 
+            <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">类型</td>
+                <td align="center">指令形式</td>
+                <td align="center">意义(设op是二目运算符)</td>
+              </tr>
+              <tr valign="top"> 
+                <td>直接地址型<br>
+                  寄存器型<br>
+                  变址型<br>
+                  间接型</td>
+                <td>op R<sub><font size="-1">i</font></sub>,M<br>
+                  op R<sub><font size="-1">i</font></sub>,R<sub><font size="-1">j</font></sub><br>
+                  op R<sub><font size="-1">i</font></sub>,c(R<sub><font size="-1">j</font></sub>)<br>
+                  op R<sub><font size="-1">i</font></sub>,*M<br>
+                  op R<sub><font size="-1">i</font></sub>,*R<sub><font size="-1">j</font></sub><br>
+                  op R<sub><font size="-1">i</font></sub>,*c(R<sub><font size="-1">j</font></sub>)</td>
+                <td>(R<sub><font size="-1">i</font></sub>)op(M)<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub><br>
+                  (R<sub><font size="-1">i</font></sub>)op(R<sub><font size="-1">j</font></sub>)<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub><br>
+                  (R<sub><font size="-1">i</font></sub>)op((R<sub><font size="-1">j</font></sub>)+c)<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub><br>
+                  (R<sub><font size="-1">i</font></sub>)op((M))<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub><br>
+                  (R<sub><font size="-1">i</font></sub>)op((R<sub><font size="-1">j</font></sub>))<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub><br>
+                  (R<sub><font size="-1">i</font></sub>)op(((R<sub><font size="-1">j</font></sub>)+c))<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    　　如果op是一目运算符，则&quot;op R<sub><font size="-1">i</font></sub>,M&quot;的意义为： op(M)<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub>，其余类型可类推。<br>
+      　　以上指令中的运算符(操作码)op包括一般计算机上常见的一些运算符。我们将某些指令的意义说明如表12.1(b)。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr align="center"> 
+          <td width="35">&nbsp;</td>
+          <td><font color="#0000FF">表12.1(b)</font></td>
+        </tr>
+        <tr> 
+          <td align="center">&nbsp;</td>
+          <td align="center"> 
+            <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" width="60">指令</td>
+                <td align="center" width="50%">意义</td>
+                <td align="center">指令</td>
+                <td align="center" width="30%">意义</td>
+              </tr>
+              <tr valign="top"> 
+                <td>LD R<sub><font size="-1">i</font></sub>,B<br>
+                  <font color="#FFFFFF">.</font><br>
+                  ST R<sub><font size="-1">i</font></sub>,B<br>
+                  <font color="#FFFFFF">.</font><br>
+                  J X<br>
+                  CMP A,B</td>
+                <td>把B单元的内容取到寄存器 R<sub><font size="-1">i</font></sub>，即(B)<img src="../../../img/chap12/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">R<sub><font size="-1">i</font></sub>。<br>
+                  把寄存器R<sub><font size="-1">i</font></sub>的内容存到B单元，即(R<sub><font size="-1">i</font></sub>)<img src="../../../img/chap12/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">B。<br>
+                  无条件转向X单元。<br>
+                  把A单元和B单元的值进行比较，并根据比较情况把机器内部特征寄存器CT置成相应状态。CT占两个二进位。根据A&lt;B或A=B或A&gt;B分别置CT为0或1或2。</td>
+                <td width="60">J&lt;X<br>
+                  J≤X<br>
+                  J=X<br>
+                  J≠X<br>
+                  J&gt;X<br>
+                  J≥X</td>
+                <td>如CT=0转X单元。<br>
+                  如CT=0或CT=1转X单元。<br>
+                  如CT=1转X单元。<br>
+                  如CT≠1转X单元。<br>
+                  如CT=2转X单元。<br>
+                  如CT=2或CT=1转X单元。</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <b>思考问题</b>：<br>
+      　　① 代码生成器的设计要着重考虑哪些问题？<br>
+      　　② 决定目标代码的因素有哪些？</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图3-4据理论集合空间分布示意图</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="250">
+              <param name=movie value="../../../flash/chap03/3-5.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap03/3-5.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　例如U可以表示疾病空间，而每个Ai可以是一类疾病，各类疾病之间是可以交叉的（同时得多种疾病），但是各类疾病本身是不同的。<br>
+      　　证据理论定义了多个函数值来描述证据及规则的不确定性，其中包括：分配函数、信任函数和似然函数，分别定义如下。 <br>
+      　　· 基本概率分配函数m：2<sup><font size="-2">U</font></sup>→[0,1]。<br>
+      　　　 m(Φ) = 0 空的为零<br>
+      　　　Σm(A) = 1 全空间的和为1　　（A属于U）<br>
+      　　基本概率分配函数是在U的幂集2<sup><font size="-2">U </font></sup>上定义的，取值范围是[0,1]。<br>
+      　　基本概率函数的物理意义是：<br>
+      　　　若A属于U，且不等于U，表示对A的精确信任度<br>
+      　　　若A等于U，表示这个数不知如何分配 <br>
+      　　· 信任函数Bel：2<sup><font size="-2">U</font></sup> →[0,1]。<br>
+      　　　<img src="../../../img/chap03/pic19.gif" width="118" height="34"><br>
+      　　A的信任函数为：包含于A中的所有集合的概率分配函数值之和。<br>
+      　　根据定义有：Bel(Φ) ＝m(Φ) = 0<br>
+      　　　Bel(U)＝Σm(B) = 1（B属于U）<br>
+      　　信任函数Bel类似于概率密度函数，表示A中所有子集的基本概率分配数值的和。表示对A的总信任度。<br>
+      　　· 似然函数Pl：2<sup><font size="-2">U</font></sup> →[0,1]<br>
+      　　　<img src="../../../img/chap03/pic20.gif" width="204" height="40"><br>
+      　　A的似然函数为Pl(A)：与A的&quot;与&quot;不为零的所有集合的概率分配函数值之和。<br>
+      　　根据定义有：0 ≤ Bel(A) ≤ Pl(A) ≤1 <br>
+      　　可见Bel是Pl的一部分。<br>
+      　　称Bel(A)和Pl(A)是A的下限不确定性值和上限不确定性值。因此可用区间（Bel(A)，Pl(A)）来表示A的不确定性度量。</td>
+  </tr>
+</table>
+</body>
+</html>

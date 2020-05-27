@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　一个最简单的智能体设计方法是写一个查找表。它在内存中存储了所有可能的感知序列，并把它们作为查找表的索引。对应于感知序列的是智能体可以采取的行动。但是不能仅仅通过查找表的形式来设计智能体，原因如下：<br>
+      　　·即便是简单的下象棋的程序也需要35100表项要检查<br>
+      　　·制表需要很长时间<br>
+      　　·在这样的智能体中预先放置了相对于某个感知序列最合适的动作，使得智能体完全没有自治性，所以，如果环境中有了不能预计的情况，智能体将完全不能应对。<br>
+      　　·即使智能体有学习功能使其具有一定的自治能力，适当计算所有的表项目将花费很多很多时间。<br>
+      　　因此，按照上述机制进行工作的智能体能够在一定的环境下工作的很好，但不叫&quot;智能智能体&quot;。智能智能体最重要的功能是推理。 
+      下面的出租汽车自动驾驶员的例子说明了如何设计智能智能体：<br>
+      　　下图为出租汽车自动驾驶员的PAGE要素：<br>
+      　　例：<font face="Arial, Helvetica, sans-serif">The taxi driver agent type</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="410" height="150">
+              <param name=movie value="../../../flash/chap08/P8-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap08/P8-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="410" height="150">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　出租汽车需要了解所处的位置，道路状况，行驶的速度等。这些信息可以通过汽车上的摄像机，速度表以及压力表，甚至GPS（人造卫星定位）定位系统等得到。<br>
+      　　出租汽车自动驾驶员可以进行的动作和人类驾驶员基本相同：通过油门控制引擎，通过方向盘和刹车控制方向和速度。<br>
+      　　性能尺度的目标可由如下组成：到达正确的目的地、尽可能减少燃油的消耗、尽可能缩短旅行的时间、尽量少违反交通规则、乘客的安全，舒适度最大化、利润最大化。可以明显看出，有些目标是相互矛盾的，因此它们之间在某种程度上存在着妥协。<br>
+      　　最后是出租车所面对的驾驶环境。出租车是在小路上行驶，还是在高速路上行驶？是在海南（从不下雪），还是在哈尔滨（经常下雪）？是靠左行驶，还是靠右行驶？可以明显的看到，环境的设定越严格，智能体程序的设计就越简单。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

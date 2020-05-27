@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "question":"PV操作是在（　　　）上的操作。\n",
+    "explain":"PV操作是对信号量的操作",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.临界区",
+        "B.进程",
+        "C.缓冲区",
+        "D.信号量"
+    ],
+    "q_number":300
+}

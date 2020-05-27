@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)实时操作系统对可靠性和安全性要求极高，它﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.十分注重系统资源的利用率",
+        "B.不强调响应速度",
+        "C.不强求系统资源的利用率",
+        "D.不必向用户反馈信息"
+    ],
+    "q_number":755
+}

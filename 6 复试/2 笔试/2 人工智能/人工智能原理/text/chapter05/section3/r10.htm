@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>
+<table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图5-2 Safe-to-stack(obj1, obj2)的解释结构</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap05/5-3.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/5-3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      
+        　　上图说明系统从目标开始反向推理。根据库中已有的上述事实和规则，分解目标。每使用一条规则时，同时反回去（自顶向下）把该规则应用到变量化的目标概念上。这样，在生成该例子求解的解释结构的同时，也生成了变量的概括的解释结构。<br>
+        　　具体步骤如下： 先按照条件产生结构，从上到下。如上图<br>
+        　　1）由Safe-to-stack(obj1, obj2)，寻找其条件（前件）。因为没有Fragile(y)，所以选择Lighter(x, 
+        y)。得到Lighter(obj1, obj2)。<br>
+        　　2）继续寻找其前件，由比较计算公式可知Lighter(obj1, obj2)的前件（条件）为Weight(p1, w1)ΛWeight(p2, 
+        w2)ΛSmaller(w1, w2)。得到Weight(obj1, 0.1)ΛWeight(obj2, 5)ΛSmaller(0.1, 5)。<br>
+      　　3）在继续分别寻找各个元素的前件。有前件就填上前件，没有前件，该结点就是叶子结点。直到全部结点都是叶子结点，便得到了解的解释结构树。</td>
+  </tr>
+</table>
+</body>
+</html>

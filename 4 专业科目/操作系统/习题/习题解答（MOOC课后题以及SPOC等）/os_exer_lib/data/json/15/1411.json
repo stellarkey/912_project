@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"内核线程的描述正确的是() s8\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"multi_answer",
+    "options":[
+        "A.由内核维护内核线程的线程控制块",
+        "B.由用户线程库维护内核线程的线程控制块",
+        "C.内核无法调度内核线程",
+        "D.内核线程间无法共享所属进程的资源"
+    ],
+    "q_number":1411
+}

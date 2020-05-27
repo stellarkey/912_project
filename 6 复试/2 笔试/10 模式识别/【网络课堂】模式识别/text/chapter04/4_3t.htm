@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent">　　从前述章节可以看出，基于距离度量是人们常用来进行分类的重要依据，因为一般情况下同类物体在特征空间呈聚类状态，即从总体上说同类物体内各样本由于具有共性，因此类内样本间距离应比跨类样本间距离小。Fisher准则正是以使类间距离尽可能大同时又保持类内距离较小这一种原理为基础的。同样在特征选择与特征提取中也使用类似的原理，这一类被称为基于距离的可分性判据。<br>
+      为了度量类内、类间的距离，也可用另一种描述方法，即描述样本的离散程度的方法。在讨论Fisher准则时曾用过两个描述离散度的矩阵。一个是类间离散矩阵S<sub>b</sub>，按(3-18)有<br>
+      　　<img src="../../images/image_content/4/4_3001.gif" width="179" height="36" align="absmiddle"><br>
+      　　另一个是类内离散度矩阵SW，按(3-16)与(3-17)有：<br>
+      　　S<sub>W</sub>＝S<sub>1</sub>+S<sub>2</sub><br>
+      　　及<img src="../../images/image_content/4/4_3002.gif" width="250" height="45" align="absmiddle"><br>
+      　　以上式子是针对两类别情况的，如果推广至c类别情况，同时考虑各类的先验概率P<sub>i</sub>不等，则可将上列各式表示成：<br>
+      　　<img src="../../images/image_content/4/4_3003.gif" width="198" height="49" align="absmiddle">　　　　(4-3)<br>
+      　　<img src="../../images/image_content/4/4_3004.gif" width="223" height="52" align="absmiddle">　　　(4-4)<br>
+      　　其中<img src="../../images/image_content/4/4_3005.gif" width="18" height="25" align="absmiddle">为所有样本的总均值向量，P<sub>i</sub>表示各类别的先验概率，E<sub>i</sub>表示i类的期望符号。<br>
+      　　利用(4-3)与(4-4)式可以将基于距离的可分性判据表示成以下形式：<br>
+      　<font color="#800040">　1 计算特征向量间平均距离的判据</font><br>
+      　　<img src="../../images/image_content/4/4_3006.gif" width="121" height="22" align="absmiddle">　　　　 
+      (4-5)<br>
+      　　其中“tr”表示矩阵的迹。(4-5)式实际上是从计算特征向量间总平均距离的公式推导得到的，该式可写成<br>
+      　　<img src="../../images/image_content/4/4_3007.gif" width="306" height="55" align="absmiddle">　　　(4-6)<br>
+      　　其中P<sub>i</sub>、P<sub>j</sub>分别表示各类的先验概率，n<sub>i</sub>、n<sub>j</sub>分别是第i与j类的样本个数，<img src="../../images/image_content/4/4_3008.gif" width="88" height="32" align="absmiddle"> 
+      用来表示第i类的第k个与j类第l个样本之间的距离度量。在欧氏距离情况下有<br>
+      　　<img src="../../images/image_content/4/4_3009.gif" width="285" height="37" align="absmiddle">(4-7)<br>
+      　　利用均值向量<img src="../../images/image_content/4/4_3010.gif" width="20" height="28" align="absmiddle"> 
+      与总均值向量<img src="../../images/image_content/4/4_3011.gif" width="17" height="27" align="absmiddle"> 
+      ，有<br>
+      　　<img src="../../images/image_content/4/4_3012.gif" width="109" height="51" align="absmiddle">　　　　　(4-8)<br>
+      　　<img src="../../images/image_content/4/4_3013.gif" width="97" height="50" align="absmiddle">　　　　　　(4-9)<br>
+      　　代入(4-6)式可得<br>
+      　　<img src="../../images/image_content/4/4_3014.gif" width="373" height="75" align="absmiddle">　　　　　(4-10)<br>
+      　　(4-10)中右边括弧里的前一项涉及类内各特征向量之间的平方距离，后一项则是类间距离项。后一项可写成<br>
+      　　<img src="../../images/image_content/4/4_3015.gif" width="391" height="44" align="absmiddle">　　　　　(4-11)<br>
+      　　显然利用(4-10)与(4-11)就可得到(4-5)。需指出的是由(4-6)推导的各式是利用有限样本数据，因此得到的都是母体各量的估计值，而(4-5)式用的是母体的离散度矩阵。<br>
+      　　<font color="#800040">2 考虑类内类间欧氏距离的其它判据</font><br>
+      　　判据Jd(X)是计算特征向量的总平均距离，以下一些判据则基于使类间离散度尽量大，类内离散度尽量小的考虑而提出：<br>
+      　　<img src="../../images/image_content/4/4_3016.gif" width="135" height="39" align="absmiddle">　　　　　(4-12)<br>
+      　　<img src="../../images/image_content/4/4_3017.gif" width="123" height="67" align="absmiddle">　　　　　　(4-13)<br>
+      　　<img src="../../images/image_content/4/4_3018.gif" width="112" height="52" align="absmiddle">　　　　　(4-14)<br>
+      　　<img src="../../images/image_content/4/4_3019.gif" width="133" height="53" align="absmiddle">　　　　　(4-15)<br>
+      　　其中<img src="../../images/image_content/4/4_3020.gif" width="39" height="28" align="absmiddle">表示是矩阵对应的行列式。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

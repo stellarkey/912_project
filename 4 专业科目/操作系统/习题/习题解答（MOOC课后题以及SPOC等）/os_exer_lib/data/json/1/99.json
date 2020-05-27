@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"哪种设备属于字符设备？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.磁盘",
+        "B.磁带",
+        "C.光盘",
+        "D.键盘"
+    ],
+    "q_number":99
+}

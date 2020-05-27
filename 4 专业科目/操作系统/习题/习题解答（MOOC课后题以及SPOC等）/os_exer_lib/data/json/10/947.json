@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"通常，文件的逻辑结构中( )组织方式，既适合于交互方式应用，也适合于批处理方式应用。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.堆文件",
+        "B.流式文件",
+        "C.索引顺序文件",
+        "D.顺序文件"
+    ],
+    "q_number":947
+}

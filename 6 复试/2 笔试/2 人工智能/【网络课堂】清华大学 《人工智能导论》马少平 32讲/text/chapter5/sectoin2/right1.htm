@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      
+      <p ><b>5.2 PROLOG</b></p>
+      <p >　　<font color="#000099">PROLOG属于逻辑程序设计语言，其理论基础是一阶谓词逻辑。该语言与我们前面介绍的基于规则的逆向演绎系统非常相似，采用深度优先、逆向推理的方式求解问题。PROLOG语言自从70年代初期被提出以后，曾经风靡一时，受到了计算机界，尤其是人工智能界研究者的高度重视，日本在开展第五代计算机计划时，曾经把PROLOG语言作为核心语言使用。PROLOG程序设计不像传统的程序设计那样描述计算机&quot;如何做&quot;，而是描述计算机要&quot;做什么&quot;，至于如何做，则由PROLOG语言自己完成。这正是PROLOG语言引起人们重视的主要原因。但正是由于PROLOG语言自己决定&quot;如何做&quot;，使得求解问题的效率比较低，严重影响了它的使用。但不管怎么说，PROLOG语言必定向自动求解迈进了一步。</font></p>
+      <p>　　PROLOG是一种基于一阶谓词的逻辑型程序设计语言，它是英文Programming in Logic的缩写。自从1972年法国的马赛大学首次发表PROLOG以来，就引起了计算机界和人工智能界的高度重视，其原因有两个方面，一方面PROLOG是基于一阶谓词逻辑的，而一阶谓词逻辑既有坚实的理论基础，又有较强的表现能力；另一方面是PROLOG具有自动推理能力，虽然这种能力目前还比较弱，但它确实由程序设计的&quot;How 
+        to do&quot;描述向&quot;What to do&quot;描述前进了一步，而这一点正是理想的人工智能程序设计语言所应具有的特点之一。 
+        <br>
+        PROLOG语言的基本组成单位是项。最简单的项是数字、常量和变量，常量用一串小写字母表示，变量用以大写字母开头的一串字符表示。例如<br>
+        is-father ma append Heat<br>
+        如下形式的结构也是项：<br>
+        ＜关系名＞（＜项1＞，…，＜项k＞）<br>
+        例如<br>
+        point（X，Y，Z）<br>
+        sentence（np（he），vp（v（likes，up（her））））<br>
+        均是项。</p>
+      <p><font color="#000099">PROLOG中的表与LISP中的表，在概念上是一致的，但表示形式有所不同。</font></p>
+      <p>　　表也是项，PROLOG中的表是用符号&quot;[&quot;和&quot;]&quot;包围起来的一些元素，元素之间用&quot;,&quot;号分开，元素可以是常量、变量、数字或其它的表，以下都是表的例子。 
+        <br>
+        [a，b，c] [1，2，3] [ ]<br>
+        其中，[ ]为空表，表示表的元素个数为零。</p>
+      <p><font color="#000099">表头、表尾和结构符&quot;|&quot;在PROLOG中是非常重要的概念，一定要理解好它们的含义。</font></p>
+      <p>表的第一个元素被称为表头，而其余元素组成的表为表尾，如在表[a，b，c]中，a是表头，[b，c]是表尾。在表中可以使用结构符&quot;|&quot;，在&quot;|&quot;前面的n个元素是表的前n个元素，在&quot;|&quot;后面用一个表给出表的其它元素。例如，表[a，b，c]也可以表示为[a|[b，c]]。利用结构符&quot;|&quot;可以表示出各种表的模式，如[a 
+        |X]表示以a为头的表，[H |T]表示一个非空表。</p>
+      <p><font color="#000099">PROLOG中的子句，相当于一阶谓词逻辑中的蕴涵式，如子句：<br>
+        P:- Q，R，S<br>
+        可以理解为：<br>
+        Q∧R∧S → P</font></p>
+      <p>一个PROLOG程序是一系列的子句，子句通常由句首和句体组成，中间用符号&quot;:-&quot;分开，句首一定是一个项，句体可以有几个项。如在子句<br>
+        P:- Q，R，S<br>
+        中，P是句首，Q，R，S是句体，它表示&quot;当Q，R，S均为真值时，P才为真&quot;。<br>
+        PROLOG程序一般可分为事实和规则两部分。事实用只有句首的子句表示，并以&quot;.&quot;结束。</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

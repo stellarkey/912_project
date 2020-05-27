@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　我们从下面例子理解这些变换。<br>
+      　　有四元式程序：<br>
+      　　t<sub><font size="-1">1</font></sub> := 4 - 2<br>
+      　　t<sub><font size="-1">2</font></sub> := t<sub><font size="-1">1</font></sub> 
+      /2 <br>
+      　　t<sub><font size="-1">3</font></sub> := a * t<sub><font size="-1">2</font></sub><br>
+      　　t<sub><font size="-1">4</font></sub> := t<sub><font size="-1">3</font></sub> 
+      * t<sub><font size="-1">1</font></sub><br>
+      　　t<sub><font size="-1">5</font></sub> := b + t<sub><font size="-1">4</font></sub><br>
+      　　c := t<sub><font size="-1">5</font></sub> * t<sub><font size="-1">5</font></sub><br>
+      　　进行合并已知量变换后得到：<br>
+      　　t<sub><font size="-1">1</font></sub> := 2<br>
+      　　t<sub><font size="-1">2</font></sub> := t<sub><font size="-1">1</font></sub> 
+      /2 <br>
+      　　t<sub><font size="-1">3</font></sub> := a * t<sub><font size="-1">2</font></sub><br>
+      　　t<sub><font size="-1">4</font></sub> := t<sub><font size="-1">3</font></sub> 
+      * t<sub><font size="-1">1</font></sub><br>
+      　　t<sub><font size="-1">5</font></sub> := b + t<sub><font size="-1">4</font></sub><br>
+      　　c := t<sub><font size="-1">5</font></sub> * t<sub><font size="-1">5</font></sub><br>
+      　　再进行复写传播和删除无用赋值等变换后得到：<br>
+      　　t<sub><font size="-1">2</font></sub> := 2 /2 <br>
+      　　t<sub><font size="-1">3</font></sub> := a * t<sub><font size="-1">2</font></sub><br>
+      　　t<sub><font size="-1">4</font></sub> := t<sub><font size="-1">3</font></sub> 
+      * 2<br>
+      　　t<sub><font size="-1">5</font></sub> := b + t<sub><font size="-1">4</font></sub><br>
+      　　c := t<sub><font size="-1">5</font></sub> * t<sub><font size="-1">5</font></sub><br>
+      　　再进行合并已知量变换后得到：<br>
+      　　t<sub><font size="-1">2</font></sub> := 1 <br>
+      　　t<sub><font size="-1">3</font></sub> := a * t<sub><font size="-1">2</font></sub><br>
+      　　t<sub><font size="-1">4</font></sub> := t<sub><font size="-1">3</font></sub> 
+      * 2<br>
+      　　t<sub><font size="-1">5</font></sub> := b + t<sub><font size="-1">4</font></sub><br>
+      　　c := t<sub><font size="-1">5</font></sub> * t<sub><font size="-1">5</font></sub></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　词法分析阶段的任务是读字符流的源程序、从中识别并构成单词。<br>
+      　　一个Pascal源程序片断：position := initial + rate * 60；词法分析后可能返回：<br>
+      
+      　　<b>单词类型 单词值</b><br>
+      　　标识符 position<br>
+      　　算符(赋值) :=<br>
+      　　标识符 initial<br>
+      　　算符(加) +<br>
+      　　标识符 rate<br>
+      　　算符(乘) *<br>
+      　　整数 60<br>
+      　　界符(分号) ；<br>
+      <br>
+      　　一个C源程序片断：<br>
+      　　int a;<br>
+      　　a = a + 2;<br>
+      　　词法分析后可能返回:<br>
+      　　<b>单词类型 单词值</b><br>
+      　　保留字 int<br>
+      　　标识符 a<br>
+      　　界符 ;<br>
+      　　标识符 a <br>
+      　　算符(赋值) =<br>
+      　　标识符 a<br>
+      　　算符(加) +<br>
+      　　整数 2<br>
+      　　界符 ；<br>
+      　　<b>有关的英文</b><br>
+      　　词法分析---lexical analysis 或者scanning<br>
+      　　单词---token<br>
+      　　保留字---resered word<br>
+      　　标识符 ---identifier(user-defined name)</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"用户程序在目态下使用特权指令将引起的中断是属于(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.硬件故障中断",
+        "B.程序中断",
+        "C.外部中断",
+        "D.访管中断"
+    ],
+    "q_number":245
+}

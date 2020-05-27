@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　下面我们将给出SLR(1)分析器用表7.8的SLR(1)分析表，对符号串i+i*i#进行。<br>
+      　　分析时栈的变化过程如表7.9。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表 7.9 对输入串i+i*i#的SLR(1)分析过程 
+            </font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">步骤</td>
+                <td align="center" valign="top">状态栈</td>
+                <td align="center" valign="top">符号栈</td>
+                <td align="center" valign="top">输入串</td>
+                <td align="center" valign="top">ACTION</td>
+                <td align="center" valign="top">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center">1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6<br>
+                  7<br>
+                  8<br>
+                  9<br>
+                  10<br>
+                  11<br>
+                  12<br>
+                  13<br>
+                  14<br>
+                </td>
+                <td valign="top">0<br>
+                  05<br>
+                  03<br>
+                  02<br>
+                  01<br>
+                  016<br>
+                  0165<br>
+                  0163<br>
+                  0169<br>
+                  01697<br>
+                  016975<br>
+                  01697(10)<br>
+                  0169<br>
+                  01</td>
+                <td valign="top">#<br>
+                  #i<br>
+                  #F<br>
+                  #T<br>
+                  #E<br>
+                  #E+<br>
+                  #E+i<br>
+                  #E+F<br>
+                  #E+T<br>
+                  #E+T*<br>
+                  #E+T*i<br>
+                  #E+T*F<br>
+                  #E+T<br>
+                  #E</td>
+                <td align="right" valign="top">i+i*i#<br>
+                  +i*i#<br>
+                  +i*i#<br>
+                  +i*i#<br>
+                  +i*i#<br>
+                  i*i#<br>
+                  *i#<br>
+                  *i#<br>
+                  *i#<br>
+                  i#<br>
+                  #<br>
+                  #<br>
+                  #<br>
+                  #</td>
+                <td align="center" valign="top">S5<br>
+                  r6<br>
+                  r4<br>
+                  r2<br>
+                  S6<br>
+                  S5<br>
+                  r6<br>
+                  r4<br>
+                  S7<br>
+                  S5<br>
+                  r6<br>
+                  r3<br>
+                  r1<br>
+                  acc</td>
+                <td align="center" valign="top"><font color="#FFFFFF">.</font><br>
+                  3<br>
+                  2<br>
+                  1<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  3<br>
+                  9<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  10<br>
+                  9<br>
+                  1</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　尽管采用SLR(1)方法能够对某些LR(0)项目集规范族中存在动作冲突的项目集，对归约项目用向前查看一个符号的办法得到解决，但是仍有许多文法构造的LR(0)项目集规范族存在的动作冲突不能用SLR(1)方法解决。下节将要介绍比SLR(1)功能更强的LR(1)分析法。 
+      <br>
+      　　<font color="#0000FF">小练习3</font>：对输入串i+i* i分别给出用SLR(1)分析过程(表7.9)和用 算符优先分析过程,并对两种方法进行比较,说明它们各自的优缺点(算符优先关系表用第6章表6.5 
+      )</td>
+  </tr>
+</table>
+</body>
+</html>

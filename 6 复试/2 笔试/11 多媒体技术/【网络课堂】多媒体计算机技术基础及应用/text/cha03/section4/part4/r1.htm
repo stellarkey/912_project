@@ -1,0 +1,341 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　我们用TD-PSOLA 算法实现了汉语TTS 系统(Sonic)。汉语是靠基音和伴音共同表达语音信息的，而且基音保持了语言的最重要的信息 
+      。为此，我们从合成基元的选择，到韵律的修改，都把保证基音的完整性、基频模式的不变性以及基音周期数作为合成的基础。改进了TD-PSOLA算法。<br>
+      　　在设计上， Sonic 主要利用了相应的汉语文--语转换技术及 Windows 3.1 提供的音频服务。Sonic 系统分以下几个主要模块: 
+      预处理、语言学处理、语音学处理、波形编辑合成和安装程序。我们建立了语音参数数据库和发音规则库。其中预处理包括：全角字符转换为半角、滤掉系统不辨识字符、检查控制符的合法性；语言学处理包括：断句、文本替换、分词及组织短语、重音和语调的分析及模式设置；语音学处理包括：获取汉字拼音码、协同发音的音变和调变的处理、设置节奏和句子结构的停顿；波形编辑合成包括：从音库中读取语音参数、实时的韵律修改、语音信号的输出。 
+      <br>
+      <b>　　<font color="#0033CC">3.4.4.1 韵律控制符的设计</font></b><a name="01"></a><br>
+      　　韵律参数包括时长、基频和幅度。为了提高TTS系统的自然度和表现力，我们研究了汉语的声调、重音、语调的声学特性，设计了韵律控制符，列于表3.10中：<br>
+      　<font color="#003399">表3.10 韵律控制符及说明 <br>
+      </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><b><font color="#000000">符号</font></b></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><b><font color="#FFFFFF"><font color="#000000">控制说明</font></font></b></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000"><b>级数n的意义（有效值为0～9）</b></font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">H</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改音域上限</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4上限升高，n越大，升高越多；<br>
+                    n&lt;5上限降低，n越小，降低越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">B</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改音域下限</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4下限降低，n越大，降低越多；<br>
+                    n&lt;5下限升高，n越小，升高越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">P</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改基频模式</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n为基频模式号。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">R</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改音域宽度</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4音域加宽，n越大，加宽越多； 
+                    <br>
+                    n&lt;5音域变窄，n越小，变窄越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">I</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">调值提高</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n越大，提高越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">E</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">调值降低</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n越大，降低越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">D</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改音节时长</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4时长增加，n越大，增加越多； 
+                    <br>
+                    n&lt;4时长减短，n越小，减短越多；<br>
+                    n＝4时长不变。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">C</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">截掉某些周期</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">4&lt;n&lt;9截去尾部周期，n越大，截去越多； 
+                    <br>
+                    0&lt;n&lt;5截去头部周期，n越小，截去越多； <br>
+                    n=9截去尾部未加标注的波形段；<br>
+                    n=0截去头部未加标注波形段的前1/4</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">A</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">修改音节幅度</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4幅度提高，n越大，提高越多； 
+                    <br>
+                    n&lt;5幅度降低，n越小，降低越多。</font></font></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">U</font></font></div>
+                </td>
+                <td class="text" width="24%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">音节前后加停顿</font></font></div>
+                </td>
+                <td class="text" width="69%"> 
+                  <div align="center"><font color="#FFFFFF"><font color="#000000">n&gt;4在尾部加停顿，n越大，停顿越长； 
+                    <br>
+                    n&lt;5在头部加停顿，n越小，停顿越长。</font></font></div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><br>
+      　　对某一音节的韵律控制，是在该汉字后面加两条反斜线符，其间加一英文字母，后跟一位数字，分别表示对该音节进行的韵律修改和修改级数。例如，&quot;衣\I3\服&quot;，表示音节&quot;衣&quot;的基频提高 
+      3 级。<br>
+      　　<b><font color="#003399">3.4.4.2 语音韵律参数的修改</font></b><a name="02"></a><br>
+      　　Sounic 系统采用的是时域 PSOLA 合成算法。为了实现韵律修改，首先要实现对语音基本数据的修改。<br>
+      　　--基音修改<br>
+      　　基音修改过程如下：<br>
+      　　(a) 加窗分析 取Hanning窗，其表达式为<br>
+      　　　<img src="../../../../images/chatp/chap03/102.gif" width="132" height="41" align="texttop">　<img src="../../../../images/chatp/chap03/103.gif" width="53" height="41" align="middle">　其中N为窗宽。窗叠率为2-4。<br>
+      　　(b) 修改<br>
+      　　当原始基音模式的基音周期数与目标基音模式的相同时，修改过程是不需要的，基频修改是体现在合成过程中。<br>
+      　　(c) 叠加合成 采用简单叠加法<br>
+      　　　<img src="../../../../images/chatp/chap03/104.gif" width="128" height="40" align="absmiddle">。其中<img src="../../../../images/chatp/chap03/105.gif" width="23" height="24" align="absmiddle">取窗<img src="../../../../images/chatp/chap03/106.gif" width="17" height="24" align="absmiddle">与平均窗宽的商作为能量补偿。<br>
+      　　--时长修改：<br>
+      　　利用基音周期间的相关性，在波形的相似段进行增/删处理。因为汉语的复合韵母和声调决定了时长变化不可能随处增删波形段。<br>
+      　　设有两个向量<b>a</b>和<b>b</b>：<br>
+      　　　<img src="../../../../images/chatp/chap03/107.gif" width="140" height="25">　<img src="../../../../images/chatp/chap03/108.gif" width="132" height="25"><br>
+      　　相关系数定义为：<br>
+      　　　<img src="../../../../images/chatp/chap03/109.gif" width="43" height="27"><img src="../../../../images/chatp/chap03/110.gif" width="104" height="61" align="absmiddle"><br>
+      　　相关系数的计算过程如图3.30所示。 <br>
+      <font color="#003399">　图 3.30 语音信号的基音周期之间的相关系数计算</font> <br>
+      　　<img src="../../../../images/chatp/chap03/111.gif" width="339" height="55"> 
+      <br>
+      　　如果基频控制后时长有所变化，或指定了时长变化需求，则百分比计算公式为<br>
+      　　<img src="../../../../images/chatp/chap03/112.gif" width="244" height="44"><br>
+      　　其中dataLength为波形数据的原始长度，changedLength为改变基频后的波形数据长度。若percent&gt;0，则是时长增加，percent&lt;0则是时长的缩短，若percent=0，时长不变。<br>
+      　　--幅度修改<br>
+      　　假设数据稳定段的周期内平均幅度为<b>amp</b>，则当<br>
+      　　幅度降低时，加权系数<img src="../../../../images/chatp/chap03/113.gif" width="123" height="44" align="absmiddle"> 
+      ，<br>
+      　　幅度升高时，加权系数<img src="../../../../images/chatp/chap03/114.gif" width="123" height="44" align="absmiddle"> 
+      。<br>
+      　　当幅度提高时，首先要计算数据被加权后是否会失真，如若失真，则根据最大允许幅度修改系数delta。<br>
+      <b><font color="#003399">　　3.4.4.3 声调的修饰</font></b><a name="03"></a><br>
+      <font color="#003399">　　(1) 声调的区别特征</font><br>
+      　　声调的构成要素主要是调型，调高和调长。调型是声调的表现形态，它是声调音高曲线的形状，反映声调调值的变化过程。<br>
+      　　普通话的声调调型可分为三大类：平调，拱调和平拱结合调。在连续语流中，声调的调型发生变化，形成多种调型。分析声调的调型曲线，我们可以用下面的参数来描述：<br>
+      　　H：音域上限。调型曲线的最高点， <br>
+      　　B：音域下限。调型曲线的最高点， <br>
+      　　I：调值中心的基频， <br>
+      　　R：调域， <br>
+      　　D：调型时长<br>
+      　　因此声调的修饰就是改变上述几个参数，即调型、调域、调值及调长。 
+      <br>
+      <font color="#003399">　　(2) 调型的修改</font><br>
+      　　调型的变化指声调的模式和调长的变化；对于汉语普通话来说，如果把轻声也算作是一种声调，则有阴平、阳平、上声、去声、轻声五种基本声调；<br>
+      　　各种目标基频模式是预设置的，其数据结构为：<br>
+      　　int pitchForm [m] [n] [k] <br>
+      　　其中，m 为调类数，也代表声调编码，五种基本声调的最大调类数是 10。 n为目标调型数。每一个目标调型是一串数字，每个数字表示一个基频周期所包含的采样点数。其上限和下限由音库的平均音域决定。 
+      k为基频周期数。<br>
+      　　举个目标基频模式的例子。假设想要把词后音节的去声调变成一个中高平调，并确定它为第4个调型，则:<br>
+      　　pitchForm [8] [3] []={ 90,90 90,90,90,90,90,90,90,90, 90,90,90,90,90,90,90,90,90,90 
+      }<br>
+      　　设某词后去声音节的基音标注为指针PP，其周期数为PP-&gt;number，音域上下限为PP-&gt;maxpitch和PP-&gt;minpitch，可求出其音域中线为<br>
+      <img src="../../../../images/chatp/chap03/115.gif" width="380" height="69"> 
+      <br>
+      　　其中，FS为采样率。另设FormMax、FormMin、FormMiddle分别为预置目标基频模式的音域上限、音域下限和音域中线，则可求得该音节进行基频模式修改后的基音周期序列为（目标模式是pitchForms[8][3]）: 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/116.gif"> <br>
+      　　<img src="../../../../images/chatp/chap03/117.gif" width="324" height="21"> 
+      <br>
+      　　其中Ratio的定义为：当<img src="../../../../images/chatp/chap03/118.gif" width="233" height="21" align="absmiddle">时， 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/119.gif" width="267" height="41"><br>
+      　　否则， <br>
+      　　<img src="../../../../images/chatp/chap03/120.gif" width="264" height="41" align="absmiddle">。<br>
+      　　下标i和j的关系为：<br>
+      　　<img src="../../../../images/chatp/chap03/121.gif" width="144" height="41" align="absmiddle">, 
+      <br>
+      　　这是一种均匀的线性插值。其中toneNumber为声调编码的归一化周期数。<br>
+      <font color="#003399">　　（3）调值的修改</font><br>
+      　　· 提高调值，也就是基频的提高，表现在时域上，就是周期内的采样点数减少。为减化处理过程，本文设定，每变一级就对应为周期内采样点数减少4个，则<br>
+      　　<img src="../../../../images/chatp/chap03/122.gif" width="156" height="21">　<img src="../../../../images/chatp/chap03/123.gif" width="168" height="17"><br>
+      　　· 降低调值，表现在时域上，就是周期内的采样点数增加。本文设定，每变一级对应在周期内为采样点数增加5个，则<br>
+      　　<img src="../../../../images/chatp/chap03/124.gif" width="155" height="21"> 
+      <img src="../../../../images/chatp/chap03/125.gif" width="168" height="17"><br>
+      　　4） 调域的修改<br>
+      　　首先要用式(4.1)求出middlePitch。<br>
+      　　· 调域宽度的变化，假设每级变化的采样点数是interval。则目标基音模式为：<br>
+      　　<img src="../../../../images/chatp/chap03/126.gif" width="357" height="24"><br>
+      　　<img src="../../../../images/chatp/chap03/127.gif" width="168" height="17"> 
+      <br>
+      　　其中，如当调域加宽时<br>
+      　　<img src="../../../../images/chatp/chap03/128.gif" width="351" height="44"><br>
+      　　· 调域上限的变化，上浮可看作是调域加宽，下移看作是调域缩窄，上述公式仍然适用，但在计算目标基频的公式中，右边的form[i]要小于middlePitch，即只对较高基频进行处理。<br>
+      　　· 调域下限的变化，与调域上限的变化类似。不同之处，一是要把下限的上浮看作是调域缩窄，下移看作是调域加宽；二是计算目标基频的公式右边的form[i]要大于middlePitch，即只对较低的基频进行处理。<br>
+      <b><font color="#003399">　　3.4.4.4 重音的模拟</font></b><a name="04"></a><br>
+      <font color="#003399">　　(1) 重音的分类</font><br>
+      　　要合成高自然度的语音，我们首先需要对汉语语音学有一定的了解，对自然语音的规律作出合适的描述和分析，才能制订出有效可行的合成规则。<br>
+      　　在语流中，各音节的响亮程度并不完全相等，有的音节听起来比其它音节响亮，简单地说，这就是重音。 其音位学分类为：正常重音、对比重音、弱重音。<br>
+      　　这种划分是以词为考查对象的。人们在口语交流中，常把在表情达意方面较重要的词读得重些，把其余的词读得轻些。语句重音是指由句子语法结构、逻辑语义，或心理情感的表达需要，而产生的句子中的重读音，它不同于词重音，因为词重音只出现在词结构中。语句重音一般分为三种：语法重音、逻辑重音、心理重音。<br>
+      　　本文的研究重点并不在重音的语言意义上，而是要区分出读音的轻重来，并给出相应的修饰算法。因此我们不再详细考虑重音的种类，而只是简单地把重音的表现分为4个等级：最重、重、中、轻。 
+      <br>
+      <font color="#003399">　　(2)重音的声学特性</font><br>
+      　　通常，学者们认为，重音的声学征兆主要表现在时长、音高与音强三个方面，也往往是三者的结合。不同语言的重音特点也不一样，对于汉语，老一辈语音学家赵元任先生认为，&quot;汉语重音首先是延长持续时间和扩大调域，其次才是增加强度&quot;。现代语音学家也认为，汉语重音主要表现在时长的增加（或者说是基音周期数的增加）；其次是调域的扩大和音高的提升，调型完整地展开；与发音强度的关系并不是肯定的。<br>
+      　　我们的重音对比实验证实了时长的重要性，它对重音的影响是第一位的；并且，时长的更精确的表示应当是基音周期数：只要周期数增加，听感上就会有时长增加的效果，实际上时长有可能略有缩短。其次应该是音高的变化，调域的变化对重音的影响是有限的。音强虽然对加重没有多大作用，但对轻读的作用比较大。另外，实验中发现，调型的变化也是重音的一个因素，轻声字的调型趋降就是一个说明；又如，当&quot;那么&quot;这个词被强调时，把&quot;那&quot;的降调变为渐升调，会有奇妙的强调效果，而且绝不会影响语义的正确理解。 
+      <br>
+      <font color="#003399">　　(3) 词组中重音的模拟 </font><br>
+      　　词组中（句子也大都如此）有重音表现的一般都是单字词和双字词，重音在三字词和四字词上的情况比较少见。因此，本文分别用三字词组和四字词组研究单字词和双字词的重音韵律控制。<br>
+      　　首先，把重音的语音学表现分为四级：轻、中、重和最重。其中&quot;轻&quot;即为轻声，本文不再对此另作韵律控制。&quot;中&quot;即指正常匀速的发音，与音库的合成基元所处语境相当，也不必再加任何韵律控制。因此，只对&quot;重&quot;和&quot;最重&quot;两级进行韵律控制。 
+      <br>
+      　　例如，图3.31所示为单字词和双字词在三字词组和四字词组中加重音后的基频和周期数的变化对比曲线。数据变化是依据语音学和听辨结果而确定的。<br>
+      　<font color="#003399">图3.31 词组中有重音效果时的基频－周期数变化。其中横坐标为周期数，纵坐标为基频。细曲线为音元的固有基频曲线，粗曲线为有重音表现的基频曲线。</font><br>
+      <br>
+      　　<img src="../../../../images/chatp/chap03/129.gif" width="151" height="151">　<img src="../../../../images/chatp/chap03/130.gif" width="151" height="151"><br>
+      　　　　| 白 | 开 | 水 |　　　　　 | 白 | 开 | 水 |<br>
+      　　　　(A) 词头重音&quot;白&quot; 　　　　　(B) 词头最重音&quot;白&quot;<br>
+      　　　重音控制与韵律标注举例如下：<br>
+      　　　单字词在词组首部 重 白\d7\开\e1\水\d3\ <br>
+      　　　最重 白\i2d8a8u5\开\r1e2d2\水\e2\ <br>
+      　　　双字词在词组首部 重 地\d8\大物\e1\博\e2\<br>
+      　　　最重 地\i2d8a8\大物\e1\博\e2\ 
+<br>
+      <font color="#003399">　　(4) 重音在语句中的模拟</font><br>
+      　　与词组中的重音相似，句子中的重音的语音学表现也是时长增加、基频提高、幅度提高和略有停顿，不同的是，句中不被加重的部分要大大地轻化：调域变窄、时长变短、基频降低，并且，字间的停顿时间要缩短，使输出语音更加连贯而流畅。图7.2所示的例子为同一陈述句、当所强调内容不同时的韵律参数变化。重音在语句中模拟的举例如下： 
+      <br>
+      　　<img src="../../../../images/chatp/chap03/131.gif" width="228" height="183">　<br>
+      　　　　| 我 |知 |道|你|会| 唱 | 歌 |<br>
+      　　　　(A) 重音在&quot;我&quot; <br>
+      　　<img src="../../../../images/chatp/chap03/132.gif" width="227" height="182"><br>
+      　　　　| 我 | 知 | 道|你 会|唱| 歌 |<br>
+      　　　　(B) 重音在&quot;知道&quot; <br>
+      　　图 3.32 陈述句中有重音时的基频－周期数对比曲线。其中横坐标为周期数，纵坐标为基频。<br>
+      　　细曲线为音元的固有基频曲线，粗曲线为有重音表现的基频曲线。韵律控制参数分别为：<br>
+      　　(A) 我\i4d6u8\知道\i1d2\你\e2d2\会\e2b3d2\唱\e2d2\歌\e2d2\。<br>
+      　　(B) 我\r1d3u8\知\i1d8\道\e1d2\你\e2d2\会\e2b3d2\唱\e2d2\歌\e2d2\<br>
+      <font color="#003399"><b>　　3.4.4.5语调的修饰<a name="05"></a></b></font><br>
+      <font color="#003399">　　(1) 语调的模式</font><br>
+      　　语调和声调相对而言，语调表现在语句上，而不是音节上。语调是说话人的心理，情感，态度的反映。试图传递陈述，疑问，祈求，商量，感叹，命令等信息。<br>
+      　　语调与声调共存在一起。这种共存是同种超音段成分－音高－的共时结合。<br>
+      　　声调类型是词的结构的一部分，是对音高的调节。而语调是对音高的再调节。有的语言学家认为：&quot;字调是叠加在语调上的，很象小波纹跨在大浪上的，其结果是两种音高变化的代数和&quot;。且：&quot;随着发音和发声力量的变化，音域的变化就象橡皮带上画的曲线。&quot;<br>
+      　　对于长句来说，一般可分为数个短语。短语自成单元，具有完整的规则调群，我们也可称之&quot;语调短语&quot;。因此，可将长句划分成多个调群，研究其语调。<br>
+      　　同时，语调的变化伴随着句子的节奏，速度的改变，其声学特征表现为音高，音域时长，音强和停顿的变化。我们从语调的声学特征，来实现语调的修饰。首先把语调分成以下的模式<br>
+      　　① 平语调：<br>
+      　　平语调没有高低升降的字调变化。句中各音节的声调基本上是原状，只是句尾的音高是趋降的。平语调用于陈述、说明。如&quot;今天下午开会&quot;。<br>
+      　　② 升语调<br>
+      　　升语调的末尾语调上扬，声学征兆是音高上升。调域扩大，调长加长。升语调用于命令、疑惑、惊讶等。如，疑问&quot;你知道他会唱歌？&quot;'歌'字的调域加宽，时长加大。一般疑问句的时长特征是全句缩短，句末音节加长。<br>
+      　　在并列陈述句中，并列成分表现为升调，只有在句末才是降调。如&quot;你去无锡，我去南京。&quot;<br>
+      　　③ 降语调<br>
+      　　降语调的末音节略短，略下降，降语调表示说话人情绪不高，感叹。如&quot;试验又失败了。&quot;<br>
+      　　④ 曲语调<br>
+      　　曲语调是一种双向语调，它由升调和降调混合组成。主要用于表述较复杂的感情和语义。如&quot;是我的错，你没有错&quot; 
+      <br>
+      <font color="#003399">　　(2) 语调的修饰：</font><br>
+        　　上述语调模式可反应一些句型的语调。汉语句子的最基本的语调，就是陈述句、疑问句和感叹句。 <br>
+        　　① 陈述句<br>
+        　　陈述句的语调是平稳趋降的。只要陈述句的句尾不是被强调部分，其基频就相对地要低些。例子参看图3.33 。<br>
+      　　<img src="../../../../images/chatp/chap03/133.gif" width="302" height="153"><br>
+      　　　　| 是 | 那 |么 | 一 | 回 | 事 | <br>
+      　　图3.33 系统直接合成的陈述句&quot;是那么一回事&quot;，与经韵<br>
+      　　律修改后自然度提高的陈述句的基频-周期数的对比曲线。<br>
+      　　② 疑问句<br>
+      　　疑问句分有疑问词(疑问助词、疑问代词、疑问语气词、选择问句等)和无疑问词两种。当句中有疑问词时，句调与陈述句相同，见图3.34的(a)。<br>
+      　　当句中没有疑问词时，句子语调是上升的，致使句尾的字调也有所上升，我们研究了句尾字基频模式的变化规律，规范出基频变化曲线。 
+     <br>
+ 　　③ 感叹句<br>
+        　　感叹句也分有感叹词和无感叹词两种。当句中有感叹词时，句调与陈述句基本相同，见图3.34的(b)。当句中没有感叹词时，句调尾部是下降的，致使句尾的字调也有所下降。同样，我们研究了句尾字基频模式的变化规律，规范出基频变化曲线。 
+        <br>
+      　　语调修饰中，基频和时长的变化举例如下：<br>
+      <font color="#003399">　　图3.34 基频－周期数的对比曲线。</font> <br>
+      　　<img src="../../../../images/chatp/chap03/134.gif"><br>
+      　　　　| 是 | 那 |么| 一 | 回 | 事 |<br>
+      　　(a) 表现疑问语气的无疑问词疑问句的基频和时长变化<br>
+      　　<img src="../../../../images/chatp/chap03/135.gif" width="307" height="115"><br>
+      　　　 | 是 | 那 |么| 一 | 回 | 事 |<br>
+      　　(b) 表现感叹语气的无感叹词感叹句的基频和时长变化<br>
+      　　相应的韵律控制参数分别为： <br>
+      　　(a) 是\p2e2d1\那\p2c7\么\p0c4\一\p0e3c7\回\r1e1c7\事\p0d9d6\？<br>
+      　　(b) 是\p2e2d1\那\p2c7\么\p0c4\一\p0e3c7\回\r1c7\事\d9d6\！ 
+      <br>
+      <font color="#003399">　　(3) 长句的语调修饰</font><br>
+        　　长句由短句或类似于短句的语调短语组成，此处暂且把短句也当作是一种语调短语，统一用语调短语这个名词。<br>
+        　　当语调短语之间有类似于并列、等候下文的关系时，除句尾之外，其它各语调短语尾的调值都呈上升，并且要加适当停顿。如：&quot;他会开飞机\i2\，我也会开飞机\e2\。&quot;。否则，语调短语尾的调值应呈下降趋势，但要比句尾降得少。如：&quot;我们来讨论\e1\搞好经济的问题\e2\。&quot;。<br>
+        　　长句的重音和语调与短句相似，本文不再作讨论。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

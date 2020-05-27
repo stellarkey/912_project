@@ -1,0 +1,1 @@
+{"knowledge": "进程和线程管理。\r\n", "question": "若当前进程因时间片用完而让出处理机时，该进程应转变为（）状态。 s1\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.就绪\r\n B.等待\r\n C.运行\r\n D.完成\r\n"}

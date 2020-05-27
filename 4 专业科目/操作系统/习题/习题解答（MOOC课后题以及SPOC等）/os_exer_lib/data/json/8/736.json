@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)操作系统是一种系统软件，它﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.控制程序的执行",
+        "B.管理计算机系统的资源",
+        "C.方便用户使用计算机",
+        "D.管理计算机系统的资源和控制程序的执行"
+    ],
+    "q_number":736
+}

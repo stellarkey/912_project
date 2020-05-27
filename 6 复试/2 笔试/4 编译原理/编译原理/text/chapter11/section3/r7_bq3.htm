@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　如果我们按照图11.15的程序流图执行，执行到B<sub><font size="-1">5</font></sub>时，i的值总为2，则j的值也为2。事实上，按图11.14的流图，若x＝30，y＝25，则B<sub><font size="-1">3</font></sub>不被执行，执行到B<sub><font size="-1">5</font></sub>时，i和j的值都为1，所以图11.15的流图改变了原来程序的运行结果。<br>
+      　　问题的原因在于B<sub><font size="-1">3</font></sub>不是循环出口结点B<sub><font size="-1">4</font></sub>的必经结点。所以，当把一个不变运算提到循环的前置结点时，要求该不变运算所在的结点是循环所有出口结点的必经结点。<br>
+      　　此外，如果循环中i的所有引用点只是B<sub><font size="-1">2</font></sub>中i的定值点（&quot;点&quot;指某一四元式的位置，对变量的&quot;定值&quot;指对变量赋值或输入值）所能达到的，i在循环中不再有其它定值点，并且出循环后不再引用该i的值，那么，即使B<sub><font size="-1">3</font></sub>不是B<sub><font size="-1">4</font></sub>的必经结点，也还可以把i∶ 
+      =2提到B′2中，因为这不影响原来程序的运行结果。 <br>
+      　　如果把图案11.14中的B2改为<br>
+      　　i:= 3;<br>
+      　　if x&lt;y goto B<sub><font size="-1">3</font></sub><br>
+      　　试考虑B2中不变运算i:= 3的外提问题。<br>
+      　　现在i:= 3所在的结点B<sub><font size="-1">2</font></sub>是循环出口结点的必经结点。但因为循环中除B<sub><font size="-1">2</font></sub>外，B<sub><font size="-1">3</font></sub>也对i定值，如果把B<sub><font size="-1">2</font></sub>中不变运算i:= 
+      3外提到循环的前置结点中，则程序的执行流程是B<sub><font size="-1">2</font></sub>→B<sub><font size="-1">3</font></sub>→B<sub><font size="-1">4</font></sub>→B<sub><font size="-1">2</font></sub>→B<sub><font size="-1">4</font></sub>→B<sub><font size="-1">5</font></sub>，那么到达B<sub><font size="-1">5</font></sub>时i的值是2，而j的值也是2；可是如果不把B<sub><font size="-1">2</font></sub>中不变运算i:= 
+      3外提，经以上执行流程到达B<sub><font size="-1">5</font></sub>时i的值是3，而j的值也是3，并不是2。从该例看到，当把循环中不变运算A：=B 
+      op C外提时，要求循环中其它地方不再有A的定值点。 <br>
+      　　这里所说的定值点指变量在该点被赋值或输入值，引用点则指在该点使用了该变量，定值和引用的关系是全局优化和数据流分析研究的问题,我们不进行讨论。</td>
+  </tr>
+</table>
+</body>
+</html>

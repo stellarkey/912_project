@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　(1) 图像压缩</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4053.gif" width="288" height="241"><br>
+            图6-11 编码网络 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　图像压缩的目的是为了使用最紧凑的方式表示具有高冗余度的原图像信息。在八十年代后期曾有不少人研究使用多层前馈网络实现图象压缩。所使用的多层网络的结构一般具有N－M－N结构。其中N是输入端及输出结点的数目，而M则是隐含层结点的数目，一般M＜N，图6-11是一个5-3-5结构。该种结构的输入端到隐含层实现对图像信号的编码，而从隐含层到输出结点部分则实现解码，以便在输出端重现原输入图像。在训练的过程中使用误差回传真法。由Cottrell等人所作的研究使用64个输入端子，每个端子具有8位的精度。输入获取8×8象素组成的图象。该网络的隐含层结点为16个。他们在一幅图象中随机地选取子图区域，作为训练集，训练使用了十五万个训练步，训练的目的是使输出端的输出要尽可能与输入信号一致。如果能做到这一点，则表明在隐含层输出端的信息是原信息的紧凑表示，因而达到将图像压缩的要求。<br>
+            　　对使用这种方法实现图像压缩进行的研究表明，隐含层结点并不一定需要具有非线性的输入输出特性，它们完全可以使用线性函数，而这还有利于对这种图象压缩原理进行理论分析。分析表明该网络实质上是将输入信号投影到由输入的头M个主分量组成的子空间中，而将输入信号分解成其主分量表示。可以尽可能真实地保留原有信息，因而在网络的输出结点较真实地重现原图像。<br>
+            　　(2) 信号预测<br>
+            　　多层前馈网络也经常用来对信息进行预测，如股票走向，天气预报等。其做法是将信号序列<br>
+            　　<img src="../../images/image_content/6/6_5F4054.gif" width="270" height="35" align="absmiddle"> 
+          </td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5F4055.gif" width="346" height="435"><br>
+            图6-12 邮政编码识别网络 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　依次送到神经网络的输入端子，而将<img src="../../images/image_content/6/6_5F4056.gif" width="52" height="26" align="absmiddle">作为网络输出结点的期望值进行训练，以确定信号<img src="../../images/image_content/6/6_5F4056.gif" width="52" height="26" align="absmiddle">与其前几个时刻的表现之间的映射关系，从而实现对未来事件的预测。<br>
+            　<span class="spe">　人工神经元网络用于预测主要体现在它具有实现复杂的函数映射的功能。对于股票走向，天气预报等应用，可以归纳为时序信号的预测，即用当前几个数据来预测第n+1个数据。表示成</span><br>
+            　　<img src="../../images/image_content/6/6_5F4057.gif" width="303" height="31" align="absmiddle"><br>
+            　　<span class="spe">这属于常说的数据拟合，回归。例如对一组数据用线性规律去拟合，或用多项式拟合等，这种基于指定函数类型的拟合往往不能反映数据内在规律，而利用MLP能以任意程度逼近任意连续函数这一点，可让所训练的函数自适应于训练的数据，避免了人为指定函数类型的不良影响。实质上这与数据集的主分量分析是相通的。</span><br>
+            　　就实现映射而言，用神经网络进行预测与其它用途，如分类等在原理上没有什么不同，但是人们对为什么前馈网络能进行预测进行理论分析与探讨，并企图找出有关神经网络设计的规律，如隐含层数目，隐含层结点数目等的确定方法等。就训练过程而言，工作量与计算量也是很大的，1988年时Lapedes等人用如下带延时的微分方程进行测试<br>
+            　　<img src="../../images/image_content/6/6_5F4058.gif" width="194" height="60" align="absmiddle">　　　(6-53)<br>
+            　　试验表明用普遍采用的误差回传算法训练，要达到所要求的精度是很慢的。为了加快收敛，他们采用了共轭梯度技术，并使用Gray超级计算机进行计算。<br>
+            　　(3)数字识别<br>
+            　　关于利用前馈网络进行分类，Le Cun等人曾用来进行美国邮政编码数字的识别。他们使用的神经网络结构如图6-12所示，每个数字图像有16×16个像素组成。而网络则包含三个隐含层。其中第一个隐含层是可训练的特征检测器，由12组单元组构成，每个组包含8×8个单元，而其中每个单元从5×5象素区域获取加权信号，它们用来在16×16象素区域内的各处检测有关特征。而第二隐含层则是由12个由16个单元组成的组构成，它们分别从第一隐含层中的12组中抽取8个组成的不同组合，而第三个隐含层则由30个单元组成，每个单元与第二隐含层的全部结点联接。最上层的10个输出结点则与第三隐含层全部结点联接。这个系统使用7300个数字进行训练，2000个数字进行测试。对训练集进行测试的误差为1%，而对测试集测试，误差为5%。<br>
+            　　他们的经验表明，为了使该神经网络具有良好的通用性，减少网络的自由参数数目是很主要的。适当地舍取部分联接，甚至能得到更好的性能。<br>
+            　　<span class="spe">一般的多层感知器在层间采用全部联接的方式，但该例子则使用舍去部分联接的方法。如第一隐含层中的结点只从图像中的局部获取信息，一个结点只从图像中某个5×5象素组成的子图获取信息，第二隐层中的每一组只与第一隐层的部分组有联接关系。据说既减少了联接数量，又提高了性能。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

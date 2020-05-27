@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　若对例6.1文法G[S]的每条产生式编上序号用[i]表示加在产生式的尾部，使产生式变为：<br>
+      　　S→aAcBe[1]<br>
+      　　A→b[2]<br>
+      　　A→Ab[3]<br>
+      　　B→d[4]<br>
+      　　但[i]不属产生式的文法符号，对输入串abbcde进行推导时把序号也带入，则最右推导过程为：<br>
+      　　S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcBe[1]<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcd[4]e[1]<br>
+      　　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAb[3]cd[4]e[1]<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ab[2]b[3]cd[4]e[1]<br>
+      　　所以输入串abbcde为该文法的句子。<br>
+      　　它的逆过程,即最左归约(规范归约)则为：<br>
+      　　ab[2]b[3]cd[4]e[1] 　　用产生式(2)归约<br>
+      　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAb[3]cd[4]e[1] 
+      　　用产生式(3)归约<br>
+      　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcd[4]e[1]　　　　 
+      用产生式(4)归约<br>
+      　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcBe[1] 
+      　　　　　 用产生式(1)归约<br>
+      　<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<br>
+      　　其中&quot;<img src="../../../img/chap07/symbol05.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">&quot;表示归约，从这里可以看到每次归约时，归约前和归约后的已归约部分和剩余部分合起来只是构成文法的规范句型，而用哪个产生式归约仅取决于当前句型的前部分，例中每次归约前句型的前部分依次为：<br>
+      　　ab[2]<br>
+      　　aAb[3]<br>
+      　　aAcd[4]<br>
+      　　aAcBe[1]<br>
+      这正是我们在表7.2的分析过程中每次采取归约动作前符号栈中的内容，即分别对应步骤3、5、8、10时符号栈中的符号串，我们把规范句型的这种前部分串称可归前缀。<br>
+      　　我们再来分析下列规范句型的前缀：<br>
+      　　ε,a,ab<br>
+      　　ε,a,aA,aAb<br>
+      　　ε,a,aA,aAc,aAcd<br>
+      　　ε,a,aA,aAc,aAcB,aAcBe<br>
+      　　不难发现前缀a,aA,aAc都不只是某一个规范句型的前缀，因此我们把形成可归前缀之前包括可归前缀在内所有规范句型的前缀都称为活前缀。活前缀为一个或若干规范句型的前缀。在规范归约过程中的任何时刻只要已分析过的部分即在符号栈中的符号串均为规范句型的活前缀，则表明输入串已被分析过的部分是该文法某规范句型的一个正确部分。</td>
+  </tr>
+</table>
+</body>
+</html>

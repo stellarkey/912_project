@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　　　　　else<br>
+      　　　　　　　if sym=ifsym<br>
+      　　　　　　　　then<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　condition([thensym,dosym]+fsys);<br>
+      　　　　　　　　　　if sym=thensym<br>
+      　　　　　　　　　　　then getsym<br>
+      　　　　　　　　　　　else error(16);<br>
+      　　　　　　　　　　cx1∶=cx;<br>
+      　　　　　　　　　　gen(jpc,0,0);<br>
+      　　　　　　　　　　statement(fsys);<br>
+      　　　　　　　　　　code[cx1].a∶=cx<br>
+      　　　　　　　　　end<br>
+      　　　　　　　　else<br>
+      　　　　　　　　　if sym=beginsym<br>
+      　　　　　　　　　　then<br>
+      　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　　　statement([semicolon,endsym]+fsys);<br>
+      　　　　　　　　　　　　while sym in [semicolon]+statbegsys do<br>
+      　　　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　　　if sym=semicolon<br>
+      　　　　　　　　　　　　　　　then getsym<br>
+      　　　　　　　　　　　　　　　else error(10);<br>
+      　　　　　　　　　　　　　　statement([semicolon,endsym]+fsys)<br>
+      　　　　　　　　　　　　　end;<br>
+      　　　　　　　　　　　　　if sym=endsym<br>
+      　　　　　　　　　　　　　　then getsym<br>
+      　　　　　　　　　　　　　　else error(17)<br>
+      　　　　　　　　　　　end<br>
+      　　　　　　　　　　else<br>
+      　　　　　　　　　　　if sym=whilesym<br>
+      　　　　　　　　　　　　then<br>
+      　　　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　　　cx1∶=cx;<br>
+      　　　　　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　　　　　condition([dosym]+fsys);<br>
+      　　　　　　　　　　　　　　cx2∶=cx;<br>
+      　　　　　　　　　　　　　　gen(jpc,0,0);<br>
+      　　　　　　　　　　　　　　if sym=dosym<br>
+      　　　　　　　　　　　　　　　then getsym<br>
+      　　　　　　　　　　　　　　　else error(18);<br>
+      　　　　　　　　　　　　　　statement(fsys);<br>
+      　　　　　　　　　　　　　　gen(jmp,0,cx1);<br>
+      　　　　　　　　　　　　　　code[cx2].a∶=cx<br>
+      　　　　　　　　　　　　　end;<br>
+      　　　　test(fsys,[],19)<br>
+      　　end (*statement*);</td>
+  </tr>
+</table>
+</body>
+</html>

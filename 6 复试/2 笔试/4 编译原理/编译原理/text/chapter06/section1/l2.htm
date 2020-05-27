@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　短语、直接短语、句柄的定义：<br>
+      　　文法G[S]，<br>
+      　　S <img src="../../../img/chap04/symbol04.gif" width="15" height="15">αAδ且A<img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      <img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">β则称β是句型α 
+      β δ相对于非终结符A的短语。<br>
+      　　若有A<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">β则称β是句型α 
+      β δ相对于A或规则A → β的直接短语。<br>
+      　　一个句型的最左直接短语称为该句型的句柄。 <br>
+      　　算符优先分析法是一种自底向上分析方法，也称移进-归约分析法，粗略地说它的实现思想是对输入符号串自左向右进行扫描，并将输入符逐个移入一个后进先出栈中，边移入边分析，一旦栈顶符号串形成某个句型的句柄时，(该句柄对应某产生式的右部)，就用该产生式的左部非终结符代替相应右部的文法符号串，这称为一步归约。重复这一过程直到归约到栈中只剩文法的开始符号时则为分析成功，也就确认输入串是文法的句子。本章将在介绍自底向上分析思想基础上，着重介绍算符优先分析法。 
+      <br>
+      　　栈顶符号串是指该符号串包含栈顶符号在内，并由栈中某个符号为该符号串的头，栈顶符号为该符号串的尾，也可以只有一个栈顶符号。 <br>
+      <b>6.1 自底向上分析概述</b> <br>
+      　　自底向上分析法，也称移进-归约分析法，或自下而上分析。现举例说明。</td>
+  </tr>
+</table>
+</body>
+</html>

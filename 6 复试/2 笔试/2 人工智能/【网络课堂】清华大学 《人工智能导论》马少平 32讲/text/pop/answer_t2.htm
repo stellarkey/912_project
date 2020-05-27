@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="6" topmargin="6" marginwidth="6" marginheight="6" bgproperties="fixed" background="images/bg.gif">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%">
+  <tr>
+    <td align="left" valign="top">
+      <p class="tt"><font color="#CC0000">问题11:</font> 什么是A*算法？<br>
+        　回答: 如果对于任何节点n，有h(n)≤h*(n)，则此时的A算法称为A*算法。</p>
+      <p class="tt"> <font color="#CC0000">问题12:</font> A*算法有什么特点？<br>
+        　回答: （1）是一种启发式的图搜索算法；（2）当问题有解时，A*算法一定能找到解，并且能保证找到最佳解。</p>
+      <p class="tt"> <font color="#CC0000">问题13:</font> 为什么A*算法会出现重复扩展节点的问题？<br>
+        　回答: 一般情况下，当A*算法扩展节点n时，并不能保证已经找到了从初始节点到节点n的最短路径，所以在以后的搜索中，当找到了更短的从初始节点到节点n的路径时，就要对n进行重复扩展。</p>
+      <p class="tt"> <font color="#CC0000">问题14:</font> 如何避免或者减少重复节点扩展问题？<br>
+        　回答: 有两种方法可以避免或者减少重复节点扩展问题。一是定义满足单调条件的启发函数h；二是对A*算法进行适当的修改，对于f值小于fm的节点，按照g值排队，选g值最小的节点优先扩展。</p>
+      <p class="tt"> <font color="#CC0000">问题15:</font> h是单调的条件是什么？<br>
+        　回答: 如果对于任何节点ni和nj，其中nj是ni的后继节点，h满足条件：<br>
+        h(ni)-h(nj)≤C(ni，nj)，且h(t)＝0，其中t为目标节点，则称为h是单调的。</p>
+      <p class="tt"> <font color="#CC0000">问题16:</font> 当h满足单调条件时，就可以完全避免重复节点扩展问题吗？为什么？<br>
+        　回答: 是的。因为当h是单调的时，当A*算法扩展节点n时，就已经找到了从初始节点到节点n的最优路径，因此在以后的搜索过程中，不会出现需要修改到n的路径问题，因此也就不会出现重复扩展节点问题了。</p>
+      <p class="tt"> <font color="#CC0000">问题17:</font> 修正的A*算法可以完全避免重复扩展节点问题吗？<br>
+        　回答: 不能。只是有可能避免一些重复扩展节点问题。最坏情况下，重复扩展的节点数与A*算法相同。</p>
+      <p class="tt"> <font color="#CC0000">问题18:</font> AO*算法的特点是什么？<br>
+        　回答: （1）是一种与或图启发式搜索算法。（2）当h（n）满足单调条件时，如果问题有解，则AO*算法一定能找到最优解。</p>
+      <p class="tt"> <font color="#CC0000">问题19:</font> 在与或图中，什么是能解节点？什么是不能解节点？<br>
+        　回答: 能解节点：（1）终节点是能解节点；（2）若非终节点有&quot;或&quot;子节点时，当且仅当其子节点至少有一个能解，该非终节点才能解；（3）若非终节点有&quot;与&quot;子节点时，当且仅当其子节点均能解，该非终节点才能解。<br>
+        不能解节点：（1）没有后裔的非终节点是不能解节点；（2）若非终节点有&quot;或&quot;子节点时，当且仅当所有子节点均不能解时，该非终节点才不能解；（3）若非终节点有&quot;与&quot;子节点时，当至少有一个子节点不能解时，该非终节点才不能解。</p>
+      <p class="tt"> <font color="#CC0000">问题20:</font> － 剪枝方法只是极小极大方法的一种近似，剪枝可能会遗漏掉最佳走步。这种说法是否正确？<br>
+        　回答: 不正确。 － 剪枝方法利用已经搜索的信息，剪掉哪些对于搜索最佳走步没有意义的分枝，其找到的最佳走步与极小极大方法找到的结果是一样的。而且搜索效率有很大提高。</p>
+      <p >&nbsp;</p>
+</td>
+  </tr>
+</table>
+</body>
+</html>

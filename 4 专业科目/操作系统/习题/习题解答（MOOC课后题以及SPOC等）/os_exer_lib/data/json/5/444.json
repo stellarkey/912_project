@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"支持现代单机操作系统发展的关键技术是_____________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":444
+}

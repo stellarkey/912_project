@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A 把 ecx 内容移动到 eax\n",
+    "question":"GCC内联汇编 asm(\"movl %ecx, %eax\"); 的含义是()\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.把 ecx 内容移动到 eax",
+        "B.把 eax 内容移动到 ecx"
+    ],
+    "q_number":1236
+}

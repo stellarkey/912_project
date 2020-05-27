@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">2．句法分析问题</font></p>
+      <p>　　<font color="#000099">句法分析问题就是根据给定的文法重写规则，判断一个字串是否是符合该重写规则的句子。一旦一个单一的S被推导出来，则说明给定的字串是一个句子。在图1.11中，为了简便起见，省略了一些过程。虚线箭头表示的是经过几次规则变换后得到的结果，实线箭头表示的是一次规则变换后的结果。</font></p>
+      <p>　　在语言学中，决定任意一个符号序列是不是一个句子的问题，是一个句法分析问题，我们可以用产生式系统来分析这个问题。下面先定义一个分析有限个英语句子的与上下文无关的简单文法来讨论这个问题。<br>
+        设该文法有如下的终结符和非终结符：<br>
+        终结符号：of approves new president company sale the <br>
+        非终结符号：S NP VP PP P V DNP DET A N<br>
+        文法的重写规则是：<br>
+        N→NP<br>
+        A NP→NP<br>
+        DET NP→DNP<br>
+        P DNP→PP<br>
+        DNP PP→DNP<br>
+        V DNP→VP<br>
+        DNP VP→S<br>
+        of→P<br>
+        approves→V<br>
+        new→A<br>
+        president→N<br>
+        company→N<br>
+        sale→N<br>
+        the→DET<br>
+        现在来分析以下的符号串是否属于该语言中的一个句子：<br>
+        The president of the new company approves the sale<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

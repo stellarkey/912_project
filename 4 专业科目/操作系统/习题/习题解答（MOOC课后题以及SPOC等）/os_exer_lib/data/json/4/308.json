@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "question":"文件目录的主要作用是_____ 。\n",
+    "explain":"解释 A",
+    "degree_of_difficulty":1,
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.按名存取",
+        "B.提高速度",
+        "C.节省空间",
+        "D.提高外存利用率"
+    ],
+    "q_number":308
+}

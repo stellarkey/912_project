@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>3.5.3 特征映射法、解决非线性判别分类问题</strong><br>
+            　　对需要非线性分类界面的情况，支持向量机采用的方法与前面提到的方法很不相同，支持向量机提出的方法是利用特征映射方法，使非线性分类的问题可以利用线性分类的计算框架来实现。利用特征映射方法的原理示意图如图3-31所示，其中左图表示的是在原特征空间两类需要非线性分界面的情况，而右图则表示采用特征映射后，样本X在新的特征空间中表示成<img src="../../images/image_content/3/3_5083.gif" width="40" height="24" align="absmiddle">，而两类样本之间的分界面可以用线性分界面方程。这就是这一节要讨论的问题。<br></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/3/3_5061.gif" width="231" height="203"><br> 
+            <img src="../../images/image_content/3/3_5062.gif" width="268" height="199"> 
+            <br> <span class="FCcontent">图3-31</span></td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　<span class="spe">　还记得在第三章开始3.2.2中提到一种广义线性判别函数吗？我们曾举了一个二次函数的例子，现在再举一个利用二次曲面的例子，假设对一个二维空间的分类问题，想用一个二次函数作为判别函数，则二次曲线函数的一般式可写成<br>
+            　　<img src="../../images/image_content/3/3_5063.gif" width="314" height="37"><br>
+            　　如果我们希望采用广义线性方程的方法，我们可以定义<br>
+            <img src="../../images/image_content/3/3_5064.gif" width="168" height="40" align="absmiddle"> 
+            作为映射后的特征向量，而相应的广义权向量<img src="../../images/image_content/3/3_5065.gif" width="118" height="35" align="absmiddle"> 
+            ，则一个线性方程就可写成<br>
+            　　<img src="../../images/image_content/3/3_5066.gif" width="106" height="28"><br>
+            　　其中w<sub>0</sub>=f<br>
+            　　这样一来，线性分类方法就可以直接采用。这条路子在传统的模式识别技术中并没有持续研究下去，因为一个突出的问题是维数会急剧增加，在高维的空间中进行计算是传统方法所忌讳的。但支持向量机方法的提出者们对这个问题进行了更深入一步的研究，他们坚持了利用特征映射的方法，从而保留了线性划分的计算框架。</span><br>
+            　　支持向量机利用特征映射的思想，可以回顾一下支持向量机中的以下两个式子：<br>
+            　　<img src="../../images/image_content/3/3_5067.gif" width="115" height="41" align="absmiddle">　　　(3-104)(原(3-90)式)<br>
+            　　其中<img src="../../images/image_content/3/3_5068.gif" width="88" height="33" align="absmiddle">是以下式子求极大值的解<br>
+            　　<img src="../../images/image_content/3/3_5069.gif" width="252" height="43" align="absmiddle">　　(3-105)(原3-91式)<br>
+            　　从这个式子可以看到，计算上式的极大值只用到训练样本数据间的点积&lt;xi·xj&gt;，而使用的分类器判别函数中权向量的作用也是通过权向量与样本的点积体现出来的，而从(3-104)式中看出来，权向量是训练样本中的支持向量的线性组合，因此WTX值的计算可写成<br>
+            　　<img src="../../images/image_content/3/3_5070.gif" width="309" height="38" align="absmiddle">(3-106)<br>
+            　　它表明在计算判别函数值时，仍然只需通过计算相应数据的点积即可。<br>
+            　　由此可以设想，如果我们将原特征向量用映射的方式转换成<img src="../../images/image_content/3/3_5071.gif" width="76" height="32" align="absmiddle"> 
+            ，则相应的式子只需改变成<br>
+            　　<img src="../../images/image_content/3/3_5072.gif" width="302" height="47" align="absmiddle">　　　　　(3-107)<br>
+            　　分类界面方程<br>
+            　　<img src="../../images/image_content/3/3_5073.gif" width="223" height="57" align="absmiddle">　　　　　(3-108)<br>
+            　　其中w<sub>0</sub>*为相应的常数项。<br>
+            　　<span class="spe">由于特征进行了映射，从x变成了f(x)，因此问题是在另一个映射后的空间讨论的。设原空间维数为d，即<img src="../../images/image_content/3/3_5084.gif" width="50" height="27" align="absmiddle">，而新空间为m维，即<img src="../../images/image_content/3/3_5085.gif" width="73" height="31" align="absmiddle">，则一般m维要比d维大得多。权向量的维数也是m维，它是在映射后空间中的支持向量的线性求和<img src="../../images/image_content/3/3_5086.gif" width="129" height="40" align="absmiddle"> 
+            。但是支持向量机的提出者进一步发现，并不一定要求出这个权向量，因为分类判别函数中只关心权向量与样本向量之间的点积。因此，又引出了所谓核函数K(x<sub>i</sub>, 
+            x)。</span><br>
+            　　其实(3-107)和(3-108)这两个式子中只用到有关数据的点积，因此如果能确定某种函数k(x<sub>i</sub>·x)的确是xi与x这两个样本数据某种映射的内积(比点积更广泛一些，点积只是内积的一种)，就可用它来设计支持向量机，而不必知道对应哪一个函数f(*)。因此支持向量机采用了巧妙的特征映射方法, 
+            将线性分类计算框架，扩展到非线性分类的领域。相应的式子可写成<br>
+            　　<img src="../../images/image_content/3/3_5087.gif" width="244" height="43">　　　　　(3-109)<br>
+            <span class="spe">　　与(3-107)式对比，看看差别在哪里。</span><br>
+            　　分类界面方程<br>
+            　　<img src="../../images/image_content/3/3_5088.gif" width="163" height="53">　　　　　(3-110)<br>
+            　　<span class="spe">这样一来，如果我们选择了一种函数k(a,b), 其中a和b是原特征空间的两个数据点，那么只要这种函数是反映了特征映射后数据的内积，线性分类器的框架就都可以用了。因此选择合适的<img src="../../images/image_content/3/3_5075.gif" width="30" height="21" align="absmiddle">函数就成为设计中的重要问题。 
+            </span> 
+            <p>　　对(3-110)式可以用一种图(3-32)所示的结构来表示<br>
+            </p></td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/3/3_5074.gif" width="524" height="282"><br>
+            图3-32 支持向量机计算示意图 </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　熟悉人工神经元网络的同学一定会注意到这种结构与人工神经元网络非常相似，关于支持向量机与人工神经元网络的联系将在人工神经元网络这一章中再讨论。 
+            <p class="FCcontent">　　那么什么样的函数k(·,·)与内积函数值等价呢？我们把具备这种条件的函数称为核函数。理论上的研究对核函数的充分必要条件进行了研究，并已得出一些主要结论(如Mercer条件)，但由于这些成果还不能具体地确定哪些函数具备这种条件，因此目前常用的核函数还局限于以下三种函数形式。<br>
+              　　多项式类型的函数<img src="../../images/image_content/3/3_5076.gif" width="167" height="33" align="absmiddle"> 
+              (3-111)<br>
+              　　核函数型式的函数<img src="../../images/image_content/3/3_5077.gif" width="176" height="54" align="absmiddle">(3-112)<br>
+              　　S形函数，如<img src="../../images/image_content/3/3_5078.gif" width="197" height="32" align="absmiddle">(3-113)<br>
+            </p></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

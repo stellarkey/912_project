@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"有关资源分配图中存在环路和死锁关系正确的说法是（　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.图中无环路则系统可能存在死锁",
+        "B.图中有环路则系统肯定存在死锁",
+        "C.图中有环路则系统可能存在死锁，也可能不存在死锁",
+        "D.以上说法都不对"
+    ],
+    "q_number":301
+}

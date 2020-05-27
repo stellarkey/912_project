@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"逻辑；物理\n",
+    "question":"把_______地址转换为_______和地址的工作称为地址映射。\n",
+    "source":"网络",
+    "answer":"逻辑；物理\n",
+    "type":"fill_in_the_blank",
+    "q_number":628
+}

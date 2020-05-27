@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"操作系统的不确定性是指同一程序使用相同的输入、在相同的环境下，经过多次运行却可能获得完全不同的结果。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":43
+}

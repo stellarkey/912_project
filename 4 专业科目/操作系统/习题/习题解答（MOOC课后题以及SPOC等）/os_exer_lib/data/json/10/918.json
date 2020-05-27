@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"实现CPU和外部设备并行工作的硬件支持是：( )。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.中断机构",
+        "B.外部设备接口（通道、控制器等）",
+        "C.通道和中断",
+        "D.多总线"
+    ],
+    "q_number":918
+}

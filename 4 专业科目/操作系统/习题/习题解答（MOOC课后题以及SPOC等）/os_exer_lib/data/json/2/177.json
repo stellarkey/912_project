@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在消息缓冲队列中，消息队列属于_____ 资源。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.临界",
+        "B.共享",
+        "C.永久",
+        "D.可剥夺"
+    ],
+    "q_number":177
+}

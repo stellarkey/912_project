@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text>　　下图表示学习系统的基本结构。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图5-1学习系统基本构成</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="100">
+              <param name=movie value="../../../flash/chap05/5-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/5-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="100">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　环境向系统的学习部分提供某些信息，学习部分利用这些信息修改知识库，以增进系统执行部分完成任务的效能，执行部分根据知识库完成任务，同时把获得的信息反馈给学习部分。下面讨论系统中的各环节。<br>
+      　　环境可以是系统的工作对象，也可以包括工作对象和外界条件。例如在医疗系统中，环境就是病人当前的症状、检验的数据和病历；在模式识别中，环境就是待识别的图形或景物；在控制系统中，环境就是受控的设备或生产流程。就环境提供给系统的信息来说，信息的水平和质量对学习系统有很大的影响。<br>
+      　　<b>信息水平</b>：信息的一般性程度，也就是适用范围的广泛性。这里的一般性程度是相对执行环节的要求而言的。高水平信息比较抽象，适用于更广泛的问题。该种信息需要具体化才能够成为知识；低水平信息比较具体，是特殊的实例，只适用于个别的问题，需要归纳才能够成为知识。<br>
+      　　<b>信息的质量</b>：信息的正确性、是否是适当的选择和合理的组织。<br>
+      　　环境提供的信息水平和执行环节所需的信息水平之间往往有差距，学习环节的目的就是解决水平差距问题。如果环境提供较抽象的高水平信息，学习环节就要补充遗漏的细节，以便执行环节能够将其用于具体情况。如果环境提供较具体的低水平信息，即在特殊情况执行任务的实例，学习环境就要由此归纳出规则，以便用于完成更广的任务。<br>
+      　　信息质量对学习难度有明显的影响。如施教者向系统提供准确的示教例子，可以减少系统的学习失误。同时学习的速度、学习结果也与提供例子的次序有关。如果次序合理，则容易进行归纳；若示教例子中有干扰，或示例的次序不合理，可能使得系统难以归纳。<br>
+      　　影响学习系统设计的第二个因素是知识库的形式和内容。<br>
+      　　<b>知识库的形式</b>：知识表示的形式。常用的知识表示方法有：特征向量、谓词演算、产生式规则、过程、LISP函数、数字多项式、语义网络和框架。选择知识表示方法要考虑可表达性、推理难度、可修改性和可扩充性等等准则。<br>
+      　　<b>可表达性</b>：表达方式要能描述缺乏内在结构的事物。以一个特征集合或是其他东西描述事物。<br>
+      　　<b>推理难度</b>：常用的推理是比较两个描述是否等效。表示的不同，推理当然有的容易，有的难。例如：向量的比较就比较容易，谓词的比较就很难。<br>
+      　　<b>可修改性</b>：知识是否可以修改。不能修改的知识不能够更新。<br>
+      　　<b>可扩充性</b>：系统学习通过增加词典条目和表示结构来扩大表示能力，使得系统能够学习并表示更复杂的知识。<br>
+      　　<b>知识库的内容</b>：在初始阶段要有相当的初始知识。并且在学习过程中不断修正和增加新的知识。知识库内的知识大多是以概念的形式存储的。</td>
+  </tr>
+</table>
+</body>
+</html>

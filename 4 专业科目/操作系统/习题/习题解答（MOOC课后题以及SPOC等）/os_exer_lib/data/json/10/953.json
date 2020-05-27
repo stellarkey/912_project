@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"一个采用二级索引文件系统，存取一块盘块信息通常要访问()次磁盘。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.1",
+        "B.2",
+        "C.3",
+        "D.5"
+    ],
+    "q_number":953
+}

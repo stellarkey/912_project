@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent"><font color="#FF0000">　　从这里开始到例4.1之前这一段可略去不看。</font><br>
+      　　需要指出的是，尽管对不同的判据，具有相同的变换形式，但是这些判据的具体使用仍是不同的。这一点可从J<sub>5</sub>的进一步分析中看出： 
+      (4-15)式表示J<sub>5</sub>采用(S<sub>w</sub>+S<sub>b</sub>)及S<sub>w</sub>的行列式之比值。由于S<sub>w</sub>都是对称矩阵，则通过相似变换可变成对角矩阵。前面已经指出J<sub>2</sub>，J<sub>3</sub>与J<sub>5</sub>在D维空间经非退化线性变换其值不变，因此我们可以通过将J<sub>5</sub>表示式中的分子，分母都变成对角矩阵来分析，并且希望有<br>
+      　　<img src="../../images/image_content/4/4_3050.gif" width="145" height="33" align="absmiddle">　　　　　(4-20)<br>
+      　　及<img src="../../images/image_content/4/4_3051.gif" width="84" height="28" align="absmiddle"> 
+      (4-21)<br>
+      　　其中U为相似变换中用的变换，<img src="../../images/image_content/4/4_3052.gif" width="16" height="19" align="absmiddle">为一对角矩阵，而I是单位矩阵。在这种情况下(4-15)式可写成<br>
+      　　<img src="../../images/image_content/4/4_3053.gif" width="204" height="60" align="absmiddle">　　　　(4-22)<br>
+      　　其中<img src="../../images/image_content/4/4_5F4089.gif" width="26" height="29" align="absmiddle">是对角矩阵主对角线上的元素。那末满足(4-20)与(4-21)式的变换U是什么样的D×D矩阵呢？<br>
+      　　如果(4-21)成立，则可写成其逆矩阵形式，有<br>
+      　　<img src="../../images/image_content/4/4_3054.gif" width="136" height="33" align="absmiddle">　　　　(4-23)<br>
+      　　将(4-23)与(4-20)结合有<br>
+      　　<img src="../../images/image_content/4/4_3055.gif" width="167" height="37" align="absmiddle">(4-24)<br>
+      　　<img src="../../images/image_content/4/4_3056.gif" width="136" height="38" align="absmiddle">(4-25)<br>
+      　　可见<img src="../../images/image_content/4/4_5F4089.gif" width="26" height="29" align="absmiddle">是矩阵<img src="../../images/image_content/4/4_3057.gif" width="68" height="34" align="absmiddle">的特征值矩阵。从(4-25)式还可看出如果用∧表示<img src="../../images/image_content/4/4_3059.gif" width="23" height="31" align="absmiddle"> 
+      的特征值矩阵，则<br>
+      　　<img src="../../images/image_content/4/4_3060.gif" width="87" height="34" align="absmiddle"> 
+      <br>
+      　　因此若用λi表示∧的主对角线各特征，则<br>
+      　　<img src="../../images/image_content/4/4_3061.gif" width="108" height="51" align="absmiddle">(4-26)<br>
+      　　与(4-19)相比，可以看出由<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">大特征值对应的特征向量组成的变换矩阵可使J<sub>2</sub>与J<sub>5</sub>这两判据都达最大值。J<sub>5</sub>与J<sub>2</sub>不同处在于，在处理多类问题时，不致于选取那些只对两类有很好可分性而对其余各类效果不大的特征。而对J<sub>2</sub>来说，只要有一个λi很大就会发生这种情况。<br>
+      　　至于J<sub>3</sub>与J1的优点是计算方便，不需要存储任何矩阵。<br>
+      <br>
+      　　</span><span class="spe">例4.1给出一个数量的例子，并且说明在两类别情况下，由于S<sub>b</sub>的秩只可能为1，因此优化以后的降维特征空间只是一个一维的特征空间，该特征空间实质上就是对应于Fisher准则求得的线性分类器法向量。如果讨论的是多类别问题，则优化后的维数至多为类别数减1。</span><span class="FCcontent"><br>
+      　　例4.1给定先验概率相等的两类，其均值向量分别为：<img src="../../images/image_content/4/4_3063.gif" width="146" height="39" align="absmiddle">和<img src="../../images/image_content/4/4_3064.gif" width="152" height="26" align="absmiddle">，协方差矩阵是：<br>
+      　　<img src="../../images/image_content/4/4_3065.gif" width="222" height="85" align="absmiddle"><br>
+      　　求用J<sub>2</sub>判据的最优特征提取。<br>
+      　　解： 根据前面的分析，应先求<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">，再求此矩的特征矩阵。<br>
+      　　今有混合均值 <img src="../../images/image_content/4/4_3066.gif" width="165" height="34" align="absmiddle"><br>
+      　　类间离散度矩阵：<img src="../../images/image_content/4/4_3067.gif" width="299" height="54" align="absmiddle"><br>
+      <br>
+      　　类内离散度矩阵<img src="../../images/image_content/4/4_3068.gif" width="202" height="87" align="absmiddle"><br>
+      <br>
+      　　则<img src="../../images/image_content/4/4_3069.gif" width="141" height="83" align="absmiddle"><br>
+      　　接着，需求<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">的特征值矩阵。由于这是一个两类别问题，总均值向量μ值是两个均值向量μ1和μ2的线性求和，则<img src="../../images/image_content/4/4_3070.gif" width="120" height="33" align="absmiddle">中只有一个是独立的，因此<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">的秩是一，换句话说<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">只有一个非零特征值，W是D×1矩阵，是一个向量W，求该向量需解<img src="../../images/image_content/4/4_3073.gif" width="102" height="36" align="absmiddle"><br>
+      <br>
+      　　而<img src="../../images/image_content/4/4_3074.gif" width="141" height="35" align="absmiddle">代入式得<br>
+      　　<img src="../../images/image_content/4/4_3075.gif" width="186" height="35" align="absmiddle"><br>
+      　　由于<img src="../../images/image_content/4/4_3076.gif" width="67" height="30" align="absmiddle">是一个标量，所以<br>
+      　　<img src="../../images/image_content/4/4_3077.gif" width="201" height="45" align="absmiddle"><br>
+      　　因此利用W向量对原始的两维样本进行线性变换，得到新的一维分布，特征空间从两维降到一维，并满足J<sub>2</sub>判据。<br>
+      </span><!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

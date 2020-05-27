@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D qemu是一个支持模拟多种CPU的模拟软件\n",
+    "question":"在ucore lab的实验环境搭建中，用来模拟一台PC机（即基于Intel 80386 CPU的计算机）的软件是()\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.apt",
+        "B.git",
+        "C.meld",
+        "D.qemu"
+    ],
+    "q_number":1193
+}

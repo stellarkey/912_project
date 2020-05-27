@@ -1,0 +1,1 @@
+{"knowledge": "处理机调度。\r\n", "question": "下面有关选择进程调度算法的准则错误的是\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.尽量提高处理器利用率 \r\n B.尽可能提高系统吞吐量 \r\n C.适当增长进程在就绪队列中的等待时间 \r\n D.尽快响应交互式用户的请求\r\n"}

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="410" height="400">
+              <param name="movie" value="../../swf/f1.3.3.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/f1.3.3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="410" height="400"></embed></object></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="example">车牌定位模块的训练和识别过程也可以用上面的框图描述。车牌定位模块的目的是从整幅图像中定位出车牌的精确位置。主要利用的信息是车牌部分的纹理分布，主要利用的是水平和竖直两个方向上的边缘。在车牌部分，边缘分布比较密集，可以利用这一点提取出候选的车牌区域，在图中用方框标出。粗略定位的结果往往不是很准，我们还可以利用颜色的连续性信息对定位的结果进行修正。之后输出的就是候选的车牌位置，这些位置中，只有一个是真正的车牌。而究竟哪一个是对的，要到字符识别阶段才能有结果。</span></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="350" height="300">
+              <param name="movie" value="../../swf/f1.3.4.swf">
+              <param name="quality" value="high">
+              <embed src="../../swf/f1.3.4.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="350" height="300"></embed></object></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="example">因此，字符识别部分的输入包括每一个候选车牌区域，而通过它们的输出评价，来把不合适的伪车牌区域去掉，只把最正确车牌的结果作为最终结果输出出来。字符识别分两部分，其中字符分割要把车牌中的一个个字符逐一切分开，这样才能在下一步的识别中对每一个字符分别处理。分割的方法就是利用灰度图像往水平方向的投影。在有数字或字符的部分，这个投影值应该比较大，而在字符之间的间隙处，投影的累计值就几乎为零了。利用这个特定，可以很好的将字符分割开来。同时，我们还需要得到对这个区域是不是车牌区域作个评价，如果划分结果比较合理，划分出的每个字符的宽度都差不多，那么说明这个区域比较像车牌。如果像(e)中左图那样字体太宽，说明是其它的字符。<br>
+            　　最后一个模块是字符识别模块，字符识别的方法很多，神经元网络，PCA，特征提取及匹配等，模板匹配和特征提取是比较常用的方法。其中模板匹配是把样本字符与输入的待识别字符作匹配，如果两个字符很像(在某种距离度量下距离很小)，说明匹配成功，把这个模板的对应字符作为输出结果。而特征提取的方法是对样本和待测图像都先提取一些明显的特征，例如对“5”和“9”考虑其右上角是否封口，这样作的好处是可以用维数较低的向量来描述图像，而且这些特征都是有代表性，可以用来区分不同样本的。但是不足之处是特征需要手工设计，工作量较大。PCA方法在一定程度上解决了这个问题。它可以从大量样本中训练得到每一类的特点。但是它也有不足之处，就是样本的对其(align)问题，如果训练时没有对其，对训练结果会有影响，而如果识别时没有对齐，也会产生错误的识别结果。<br>
+            　　请大家在学习下面的框图中各单元的功能时，联系这个例子，看看各对应哪一部分功能。</span><br></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

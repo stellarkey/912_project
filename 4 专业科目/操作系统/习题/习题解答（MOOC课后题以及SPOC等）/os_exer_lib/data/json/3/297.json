@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"用户可以使用（　　　）编写控制作业执行步骤的作业说明书。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.操作控制命令",
+        "B.作业控制语言",
+        "C.作业启动命令",
+        "D.窗口或菜单"
+    ],
+    "q_number":297
+}

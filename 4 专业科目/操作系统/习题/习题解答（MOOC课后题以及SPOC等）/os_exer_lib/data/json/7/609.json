@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"原语是（ ）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.中途能打断的指令",
+        "B.一条机器指令",
+        "C.若干条机器指令但中途不打断",
+        "D.一条特定指令"
+    ],
+    "q_number":609
+}

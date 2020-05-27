@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　下例中符号a的属性，是取决于编译程序扫描到&quot;a[n][m]，&quot;时的有关状态。<br>
+      　　…<br>
+      　　　func(x,y)<br>
+      　　　　{…<br>
+      　　　　　struct tag { …<br>
+      　　　　　　　　　　 　int a[n][m],…<br>
+      　　　　　　　　　　 　… Y　　<img src="../../../img/chap09/symbol01.gif" width="9" height="15"><br>
+      　 　　　　　　　　　} t;<br>
+      　　　　}<br>
+      　　…<br>
+      　　编译程序在 <img src="../../../img/chap09/symbol01.gif" width="9" height="15"> 
+      处得到一个标识符号a，当时程序处理的状态决定了如下一些符号a的属性。<br>
+      　　· 类型属性： 当前类型状态是int决定了a的类型属性是整型。<br>
+      　　· 存储类别属性： 当前存储状态是在函数内部，决定了a的存储属性是动态存储区(即Auto)。<br>
+      　　· 符号作用域属性： 当前是在函数内部作用域中，由func函数层次决定了a的分程序级别level=1，(外层level=0)。<br>
+      　　· 存储分配属性：<br>
+      　　　⒈ 结构成员属性：a是结构tag的成员，是t结构量的成员变量。其存储分配属性是成员变量a在结构量t中的相对位移量。<br>
+      　　　⒉ 由于t结构量是函数func中的Auto变量，因而t的存储分配属性又是函数func动态工作区中的相对位移量。<br>
+      　　· 数组内情向量属性： 该变量a是一个二维整型数组，具有n×m个元素。<br>
+      　　符号属性除了上述这些属性在扫描到该符号时就已具备，并可立即登录之外，还有些符号的属性需要在以后的语法分析过程中逐步获得并登入。例如，常量定义要在定义的常数表达式计算完成后，才能把其值填入该常量符号项的属性中。其它如结构量的值域尺寸，各种属性链(函数形参链、结构成员链及下推链等)的指针都是在编译过程中逐步登录的。</td>
+  </tr>
+</table>
+</body>
+</html>

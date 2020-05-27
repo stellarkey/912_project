@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　另外由于PL/0编译程序采用自顶向下的分析方法，一个语法单元分析程序调用别的语法单元的分析程序时，以参数形式(文本中以FSYS定义为单词符号集合作为形参)给出被调用的语法分析程序出口时合法的后继单词符号集合(如表2.3所给出)，在出口处也调用测试程序。若当前单词符号是属于所给集合，则语法分析正常进行，否则出错。单词符号集合FSYS参数是可传递的，随着调用语法分析程序层次的深入，FSYS的集合逐步补充合法单词符。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">图 2.9 TEST测试过程流程图 </font></td>
+        </tr>
+        <tr align="center"> 
+          <td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="450" height="320">
+              <param name=movie value="f2-6-2.swf">
+              <param name=quality value=high>
+              <embed src="f2-6-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="450" height="320">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 表 2.3 PL/0文法非终结符的开始符号与后继符号集合表 
+            </font></td>
+        </tr>
+        <tr> 
+          <td align="center"> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr bgcolor="#DAE1BB"> 
+                <td align="center" width="19%">非终结符名</td>
+                <td align="center" width="53%">开始符号集合</td>
+                <td align="center" width="28%" bgcolor="#DAE1BB">后继符号集合</td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">分程序</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">const 
+                  var procedure ident if call begin while read write</font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif"> 
+                  . ；</font></td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">语句</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">ident 
+                  call begin if while read write</font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif"> 
+                  . ； end</font></td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">条件</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">odd 
+                  　　+　　- 　　(<br>
+                  ident　number</font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif">then 
+                  do</font></td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">表达式</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">+　　-　　(<br>
+                  ident 　number</font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif"> 
+                  . 　　；　　)<br>
+                  rop end then do</font></td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">项</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">ident 
+                  number ( </font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif"> 
+                  .　　；　　)<br>
+                  rop　　+　　-<br>
+                  end　then　do</font></td>
+              </tr>
+              <tr> 
+                <td align="center" width="19%">因子</td>
+                <td align="center" width="53%"><font face="Arial, Helvetica, sans-serif">ident 
+                  number (</font></td>
+                <td align="center" width="28%"><font face="Arial, Helvetica, sans-serif"> 
+                  .　　；　　+<br>
+                  　-　　*　　／<br>
+                  end　then　do</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#0000FF">*注： 表2.3中'rop'表示关系运算符集合,如=，＃，＜，＜=，＞，＞=。</font> </td>
+  </tr>
+</table>
+</body>
+</html>

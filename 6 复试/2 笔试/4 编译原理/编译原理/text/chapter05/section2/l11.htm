@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>5.2.3 非LL(1)文法的等价变换 </b><br>
+      　　在第5.1、5.2.1和5.2.2 中指出确定的自顶向下分析要求对给定语言的文法必须是LL(1)形式。然而，不一定每个语言都有LL(1)文法。对一个语言的非LL(1)文法是否能变换为等价的LL(1)形式以及如何变换是本节讨论的主要问题。由LL(1)文法的定义可知若文法中含有直接或间接左递归，或含有左公共因子则该文法肯定不是LL(1)文法。因而，我们设法消除文法中的左递归，提取左公共因子对文法进行等价变换，在某些特殊情况下可能使其变为LL(1)文法。<br>
+      <b>1．提取左公共因子</b><br>
+      　　若文法中含有形如：A→αβ|αγ的产生式，这导致了对相同左部的产生式其右部的FIRST集相交，也就是SELECT(A→αβ)∩SELECT(A→αγ) 
+      ≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，不满足LL(1)文法的充分必要条件。<br>
+      　　现将产生式A→αβ|αγ进行等价变换为：<br>
+      　　A→α（β|γ）<br>
+      　　其中'('，')'为元符号，可进一步引进新非终结符A′，去掉'('，')'使产生式变换为：<br>
+      　　A→αA′<br>
+      　　A′→β|γ<br>
+      　　写成一般形式为：<br>
+      　　A→αβ<sub><font size="-2">1</font></sub>|αβ<sub><font size="-2">2</font></sub>|…|αβ<sub><font size="-2">n</font></sub>，提取左公共因子后变为：<br>
+      　　A→α（β<sub><font size="-2">1</font></sub>|β<sub><font size="-2">2</font></sub>|…|β<sub><font size="-2">n</font></sub>），再引进非终结符A′，变为：<br>
+      　　A→αA′<br>
+      　　A′→β<sub><font size="-2">1</font></sub>|β<sub><font size="-2">2</font></sub>|…|β<sub><font size="-2">n</font></sub><br>
+      　　若在β<sub><font size="-2">i</font></sub>、β<sub><font size="-2">j</font></sub>、β<sub><font size="-2">k</font></sub> 
+      … (其中1≤i，j，k≤n)中仍含有左公共因子，这时可再次提取，这样反复进行提取直到引进新非终结符的有关产生式再无左公共因子为止。 </td>
+  </tr>
+</table>
+</body>
+</html>

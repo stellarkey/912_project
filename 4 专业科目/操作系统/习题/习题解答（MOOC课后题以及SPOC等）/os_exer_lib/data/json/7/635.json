@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"    ```\n     var mutex,Beginready,Testready,Endready:semaphore;\n         //mutex用以标示教室门这个临界资源\n         //beginready等待考生来全，标示考试开始\n         mutex:=1;\n         Beginready:=-(N-1);\n         Testready:=0;\n         Endready:=-(N-1);\n         cobegin\n             Procedure Student       Procedure Teacher\n                 P(mutex);               P(mutex);\n                     // Enter;               // Enter;\n                 V(mutex);               V(mutex);\n                     // Waiting;\n                 P(Beginready);\n     --------------------------------------------------\n                                         P(Beginready);\n                                         // Hand Out;\n                                         V(Beginready);\n     --------------------------------------------------\n                 P(Testready);\n                 V(Testready);\n                 // 答题\n                 // 交卷\n                 // 离开\n                 V(Endready);\n     --------------------------------------------------\n                                         P(Endready);\n                                         // 封卷离开\n    ```\n\n",
+    "question":"把学生和监考老师都看做进程，学生有N个人，教师1人，考场门口每次只能进出一个人，进\n考场原则是先来先进，当N个学生都进入考场后，教师才能发试卷。学生交卷后可以离开考\n场，教师要等收上来全部试卷并封装试卷后才能离开考场。问共需设置几个进程？使用P，V 操作解决上述问题中的同步和互斥关系。\n",
+    "source":"网络",
+    "answer":"    ```\n     var mutex,Beginready,Testready,Endready:semaphore;\n         //mutex用以标示教室门这个临界资源\n         //beginready等待考生来全，标示考试开始\n         mutex:=1;\n         Beginready:=-(N-1);\n         Testready:=0;\n         Endready:=-(N-1);\n         cobegin\n             Procedure Student       Procedure Teacher\n                 P(mutex);               P(mutex);\n                     // Enter;               // Enter;\n                 V(mutex);               V(mutex);\n                     // Waiting;\n                 P(Beginready);\n     --------------------------------------------------\n                                         P(Beginready);\n                                         // Hand Out;\n                                         V(Beginready);\n     --------------------------------------------------\n                 P(Testready);\n                 V(Testready);\n                 // 答题\n                 // 交卷\n                 // 离开\n                 V(Endready);\n     --------------------------------------------------\n                                         P(Endready);\n                                         // 封卷离开\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":635
+}

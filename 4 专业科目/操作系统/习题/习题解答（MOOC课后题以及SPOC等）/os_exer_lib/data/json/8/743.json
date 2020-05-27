@@ -1,0 +1,18 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)从总体上说，多道程序设计技术可﹎﹎﹎﹎单位时间的算题量。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.增加",
+        "B.减少",
+        "C.维持"
+    ],
+    "q_number":743
+}

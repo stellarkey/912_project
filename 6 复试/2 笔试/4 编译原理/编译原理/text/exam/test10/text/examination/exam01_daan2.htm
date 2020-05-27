@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b><br>
+          <br>
+          <b>问答第1题</b><br>
+          解答： (1) 参数的传递办法为"传值"时，a 为 2。 <br>
+          　　(2) 参数的传递办法为"传地址"，a 为 7。 <br>
+          <br>
+          <b>问答第2题</b><br>
+          解答：参数的传递方式有下述几种：<br>
+          　　"传值" -- Call by Value <br>
+          　　"传地址"-- Call by Address<br>
+          　　"换名" -- Call by Name <br>
+          　　"得结果"-- Value-result<br>
+          　　"传值"方式，这是最简单的参数传递方法。即将实参计算出它的值，然后把它传给被调过程。具体来讲是这样的：<br>
+          　　1.形式参数当作过程的局部变量处理，即在被调过程的活动记录中开辟了形参的存储空间，这些存储位置即是我们所说的实参或形式单元。<br>
+          　　2.调用过程计算实参的值，并将它们的右值（r-value）放在为形式单元开辟的空间中。<br>
+          　　3.被调用过程执行时，就像使用局部变量一样使用这些形式单元。<br>
+          　　"传地址"方式，也称作传地址，或引用调用。调用过程传给被调过程的是指针，指向实参存储位置的指针。<br>
+          　　1.如实参是一个名字或是具有左值的表达式，则左值本身传递过去。<br>
+          　　2.如实参是一个表达式，比方a+b或2，而没有左值，则表达式先求值，并存入某一位置，然后该位置的地址传递过去。<br>
+          　　3.被调过程中对形式参数的任何引用和赋值都通过传递到被调过程的指针被处理成间接访问。<br>
+          <br>
+          <b>问答第3题</b><br>
+          解答：<b><br>
+          <img src="../../images/img/daan3_1.gif" width="269" height="219"> <br>
+          <br>
+          问答第4题</b><br>
+          解答：<br>
+          程序执行到（1）点时的流程是：<br>
+          ①主程序激活A<br>
+          ②A激活B<br>
+          <img src="../../images/img/daan4_1.gif" width="212" height="129"> <br>
+          程序执行到（2）点时的流程是：<br>
+          ① 主程序激活A<br>
+          ② A激活B<br>
+          ③ B执行结束返回A<br>
+          ④ A激活C<br>
+          <img src="../../images/img/daan4_2.gif" width="208" height="129"><br>
+          <br>
+          <b>问答第5题</b><br>
+          解答：<br>
+          程序结构：<br>
+          <img src="../../images/img/daan5_3.gif" width="107" height="102"> <br>
+          （1）<br>
+          <img src="../../images/img/daan5_1.gif" width="255" height="239"> <br>
+          （2）<br>
+          <img src="../../images/img/daan5_2.gif" width="254" height="237"> <br>
+          <!--czp-wenda-daan-->
+        </p>
+        </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　<img src="../../../../images/chatp/chap02/059.gif"><br>
+      　　数字锁相电路结构原理如上图所示，它由下面几个部分组成：<br>
+      　　①数字式检相器，将输入的行同步信号与10MHZ振荡器经1/640分频得到脉冲信号，进行数字式检相，得到相差P；<br>
+      　　②数字滤波器，同步锁相是一个反馈系统，为了防止系统振荡而设计的滤波器，它相当于控制系统中的校正装置；<br>
+      　　③ 离散时间振荡器，输出的振荡频率f０与输入数字增量P成正比；<br>
+      　　④ 数字式分频器；10MHZ的脉冲信号经过640分频得到本地时钟产生的行同步信号。 
+      <br>
+      　　通过锁相回路，能够保证离散时间振荡器的输出频率与摄像机输入频率一致。<br>
+      　　在数字式锁相和数字式解码电路中用离散时间振荡器DTO（Discrete Time Oscillator）代替压控振荡器（VCO）。DTO的工作原理如图2.16所示。DTO的核心部件是加法器，加法器的输出通过一个寄存器反馈到输入端，和另一个增量P在每个时钟的上升沿相加，使得Xn为线性增长序列。当Xn超过加法器的最大值q时，产生溢出，忽略进位，则又产生由小到大的序列，如图2.17所示。<br>
+      　　<img src="../../../../images/chatp/chap02/060.gif" width="293" height="136"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/061.gif" width="272" height="188"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/062.gif" width="315" height="263"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap02/063.gif" width="149" height="24" align="absmiddle"> 
+      （2.17）<br>
+      　　由上式可知，<i><font face="Times New Roman, Times, serif" size="3">X</font></i><sub>n</sub>是一个离散时间锯齿信号，时间间隔 
+      。由图3.17可知，<i><font face="Times New Roman, Times, serif" size="3">p</font></i>和 
+      <i><font face="Times New Roman, Times, serif" size="3">q</font></i>的比例与时间T、T<sub>0</sub>的比例相等，即<br>
+      　　<img src="../../../../images/chatp/chap02/064.gif" width="89" height="47" align="absmiddle"> 
+      　　　　 （2.18）<br>
+      　　若将 <i><font face="Times New Roman, Times, serif" size="3">q</font></i>归一化为1，则有<br>
+      　　<img src="../../../../images/chatp/chap02/065.gif" width="60" height="24" align="absmiddle">　　　　　　　（2.19）<br>
+      　　因此，离散时间振荡器的输出频率<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>0</sub>受<i><font face="Times New Roman, Times, serif" size="3">p</font></i>控制，像模拟锁相回路一样，输入频率为<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>T</sub>的信号，会产生输出频率<img src="../../../../images/chatp/chap02/066.gif" width="60" height="24" align="absmiddle">的信号。<br>
+      　　完成了锁相任务后，如何进行彩色全电视信号的数字式解码?<br>
+      　　通过数字电路将数字式彩色全电视信号分解为亮度信号Y，色差信号U和V，称之为数字式解码，具体作法如下：<br>
+      　　彩色全电视信号的近似表达式如下：<br>
+      　　CVBS=Y+Usinwsct+nVcoswsc t<br>
+      　　Y为亮度信号 U、V为色差信号<br>
+      　　ωsc为4.44MHZ彩色副载波信号，k=±1系数<br>
+      　　①将CVBS经过一个中心频率为ωsc的陷波器，得到Y；<br>
+      　　②将CVBS经过一个中心频率为ωsc的带通滤波器，得到：<br>
+      　　C<sup>*</sup> =Usinωsct+KVcosωsct<br>
+      　　③将C<sup>*</sup> 经过U解调器得到U；<br>
+      　　将C<sup>*</sup> 经过V 解调器得到V；<br>
+      　　具体作法是：<br>
+      　　a) U解调器：<br>
+      　　C<sup>*</sup>×Sinωsct<br>
+      　　→U×sinωsct . sinωsct + KVcosωsct . sinωsct<br>
+      　　→Usin2ωsct +KV 1/2sin2ωsct<br>
+      　　→1/2U-1/2 U cos2ωsct+K1/2sin2ωsct [sin2α=1/2(1-cos2α)]<br>
+      　　→U(用低通滤波器，滤掉2ωsc高频分量)<br>
+      　　b) V解调器<br>
+      　　C<sup>*</sup>×cosωsct<br>
+      　　=&gt;Usinωsct×cosωsct+KVcosωsct×cosωsct<br>
+      　　=&gt;U 1/2 sin2ωsct + K(1/2 V+1/2Vcos2ωsctt)<br>
+      　　=&gt;1/2V + 1/2 V cos2ωsct +1/2 Usin2ωsct [cos2α=1/2(1+cos2α)]<br>
+      　　=&gt;V (用低通滤波器，滤掉2ωsc高频分量) <br>
+      　　这样，我们就将彩色全电视信号，解出Y 、U、V三个分量，送到存贮器中。 <br>
+      <font color="#003399">　　全电视信号表达式：</font><br>
+      　　　<img src="../../../../images/chatp/chap02/067.gif" width="177" height="17"><br>
+      　　其中Y为亮度信号，U、V为色差信号，<img src="../../../../images/chatp/chap02/068.gif" width="23" height="14" align="absmiddle">为彩色幅载波频率。<br>
+      　　彩色全电视信号数字锁相和解码的具体电路和工作原理如图2.18所示。数字式彩色全电视信号，首先经过一个带通滤波器，把色差信号滤出，最终得到UV信号，另外一路经过彩色副载波陷波电路，去掉色差信号，得到Y信号。再经过数字式同步分离电路，得到输入信号的行同步，通过检相器检测输入行频和系统时钟，经分频后得到的行频，两者之间的相位差，再经过平滑滤波得到增量p，由式（2.19）可知，它由p线性控制离散时间振荡器，得到系统时钟信号<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>0</sub>，这即数字锁相的工作原理，具体电路框图如图2.18左半部所示。<br>
+      　　数字解码电路，在模拟电路中，彩色信号采用正交调幅方法进行调制，彩色全电视信号的表达式为：<br>
+      　　　<img src="../../../../images/chatp/chap02/069.gif" width="278" height="26" align="absmiddle"> 
+      　　（2.20）<br>
+      　　其中Y为亮度信号，UV为色差信号，<img src="../../../../images/chatp/chap02/070.gif" width="25" height="24" align="absmiddle">为彩色副载波频率，用带通滤波器可分离出C信号：<br>
+      　　　<img src="../../../../images/chatp/chap02/071.gif" width="236" height="22" align="absmiddle">　　　　　　（2.21）<br>
+      　　再用一个具有同样频率和相位的副载波信号乘以C得： <br>
+      　　<img src="../../../../images/chatp/chap02/072.gif" width="361" height="35" align="absmiddle"> 
+      　　（2.22）<br>
+      　　用低通滤器滤掉<img src="../../../../images/chatp/chap02/073.gif" width="107" height="24" align="absmiddle">，即可恢复R-Y分量，同样用<img src="../../../../images/chatp/chap02/074.gif" width="53" height="24" align="absmiddle">乘C，即可恢复B-Y分量。具体电路如图3.18右半部所示，也采用数字锁相的办法，产生副载波频率，将它做为地址去找ROM中sin，cos表，读出的结果和输入的数字彩色信号相乘，就达到了解码的目的。<br>
+      <font color="#003399">　　图2.18　数字锁相与数字解码原理框图</font> <font color="#990000">（点击查看大图）</font><br>
+      　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap02/075.gif" width="304" height="276" border="0"></a><br>
+      　　在图2.18的右半部，数字式彩色全电视信号首先经过副载波滤波器，得到U、V的调制信号，再经过解调，即分别乘以<img src="../../../../images/chatp/chap02/076.gif" width="52" height="24" align="absmiddle">和<img src="../../../../images/chatp/chap02/077.gif" width="53" height="24" align="absmiddle">得到U、V分量。在此电路中，数字锁相电路是将V的解调信号，经过脉冲门和平滑滤波得到<img src="../../../../images/chatp/chap02/078.gif" width="76" height="25" align="absmiddle">(其中<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>sc</sub>是彩色副载波频率，<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>q</sub>是参考时钟频率)，如前所述，另一路 
+      （其中<i><font face="Times New Roman, Times, serif" size="3">f</font></i><sub>H</sub>是行频，N是分频器值，对于PAL制，N 
+      =864，对于NTSC制，N=858），经过A/B除法器，得到离散时间振荡器的增量<img src="../../../../images/chatp/chap02/079.gif" width="87" height="24" align="absmiddle">，控制DTO的输出。DTO的输出作为地址，到ROM中查sin和cos值，与从数字式彩色全电视信号分离的U、V信号相乘，再经过低通滤波器就得到了数字式U、V信号。数字式彩色全电视信号，如式（2.16）所示，经过陷波器滤掉彩色副载波分量，去掉噪声，经过校正就能得到数字式Y信号。 
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

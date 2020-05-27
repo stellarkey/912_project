@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"Windows操作系统的一个文件的绝对路径名是从( )开始的整个通路上所有子目录 名组成的一个有序组合。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.当前目录",
+        "B.根目录",
+        "C.家目录(home directory)",
+        "D.磁盘驱动器编号"
+    ],
+    "q_number":963
+}

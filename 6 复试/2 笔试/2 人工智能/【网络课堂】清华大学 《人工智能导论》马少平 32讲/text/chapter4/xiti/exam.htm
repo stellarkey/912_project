@@ -1,0 +1,324 @@
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <br>
+  第四章 课后习题<br>
+  <br>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+       
+ 
+        
+ 
+ 
+ 
+        
+          <form>
+          <p> 1、化下列公式成子句形式：<br>
+            （1）（<img src="images/exam1.gif" width="12" height="12">x）[P（x）→P（x）] 
+            <br>
+            （2）{~{（<img src="images/exam1.gif" width="12" height="12">x）P（x）}}→（<img src="images/exam2.gif" width="10" height="9">x）[~P（x）] 
+            <br>
+            （3）~（<img src="images/exam1.gif" width="12" height="12">x）{P（x）→{（<img src="images/exam1.gif" width="12" height="12">y）[P（y）→P（f（x，y））]∧~（<img src="images/exam1.gif" width="12" height="12">y）[Q（x，y）→P（y）]}}<br>
+            （4）（<img src="images/exam1.gif" width="12" height="12">x）（<img src="images/exam2.gif" width="10" height="9">y）{[P（x，y）→Q（y，x）]∧[Q（y，x）→S（x，y）]}→（<img src="images/exam2.gif" width="10" height="9">x）（<img src="images/exam1.gif" width="12" height="12">y）[P（x，y）→S（x，y）] 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            2、以一个例子证明置换的合成是不可交换的。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            3、找出集{P（x，z，y），P（w，u，w），P（A，u，u）}的mgu。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            4、说明下列文字集不能合一的理由：<br>
+            （1）{P（f（x，x），A），P（f（y，f（y，A）），A）}<br>
+            （2）{~P（A），P（x）}<br>
+            （3）{P（f（A），x），P（x，A）} <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            5、已知两个子句为<br>
+            Loves（father（a），a）<br>
+            ~Loves（y，x）∨Loves（x，y）<br>
+            试用合一算法求第一个子句和第二个子句的第一个文字合一时的结果。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            6、用归结反演法证明下列公式的永真性：<br>
+            （1）（<img src="images/exam2.gif" width="10" height="9">x）{[P（x）→P（A）]∧[P（x）→P（B）]}<br>
+            （2）（<img src="images/exam1.gif" width="12" height="12">z）[Q（z）→P（z）]→{（<img src="images/exam2.gif" width="10" height="9">x）[Q（x）→P（A）]∧[Q（x）→P（B）]}<br>
+            （3）（<img src="images/exam2.gif" width="10" height="9">x）（<img src="images/exam2.gif" width="10" height="9">y）{[P（f（x））∧Q（f（B））]→[P（f（A））∧P（y）∧Q（y）]} 
+            <br>
+            （4）（<img src="images/exam2.gif" width="10" height="9">x）（<img src="images/exam1.gif" width="12" height="12">y）P（x，y）→（<img src="images/exam1.gif" width="12" height="12">y）（<img src="images/exam2.gif" width="10" height="9">x）P（x，y）<br>
+            （5）（<img src="images/exam1.gif" width="12" height="12">x）{P（x）∧[Q（A）∨Q（B）]}→（<img src="images/exam2.gif" width="10" height="9">x）[P（x）∧Q（x）] 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            7、以归结反演法证明公式（<img src="images/exam2.gif" width="10" height="9">x）P（x）是[P（A<sub>1</sub>）∨P（A<sub>2</sub>）]的逻辑推论，然而，（<img src="images/exam2.gif" width="10" height="9">x）P（x）的Skolem形即P（A）并非[P（A<sub>1</sub>）∨P（A<sub>2</sub>）]的逻辑推论，请加以证明。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            8、给定下述语句：<br>
+            John likes all kinds of food.<br>
+            Apples are food.<br>
+            Anything anyone eats and isn't killed by is food.<br>
+            Bill eats peanuts and is still alive.<br>
+            Sue eats everything Bill eats. <br>
+            （1）用归结法证明"John likes peanuts。" <br>
+            （2）用归结法提取回答"What food does Sue eat?" <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            9、已知事实公式为 <br>
+            （（<img src="images/exam1.gif" width="12" height="12">x）（<img src="images/exam1.gif" width="12" height="12">y）（<img src="images/exam1.gif" width="12" height="12">z）（Gt（x，y）∧Gt（y，z）→Gt（x，z）） 
+            <br>
+            （<img src="images/exam1.gif" width="12" height="12">u）（<img src="images/exam1.gif" width="12" height="12">v）（Succ（u，v）→Gt（u，v） 
+            <br>
+            （<img src="images/exam1.gif" width="12" height="12">x）（~Gt（x，x））<br>
+            求证Gt（5，2） <br>
+            试判断下面的归结过程是否正确？若有错误应如何改进：</p>
+          <p><img src="images/exam5.gif" width="365" height="382"><br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            10、设公理集为<br>
+            　　（<img src="images/exam1.gif" width="12" height="12">u）LAST（cons（u，NIL），u）（cons是表构造函数）<br>
+            　　（<img src="images/exam1.gif" width="12" height="12">x）（<img src="images/exam1.gif" width="12" height="12">y）（<img src="images/exam1.gif" width="12" height="12">z）（LAST（y，z）→LAST（cons（x，y），z））（LAST（x，y）代表y是表x的最末元素） 
+            <br>
+            （1）用归结反演法证明如下定理： （<img src="images/exam2.gif" width="10" height="9">v）LAST（cons（2，cons（1，NIL）），v）<br>
+            （2）用回答提取过程求表（2，1）的最末元素v。<br>
+            （3）简要描述如何使用这个方法求长表的最末元素。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            11、对一个基于规则的几何定理证明系统，把下列语句表示成产生式规则： <br>
+            （1）两个全等的三角形的对应角相等。<br>
+            （2）两个全等的三角形的对应边相等。<br>
+            （3）如果两个三角形对应边是相等的，则这两个三角形全等。<br>
+            （4）一个等腰三角形的底角是相等的。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            12、我们来考虑下列一段知识：Tony、Mike和John属于Alpine俱乐部，Alpine俱乐部的每个成员不是滑雪运动员就是一个登山运动员，登山运动员不喜欢雨而且任一不喜欢雪的人不是滑雪运动员，Mike讨厌Tony所喜欢的一切东西，而喜欢Tony所讨厌的一切东西，Tony喜欢雨和雪。 
+            以谓词演算语句的集合表示这段知识，这些语句适合一个逆向的基于规则的演绎系统。试说明这样一个系统怎样才能回答问题"有没有Alpine俱乐部的一个成员，他是一个登山运动员但不是一个滑雪运动员呢？" 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            13、一个积木世界的状态由下列公式集描述：<br>
+            　　ONTABLE（A）　　CLEAR（E）<br>
+            　　ONTABLE（C）　　CLEAR（D）<br>
+            　　ON（D，C）　　　HEAVY（D）<br>
+            　　ON（B，A）　　　WOODEN（B）<br>
+            　　HEAVY（B）　　　ON（E，B）<br>
+            绘出这些公式所描述的状态的草图。 <br>
+            下列语句提供了有关这个积木世界的一般知识：<br>
+            每个大的蓝色积木块是在一个绿色积木块上。<br>
+            每个重的木制积木块是大的。<br>
+            所有顶上没有东西的积木块都是蓝色的。<br>
+            所有木制积木块是蓝色的。<br>
+            以具有单文字后项的蕴涵式的集合表示这些语句。绘出能求解"哪个积木块是在绿积木块上"这个问题的一致解图（用B规则）。 <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form>
+       
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

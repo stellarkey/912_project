@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理: 连续内存分配。\r\n", "question": "连续内存分配的算法中，会产生外碎片的是()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABC", "type": "2\r\n", "options": " A.最先匹配算法\r\n B.最差匹配算法\r\n C.最佳匹配算法\r\n D.都不会\r\n"}

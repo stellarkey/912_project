@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列文件物理结构中，适合随机访问且易于文件扩展的是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.连续结构",
+        "B.索引结构",
+        "C.链式结构且磁盘块定长",
+        "D.链式结构且磁盘块变长"
+    ],
+    "q_number":678
+}

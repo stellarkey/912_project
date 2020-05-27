@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr>
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例4.16</font></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　文法G[S]：<br>
+            　　(1)S→Be<br>
+            　　(2)B→Ce<br>
+            　　(3)B→Af<br>
+            　　(4)A→Ae<br>
+            　　(5)A→e<br>
+            　　(6)C→Cf<br>
+            　　(7)D→f<br>
+            　　对文法G=(V<sub><font size="-2">N</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)来说，为了保证其任一非终结符A在句子推导中出现，必须满足如下两个条件：<br>
+            　　① A必须在某句型中出现。即有S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">αAβ，其中α，β属于(V<sub><font size="-2">T</font></sub>∪V<sub><font size="-2">N</font></sub>)<sup><font size="-2">*</font></sup> 
+            。<br>
+            　　② 必须能够从A推出终结符号串t来。即A<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">t，其中t∈V<sub><font size="-2">T</font></sub><br>
+            　　若程序设计语言的文法包含有多余规则时，其中必定有错误存在，因此检查文法是否包含多余规则是很有必要的。</td>
+        </tr>
+      </table>
+      <b>有关文法的实用限制 <br>
+      </b>　　文法中不得含有<b>有害规则</b>和<b>多余规则</b><br>
+      　　<b>有害规则</b>：形如U→U的产生式。会引起文法的二义性<br>
+      　　<b>多余规则</b>：指文法中任何句子的推导都不会用到的规则<br>
+      　　① 文法中某些非终结符不在任何规则的右部出现，该非终结符称为不可到达。<br>
+      　　② 文法中某些非终结符，由它不能推出终结符号串，该非终结符称为不可终止。</td>
+  </tr>
+</table>
+</body>
+</html>

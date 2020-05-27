@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"作业经过下面哪一个过程进入“后备”状态？\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.作业创建",
+        "B.作业调度",
+        "C.进程调度",
+        "D.作业终止"
+    ],
+    "q_number":103
+}

@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>视频播放页面检测　　　　　　　　　　　　　　　　</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<style>
+body,td{font-size:9pt;color:#ffffff}
+</style>
+<body bgcolor="#000000" leftmargin="0" topmargin="0" scroll="no">
+<script language="JScript">
+function loc(){
+	window.open(dialogArguments,"","width=760,height=432,top="+(screen.height-432)/2+",left="+(screen.width-760)/2+",win");
+	close();
+	}
+function GetCookie(str){
+	var tmp,reg=new RegExp("(^| )"+str+"=([^;]*)(;|$)","gi");
+	if(tmp=reg.exec(document.cookie))return(tmp[2]);
+	return null;
+	}
+function AddCookie(str){
+	document.cookie="Scan="+str
+	//+";expires="+new Date(2003,1).toGMTString();
+	}
+if(GetCookie("Scan")=="ok"){
+	loc();
+	}
+
+</script>
+<object id="realplayer"classid="clsid:cfcdaa03-8be4-11cf-b84b-0020afbbccfa" style="display:none"></object>
+<script language=vbscript> 
+RealPlayer5=0
+RealPlayer4=0
+RealPlayerG2=0
+on error resume next
+RealPlayerG2=(NOT IsNull(CreateObject("rmocx.RealPlayer G2 Control")))
+RealPlayer5=(NOT IsNull(CreateObject("RealPlayer.RealPlayer(tm) ActiveX Control (32-bit)")))
+RealPlayer4=(NOT IsNull(CreateObject("RealVideo.RealVideo(tm) ActiveX Control (32-bit)")))
+</script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="300">
+  <tr>
+ 	 <script language="JScript">
+		<!--
+		function WriteTd(){var str=new Array(58,64,16,1,113,48,1);for(i=0;i<str.length;i++)document.write("<td style=\"width:"+str[i]+";height:1\"></td>")}WriteTd();
+		-->
+		</script>
+  </tr>
+
+  <tr>
+   <td rowspan="8"><img name="skin_r1_c1" src="image/skin_r1_c1.gif" width="58" height="220" border="0" ></td>
+   <td colspan="5"><img name="skin_r1_c2" src="image/skin_r1_c2.gif" width="242" height="70" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="70" border="0" ></td>
+  </tr>
+  <tr>
+    <td colspan="2" background="image/skin_r2_c2.gif" style="width:80;height:18" id="IeChkBox">&nbsp;正在检测....</td>
+   <td rowspan="2"><img name="skin_r2_c4" src="image/skin_r2_c4.gif" width="1" height="51" border="0" ></td>
+   <td rowspan="4" colspan="2"><img name="skin_r2_c5" src="image/skin_r2_c5.gif" width="161" height="81" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="18" border="0" ></td>
+  </tr>
+  <tr>
+   <td colspan="2"><img name="skin_r3_c2" src="image/skin_r3_c2.gif" width="80" height="33" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="33" border="0" ></td>
+  </tr>
+  <tr>
+    <td colspan="3" background="image/skin_r4_c2.gif" style="width:81;height:19" id="RealChkBox">&nbsp;正在检测....
+    </td>
+   <td><img src="image/spacer.gif" width="1" height="19" border="0" ></td>
+  </tr>
+  <tr>
+   <td colspan="3"><img name="skin_r5_c2" src="image/skin_r5_c2.gif" width="81" height="11" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="11" border="0" ></td>
+  </tr>
+  <tr>
+   <td rowspan="3"><img name="skin_r6_c2" src="image/skin_r6_c2.gif" width="64" height="69" border="0" ></td>
+    <td colspan="3" background="image/skin_r6_c3.gif" style="width:130;height:18" align="center" id="ssr">需下载60 
+        已下载60</td>
+   <td rowspan="3"><img name="skin_r6_c6" src="image/skin_r6_c6.gif" width="48" height="69" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="18" border="0" ></td>
+  </tr>
+  <tr>
+   <td colspan="3" style="width:130;height:23;background:url(image/skin_r7_c3.gif)">
+   <div style="position:relative;left:0;top:-1;background:url(image/loads.gif);font-size:1;height:12" id="ssgs"></div>
+   </td>
+   <td><img src="image/spacer.gif" width="1" height="23" border="0" ></td>
+  </tr>
+  <tr>
+   <td colspan="3"><img name="skin_r8_c3" src="image/skin_r8_c3.gif" width="130" height="28" border="0" ></td>
+   <td><img src="image/spacer.gif" width="1" height="28" border="0" ></td>
+  </tr>
+</table>
+<img src="image/rg.gif" style="position:absolute;top:75;left:190" id="img1"> <img src="image/rg.gif" style="position:absolute;top:123;left:190" id="img2"> 
+<img src="image/dload.gif" style="position:absolute;top:74;left:216;display:none" id="down1"> 
+<a href="../../software/rp8-cn-setup.exe"><img src="image/dload.gif" style="position:absolute;top:122;left:216;display:none" id="down2" border="0"></a> 
+<a id=cc></a> 
+<script language="JScript">
+moveTo((screen.width-300)/2,(screen.height-200)/2);
+var ZtBox1=true,ZtBox2=true;
+IeChkBox.innerHTML="&nbsp;MS IE"+navigator.appVersion.split(";")[1].split(" ")[2];
+RealChkBox.innerHTML=RealPlayerG2||RealPlayer5||RealPlayer4?"&nbsp;"+document.realplayer.GetVersionInfo():"&nbsp;无法检测";
+navigator.appVersion.split(";")[1].split(" ")[2]>=5?new function(){img1.src="image/rg.gif"}:new function(){img1.src="image/wg.gif";down1.style.display="";ZtBox1=false};
+RealPlayerG2||RealPlayer5||RealPlayer4?new function(){img2.src="image/rg.gif"}:new function(){img2.src="image/wg.gif";down2.style.display="";ZtBox2=false};
+
+LoadImage=new Array("back_d.jpg","back_i.jpg","back_s.jpg","down_d.gif","down_o.gif","i_01.jpg","i_02.jpg","i_03.jpg","i_04.jpg","i_05.jpg","i_06.jpg","i_07.jpg","i_08.jpg","i_09.jpg","i_10.jpg","i_11.jpg","i_13.jpg","i_14.jpg","i_15.jpg","i_16.jpg","i_17.jpg","i_18.jpg","i_19.jpg","i_20.jpg","i_21.jpg","i_23.jpg","i_24.jpg","i_5F25.jpg","i_26.jpg","i_27.jpg","next_d.jpg","next_i.jpg","next_s.jpg","pause_d.jpg","pause_i.jpg","pause_s.jpg","play_d.jpg","play_i.jpg","play_s.jpg","spacer.gif","stop_d.jpg","stop_i.jpg","stop_s.jpg","t_ico.gif","u_d.jpg","u_s.jpg","up_d.gif","up_o.gif","v_b.gif","vos.gif");
+ImageArray=new Array();
+for(i=0;i<LoadImage.length;i++)ImageArray[i]=new Image(),ImageArray[i].src="image/"+LoadImage[i];
+s=0
+function ws(){
+if(s<LoadImage.length){
+	document.title=parseInt(s/(ImageArray.length-1)*100);
+	ssr.innerText="需下载"+ImageArray.length+" 已下载"+(s+1);
+	ssgs.style.width=parseInt(s/(ImageArray.length-1)*128);
+	if(s==ImageArray.length-1&&ZtBox1&&ZtBox2)setTimeout(loc,2000),AddCookie("ok");
+	if(ImageArray[s].complete){
+		s++;
+		setTimeout(ws,20);
+		}
+	}
+}
+onload=ws;
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　（1）PL/0编译程序文本中给出关于某些语法单位开始符号集合的定义为：<br>
+      　　<font face="Arial, Helvetica, sans-serif">symset=set of symbol; （见PL/0文本类型说明部分）<br>
+      　　declbegsys, statbegsys, facbegsys:symset;<br>
+      　　declbegsys:=[constsym,varsym,procsym];（见PL/0文本主程序置初值部分）<br>
+      　　statbegsys:=[beginsym,callsym,ifsym,whilesym,readsym,writesym];<br>
+      　　facbegsys:=[ident,number,lparen];</font><br>
+      　　（2）后继符号集合fsys作为参数传递（见PL/0文本相应过程的说明部分）<br>
+      　　<font face="Arial, Helvetica, sans-serif">procedure test(s1,s2:symset; 
+      n:integer);<br>
+      　　procedure block(lev,tx:integer; fsys:symset); <br>
+      　　procedure statement(fsys:symset);<br>
+      　　procedure expression (fsys:symset);<br>
+      　　procedure term (fsys:symset);<br>
+      　　procedure factor (fsys:symset);</font><br>
+      　　（3）因子过程的处理片段（见PL/0文本的factor过程） <br>
+      　　<img src="../../../img/chap02/2_1_5F25.gif" width="273" height="208"><br>
+      　　（4）由于后继符号集合fsys作为参数传递，随着调用语法分析程序层次的深入后继符号集合逐步增加，但对调用同一个过程所需增加的后跟符与调用位置有关。例如： 
+      在write语句和factor中调用expression(fsys);所增加的后继符号不完全相同。<br>
+      　　· write语句的语法：&lt;写语句&gt; ∷= write(&lt;exp&gt;{,&lt;exp&gt;}); <br>
+      　　处理在（ ）内调用expression时在fsys中应增加 rparen,comma。<br>
+      　　expression([rparen,comma]+fsys);<br>
+      　　· factor的语法：&lt;因子&gt;∷=...|'(' exp ')<br>
+      　　在处理（ ）内调用expression时在fsys中应增加rparen。<br>
+      　　expression([rparen]+fsys);</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>1.栈式动态存储分配</b><br>
+      　　这种分配策略是将整个程序的数据空间设计为一个栈。在具有递归结构的语言程序中，每当调用一个过程时，它所需的数据空间就分配在栈顶，每当过程工作结束时就释放这部分空间。过程所需的数据空间包括两部分：一部分是生存期在本过程这次活动中的数据对象，如局部变量、参数单元、临时变量等等；另一部分则是用以管理过程活动的记录信息。即当一次过程调用出现时，调用该过程的那个过程的活动即被中断，当前机器的状态信息，诸如程序计数器（返回地址）、寄存器的值等等，也都必须保留在栈中。当控制从调用返回时，便根据栈中记录的信息恢复机器状态，使该过程的活动继续进行。至于在这种分配策略下，如何实现动态地分配和释放一个过程的数据空间，如何实现对非局部变量的引用、参数传递以及对可变数据结构（如可变数组）的空间分配办法等等，将在后面几节给予详细讨论。<br>
+      　　栈式动态存储分配策略适用于PASCAL，C，ALGOL之类具有递归结构的语言的实现。 <br>
+      <b>2．堆式动态存储分配</b><br>
+      　　如果一个程序语言提供用户自由地申请数据空间和退还数据空间的机制（如Ｃ++中的new，delete，PASCAL的new，等机制），或者不仅有过程而且有进程的程序结构的情况下，空间的使用未必服�&quot;先申请后释放，后申请先释放&quot;的原则，那么栈式的动态分配方案就不适用了。通常使用一种称为堆式的动态存储分配方案。</td>
+  </tr>
+</table>
+</body>
+</html>

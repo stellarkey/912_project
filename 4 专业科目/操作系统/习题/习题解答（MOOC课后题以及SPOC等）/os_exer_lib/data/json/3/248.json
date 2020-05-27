@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"下列算法中用于磁盘移臂调度的是(　　)\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.时间片轮转法",
+        "B.LRU算法",
+        "C.最短寻找时间优先算法",
+        "D.优先级高者优先算法"
+    ],
+    "q_number":248
+}

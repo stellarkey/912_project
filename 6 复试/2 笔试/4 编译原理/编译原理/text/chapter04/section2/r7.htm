@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　<font color="#0000FF">例：</font>1型（上下文有关）文法<br>
+      　　文法G[S]： S→CD　　Ab→bA<br>
+      　　 　　　　　C→aCA 　Ba→aB<br>
+      　　　　　　 　C→bCB 　Bb→bB<br>
+      　　　　　　　 AD→aD 　C→ε<br>
+      　　　　　　　 BD→bD 　D→ε<br>
+      　　　　　　　 Aa→bD<br>
+      　　L(G)={ww|w∈{a,b}*}<br>
+      　　<font color="#0000FF">例：</font>2型（上下文无关）文法<br>
+      　　文法G[S]： S→0A|1B|0<br>
+      　　　　　 　　A→0A|1B|0S<br>
+      　　　　　　　 B→1B|1|0 <br>
+      　　<font color="#0000FF">例：</font>定义标识符的3型（正规）文法<br>
+      　　文法G[I]： I → lT<br>
+      　　　　　　　 I → l<br>
+      　　　　　　　 T → lT<br>
+      　　　　　　　 T → dT<br>
+      　　　　　　　 T → l<br>
+      　　　 　　 　 T → d<br>
+      　　其中l表示a～z中的任何一英文字母，d表示0～9中的任一数字。 </td>
+  </tr>
+</table>
+</body>
+</html>

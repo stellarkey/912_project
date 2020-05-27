@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　1）&quot;与&quot;的计算： <br>
+      　　　A1 ∧ A2 →B<br>
+      　　　CF(A1 ∧ A2 ) = min { CF(A1), CF(A2) }<br>
+      　　2）&quot;或&quot;的计算：<br>
+      　　　A1 ∨ A2 →B<br>
+      　　　CF(A1 ∨ A2 ) = max { CF(A1), CF(A2) } <br>
+      　　3）&quot;非&quot;的计算：<br>
+      　　　CF(～A ) = －CF(A) <br>
+      　　4）由A， A →B，求 CF(B)：<br>
+      　　　CF(B) = max(0，CF(A))·CF(B,A)<br>
+      　　5）合成，由两条规则求出再合并：<br>
+      　　由规则A<sub>1</sub>→B可求得CF<sub>1</sub>（B），同时又有规则A<sub>2</sub>→B，可求得CF<sub>2</sub>（B）。如何根据这两条规则的产生的结果，计算其合成后的可信度CF（B）？<br>
+      　　先有：<br>
+      　　CF<sub>1</sub>(B)= max(0，CF(A<sub>1</sub>))·CF(B,A<sub>1</sub>)<br>
+      　　CF<sub>2</sub>(B)= max(0，CF(A<sub>2</sub>))·CF(B,A<sub>2</sub>)<br>
+      　　<img src="../../../img/chap03/pic02.gif" width="351" height="94"><br>
+      　　CF<sub>1</sub>(B)和CF<sub>2</sub>(B)是同时发生的，即可以是分别从两条完全独立的途径得到的知识。</td>
+  </tr>
+</table>
+</body>
+</html>

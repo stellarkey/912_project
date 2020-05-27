@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "在分时系统中，当用户程序要在显示器上输出一行字符时，使用操作系统提供的_____ 接口。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.作业控制语言 \r\n B.系统调用 \r\n C.原语 \r\n D.键盘命令\r\n"}

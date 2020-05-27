@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td>　　为了说明DFA如何作为一种识别机制,我们还要理解下面的定义。<br>
+      <b>∑<sup><font size="-2">*</font></sup>上的符号串t在M上运行</b><br>
+      　　- 一个输入符号串t，（我们将它表示成Tt1的形式，其中T∈∑，t1∈ ∑<sup><font size="-2">*</font></sup>）在DFA 
+      M上运行的定义为：<br>
+      　　- f（Q， Tt1）=f（f（Q，T），t1） 其中Q∈K <br>
+      　　- 扩充转换函数f，是K×Σ<sup><font size="-2">*</font></sup>→K上的映射，且： f（k<sub><font size="-2">i</font></sub>，ε）= 
+      k<sub><font size="-2">i</font></sub><br>
+      <b>∑<sup><font size="-2">*</font></sup>上的符号串t被M接受</b><br>
+      　　- 若t∈∑<sup><font size="-2">*</font></sup>，f(S，t)=P，其中S为 M的开始状态，P∈Z，Z为终态集。<br>
+      　　- 则称t为DFA M所接受（识别）<br>
+      <br>
+      　　DFA M所能接受的符号串的全体记为 L(M)<br>
+      <b>结论：</b><br>
+      　　∑上一个符号串集V<img src="../../../img/chap03/symbol01.gif" width="9" height="7">∑<sup><font size="-2">*</font></sup>是正规的，当且仅当存在一个∑上的确定有穷自动机M，使得V=L(M) 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

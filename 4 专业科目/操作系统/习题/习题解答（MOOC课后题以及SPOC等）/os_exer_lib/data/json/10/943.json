@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"下列第( )项不是文件系统的功能?\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.文件系统实现对文件的按名存取",
+        "B.负责实现数据的逻辑结构到物理结构的转换",
+        "C.提高磁盘的读写速度",
+        "D.提供对文件的存取方法和对文件的操作"
+    ],
+    "q_number":943
+}

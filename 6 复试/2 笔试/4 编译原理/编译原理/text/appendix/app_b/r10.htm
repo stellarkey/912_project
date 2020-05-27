@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　LEX是把用户写的LEX源程序转换成一个C语言的程序yylex，在转换过程中，LEX是把用户自己的变量定义和子程序照抄到yylex中去，LEX规定属于下面三种情况之一的内容就照抄过去：<br>
+        　　1) 以一个空格或tab起头的行，若不是LEX的识别规则的一部分，则被照抄到LEX产生的程序中去。如果这样的行出现在第一个%%之前，它所含的定义就是全局的，即LEX产生的程序中的所有函数都可使用它。如果这样的行紧接在第一个%%之后但在所有识别规则之前，它们就是局部的，将被抄到涉及它的动作相应的代码中去。注意，这些行必须符合C语言的语法，并且必须出现在所有识别规则之前。<br>
+        　　这一规定的一个附带的作用是使用户可以为LEX源程序或LEX产生的词法分析器提供注解，当然注解必须符合C语言文法。<br>
+        　　2) 所有被界于两行%{和%}之间的行，无论出现在哪里也无论是什么内容都被照抄过去，要注意%{和%}必须分别单独占据一行。例如<br>
+        　　%{<br>
+        　　#defineENDOFFILE 0<br>
+        　　#include &quot;head.h&quot;<br>
+        　　int flag<br>
+        　　%}<br>
+        提供上面的措施主要因为在C语言中有一些行如上例中的宏定义或文件蕴含行必须从第一列开始写。<br>
+        　　3) 出现在第二个%%之后的任何内容，不论其格式如何，均被照抄过去。 </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

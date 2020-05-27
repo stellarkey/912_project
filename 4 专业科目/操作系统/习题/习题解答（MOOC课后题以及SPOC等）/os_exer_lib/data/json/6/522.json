@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"产生死锁的必要条件包括：互斥条件、请求和保持条件、不剥夺条件、______________ 。常用的两种解脱死锁的方法是：剥夺资源\n、______________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":522
+}

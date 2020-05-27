@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><strong>5.3.1.3 ISODATA算法</strong><br>
+            　　C—均值算法比较简单，但它的自我调整能力也比较差。这主要表现在类别数不能改变，受代表点初始选择的影响也比较大。ISODATA算法的功能与C—均值算法相比，在下列几方面有改进。<br>
+            　　1.考虑了类别的合并与分裂，因而有了自我调整类别数的能力。合并主要发生在某一类内样本个数太少的情况，或两类聚类中心之间距离太小的情况。为此设有最小类内样本数限制<img src="../../images/image_content/5/5_3001.gif" width="18" height="22" align="absmiddle">，以及类间中心距离参数<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">。若出现两类聚类中心距离小于<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">的情况，可考虑<br>
+            将此两类合并。<br>
+            　　分裂则主要发生在某一类别的某分量出现类内方差过大的现象，因而宜分裂成两个类别，以维持合理的类内方差。给出一个对类内分量方差的限制参数<img src="../../images/image_content/5/5_3003.gif" width="16" height="29" align="absmiddle">，用以决定是否需要将某一类分裂成两类。<br>
+            　　2.由于算法有自我调整的能力，因而需要设置若干个控制用参数，如聚类数期望值K、每次迭代允许合并的最大聚类对数L、及允许迭代次数I等。<br>
+            　　下面我们将ISODATA算法的步骤列出：<br>
+            　　步骤1(确定控制参数及设置代表点)<br>
+            　　需确定的控制参数为：<br>
+            　　K：聚类期望数；<br>
+            　　<img src="../../images/image_content/5/5_3004.gif" width="27" height="26" align="absmiddle">： 
+            一个聚类中的最少样本数；　<br>
+            　　<img src="../../images/image_content/5/5_3003.gif" width="16" height="29" align="absmiddle">： 
+            标准偏差控制参数，用于控制分裂；<br>
+            　　<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">： 
+            类间距离控制参数，用于控制合并；<br>
+            　　L： 每次迭代允许合并的最大聚类对数；<br>
+            　　I： 允许迭代的次数。<br>
+            　　设初始聚类数为c及聚类中心<img src="../../images/image_content/5/5_3005.gif" width="96" height="24" align="absmiddle">。<br>
+            　　步骤2(分类)<br>
+            　　对所有样本，按给定的c个聚类中心，以最小距离进行分类，即<br>
+            　　若<img src="../../images/image_content/5/5_3006.gif" width="305" height="35" align="absmiddle"><br>
+            　　步骤3(撤消类内样本数过小类别)<br>
+            　　若有任何一个类<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">，其样本数，<img src="../../images/image_content/5/5_3007.gif" width="52" height="29" align="absmiddle">则舍去<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">，令c＝c-1，将<img src="../../images/image_content/5/5_3035.gif" width="15" height="17" align="absmiddle">原样本分配至其它类；<br>
+            　　步骤4(更新均值向量)<br>
+            　　按现有样本分类结果，调整均值参数<br>
+             　<img src="../../images/image_content/5/5_3009.gif" width="222" height="56" align="absmiddle">　　　　(5-19)<br>
+            　　步骤5(计算类内平均距离)<br>
+            　　每类各样本离开均值的平均距离<br>
+             <img src="../../images/image_content/5/5_3010.gif" width="269" height="49" align="absmiddle">　　　　　(5-20)<br>
+            　　步骤6(计算整个样本集偏离均值的平均距离)<br>
+            　　<img src="../../images/image_content/5/5_3011.gif" width="118" height="50" align="absmiddle"><br>
+            　　步骤7(入口选择)<br>
+            　　如这是最后一次迭代(取决于I)，则转步骤11，并设置<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">，防止合并发生。<br>
+            　　如果<img src="../../images/image_content/5/5_3012.gif" width="40" height="48" align="absmiddle">，则转向步骤8，执行分裂步骤；<br>
+            　　如果c≥2K，则转向步骤11，执行合并步骤。<br>
+            　　步骤8(求各类内各分类标准偏差)<br>
+            　　对每个聚类j，求其标准偏差<img src="../../images/image_content/5/5_3013.gif" width="152" height="29" align="absmiddle"><br>
+            　　<img src="../../images/image_content/5/5_3014.gif" width="185" height="60" align="absmiddle">　　　　　　(5-21)<br>
+            　　式中<img src="../../images/image_content/5/5_3015.gif" width="23" height="22" align="absmiddle">是j中第k个样本的第i分量，<img src="../../images/image_content/5/5_3016.gif" width="26" height="23" align="absmiddle">是<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">的第i个分量，<img src="../../images/image_content/5/5_3017.gif" width="21" height="19" align="absmiddle">是第j个聚类第i个分量的标准偏差，D是样本特征维数。<br>
+            　　步骤9(求每类具有最大标准偏差的分量)<br>
+            　　<img src="../../images/image_content/5/5_3018.gif" width="117" height="29" align="absmiddle">指每类具有最大标准偏差的分量。<br>
+            　　步骤10(分裂计算步骤) <br>
+            　　若任一个<img src="../../images/image_content/5/5_3018.gif" width="117" height="29" align="absmiddle">有<img src="../../images/image_content/5/5_3020.gif" width="69" height="29" align="absmiddle">，并且有(a)<img src="../../images/image_content/5/5_3021.gif" width="53" height="31" align="absmiddle">且<img src="../../images/image_content/5/5_3022.gif" width="98" height="33" align="absmiddle">，或有(b)<img src="../../images/image_content/5/5_3012.gif" width="40" height="48" align="absmiddle">，则把<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">分裂成两个聚类，其中心相应为<img src="../../images/image_content/5/5_3023.gif" width="23" height="26" align="absmiddle">与<img src="../../images/image_content/5/5_3024.gif" width="23" height="25" align="absmiddle">，把原来的<img src="../../images/image_content/5/mj.gif" width="20" height="17" align="absmiddle">取消，且令c＝c+1，由于<img src="../../images/image_content/5/5_3023.gif" width="23" height="26" align="absmiddle">与<img src="../../images/image_content/5/5_3024.gif" width="23" height="25" align="absmiddle">值设置不当将会导致影响到其它类别，因此<img src="../../images/image_content/5/5_3023.gif" width="23" height="26" align="absmiddle">与<img src="../../images/image_content/5/5_3024.gif" width="23" height="25" align="absmiddle">可按以下步骤计算：<br>
+            　　(a) 给定一k值，0＜k＜1；<br>
+            　　(b) 令<img src="../../images/image_content/5/5_3025.gif" width="76" height="30" align="absmiddle">；<br>
+            　　(c) <img src="../../images/image_content/5/5_3026.gif" width="189" height="31" align="absmiddle">；<br>
+            　　其中k值应使<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">中的样本到<img src="../../images/image_content/5/5_3023.gif" width="23" height="26" align="absmiddle">与<img src="../../images/image_content/5/5_3024.gif" width="23" height="25" align="absmiddle">的距离不同，但又应使<img src="../../images/image_content/5/5_1066.gif" width="17" height="27" align="absmiddle">中的样本仍然在分裂后的新样本类中。<br>
+            　　步骤11(计算类间聚类中心距离)<br>
+            　　　i类与j类的类间距离<br>
+             <img src="../../images/image_content/5/5_3027.gif" width="350" height="35" align="absmiddle"><br>
+            　　步骤12(列出类间距离过近者)<br>
+            　　比较<img src="../../images/image_content/5/5_3028.gif" width="20" height="27" align="absmiddle">与<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">并将小于<img src="../../images/image_content/5/5_3002.gif" width="19" height="24" align="absmiddle">的<img src="../../images/image_content/5/5_3028.gif" width="20" height="27" align="absmiddle">按上升次序排列<br>
+            　　<img src="../../images/image_content/5/5_3029.gif" width="196" height="34" align="absmiddle"> 
+            <br>
+            　　该队列最大个数是控制合并对数的参数L<br>
+            　　步骤13(执行合并)<br>
+            　　从类间距离最大的两类开始执行合并过程，此时需将<img src="../../images/image_content/5/5_3030.gif" width="27" height="16" align="absmiddle">与<img src="../../images/image_content/5/5_3031.gif" width="20" height="17" align="absmiddle">合并，得<br>
+            <img src="../../images/image_content/5/5_3032.gif" width="205" height="44" align="absmiddle">　　　　(5-22)<br>
+            　　且c=c-1，从第二个<img src="../../images/image_content/5/5_3033.gif" width="30" height="30" align="absmiddle">开始，则要检查其涉及的<img src="../../images/image_content/5/5_3030.gif" width="27" height="16" align="absmiddle">或<img src="../../images/image_content/5/5_3031.gif" width="20" height="17" align="absmiddle">是否已在前面合并过程中被合并，如两者并未被合并，则执行合并过程。<br>
+            　　步骤14(结束步骤)<br>
+            　　如是最后一次迭代则终止，否则可根据需要转步骤1或步骤2，转步骤1是为了更改控制数。迭代计数要加1。</td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　以上是整个ISODATA算法的计算步骤。可以看出ISODATA算法与C—均值算法一样，都是以与代表点的最小距离作为样本聚类的依据，因此比较适合各类物体在特征空间以超球体分布的方式分布，对于分布形状较复杂的情况需要采用别的度量。ISODATA算法与C—均值算法的主要不同在于自我控制与调整的能力不同。它们的另一个不同点是，C—均值算法的类均值参数在每个样本归入时随即修改，因而称为逐个样本修正法，而ISODATA算法的均值向量或聚类中心参数是在每一次迭代分类后修正的，因而称为成批样本修正法。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

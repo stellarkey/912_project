@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"死锁定理用于\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.预防死锁",
+        "B.解除死锁",
+        "C.避免死锁",
+        "D.检测死锁"
+    ],
+    "q_number":146
+}

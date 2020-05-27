@@ -1,0 +1,196 @@
+<html>
+<head>
+<title> 多媒体技术基础</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="C";mykeys[1]="D";mykeys[2]="D";mykeys[3]="D";mykeys[4]="D";mykeys[5]="B";mykeys[6]="D";mykeys[7]="D";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+mykeys[0]="一类是家电制造厂商研制的电视计算机(Teleputer)";mykeys[1]="另一类是计算机制造厂商研制的计算机电视（Compuvision）";mykeys[2]="①声、文、图信息";mykeys[3]="②集成性";mykeys[4]="③交互性";mykeys[5]="①采用国际标准的压缩编码算法MPEG-2";mykeys[6]="②采用打包数据结构";mykeys[7]="③采用双层传输技术";mykeys[8]="①一类是对称全双工的多媒体通信";mykeys[9]="②另一类是非对称全双工的多媒体通信系统";mykeys[10]="①多媒体数据库和基于内容的检索";mykeys[11]="②多媒体通信";mykeys[12]="③多媒体创作工具";//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <form>
+          <p><b>一、 选择</b><br>
+            选择第1题<br>
+            多媒体技术的主要特性有(     )
+⑴多样性    ⑵集成性    ⑶交互性    ⑷可扩充性
+<p><input type="radio" name="1" value="A"> A  ⑴                 <p><input type="radio" name="1" value="B"> B  ⑴、⑵
+<p><input type="radio" name="1" value="C"> C  ⑴、⑵、⑶  <p><input type="radio" name="1" value="D"> D  全部
+<br><br>选择第2题<br>要把一台普通的计算机变成多媒体计算机要解决的关键技术是（　　　）
+     ⑴视频音频信息的获取技术　　　    ⑵多媒体数据压缩编码和解码技术
+　　 ⑶视频音频数据的实时处理          ⑷视频音频数据的输出技术
+<p><input type="radio" name="2" value="A"> A  ⑴                 <p><input type="radio" name="2" value="B"> B  ⑴、⑵
+<p><input type="radio" name="2" value="C"> C  ⑴、⑵、⑶ <p><input type="radio" name="2" value="D"> D  全部
+<br><br>选择第3题<br>多媒体计算机中的媒体信息是指      。
+     ⑴数字、文字　　⑵声音、图形　　⑶动画、视频　　⑷图像
+<p><input type="radio" name="3" value="A"> A  ⑴      <p><input type="radio" name="3" value="B"> B  ⑵       <p><input type="radio" name="3" value="C"> C  ⑶         <p><input type="radio" name="3" value="D"> D  全部<br><br>选择第4题<br>多媒体计算机的发展趋势是（　　）
+<p><input type="radio" name="4" value="A"> A  进一步完善计算机支持的协同工作环境CSCW
+<p><input type="radio" name="4" value="B"> B  智能多媒体技术
+<p><input type="radio" name="4" value="C"> C  把多媒体信息实时处理和压缩编码算法作到CPU芯片中
+<p><input type="radio" name="4" value="D"> D  以上信息全对
+<br><br>选择第5题<br>多媒体信息的实时处理、压缩编码算法及通信，大量运行的是8位和16位定点矩阵运算；把这些功能和算法集成到CPU芯片中，要遵循的几条原则是（    ）
+<p><input type="radio" name="5" value="A"> A  压缩的算法采用国际标准的设计原则
+<p><input type="radio" name="5" value="B"> B  多媒体功能的单独解决变成集中解决
+<p><input type="radio" name="5" value="C"> C  体系结构设计和算法相结合
+<p><input type="radio" name="5" value="D"> D  以上信息全对
+<br><br>选择第6题<br>根据多媒体特性判断以下哪些属于多媒体范畴（　　）
+   ⑴交互式游戏
+        ⑵有声图书
+        ⑶彩色画报
+   ⑷立体声音乐、彩色电视等
+<p><input type="radio" name="6" value="A"> A  仅 ⑴
+<p><input type="radio" name="6" value="B"> B  ⑴、⑵
+<p><input type="radio" name="6" value="C"> C  ⑴、⑵、⑶
+<p><input type="radio" name="6" value="D"> D  全部
+<br><br>选择第7题<br>多媒体技术未来发展的方向是？
+（１）	高分辨率，提高显示质量。
+（２）	高速度化，缩短处理时间。
+（３）	简单化，便于操作。
+（４）	智能化，提高信息识别能力。
+<p><input type="radio" name="7" value="A"> A  （1）、（2）、（3）　<p><input type="radio" name="7" value="B"> B  （1）、（2）、（4）
+<p><input type="radio" name="7" value="C"> C  （1）、（3）、（4）　<p><input type="radio" name="7" value="D"> D  全部
+<br><br>选择第8题<br>国际标准MPEG-II采用了分层的编码体系，提供了四种技术，它们是： 
+（1）空间可扩展性；信噪比可扩充性；框架技术；等级技术。
+（2）时间可扩充性；空间可扩展性；硬件扩展技术；软件扩展技术。
+（3）数据分块技术；空间可扩展性；信噪比可扩充性；框架技术。
+（4）空间可扩展性；时间可扩充性；信噪比可扩充性；数据分块技术。
+<p><input type="radio" name="8" value="A"> A  （1） 
+<p><input type="radio" name="8" value="B"> B  （2）
+<p><input type="radio" name="8" value="C"> C  （3）
+<p><input type="radio" name="8" value="D"> D  （4）
+<br><!--czp-select-timu--> 
+          </p>
+          <p> 
+            <input type="reset" name="Reset2" value="重置" class=pbox>
+            <input type=button name=Button22 value="判分" onClick="getresultcheck(this.form)" class=pbox>
+          </p>
+          <p>&nbsp;</p></form>
+        <form name="zfl">
+          <p>二<b>、 填空题</b><br>
+            填空第1题<br>多媒体计算机可分为两大类<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">,<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"><br><br>填空第3题<br>多媒体计算机的定义简单地说是综合处理<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">,使多种媒体信息具有<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">和<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px"><br><br>填空第6题<br>多媒体技术是解决常规电视数字化及高清晰度电视（HDTV）切实可行的方案。HDTV的特点有：<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">。<br><br>填空第9题<br>多媒体通信可分为两类：<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">。<br><br>填空第11题<br>多媒体计算机的主要应用领域：<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">，<input type=text size=10 style="border-color: black black #000000; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px">。<br><!--czp-input-timu-->
+            <br>
+            <input type="reset" name="Reset" value="重置" class=pbox>
+            <input type=button name=Button23 value="判分" onClick="check()" class=pbox>
+          </p>
+          </form>
+          <form>
+          <p>&nbsp;</p>
+          <p><b>三、 问答题</b><br>
+            <br>
+            问答第1题<br>多媒体计算机的定义是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第2题<br>多媒体计算机从开发、生产厂商及应用的角度可分哪两大类？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第3题<br>要把一台普通计算机变成多媒体计算机需要解决哪些关键技术？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第4题<br>多媒体计算机的发展趋势?<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第5题<br>多媒体与目前的电视有何异同？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第6题<br>简述多媒体计算机的关键技术及其主要应用领域。<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第7题<br>多媒体技术促进了通信、娱乐和计算机的融合，主要体现在哪几个方面？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第8题<br>把多媒体信息实时处理和压缩编码算法作到CPU芯片中应遵循的原则是什么？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br><!--czp-wenda-timu-->
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD 在ucore处理中，上述几个都是要设置好的。\n",
+    "question":"为了让系统正确完成80386的中断处理过程中，操作系统需要正确设置()\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.全局描述符表",
+        "B.中断描述符表",
+        "C.中断服务例程",
+        "D.内核堆栈"
+    ],
+    "q_number":1237
+}

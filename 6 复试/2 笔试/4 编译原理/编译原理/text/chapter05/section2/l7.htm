@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 2. 计算FIRST集<br>
+      　　① 根据定义计算<br>
+      　　由定义5.1 FIRST(α)={a|α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aβ,a∈V<sub><font size="-2">T</font></sub>，α,β∈V<sup><font size="-2">*</font></sup>},若α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则规定ε∈FIRST(α) 
+      <br>
+      　　对每一文法符号X∈V 计算FIRST(X)<br>
+      　　(a) 若X∈V<sub><font size="-2">T</font></sub>，则FIRST(X)＝{X}。<br>
+      　　(b) 若X∈V<sub><font size="-2">N</font></sub>，且有产生式X→a…，a∈V<sub><font size="-2">T</font></sub>， 
+      则 a∈FIRST(X)。<br>
+      　　(c) 若X∈V<sub><font size="-2">N</font></sub>，X→ε,则ε∈FIRST(X)。<br>
+      　　(d) 若X∈V<sub><font size="-2">N</font></sub>；Y<sub><font size="-2">1</font></sub>，Y<sub><font size="-2">2</font></sub>，…，Y<sub><font size="-2">i</font></sub>∈V<sub><font size="-2">N</font></sub>，且有产生式X→Y<sub><font size="-2">1</font></sub> 
+      Y<sub><font size="-2">2</font></sub> … Y<sub><font size="-2">n</font></sub>；当Y<sub><font size="-2">1</font></sub> 
+      Y<sub><font size="-2">2</font></sub> … Y<sub><font size="-2">i-1</font></sub>都<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε时，(其中1≤i≤n)，则FIRST(Y<sub><font size="-2">1</font></sub>)、FIRST(Y<sub><font size="-2">2</font></sub>)、…、FIRST(Y<sub><font size="-2">i-1</font></sub>)的所有非{ε}元素和FIRST(Y<sub><font size="-2">i</font></sub>)都包含在FIRST(X)中。<br>
+      　　(e) 当(d)中所有Y<sub><font size="-2">i</font></sub><img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,(i=1,2,…n)，则<br>
+      　　FIRST(X)=FIRST(Y<sub><font size="-2">1</font></sub>)∪FIRST(Y<sub><font size="-2">2</font></sub>)∪…∪FIRST(Y<sub><font size="-2">n</font></sub>)∪{ε}<br>
+      　　反复使用上述(b)～(e)步直到每个符号的FIRST集合不再增大为止。<br>
+      　　求出每个文法符号的FIRST集合后也就不难求出一个符号串的FIRST集合。<br>
+      　　若符号串α∈V<sup><font size="-2">*</font></sup>，α=X<sub><font size="-2">1</font></sub> 
+      X<sub><font size="-2">2</font></sub> … X<sub><font size="-2">n</font></sub>,当X<sub><font size="-2">1</font></sub>不能<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则置FIRST(α)= 
+      FIRST(X<sub><font size="-2">1</font></sub>)。<br>
+      　　若对任何j(1≤j≤i-1，2≤i≤n), ε∈FIRST(X<sub><font size="-2">j</font></sub>), 则<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td>　　FIRST(α)=</td>
+          <td><img src="../../../img/chap05/symbol03.gif" width="21" height="31"></td>
+          <td>(FIRST(X<sub><font size="-2">j</font></sub>)\{ε})</td>
+        </tr>
+        <tr> 
+          <td colspan="3">∪FIRST(X<sub><font size="-2">i</font></sub>)</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td colspan="3">　　当所有FIRST(X<sub><font size="-2">j</font></sub>)(1≤j≤n)都含有</td>
+        </tr>
+        <tr> 
+          <td>{ε}时，则FIRST(α)=</td>
+          <td><img src="../../../img/chap05/symbol04.gif" width="22" height="30"></td>
+          <td>(FIRST(X<sub><font size="-2">j</font></sub>))</td>
+        </tr>
+        <tr> 
+          <td colspan="3">∪{ε}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

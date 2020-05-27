@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>2.7 PL/0编译程序的目标代码解释执行时的存储分配</b> <br>
+      　　当源程序经过语法分析，如果未发现错误时，由编译程序调用解释程序，对存放在CODE中的目标代码CODE[0]开始进行解释执行。当编译结束后，记录源程序中标识符的TABLE表已没有作用。<br>
+      　　因为计算每个变量在运行栈中相对本过程基地址的偏移量dx 的值，放在table表中的adr域，生成目标代码时再从adr域中取出基地址的偏移量 
+      ，放在code中的a域。<br>
+      　　因此数据空间只需以数组CODE存放的只读目标程序和运行时的数据栈S。S是由解释程序定义的一维整型数组。由于PL/0语言的目标程序是一种假想的栈式计算机的汇编语言，仍用PASCAL语言解释执行。解释执行时的数据空间S为栈式计算机的存储空间。遵循后进先出规则，对每个过程(包括主程序)当被调用时，才分配数据空间，退出过程时，则所分配的数据空间被释放。</td>
+  </tr>
+</table>
+</body>
+</html>

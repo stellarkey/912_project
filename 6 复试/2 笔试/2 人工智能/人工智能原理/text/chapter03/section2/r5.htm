@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　本题可图示为：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图3-2 推理关系</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="300" height="250">
+              <param name=movie value="../../../flash/chap03/t3_5.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap03/t3_5.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="300" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　<font color="#0000FF">解：</font>依规则R<sub>1</sub>，<br>
+      　　CF（B<sub>1</sub>|A<sub>1</sub>）＝CF（B<sub>1</sub>）＋CF（B<sub>1</sub>，A<sub>1</sub>）（1－CF（B<sub>1</sub>））＝0.8，<br>
+      　　即更新后CF（B<sub>1</sub>）＝0.8<br>
+      　　依规则R<sub>2</sub>：<br>
+      　　CF（B<sub>1</sub>|A<sub>2</sub>）＝CF（B<sub>1</sub>）＋CF（B<sub>1</sub>，A<sub>2</sub>）（1－CF（B<sub>1</sub>））＝0.9<br>
+      　　更新后CF（B<sub>1</sub>）＝0.9<br>
+      　　依R<sub>3</sub>，先计算<br>
+      　　CF（B<sub>1</sub>∧A<sub>3</sub>）＝min（CF（A<sub>3</sub>），CF（B<sub>1</sub>））＝0.9<br>
+      　　由于CF（B<sub>1</sub>∧A<sub>3</sub>）&lt;1，<br>
+      　　CF（B<sub>2</sub>| B<sub>1</sub>∧A<sub>3</sub>）= CF（B<sub>2</sub>）+ CF（B<sub>1</sub>∧A<sub>3</sub>）×CF(B<sub>2</sub>，B<sub>1</sub>∧A<sub>3</sub>)×（1-CF（B<sub>2</sub>））=0+0.9×0.8(1-0)=0.72<br>
+      　　答：更新后的可信度分别是：CF（B<sub>1</sub>）＝0.9，CF（B<sub>2</sub>）＝0.72<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="160">
+              <param name=movie value="../../../flash/chap03/3-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap03/3-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="160">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

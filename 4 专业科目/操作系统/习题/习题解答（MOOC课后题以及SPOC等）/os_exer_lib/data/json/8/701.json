@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"(20150309_操作系统试题_doc)SPOOLing技术的实质是将【 】转化为共享设备的技术。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.独占设备",
+        "B.虚拟设备",
+        "C.脱机设备",
+        "D.块设备"
+    ],
+    "q_number":701
+}

@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　说明部分的处理对主程序看成是第0层过程，主程序定义的过程为第1层，随着嵌套的深度增加而层次数加大。PL/0允许最大层次为3。<br>
+      　　所造名字表放在全程量一维数组TABLE表中。TX为索引表的指针，表中的每个元素为记录型数据。LEV给出层次，DX给出每层局部量当前已分配到的相对位置，可称地址指示器，每说明完一个变量后DX指示器加1。<br>
+      　　PL/0编译程序文本中对名字表定义有：<br>
+      　　说明类型的定义：<br>
+      　　type object= (constant, variable, procedur)<br>
+      　　（定义为纯量/枚举类型）<br>
+      　　名字表的定义：<br>
+      　　table:array[0..txmax] of record<br>
+      　　name:alfa;<br>
+      　　case kind:object of<br>
+      　　constant:(val:integer);<br>
+      　　variable:procedur:(level,adr,size:integer);<br>
+      　　end；<br>
+      　　例如：一个过程的说明部分为：<br>
+      　　CONST A=35,B=49；<br>
+      　　VAR C，D，E；<br>
+      　　PROCEDUREP；<br>
+      　　VAR G, ...<br>
+      　　对常量，变量和过程说明分析后，在TABLE表中的信息如表2.2所示。<br>
+      　　在说明处理后TABLE表中的信息对于过程名的ADR域，是在过程体的目标代码生成后再反填过程体的入口地址。例中在处理P过程的说明时对LEV就增加1。在P过程中的变量名的层次为LEV+1后的值。对过程还有一项数据SIZE，是记录该过程体运行时所需的数据空间。至于在造表和查表的过程中，如何保证每个过程的局部量不被它的外层引用，请读者阅读完PL/0编译程序后自己总结。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

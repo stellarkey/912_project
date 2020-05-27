@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　首先构造该文法G′的识别活前缀的DFA如图7.9。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 7.9 识别文法G′活前缀的DFA 
+            </font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap07/f7-3-1.swf">
+              <param name=quality value=high>
+              <param name=quality value=high>
+              <param name=wmode value=transparent>
+              <embed src="../../../flash/chap07/f7-3-1.swf" quality=high wmode=transparent pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　也可先构造该文法G′的LR(0)项目集规范族如表7.5。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 表 7.5 G′的LR(0)项目集族 </font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">状态</td>
+                <td align="center" valign="top">核集合</td>
+                <td align="center" valign="top">闭包增加项目</td>
+                <td align="center" valign="top">项目集</td>
+              </tr>
+              <tr> 
+                <td align="center">I0</td>
+                <td align="center" valign="top">S′→·S<font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top">S→·rD<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top">S′→·S<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  S→·rD<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I1</td>
+                <td align="center" valign="top">S′→S·<font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top">S′→S·<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I2</td>
+                <td align="center" valign="top">S→r·D<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top">D→·D，i<br>
+                  D→·i<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top">S→r·D<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  D→·D，i<font color="#FFFFFF">.</font><br>
+                  D→·i<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I3</td>
+                <td align="center" valign="top">S→rD·<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  D→D·，i</td>
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top">S→rD·<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><br>
+                  D→D·，i<font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I4</td>
+                <td align="center" valign="top">D→i·<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top">D→i·<font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font><font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I5</td>
+                <td align="center" valign="top">D→D，·i</td>
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top">D→D，·i<font color="#FFFFFF">.</font></td>
+              </tr>
+              <tr> 
+                <td align="center">I6</td>
+                <td align="center" valign="top">D→D，i·</td>
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top">D→D，i·<font color="#FFFFFF">.</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      然后再用GO函数构造图 7.9 识别文法G′活前缀的DFA。 <br>
+      　　分析每个状态包含的项目集，不难发现在状态I3中含项目：<br>
+      　　S→rD· 为归约项目<br>
+      　　D→D·，i 为移进项目<br>
+      　　也就是按S→rD·项目的动作认为用S→rD产生式进行归约的句柄已形成，不管当前的输入符号是什么，都应把rD归约成S。但是按D→D·，i项目当面临输入符为'，'号时，应将'，'号移入符号栈，状态转向I5。显然该文法不是LR(0)文法，也可在构造它的LR(0)分析表时发现这个问题，如表7.6所示。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">表7.6 实数说明文法的LR(0)分析表</font> 
+          </td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" rowspan="2">状态</td>
+                <td align="center" valign="top" colspan="4">ACTION</td>
+                <td align="center" valign="top" colspan="2">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top">r</td>
+                <td align="center" valign="top">，</td>
+                <td align="center" valign="top">i</td>
+                <td align="center" valign="top">#</td>
+                <td align="center" valign="top">S</td>
+                <td align="center" valign="top">D</td>
+              </tr>
+              <tr> 
+                <td align="center">0<br>
+                  1<br>
+                  2<br>
+                  3<br>
+                  4<br>
+                  5<br>
+                  6</td>
+                <td align="center" valign="top">S2<br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1, S5<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  S4<br>
+                  r1<br>
+                  r3<br>
+                  S6<br>
+                  r2</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  acc<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r1<br>
+                  r3<br>
+                  <font color="#FFFFFF">.</font><br>
+                  r2</td>
+                <td align="center" valign="top">1</td>
+                <td align="center" valign="top"> <font color="#FFFFFF">.</font><br>
+                  <font color="#FFFFFF">.</font><br>
+                  3</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

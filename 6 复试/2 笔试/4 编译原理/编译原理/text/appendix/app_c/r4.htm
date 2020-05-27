@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>C.3.2 宏定义</b><br>
+      　　这部分用C语言的#define语句定义程序中要用的宏。例如<br>
+      　　%{<br>
+      　　…<br>
+      　　#define EOF O<br>
+      　　#dffine max(x，y)((x&gt;y)。x∶y)<br>
+      　　…<br>
+      　　%} 
+      <p><b>C.3.3 数据类型定义</b><br>
+        　　这部分定义语义动作中或程序段部分中要用到的数据类型，例如<br>
+        　　%{<br>
+        　　…<br>
+        　　typedef struct interval {<br>
+        　　double lo，hi;<br>
+        　　}INTERVAL;<br>
+        　　…<br>
+        　　%}</p>
+      <p><b>C.3.4 全局变量定义</b><br>
+        　　外部变量(external variable)和YACC源程序中要用到的全局变量都在这部分定义，例如 <br>
+        　　%{<br>
+        　　…<br>
+        　　extern int nfg;<br>
+        　　double dreg[26];<br>
+        　　INTERVAL Vreg[26];<br>
+        　　…<br>
+        　　%}<br>
+        　　另外非整型函数的类型声明也包含在这部分中，请参看本附录C.6例2。<br>
+        　　重申一遍，上述四部分括在%{和%}之间的内容是由YACC原样照抄到y.tab.c中去，所以必须完全符合C语言文法，另外，界符%{和%}最好各自独占一行，即最好不要写成:<br>
+        　　%{ int x; %}</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

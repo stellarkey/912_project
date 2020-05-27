@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例 5．6</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若有文法G6[S]:<br>
+            　　(1) S→Sa<br>
+            　　(2) S→b<br>
+            　　若推导baa#<br>
+            　　开始由于输入当前符是b,所以试图用(2)推导对应语法树为图5.10(a)。<br>
+            　　这时推导树的末端结点都是终结符，输入串未分析完，所以应重新选用产生式(1)来推导，对应语法树为图5.10(b)。<br>
+            　　语法树末端结点最左符号为非终结符，当前输入符号为b，所以选用(2)继续推导，得语法树为图5.10(c)。<br>
+            　　此时语法树最左边的符号为终结符b与当前符号匹配，语法树下一符号与输入串的下一符号都为a所以匹配，但语法树的末端结点只有两个终结符，而输入串还有剩余部分a#，所以要把第二步的推导回溯，输入串指针也恢复到第一个符号，对第二步推导的重新选择只有选择产生式(1)。相应语法树为图5.10(d)。<br>
+            　　这时语法树的最左末端结点为非终结符S，当前输入符为b，所以试用产生式(2)推导，得语法树为图5.10(e)。</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图 5.10 不确定的自顶向下语法分析树(三) </font> 
+          </td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle/p5_10%20copy.gif" width="383" height="199"></td>
+        </tr>
+      </table>
+      　　当前输入符与语法树最左末端结点匹配，剩余的输入符aa与语法树其余的末端结点也逐个相匹配，最后遇到输入串结束符，所以分析成功。</td>
+  </tr>
+</table>
+</body>
+</html>

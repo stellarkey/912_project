@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"一个分段存储管理系统中，地址长度为32位，其中段号占8位，则段长最大\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.2的8次方字节",
+        "B.2的16次方字节",
+        "C.2的24次方字节",
+        "D.2的32次方字节"
+    ],
+    "q_number":677
+}

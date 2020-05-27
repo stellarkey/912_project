@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　表示问题：是指用什么方法描述不确定性，这是解决不确定推理关键的一步。通常有数值表示如：CH(A), 和非数值表示的语义表示方法如：很可能。<br>
+      　　表示问题决定采用什么方法描述。表达不确定性，问题表达不了就不可能解决。 <br>
+      　　计算问题：主要是指不确定性的传播和更新，也即获得新的信息的过程。<br>
+      　　如：<br>
+      　　1） 已知C（A）, A→B f（B，A）如何计算C（B）<br>
+      　　2） 从一个规则得到A的度量C<sub>1</sub>（A），又从另一个规则得到A的度量 C<sub>2</sub>（A），如何从两个规则合成确定C（A）<br>
+      　　3） 如何由C（A<sub>1</sub>）、 C（A<sub>2</sub>）来计算C（A<sub>1</sub>∧A<sub>2</sub>）,C(A<sub>1</sub>∨A<sub>2</sub>) 
+      等 <br>
+      　　初始命题的不确定性度量的获得也是非常重要的，一般由领域内的专家从经验得出。这个过程可以用推理树直观的表示出来。例如，对于如　　下的推理过程：<br>
+      　　R<sub>1</sub>：A<sub>1</sub>∧A<sub>2</sub>→B<sub>1</sub><br>
+      　　R<sub>2</sub>：A<sub>2</sub>∨A<sub>3</sub>→B<sub>2</sub><br>
+      　　R<sub>3</sub>：B<sub>1</sub>→B<br>
+      　　R<sub>4</sub>：B<sub>2</sub>→B<br>
+      　　用推理树可以表示如下：<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图3-1 推理树结果图</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap03/3-1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap03/3-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　最下层的是初始证据，经过一些&quot;与&quot;和&quot;或&quot;的组合，形成推理中的临时证据，由这些临时证据推导出最终的结论。图中斜体所表示的是推理弧上所使用的规则，图中的红字表示证据或规则的不确定度量值。正是这些值的变化反映了不确定性的传播和更新。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

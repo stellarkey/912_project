@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　有了入口语句的概念之后，我们就可以给出划分中间代码（四元式程序）为基本块的算法，<br>
+      　　其步骤如下：<br>
+      　　① 求出四元式程序中各个基本块的入口语句。<br>
+      　　② 对每一入口语句，构造其所属的基本块。它是由该入口语句到下一入口语句（不包括下一入口语句），或到一转移语句（包括该转移语句），或到一停语句（包括该停语句）之间的语句序列组成的。<br>
+      　　③ 凡未被纳入某一基本块的语句、都是程序中控制流程无法到达的语句，因而也是不会被执行到的语句，可以把它们删除。<br>
+      　　我们以下述四元式程序为例来说明如何划分基本块的：<br>
+      　　(1) read (C)<br>
+      　　(2) A:= 0<br>
+      　　(3) B:= 1<br>
+      　　(4) L1: A:=A + B<br>
+      　　(5) if B&gt;= C goto L2<br>
+      　　(6) B:=B+1<br>
+      　　(7) goto L1<br>
+      　　(8) L2: write (A)<br>
+      　　(9) halt<br>
+      　　先求出四元式程序中各个基本块的入口语句，<br>
+      　　语句（1）是程序的第一个语句，因此它是入口语句。<br>
+      　　语句（4）和语句（8）是条件转移语句或无条件转移语句的转移目标语句，因此是入口语句。<br>
+      　　语句（6）是紧跟在条件转移语句后面的语句，因此是入口语句。<br>
+      　　这样，语句（1），（2）和（3）构成一个基本块，语句（4）和（5）构成一个基本块，语句（6）和（7）构成一个基本块，语句（8）和（9）构成一个基本块。</td>
+  </tr>
+</table>
+</body>
+</html>

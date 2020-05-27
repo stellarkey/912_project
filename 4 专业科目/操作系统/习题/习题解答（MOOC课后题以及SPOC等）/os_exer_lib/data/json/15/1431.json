@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"有关管理进程等待的描述正确的是（） s４\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.wait()系统调用用于父进程等待子进程的结束",
+        "B.子进程结束时通过exit()向父进程返回一个值",
+        "C.当某子进程调用exit()时,唤醒父进程，将exit()返回值作为父进程中wait的返回值",
+        "D.进程结束执行时调用exit()，完成进程的部分占用资源的回收"
+    ],
+    "q_number":1431
+}

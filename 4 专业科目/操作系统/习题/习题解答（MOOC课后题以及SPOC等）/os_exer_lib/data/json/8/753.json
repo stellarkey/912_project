@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)批处理系统的主要缺点是﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.CPU的利用率不高",
+        "B.失去了交互性",
+        "C.不具备并行性",
+        "D.以上都不是"
+    ],
+    "q_number":753
+}

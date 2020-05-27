@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"如果父进程没有执行wait()或已退出, 那子进程执行exit()后，将一直是“僵尸进程(zombie)”。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016期中考试",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1508
+}

@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "在UNIX系统中，所有进程都是利用系统调用fork创建的。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "3\r\n", "options": " A.对 \r\n B.错\r\n"}

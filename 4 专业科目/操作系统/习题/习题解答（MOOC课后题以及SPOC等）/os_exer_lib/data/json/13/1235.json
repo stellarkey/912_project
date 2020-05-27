@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C iret用于中断返回\n",
+    "question":"应用程序中的C函数调用中不需要用到()指令\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.push",
+        "B.ret",
+        "C.iret",
+        "D.call"
+    ],
+    "q_number":1235
+}

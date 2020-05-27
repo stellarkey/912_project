@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td align="center"><font color="#0000FF">过程出口指令的解释执行示意图 </font></td>
+        </tr>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="450" height="320">
+              <param name=movie value="../../../flash/chap02/f2-7-3.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap02/f2-7-3.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="450" height="320">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　最后为了使读者弄清PL/0编译程序各阶段的任务；源程序和目标程序的等价功能；解释执行目标程序时数据栈的变化情况，建议读者参看第2.5节中的例子，在阅读PL/0编译程序文本时，可按例子对照学习。<br>
+      　　另外由于PL/0编译程序是用PASCAL语言编写的(若文件名为PL0.PAS)，所以要对PL/0语言的源程序进行编译，如在PC机上，首先必须对PL0.PAS进行编译、汇编、连接得到PL0.EXE文件。运行PL0.EXE文件才是启动PL/0的编译程序。因此执行命令。<br>
+      　　RUN PL0&lt;回车&gt;启动PL/0编译程序，输出一些询问信息，需用户回答。<br>
+      　　输出信息 　　　　　　回答信息<br>
+      　　INPUT FILE?　　　　　PL/0源程序文件名&lt;回车&gt;<br>
+      　　LIST OBJECT CODE?　　Y或N&lt;回车&gt;<br>
+      　　目标程序输出的次序是，最内层的过程体在最前边，主程序体在最后。源程序清单中的序号，是该语句在目标程序中对应的起始位置。但需指出例题中序号为0，1指令的内容为：<br>
+      　　0 jmp 0 8 8为主程序入口<br>
+      　　1 jmp 0 2 2为过程P的入口</td>
+  </tr>
+</table>
+</body>
+</html>

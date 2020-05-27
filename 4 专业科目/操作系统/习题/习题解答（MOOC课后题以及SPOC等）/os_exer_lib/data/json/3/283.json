@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在下列解决死锁的方法中，属于死锁预防策略的是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.银行家算法",
+        "B.资源有序分配法",
+        "C.定时运行死锁检测程序法",
+        "D.资源分配图化简法"
+    ],
+    "q_number":283
+}

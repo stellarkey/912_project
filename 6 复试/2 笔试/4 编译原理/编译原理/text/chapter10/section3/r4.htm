@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图10.22 嵌套过程作为参数传递</font></td>
+        </tr>
+        <tr>
+          <td valign="top">　　(1) program param(input， output);<br>
+            　　　　//例程param的头<br>
+            　　(2) procedure b(function h(n:integer): integer);<br>
+            　　　　//嵌套过程b的头，其形式参数是一个具有一个整型形参n的整型函数h<br>
+            　　(3) 　begin writeln(h(2)) end {b};//b的过程体<br>
+            　　(4) procedure c; //嵌套过程c的头<br>
+            　　(5) 　var <img src="../../../img/chap10/symbol01.gif" width="16" height="16">:integer;<br>
+            　　(6) 　function f(n;integer): integer;<br>
+            　　　　　//过程c中嵌套定义的具有一个整型形参n的整型函数f<br>
+            　　(7) 　　begin f∶=<img src="../../../img/chap10/symbol01.gif" width="16" height="16">+n 
+            end{f};//f的函数体<br>
+            　　(8) 　begin <img src="../../../img/chap10/symbol01.gif" width="16" height="16">∶=0;b(f) 
+            end{c};<br>
+            　　　　　//c的过程体，其中b(f)调用b函数，<br>
+            　　　　　//而实参是函数f，调用时替换形参函数h<br>
+            　　(9) begin<br>
+            　　(10) c <br>
+            　　(11) end</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图10.23 连同存取链一起传递过程实参</font></td>
+        </tr>
+        <tr> 
+          <td align="center" valign="top"><img src="../../../img/totle/p10_28.gif" width="397" height="353"></td>
+        </tr>
+      </table>
+      　　一般来讲，过程P把过程T做为实参传递给Q时，也是一种&quot;传地址&quot;方式，P可以先建立两个相继的临时单元，第一个单元B1存放过程T的入口地址；第二单元B2存放现行display地址或存取链地址。然后把第一临时单元地址传送给Q（即放置于Q活动记录的形式单元，比方说Z中）。假定过程Q执行到引用形参Z时，Z中已含有上述B1的地址，则B1的内容将用来作为转子指令的目的地址（即转进过程T）。B2的内容将传送给T。<br>
+      　　除了实参是过程的情况外，还有实参为数组的情况，实参为标号的情况以及实参为形式参数的情况。我们不再讨论。</td>
+  </tr>
+</table>
+</body>
+</html>

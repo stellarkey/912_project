@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"常用的单道批处理作业调度有_____________________________________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":390
+}

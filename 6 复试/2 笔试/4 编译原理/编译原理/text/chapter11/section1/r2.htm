@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　一般，优化工作阶段可在中间代码生成之后和（或）目标代码生成之后进行，如图11.1所示： <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图11.1 编译的优化工作阶段</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p11_1.gif" width="391" height="119"></td>
+        </tr>
+      </table>
+      　　中间代码的优化是对中间代码进行等价变换。目标代码的优化是在目标代码生成之后进行的，因为生成的目标代码对应于具体的计算机，因此，这一类优化在很大程度上依赖于具体的机器，我们不做详细讨论。<br>
+      　　另外依据优化所涉及的程序范围，又可分为局部优化、循环优化和全局优化三个不同的级别。局部优化指的是在只有一个入口、一个出口的基本程序块上进行的优化。循环优化是对循环中的代码进行的优化。全局优化是在整个程序范围内进行的优化。 
+      <br>
+      　　编译程序的优化工作旨在生成较好性能的目标代码，为此，编译程序需要对代码（中间代码或目标代码）进行各种方式的变换，变换的宗旨是：等价-经优化工作变换后的代码运行结果应与原来程序运行结果一样。有效-经优化工作变换后的代码应运行时间较短，占用的存储空间较小。合算-获得较好性能的目标代码是优化工作的意图，而优化本身包括大量的代码分析和变换工作，这里有个权衡：应尽可能以较低的代价取得较好的优化效果。</td>
+  </tr>
+</table>
+</body>
+</html>

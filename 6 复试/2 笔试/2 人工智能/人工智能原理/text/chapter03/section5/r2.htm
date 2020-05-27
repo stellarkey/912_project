@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图3-5 贝叶斯网络的实例</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="150">
+              <param name=movie value="../../../flash/chap03/P3_5_1_1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap03/P3_5_1_1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="150">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+    　　图中表达了贝叶斯网的两个要素：其一为贝叶斯网的结构，也就是各节点的继承关系，其二就是条件概率表CPT。若一个贝叶斯网可计算，则这两个条件缺一不可。<br>
+      　　贝叶斯网由一个有向无环图（DAG）及描述顶点之间的概率表组成。其中每个顶点对应一个随机变量。这个图表达了分布的一系列有条件独立属性：在给定了父亲节点的状态后，每个变量与它在图中的非继承节点在概率上是独立的。该图抓住了概率分布的定性结构，并被开发来做高效推理和决策。<br>
+      　　贝叶斯网络能表示任意概率分布的同时，它们为这些能用简单结构表示的分布提供了可计算优势。 <br>
+      　　假设对于顶点x<sub><font size="-2">i</font></sub>，其双亲节点集为P<sub><font size="-2">ai</font></sub>，每个变量x<sub><font size="-2">i</font></sub>的条件概率P(x<sub><font size="-2">i</font></sub>|P<sub><font size="-2">ai</font></sub>)。 
+      则顶点集合X={x<sub><font size="-2">1</font></sub>,x<sub><font size="-2">2</font></sub>,…,x<sub><font size="-2">n</font></sub>}的联合概率分布可如下计算：<br>
+      　　<img src="../../../img/chap03/pic21.gif" width="218" height="46"><br>
+      　　<b>双亲结点</b>。该结点得上一代结点。<br>
+      　　该等式暗示了早先给定的图结构有条件独立语义。它说明贝叶斯网络所表示的联合分布作为一些单独的局部交互作用模型的结果具有因式分解的表示形式。</td>
+  </tr>
+</table>
+</body>
+</html>

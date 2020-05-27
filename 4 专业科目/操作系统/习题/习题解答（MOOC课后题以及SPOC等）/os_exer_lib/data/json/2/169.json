@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可以实现虚拟存储器的方案是_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.固定分区方式",
+        "B.可变分区方式",
+        "C.纯分页方式",
+        "D.请求页式"
+    ],
+    "q_number":169
+}

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.2 LEX源程序的格式</b><br>
+        　　LEX源程序的一般格式是:<br>
+        　　{辅助定义部分}<br>
+        　　%%<br>
+        　　{识别规则部分}<br>
+        　　%%<br>
+        　　{用户子程序部分}<br>
+        　　其中用花括号括起来的各部分都不是必须有的。当没有&quot;用户子程序部分&quot;时，第二个%%也可以省去。第一个%%是必须的，因为它标志着识别规则部分的开始，最短的合法的LEX源程序是：<br>
+        　　%%<br>
+        它的作用是将输入串照原样抄到输出文件中。<br>
+        　　识别规则部分是LEX源程序的核心。它是一张表，左边一列是正规式，右边一列是相应的动作。下面是一条典型的识别规则：<br>
+        　　integer printf (&quot;found keyword INT&quot;);<br>
+        这条规则的意思是在输入串中寻找词形&quot;integer&quot;，每当与之匹配成功时，就打印出&quot;found keyword 
+        INT&quot;这句话。<br>
+        　　注意在识别规则中，正规式与动作之间必须用空格分隔开。动作部分如果只是一个简单的C表达式，则可以写在正规式右边同一行中，如果动作需要占两行以上，则需用花括号括起来，否则会出错。上例也可以写成：<br>
+        　　integer {printf(&quot;found keyword INT&quot;);}<br>
+        下面先介绍识别规则部分的写法，再介绍其余部分。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

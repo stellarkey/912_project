@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "置换算法"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)用外存换内存是以牺牲程序运行时间为代价的。为提高CPU有效利用率，避免内外存的频繁交换，虚\n拟存储技术常用某种页面淘汰策略来选择换出内存的页面，它的基础是程序的﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.完整性",
+        "B.局部性",
+        "C.递归性",
+        "D.正确性"
+    ],
+    "q_number":823
+}

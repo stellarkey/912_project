@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"F\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在操作系统中，进程是一个﹎﹎﹎﹎概念，而程序是一个静态的概念。\n",
+    "source":"网络",
+    "answer":"F",
+    "type":"single_answer",
+    "options":[
+        "A.组合态",
+        "B.关联态",
+        "C.运行态",
+        "D.等待态",
+        "E.静态",
+        "F.动态"
+    ],
+    "q_number":761
+}

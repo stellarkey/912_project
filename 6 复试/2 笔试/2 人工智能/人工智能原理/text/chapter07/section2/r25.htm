@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　下图是&quot;<sub>1</sub>The <sub>2</sub>old <sub>3</sub>man <sub>4</sub>cried 
+        <sub>5</sub>&quot;的分析过程。<br>
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="250">
+              <param name=movie value="../../../flash/chap07/P7_2_4_4.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/P7_2_4_4.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="250">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      
+    　　这里，分析成功是因为我们每一步转移都正确了，因为&quot;The old man cried&quot;中的单词的属性都是唯一的。如果我们分析&quot;The 
+      green faded&quot;，其中green可以属于adj或者noun，分析为adj的算法最后会失败，因为开始时把green分析为adj，其后无法发现noun。<br>
+      　　为了解决这个问题，我们可以把所有可能的候选状态保存起来，当分析失败的时候，回溯到以前保存的候选状态，选择其他的转移弧进行分析（深度优先时，候选状态列表以堆栈形式保存；而宽度优先时，候选状态列表以队列形式保存）。</td>
+  </tr>
+</table>
+</body>
+</html>

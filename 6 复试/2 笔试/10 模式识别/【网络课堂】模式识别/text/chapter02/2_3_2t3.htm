@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent"><font color="#800040">三、各类协方差矩阵不相等的情况</font><br>
+            　　各类协方差矩阵不相等的情况是多元正态分布的一般情况,在这种情况下Σ<sub>i</sub>≠Σ<sub>j</sub>, i,j=1,2,…,c。因此在(2-45)表示的判别函数一般式中只有(d/2)ln2π这一项可以被省略，判别函数可表示成<br>
+            　　<img src="../../images/image_content/2/2_3_5F2am.gif" width="461" height="27" align="absmiddle"> 
+            (2-57)<br>
+            　　将(2-57)进一步整理得<br>
+            　　<img src="../../images/image_content/2/2_3_5F2an.gif" width="193" height="37" align="absmiddle">　　　　(2-58)<br>
+            　　其中<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ak.gif" width="112" height="33" align="absmiddle">(d×d矩阵) 
+            　　　　(2-59)<br>
+            　　<img src="../../images/image_content/2/2_3_5F2aj.gif" width="91" height="34" align="absmiddle">(d维列向量) 
+            　　　　(2-60)<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ai.gif" width="368" height="28" border="0" align="absmiddle">　　　　(2-61)<br>
+            　　由(2-61)可见判别函数在一般情况下为X的二次型，因而其相应的决策面方程(当两个决策域毗邻)根据g<sub>i</sub>(X)－g<sub>j</sub>(X)＝0有<br>
+            　　<img src="../../images/image_content/2/2_3_5F2ag.gif" width="307" height="36" align="absmiddle">　　　　(2-62)<br>
+            　　在一情况下决策面为二次超曲面，随着Σ<sub>i</sub>及P(ω<sub>i</sub>)的不同而呈现不同形式的超二次曲面，如超球面、超椭球面、超抛物面、超双曲面，也可能是超平面。图2.10示出在二元正态情况下决策面具有不同形式的若干例子。在图2.10所示的各种情况中，假设变量x<sub>1</sub>与x<sub>2</sub>是相互独立的，并假设先验概率相等，因而决策面形式的不同仅取决于方差项的差异。图中用圆或椭圆的尺度表征相应类别的方差。图2.10(a)是两个超球体等密度分布的情况。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_3_5F2al.gif" width="380" height="610"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　由于这两类分布离散度不同，决策面是一个园，而不是前面提到过的最小距离分类器的情况。图2.10(b)的情况只是(a)在x<sub>2</sub>轴方向有扩展，因而圆形分布及决策面都演变成椭圆。图2.10 
+            (c)表示决策面为抛物面的一个例子。图2.10(d)与(e)中两类分布的差别在于均值点相互关系不同，造成决策面的形式很不相同，由于2.10 
+            (e)中出现了对称性情况，双曲线退化成直线。<br>
+            　　<span class="spe">以上对多元正态分布概率模型条件下最小错误率贝叶斯决策方面进行了讨论，分析了几种简单情况下判别函数及决策面的特点，也提到了一般性的情况。上述讨论分析了在何种正态分布条件下，最小错误率贝叶斯决策具有线性决策面。讨论中还提到最小距离分类器，这种分类器在模式识别中经常采用，但是如果从统计上错误率最小角度看，不仅各类样本需要分布在类似于超球体内，且这些分布要近乎相同，再加上先验概率相等的条件。换句话说，只有在这种条件下，最小距离分类器与统计上最小错误率决策是一致的。<br>
+            　　模式识别的主要目的是要对观察到的现象与事物,通过度量确定事物的类型。在人工智能各领域，图像处理、计算机视觉、语音处理等都有大量分类与模式识别的任务。例如在第一章中讨论的车牌识别中，就包含了车牌识别，数字、字母区别划分，数字与字母识别等多个模式识别任务。对事物进行分类需要知道正确分类的可能性有多大，因此错误识别率是评价一种分类方法与一个分类器性能的最主要指标。基于最小错误率的贝叶斯决策理论方法在原则上讨论了在何种条件下错误率最小，并给出了计算错误率的原则性公式。</span><br> 
+          </td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

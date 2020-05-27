@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　　在下面的讨论中采用(2-3)式表示的决策规则，即<br>
+            　　如果<img src="../../images/image_content/2/2_3_5F2f.gif" width="343" height="37" align="absmiddle"><br>
+            　　则X∈ωi<br>
+            　　因此判别函数为<img src="../../images/image_content/2/2_3_2m.gif" width="102" height="28" align="absmiddle">，其中<img src="../../images/image_content/2/2_3_2l.gif" width="63" height="27" align="absmiddle">是多元正态分布，可表示成<img src="../../images/image_content/2/2_3_2k.gif" width="149" height="25" align="absmiddle">。考虑到正态分布函数是指数函数形式，判别函数采用对数形式则更为方便，因此判别函数可写成：<br>
+            　　<img src="../../images/image_content/2/2_3_2j.gif" width="362" height="72" align="absmiddle">(2-37)<br>
+            　　而相应的决策面方程为<br>
+            　　<img src="../../images/image_content/2/2_3_2i.gif" width="84" height="25" align="absmiddle"><br>
+            　　即<br>
+            　　<img src="../../images/image_content/2/2_3_2h.gif" width="343" height="108" align="absmiddle">　　　(2-38)<br>
+            <font color="#800040">一、最小距离分类器情况</font><br>
+            　　在正态分布的某一种特殊情况下，最小错误率贝叶斯分类器可演化成最小距离分类器。最小距离分类器的定义是，每个样本以它到每类样本均值的欧氏距离的最小值确定其分类，即<br>
+            　　如果<img src="../../images/image_content/2/2_3_2g.gif" width="326" height="27" align="absmiddle"><br>
+            　　则X∈ωi (2-39)<br>
+            　　样本分布满足以下正态分布条件时，最小错误分类器与(2-39)表示的决策规则相当；<br>
+            　　<img src="../../images/image_content/2/2_3_2n.gif" width="255" height="28" align="absmiddle"><br>
+            　　其中I是d×d维单位矩阵，即<br>
+            　　<img src="../../images/image_content/2/2_3_2e.gif" width="143" height="85" align="absmiddle"><br>
+            　　以上条件表明，c类样本都以半径相等的超球面形状分布在特征空间内，且具有相等的先验概率。图2.8(a)表示一个在二维特征空间中满足上述条件的两类别问题示意图，图中两类分布为两个相同的同心园，图中μ<sub>1</sub>与μ<sub>2</sub>为其圆心。</span></td>
+        </tr>
+        <tr>
+          <td><img src="../../images/image_content/2/2_3_2d.gif" width="252" height="248"><br>
+            <img src="../../images/image_content/2/2_3_2c.gif" width="273" height="247"> 
+          </td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　在这种条件下，由于|Σ|＝σ<sup>2d</sup>及Σ<sub>i</sub><sup>-1</sup>=σ<sup>2</sup>I，代入(2-37)得<br>
+            　　<img src="../../images/image_content/2/2_3_2b.gif" width="384" height="50" align="absmiddle">　　(2-40)<br>
+            　　由于决策是根据各判别函数之间的大小，因而在(2-48)中一些与类别无关的项可以忽略，再加上先验概率相等这个条件，判别函数可简化成<br>
+            　　<img src="../../images/image_content/2/2_3_5F2a.gif" width="316" height="25" align="absmiddle">　　(2-41)<br>
+            　　由此可见，在这种条件下，最小欧氏距离是决定分类的准则。图2.8(a)表示了两类别情况下μ<sub>1</sub>与μ<sub>2</sub>连线的垂直平分线是其决策面，图2.8(b)则画出多类别的情况，它们分别是相邻区域的垂直平分线组合而成。<br>
+            　　<span class="spe">前面我们曾经提到过分类的两种基本方法中的一种——模板匹配，最小距离分类器就可看作模板匹配。每个类有一个典型样本(即均值向量)，称为模板，而待分类样本X只要按欧氏距离计算与哪个模板最相似(欧氏距离最短)即可作决定。<br>
+            </span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

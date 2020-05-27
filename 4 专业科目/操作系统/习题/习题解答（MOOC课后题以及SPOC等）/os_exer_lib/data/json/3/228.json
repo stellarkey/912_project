@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在以下的文件物理存储组织形式中，_____ 常用于存放大型的系统文件。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.连续文件",
+        "B.串连文件",
+        "C.索引文件",
+        "D.多重索引文件"
+    ],
+    "q_number":228
+}

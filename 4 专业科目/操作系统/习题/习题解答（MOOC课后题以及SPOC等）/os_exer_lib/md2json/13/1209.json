@@ -1,0 +1,1 @@
+{"knowledge": "中断、异常与系统调用。\r\n", "question": "操作系统处理中断的流程包括____（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.保护当前正在运行程序的现场\r\n B.分析是何种中断，以便转去执行相应的中断处理程序\r\n C.执行相应的中断处理程序\r\n D.恢复被中断程序的现场\r\n"}

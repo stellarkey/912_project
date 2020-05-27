@@ -1,0 +1,21 @@
+{
+    "status":"error",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"文化程度\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.初中",
+        "B.高中",
+        "C.本科",
+        "D.硕士",
+        "E.博士",
+        "F.其他"
+    ],
+    "q_number":1135
+}

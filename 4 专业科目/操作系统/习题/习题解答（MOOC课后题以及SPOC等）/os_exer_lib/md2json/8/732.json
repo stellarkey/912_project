@@ -1,0 +1,1 @@
+{"knowledge": "连续内存分配。\r\n", "question": "(20150309_操作系统试题_doc)设进程A（30K）、B（70K）和C（50K）依次请求内存分配，内存采用可变分区管理。现有两个空闲分区F1（150\r\nK）和F2（90K），如下图所示。若采用最佳适应算法，画出内存分配情况示意图。\r\n| 已用 |\r\n|F1(150K)|\r\n| 已用 |\r\n|F2( 90K)|\r\n| 已用 |  \r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "  ", "type": "4\r\n", "options": "  \r\n"}

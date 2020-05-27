@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"UNIX系统把设备分为_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.输入设备和输出设备",
+        "B.字符设备和块设备",
+        "C.系统设备和用户设备",
+        "D.共享设备和虚拟设备"
+    ],
+    "q_number":192
+}

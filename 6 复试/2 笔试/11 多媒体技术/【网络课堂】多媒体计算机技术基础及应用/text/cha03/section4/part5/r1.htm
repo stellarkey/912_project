@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699"> <font color="#003399"><b>　　（1） 简介</b></font><br>
+      　　CTS的输入是建立在格结构和短语模型基础上的概念描述，输出的是合成语音。这一层次的研究包括自然语言生成、韵律修饰和语音合成。它首先要由概念描述生成带有韵律修饰特性的语句，然后将语句转换成语音输出。<br>
+      　　本节介绍一个由日本大坂大学实现的概念到语音（Concept to Speech )转换系统。这是一个基本格结构表述的语音输出系统-SCOS（Speech 
+      Output from Case Structure representation )。对CTS系统来说，如何表示系统输入是一个值得研究的重要问题。在SOCS中，基于格结构和短语模型之上的表述，即概念表述，被转换成合成语音。这个概念描述是在一个抽象的概念水平上描绘的。它使按照对话内容来修饰输出语句成为可能，同时也有可能构造适应性强的言语输出界面。SOCS以两种内置的机制来控制概念表述的韵律参数：第一个是停顿标记（pause 
+      marker），这是在句子生成时和单词一块生成的。停顿标记用于插入停顿，也可以用于设置韵律短语边界的基频。第二是嵌于惯用模板内的韵律修饰函数PMF(Prosody 
+      Modification Function)。SMF函数控制句型的韵律参数。<br>
+      　　SOCS可能作为智能工作系统（IPS-Intelligent Performanee Systems )的通用接口。以往IPS产生文本方式的消息，并在终端上显示。但人们期望，通过语音与IPS交换信息。当前语音来自文语转换系统，而获得语音更方便的表示方式不应是文本。<br>
+      　　SOCS与IPS的接口框图如下：<br>
+      <font color="#003399">　图3.35 SOCS与IPS的接口</font> <br>
+      　　<img src="../../../../images/chatp/chap03/136.gif" width="328" height="358"> 
+      <br>
+      　　SOCS是把概念表述转换成语音的CTS系统。IPS产生的中间表述形式叫作概念表述，通过对话管理器它被送到SOCS。对话管理器根据上下文修改概念表述，并产生句子和韵律特征。CTS的输入是用语义表示框架，而不是用文本来表示的。它比TTS具有如下优点：CTS系统直接由概念表述产生句子，因而没有必要进行文本分析。一些特征如重音、语速可直接加到概念表述中。一种概念表述可以根据上下文转换成几种句子。故此IPS只需决定&quot;说什么&quot;，而不用管&quot;怎么说&quot;。因此，CTS是人机语音交互的一种必要手段。<br>
+      <font color="#003399"><b>　　（2）概念表述</b></font><br>
+      <font color="#003399">　　a) 中间表述的要求：</font><br>
+      　　要实现人机之间真正自然的对话，有很多问题需要解决。首先是对话的总体处理：如话语中间的完整和省缺；对人意图的理解；依据情景采用最合适的表达方式等。其次是人机语言交互的处理：如语音识别错误后的恢复、输出语音的韵律生成等。这些问题不仅有赖于IPS中的处理，还源于对话本身。因此应设计一个独立于IPS、能灵活地处理这些现象的语音界面是必要的。但自然语言复杂、表达能力很强，而且对话过程中，基于上下文的表述不断地变动。在界面中自动修改自然语言语句是相当难的。总之，信息描述的表示方案起着关键的作用。<br>
+      　　SOCS系统试图找到一种比自然语言更有弹性的中间表述方式，它的特点是： <br>
+      　　·易于抽取用于韵律控制的必要信息。期望CTS对韵律的控制比TTS容易。<br>
+      　　·易于产生语句。CTS从中间表示生成语句，而TTS必须分析文本，因此可能通过简单的机制实现。<br>
+      　　·易于修改中间表述形式(删除单词、增加韵律特性)，以产生适合于上下文的语句。<br>
+      　　·当IPS执行时，易于准备IPS产生中间形式所需的数据。<br>
+      　　·中间形式的表达力应较强，一种表示应能转换成不同的句子和具有不同韵律结构的语言表达。<br>
+      　　·易于IPS产生中间形式。<br>
+      　　比较了众多表示方式后发现把基于格结构的表述和一些模板结合起来,可满足上述要求。图3.36是三个中间表述的例子。在这种表述方案中，给出了表层语句使用的词语和含义，但没有给出语法结构。概念表述减小了CTS生成语句的复杂性，增加了依据对话上下文变化语句的可能性。<br>
+      　<font color="#003399">概念表述的例子 </font><br>
+      <table width="100%" border="1" cellspacing="1" cellpadding="1" bordercolor="#006699" class="text">
+        <tr> 
+          <td> 
+            <div align="left">　s1(hajimeru([$object(lesson1),$persuasive])).<br>
+              　　 ('star')<br>
+              　　lesson1($modify(chiri , benkyo , []).<br>
+              　('geography')('lesson')s2($because(soviet1,seiikusuru([$actor(kome),$negative]))). 
+              <br>
+              　('grow') ('rice') soviet1($is(soren,$modify(samui,kuni,[$p_priminent(samui)])). 
+              <br>
+              　('the Soviet union') ('cold') ('country') ('cold')<br>
+              　$3($why(seiikusuru([$actor(kome),$place(iran)]),[$p_interrogative])). 
+              <br>
+              　('grow') ('rice') ('Iran')</div>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399">　　b) 概念表述的组成：</font><br>
+      　　这里概念表述的定义是基于格结构的。它由七部分组成。图.3.36中以&quot;$ &quot;开头的串都是SOCS系统定义的模板或操作符。如$why() 
+      就是一个惯用模板。<br>
+      　　·原子符号：单词（动词、名词、形容词等）作为原子符号。<br>
+      　　·修饰模板：$Modify (A,B,OPs) 表示&quot;A &quot;与&quot;B &quot;之间的修饰关系（&quot;A 
+      &quot;和&quot;B &quot;是句子的成分）。<br>
+      　　·格模板：用来表示动词的格信息。它表示了动作和受主之间的关系。SOCS中定义了十三种格模板。<br>
+      　　·语气操作符：描述动词的时态、体态和形式等信息，语气操作符将动词按事先存储的模式变成适当的形式。<br>
+      　　·连接模板：表示两个连续句子之间的关系。<br>
+      　　·惯用模板：用于表达IPS输出信息中经常使用的语句/短语模式和不是基于格关系的语义结构。<br>
+      　　· 韵律操作符：它与动词和模板一起指明韵律特性。SOCS有三个韵律操作符：$p_prominent(A) , $p_interrogative 
+      , $p_speed(A,S)。<br>
+      　　在SOCS中，惯用摸板对生成韵律模式扮演重要角色。<br>
+      <table width="100%" border="1" cellspacing="1" cellpadding="1" bordercolor="#006699" class="text">
+        <tr> 
+          <td>$reason(A,B,Ops): [A,wa,p2,B,kara,desu],$mod_acc(4,+,15),$mod_bpit(4,+,10).<br>
+            　　('the reason of A is B')<br>
+            $because(A,B,OPs):[A,kara,p2,B],$mod_bpit(4,190).<br>
+            　　('because A,B')<br>
+            $why(A,OPs):[naze,p2,A,no,desu,ka],$mod_dur(1,+,10),$mod_bpit(3,190). 
+            <br>
+            　　('why A')<br>
+            $is(A,B,OPs):[A,wa,pl,B,desu]. <br>
+            　　('A is B') </td>
+        </tr>
+      </table>
+      惯用模板利用词汇列表产生句子和短语。词汇列表中，除词汇之外，还有停顿标记&quot;p1&quot;和&quot;p2&quot;。停顿符号穿插在形成的句子中，它们将在韵律控制的过程中使用。停顿符号也会用在其他模板中，如修饰模板、格模板和连接模板。<br>
+      韵律修饰函数（PMF）能与惯用模板联系起来，控制韵律参数，如时长、韵律短语起始时的f0、词语的重音。图3.37 $reason中的$mod-acc和 
+      $mod-bpit是PMF的例子。
+      <br>
+      <font color="#003399">　　c) 语句形成：</font><br>
+      　　SOCS是按照模板引用和格语法生成语句的，句子中包括句法结构和停顿标记。动词短语根据格描述，按预定的顺序连接格元素而形成的。<br>
+      　　连成语句后，再自动变换成口语的礼貌形式，句尾加 -dasu或 -masu.。这样，便形成了IPS使用者的友好界面。图3.38表示了由图3.36概念表示生成的语句。图3.36中s1中的hajimeru先变成礼貌形式hajimemasu，然后$persuasive操作符给masu后面加上功能词，映射成macho。这样，hajimeru的结果是hajimemashou。<br>
+      <table width="100%" border="1" cellspacing="1" cellpadding="1" bordercolor="#006699" class="text">
+        <tr> 
+          <td>s1:chiri no pl penkyo wo pl hajimemashou <br>
+            　 ('Let us start studying geography.,)<br>
+            s2:soren wapl samui kuni desu kara p2 kame ga pl seiikushimasen <br>
+            　 ('As the Soviet union is a cold country , rice not grow.')<br>
+            s3:naze p2 kome ga pl iran de pl seiikusuru no desu ka <br>
+            　 ('Why does rice grow in Iran?')</td>
+        </tr>
+      </table>
+      <font color="#003399">　　d) 韵律控制：</font><br>
+      　　·停顿标记：按照生成的语句中的停顿标记插入停顿。停顿时间有两种：<br>
+      　　p2：停顿300ms (PS2)<br>
+      　　p1：停顿100ms (PS1)<br>
+      　　如果短语长度太长，超过25个字符，可在这个短语中插入一个PS1，即把该短语分成两个一次性呼吸短语。注意，词和短语标记是在一个网状结构中生成的。若有不止一个p1时，则选择最外层的p1。<br>
+      　　· 韵律修改函数(PMF)：<br>
+      　　PMF函数用于在惯用摸板中改变句子的局部韵律参数。目前有三个PMF函数：<br>
+      　　$mod_dur：修改时长。<br>
+      　　$mod_bpit：修改韵律短语开始点的f0 。<br>
+      　　$mod_ace：修改重音。<br>
+      　　有两个变量的PMF函数设定的参数是绝对值。有三个变量的PMF函数设定的参数是相对默认值的相对值。PMF函数中第一个变量表示该元素在词汇表中的位置。$mod_dur的第三个变量表示相对默认时长变化的相对值。<br>
+      　　·韵律操作符：<br>
+      　　当惯用模板中调用PMF函数时，在概念表述中给出韵律操作符。换句话说，PMF与语句模式有关，而IPS和对话管理器根据上下文修改语音韵律参数和韵律操作符。SOCS定义了三个韵律操作符:：<br>
+      　　$p_prominent(A)：为了体现韵律上的重读，提高重音突出部分50Hz，提高重音下降部分40Hz，并把变量(A)的持续时间加大5%。<br>
+      　　$p_interrogative：提高疑问句句尾的f0 。SOCS为其准备句尾的特定模式。<br>
+      　　$p_speech(A,S)：根据第二变量&quot;S &quot;控制第一变量A的发音速度。<br>
+      　　图3.38表示图3.36中s3的韵律参数的生成结果。停顿标记p2为惯用模板$why在两个短语间插入一个长停顿。$mod_bpit与$why一起将第二个韵律短语kome（rice）开始点的f0设置为　190Hz。在s3，$p_prominent用于强调samui(cold), 
+      并增加samui的f0。<br>
+      　　e) 语音输出接口中的对话管理：<br>
+      　　图3.35中给出配合SOCS系统工作的语音输出接口。对话管理器能够修改IPS产生的概念表述。这样，输出语音就可与对话内容匹配、韵律自然。对话处理有两种：<br>
+      　　·抽取重读词语：按以下三种情况决定IPS中的词或短语是否重读：一是部分替代或重复出现在表层句子中的词；二是IPS回答用户问题的要点；三是IPS使用的知识。第三种情况与对话管理无关，ISP知道那些词应该重读。<br>
+      　　·惯用模板的使用<br>
+      　　在SCOS系统中，通常使用惯用模板。当使用PMS函数描述一个韵律模板时、在概念表述中使用惯用模板能合成更为自然的语音。ISP不需要知道它能用的是什麽惯用模板。对话管理器可以用惯用模板的形式改写IPS生成的概念表述。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

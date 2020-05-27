@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <font color="#0000FF">小练习2：<br>
+      </font>　　由小练习1 构造的文法例6.1的LR(0)分析表完成，对输入符号串abbcde和abbbce的分析步骤。<br>
+      　　例:6.1 G[S]拓广为:<br>
+      　　S'→ S<br>
+      　　S →a A c B e <br>
+      　　A →b<br>
+      　　A →Ab <br>
+      　　B →d
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 已有表7.1 例6.1 G[S]的LR(0)分析表 
+            </font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"> 
+            <table  width="96%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center" valign="top" rowspan="2"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center" valign="top" colspan="6">ACTION</td>
+                <td align="center" valign="top" colspan="3">GOTO</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">a</td>
+                <td align="center" valign="top" width="10%">c</td>
+                <td align="center" valign="top" width="10%">e</td>
+                <td align="center" valign="top" width="10%">b</td>
+                <td align="center" valign="top" width="10%">d</td>
+                <td align="center" valign="top" width="10%">#</td>
+                <td align="center" valign="top" width="10%">s</td>
+                <td align="center" valign="top" width="10%">A</td>
+                <td align="center" valign="top" width="10%">B</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">0</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">1</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">1</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">acc</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">2</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">3</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">3</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">5</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">6</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">4</td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">2</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">5</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">8</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">7</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">6</td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">3</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">7</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">S<sub><font size="-2">9</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">8</td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">4</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top" width="10%">9</td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">r<sub><font size="-2">1</font></sub></td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+                <td align="center" valign="top" width="10%">&nbsp;</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

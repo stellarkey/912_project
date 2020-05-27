@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"有关线程或进程的描述正确的是（） s6\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.进程是资源分配单位，线程是CPU调度单位",
+        "B.进程拥有一个完整的资源平台，而线程只独享指令流执行的必要资源，如寄存器和栈",
+        "C.线程能减少并发执行的时间和空间开销",
+        "D.同一进程的各线程间共享内存和文件资源，可不通过内核进行直接通信"
+    ],
+    "q_number":1409
+}

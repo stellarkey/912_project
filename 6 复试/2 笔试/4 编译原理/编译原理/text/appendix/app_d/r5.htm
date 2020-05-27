@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 语法、语义分析程序 */<br>
+      　　int block(int lev, /* 当前分程序所在层 */<br>
+      　　　　　　　int tx, /* 名字表当前尾指针 */<br>
+      　　　　　　　bool* fsys /* 当前模块后跟符号集合 */<br>
+      　　　　　　　)<br>
+      　　{<br>
+      　　　int i;<br>
+      　　　int dx; /* 名字分配到的相对地址 */<br>
+      　　　int tx0; /* 保留初始tx */<br>
+      　　　int cx0; /* 保留初始cx */<br>
+      　　　bool nxtlev[symnum]; /* 在下级函数的参数中，<br>
+      　　　　　　　　　　　　　　符号集合均为值参，但由于使用数租实现，<br>
+      　　　　　　　　　　　　　　传递进来的是指针，为防止下级函数改变<br>
+      　　　　　　　　　　　　　　上级函数的集合，开辟新的空间传递给<br>
+      　　　　　　　　　　　　　　下级函数，之后所有的nxtlev都是这样 */ 
+      <p> 　　　dx=3; <br>
+        　　　tx0=tx; /* 记录本层名字的初始位置 */<br>
+        　　　table[tx].adr=cx;<br>
+        　　　gendo(jmp,0,0);<br>
+        　　　if(lev&gt;levmax)error(32);<br>
+        　　　do<br>
+        　　　{<br>
+        　　　　if(sym==constsym) /*常量声明符号，开始处理常量声明 */<br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　　do</p>
+      <p> 　　　　　{<br>
+        　　　　　　constdeclarationdo(&amp;tx,lev,&amp;dx); /* dx的值会被constdeclaration改变，使用指针 
+        */<br>
+        　　　　　　while(sym==comma) <br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　　constdeclarationdo(&amp;tx,lev,&amp;dx);<br>
+        　　　　　　}<br>
+        　　　　　　if(sym==semicolon)<br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　}<br>
+        　　　　　　else error(5);<br>
+        　　　　　}<br>
+        　　　　　while(sym==ident);<br>
+        　　　　}<br>
+        　　　　if(sym==varsym) /*变量声明符号，开始处理变量声明 */<br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　　do<br>
+        　　　　　{<br>
+        　　　　　　vardeclarationdo(&amp;tx,lev,&amp;dx);<br>
+        　　　　　　while(sym==comma) <br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　　vardeclarationdo(&amp;tx,lev,&amp;dx);<br>
+        　　　　　　}<br>
+        　　　　　　if(sym==semicolon)<br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　}<br>
+        　　　　　　else error(5);<br>
+        　　　　　}<br>
+        　　　　　while(sym==ident);<br>
+        　　　　}<br>
+        　　　　while(sym==procsym) /*过程声明符号，开始处理过程声明 */<br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　　if(sym==ident)<br>
+        　　　　　{<br>
+        　　　　　　enter(procedur,&amp;tx,lev,&amp;dx); /* 记录过程名字 */<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}<br>
+        　　　　　else error(4); /* procedure后应为标识符 */<br>
+        　　　　　if(sym==semicolon)<br>
+        　　　　　{<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}<br>
+        　　　　　else error(5); /* 漏掉了分号 */<br>
+        　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　nxtlev[semicolon]=true;<br>
+        　　　　　if(-1==block(lev+1,tx,nxtlev))return -1; /* 又进入一层分程序 */<br>
+        　　　　　if(sym==semicolon)<br>
+        　　　　　{<br>
+        　　　　　　getsymdo;<br>
+        　　　　　　memcpy(nxtlev,statbegsys,sizeof(bool)*symnum);<br>
+        　　　　　　nxtlev[ident]=true;<br>
+        　　　　　　nxtlev[procsym]=true;<br>
+        　　　　　　testdo(nxtlev,fsys,6);<br>
+        　　　　　}<br>
+        　　　　　else error(5); /* 漏掉了分号 */<br>
+        　　　　　}<br>
+        　　　　　memcpy(nxtlev,statbegsys,sizeof(bool)*symnum);<br>
+        　　　　　nxtlev[ident]=true;<br>
+        　　　　　testdo(nxtlev,declbegsys,7);<br>
+        　　　　}<br>
+        　　　　while(inset(sym,declbegsys)); /* 直到没有声明符号 */<br>
+        　　　　code[table[tx0].adr].a=cx; /* 开始生成当前过程代码 */<br>
+        　　　　table[tx0].adr=cx; /* 当前过程代码地址 */<br>
+        　　　　table[tx0].size=dx; /* 声明部分中每增加一条声明都会给dx增加1，<br>
+        　　　　　　　　　　　　声明部分已经结束，dx就是当前过程数据的size */<br>
+        　　　　cx0=cx;<br>
+        　　　　gendo(inte,0,dx); /* 开辟数据段 */<br>
+        　　　　if(tableswitch) /* 输出名字表 */<br>
+        　　　　{<br>
+        　　　　　printf(&quot;TABLE:\n&quot;);<br>
+        　　　　　if(tx0+1&gt;tx)printf(&quot; NULL\n&quot;);<br>
+        　　　　　for(i=tx0+1;i&lt;=tx;i++)<br>
+        　　　　　{<br>
+        　　　　　　switch(table[i].kind)<br>
+        　　　　　　{<br>
+        　　　　　　　case constant:<br>
+        　　　　　　　printf(&quot; %d const %s &quot;,i,table[i].name);<br>
+        　　　　　　　printf(&quot;val=%d\n&quot;,table[i].val);<br>
+        　　　　　　　fprintf(fas,&quot; %d const %s &quot;,i,table[i].name);<br>
+        　　　　　　　fprintf(fas,&quot;val=%d\n&quot;,table[i].val);<br>
+        　　　　　　　break;<br>
+        　　　　　　　case variable:<br>
+        　　　　　　　printf(&quot; %d var %s &quot;,i,table[i].name);<br>
+        　　　　　　　printf(&quot;lev=%d addr=%d\n&quot;,table[i].level,table[i].adr);<br>
+        　　　　　　　fprintf(fas,&quot; %d var %s &quot;,i,table[i].name);<br>
+        　　　　　　　fprintf(fas,&quot;lev=%d addr=%d\n&quot;,table[i].level,table[i].adr);<br>
+        　　　　　　　break;<br>
+        　　　　　　　case procedur:<br>
+        　　　　　　　printf(&quot; %d proc %s &quot;,i,table[i].name);<br>
+        　　　　　　　printf(&quot;lev=%d addr=%d size=%d\n&quot;,table[i].level,table[i].adr,table[i].size);<br>
+        　　　　　　　fprintf(fas,&quot; %d proc %s &quot;,i,table[i].name);<br>
+        　　　　　　　fprintf(fas,&quot;lev=%d addr=%d size=%d\n&quot;,table[i].level,table[i].adr,table[i].size);<br>
+        　　　　　　　break;<br>
+        　　　　　　}<br>
+        　　　　　}<br>
+        　　　　　printf(&quot;\n&quot;);<br>
+        　　　　}<br>
+        　</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

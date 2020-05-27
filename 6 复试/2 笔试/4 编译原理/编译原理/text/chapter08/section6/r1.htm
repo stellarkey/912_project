@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　回想在上一节，讨论控制语句中的布尔表达式的翻译时，使用E．true和E．false分别指出尚待回填&quot;真、&quot;假&quot;出口的四元式串，如对于条件语句if 
+        E then S1 else S2，在扫描到then时才能知道E的&quot;真&quot;出口，而E的&quot;假&quot;出口只有处理了S1之后，到达else时才明确。即是说，必须将E．false的值传下去，以便到达相应的else时才进行回填。另外，E为真时，S1语句执行完时意味着整个if 
+        then else语句也已执行完毕，因此应在S1之后产生一无条件转指令，将控制离开整个if then else语句。但在完成S2的翻译之前，该无条件转的转移目标无法知道。对于语句嵌套的情况，如下面的语句：if 
+        E1 then if E then S1 else S2 else S3，在翻译完S2之后，S1后的无条件转移目标仍无法确定，因为它不仅要跨越S2还应跨越S3。看出，转移目标的确定和语句所处的环境密切相关。因此仿照处理布尔表达式的办法，让非终结符S（和L）含有一项语义值S．CHAIN（和L．CHAIN）。也是一条链，它把所有那些四元式串在一起，这些四元式期待在翻译完S（L）之后回填转移目标。真正的回填工作将在处理S的外层环境的某一适当时候完成。 
+        <br>
+        　　按照上述文法产生式相应的语义动作，加上前述关于赋值句和布尔表达式的翻译法，语句<br>
+        　　while （A＜B） do if （C＜D） then X∶=Y+Z<br>
+        　　将被翻译成如下的一串四元式：<br>
+        　　100　if A＜B goto 102<br>
+        　　101　goto　107<br>
+        　　102　if　C＜D goto 104<br>
+        　　103　goto 100<br>
+        　　104　T∶=Y+Z<br>
+        　　105　X∶=T<br>
+        　　106　goto 100<br>
+        　　107
+      </td>
+  </tr>
+</table>
+</body>
+</html>

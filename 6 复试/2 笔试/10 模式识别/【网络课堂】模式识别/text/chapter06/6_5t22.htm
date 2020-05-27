@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　与(6-55)式不同的是权向量各分量的修改量不再只与输出值及数据相应分量的乘积成正比，在(6-55)式中<img src="../../images/image_content/6/6_5018.gif" width="17" height="25" align="absmiddle">的的作用为<img src="../../images/image_content/6/6_5028.gif" width="59" height="29" align="absmiddle">所取代。使用(6-59)式的<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">规则不仅可以做到保持权向量模的恒定，并且所得到的该向量就是C矩阵对应最大特征值的特征向量。图6-14表示了两个二维数据集使用该规则的训练过程及最终结果。其中(a)中的数据集均值为零，而(b)中的数据集均值不为零。训练从W被赋为一个小的随机向量开始，随着训练的继续，W模增大并趋于稳定。实际上使用<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">规则的结果是使W选择到使输出值V的均方值最大的方向。对(a)中的数据来说W的方向指向数据集方差最大的方向，而对(b)中的数据来说，它对应于数据沿该方向投影的绝对值之和为最大的方向。</td>
+        </tr>
+        <tr> 
+          <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_5029.gif" width="220" height="186"><br> 
+            <img src="../../images/image_content/6/6_5030.gif" width="186" height="172"> 
+            <br>
+            图6-14 使用 规则的训练示例 </td>
+        </tr>
+        <tr> 
+          <td class="FCcontent">　　 为了说明以上结论，可以利用上面已定义的相关矩阵C。假设W已达到某一个稳定值，则有<br>
+            　　<img src="../../images/image_content/6/6_5031.gif" width="85" height="31" align="absmiddle"><br> 
+            <br>
+            　　而<img src="../../images/image_content/6/6_5032.gif" width="277" height="127" align="texttop"><br>
+            　　则有<img src="../../images/image_content/6/6_5033.gif" width="209" height="32" align="absmiddle"><br>
+            　　因此有<img src="../../images/image_content/6/6_5034.gif" width="151" height="29" align="absmiddle"><br>
+            　　<img src="../../images/image_content/6/6_5035.gif" width="76" height="24" align="absmiddle">　　　　(6-60)<br>
+            　　其中<img src="../../images/image_content/6/6_5036.gif" width="212" height="32" align="absmiddle"> 
+            　　(6-61)<br>
+            　　该式表明W是C矩阵的某一个特征向量，而W的模为1。<br>
+            　　(6-60)式表明相关矩阵C的任一个规范化特征向量都能满足该式，但是实际上只有对应于最大特征值的特征向量才是稳定的，　　这一点就不再证明。此外以上推导只说明使用 
+            规则存在一个平均意义上的稳定固定点，对解的收敛性并没有给予证明，这可能要用到随机近似理论，这里就不再赘述。<br>
+            　　除了<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">规则外，还有一些类似的方法，本节也不再讨论。<br>
+            　　从以上分析可以看出，如果将数据集转换成均值为零，则相关矩阵也就成为协方差矩阵，因而使用<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">规则所得到的W向量就是对应协方差矩阵最大特征值的特征向量，这也就是第一个主分量。一般情况下主分量分析不仅需要得到第一个主分量，而且要求得到前M个主分量，也就是说，如果将协方差矩阵C的M个最大的特征值按降序排列<br>
+            　　<img src="../../images/image_content/6/6_5037.gif" width="124" height="40" align="absmiddle"><br>
+            　　则所要找的是相应的M个特征向量。<br>
+            　　利用人工神经网络进行主分量分析，可以采用不同的网络结构。对使用单层前馈网络的形式，有两个相近的比较着名的方法，一个是由<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">提出的，另一个是由Sanger提出的。所使用的网络可以是线性单元，但Sanger的方法可以扩展到使用非线性单元的情况。对于线性单元的情况，Sanger的学习规则是<br>
+            　　<img src="../../images/image_content/6/6_5038.gif" width="174" height="51" align="absmiddle">　　　　(6-62)<br>
+            　　而<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">的学习规则为<br>
+            　　<img src="../../images/image_content/6/6_5039.gif" width="175" height="50" align="absmiddle">　　　(6-63)<br>
+            　　其中i为输出结点层中结点的下标，因此<sub><img src="../../images/image_content/6/6_5042.gif" width="22" height="26" align="absmiddle"></sub>表示所求的第i个主分量。上两式的唯一不同点是公式右端求和式的上限。使用(6-62)式得到的结果正是按降序排列的前M个主分量向量。而<img src="../../images/image_content/6/6_5026.gif" width="23" height="27" align="absmiddle">的规则所收敛到的M个权向量，其描述的子空间与前M个子空间所组成的子空间相同，但是并没有确定特征向量的方向，它所确定的权向量并不唯一，它与初始条件有关，也与学习时所使用的采样样本有关。<br>
+            　　通过主分量分析这个例子可以体会到使用非监督Hebb类型学习方法的特点。使用这种方法对数据集分析，主要用来获取对数据集的某些描述参数，这些参数则往往以权向量的形式表示。如果将它与单层的感知器相比较，感知器关心的是对数据类别的正确划分，因而关心的是输出结点输出值，是输入输出映射关系的输出结果。而非监督Hebb学习方法关心的是所训练得到的权向量，而不是其输出结点的状态本身。<br>
+            　　至于要用到网络对数据进行划分、聚类、则要使用非监督的竞争学习方法，这将在下一节中讨论。</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

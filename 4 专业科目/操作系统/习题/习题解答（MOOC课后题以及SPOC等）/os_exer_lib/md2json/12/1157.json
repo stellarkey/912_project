@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述\r\n", "question": "下面对于分时操作系统的说法，正确的是（）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.应用程序执行的先后顺序是完全随机的\r\n B.应用程序按照启动的时间依次执行\r\n C.应用程序可以交替执行\r\n D.应用程序等待的时间越长，下一次调度被选中的概率一定越大\r\n"}

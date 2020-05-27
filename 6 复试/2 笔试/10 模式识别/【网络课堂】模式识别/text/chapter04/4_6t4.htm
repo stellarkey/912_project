@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　　<font color="#FF0000">此节不作基本要求</font><br>
+            　　上面讨论K-L变换时得出K-L坐标系是由 <img src="../../images/image_content/4/4_6048.gif" width="57" height="27" align="absmiddle">的特征值对应的特征向量产生，因而<img src="../../images/image_content/4/4_6048.gif" width="57" height="27" align="absmiddle">被称为K-L坐标系的产生矩阵。实际上使用不同的向量作为产生矩阵，会得到不同的K-L坐标系，从而满足不同的分类要求。例如可用样本数据的协方差矩阵<img src="../../images/image_content/4/4_6049.gif" width="147" height="45" align="absmiddle">作为产生矩阵。这跟<img src="../../images/image_content/4/4_6048.gif" width="57" height="27" align="absmiddle">所产生的K-L坐标系是一样的。另一种按分类均值<img src="../../images/image_content/4/4_6050.gif" width="22" height="24" align="absmiddle">及各类先验概率<img src="../../images/image_content/4/4_6051.gif" width="21" height="24" align="absmiddle">考虑。如各类别协方差矩阵为<img src="../../images/image_content/4/4_6052.gif" width="219" height="43" align="absmiddle">则可以用类内离散矩阵S<sub>W</sub>作为产生矩阵，<img src="../../images/image_content/4/4_6053.gif" width="91" height="32" align="absmiddle"> 
+            其效果相当于只按类内离散程度进行特征选取。如果只以某一样本集的协方差矩阵<img src="../../images/image_content/4/4_6054.gif" width="31" height="35" align="absmiddle">作为产生矩阵，则效果是对该类样本集有信息压缩的最优性质。<br>
+            　　下面讨论一些不同的使用K-L变换的方法。</span> 
+            <p><span class="FCcontent"><strong>4.6.3.1 
+              利用类均值向量提取特征</strong><a name="1"></a><br>
+              　　</span><span class="spe">此节不作基本要求</span><span class="FCcontent"></font><br>
+              　　在讨论欧氏距离度量进行特征提取时，曾提到一些判据是从使类内尽可能密集，类间尽可能分开的设计思想出发的，可见类内离散程度与类间离散程度要结合起来考虑。如何在K-L变换方法中体现对这两者的兼顾可用不同的做法。一种做法是先按<img src="../../images/image_content/4/4_6072.gif" width="23" height="27" align="absmiddle">，即类内离散度矩阵提供的信息(作为产生矩阵)产生相应的K-L坐标系统，从而把包含在原向量中各分量的相关性消除，并得到在新坐标系中各分量离散的程度。然后对均值向量在这些坐标中分离的程度作出判断，决定在各坐标轴分量均值向量所能提供的相对可分性信息。为此可设判据为：<br>
+              　　<img src="../../images/image_content/4/4_6055.gif" width="117" height="60" align="absmiddle">　　(4-72)<br>
+              　　其中<img src="../../images/image_content/4/4_6056.gif" width="71" height="32" align="absmiddle"> 
+              表示在新坐标轴u<sub>i</sub>上的分量，<br>
+               <img src="../../images/image_content/4/4_6057.gif" width="208" height="57"><br>
+              　　是类间离散度矩阵，<img src="../../images/image_content/4/4_6058.gif" width="39" height="29" align="absmiddle"> 
+              分别是类均值与总体均值.<img src="../../images/image_content/4/4_6059.gif" width="40" height="28" align="absmiddle"> 
+              是各类先验概率。实际上(4-72)也可写作<br>
+              　　<img src="../../images/image_content/4/4_6060.gif" width="118" height="60" align="absmiddle">　　(4-73)<br>
+              　　可见<img src="../../images/image_content/4/4_6061.gif" width="46" height="29" align="absmiddle"> 
+              是类间离散度与类内离散度在u<sub>j</sub>这坐标的分量之比<img src="../../images/image_content/4/4_6061.gif" width="46" height="29" align="absmiddle">越大，表明在新坐标系中该坐标抽包含较多可分性信息。因此为了降低特征空间的维数，可以将各分量按<img src="../../images/image_content/4/4_6061.gif" width="46" height="29" align="absmiddle">大小重新排列，使<br>
+              <img src="../../images/image_content/4/4_6062.gif" width="200" height="39" align="absmiddle"> 
+              <br>
+              　　并取与前面d个最大的<img src="../../images/image_content/4/4_6061.gif" width="46" height="29" align="absmiddle">值相对应的特征向量u<sub>j</sub>,j=1,...,d作为特征空间的基向量。<br>
+              　　例4.2 设有两类问题，其先验概率相等，即<img src="../../images/image_content/4/4_6063.gif" width="128" height="49" align="absmiddle"> 
+              ，样本均值向量分别为：<br>
+              　　<img src="../../images/image_content/4/4_6064.gif" width="97" height="57" align="absmiddle"><br>
+              　　协方差矩阵分别是<br>
+              <img src="../../images/image_content/4/4_6065.gif" width="234" height="72" align="absmiddle"> 
+              <br>
+              　　为了把维数从2压缩为1，求<img src="../../images/image_content/4/4_6066.gif" width="21" height="25" align="absmiddle">的特征向量<br>
+              　　<img src="../../images/image_content/4/4_6067.gif" width="214" height="56" align="absmiddle"><br>
+              　　它的特征值矩阵和特征向量分别是：<br>
+              　　<img src="../../images/image_content/4/4_6068.gif" width="276" height="67" align="absmiddle"><br>
+              　　今有<img src="../../images/image_content/4/4_6069.gif" width="96" height="62" align="absmiddle"><br>
+              　　可计算得<img src="../../images/image_content/4/4_6070.gif" width="193" height="34" align="absmiddle"><br>
+              　　因此<img src="../../images/image_content/4/4_6071.gif" width="130" height="34" align="absmiddle">作为一维特征空间的坐标轴，见图4.3。</span><br>
+            </p></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/4/4_6073.gif" width="367" height="250"><br>
+            <span class="FCcontent">图 4.3</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

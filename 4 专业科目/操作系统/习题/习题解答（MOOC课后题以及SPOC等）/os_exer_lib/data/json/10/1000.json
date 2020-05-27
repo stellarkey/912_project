@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"下列四个操作系统中，是分时系统的为 。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.CP／M",
+        "B.MS－DOS",
+        "C.UNIX",
+        "D.WINDOWS NT"
+    ],
+    "q_number":1000
+}

@@ -1,0 +1,1 @@
+{"knowledge": "操作系统概述。\r\n", "question": "关于Unix的用户接口处理的说明不正确的提法是（　　　）\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.用户注册成功后，即处于shell控制下 \r\n B.shell 以交互方式为用户服务 \r\n C.shell 以某个提示符（如$）表示等待用户输入命令\r\n D.用户打入shell命令行后，当这个命令行执行完以后，才再次显示提示符，等待用户输入下一命令\r\n"}

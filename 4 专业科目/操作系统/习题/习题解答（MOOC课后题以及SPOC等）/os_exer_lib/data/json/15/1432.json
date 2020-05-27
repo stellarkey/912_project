@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"CD\n",
+    "question":"下列叙述中正确的是() s2\n",
+    "source":"网络",
+    "answer":"CD",
+    "type":"multi_answer",
+    "options":[
+        "A.lab５建立了用户进程，且0~3GB都是用户可访问空间，用户进程可进行正常读写",
+        "B.lab５建立了用户进程，且3GB～４GB都是内核可访问空间，内核可进行正常读写",
+        "C.lab5中的第一个用户进程是内核创建的。",
+        "D.lab5中的用户进程可通过fork创建新的用户进程。"
+    ],
+    "q_number":1432
+}

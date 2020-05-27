@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"分区分配内存管理方式的主要保护措施是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.界地址保护",
+        "B.程序代码保护",
+        "C.数据保护",
+        "D.栈保护"
+    ],
+    "q_number":676
+}

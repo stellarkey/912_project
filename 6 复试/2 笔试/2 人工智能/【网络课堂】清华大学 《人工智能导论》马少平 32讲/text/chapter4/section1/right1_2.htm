@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">（3）变量换名<br>
+        在一个量词的约束范围内，受该量词约束的变量用任何一个未出现的变量名替换，并不改变一个合适公式的真值。因此不同的量词约束的变量，应使用不同的变量名。<br>
+        例如：<br>
+        (<img src="../images/001.gif" width="11" height="12">x)A(x)∨(<img src="../images/002.gif" width="8" height="12">x)B(x)<br>
+        这里A(x)中的x，和B(x)中的x可以认为是不同的x，因为A(x)中的x受第一个量词约束，B(x)中的x受第二个量词约束，所以可以将其中一个变量名用其他的变量名替换。如：<br>
+        (<img src="../images/001.gif" width="11" height="12">x)A(x)∨(<img src="../images/002.gif" width="8" height="12">y)B(y)<br>
+        在本例中没有出现这种情况。<br>
+        （4）量词左移<br>
+        将所有的量词移到公式的左边，但不改变原来各量词的排列顺序。如上例可以重写为：<br>
+        (<img src="../images/001.gif" width="11" height="12">x)(<img src="../images/002.gif" width="8" height="12">y){A(x)∨B(y)}<br>
+        这也是为什么在第三步要进行变量改名的原因，否则就不能进行这种移动。 <br>
+        在本例中没有出现这种情况。<br>
+        经过以上几步后，就将一个合式公式转化为了前束范式，其特点是：所有量词均非否定的出现在公式的前部，而且所有量词的约束范围均是整个合式公式。<br>
+        （5）消去存在量词（skolem化）<br>
+        按照这样的原则将公式中的存在量词消去：设<img src="../images/005.gif" width="10" height="11">是前束范式中的一个存在量词，如果在它的前面没有出现全称量词，则<img src="../images/005.gif" width="10" height="11">所约束的变量x，全部用一个新的常量（未在公式中出现过）代替；如果 
+        <img src="../images/005.gif" width="10" height="11">前面有全称量词，则<img src="../images/005.gif" width="10" height="11">所约束的变量x，全部用一个新的（未在公式出现过的）函数（称为skolem函数）代替，该函数的变量是哪些在<img src="../images/005.gif" width="10" height="11">前面的全称量词所约束的变量。然后将存在量词<img src="../images/005.gif" width="10" height="11">消去。<br>
+        对于本例有：<br>
+        (<img src="../images/002.gif" width="8" height="12">z)(<img src="../images/001.gif" width="11" height="12">x)(<img src="../images/002.gif" width="8" height="12">y){[(～P(x)∧～Q(x))∨R(y)]∨U(z)}<br>
+        ＝&gt; (<img src="../images/001.gif" width="11" height="12">x){[(～P(x)∧～Q(x))∨R(f(x))]∨U(a)}<br>
+        对于存在量词&quot; z&quot;，由于其前面没有全称量词，所以受该存在量词约束的变量z用一个常量a代替。对于存在量词&quot;<img src="../images/002.gif" width="8" height="12">y&quot;，其前面有全称量词&quot;<img src="../images/001.gif" width="11" height="12">x&quot;，所以受该存在量词约束的变量y用一个skolem函数f代替，f的变量是x，因为约束x的全称量词在约束y的存在量词的前面。<br>
+        （6）化为合取范式<br>
+        利用结合律、分配律等，可以把S范式的母式转化为合取范式。结合律、分配律描述为： <br>
+        (A(x)∧B(x))∧C(x) ≡ A(x)∧(B(x)∧C(x))<br>
+        (A(x)∨B(x))∨C(x) ≡ A(x)∨(B(x)∨C(x))<br>
+        A(x)∧(B(x)∨C(x)) ≡ (A(x)∧B(x))∨(A(x)∧C(x))<br>
+        A(x)∨(B(x)∧C(x)) ≡ (A(x)∨B(x))∧(A(x)∨C(x))<br>
+        对于本例有：<br>
+        　　(<img src="../images/001.gif" width="11" height="12">x){[(～P(x)∧～Q(x))∨R(f(x))]∨U(a)}<br>
+        ＝&gt; (<img src="../images/001.gif" width="11" height="12">x){[～P(x)∧～Q(x)]∨R(f(x))∨U(a)}<br>
+        ＝&gt; (<img src="../images/001.gif" width="11" height="12">x){[～P(x)∨R(f(x))∨U(a)]∧[～Q(x)∨R(f(x))∨U(a)]}<br>
+        （7）隐去全称量词<br>
+        经过前6步变换以后，所有的变量都是受全称量词约束，所以可以将全称量词隐去，默认所有的变量是受全称量词约束的。<br>
+        对于本例有：<br>
+        [～P(x)∨R(f(x))∨U(a)]∧[～Q(x)∨R(f(x))∨U(a)]<br>
+        （8）表示为子句集<br>
+        在隐去全称量词以后，用&quot;，&quot;号代替公式中的&quot;∧&quot;，并用&quot;{&quot;和&quot;}&quot;括起来，就得到了原合适公式的子句集。<br>
+        对于本例，得到子句集如下：<br>
+        {～P(x)∨R(f(x))∨U(a), ～Q(x)∨R(f(x))∨U(a)}<br>
+        该子句集含有～P(x)∨R(f(x))∨U(a)和～Q(x)∨R(f(x))∨U(a)}两个子句。<br>
+        （9）变量换名<br>
+        对子句集中的变量再次进行换名替换，使得不同的子句中的变量使用不同的名字。最简单的方法是采用加下标的方法。对于本例有：<br>
+        {～P(x1)∨R(f(x1))∨U(a), ～Q(x2)∨R(f(x2))∨U(a)}<br>
+        注意：在有些书中并不要求对子句集中的变量进行换名替换，如果是这样的话，你必须很清楚，不同子句中的变量，即便是同名的，也可以代表不同的变量。在后边将要介绍的归结法中，你会发现，如果不进行换名，很容易出现错误。因此建议大家对变量进行换名。</font></p>
+      <p><font color="#000099">将一个合适公式化为子句集是后面将要介绍的归结法的基础，如果不熟悉这部分内容，请参看离散数学、数理逻辑等方面的有关内容。</font><br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

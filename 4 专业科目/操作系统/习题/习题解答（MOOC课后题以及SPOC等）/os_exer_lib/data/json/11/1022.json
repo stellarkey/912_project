@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"批处理操作系统的特点不包括\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.提高了系统资源的利用率",
+        "B.用户可以直接干预作业的运行，具有交互性",
+        "C.提高了单位时间内的处理能力",
+        "D.提高了系统的吞吐率"
+    ],
+    "q_number":1022
+}

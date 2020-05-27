@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　例如变量可以有一个属性&quot;类型&quot;以便以后进行类型审查，整常数可以有一个属性&quot;值&quot;，以便以后生成代码需要。<br>
+        　　对每个产生式，给一个语义规则或动作（actions），用以描述如何计算和每个符号相联的属性值。<br>
+        　　在8.2节，我们已经讨论了两种类型的属性：综合和继承的。综合的属性是指沿着语法树向上的属性，即产生式左端的非终结符的属性是由产生式右端的非终结符的属性计算的，终结符的属性通常由词法分析程序提供，然后再作为综合属性由此向上走。也就是说，若产生式为 
+        x→y<sub><font size="-2">1</font></sub>y<sub><font size="-2">2</font></sub>…y<sub><font size="-2">n</font></sub>，综合属性a的计算公式形式为x.a=f(y<sub><font size="-2">1</font></sub>.a,y<sub><font size="-2">2</font></sub>.a, 
+        …,y<sub><font size="-2">n</font></sub>.a)。<br>
+        　　例如，下述属性文法说明了计算整数的过程：<br>
+        　　&lt;digit&gt; → 0 {digit.value=0}<br>
+        　　　　　　　　…<br>
+        　　　　　　 　9 {digit.value=9}<br>
+        　　&lt;int1&gt; → &lt;digit&gt; {int1.value=digit.value}<br>
+        　　　　　　　|&lt;int2&gt; &lt;digit&gt;　{int1.value=int2.value*10+digit.value} 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF">图8.14 属性值自底向上传递</font></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"><img src="../../../img/chap08/8_8_1.gif" width="268" height="203"></td>
+        </tr>
+      </table>
+      　　图8.14是句子42的标有属性值的语法树，属性值value的计算过程首先从最底层最左边的结点4开始，然后按照自底向上归约的顺序，一步步向上综合的。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

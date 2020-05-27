@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　（4）线性输入形策略 </font></p>
+      <p align="center" ><img src="../images/rl4.6.gif" width="382" height="328"></p>
+      <p align="center" ><font color="#FF0000">图4.6线性输入形策略搜索过程</font></p>
+      <p >　　这种策略每次归结时，至少有一个母子句是从基本集中挑选，图4.6是这种策略的示例图。该策略可限制生成归结式的数目，具有简单和效率高的优点。但它不是一个完备的策略，我们来看一个反例：<br>
+        S＝{Q（u）∨P（A），~Q（w）∨P（w），~Q（x）∨~P（x），Q（y）∨~P（y）}，从S出发很容易找到一棵反演树，但不存在一个线性输入形策略的反演树。<br>
+        　　<font color="#000099">（5）祖先过滤形策略</font></p>
+      <p align="center" ><img src="../images/rl4.7.gif" width="334" height="333"></p>
+      <p align="center" ><font color="#FF0000">图4.7祖先过滤策略的搜索过程</font></p>
+      <p >　　祖先过滤形策略在每次归结时，有一个母子句或者是从基本集中挑选，或者是从另一个母子句的先辈子句中挑选，这和线性输入形策略有点相似，但比它降低了挑选的限制。可以证明这种策略也是完备的。图4.7是这种策略求解上例的一棵反演树。<br>
+        　　上面分别对几种典型策略的基本思想进行了讨论，还可以采取组合的方式得到更实用的策略。总之归结反演系统搜索策略的研究主要考虑完备性和效率的问题，更全面的讨论可参阅有关文献。<br>
+      </p>
+ 
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　而权的修正则对Wc和y<sub>j</sub>∈Nc中W<sub>j</sub>进行，具体算法为：<br>
+      　　1. 初值权W<sub>j</sub>= W<sub>j</sub>(0)，j = 0,…,n<sub>2<font size="-2"></font></sub>,为一个小的随机量；t 
+      = 0。<br>
+      　　2. 在样本X<sup><font size="-2">1</font></sup>,X<sup><font size="-2">2</font></sup>,…,X<sup><font size="-2">p</font></sup>中，任取一个样本作为网络的输入。<br>
+      　　计算<br>
+      　　<img src="../../../img/chap06/pic49.gif" width="211" height="40"> <br>
+      　　j=1, 2,…, n1,取其中最大的d<sub>j</sub>，对应于的y<sub>j</sub>最大，作为竞争得胜的神经元，取c为相应的j。<br>
+      　　3. 对权W<sub>j</sub>进行修改： <br>
+      　　<img src="../../../img/chap06/pic50.gif" width="325" height="57"><br>
+      　　其中，<br>
+      　　<img src="../../../img/chap06/pic51.gif" width="115" height="38"><br>
+      　　修正的区域Nc(t)，一开始很大，约为输出平面的1/2，中心点为j，形状可用正方形或六角形，然后每次迭代时该面积按下面公式减少： <br>
+      　　<img src="../../../img/chap06/pic52.gif" width="137" height="19">A<sub><font size="-2">1</font></sub>,A<sub><font size="-2">2</font></sub>,τ为常数<br>
+      　　4. t=t+1，回到步骤2，直到在输出神经元平面上的兴奋神经元相对输入样本稳定，或训练次数达到预定最大训练次数T为止。<br>
+      　　网络的输出层可以设计成二维的，也可以是一维的。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "可以破坏环路等待条件的策略是\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.资源抢占 \r\n B.独享分配 \r\n C.按序分配 \r\n D.共享分配\r\n"}

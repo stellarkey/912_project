@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"访管指令的作用是\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.嵌套调用",
+        "B.用户使用的命令",
+        "C.用户态转换为核心态",
+        "D.保证运行在不同状态"
+    ],
+    "q_number":1025
+}

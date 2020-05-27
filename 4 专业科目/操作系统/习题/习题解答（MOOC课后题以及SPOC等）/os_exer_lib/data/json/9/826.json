@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)由于内存大小有限，为使得一个或多个作业能在系统中运行，常需要用外存来换取内存。其中在作业内\n部对内外进行交换的技术称为 ﹎﹎﹎﹎技术。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.SPOOLING",
+        "B.SWAPPING",
+        "C.虚拟存储",
+        "D.虚拟机",
+        "E.进程管理",
+        "F.设备管理"
+    ],
+    "q_number":826
+}

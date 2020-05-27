@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　标记S的顶端结点是树根，它的直接子孙为a，A和S三个结点，a在A和S的左边，A在S的左边，S→aAS是一个产生式。同样，A结点至少有一个除它自己以外的子孙，(A的直接子孙为S，b和A)，A肯定是非终结符。<br>
+      　　图4.3的推导树是例4.13的文法G的句型aabbaa的推导过程非常直观自然的描述，从左至右读出图4.3的推导树的叶子标记，得到的就是句型aabbaa。常常把aabbaa叫做推导树的结果，也把推导树叫做句型aabbaa的语法树，而且在以后的章节中，我们会任意使用语法树和推导树两种名称。<br>
+      　　语法树表示了在推导过程中施用了哪个产生式和施用在哪个非终结符上，它并没有表明施用产生式的顺序。比如例4.13文法G的句型aabbaa的推导过程可以列举以下3个：<br>
+      　　推导过程1：S <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAa 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSbAa 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSbbaa 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabbaa<br>
+      　　推导过程2：S <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSbAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabbaS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabbaa<br>
+      　　推导过程3：S <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSbAS 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aSbAa 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabAa 
+      <img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aabbaa<br>
+      　　其中第一个推导过程的特点是在推导中总是对当前串中的最右非终结符施用产生式进行替换，施用产生式的顺序为(1)，(4)，(2)，(5)和(4)。第二个推导过程恰恰相反，在推导中总是对当前串中的最左非终结符施用产生式进行替换，施用产生式的顺序为(1)，(2)，(4)，(5)和(4)。除上述3个推导过程外，显然还可以给出一些不同的推导过程，我们不再列举。</td>
+  </tr>
+</table>
+</body>
+</html>

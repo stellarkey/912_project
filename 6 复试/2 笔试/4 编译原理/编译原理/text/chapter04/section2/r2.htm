@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　对于例4.1的文法G，可以给出直接推导的一些例子如下：<br>
+      　　v=0S1,w=0011,直接推导：0S1<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">0011，使用的规则：S→01，这里γ=0，δ=1。<br>
+      　　v=S,w=0S1，直接推导：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">0S1使用的规则：S→0S1，这里γ=ε，δ=ε<br>
+      　　v=0S1,w=00S11,直接推导：0S1<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">00S11，使用的规则：S→0S1，这里γ=0，δ=1。<br>
+      　　对于例4.2的文法G，直接推导的例子有：<br>
+      　　v=〈标识符〉，w=〈标识符〉〈字母〉，直接推导：〈标识符〉<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">〈标识符〉〈字母〉，使用的规则：〈标识符〉→〈标识符〉〈字母〉，这里γ=δ=ε<br>
+      　　v=〈标识符〉〈字母〉〈数字〉，w=〈字母〉〈字母〉〈数字〉，<br>
+      　　直接推导：〈标识符〉〈字母〉〈数字〉<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">〈字母〉〈字母〉〈数字〉，使用的规则：〈标识符〉→〈字母〉。这里γ=ε，δ<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="13"><img src="../../../img/index/1x1pixel.gif" width="1" height="14">〈字母〉〈数字〉。<br>
+      　　v=abc〈数字〉，w=abc5，直接推导：abc〈数字〉<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="15">abc5, 
+      使用的规则：〈数字〉→5，这里γ=abc,δ=ε。</td>
+  </tr>
+</table>
+</body>
+</html>

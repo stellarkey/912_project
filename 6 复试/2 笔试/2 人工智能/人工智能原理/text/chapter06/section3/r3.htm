@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　离散Hopfield神经网络(DHNN)是一个离散时间序列系统，网络结构上只有一个神经元层，各个神经元的转移函数都是线性阈值函数。每个神经元均有一个活跃值，或称之为状态（取两个可能值之一）<br>
+      　　设N是一n阶神经网络。连接权重为W，状态改变阈值为θ。则N由(W,θ)唯一的定义，其中：W为n×n对称矩阵，其中w<sub>ij</sub>为神经元（节点）i与j的之间的连接权值；θ为n维向量，θ<sub>i</sub>表示神经元i的阈值。 
+      <br>
+      　　每个节点可处于两个可能状态之一，只能取值1或－1。以x<sub>i</sub>(t)表示任意时刻t（t为正整数）节点i的状态，向量X(t)是神经网络N在t时刻的状态向量。描述状态变化的方程式可写为 
+      <br>
+      　　<img src="../../../img/chap06/pic27.gif" width="281" height="54"><br>
+      　　<img src="../../../img/chap06/pic28.gif" width="160" height="47"><br>
+      　　整个网络的状态向量X(t)∈{-1, +1}<sup>n</sup>，如果w<sub>ij</sub> = 0( i = 1, 2, 3, …n)则称为无反馈的DHNN，否则称为有自反馈的DHNN。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

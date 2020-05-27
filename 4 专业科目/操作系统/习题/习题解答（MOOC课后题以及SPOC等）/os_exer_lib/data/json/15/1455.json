@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量与管程"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"多个进程对信号量S进行了6次P操作，2次V操作后，现在信号量的值是-3，与信号量S相关的处于阻塞状态的进程有几个（） s2\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.1个",
+        "B.2个",
+        "C.3个",
+        "D.4个"
+    ],
+    "q_number":1455
+}

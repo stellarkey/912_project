@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程和程序的一个本质区别\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.前者分时使用CPU，后者独占CPU",
+        "B.前者存储在内存，后者存储在外存",
+        "C.前者在一个文件，后者在多个文件中",
+        "D.前者是动态的，后者是静态的"
+    ],
+    "q_number":611
+}

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"使用“银行家算法”决定是否给进程分配资源，这种策略属于：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.预防死锁",
+        "B.避免死锁",
+        "C.检测死锁",
+        "D.解除死锁"
+    ],
+    "q_number":97
+}

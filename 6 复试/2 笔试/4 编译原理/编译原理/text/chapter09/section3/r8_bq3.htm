@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　在等长属性值域的组织中（见图9.12），讨论了用成员链来组织C语言的结构量符号。也可用成员的索引结构来构造结构量。这时结构标志符号在符号表项中设一个指向成员索引区的指针，索引区包含两种属性信息，即该结构的空间尺寸及成员索引信息。上述结构例子struct 
+      tag1的不等长索引结构可用图9.15所示的组织。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.15 不等长结构索引组织的符号表</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_15.gif" width="423" height="400"></td>
+        </tr>
+      </table>
+      　　其中成员索引指针区的长度对不同的结构标志是不一样的。<br>
+      　　在图9.15中可以看到，其中结构定义指针域值是当该符号为结构变量时，表示指向定义该结构的标志符号，图9.15中memn6是结构tag2的结构变量，而stv是结构tag1的结构变量。符号表中结构索引指针域值是当该符号为结构标志时，表示指向定义结构的成员索引信息。这两个信息属性，仅分别表达了结构标志和结构变量的属性，与其它符号无关且互不冲突，因此可将此两个属性域合并成一个域，这种多态域（多属性域）在C语言中可用union来实现。在本例中这两个合并的域具有相同类型，实际上不同类型的域也同样可合并。这儿体现了图9.5中《属性值34》在不同符号表项中代表不同的属性的具体实现。<br>
+      　　在一个符号表中有若干个用位信息表示的属性时，可把他们组织到一起，甚至可用一个整型数来表达这样的几个位信息属性。这种组织与上述合并不同的是各属性有各自的表项中的位置。<br>
+      　　图9.16中有下列的一些符号属性：<br>
+      　　· 该变量符号是否已初始化<br>
+      　　· 该符号是否是结构成员<br>
+      　　· 该符号是否是标号<br>
+      　　· 该符号是否是保留字<br>
+      　　这些属性都可用1个信息位表示，在符号表中可以把他们组织在一个整型字段中作为一个属性域，而其中相应的信息位置表示上述相应的属性，我们称这种域为复合属性域。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 9.16 复合属性域组织的符号表</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p9_16.gif" width="376" height="450"></td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

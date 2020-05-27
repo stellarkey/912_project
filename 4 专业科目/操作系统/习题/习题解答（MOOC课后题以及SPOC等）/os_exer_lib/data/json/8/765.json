@@ -1,0 +1,21 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"E\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)在一单处理机系统中，若有5个用户进程，在非管态的某一时刻，处于阻塞态的用户进程最多有﹎﹎﹎\n﹎个。\n",
+    "source":"网络",
+    "answer":"E",
+    "type":"single_answer",
+    "options":[
+        "A.1",
+        "B.2",
+        "C.3",
+        "D.4",
+        "E.5",
+        "F.0"
+    ],
+    "q_number":765
+}

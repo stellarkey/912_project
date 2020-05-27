@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　再回到图10.11的例子。如果该程序的某次执行顺序为：<br>
+      　　sort→quicksort→quicksort→partition→exchange…<br>
+      　　即主程序(最外层过程)sort开始执行,继而进入过程quicksort，而又一次进入过程quicksort，接着进入过程partition，进入过程exchange…。<br>
+      　　图10.15给出了进入过程exchange之后运行栈的示意，我们仅把存取链和控制链的值标明。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 10.15 运行栈 </font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p10_15.gif" width="379" height="368"></td>
+        </tr>
+      </table>
+      　　可以看出，过程exchange由过程（函数）partition调用，但exchange的直接外层过程是sort，所以过程exchange的活动记录的存取链指向sort的活动记录的始址。 
+      <br>
+      　　另外，过程partition中引用了第(2)行说明的变量a，而partition的直接外层是quicksort，quicksort的直接外层过程是sort，partition对非局部量a的引用通过两次拉链实现。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+<div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　电视信号的预测编码包括：电视信号的帧内DPCM编码和帧间DPCM编码两部分。<br>
+        　　在讲电视信号的预测编码前，我们先要对电视信号做简单的介绍。 <br>
+        　　当今世界上彩色电视有三种制式：NTSC制式与PAL、SECAM制式。这三中制式的行频、场频、帧频不同，略有差别（请参阅阅读材料），但是它们共同点是，频率高、周期短。要保证画面质量，须在一行内或一帧时间内完成实时编码操作。<br>
+        　　国际无线电咨询委员会(CCIR)制定的演播室质量数字电视编码标准，即CCIR 601标准，推荐彩色电视的采样格式有，Y∶CR∶CB为4∶2∶2格式，和Y∶CR∶CB为4∶4∶4格式。在4∶2∶2格式中，亮度信号Y的采样频率为13.5MHz，两个彩色信号CR、CB采样频率都用6.75MHz。在4∶4∶4格式中，亮度信号Y和彩色信号CR、CB采样频率都用13.5MHz。以4∶4∶4采样格式为例，当每像素量化成8比特，那么其数据速率为13.5×8×3=324Mb/s<br>
+        　　如此高的数据速率，无论在通讯线上传输，或者存贮都是难以实现的。所以电视信号的压缩编码是十分重要的问题。<br>
+        　　电视图像的帧内和帧间，都采用DPCM编码方法。<br>
+        　　先讲电视信号的帧内DPCM编码<br>
+        　　1．电视信号的帧内DPCM编码</div>
+      <br>
+      <span class="zhongdian">　　一个帧内（两场）DPCM像素位置排列示意图<br>
+      <font color="#003399">　　</font> 4 .4-5 DPCM像素位置示意图 <br>
+      　　<img src="../../../../images/chatp/chap04/091.gif" width="194" height="114"> 
+      </span> <br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　绿色虚线表示上一场的扫描线，黑色实线表示当前场的扫描线，&quot;X&quot;是当前场中被预测像素，其余各点是与X像素帧内相关性大的像素。</div>
+      <br>
+      <span class="zhongdian">　　绿色虚线--上一场的扫描线<br>
+      　　黑色实线--当前场的扫描线<br>
+      　　X--前场中被预测像素<br>
+      　　其余各点--与X像素帧内相关性大的像素<br>
+      　　X像素的预测值，可写成<br>
+      　　<img src="../../../../images/chatp/chap04/092.gif" width="119" height="25" align="absmiddle"> 
+      <img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle">--同一场内 
+      像素A和像素D进行预测；<br>
+      　　<img src="../../../../images/chatp/chap04/094.gif" width="116" height="25" align="absmiddle">　<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle">--上一场内 
+      像素F和像素I进行预测；</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide03Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　其中<img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle">是用同一场内，同一扫描行上X前一个像素A和同一场内，上一行上的像素D，进行预测；<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle">是用上一场内的F和I对X进行预测。究竟用<img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle">还是用<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle">对X预测好呢？这要看图像的具体情况。对于两场之间没有运动的区域，用<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle">预测X较好；当两场之间有运动，则用<img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle">预测X较好。具体的实现是由比较器判断，比较器的判断依据，是据领先于X且紧邻X的像素A，当不等式<img src="../../../../images/chatp/chap04/096.gif" width="120" height="32" align="absmiddle">，为真，取<img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle">；当等式<img src="../../../../images/chatp/chap04/097.gif" width="120" height="32" align="absmiddle">为假，用<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle">作为X的预测值。</div>
+      <br>
+      <span class="zhongdian">　　当不等式<img src="../../../../images/chatp/chap04/097.gif" width="120" height="32" align="absmiddle">为真，取<img src="../../../../images/chatp/chap04/093.gif" width="23" height="25" align="absmiddle"><br>
+      　　当不等式<img src="../../../../images/chatp/chap04/097.gif" width="120" height="32" align="absmiddle">为假，取<img src="../../../../images/chatp/chap04/095.gif" width="24" height="25" align="absmiddle"></span><br>
+      <span class="zhongdian">　　2．电视信号的帧间DPCM编码</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide04Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　帧间编码技术处理的对象是序列图像（也称为运动图像）。随着大规模集成电路的迅速发展，已有可能把几帧的图像存储起来作实时处理，利用帧间的时间相关性进一步消除图像信号的冗余度，提高压缩比。帧间编码的技术基础是预测技术。</div>
+      <br>
+      <span class="zhongdian">　　（1） 帧间预测</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide05Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide05Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　帧间DPCM预测编码，是以先前帧或场的图像信号为基础的。帧间DPCM与帧内DPCM原理一样，只是预测值是由先前帧（或场）的信号产生。即用先前帧（或场）图像的亮度或色差信号进行预测，然后对当前像素的实际值与预测值之间的预测误差进行编码。</div>
+      <br>
+      <span class="zhongdian">　 4.4-6是帧间预测像素位置示意图<font color="#003399"> </font><br>
+      <img src="../../../../images/chatp/chap04/098.gif" width="403" height="176"> 
+      <br>
+      　　Z像素--当前被预测的像素<br>
+      　　计算：<img src="../../../../images/chatp/chap04/099.gif" width="51" height="20" align="absmiddle"> 
+      、<img src="../../../../images/chatp/chap04/100.gif" width="49" height="21" align="absmiddle"> 
+      、<img src="../../../../images/chatp/chap04/101.gif" width="49" height="21" align="absmiddle"> 
+      的值，选取这三个差值最小的进行预测<br>
+      　　若<img src="../../../../images/chatp/chap04/099.gif" width="51" height="20" align="absmiddle">（前一像素与再前一个像素差）最小，则用同一场同一扫描行上的前一个像素H<br>
+      　　<img src="../../../../images/chatp/chap04/100.gif" width="49" height="21" align="absmiddle">（同一场前一扫描行像素差）最小， 
+      则用同一场上一扫描行上的像素B<br>
+      　　<img src="../../../../images/chatp/chap04/101.gif" width="49" height="21" align="absmiddle">（帧间像素差）最小， 
+      则上一帧对应位置像素M <br>
+      　　（2） 条件传送和内插<br>
+      　　·条件传送：设置一个阈值&quot;T&quot;，对于帧间对应位置像素的亮度或色差信号值，大于T值传送，小于T值者不传送。一帧电视画面，只传送其中一部分活动比较明显像素的帧间差值信号，可以有效降低传输比特率。这种传送方式，称为条件传送。 
+      <br>
+      　　·内插方法：当帧内像素的空间分辨率降低时，如果采样频率降低一倍，那么对于未采样像素的亮度或色差信号值，可用内插（插补）方法补充。<br>
+      　　内插方法举例：<br>
+      　　用同一扫描行上前后相邻两像素的采样值，对未采样像素值插补如图4.-7，即<br>
+      <font color="#003399">　　</font> 4-7 同一扫描行上像素插补 <br>
+      　　<img src="../../../../images/chatp/chap04/102.gif" width="136" height="25"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap04/103.gif" width="184" height="66"><br>
+      　　用上一场内四个相邻像素的平均值插补（如图4.4-8），即<br>
+      <font color="#003399">　　</font> 4.4-8 上一场4邻像素插补<br>
+      　　<img src="../../../../images/chatp/chap04/104.gif" width="189" height="25"> 
+      <br>
+      　　<img src="../../../../images/chatp/chap04/105.gif" width="201" height="121"> 
+      </span> <br>
+      <a href="#nowhere" onClick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide06Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　帧间编码除了上述讲的条件补充法外，还有一个比较重要的技术就是运动补偿。<br>
+        　　（3）运动补偿<br>
+        　　近十年来，运动补偿（motion conpensation）技术得到特别的重视，在标准化视频编码方案MPEG中，运动补偿技术是其使用的主要技术之一。使用运动补偿技术对提高编码压缩比很有好处。尤其对于运动部分只占整个画面较小的会议电视和可视电话，引入运动补偿技术后，压缩比可以提高很多。用这一技术计算图像中运动部分位移的两个分量可使预测效果大大提高。　　运动补偿方法是跟踪画面内的运动情况对其加以补偿之后再进行帧间预测。这项技术的关键是运动向量的计算。<br>
+        　　下面介绍对运动向量的估值方法：</div>
+      <br>
+      <span class="zhongdian">　　①块匹配算法<br>
+      　　块匹配算法是把图像分成若干子块图像，设子图像是M×N的矩形块。设当前帧图像亮度信号为fk（m，n），前一次传送的图像为fk-Ns（m，n），这里Ns为帧差数目。通常帧差Ns可能是1，3或7。我们假定当前帧中的一个M×N子块是从第k-Ns帧平行移动而来，并设M×N子块内所有像素都具有同一个位移值（i，j）。假定运动物体在Ns帧差时间内水平和垂直最大位移均为L，这样我们可以在第k-Ns帧搜索区SR内进行搜索，这里SR搜索区为（M+2L，N+2L），见图4.4-9。<br>
+      　　<font color="#003399"> </font>4.4-9 块匹配位移估计算法<font color="#003399"><br>
+      　　<img src="../../../../images/chatp/chap04/106.gif"> </font><br>
+      　　可以计算两帧中子块的相关函数<br>
+      　<img src="../../../../images/chatp/chap04/107.gif" align="absmiddle"> <b>（4.15）</b><br>
+      　　当相关函数NCCF（i，j）达到最小值时，它的i和j值就被认定为子块的水平和垂直位移值。式（4.15）计算工作量很大，实际应用中常用式（4.16）或式（4.17）代替。 
+      <br>
+      <img src="../../../../images/chatp/chap04/108.gif" width="320" height="45" align="absmiddle">　<b>（i，j）∈SR 
+      （4.16）</b><br>
+      <img src="../../../../images/chatp/chap04/109.gif" width="325" height="45" align="absmiddle"> 
+      <b>（i，j）∈SR （4.17）</b><br>
+      　　MSE是均方误差，MAD是帧间绝对差，取MSE或MAD最小时的i，j值就是水平和垂直的偏移量。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      <div id="hide07Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　在搜索范围内寻找某一块使其与被匹配的块的差平方或绝对值达到最小，就认为子块已经匹配，得到水平和垂直位移（i，j）。搜索算法有：穷尽搜索法、二维对数法（TDL）和三步搜索法（TTS）。</div>
+      <br>
+      <span class="zhongdian">　　②搜索算法<br>
+      　　·穷尽搜索法：对每一点，沿如图所示的路径，计算MAD（帧间绝对差）。取MAD最小值，所得到的i和j就是水平和垂直的偏移量。<br>
+      <font color="#003399">　　 </font>4.4-10 穷尽搜索法<br>
+      　　<img src="../../../../images/chatp/chap04/120.gif" width="178" height="141"> 
+      <br>
+      　　·二维对数法：此算法用MSE均方差作为匹配准则，并在搜索容口中，用沿着最小误差方向执行对数二维搜索过程。其过程如图4.4-11所示。<br>
+      　　第一步：5个初始点，如图所示为&quot;G&quot;，取MSE为最小的点如&quot;m&quot;<br>
+      　　第二步：搜索三个新位置，如图所示为&quot;s&quot;，取MSE为最小的点如&quot;m&quot;<br>
+      　　第三步：步长除以2，并搜索围绕此最小的误差9个点&quot;H&quot;。<br>
+      <font color="#003399">　　</font> 4.4-11 二维对数法<br>
+      　　<img src="../../../../images/chatp/chap04/121.gif" width="256" height="235"> 
+      <br>
+      　　·三步搜索法：每步搜索9个点，用MSE度量，找到最小的，搜索步长减半，再搜索，共25个点。 <br>
+      <font color="#003399">　　 </font> 4.4-12 三步搜索法<br>
+      　　<img src="../../../../images/chatp/chap04/122.gif" width="191" height="209"> 
+      <br>
+      <a href="#nowhere" onClick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a> 
+      <br>
+      </span> 
+      <div id="hide08Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　当前帧的M×M子块的任意位置（m，n）的像素完全可以用K—Ns帧的位置的像素来预测，其效果是相当好的。使用块匹配算法后的图像容易产生“方块效应（blockness 
+        effect）”，要另外预处理或后处理技术才能消除。</div>
+      <br>
+</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>第六章习题　答案</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../examination1/css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" background="../../../images/image_temp/des_t_square.gif" text="#000000">
+<center>
+  <table width="95%" border="0" cellspacing="0" cellpadding="8">
+    <tr> 
+      <td class=text> <p><b>第六章习题　答案</b></p>
+        <p><span class="explaination">问答第1题</span><br>
+          　　答：（1）为了方便起见，设第一个神经元的输出值为z，则真值表<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60005.gif" width="308" height="188"> 
+          <br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60006.gif" width="251" height="191"> 
+          <br>
+          <span class="explaination"><br>
+          问答第2题</span><br>
+          　　答：<br>
+          　　（1）实现的运算为<img src="../../../images/image_content/chormeless/6/ch60009.gif" width="156" height="25" align="absmiddle"><br>
+          　　由于<img src="../../../images/image_content/chormeless/6/ch60010.gif" width="104" height="25" align="absmiddle">，故<img src="../../../images/image_content/chormeless/6/ch60011.gif" width="162" height="50" align="absmiddle"> 
+          <br>
+          　　由此可见，它实现了一个逻辑“与”运算<br>
+          　　（2）<img src="../../../images/image_content/chormeless/6/ch60012.gif" width="200" height="28" align="absmiddle"> 
+          <br>
+          　　故有<img src="../../../images/image_content/chormeless/6/ch60013.gif" width="181" height="51" align="absmiddle"><br>
+          　　它与逻辑运算<img src="../../../images/image_content/chormeless/6/ch60014.gif" width="187" height="27" align="absmiddle">等价，其中<img src="../../../images/image_content/chormeless/6/ch60015.gif" width="17" height="21" align="absmiddle">是“或”运算，<img src="../../../images/image_content/chormeless/6/ch60016.gif" width="15" height="25" align="absmiddle">是“与”运算。<br>
+          <br>
+          <span class="explaination">问答第3题</span><br>
+          <span class="text">　　答：按题意该双层感知器第一层为两个结点，输出层只需一个结点，都采用域值函数，结构如图所示<br>
+          　　 <img src="../../../images/image_content/chormeless/6/ch60019.gif" width="239" height="300" align="absmiddle"><br>
+          <br>
+          　　则按f1(x)与f2(x)，第一层两个结点参数分别如图所示。在这种参数设置下输入B与D时。第一层两结点的输出y1与y2分别为”1”与”0”，而A点输入时为（1，1），c点为（0，0）。故输出结点的参数只需将（1，0）与（1，1）及（0，0）划分开即可，如使用<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60020.gif" width="163" height="28" align="absmiddle"><br>
+          　　即可实现异或输入时输出为1的要求，故其参数表示在图上。</span><span class="chap"><br>
+          </span><br>
+          <span class="chap"> </span><span class="explaination">问答第4题</span><br>
+          　　答：y<sub>1</sub>，y<sub>2</sub>及y<sub>3</sub>实现的运算为<br>
+          <br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60022.gif" width="125" height="105"> 
+          <br>
+          <br>
+          　　而第四个神经元实现<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60023.gif" width="159" height="25" align="absmiddle"><br>
+          　　故z=1的决策域为图示的阴影区域：<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60024.gif" width="294" height="306"> 
+          <br>
+          <br>
+          <span class="explaination">问答第5题</span><br>
+          　　答：(a)由于分类器由三个线性方程式决定，可用三个感知器<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60028.gif" width="238" height="117"> 
+          <br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60029.gif" width="273" height="52"> 
+          <br>
+          　　按题意，阴影部分决策域要求 <img src="../../../images/image_content/chormeless/6/ch60030.gif" width="176" height="28" align="absmiddle"><br>
+          　　因此可设计的四个神经元进行运算，为<img src="../../../images/image_content/chormeless/6/ch60031.gif" width="114" height="23" align="absmiddle"><br>
+          　　由此可以得到神经元网络为<br>
+          <img src="../../../images/image_content/chormeless/6/ch60032.gif" width="352" height="307"><br>
+          　　（b） 图（b）的决策域与图(a)的差异只在于决策域要求<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60033.gif" width="237" height="55" align="absmiddle"><br>
+          　　即<img src="../../../images/image_content/chormeless/6/ch60034.gif" width="194" height="27" align="absmiddle"><br>
+          　　运算函数的一种方案为<img src="../../../images/image_content/chormeless/6/ch60035.gif" width="151" height="18" align="absmiddle"><br>
+          　　此时的网络结构及参数是<br>
+          <img src="../../../images/image_content/chormeless/exa0019.gif" width="352" height="307"><br>
+          <br>
+          <span class="explaination">问答第6题</span><br>
+          　　答：按Hebb规则，有<br>
+          　　<img src="../../../images/image_content/chormeless/6/ch60037.gif" width="119" height="42" align="absmiddle"><br>
+          　　得<br>
+          　　<img src="../../../images/image_content/chormeless/exa0021.gif" width="201" height="205"><br>
+          　　该Hopfield网络只有1与2，以及3与4之间有联接，其联接权值都为-1。<br>
+          　　而外触发信号（-1,1,1,1）消失后，稳态为（-1,1,-1,1）<br>
+          　　外触发信号（1,-1,1,1）消失后，稳态为（1,-1,1,-1）或（1,-1,-1,1）<br>
+          　　它们分别是两个存储信号的反相。<br>
+          <br>
+          <span class="explaination">问答第7题</span><br>
+          　　答：<br>
+          　　1．状态的改变可以采用串行方式进行，例如先判断第一个结点，可以看出第二个结点及第三个结点的状态都支持第一个结点维持在原状态，同样，第二个结点与第三个结点不可能改变各自状态，因而（1,-1,-1）是该网络的一个稳态。<br>
+          　　2．（-1,1,-1）是（1,-1,1）的反相，也是一个稳态<br>
+          　　3.对外触发（-1,-1,1）分析<br>
+          　　第一个结点：输入＝<img src="../../../images/image_content/chormeless/6/ch60039.gif" width="203" height="39" align="absmiddle">，状态变为+1<br>
+          　　第二个结点：输入＝<img src="../../../images/image_content/chormeless/6/ch60040.gif" width="216" height="45" align="absmiddle">，状态不变<br>
+          　　第三个结点，输入＝<img src="../../../images/image_content/chormeless/6/ch60041.gif" width="201" height="40" align="absmiddle">，状态也不变。<br>
+          　　故（1,-1,1）为稳态。<br>
+          　　其它可以相同方法计算。<br>
+          　　4．（1,1,-1）等三种触发信号都会稳定在（-1,1,-1）状态。<br>
+          　　5．说明该网络只有两个稳定状态<br>
+          <br>
+        </p></td>
+    </tr>
+  </table>
+  </center>
+
+</body>
+</html>

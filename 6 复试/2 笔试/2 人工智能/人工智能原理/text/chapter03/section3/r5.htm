@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　① A必出现时（即P（A）＝1）:<br>
+      　　　　O(B|A) = LS·O(B)<br>
+      　　　　O(B|~A) = LN·O(B) <br>
+      　　② 当A不确定时即P（A）≠1时<br>
+      　　设A'代表与A有关的所有观察，<br>
+      　　　　P(B|A') = P(B|A)P(A| A')+P(B|～A)P(～A| A') <br>
+      　　当P(A| A') = 1时，证据A必然出现<br>
+      　 　　<img src="../../../img/chap03/pic16.gif" width="302" height="41"><br>
+      　　当P(A| A') = 0时，证据A必然不出现<br>
+      　　　 <img src="../../../img/chap03/pic17.gif" width="313" height="38"><br>
+      　　当P(A| A') = P(A)时， 观察A'对A没有影响： <br>
+      　　　　P(B|A') = P(B)<br>
+      　　这样可得P(A| A')为0，P（A），1时相应的P（B|A'）的值，根据这三点可以得到线性插值图，见图3-3。P(A| A')的其它取值下的P（B|A'）可根据此图通过线性插值法得到。<br>
+      　　更简单的还有用两点直线插值的，当然也可以用更复杂的插值方法，只要你有足够的数据。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

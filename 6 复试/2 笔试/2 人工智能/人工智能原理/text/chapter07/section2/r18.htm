@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　例如，对于规则<br>
+        　　　　NP→ART ADJ N<br>
+        　　在自顶向下系统中，我们由NP来产生序列ART ADJ N，而在自底向上分析器中，寻找句子中的ART ADJ N序列归约产生NP。<br>
+        　　在自底向上分析器中，最基本的操作是寻找句子中的序列并且与产生式规则的右边进行匹配。我们可以进行搜索完成这种匹配，状态仅仅由符号列表组成，初始状态是待分析的语句。后续的状态以下面的方法产生：<br>
+        　　1 以词所属的类别来重写该词；<br>
+        　　2 符号序列与产生式规则的右边进行匹配，如果相同的话，则以该产生式规则的左边替换匹配的局部符号串。<br>
+        　　但是，这种简单的操作会浪费大量的时间，因为句法分析器会进行很多同样的匹配，而这些是非常冗余的。为了解决这个问题，我们以图表（chart）的形式进行搜索，分析器可以存储部分匹配的结果，这样就可以避免后续过程中进行同样的匹配。<br>
+        　　我们在规则中加入点·来指明当前的搜索到的位置。<br>
+        　　首先给出一个简单的上下文无关文法。<br>
+        　　　　1 S→NP VP<br>
+        　　　　2 NP→ART ADJ N<br>
+        　　　　3 NP→ART N<br>
+        　　　　4 NP→ADJ N<br>
+        　　　　5 VP→AUX VP<br>
+        　　　　6 VP→V NP
+      </td>
+  </tr>
+</table>
+</body>
+</html>

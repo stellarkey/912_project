@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "打开文件操作的使用是( )。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.把整个文件从磁盘拷贝到内存 \r\n B.把文件目录项(FCB)从磁盘拷贝到内存 \r\n C.把整个文件和文件目录项(FCB)从磁盘拷贝到内存\r\n D.把磁盘文件系统的控制管理信息从辅存读到内存\r\n"}

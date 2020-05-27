@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　为了了解自顶向下（自上而下）分析的一般过程和问题我们首先回顾在“文法和语言”一章中介绍的关于句子、句型和语言的定义及什么叫最左推导、最右推导和规范推导的基本概念。在确定的自顶向下语法分析中用的是最左推导。<br>
+      <b>句型、句子、语言的定义</b><br>
+      <font color="#0000FF"><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+      句型:</font><br>
+      　　有文法G [S]， 若S <img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">x，且x∈ 
+      V<sup><font size="-2">*</font></sup>则称x是文法G [S]的句型。<br>
+      　　符号 <img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">表示经过0步或若干步的推导。<br>
+      <font color="#0000FF"><img src="../../../img/label/icon_dy.gif" width="30" height="20" align="absmiddle" alt="定义"> 
+      句子:</font><br>
+      　　有文法G[S]，若S<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">x，且x∈V<sub><font size="-2">T</font></sub><sup><font size="-2">*</font></sup>，则称x是文法G 
+      [S]的句子。<br>
+      　　例：G[S]： S→0S1， S→01<br>
+      　　可有推导 S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">0S1<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">00S11<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">000S111<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">00001111<br>
+      　　说明00001111是G[S]的句子。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap05/f5-1-2.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap05/f5-1-2.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　最左（最右）推导：在推导的任何一步α<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">β 
+      (其中α、β是句型)，都是对α中的最左（右）非终结符进行替换。<br>
+      　　最右推导被称为规范推导。<br>
+      　　由规范推导所得的句型称为规范句型。 </td>
+  </tr>
+</table>
+</body>
+</html>

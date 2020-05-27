@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　begin<br>
+      　　writeln(′start pl0′);<br>
+      　　t∶=0; b∶=1; p∶=0;<br>
+      　　s[1]∶=0; s[2]∶=0; s[3]∶=0;<br>
+      　　repeat<br>
+      　　　i∶=code[p];<br>
+      　　　p∶=p+1;<br>
+      　　　with i do<br>
+      　　　　case f of<br>
+      　　　　　lit: begin <br>
+      　　　　　　　　　t∶=t+1;<br>
+      　　　　　　　　　s[t]∶=a<br>
+      　　　　　　　end;<br>
+      　　　　　opr: case a of(*operator*)<br>
+      　　　　　　　　　0: begin (*return*)<br>
+      　　　　　　　　　　　　t∶=b-1;<br>
+      　　　　　　　　　　　　p∶=s[t+3];<br>
+      　　　　　　　　　　　　b∶=s[t+2]<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　1: s[t]∶=-s[t];<br>
+      　　　　　　　　　2: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=s[t]+s[t+1]<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　3: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=s[t]-s[t+1]<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　4: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=s[t]*s[t+1]<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　5: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=s[t] div s[t+1]<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　6: s[t]∶=ord(odd(s[t]));<br>
+      　　　　　　　　　8: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]=s[t+1])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　9: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]&lt;&gt;s[t+1])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　10: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]&lt;s[t+1])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　11: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]&gt;=s[t+1])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　12: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]&gt;s[t+1]) <br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　13: begin<br>
+      　　　　　　　　　　　　t∶=t-1;<br>
+      　　　　　　　　　　　　s[t]∶=ord(s[t]&lt;=s[t+1])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　14: begin<br>
+      　　　　　　　　　　　　write(s[t]);<br>
+      　　　　　　　　　　　　write(fa2,s[t]);<br>
+      　　　　　　　　　　　　t∶=t-1<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　15: begin<br>
+      　　　　　　　　　　　　writeln;<br>
+      　　　　　　　　　　　　writeln(fa2)<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　16: begin<br>
+      　　　　　　　　　　　　t∶=t+1;<br>
+      　　　　　　　　　　　　write(′ ? ′);<br>
+      　　　　　　　　　　　　write(fa2,′? ′);<br>
+      　　　　　　　　　　　　readln(s[t]);<br>
+      　　　　　　　　　　　　writeln(fa2,s[t])<br>
+      　　　　　　　　　　　end;<br>
+      　　　　　　　　　end;<br>
+      　　　　　lod: begin<br>
+      　　　　　　　　　t∶=t+1;<br>
+      　　　　　　　　　s[t]∶=s[base(l)+a] <br>
+      　　　　　　　　end;<br>
+      　　　　　sto: begin<br>
+      　　　　　　　　　s[base(l)+a]∶=s[t]; (*writeln(s[t])*)<br>
+      　　　　　　　　　t∶=t-1<br>
+      　　　　　　　　end;<br>
+      　　　　　cal: begin (*generat new block mark*)<br>
+      　　　　　　　　　s[t+1]∶=base(l);<br>
+      　　　　　　　　　s[t+2]∶=b;<br>
+      　　　　　　　　　s[t+3]∶=p;<br>
+      　　　　　　　　　b∶=t+1;<br>
+      　　　　　　　　　p∶=a<br>
+      　　　　　　　　end;<br>
+      　　　　　int: t∶=t+a;<br>
+      　　　　　jmp: p∶=a;<br>
+      　　　　　jpc: begin<br>
+      　　　　　　　　　if s[t]=0<br>
+      　　　　　　　　　　then p∶=a;<br>
+      　　　　　　　　　t∶=t-1<br>
+      　　　　　　　　end;<br>
+      　　　　end (*with,case*)<br>
+      　　　until p=0;<br>
+      　　　closef(fa2)<br>
+      　end (*interpret*);</td>
+  </tr>
+</table>
+</body>
+</html>

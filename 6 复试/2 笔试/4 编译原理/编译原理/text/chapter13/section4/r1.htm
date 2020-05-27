@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.13 YACC工作示意图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle/p13_13.gif" width="389" height="151"></td>
+        </tr>
+      </table>
+       　　在YACC的源程序中，除了BNF描述的语法规则外，还可以包括当这些语法规则被识别出来时需要完成的语义动作，其语义动作可以是一段C程序(或RATFOR程序)。语义动作的内容可以是填写和查找符号表、做语义检查或生成语法树和代码生成等，若动作加在一条规则的末尾，则表明用此规则归约时所做的动作。动作也可插入在某规则的文法符号之间，这时需注意伪变量的位置关系。因为LR类分析表只有当归约时才能调语义处理动作，所以YACC对于在语法规则的文法符号之间插入的语义动作自动增加规则和非终结符，使其语义动作都在一条规则的末尾，即归约时做。对此的详细说明请参见附录C。<br>
+        　　此外YACC还可以处理某些二义性文法的规则，我们在第7章中曾介绍过二义性文法在LR分析中的应用，YACC也给出了二义性文法终结符之间的优先关系和结合性的书写规定。对用户书写的二义性文法规则按其优先级和结合性自动生成相应的分析表，对于用优先级和结合性能解决的冲突，YACC不报告错误。当所给的条件仍不能解决冲突时才报错。<br>
+      　　在第7章中曾介绍过二义性文法在LR分析中的应用，当给出了二义性文法终结符之间的优先关系和结合性的规定后，可能会解决LR项目集中的冲突，用二义性文法的LR分析和同样语言非二义性文法的LR分析相比可提高对输入串分析的速度，例如：表达式的二义性文法的LR分析速度比非二义性文法的LR分析速度要快的多。</td>
+  </tr>
+</table>
+</body>
+</html>

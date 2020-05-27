@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)虚拟存储器的作用是允许﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.直接使用外存代替内存",
+        "B.添加比地址字长允许的更多内存容量",
+        "C.程序直接访问比内存更大的地址空间",
+        "D.提高内存的访问速度"
+    ],
+    "q_number":825
+}

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "虚拟内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A 页表项中的高24位\n",
+    "question":"lab3中把扇区索引信息放在（）s5\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.页表项中",
+        "B.页目录项中",
+        "C.内存中的Page结构中",
+        "D.内存中的vma_struct结构中"
+    ],
+    "q_number":1371
+}

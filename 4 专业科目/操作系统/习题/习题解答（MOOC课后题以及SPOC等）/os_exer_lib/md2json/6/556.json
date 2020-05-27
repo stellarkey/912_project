@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "简述解决死锁问题的三种方法。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "① 死锁的防止。系统按预定的策略为进程分配资源，这些分配策略能使死锁的四个必要条件之一不成立，从而使系统不产生死锁。 ②", "type": "4\r\n", "options": "  \r\n"}

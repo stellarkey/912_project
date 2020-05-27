@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　<font color="#0000FF">符号串的头尾，固有头和固有尾</font>：如果z=xy是一符号串，那么x是z的头，y是z的尾，如果x是非空的，那么y是固有尾；同样如果y非空，那么x是固有头。 
+      <br>
+      　　举个例子:设z=abc,那么z的头是ε,a,ab,abc,除abc外，其它都是固有头；z的尾是ε,c,bc,abc,z的固有尾是ε,c,bc。<br>
+      　　当我们对符号z=xy的头感兴趣而对其余部分不感兴趣时，我们可以采用省略写法：z=x…；<br>
+      　　如果只是为了强调x在符号串z中的某处出现，则可表示为：z=…x…；符号t是符号串z的第一个符号，则表示为z=t…。 <br>
+      　　<font color="#0000FF">符号串的连接</font>：设x和y是符号串，它们的连接xy是把y的符号写在x的符号之后得到的符号串. 
+      由于ε的含义，显然有εx=xε=x。<br>
+      　　例如设x=ST，y=abu，则它们的连接xy=STabu，看出|x|=2，|y|=3，|xy|=5。<br>
+      　　<font color="#0000FF">符号串的方幂</font>：设x是符号串，把x自身连接n次得到符号串z，即z=xx…xx，称为符号串x的n次方幂，写作z=x<sup><font size="-2">n</font></sup>，也即把符号串x相继地重复写n次。x<sup><font size="-2">0</font></sup>=ε,x<sup><font size="-2">1</font></sup>=x,x<sup><font size="-2">2</font></sup>=xx,x<sup><font size="-2">3</font></sup>=xxx分别对应于n=0,1,2和3<br>
+      　　例子；若x=AB 则:<br>
+      　　x<sup><font size="-2">0</font></sup> = ε<br>
+      　　x<sup><font size="-2">1</font></sup> = AB<br>
+      　　x<sup><font size="-2">2</font></sup> = ABAB<br>
+      　　x<sup><font size="-2">3</font></sup> = ABABAB<br>
+      　　x<sup><font size="-2">n</font></sup> = xx<sup><font size="-2">n-1</font></sup> 
+      = x<sup><font size="-2">n-1</font></sup> x (n&gt;0)</td>
+  </tr>
+</table>
+</body>
+</html>

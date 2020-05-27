@@ -1,0 +1,254 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text">　　随着计算机、网络、通信技术发展，视频会议系统会变成协同合作、信息交流越来越方便的手段。它可以广泛地用于政府各个部委、国防机构、工商企业等，会议内容常常会涉及到许多国家机密、军事情报、商业秘密及私人信息等。因此，安全保密问题是视频会议系统的一个重要问题。<br>
+      <b><font color="#003399">　　一、视频会议系统安全保密结构原理</font></b><a name="01"></a><br>
+      　　国际电信组织ITU-T在1993年专门制定了声视业务安全系统的建议H.233，该建议规定的安全保密机制适用于窄带声视业务，并遵守H.221、H.230和H.242建议。安全系统应用于两个终端或一个终端和一个多点控制器（MCU）之间的点对点连接，当然也可以扩展到多点环境中，具体满足：<br>
+      　　⑴安全性与系统提供的其他保密业务无关，可以由其他机制如关于密钥鉴定和管理建议草案提供密钥，或者也可以手工输入。<br>
+      　　⑵它适用H.221建议的视声成帧信号，其传输率是P×64kbps，这里的P是1～30的任何值，与H.221建议一致，帧结构本身没有加密。<br>
+      　　⑶给所有用户的语音、图像和数据信号在同一密钥下一起进行加密，保证传输安全保密。<br>
+      　　⑷系统所采用的加密方案是可扩充的模块化方法，它便于加密算法的更新。<br>
+      　　⑸系统的安全保密机制能够工作在点对点的视频会议系统中，也可以工作在多点会议系统中，此时允许MCU进行解密。<br>
+      　　图8.14给出了一个视频会议系统安全保密方法的框图。它的主要组成是加密模块和解密模块，加密模块接收视频会议系统终端用户数据进行加密，形成加密后的数据在网络上传输，解密模块接收加密数据进行解密得到用户数据。从图中我们可以看到，并没有给密钥的产生和管理作出较多的规定，开发者可以根据自己的需要和可能，为视频会议系统提供密钥并进行管理，密钥被加密器、解密器和数据同步使用。如果需要采用密钥，则必须通过控制信道发送一个加载新密钥的标志。数据加密由加密器进行控制，通过控制信道发送一个标志指示当前数据正处于加密状态；而解密器的相应标志指示在需要时对数据进行解密。<br>
+      　　 <font color="#003399"><b>8.14 
+      视频会议系统中安全保密结构框图 </b></font><br>
+      　　<img src="../../../../images/chatp/chap08/014.gif" width="320" height="164"> 
+      <br>
+      　　从应用角度来看，一个安全密码系统应包含如下功能：<br>
+      　　·秘密性（secrecy）：密文对非法接收者来说，不可被译；<br>
+      　　·可验证性（authenticity）：可验证信息来源的合法性，检验信息是否伪造，或以前信息的全发；<br>
+      　　·完整性（integrity）：可检验信息是否被更改，取代或删除；<br>
+      　　·不可否认性（nonrepudiation）：发送方对发送的信息不可否认。<br>
+      　　早在中世纪，古罗马皇帝凯撒就开始使用密码，早期的加密方式主要是简单的代替和置换，借助的工具则是一些表格等，这是与当时的手工加密方式相适应的，这些密码的强度很低，可用统计方法等进行攻击。<br>
+      　　此后，数论、近世代数等数学工具的发展和信息理论研究的深入，特别是计算工具的改进，不断有新的加密思想和方法提出。现在，密码学的研究已取得了一系列较为系统的成果。密码系统按明文与密文的对应关系可分为序列密码和分组密码，其比较可参见表8.7。<br>
+       <font color="#003399"><b>表8.7序列密码与分组密码的比较 
+      </b> </font> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 　</td>
+                <td class="text" width="38%"> 
+                  <div align="center"><b>序列密码</b></div>
+                </td>
+                <td class="text" width="55%"> 
+                  <div align="center"><b>分组密码</b></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"><b>　含义</b></td>
+                <td class="text" width="38%">　一个明文符号转化成一个密文符号</td>
+                <td class="text" width="55%">　一组明文符号转化成一组密文符号</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%" rowspan="2" valign="top"><b>　优点</b></td>
+                <td class="text" width="38%">　没有译码延迟，变换速度快</td>
+                <td class="text" width="55%">　扩散能力强</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="38%">　低错误扩散</td>
+                <td class="text" width="55%">　在密文中插入信息破坏分组结构</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%" rowspan="2" valign="top"><b>　缺点</b></td>
+                <td class="text" width="38%">　低扩散能力</td>
+                <td class="text" width="55%">　变换速度稍慢</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="38%">　有可能拼凑出假消息</td>
+                <td class="text" width="55%">　错误将影响同一分组</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　密码系统按加密密钥与解密密钥的对称性可分为：对称密码系统（也称传统密码系统或私钥密码系统）、非对称密码系统（也称公钥密码系统）和混合密钥系统，其对比可参见表8.8。<br>
+      <font color="#003399"><b> 表8.8 
+      私钥、公钥及混合密码系统的比较</b></font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="30%"> 
+                  <div align="center"><b>私钥密码系统</b></div>
+                </td>
+                <td class="text" width="27%"> 
+                  <div align="center"><b>公钥密码系统</b></div>
+                </td>
+                <td class="text" width="27%"> 
+                  <div align="center"><b>混合密码系统</b></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"><b>含义</b></div>
+                </td>
+                <td class="text" width="30%"> 　加、解密密钥相同</td>
+                <td class="text" width="27%">　加密密钥公开</td>
+                <td class="text" width="27%">　用公钥加密会话密钥</td>
+              </tr>
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"><b>安全性基础</b></div>
+                </td>
+                <td class="text" width="30%">　第三方不能获得密钥</td>
+                <td class="text" width="27%">　依赖于计算复杂的问题</td>
+                <td class="text" width="27%">　用公钥加密私钥</td>
+              </tr>
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"><b>优点</b></div>
+                </td>
+                <td class="text" width="30%">　加、解密速度快</td>
+                <td class="text" width="27%">　多用户时，能减少密钥量对安全性有计算复杂性的估计</td>
+                <td class="text" width="27%">　兼有私钥和公钥的优点</td>
+              </tr>
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"><b>缺点</b></div>
+                </td>
+                <td class="text" width="30%">　密钥传输依赖于保密信道<br>
+                  　多用户时密钥量大安全性不易分析</td>
+                <td class="text" width="27%">　加、解密速度较慢</td>
+                <td class="text" width="27%">　</td>
+              </tr>
+              <tr bgcolor="#FFFFFF" valign="top"> 
+                <td class="text" width="16%"> 
+                  <div align="center"><b>典型体型</b></div>
+                </td>
+                <td class="text" width="30%">　DES<br>
+                  　FEAL-N<br>
+                  　IDEA<br>
+                  　Shipjack</td>
+                <td class="text" width="27%">　RSA<br>
+                  　Rabin<br>
+                  　McEliece<br>
+                  　EIGamal</td>
+                <td class="text" width="27%">　MIX</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　视频会议系统涉及到加密算法范围极广，算法本身的说明并不包含在标准的建议中，但是加密算法的说明必须以某种方式给出，它必须包含下述细节：<br>
+      　　·初始矢量的长度和会话密钥；<br>
+      　　·从初始化矢量生成起始变量等。<br>
+      <br>
+      　　<b><font color="#003399">二、视频会议系统中常用的加密算法</font></b><a name="02"></a><br>
+      　　下面简单介绍一下视频会议系统中常用的两种加密算法：<br>
+      　　(1) FEAL加密算法<br>
+      　　FEAL算法，我们结合具体的实际应用对它作一简介。视频会议系统的两个终端都根据当前的密钥和初始矢量生成码流，采用在ISO8372中定义的OFB模式中的FEAL-8（8 
+      round FEAL with 64-bit key）。在加密器方码流通过采用模2加和要加密的比特进行组合，而在解密器方对同样的码流采用模2加恢复原来的用户信息。起动矢量（SV）和初始化矢量（IV）相等。IV在每个多帧的起始处加载。加密算法的64位的输出中，MSB方的第一个8位用来和声视信号块中的8比特进行模2加；码字块的第一个比特和信号块的第一个比特进行模2加，并且结果比特首先通过信道传送，码字块的第二个比特和信号块的第二个比特进行模2加，并且结果比特第二个通过信道传送，依此类推。如果所有的8比特都发送完了，那么下一个周期的码流就接着生成并运用于加密中。<br>
+      　　(2) DES加密算法<br>
+      　　数据加密标准DES（data encryption standard）是分组密码体系中最为成功的作品，也是运用的最为广泛的一种加密算法。它将64比特的输入块变成64比特的输出块，输出块的每一位都必须和输入块的每一位和64比特的密钥块（其中8位是奇偶校验位）联合确定。DES模式1将采用OFB-0方法，DES模式2留待将来研究。起动变量（SV）和初始化矢量（IV）相等，参数标志符设置为[00000000]。<br>
+      　　上述两种加密算法的详细细节请参考书后有关的参考文献。<br>
+      　　视频会议系统中允许多种加密算法并存，为此，必须有办法识别它们。我们采用一个字节表示算法标志。目前标志的几个算法如表8.9所示。<br>
+      　　算法标志的默认值为[00000000]，通信设备至少应能解密所指定的算法中的一个：如果具有解密几种算法的能力，那么需要系统的操作员来指定选用哪一种加密算法。<br>
+      <font color="#003399"><b> 表8.9 
+      算法标志符及其定义</b></font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">MSB　LSB</div>
+                </td>
+                <td class="text" width="83%"> 
+                  <div align="left">　Meaning</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000000</div>
+                </td>
+                <td class="text" width="83%">　Not allocated, Reserved for future 
+                  use</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000001</div>
+                </td>
+                <td class="text" width="83%">　&quot;FEAL&quot;</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000010</div>
+                </td>
+                <td class="text" width="83%">　DES Model 1</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000011</div>
+                </td>
+                <td class="text" width="83%">　Reserved for &quot;DES&quot; Model 
+                  2</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000100</div>
+                </td>
+                <td class="text" width="83%">　Reserved for &quot;DES&quot; Model 
+                  3</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">000000101</div>
+                </td>
+                <td class="text" width="83%">　Reserved for ISO/IEC 9979 algorithm 
+                  register,</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="83%">　Registeration number 000001 (B-CRYPT)</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="17%"> 
+                  <div align="center">Other values</div>
+                </td>
+                <td class="text" width="83%">　Not allocated, reserved for future 
+                  use</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　在现有的视频会议系统密码体系下，加密和解密所用的密钥都是相同的。因而，密钥的管理就显得异常重要，这是因为：密钥在使用了一定的时间以后就必须进行更改，否则就很难保证不失密，因为视频会议系统涉及的人员很多。而且加密方在每次启用新的密钥时，都要通过某种秘密的渠道把密钥传送给解密方。在传送过程中，密钥容易泄露。<br>
+      　　可以用非对称密钥体制也称为公开密钥体制解决上述难题。系统工作流程如下：每个通信实体x，都有一个私人密钥Rx，该密钥仅为实体个人所知，和一个公共密钥Ux，公共密钥为大家所知。系统具有这样一个性质即一旦消息采用用户的公共密钥加密以后就只能用其私人密钥才能解开；反之亦然（但对于大多数的系统往往只是单向的动作）。所以如果发送方想向接收方发送一条消息的话，那么发送方首先查找接收方的公共密钥，然后计算密文C=E（M，Ub）并将密文发送给接收方。接收方使用他的私人密钥Rb通过计算M=D（C，Rb）而恢复出明文来，反之如果有人不知道密钥Rb而想恢复出明文是不可能的。如果消息M就是我们视频会议系统使用的会话密钥K的话，那么它就解决了密钥管理的问题。<br>
+      　　事实证明采用公开密钥体制来进行视频会议系统中的会话密钥的管理是一种行之有效的方法。它解决了现有公共密钥保密系统的有效性不够高，保密性不够强的缺点。 
+      <br>
+      　　访问控制的任务是：防止非法用户进入系统及合法的用户对系统资源的非法使用。可以采取两种措施：身份鉴别和使用授权。在过去，鉴别差不多总是和口令系统是同义词，但在今天，鉴别要做的事更多。例如，在一个视频会议系统中，一个多点控制器面临的是多个会场，多个会议，这时多点控制器就必须能够鉴别出用户是否是一个合法的用户。进一步，鉴别系统还应提供单次登录的功能，这样用户就不用重复输入口令。虽然鉴别提供了身份的验证，但它并没有描述一个实体进程的优先权。例如，当你在加入到会议中来之前被鉴别并不意味着你有权去作任何事。后者的功能称之为授权。 
+      <br>
+      　　对视频会议电视系统可以设立四级访问权限：超级、优先、一般及作废。<br>
+      　　(1) 超级，这是为视频会议系统的管理员而设立的，他可以进行系统范围的安全控制和资源使用情况的审计；<br>
+      　　(2) 优先，可以对系统的任何资源进行访问，可以申请作主席，可以申请数据令牌等。<br>
+      　　(3) 一般，访问操作受到一定的限制，根据需要才可以让他申请主席、数据令牌。<br>
+      　　(4) 作废，系统拒绝这一类的用户进行访问。<br>
+      　　可以在每次会议预约的时候进行权限的分配，也可以在会议期间向系统管理员申请。<br>
+      <br>
+      　　<b><font color="#003399">视频会议如何解决安全保密问题？ <br>
+      　　  
+      <br>
+      　　<img src="../../../../images/chatp/chap08/015.gif" width="347" height="155"> 
+      </font></b><br>
+      　　<font color="#003399">上图给出了一个视频会议系统安全保密方法的框图。它的主要组成是加密模块和解密模块，加密模块接收视频会议系统终端用户数据进行加密形成加密后的数据在网络上传输，解密模块接收加密数据进行解密得到用户数据。从图中可以看到，并没有给密钥的产生和管理作出较多的规定，开发者可以根据自己的需要和可能，为视频会议系统提供密钥并进行管理，密钥被加密器、解密器和数据同步使用。如果需要采用密钥，则必须通过控制信道发送一个加载新密钥的标志。数据加密由加密器进行控制，通过控制信道发送一个标志指示当前数据正处于加密状态；而解密器的相应标志指示在需要时对数据进行解密。 
+      <br>
+      </font> </td>
+  </tr>
+</table>
+</body>
+</html>

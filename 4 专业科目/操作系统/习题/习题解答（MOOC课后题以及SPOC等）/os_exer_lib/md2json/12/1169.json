@@ -1,0 +1,1 @@
+{"knowledge": "实验环境准备\r\n", "question": "尝试用qemu+gdb（or ECLIPSE-CDT）调试lab1\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "清除文件夹：make clean 编译lab1：make 调出debug命令行：make debug", "type": "4\r\n", "options": "  \r\n"}

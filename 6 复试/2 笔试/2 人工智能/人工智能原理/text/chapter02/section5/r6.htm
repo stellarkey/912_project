@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> <b>2.5.5 单元归结策略</b><br>
+      　　单元归结策略要求在归结过程中，每次归结都有一个子句是单元子句（只含一个文字的子句）或单元因子。显而易见，词中方法可以简单地削去另一个非单子句中的一个因子，使其长度减少，构成简单化，归结效率较高。<br>
+      　　单元归结 <img src="../../../img/chap02/symbol02.gif" width="20" height="16"> 
+      完备；反之不成立。<br>
+      　　初始子句集中没有单元子句时，单元归结策略无效。所以说&quot;反之不成立&quot;，即此问题不能采用单元归结策略。 <br>
+      <b>2.5.6 输入归结策略</b><br>
+      　　与单元归结策略相似，输入归结策略要求在归结过程中，每一次归结的两个子句中必须有一个是S的原始子句。这样可以避免归结出的不必要的新子句加入归结，造成恶性循环。可以减少不必要的归结次数。<br>
+      　　输入归结 <img src="../../../img/chap02/symbol02.gif" width="20" height="16"> 
+      完备；反之不成立。<br>
+      　　如同单元归结策略，不是所有的可归结谓词公式的最后结论都是可以从原始子句集中的得到的。简单的例子，归结结束时，即最后一个归结式为空子句的条件是，参加归结的双方必须是两个单元子句。原始子句集中没有单元子句的谓词公式一定不能采用输入归结策略。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,657 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"> <a href="#nowhere" onclick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　JPEG(Joint 
+        Photographic Experts Group)是联合图像专家小组的英文缩写。其中联合的含意是指，国际电报电话咨询委员会(CCITI)和国际标准化协会(ISO)联合组成的一个图像专家小组。<br>
+      　　联合图像专家小组，多年来一直致力于标准化工作，他们开发研制出，连续色调、多级灰度、静止图像的数字图像压缩编码方法。这个压缩编码方法称为JPEG算法。JPEG算法被确定为JPEG国际标准，它是国际上，彩色、灰度、静止图像的第一个国际标准。JPEG标准是一个适用范围广泛的通用标准。它不仅适于静图像的压缩；电视图像序列的帧内图像的压缩编码，也常采用JPEG压缩标准。<br>
+      　　在JPEG编码中用到了我们已学过的变换编码、预测编码和熵编码等原理和方法。这一章前面几节讲的内容是这一部分的基础。因此我们把重点放在JPEG的编码算法的具体实现上。</div><br>
+      　<span class="zhongdian">　1．引言</span><br>
+      　　<span class="zhongdian">JPEG 标准定义了两种基本压缩算法：一是：基于DCT变换有失真的压缩算法。二是：基于空间预测编码DPCM的无失真压缩算法。<br>
+      　　JPEG 标准定义了两种基本压缩算法：<br>
+      　　　(1). 基于DCT变换有失真的压缩算法。<br>
+	  　　(2). 基于空间预测编码DPCM的无失真压缩算法。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　在对&quot;基于空间预测编码DPCM的无失真压缩算法&quot;的简单介绍后，我们将重点讲述基于DCT变换有失真的压缩算法。</div>
+      <br>
+      　　<font color="#003399" class="zhongdian">2． 无失真的预测编码</font><a name="02"></a><br>
+      　　<br>
+      <br>
+      
+      <center><img src="../../../../images/chatp/chap04/image002-.gif" width="399" height="126"><br>
+        图4.6—1　DPCM预测编码框图 
+      </center>
+      <br>
+      <br>
+	  <a href="#nowhere" onclick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide03Notice" name"hide03Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　这幅图是无失真的预测编码的原理图，由无失真编码器实现数据压缩，它由预测器和熵编码器组成。预测器采用的是基于DPCM预测编码方法，例如对&quot;<img src="../../../../images/chatp/chap04/01.gif" width="19" height="16" align="absmiddle"> 
+        &quot;点的预测值&quot;<img src="../../../../images/chatp/chap04/02.gif" width="19" height="21" align="absmiddle"> 
+        &quot;由&quot;a、b、c&quot;算出，进行三阶预测；该预测器提供了7个选项，如表4.6-1 所示，选&quot;1、2、3&quot;是一维预测；选&quot;4、5、6、7&quot;是二维预测。<br>
+      熵编码器是对<img src="../../../../images/chatp/chap04/01.gif" width="19" height="16" align="absmiddle"> 
+      -<img src="../../../../images/chatp/chap04/02.gif" width="19" height="21" align="absmiddle"> 
+      的差进行无失真的熵编码，比如算术编码或哈夫曼编码。</div><br>
+      　<span class="zhongdian">(1). 预测器 <br>
+      　　<img src="../../../../images/chatp/chap04/01.gif" width="19" height="16" align="absmiddle">是预测值 
+      <img src="../../../../images/chatp/chap04/02.gif" width="19" height="21" align="absmiddle">是该点的实际值 
+      <br>
+      　　　c b<br>
+      　　　a X <br>
+      　　预测器有两类选择项（如表4.6-1 所示）<br>
+      　　　　　<img src="../../../../images/chatp/chap04/03.gif" width="195" height="229"><br>
+      　　选&quot;1、2、3&quot;是一维预测<br>
+      　　选&quot;4、5、6、7&quot;是二维预测<br>
+      　(2). 熵编码器 <br>
+      　　对<img src="../../../../images/chatp/chap04/01.gif" width="19" height="16" align="absmiddle"> 
+      -<img src="../../../../images/chatp/chap04/02.gif" width="19" height="21" align="absmiddle"> 
+      的差值进行无失真<br>
+      　　的熵编码或算术编码<br>
+      　　压缩比可达2:1倍。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide04Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide04Notice" name"hide04Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　下面我们重点讲述基于DCT 的有失真压缩编码，希望大家认真学习，把这部分内容掌握了。<br>
+      　　学习JPEG编码的方法我们仍然采用从&quot;总体把握&quot;再到&quot;细节理解&quot;从而达到彻底掌握的学习思路。</div><br>
+      　　<span class="zhongdian">3． 基于DCT 的有失真压缩编码<br>
+      　　　（1）基于DCT的有失真编码处理过程图<br>
+      </span><br>
+      　　
+      <center>
+        <img width=371 height=89 src="../../../../images/chatp/chap04/image002.gif" v:shapes="_x0000_s1026"> 
+        <br clear=ALL>
+        　　 图4.6—2 基于DCT解码器处理步骤 </center><br>
+		 <a href="#nowhere" onclick="ShowItem(hide23Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide23Notice" name"hide23Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　首先来看&quot;基于DCT的编码器处理步骤&quot;图。从这幅图我们可以看出JPEG编码的处理过程，从总的来说是这样的：对于一幅图像首先将其分成许多个&quot;8×8&quot;的小块，也就是每个小块有8×8=64个像素；分成多少个小块要看图像的分辨率，分辨率高，分的块就多，分 
+        辨率小，分的块就少。然后对（每一个）8×8的块进行DCT变换（二维），经过DCT变换后就得到频域的64个离散余弦变换系数，得到64个离散余弦变换系数后，要对这64个系数进行量化，量化是根据&quot;表说明&quot;也就是量化表进行的，量化表是JPEG组织根据人的眼睛视觉特性规定好的，直接用量化表去除得到的64个系数就是量化，量化后得到的仍是一个（8×8）64的系数，而这一系数已是低频集中在左上角的一个8×8的系数了。最后再利用熵编码表对其进行熵编码，熵编码后的到的就是已压缩的图像数据。这是一个总的过程，我把刚才说的归纳如下：</div>
+      <br>
+      
+      　　<span class="zhongdian">（2）基于DCT的有失真编码处理总过程： </span> 　　<br>
+      <br>
+      　　　<img src="../../../../images/chatp/chap04/04.gif" width="299" height="172"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide06Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide06Notice" name"hide06Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　在对总体有了一个认识后，再细说各部分是如何具体实现的。</div>
+      <br>
+        　　<span class="zhongdian">（3）各步骤的具体实现</span><br>
+      　　<span class="zhongdian">① 将图像分成8×8的块</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide07Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide07Notice" name"hide07Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　对于第一步，将图像分成8×8的块，我们想解释的是：按什么次序分？是按从左到右，从上到下的次序来分，并按该顺序送入DCT编码器，一个接一个的变换。第二个要说的是： 
+        被压缩的图像可以是黑白图像，也可以是彩色图像，对于黑白图像每小块只有64个灰度值作为下一步的输入；对于彩色图像不仅要有64个亮度值，而且还有色差值，这两种值要分别做DCT变换。</div>
+      <br>
+      <span class="zhongdian">　　分法： 从左到右，从上到下<br>
+      　　黑白图像：64个灰度值<br>
+      　　彩色图像：64个亮度分量，64个色差分量<br>
+      　　例如：分辨率为576行×720列的彩色图像<br>
+      　　有亮度子块：576/8×720/8=6480个<br>
+      　　有色差子块：576/8×360/8=3240</span><br>
+      　　<img src="../../../../images/chatp/chap04/05.gif" width="229" height="160"><br>
+      　　<span class="zhongdian">② 进行DCT变换</span><br>
+      　　<span class="zhongdian">JPEG在编码时用的是离散余弦正变换（FDCT）其数学表达式为：</span><br>
+      　　<span class="zhongdian">FDCT变换：</span><br>
+      <font color="#003399">　　</font><img src="../../../../images/chatp/chap04/06.gif" width="480" height="53">（１）<br>
+      　　<span class="zhongdian">（1）式中：</span><br>
+      　　<img src="../../../../images/chatp/chap04/07.gif" width="233" height="56"><br>
+      　　　<span class="zhongdian">其输入数据是：把原始图像分成8×8的多个子块的同时将原始图像的采样数据从无符号整数变成有符号的整数。即若采样精度为P位，采样数据在范围<img src="../../../../images/chatp/chap04/08.gif" width="77" height="29" align="absmiddle"> 
+      内，则变换成在范围<img src="../../../../images/chatp/chap04/09.gif" width="115" height="29" align="absmiddle">内，以此作为DCT的输入。<br>
+      　　输出数据是：DCT变换系数--64个基信号的幅值。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide08Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide08Notice" name"hide08Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　每个8×8二维每个8×8二维源图像采样数据块，实际上是64点离散信号，该信号是空间二维参数x和y的函数。FDCT把这些信号作为输入，然后把它分解成64个正交基信号，每个正交基信号对应于64个独立二维(2D)空间频率中的一个，这些空间频率是由输入信号的频谱组成。FDCT的输出是64个基信号的幅值，或称DCT系数，每个系数值由64点输入信号唯一地确定。即离散余弦变换的变换系数。</div>
+      <br>
+      　　<span class="zhongdian">③ 根据量化表进行量化<br>
+      　　　·量化的方法：JPEG在JPEG标准中采用线性均匀量化器。<br>
+      　　　均匀量化我们已经讲过了，在此稍提一下：就是&quot;多到一&quot;的映射，它的定义为：<br>
+      　　　· 均匀量化定义为，对64个DCT变换系数<img src="../../../../images/chatp/chap04/10.gif" width="60" height="19" align="absmiddle"> 
+      ，除以量化步长，四舍五入取整，如下：<br>
+      　　　　　　<img src="../../../../images/chatp/chap04/11.gif" width="311" height="43" align="absmiddle">（2）<br>
+      其中<img src="../../../../images/chatp/chap04/12.gif" width="60" height="24" align="absmiddle"> 
+      是量化器步长。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide09Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide09Notice" name"hide09Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　比如：下图是均匀量化的特性图，表示当输入值在&quot;0--0.5&quot;时量化输出的的结果为&quot;0&quot;；当输入值在&quot;0.5--1.5&quot;时（4舍5入）量化输出的的结果为&quot;1&quot;。这样实现多到一的映射。</div>
+      <br>
+      　　　　　　　<img src="../../../../images/chatp/chap04/13.gif" width="253" height="220"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide10Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide10Notice" name"hide10Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　量化器步长<span class="zhongdian"><img src="../../../../images/chatp/chap04/12.gif" width="60" height="24" align="absmiddle"></span> 
+        是量化的关键，JPEG标准给出了一个参考标准--量化表，量化表就是给出了量化步长。量化器步长应如何定义呢？人的眼睛对亮度比较敏感，对色差不敏感，对亮度和色差采用不同的量化步长。因而有了亮度量化表和色度量化表，这两张表如下：</div>
+      <br>
+      　　表4.6—1 亮度量化表 
+      <table border=1 cellspacing=0 cellpadding=0 class="text">
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">16 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">11 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">10 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">16 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">24 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">40 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">51 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">61 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">12 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">12 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">14 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">19 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">26 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">58 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">60 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">55 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">14 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">13 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">16 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">24 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">40 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">57 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">69 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">56 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">14 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">17 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">22 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">29 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">51 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">87 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">80 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">62 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">18 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">22 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">37 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">56 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">68 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">109 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">103 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">77 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">24 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">35 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">55 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">64 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">81 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">104 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">113 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">92 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">49 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">64 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">78 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">87 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">103 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">121 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">120 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">101 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">72 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">92 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">95 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">98 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">112 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">100 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">103 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　<br>
+      　　4.6—2 色度量化表 
+      <table border=1 cellspacing=0 cellpadding=0 class="text">
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">17 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">18 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">24 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">47 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">18 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">21 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">26 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">66 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">24 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">26 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">56 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">47 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">66 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+        <tr> 
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+          <td width=66 valign=top class="Normal"> 
+            <div align="center">99 </div>
+          </td>
+        </tr>
+      </table>
+	  <a href="#nowhere" onclick="ShowItem(hide11Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide11Notice" name"hide11Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　从这两张表可以看出，对亮度的量化步长划分的&quot;细&quot;一些，对色度的量化步长划分的&quot;粗&quot;一些；两张表都是在低频部分（左上角）步长小一些，在高频部分（右下角）步长大许多。<br>
+        　　因为DCT变换后能量大部分集中在左上角，所以对其细一些。这样一量化，量化就是用DCT系数除以量化表。那么量化后高频部分会出现一些&quot;0&quot;，就实现了压缩，而且失真也就是在此发生的。再强调一下，JPEG标准的具体做法是用64个DCT系数除以（一一对应）量化表中的64个数。</div>
+      <br>
+      　　<span class="zhongdian">·具体做法：是用64个DCT系数除以（一一对应）量化表中的64个数。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide12Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide12Notice" name"hide12Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　下一步对量化后的结果进行熵编码</div>
+      <br>
+      　　<span class="zhongdian">④根据熵编码表进行熵编码</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide13Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide13Notice" name"hide13Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　在做熵编码之前，先明确两个概念：DC系数和AC系数。<br>
+      　　量化后得到的仍是64个系数，量化并没有改变系数的性质。大家知到DCT变换是将数据域从时（空）域变换到频域，在频域平面上变换系数是二维频域变量u和v的函数。对应于u=0，v=0的系数，称做直流分量，即DC系数，其余63个系数称做AC系数，即交流分量。如图4.6-5，红点位置上的系数就是直流系数，其它63个绿点位置上的系数就是交流分量。</div><br>
+      　　<span class="zhongdian">· DC系数：对应于u=0，v=0的系数，称做直流分量，即DC系数。<br>
+      　　· AC系数：其余63个系数称做AC系数，即交流分量。</span><br>
+      　　　　　　　<img src="../../../../images/chatp/chap04/14.gif" width="302" height="165"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide14Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide14Notice" name"hide14Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　DC系数是64个图像采样平均值。因为在一幅图像中像素之间的灰度或色差信号变化缓慢，相邻的8×8块之间有更强的相关性，所以相邻块的DC系数值很接近，对量化后前后两块之间的DC系数差值，进行编码，可以用较少的比特数。DC系数包含了整个图像能量的主要部分，远离直流系数的高频交流系数大多数为零或趋于零。例如，图4.6-6是某一特定8×8图像块的量化后的DCT系数。可见DC系数值最大，离直流系数远的大部分都为零。</div>
+      <br>
+      　　<span class="zhongdian">· 例如，图4.6-6是某一特定8×8图像块的量化后的DCT系数。</span><br>
+      　　　　　<span class="zhongdian">48 12 0 0 0 0 0 0<br>
+      　　　　-10 8 0 0 0 0 0 0<br>
+      　　　　　2 0 0 0 0 0 0 0<br>
+      　　　　　0 0 0 0 0 0 0 0<br>
+      　　　　　0 0 0 0 0 0 0 0<br>
+      　　　　　0 0 0 0 0 0 0 0<br>
+      　　　　　0 0 0 0 0 0 0 0<br>
+      　　　　　0 0 0 0 0 0 0 0<br>
+      　　　　　图4.6-6 8×8量化后的系数</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide15Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide15Notice" name"hide15Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　4.6-6所示的数据大部分都是&quot;0&quot;，用那一种编码来表示它呢？既能表示出系数的相对位置有能说明系数的值，而且编码效率又比较高？</div><br>
+      　　<span class="zhongdian">· JPEG中对交流分量用了一个&quot;Z&quot;字型编码解决了这一问题。所谓&quot;Z&quot;字型编码就是（如图4.6-7所示）。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide16Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide16Notice" name"hide16Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　编码时从左上方<img src="../../../../images/chatp/chap04/15.gif" width="129" height="24" align="absmiddle"> 
+      开始，沿箭头方向，以&quot;Z&quot;字形行程扫描，直到 <img src="../../../../images/chatp/chap04/16.gif" width="133" height="24" align="absmiddle">扫描结束。</div><br>
+      　　　　　<img width=180 height=162 src="../../../../images/chatp/chap04/image035.jpg" v:shapes="_x0000_s1028"><br>
+	  <a href="#nowhere" onclick="ShowItem(hide17Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide17Notice" name"hide17Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　沿&quot;Z&quot;字形路径行进，可使值为&quot;0&quot;AC系数集中，在这种情况下使用行程编码方法更有效。<br>
+      　　63个AC系数行程编码的码字，可用两个字节表示，如图4.6-8所示。</div><br>
+      　　<span class="zhongdian">· AC系数行程编码的码字</span><br>
+	 
+      　　　　<img src="../../../../images/chatp/chap04/17.gif" width="307" height="179"><br>
+      <a href="#nowhere" onclick="ShowItem(hide18Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide18Notice" name"hide18Notice" class="Notice" style="visibility:hidden;display:none;"> 
+        　　为了进一步达到压缩数据的目的，需对量化后的DC系数，和行程编码后的AC系数进行基于统计特性的熵编码。JPEG建议使用两种熵编码方法：哈夫曼(Huffman)编码和自适应二进制算术编码(Adaptive 
+        Binary Arithmetic Coding)。</div>
+      <br>
+      　　<span class="zhongdian">熵编码可分成两步进行，首先把DC和AC系数转换成一个中间格式的符号序列，<br>
+      　　第二步是给这些符号赋以变长码字。<br>
+      　　第一步：中间格式符号表示<br>
+      　　对交流系数AC的中间格式，由两个符号组成。<br>
+      　　符号1（行程，尺寸）<br>
+      　　符号2（幅 值）</span><br>
+	   <a href="#nowhere" onclick="ShowItem(hide19Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide19Notice" name"hide19Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　这个中间格式符号就是上面所说的AC系数行程编码的码字。可以这样理解：</div><br>
+      　　<span class="zhongdian">符号1就是：第一个字节（NNNN--行程，SSSS--尺寸）<br>
+      　　符号2就是：第二个字节（幅值--下一个非零值的实际值。）</span><br>
+	   <a href="#nowhere" onclick="ShowItem(hide20Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide20Notice" name"hide20Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　在这需说明的是：关于符号1：当两个非零AC系数之间连续零的个数超过15时，用增加扩展符号1&quot;（15，0）&quot;的个数来扩充。对于8×8块的63个AC系数最多增加三个&quot;(15，0)&quot;扩展符号1。块结束(EOB)以(0， 
+      0)表示。<br>
+      　　关于符号2直接用二进制数编码表示，若幅值为负数用反码表示。</div><br>
+      　　<span class="zhongdian">对于直流分量DC系数的差，符号1只代表尺寸信息，用以表示DC系数差值的幅值所需的比特数；符号2表示差值的幅值大小，</span><br>
+	   <a href="#nowhere" onclick="ShowItem(hide21Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide21Notice" name"hide21Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　可变长度熵编码就是对符号1、2对序列的统计编码。</div><br>
+      　　<span class="zhongdian">对DC系数和AC系数中的符号1，查&quot;哈夫曼码表&quot;进行编码。<br>
+      　　&quot;哈夫曼变长码表&quot;和&quot;哈夫曼变长整数表&quot;是JPEG标准制定的。必须作为JPEG编码器的一部分输入。</span><br>
+	   <a href="#nowhere" onclick="ShowItem(hide22Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide22Notice" name"hide22Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　设&quot;NNNN&quot;的值为&quot;n&quot;，SSSS的值为&quot;s&quot;则符号1可以写成符号1（n,s）<br>
+      　　例如符号1（3，4）表示非零两个符号之间有3个&quot;0&quot;，下一个非零符号用4比特，<br>
+      　　对符号1的编码就是在&quot;AC系数表中 ，查3/4所对应的编码。</div><br>
+      <center>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="400" height="420">
+          <param name="movie" value="../../../../swf/1.swf">
+          <param name="quality" value="high">
+          <embed src="../../../../swf/1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="400" height="420"></embed></object>
+      </center> <br>
+     </td>
+  </tr>
+</table>
+</body>
+</html>

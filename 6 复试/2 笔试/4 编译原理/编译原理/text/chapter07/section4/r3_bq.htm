@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　现在我们可以对上面7.4例中不能用SLR(1)方法解决I<sub><font size="-2">5</font></sub>，I<sub><font size="-2">7</font></sub>中移进-归约冲突的文法构造它的LR(1)项目集规范族如下：<br>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td>　　I<sub><font size="-2">0</font></sub>： S′→·S,# <br>
+            　　　 　S→·aAd,# <br>
+            　　　 　S→·bAc,# <br>
+            　　　 　S→·aec,#<br>
+            　　　 　S→·bed,#<br>
+            　　I<sub><font size="-2">1</font></sub>： S′→S·,#<br>
+            　　I<sub><font size="-2">2</font></sub>： S→a·Ad,#<br>
+            　　　 　S→a·ec,# <br>
+            　　　 　A→·e,d<br>
+            　　I<sub><font size="-2">3</font></sub>： S→b·Ac,#<br>
+            　 　　　S→b·ed,#<br>
+            　 　　　A→·e,c<br>
+            　　I<sub><font size="-2">4</font></sub>： S→aA·d,#<br>
+          </td>
+          <td valign="top">I<sub><font size="-2">5</font></sub>： S→ae·c,#<br>
+            　 　A→e·,d <br>
+            I<sub><font size="-2">6</font></sub>： S→bA·c,# <br>
+            I<sub><font size="-2">7</font></sub>： S→be·d,# <br>
+            　 　A→e·,c <br>
+            I<sub><font size="-2">8</font></sub>： S→aAd·,# <br>
+            I<sub><font size="-2">9</font></sub>： S→aec·,# <br>
+            I<sub><font size="-2">10</font></sub>：S→bAc·,# <br>
+            I<sub><font size="-2">11</font></sub>：S→bed·,# <br>
+          </td>
+        </tr>
+      </table>
+      　　这样LR(1)方法构造的项目集规范族在项目集I<sub><font size="-2">5</font></sub>和I<sub><font size="-2">7</font></sub>中的移进-归约冲突，由于归约项目的搜索符集合与移进项目的待移进符号不相交，所以在I<sub><font size="-2">5</font></sub>中，当面临输入符为d时归约，为c时移进，而在I<sub><font size="-2">7</font></sub>中则当面临输入符为c时归约，为d时移进，冲突已全部可以解决，因此该文法为LR(1)文法。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　实际上，上述四元式（1）和（5），（4）和（6）的转移地址并不能在产生这些四元式的同时得知。例如（1）和（5）的转移地址为（7），它是在整个布尔表达式的四元式序列生成之后才回填的地址。为了记录需回填地址的四元式，常采用一种&quot;拉链&quot;的办法。把需回填E．true的四元式拉成一链，把需回填E．false的四元式拉成一链，分别称做&quot;真&quot;链和&quot;假&quot;链。用一个例子说明拉链是如何方式，若有四元式序列：<br>
+        　　（10）　…　goto　E．true<br>
+         　　…<br>
+        　　（20）　…　goto　E．true<br>
+        　　 …<br>
+        　　（30）　…　goto　E．true<br>
+        　　则把需回填E．true的四元式（10），（20）和（30） 链成<br>
+        　　（10）　…　goto　（0）<br>
+        　　 …<br>
+        　　（20）　…　goto　（10）<br>
+        　　 …<br>
+        　　（30）　…　goto　（20）<br>
+        　　把地址（30）称作链首，0为链尾标志，即地址（10）为链尾。<br>
+        　　如何描述回填，我们不再介绍，有兴趣的同学可阅读参考书。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

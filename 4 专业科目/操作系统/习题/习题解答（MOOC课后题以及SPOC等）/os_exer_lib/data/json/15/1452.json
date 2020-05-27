@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"一个进程由阻塞队列进入就绪队列，可能发生了哪种情况（） s5\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"multi_answer",
+    "options":[
+        "A.一个进程释放一种资源",
+        "B.系统新创建了一个进程",
+        "C.一个进程从就绪队列进入阻塞队列",
+        "D.一个在阻塞队列中的进程被系统取消了"
+    ],
+    "q_number":1452
+}

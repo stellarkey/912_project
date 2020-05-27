@@ -1,0 +1,141 @@
+<html>
+<head>
+<title><!--czp-title --></title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center><form>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> <b>问答题</b><br>
+        <br>
+           
+            问答第1题<br>如何理解"数据压缩"的概念？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第2题<br>何为"有损压缩"和"无损压缩"？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第3题<br>存储1分钟的分辨率为512×512的NTSC制彩色视频图像，其数据存储量有多大？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第4题<br>举例说明信息量与数据量之间的关系。<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第5题<br>为什么要进行数据压缩？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第6题<br>如何理解数据压缩中的"量化处理"？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第7题<br>量化方法是如何分类的？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第8题<br>设一个均匀量化器的输出阶层数为L，它的输出值的位数为n，那么当确定输出阶层数为L的量化器，则它的输出值的位数n为多少？确定输出量化位数为n的量化器，则它的输出阶数L为多少？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第9题<br>举例说明什么叫信息？<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第10题<br>叙述信息量的概念。<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第11题<br>叙述信息熵的概念。<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第12题<br>
+        信源X中有16个随机事件，即n=16。每一个随机事件的概率都相等，即P(x1)=P(x2)=P(x3)……P(x8)=<img src="../../../../images/chatp/chap04/test/image014.gif" width="16" height="33" align="absmiddle"> 
+        ，计算信源X的熵。<br>
+        <textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第13题<br>证明：在变长编码中，若码字长度严格按照所对应符号出现概率的大小逆序排列，则其平均长度为最小。<br><textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第14题<br>
+        已知信源：<img src="../../../../images/chatp/chap04/test/image033.gif" width="339" height="64" align="absmiddle"> 
+        对其进行Huffman编码，并计算其平均码长。 <br>
+        <textarea name=jianda cols=50 rows=5></textarea><br><br><br>问答第15题<br>已知信源：0100，对其进行算术编码，写出最终编码的结果。<br><textarea name=jianda cols=50 rows=5></textarea><br>
+        <br>
+        <br>
+        问答第16题<br>
+        MPEG图像的三种类型：I帧、P帧、B帧，其显示顺序和传输视频流顺序不一致的，若显示的顺序： 1 2 3 4 5 6 7 I B B P B	
+        B P 传输的顺序应如何？<br>
+        <textarea name=jianda cols=50 rows=5></textarea><br>
+        <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+      
+      </td>
+  </tr>
+</table></form></center>
+
+</body>
+</html>

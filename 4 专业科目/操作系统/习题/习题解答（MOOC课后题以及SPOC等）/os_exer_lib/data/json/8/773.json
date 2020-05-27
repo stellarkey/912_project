@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)对于记录型信号量，在执行V操作(signal操作)时，信号量的值应当加1；当其值为﹎﹎﹎﹎\n时，应唤醒阻塞队列中的进程。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.大于0",
+        "B.小于0",
+        "C.大于等于0",
+        "D.小于等于0"
+    ],
+    "q_number":773
+}

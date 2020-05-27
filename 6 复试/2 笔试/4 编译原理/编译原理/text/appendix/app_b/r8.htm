@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p><b>B.5 识别规则的二义性</b><br>
+        　　有时LEX的程序中可能有多于一条规则与同一个字符串匹配，这就是规则的二义性，在这种情况下，LEX有两个处理原则：<br>
+        　　1) 能匹配最多字符的规则优先<br>
+        　　2) 在能匹配相同数目的字符的规则中，先给出的规则优先<br>
+        　　例　设有两规则按下面次序给出：<br>
+        　　integerkeyword action…<br>
+        　　[a-z]+identifier action…<br>
+        如果输入是integers，则它将被当成标识符处理，因为规则integer只能匹配7个字符，而[a-z]+能匹配8个字符；如果输入串是integer，那么它将被当作关键字处理，因为两条规则都能与之匹配，但规则integer先给出。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

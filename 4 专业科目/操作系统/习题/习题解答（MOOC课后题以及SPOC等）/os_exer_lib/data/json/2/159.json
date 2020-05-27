@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"在UNIX系统中，用来实现进程换入换的是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.0进程",
+        "B.1进程",
+        "C.kill系统调用",
+        "D.作业调度进程"
+    ],
+    "q_number":159
+}

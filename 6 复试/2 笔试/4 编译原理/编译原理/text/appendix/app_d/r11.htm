@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 　　/* 项处理 */<br>
+      　　int term(bool* fsys,int* ptx,int lev) /* 参数意义见block和enter函数 */<br>
+      　　{<br>
+      　　　enum symbol mulop; /* 用于保存乘除法符号 */<br>
+      　　　bool nxtlev[symnum]; 
+      <p> 　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　nxtlev[times]=true;<br>
+        　　　nxtlev[slash]=true;<br>
+        　　　factordo(nxtlev,ptx,lev); /* 处理因子 */<br>
+        　　　while(sym==times||sym==slash)<br>
+        　　　{<br>
+        　　　　mulop=sym;<br>
+        　　　　getsymdo;<br>
+        　　　　factordo(nxtlev,ptx,lev);<br>
+        　　　　if(mulop==times)<br>
+        　　　　{<br>
+        　　　　　gendo(opr,0,4); /* 生成乘法指令 */<br>
+        　　　　}<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　gendo(opr,0,5); /* 生成除法指令 */<br>
+        　　　　}<br>
+        　　　}<br>
+        　　　return 0;<br>
+        　　}</p>
+      <p>　　　/* 因子处理 */<br>
+        　　　int factor(bool* fsys,int* ptx,int lev) /* 参数意义见block和enter函数 */<br>
+        　　　{<br>
+        　　　　int i;<br>
+        　　　　bool nxtlev[symnum];<br>
+        　　　　testdo(facbegsys,fsys,24); /* 检测因子的开始符号 */<br>
+        　　　　while(inset(sym,facbegsys)) /* 循环直到不是因子开始符号 */<br>
+        　　　　{<br>
+        　　　　　if(sym==ident) /* 因子为常量或变量 */<br>
+        　　　　　{<br>
+        　　　　　　i=postion(id,*ptx); /* 查找名字 */<br>
+        　　　　　　if(i==0)error(11); /* 名字未声明 */<br>
+        　　　　　　else<br>
+        　　　　　　{<br>
+        　　　　　　　switch(table[i].kind)<br>
+        　　　　　　　{<br>
+        　　　　case constant: /* 名字为常量 */<br>
+        　　　　　　　　gendo(lit,0,table[i].val); /* 直接把常量的值入栈 */<br>
+        　　　　　　　　break;<br>
+        　　　　case variable: /* 名字为变量 */<br>
+        　　　　　　　　gendo(lod,lev-table[i].level,table[i].adr); /* 找到变量地址并将其值入栈 */<br>
+        　　　　　　　　break;<br>
+        　　　　case procedur: /* 名字为过程 */<br>
+        　　　　　　　　error(21); /* 不能为过程 */<br>
+        　　　　　　　　break;<br>
+        　　　　　　　}<br>
+        　　　　　}<br>
+        　　　　　getsymdo;<br>
+        　　　　}<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　if(sym==number) /* 因子为数 */<br>
+        　　　　　{<br>
+        　　　　　　if(num&gt;amax)<br>
+        　　　　　　{<br>
+        　　　　　　　error(31);<br>
+        　　　　　　　num=0;<br>
+        　　　　　　}<br>
+        　　　　　　gendo(lit,0,num);<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}<br>
+        　　　　　else<br>
+        　　　　　{<br>
+        　　　　　　if(sym==lparen) /* 因子为表达式 */<br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　　　nxtlev[rparen]=true;<br>
+        　　　　　　　expressiondo(nxtlev,ptx,lev);<br>
+        　　　　　　　if(sym==rparen)<br>
+        　　　　　　　{<br>
+        　　　　　　　　getsymdo;<br>
+        　　　　　　　}<br>
+        　　　　　　　else error(22); /* 缺少右括号 */<br>
+        　　　　　　}<br>
+        　　　　　　test(fsys,facbegsys,23); /* 因子后有非法符号 */<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　}<br>
+        　　　return 0;<br>
+        　　}</p>
+      <p>　　/* 通过过程活动记录基址求上l层过程的基址活动记录 */<br>
+        　　int base(int l,int* s,int b)<br>
+        　　{<br>
+        　　　int b1;<br>
+        　　　b1=b;<br>
+        　　　while(l&gt;0)<br>
+        　　　{<br>
+        　　　　b1=s[b1];<br>
+        　　　　l--;<br>
+        　　　}<br>
+        　　　return b1;<br>
+        　　}</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

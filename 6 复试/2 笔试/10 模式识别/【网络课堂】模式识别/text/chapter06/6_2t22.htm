@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --> 
+      <p class="spe"><strong>6.2.2.2 存储多个模式的情况</strong><br>
+        　　显然用一个网络仅存储一个模式是没有意义的，因此要讨论一个网络存多个模式的方法，以及存储的容量限制问题。<br>
+        　　如果我们将p个模式存入网络，对第μ个模式的第i位用<img src="../../images/image_content/6/6_2014.gif" width="17" height="19" align="absmiddle">表示，则只要将(6-6)中联接数据的计算式改成<br>
+        　　<img src="../../images/image_content/6/6_2015.gif" width="112" height="47" align="absmiddle">　　　(6-8)<br>
+        　　即可。上式确定联接数值的原则一般称为“Hebb规则”或“广义的Hebb规则”。这种称呼主要来自于这种规则与神经心理学家Hebb在1949年提出的一种假设相似。Hebb认为脑细胞中突触强度根据其感受到的经验改变，他因此提出这种突触的改变与神经在触发前后突触之间的相关成正比。<br>
+        　　为了检验按上述规则建立的网络，对第ν个模式稳定条件的影响，我们不妨将第i个结点的纯输入h<sub>i</sub>表示成<br>
+        　　<img src="../../images/image_content/6/6_2016.gif" width="228" height="49" align="absmiddle">　　　(6-9)<br>
+        　　如果进一步将上式写成μ＝ν与μ≠ν两部分，则有<br>
+        　　<img src="../../images/image_content/6/6_2018.gif" width="184" height="46" align="absmiddle">　　　(6-10)<br>
+        　　如果上式后一项的幅值小于1，则它就无法改变<img src="../../images/image_content/6/6_2019.gif" width="20" height="29" align="absmiddle">的符号，因此我们仍有<br>
+        　　<img src="../../images/image_content/6/6_2020.gif" width="90" height="36" align="absmiddle">对任意i　　(6-11)<br>
+        　　这就表明第ν个模式的稳定条件有了保证。至于(6-10)式中第二项，在p足够小时，一般其幅值都小于1。经过有的研究人员分析，如果所存储的模式纯粹是随机性的，<img src="../../images/image_content/6/6_2021.gif" width="23" height="28" align="absmiddle">取+1与-1的概率相等并与j及μ无关，则在p/N&lt;0.138条件下每个模式只有很少部分位有可能出错。如果所存储的模式之间相关程度高，则也可通过利用投影规则等方法设置联接权值，扩大网络的存储容量。<br>
+        　　从存单一模式到存储多个模式，(6-8)式给出了联接权值的确定方法。为什么将存单一模式的连接权值求总和就能存储多个模式，并且能按外触发信号调出相应的模式呢？从单一模式的情况就知道，如外触发信号接近第v个模式，则联接权值中与第v个模式有关的联接成分能协调一致地支持各个结点到所存储的第v个模式对应的状态，而其它联接权值则因第v个模式与其它模式相关性小，因而对每个结点状态的影响往往相互抵消。形象的说，系统的这种联接权值方式就像收音机调协选台一下，当外触发信号与某个存储信号接近时，系统就会发生共鸣，而稳定到该相应的存储模式状态。</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

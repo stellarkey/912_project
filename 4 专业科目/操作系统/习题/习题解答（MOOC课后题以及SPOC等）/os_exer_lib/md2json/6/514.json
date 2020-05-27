@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "进程控制的功能是负责进程状态的变化，当执行了一条进程等待原语后，该进程的状态将由___________ 状态转变为___________ 状态。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "解释", "type": "5\r\n", "options": "  \r\n"}

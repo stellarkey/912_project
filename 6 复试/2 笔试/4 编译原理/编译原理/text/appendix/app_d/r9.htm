@@ -1,0 +1,226 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　/* 输出代码 */<br>
+      　　void listcode(int cx0)<br>
+      　　{<br>
+      　　　int i;<br>
+      　　　if(listswitch)<br>
+      　　　{<br>
+      　　　　for(i=cx0;i&lt;cx;i++)<br>
+      　　　　{<br>
+      　　　　　printf(&quot;%d %s %d %d\n&quot;,i,mnemonic[code[i].f],code[i].l,code[i].a);<br>
+      　　　　　fprintf(fa,&quot;%d %s %d %d\n&quot;,i,mnemonic[code[i].f],code[i].l,code[i].a);<br>
+      　　　　}<br>
+      　　　}<br>
+      　　} 
+      <p>　　/* 语句处理 */<br>
+        　　int statement(bool* fsys,int* ptx,int lev) /* 参数意义见block和enter函数 */<br>
+        　　{<br>
+        　　　int i,cx1,cx2;<br>
+        　　　bool nxtlev[symnum]; /*　意义见block函数 */</p>
+      <p> 　　　if(sym==ident) /* 准备按照赋值语句处理 */<br>
+        　　　{<br>
+        　　　　i=postion(id,*ptx);<br>
+        　　　　if(i==0)error(11); /* 变量未找到 */<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　if(table[i].kind!=variable)<br>
+        　　　　　{<br>
+        　　　　　　error(12); /* 赋值语句格式错误 */<br>
+        　　　　　　i=0;<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　　getsymdo;<br>
+        　　　　if(sym==becomes) <br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　}<br>
+        　　　　else error(13); /* 检测赋值符号 */<br>
+        　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　expressiondo(nxtlev,ptx,lev); /* 处理赋值符号右侧表达式 */<br>
+        　　　　if(i!=0)<br>
+        　　　　{<br>
+        　　　　　gendo(sto,lev-table[i].level,table[i].adr); /* expression将执行一系列指令，但最终结果将会保存在栈顶，执行sto命令完成赋值 
+        */<br>
+        　　　　}<br>
+        　　　}<br>
+        　　　else<br>
+        　　　{<br>
+        　　　　if(sym==readsym) /* 准备按照read语句处理 */<br>
+        　　　　{<br>
+        　　　　　getsymdo;<br>
+        　　　　　if(sym!=lparen)error(34); /* 格式错误，应是左括号 */<br>
+        　　　　　else<br>
+        　　　　　{<br>
+        　　　　　　do<br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　　if(sym==ident)i=postion(id,*ptx); /* 查找要读的变量 */<br>
+        　　　　　　　else i=0;<br>
+        　　　　　　　if(i==0)error(35); /* read()中应是声明过的变量名 */<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　gendo(opr,0,16); /* 生成输入指令，读取值到栈顶 */<br>
+        　　　　　　　　gendo(sto,lev-table[i].level,table[i].adr); /* 储存到变量 */<br>
+        　　　　　　　}<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　}<br>
+        　　　　　　while(sym==comma); /* 一条read语句可读多个变量 */<br>
+        　　　　　}<br>
+        　　　　　if(sym!=rparen) <br>
+        　　　　　{<br>
+        　　　　　　error(33); /* 格式错误，应是右括号 */<br>
+        　　　　　　while(!inset(sym,fsys)) /* 出错补救，直到收到上层函数的后跟符号 */<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}　<br>
+        　　　　　else<br>
+        　　　　　{<br>
+        　　　　　　getsymdo;<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　　else<br>
+        　　　　{<br>
+        　　　　　if(sym==writesym) /* 准备按照write语句处理，与read类似 */<br>
+        　　　　　{<br>
+        　　　　　　getsymdo;<br>
+        　　　　　　if(sym==lparen)<br>
+        　　　　　　{<br>
+        　　　　　　　do<br>
+        　　　　　　　{<br>
+        　　　　　　　　getsymdo;<br>
+        　　　　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　　　　nxtlev[rparen]=true;<br>
+        　　　　　　　　nxtlev[comma]=true; /* write的后跟符号为) or , */<br>
+        　　　　　　　　expressiondo(nxtlev,ptx,lev); /* 调用表达式处理，此处与read不同，read为给变量赋值 
+        */<br>
+        　　　　　　　　gendo(opr,0,14); /* 生成输出指令，输出栈顶的值 */<br>
+        　　　　　　　}<br>
+        　　　　　　　while(sym==comma); <br>
+        　　　　　　　if(sym!=rparen)error(33); /* write()中应为完整表达式 */<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　getsymdo;<br>
+        　　　　　　　}<br>
+        　　　　　　}<br>
+        　　　　　　gendo(opr,0,15); /* 输出换行 */<br>
+        　　　　　}<br>
+        　　　　　else<br>
+        　　　　　{<br>
+        　　　　　　if(sym==callsym) /* 准备按照call语句处理 */<br>
+        　　　　　　{<br>
+        　　　　　　　getsymdo;<br>
+        　　　　　　　if(sym!=ident)error(14); /* call后应为标识符 */<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　i=postion(id,*ptx);<br>
+        　　　　　　　　if(i==0)error(11); /* 过程未找到 */<br>
+        　　　　　　　　else<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　if(table[i].kind==procedur)<br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　　gendo(cal,lev-table[i].level,table[i].adr); /* 生成call指令 */<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　　else error(15); /* call后标识符应为过程 */<br>
+        　　　　　　　　}<br>
+        　　　　　　　　getsymdo;<br>
+        　　　　　　　}<br>
+        　　　　　　}<br>
+        　　　　　　else<br>
+        　　　　　　{<br>
+        　　　　　　　if(sym==ifsym) /* 准备按照if语句处理 */<br>
+        　　　　　　　{<br>
+        　　　　　　　　getsymdo;<br>
+        　　　　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　　　　nxtlev[thensym]=true;<br>
+        　　　　　　　　nxtlev[dosym]=true; /* 后跟符号为then或do */<br>
+        　　　　　　　　conditiondo(nxtlev,ptx,lev); /* 调用条件处理（逻辑运算）函数 */<br>
+        　　　　　　　　if(sym==thensym) <br>
+        　　　　　　　　{<br>
+        　　　　　　　　　getsymdo;<br>
+        　　　　　　　　}<br>
+        　　　　　　　　else error(16); /* 缺少then */<br>
+        　　　　　　　　cx1=cx; /* 保存当前指令地址 */<br>
+        　　　　　　　　gendo(jpc,0,0); /* 生成条件跳转指令，跳转地址未知，暂时写0 */<br>
+        　　　　　　　　statementdo(fsys,ptx,lev); /* 处理then后的语句 */<br>
+        　　　　　　　　code[cx1].a=cx; /* 经statement处理后，cx为then后语句执行完的位置，它正是前面未定的跳转地址 
+        */<br>
+        　　　　　　　}<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　if(sym==beginsym) /* 准备按照复合语句处理 */<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　getsymdo;<br>
+        　　　　　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　　　　　nxtlev[semicolon]=true;<br>
+        　　　　　　　　　nxtlev[endsym]=true; /* 后跟符号为分号或end */</p>
+      <p> 　　　　　　　　　/* 循环调用语句处理函数，直到下一个符号不是语句开始符号或收到end */<br>
+        　　　　　　　　　statementdo(nxtlev,ptx,lev);<br>
+        　　　　　　　　　while(inset(sym,statbegsys)||sym==semicolon) <br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　if(sym==semicolon)<br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　　getsymdo;<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　　else error(10); /* 缺少； */<br>
+        　　　　　　　　　statementdo(nxtlev,ptx,lev);<br>
+        　　　　　　　　}<br>
+        　　　　　　　　if(sym==endsym) <br>
+        　　　　　　　　{<br>
+        　　　　　　　　　getsymdo;<br>
+        　　　　　　　　}<br>
+        　　　　　　　　else error(17); /* 缺少end或； */<br>
+        　　　　　　　}<br>
+        　　　　　　　else<br>
+        　　　　　　　{<br>
+        　　　　　　　　if(sym==whilesym) /* 准备按照while语句处理 */<br>
+        　　　　　　　　{<br>
+        　　　　　　　　　cx1=cx; /* 保存判断条件操作的位置 */<br>
+        　　　　　　　　　getsymdo;<br>
+        　　　　　　　　　memcpy(nxtlev,fsys,sizeof(bool)*symnum);<br>
+        　　　　　　　　　nxtlev[dosym]=true; /* 后跟符号为do */<br>
+        　　　　　　　　　conditiondo(nxtlev,ptx,lev); /* 调用条件处理 */<br>
+        　　　　　　　　　cx2=cx; /* 保存循环体的结束的下一个位置 */<br>
+        　　　　　　　　　gendo(jpc,0,0); /* 生成条件跳转，但跳出循环的地址未知 */<br>
+        　　　　　　　　　if(sym==dosym)<br>
+        　　　　　　　　　{<br>
+        　　　　　　　　　　getsymdo;<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　　else error(18); /* 缺少do */<br>
+        　　　　　　　　　statementdo(fsys,ptx,lev); /* 循环体 */<br>
+        　　　　　　　　　gendo(jmp,0,cx1); /* 回头重新判断条件 */<br>
+        　　　　　　　　　code[cx2].a=cx; /* 反填跳出循环的地址，与if类似 */<br>
+        　　　　　　　　　}<br>
+        　　　　　　　　　memset(nxtlev,0,sizeof(bool)*symnum); /* 语句结束无补救集合 */<br>
+        　　　　　　　　　testdo(fsys,nxtlev,19); /* 检测语句结束的正确性 */<br>
+        　　　　　　　　}<br>
+        　　　　　　　}<br>
+        　　　　　　}<br>
+        　　　　　}<br>
+        　　　　}<br>
+        　　　}</p>
+      <p> 　　　return 0;<br>
+        　　}<br>
+      </p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

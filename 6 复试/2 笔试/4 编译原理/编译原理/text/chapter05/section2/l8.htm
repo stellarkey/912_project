@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　也可以由关系图法求文法符号的FIRST集，可作为一种验证。其方法为：<br>
+      　　(a) 每个文法符号对应图中一个结点，对应终结符的结点时用符号本身标记，对应非终结符的结点用FIRST(A)标记。这里A表示非终结符。<br>
+      　　(b) 如果文法中有产生式A→αXβ，且α<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε,则从对应A的结点到对应X的结点连一条箭弧。<br>
+      　　(c) 凡是从FIRST(A)结点有路径可到达的终结符结点所标记的终结符都为FIRST(A)的成员。<br>
+      　　(d) 由判别步骤1确定ε是否为某非终结符FIRST集的成员，若是则将ε加入该非终结符的FIRST集中。</td>
+  </tr>
+</table>
+</body>
+</html>

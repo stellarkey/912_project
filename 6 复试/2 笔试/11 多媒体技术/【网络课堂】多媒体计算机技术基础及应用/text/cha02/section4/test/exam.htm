@@ -1,0 +1,204 @@
+<html>
+<head>
+<title> 多媒体技术基础</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<link rel="stylesheet" href="../../../../css/te.css" type="text/css">
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+mykeys[0]="C";mykeys[1]="D";mykeys[2]="D";mykeys[3]="D";mykeys[4]="D";mykeys[5]="B";mykeys[6]="D";mykeys[7]="D";//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+function check(){
+var mykeys=new Array();
+mykeys[0]="一类是家电制造厂商研制的电视计算机(Teleputer)";mykeys[1]="另一类是计算机制造厂商研制的计算机电视（Compuvision）";mykeys[2]="①声、文、图信息";mykeys[3]="②集成性";mykeys[4]="③交互性";mykeys[5]="①采用国际标准的压缩编码算法MPEG-2";mykeys[6]="②采用打包数据结构";mykeys[7]="③采用双层传输技术";mykeys[8]="①一类是对称全双工的多媒体通信";mykeys[9]="②另一类是非对称全双工的多媒体通信系统";mykeys[10]="①多媒体数据库和基于内容的检索";mykeys[11]="②多媒体通信";mykeys[12]="③多媒体创作工具";//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=0>
+
+<center>
+  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+      
+          <form>
+          <p><b>一、问答题</b><br>
+            <br>
+            问答第1题<br>
+            什么是黑白全电视信号?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第2题<br>
+            给定一张下述黑白图像，请画出一行的黑白电视信号示意图?<br>
+            <img src="../../../../images/chatp/chap02/120.gif" width="346" height="260"> 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第3题<br>
+            什么是彩色全电视信号?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第4题<br>
+            为什么选用YUV彩色空间？它与RGB彩色空间的关系如何?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第5题<br>
+            黑白视频信号获取器的工作原理?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第6题<br>
+            什么是数字锁相电路?<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第7题<br>
+            什么是彩色全电视信号的数字式解码?<br>
+            <img src="../../../../images/chatp/chap02/123.gif" width="331" height="110"> 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            问答第8题<br>
+            彩色视频信号获取器的工作原理?<br>
+            <img src="../../../../images/chatp/chap02/124.gif" width="432" height="260"> 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            问答第9题<br>
+            什么是彩色键联 Color Key<br>
+            <textarea name=textarea cols=50 rows=5></textarea>
+            <br>
+            <br>
+            问答第10题 <br>
+            什么是视频信号的实时处理？ <br>
+            <textarea name=textarea2 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            问答第11题<br>
+            多媒体计算机中实时处理视频信号有哪几种可行的方案? <br>
+            <textarea name=textarea3 cols=50 rows=5></textarea>
+            <br>
+            <br>
+            问答第12题<br>
+            什么是图像文件格式？有那几类? <br>
+            <textarea name=textarea4 cols=50 rows=5></textarea>
+            <br>
+            <!--czp-wenda-timu-->
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form>
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"块设备包括（） s1\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.硬盘",
+        "B.软盘",
+        "C.光盘",
+        "D.U盘"
+    ],
+    "q_number":1482
+}

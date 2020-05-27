@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"lab6调度算法支撑框架包括的函数指针有（）s4\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.(enqueue)(struct run_queue rq, …);",
+        "B.(dequeue)(struct run_queue rq, …);",
+        "C.(pick_next)(struct run_queue rq);",
+        "D.(proc_tick)(struct run_queue rq, …);"
+    ],
+    "q_number":1444
+}

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>句型分析的有关问题</b><br>
+      　　在自上而下的分析中，对于例4.15的文法，在扩展非终结符A时，在A的两个选择中取了产生式(2)，很顺利地完成了识别过程。假若当时是另一选择，即用(3)的右部扩展A，那将会出现什么情况呢?首先构造的推导序列是：S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cAd<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">cad。语法树如图4.8所示。这时输入符号串w的第二个符号可以与叶子结点a得以匹配，但第三个符号却不能与下一叶子结点d匹配，这时如果宣告分析失败，其意味着，识别程序不能为串cad构造推导(或语法)树，也即cad不是句子。这显然是错误的结论。因为导致失败的原因是在分析中对A的选择不是正确的。因此在自上而下分析方法中的主要问题是：假定要被代换的最左非终结符号是V，且有n条规则：V∷=α<sub><font size="-2">1</font></sub>|α<sub><font size="-2">2</font></sub>|…|α<sub><font size="-2">n</font></sub>那么如何确定用哪个右部去替代V呢?有一种解决办法是从各种可能的选择中随机挑选一种，并希望它是正确的。如果以后发现它是错误的，我们必须退回去，再试另外的选择，这种方式称为回溯。显然这样做代价极高，效率很低。在第5章，我们将专门介绍自上而下分析方法中回溯问题的解决。</td>
+  </tr>
+</table>
+</body>
+</html>

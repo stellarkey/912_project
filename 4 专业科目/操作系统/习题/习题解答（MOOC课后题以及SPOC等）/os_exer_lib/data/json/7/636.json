@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"互斥资源：读写者问题，隐含一个互斥资源-读写的问件\n互斥锁：读文件时不能写，写文件时不能读文件\n读进程：允许多个文件读，读进程时> 0时，锁定文件，读文件进程< 1时，解锁；读进程 数> 0时，说明读进程拥有锁\n写进程:拥有锁时写文件\n    ```\n     增加一个信号量w：=1，用以在写进程到达时封锁后续进程\n       cobegin\n       procedure Reader            procedure Writer\n         begin                       begin\n                                     P(w);\n           P(rmutex);                P(wmutex);\n           if rcount==0 then         // 写数据；\n             P(wmutex);              V(wmutex);\n             V(rmutex);              V(w)\n             V(w);                 end\n             // 读数据；\n             P(rmutex);\n             rcount:=rcount-1;\n             if rcount==0 then\n              V(rmutex);\n               V(rmutex);\n               end\n       coend\n    ```\n\n",
+    "question":"我们将只读数据的进程称为“读者”进程，而写或者修改数据的进程称为“写者”进程，允许多\n个“读者”同时读数据，但不运行写者与其它读者或者写者进程同时访问数据。另外，要保证：\n一旦有写者等待，新到达的读者必须等待，直到该写者完成数据访问为止，用P,V 操作实现 读者，写者同步。\n",
+    "source":"网络",
+    "answer":"互斥资源：读写者问题，隐含一个互斥资源-读写的问件\n互斥锁：读文件时不能写，写文件时不能读文件\n读进程：允许多个文件读，读进程时> 0时，锁定文件，读文件进程< 1时，解锁；读进程 数> 0时，说明读进程拥有锁\n写进程:拥有锁时写文件\n    ```\n     增加一个信号量w：=1，用以在写进程到达时封锁后续进程\n       cobegin\n       procedure Reader            procedure Writer\n         begin                       begin\n                                     P(w);\n           P(rmutex);                P(wmutex);\n           if rcount==0 then         // 写数据；\n             P(wmutex);              V(wmutex);\n             V(rmutex);              V(w)\n             V(w);                 end\n             // 读数据；\n             P(rmutex);\n             rcount:=rcount-1;\n             if rcount==0 then\n              V(rmutex);\n               V(rmutex);\n               end\n       coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":636
+}

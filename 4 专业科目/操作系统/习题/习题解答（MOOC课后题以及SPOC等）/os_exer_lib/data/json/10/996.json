@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"双工体制\n",
+    "question":"实时系统通常采用 方法来提高可靠性。\n",
+    "source":"网络",
+    "answer":"双工体制\n",
+    "type":"fill_in_the_blank",
+    "q_number":996
+}

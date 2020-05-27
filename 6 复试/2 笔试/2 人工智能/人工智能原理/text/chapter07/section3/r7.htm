@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　例如，<br>
+      　　二元概率（bigram probabilities）：<br>
+      　　<img src="../../../img/chap07/formula14.gif" width="310" height="35"><br>
+      　　词频概率（lexical-generation probabilities）： <br>
+      　　<img src="../../../img/chap07/formula15.gif" width="182" height="38"><br>
+      　　从公式可以看出，在样本数趋于无穷时，所得到的就是概率。因此，在语料库足够大的前提下上式得到的数值是完全可以代替概率使用的。实际中也是这样做的。<br>
+      　　利用这种方法，首先可以避免繁杂的人工获取规则知识的工作，它所利用的同现概率等信息可以由机器对大规模语料库进行统计而得出。同时，由于语料库中包含的语言信息比较全面，所以在对语料库的统计中，小颗粒的语言知识也会被同时获得，从而在歧义词的判定上要大大优于传统的规则方法。<br>
+      　　但是，统计方法由于需要大量的同现频率的信息，因此对计算机的存储量要求很高，同时计算这些同现概率，也需要计算机拥有较高的运算水平。<br>
+      　　在很长一段时间内，统计方法在词性标注中将成为主导性的方法。</td>
+  </tr>
+</table>
+</body>
+</html>

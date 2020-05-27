@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"stride调度算法是如何避免stride溢出问题的？",
+    "explain":"stride调度算法如何避免stride溢出（4分：三种情况，每个1分；关于BIG_STRIDE的讨论1分）\n\nhttps://piazza.com/class/i5j09fnsl7k5x0?cid=357\n\n无符号整数ab作为两个stride\n假设开始的时候a=b，之后b先增加。如果b没有溢出的话，此时a-b<0，之后应该轮到a增加，此时是成功的。\n如果b溢出了话\n首先看到schedule/default_sched.c中有一句 #define BIG_STRIDE 0x7FFFFFFF\n因为stride每次的增量都是 BIG_STRIDE / priority，所以stride每次最大的增量不会超过BIG_STRIDE \n那么因为b溢出了，所以b在溢出之前，ab相等，且无符号大于0x7FFFFFFF\n          在b溢出之后，a仍然保持原来大于0x7FFFFFFF，b小于0x7FFFFFFF\n          且a-b无符号大于0x7FFFFFFF（因为b的步进值小于0x7FFFFFFF），也就是有符号小于0，仍然是成功的\n \n \n所以问题的关键就在于#define BIG_STRIDE 0x7FFFFFFF\n这个值必须是有符号整数的最大值，这个是保证stride不会出错的原因\n举个例子，把BIG_STRIDE增大，BIG_STRIDE=0xE0000000\n那么初始令a=b=0xE0000000，b先前进0xE0000000，b变为0xC0000000，此时就有a-b>0，stride算法就错了\n\n关于BIG_STRIDE的其他解法：通过减所有进程stride的最小值来避免溢出\n",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"stride调度算法如何避免stride溢出（4分：三种情况，每个1分；关于BIG_STRIDE的讨论1分）\n\nhttps://piazza.com/class/i5j09fnsl7k5x0?cid=357\n\n无符号整数ab作为两个stride\n假设开始的时候a=b，之后b先增加。如果b没有溢出的话，此时a-b<0，之后应该轮到a增加，此时是成功的。\n如果b溢出了话\n首先看到schedule/default_sched.c中有一句 #define BIG_STRIDE 0x7FFFFFFF\n因为stride每次的增量都是 BIG_STRIDE / priority，所以stride每次最大的增量不会超过BIG_STRIDE \n那么因为b溢出了，所以b在溢出之前，ab相等，且无符号大于0x7FFFFFFF\n          在b溢出之后，a仍然保持原来大于0x7FFFFFFF，b小于0x7FFFFFFF\n          且a-b无符号大于0x7FFFFFFF（因为b的步进值小于0x7FFFFFFF），也就是有符号小于0，仍然是成功的\n \n \n所以问题的关键就在于#define BIG_STRIDE 0x7FFFFFFF\n这个值必须是有符号整数的最大值，这个是保证stride不会出错的原因\n举个例子，把BIG_STRIDE增大，BIG_STRIDE=0xE0000000\n那么初始令a=b=0xE0000000，b先前进0xE0000000，b变为0xC0000000，此时就有a-b>0，stride算法就错了\n\n关于BIG_STRIDE的其他解法：通过减所有进程stride的最小值来避免溢出\n",
+    "type":"question_answer",
+    "q_number":1572
+}

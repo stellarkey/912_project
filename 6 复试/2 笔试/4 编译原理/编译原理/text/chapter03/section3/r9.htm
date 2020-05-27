@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 4.7 消除多余状态 
+            </font></td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"><img src="../../../img/totle1/p4_7.gif" width="367" height="300"></td>
+        </tr>
+      </table>
+      　　对于给定的有穷自动机，如果它含有多余状态，可以非常简单地将多余状态消除，而得到与它等价的有穷自动机，例如图4.7(a)的状态s<sub><font size="-2">4</font></sub>连同状态s4射出的两个弧消掉，得到如图4.7(b)的有穷自动机。而在图4.7(b)中，状态s<sub><font size="-2">6</font></sub>和s<sub><font size="-2">8</font></sub>也是不能从开始状态经由任何输入串而到达的，也将它们连同由它们射出的弧消除而得到如图4.7(c)的有穷自动机。 
+      <br>
+      <b> 　　确定有穷自动机的化简就是指DFA的最小化，也就是寻求最小状态DFA</b><br>
+      　　简言之，最小状态DFA满足：<br>
+      　　没有多余状态（死状态）<br>
+      　　没有两个状态是互相等价（不可区别）<br>
+      　　下图的DFA中，没有多余状态。考察状态C和D，首先C和D同是终态，其次在读入a后分别到达C和F，而C和F也同是终态，C和F读入a后都到达C，读入b后都到达E，所以C和D等价。<br>
+      <img src="../../../img/chap03/3_3_9.gif" width="435" height="216"> </td>
+  </tr>
+</table>
+</body>
+</html>

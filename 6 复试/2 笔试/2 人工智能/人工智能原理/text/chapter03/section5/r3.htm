@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　图例中的联合概率密度：<br>
+      　　P(S,C,L,E)=P(E|S,C)<sup>*</sup>P(L|S)<sup>*</sup>P(C)<sup>*</sup>P(S)<br>
+      　　推导过程：P(S,C,L,E)=P(E|S,C,L)<sup>*</sup>P(L|S,C)<sup>*</sup>P(C|S)<sup>*</sup>P(S)（贝叶斯定理）<br>
+      　　＝P(E|S,C)<sup>*</sup>P(L|S)<sup>*</sup>P(C)<sup>*</sup>P(S)<br>
+      　　即：P(E|S,C,L) ＝ P(E|S,C), E与L无关<br>
+      　　　　P(L|S,C)= P(L|S)　　　　L与C无关<br>
+      　　　　P(C|S)=P(C) 　　　　　　C与S无关<br>
+      　　以上三条等式的正确性，可以从贝叶斯网的条件独立属性推出：每个变量与它在图中的非继承节点在概率上是独立的。<br>
+      　　相比原始的数学公式：<br>
+      　　P(S,C,L,E)=P(E|S,C,L)<sup>*</sup>P(L|S,C)<sup>*</sup>P(C|S)<sup>*</sup>P(S)<br>
+      　　推导过程：<br>
+      　　由贝叶斯定理， P(S,C,L,E)=P(E|S,C,L)<sup>*</sup>P(S,C,L)<br>
+      　　再由贝叶斯定理 P(S,C,L)= P(L|S,C)<sup>*</sup> P(S,C)<br>
+      　　同样， P(S,C)=P(C|S)<sup>*</sup>P(S)<br>
+      　　以上几个等式相乘即得原式。 <br>
+      　　显然，简化后的公式更加简单明了，计算复杂度低很多。如果原贝叶斯网中的条件独立语义数量较多，这种减少更加明显。<br>
+      　　贝叶斯网络是一系列变量的联合概率分布的图形表示。这种表示法最早被用来对专家的不确定知识编码，今天它们在现代专家系统、诊断引擎和决策支持系统中发挥了关键作用。贝叶斯网络的一个被经常提起的优点是它们具有形式的概率语义并且能作为存在于人类头脑中的知识结构的自然映像。这有助于知识在概率分布方面的编码和解释，使基于概率的推理和最佳决策成为可能。</td>
+  </tr>
+</table>
+</body>
+</html>

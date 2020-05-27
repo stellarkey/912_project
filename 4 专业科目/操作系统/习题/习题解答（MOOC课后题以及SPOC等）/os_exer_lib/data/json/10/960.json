@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"文件系统中用﹎﹎﹎﹎管理文件。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.堆栈结构",
+        "B.指针",
+        "C.目录",
+        "D.页表"
+    ],
+    "q_number":960
+}

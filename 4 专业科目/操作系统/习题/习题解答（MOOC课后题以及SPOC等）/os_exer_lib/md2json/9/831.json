@@ -1,0 +1,1 @@
+{"knowledge": "置换算法。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)在请求调页系统中有着多种置换算法：选择在以后不再使用的页面予以淘汰的算法称为﹎﹎﹎﹎。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.FIFO算法 \r\n B.OPT算法 \r\n C.LRU算法 \r\n D.NRU算法 \r\n E.LFU算法\r\n"}

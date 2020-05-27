@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "进程和程序的一个本质区别\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.前者分时使用CPU，后者独占CPU \r\n B.前者存储在内存，后者存储在外存 \r\n C.前者在一个文件，后者在多个文件中 \r\n D.前者是动态的，后者是静态的\r\n"}

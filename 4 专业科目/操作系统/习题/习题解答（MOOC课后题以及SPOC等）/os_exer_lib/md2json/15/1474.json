@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "关于文件分配的阐述正确的是（） s6\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "AD", "type": "2\r\n", "options": " A.连续分配会产生外碎片\r\n B.链式分配会产生外碎片\r\n C.索引分配会产生外碎片\r\n D.多级索引分配可支持大文件\r\n"}

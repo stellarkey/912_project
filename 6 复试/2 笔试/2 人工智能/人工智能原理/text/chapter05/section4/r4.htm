@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　<b>1.规则的表示与实例的表示一致</b><br>
+        　　如果示教例子和规则的表示形式相差很大，那么解释例子和选择例子的过程就很复杂。因此，最好采用相同的形式来表示规则和示教例子。<br>
+        　　比如程序要学习“对牌”的概念，对牌是两张点数相同的牌，对牌的规则是<br>
+        　　RANK(c1,x)∧RANK(c2,x)<img src="../../../img/chap05/symbol01.gif" width="20" height="16">PAIR<br>
+        　　为了学习这条规则，提供下面的例子<br>
+        　　(2,clubs),(3,diamonds),(2,hearts),(6,spades),(K,hearts)<img src="../../../img/chap05/symbol01.gif" width="20" height="16">PAIR<br>
+        　　这样表示的示教例子与规则表示形式差异很大，使得归纳比较困难。如果把例子改用谓词逻辑表示，则上面的例子可表示为：<br>
+        RANK(c1,2)∧SUIT(c1,clubs)∧RANK(c2,3)∧SUIT(c2,diamonds)∧RANK(c3,2)∧SUIT(c3,hearts)∧RANK(c4,6)∧SUIT(c4,spades)∧RANK(c5,K)∧SUIT(c5,hearts)<img src="../../../img/chap05/symbol01.gif" width="20" height="16">PAIR<br>
+        　　这样改写之后，再归纳出规则就比较简单了。我们可以首先去掉五个SUIT条件，然后再去掉c2、c4和c5的RANK条件，最后把常量2变换成变量x，就可以归纳成规则了。<br>
+        　　<b>2.规则的表示形式应适应归纳推理</b><br>
+        　　规则空间的表示方法应该支持归纳推理，常用的归纳方法有：把常量变成变量，省略条件，增加选择项，曲线拟合等。<br>
+        　　<b>3.规则空间中应能够包含所有可能产生的规则</b><br>
+        　　在有些实例学习的问题中，初始化时，所要求的规则并不一定全都包含在规则空间中，即规则空间的描述语言不一定能够表示全部要求的规则。解决的办法是引入新的术语，扩充规则空间的描述语言，使之能够适应所有的规则。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>LL（1）文法也可定义为:</b><br>
+      　　一个文法G是LL（1）的，当且仅当对于G的每一个非终结符A的任何两个不同产生式 A→α|β，下面的条件成立：<br>
+      　　① FIRST（α）∩FIRST(β)=<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，也就是α和β推导不出以某个相同的终结符a为首的符号串；它们不应该都能推出空字ε．<br>
+      　　② 假若β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε那么，<br>
+      　　FIRST（α)∩ FOLLOW（A）＝<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　也就是，若β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε<br>
+      　　则α所能推出的串的首符号不应在FOLLOW(A)中（如例5.3）。这种表示与定义5.4相比计算步骤少，但不如定义5.4清晰。</td>
+  </tr>
+</table>
+</body>
+</html>

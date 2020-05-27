@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　首先，我们寻找E的另一个父结点（C），并进行概率扩展<br>
+      　　　P(E|S)=P(E,C|S)+P(E,~C|S);<br>
+      　　即，吸烟的人得肺气肿的概率为吸烟得肺气肿又是矿工的人的概率与吸烟得肺气肿不是矿工的人的概率之和，也就是全概率公式。<br>
+      　　然后利用Bayes定理：<br>
+      　　　P(E|S)=P(E|C,S)<sup>*</sup>P(C|S)+P(E|~C,S)<sup>*</sup>P(~C|S); <br>
+      　　公式解释：P(E,C|S)＝P(E,C,S)/P(S)<br>
+      　　　　　　　　　　　＝P(E|C,S)<sup>*</sup>P(C,S)/P(S)(贝叶斯定理)<br>
+      　　　　　　　　　　　＝P(E|C,S)<sup>*</sup>P(C|S)(反向利用贝叶斯定理)<br>
+      　　同理可以得出P(E,~C|S)的推导过程。<br>
+      　　需要寻找该表达式的双亲结点的条件概率，重新表达联合概率（指P(E,C|S)，P(E,~C|S)）。<br>
+      　　在图中，C和S并没有双亲关系，符合条件独立条件：<br>
+      　　　P(C|S)=P(C), <br>
+      　　　P(~C|S) = P(~C),<br>
+      　　由此可得：<br>
+      　　　P(E|S) = P(E|S,C)<sup>*</sup>P(C)+P(E|~C,S)<sup>*</sup>P(~C)<br>
+      　　如果采用概述中的例题数据，则有P(E|S)＝0.9<sup>*</sup>0.3+0.3<sup>*</sup>(1-0.3)=0.48<br>
+      　　从这个例子中，不难得出这种推理的主要操作：<br>
+      　　1） 按照给定证据的V和它的所有双亲的联合概率，重新表达给定证据的询问结点的所求条件概率。<br>
+      　　2） 回到以所有双亲为条件的概率，重新表达这个联合概率。<br>
+      　　3） 直到所有的概率值可从CPT表中得到，推理完成。</td>
+  </tr>
+</table>
+</body>
+</html>

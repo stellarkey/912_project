@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onclick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　利用预测编码可以去除图像数据的时间和空间的冗余，直观、简捷和容易实现，特别适用于硬件实现，对于传输速率高的地方，大多用此法。但是预测编码的压缩能力有限，DPCM一般压缩到2~4bit/s。变换编码是进行一种函数变换，不是直接对空域图像信号编码，而是首先将空域图像信号映射变换到另一个正交矢量空间(变换域、或频域)，产生一批变换系数，然后对这些变换系数进行编码处理。</div><br>
+      　　<font color="#003399"><span class="zhongdian">1.变换编码原理</span></font><span class="zhongdian"><br>
+      　　变换编码是进行一种函数变换，不是直接对空域图像信号编码，而是首先将空域图像信号映射变换到另一个正交矢量空间(变换域、或频域)，产生一批变换系数，然后对这些变换系数进行编码处理。</span><br>
+	  <a href="#nowhere" onclick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide02Notice" name"hide02Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　变换编码的理论基础是&quot;联合信息熵必不大于各分量信息熵之和。&quot;也就是说，对于联合信源（x,y），其冗余度也隐含在信源间的相关性之中，通常不易直接对各分量进行编码；应尽量去除各分量间的相关性。 
+      <br>
+      　　现在举一个例子，设有两个相邻的数据样本x1与x2，每样本采用3bit编码，因此各有23=8个幅度等级。而两个样本的联合事件，共有8×8=64种可能性，可用图4.5-1的二维平面坐标表示。其中x1轴与x2轴分别表示相邻两样本可能的幅度等级。对于慢变信号，相邻两样本x1与x2同时出现相近幅度等级的可能性较大。因此，如图4.5-1（a）阴影区内45。斜线附近的联合事件，其出现概率也就较大，不妨将此阴影区之边界称为相关圈。信源的相关性愈强，则相关圈愈加扁长。或者形象地说，x1与x2呈现&quot;水涨船高&quot;的紧密关联特性。为了要对圈内各点的位置进行编码，就要对两个差不多大的坐标值分别进行编码。当相关性愈弱时，此相关圈就愈显方圆形状，说明x1处于某一幅度等级时，x2可能出现在不相同的任意幅度等级上。</div><br>
+      　<span class="zhongdian">　例如：<br>
+      　　·两个相邻的数据样本x1与x2<br>
+      　　·每样本采用3bit编码，各有23=8个幅度等级<br>
+      　　·两个样本的联合事件，共有8×8=64种可能性<br>
+      　　·用图4.5-1的二维平面坐标表示。</span><br>
+      <font color="#003399">　　 </font>4.5-1 正交变换的几何意义<br>
+      　　<img src="../../../../images/chatp/chap04/124.gif" width="170" height="165"> 
+      <br>
+      　　（a）子图像在阴影区中的概率大小 <br>
+      　　<img src="../../../../images/chatp/chap04/123.gif" width="261" height="167"><br>
+      　　　　　　（b）坐标系旋转后的情况 <br>
+
+      　　
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="340">
+        <param name=movie value="../../../../swf/4-5.swf">
+        <param name=quality value=high>
+        <embed src="../../../../swf/4-5.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="340">
+        </embed> 
+      </object><br>
+	  <a href="#nowhere" onclick="ShowItem(hide03Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+      <div id="hide03Notice" name"hide03Notice" class="Notice" style="visibility:hidden;display:none;">
+      　　现在若对该数据对进行正交变换，从几何上相当于坐标系旋转45<sup>。</sup>，变成y<sub>1</sub>，y<sub>2</sub>坐标系，如图4.5-1（b）所示。那么此时该相关圈正好处在y<sub>1</sub>坐标轴上下，且该圈愈扁长，其在y<sub>1</sub>上的投影就愈大，而在y<sub>2</sub>上的投影就愈小。因而从y<sub>1</sub>，y<sub>2</sub>坐标来看，任凭y<sub>1</sub>在较大范围内变化，而y<sub>2</sub>却巍然&quot;不动&quot;或&quot;只有微动&quot;。这就意味着变量y<sub>1</sub>和y<sub>2</sub>之间在统计更加相互独立。因此，通过这种坐标系旋转变换，就能得到一组去掉大部分甚至全部统计相关性的另一种输出样本。<br>
+      　　变换编码技术已有近30年的历史，技术上比较成熟，理论也比较完备，广泛应用于各种图像数据压缩，诸如单色图像、彩色图像、静止图像、运动图像，以及多媒体计算机技术中的电视帧内图像压缩和帧间图像压缩等。<br>
+      　　正交变换的种类很多，如傅立叶（Fouries）变换、沃尔什（Walsh）变换、哈尔（Haar）变换、斜（slant）变换、余弦变换、正弦变换、K-L（Karhunen - Loeve）变换等。</div><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

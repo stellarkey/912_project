@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr> 
+          <td> 
+            <table border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text  width="100%">
+              <tr bgcolor="#FFFFCC" align="center"> 
+                <td colspan="2"><b>指令功能表</b></td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">LIT 0 a</font></td>
+                <td>将常数值取到栈顶，a为常数值</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">LOD l a</font></td>
+                <td>将变量值取到栈顶，a为偏移量，l为层差</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">STO l a</font></td>
+                <td>将栈顶内容送入某变量单元中，a为偏移量，l为层差</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">CAL l a</font></td>
+                <td>调用过程，a为过程地址，l为层差</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">INT 0 a</font></td>
+                <td>在运行栈中为被调用的过程开辟a个单元的数据区</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">JMP 0 a</font></td>
+                <td>无条件跳转至a地址</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">JPC 0 a</font></td>
+                <td>条件跳转，当栈顶布尔值非真则跳转至a地址，否则顺序执行</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 0</font></td>
+                <td>过程调用结束后,返回调用点并退栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 1</font></td>
+                <td>栈顶元素取反</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 2</font></td>
+                <td>次栈顶与栈顶相加，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 3</font></td>
+                <td>次栈顶减去栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 4</font></td>
+                <td>次栈顶乘以栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 5</font></td>
+                <td>次栈顶除以栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 6</font></td>
+                <td>栈顶元素的奇偶判断，结果值在栈顶</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 7</font></td>
+                <td><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 8</font></td>
+                <td>次栈顶与栈顶是否相等，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 9</font></td>
+                <td>次栈顶与栈顶是否不等，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 10</font></td>
+                <td>次栈顶是否小于栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 11</font></td>
+                <td>次栈顶是否大于等于栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 12</font></td>
+                <td>次栈顶是否大于栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 13</font></td>
+                <td>次栈顶是否小于等于栈顶，退两个栈元素，结果值进栈</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 14</font></td>
+                <td>栈顶值输出至屏幕</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 15 </font></td>
+                <td>屏幕输出换行</td>
+              </tr>
+              <tr> 
+                <td><font face="Arial, Helvetica, sans-serif">OPR 0 16</font></td>
+                <td>从命令行读入一个输入置于栈顶</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

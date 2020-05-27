@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"并发 共享 虚拟和异步\n",
+    "question":"操作系统的特征为____________________________________________________ 。\n",
+    "source":"网络",
+    "answer":"并发 共享 虚拟和异步\n",
+    "type":"fill_in_the_blank",
+    "q_number":389
+}

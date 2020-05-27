@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"将文件描述信息从目录项中分离出来（将文件控制块FCB分离为文件名和文件描述信息） 的好处是：( )\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.减少读文件时的I/O信息量",
+        "B.减少写文件时的I/O信息量",
+        "C.减少查文件时的I/O信息量",
+        "D.减少复制文件时的I/O信息量"
+    ],
+    "q_number":966
+}

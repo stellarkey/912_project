@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　PL/0编译程序语法、语义分析的的核心程序是BLOCK过程，在BLOCK过程内又定义了许多嵌套及并列的过程。<br>
+      　　在过程BLOCK内对说明部分及程序体部分的分析说明如下：<br><font color="#0000FF">(1) 说明部分的分析</font><br>
+      　　由于PL/0语言允许过程调用语句，且允许过程嵌套定义。因此每个过程应有过程首部以定义局部于它自己过程的常量、变量和过程标识符，也称局部量。每个过程所定义的局部量只能供它自己和它自己定义的内过程引用。对于同一层并列过程的调用关系是先定义的可以被后定义的引用，反之则不行。<br>
+      　　说明部分的处理任务就是对每个过程的说明对象造名字表，填写所在层次、标识符的属性和分配的相对位置等。标识符的属性不同时，所需要填写的信息也有所不同。登录信息是调用ENTER过程完成的。</td>
+  </tr>
+</table>
+</body>
+</html>

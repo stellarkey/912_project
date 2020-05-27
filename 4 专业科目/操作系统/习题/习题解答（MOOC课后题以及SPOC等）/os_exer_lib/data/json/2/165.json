@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"可解决文件重名问题的最简单的目录结构是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.单级目录",
+        "B.树型结构目录",
+        "C.二级目录",
+        "D.便于共享的目录"
+    ],
+    "q_number":165
+}

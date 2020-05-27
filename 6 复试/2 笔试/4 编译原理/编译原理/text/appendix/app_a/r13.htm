@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　　　　　else<br>
+      　　　　　　　if sym=writesym<br>
+      　　　　　　　　then<br>
+      　　　　　　　　　begin<br>
+      　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　if sym=lparen<br>
+      　　　　　　　　　　　then<br>
+      　　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　　repeat<br>
+      　　　　　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　　　　　expression([rparen,comma]+fsys);<br>
+      　　　　　　　　　　　　　　gen(opr,0,14)<br>
+      　　　　　　　　　　　　　until sym&lt;&gt;comma; <br>
+      　　　　　　　　　　　　　if sym&lt;&gt;rparen<br>
+      　　　　　　　　　　　　　　then error(33)<br>
+      　　　　　　　　　　　　　　else getsym<br>
+      　　　　　　　　　　　　end;<br>
+      　　　　　　　　　　gen(opr,0,15)<br>
+      　　　　　　　　　end<br>
+      　　　　　　　　else<br>
+      　　　　　　　　　if sym=callsym<br>
+      　　　　　　　　　　then<br>
+      　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　getsym;<br>
+      　　　　　　　　　　　　if sym&lt;&gt;ident<br>
+      　　　　　　　　　　　　　then error(14)<br>
+      　　　　　　　　　　　　　else<br>
+      　　　　　　　　　　　　　　begin<br>
+      　　　　　　　　　　　　　　　i∶=position(id);<br>
+      　　　　　　　　　　　　　　　if i=0<br>
+      　　　　　　　　　　　　　　　　then error(11)<br>
+      　　　　　　　　　　　　　　　　else<br>
+      　　　　　　　　　　　　　　　　　with table[i] do<br>
+      　　　　　　　　　　　　　　　　　if kind=procedur<br>
+      　　　　　　　　　　　　　　　　　　then gen(cal,lev-level,adr)<br>
+      　　　　　　　　　　　　　　　　　　else error(15);<br>
+      　　　　　　　　　　　　　　　getsym<br>
+      　　　　　　　　　　　　　　end<br>
+      　　　　　　　　　　　end</td>
+  </tr>
+</table>
+</body>
+</html>

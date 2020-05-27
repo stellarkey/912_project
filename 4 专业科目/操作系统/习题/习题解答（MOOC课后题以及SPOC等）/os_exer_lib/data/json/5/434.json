@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"并发性 、共享性 、 虚拟性 、 异步性\n",
+    "question":"简单 以多道程序设计为基础的现代操作系统具有______ 、______ 、______ 和__________ 四个基本特征。\n",
+    "source":"网络",
+    "answer":"并发性 、共享性 、 虚拟性 、 异步性\n",
+    "type":"fill_in_the_blank",
+    "q_number":434
+}

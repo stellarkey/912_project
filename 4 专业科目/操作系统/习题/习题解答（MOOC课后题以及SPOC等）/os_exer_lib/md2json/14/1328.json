@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理。\r\n", "question": "x86保护模式中权限管理无处不在，下面哪些时候要检查访问权限() (w4l1)\r\n\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABC", "type": "2\r\n", "options": " A.内存寻址过程中\r\n B.代码跳转过程中\r\n C.中断处理过程中\r\n D.ALU计算过程中\r\n"}

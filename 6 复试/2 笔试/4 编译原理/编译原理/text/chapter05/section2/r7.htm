@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　请学员用算法1的结果由算法2计算例5.7文法各非终结符的FIRST集。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例5.7</font> </td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　文法G7[S]为：<br>
+            　　S→AB<br>
+            　　S→bC<br>
+            　　A→ε<br>
+            　　A→b<br>
+            　　B→ε<br>
+            　　B→aD<br>
+            　　C→AD<br>
+            　　C→b<br>
+            　　D→aS<br>
+            　　D→c<br>
+            　　<font color="#0000FF">参考答案：</font><br>
+            　　FIRST(S)={FIRST(A)\{ε}}∪{FIRST(B)\{ε}}∪{ε}∪{b}={b,a,ε}<br>
+            　　FIRST(A)={b}∪{ε}={ b,ε}<br>
+            　　FIRST(B)＝{ε}∪{a}＝{a,ε}<br>
+            　　FIRST(C)={FIRST(A) \{ε}}∪FIRST(D)∪FIRST(b)={b,a,c}<br>
+            　　FIRST(D)={a}∪{c}={a,c}<br>
+            　　所以最终求得：<br>
+            　　FIRST(S)={a,b,ε}<br>
+            　　FIRST(A)={b,ε}<br>
+            　　FIRST(B)={a,ε}<br>
+            　　FIRST(C)={a,b,c}<br>
+            　　FIRST(D)={a,c}<br>
+            　　每个产生式的右部符号串的开始符号集合为： <br>
+            　　FIRST(AB)={a,b,ε}<br>
+            　　FIRST(bC)={b}<br>
+            　　FIRST(ε)＝{ε}<br>
+            　　FIRST(b)＝{b}<br>
+            　　FIRST(aD)={a}<br>
+            　　FIRST(AD)={a,b,c}<br>
+            　　FIRST(b)={b}<br>
+            　　FIRST(aS)={a}<br>
+            　　FIRST(c)={c}</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

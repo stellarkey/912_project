@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"下面软件系统中完全属于系统软件的一组是\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.操作系统、编译系统、windowsNT",
+        "B.接口软件、操作系统、软件开发工具",
+        "C.专用程序、财务管理软件、编译系统、操作系统",
+        "D.操作系统、接口软件、Office 2000"
+    ],
+    "q_number":889
+}

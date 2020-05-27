@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　<b>n-gram模型</b>。语言模型主要分为规则模型和统计模型两种。统计语言模型是用概率统计的方法来揭示语言单位内在的统计规律，其中n-gram模型简单有效，被广泛使用。n-gram模型基于这样一种假设，第n个词的出现只与前面n-1个词相关，而与其它任何词都不相关，整句的概率就是各个词出现概率的乘积。这些概率可以通过直接从语料中统计n个词同时出现的次数得到。常用的是二元的bigram和三元的trigram。语言模型的性能通常用交叉熵和复杂度（Perplexity）来衡量。交叉熵的意义是用该模型对文本识别的难度，或者从压缩的角度来看，每个词平均要用几个位来编码。复杂度的意义是用该模型表示这一文本平均的分支数，其倒数可视为每个词的平均概率。平滑是指对没观察到的N元组合赋予一个概率值，以保证词序列总能通过语言模型得到一个概率值。通常使用的平滑技术有图灵估计、删除插值平滑、Katz平滑和Kneser-Ney平滑。<br>
+      　　式（1）的第二项，根据互不相关性假设，可改写为： <br>
+      　　PROB(W<sub>1</sub>,...,W<sub>T</sub>|C<sub>1</sub>,...,C<sub>T</sub>)≌∏<sub>i=1,...,T</sub>PROB(W<sub>i</sub>|C<sub>i</sub>)<br>
+      　　例：Flies like a flower.<br>
+      　　PROB(N V ART N)<br>
+      　　=PROB(N|φ)×PROB(V|N)×PROB(ART|V)×PROB(N|ART)<br>
+      　　=0.29×0.43×0.65×1=0.081<br>
+      　　PROB(flies like a flower|ART,N,V,N)<br>
+      　　=PROB(flies|N)×PROB(flies|V)×PROB(a|ART)×PROB(flowers|N)<br>
+      　　=0.025×0.1×0.36×0.063=0.000054=5.4×10<sup>-5</sup> <br>
+      　　即，综合结果为： <br>
+      　　PROB(flies like a flower)<br>
+      　　=PROB(N V ART N)×PROB(flies like a flower|ART,N,V,N )<br>
+      　　＝0.081×5.4×10<sup>-5</sup> = 4.37×10<sup>-6</sup><br>
+      　　总之，式（1）的概率公式可改写为： <br>
+      　　PROB(C<sub>1</sub>,C<sub>2</sub>,...C<sub>T</sub>)×PROB(W<sub>1</sub>,W<sub>2</sub>,...,W<sub>T</sub>|C<sub>1</sub>,C<sub>2</sub>,...,C<sub>T</sub>)<br>
+      　　=∏<sub>i=1,...,T</sub>PROB(C<sub>i</sub>|C<sub>i-1</sub>)×∏<sub>i=1,...,T</sub>PROB(W<sub>i</sub>|C<sub>i</sub>)<br>
+      　　=∏<sub>i=1,...,T</sub>PROB(C<sub>i</sub>|C<sub>i-1</sub>)×PROB(W<sub>i</sub>|C<sub>i</sub>)</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由上述例子不难看出含有左递归的文法绝对不是LL(1)文法，对此结论读者可以自己证明，所以也就不可能用确定的自顶向下分析法，然而，为了使某些含有左递归的文法经过等价变换消除左递归后可能变为LL(1)文法，可采取下列变换公式：<br>
+      　　a) 消除直接左递归，把直接左递归改写为右递归，如对文法G5：<br>
+      　　S→Sa<br>
+      　　S→b<br>
+      　　可改写为：<br>
+      　　S→bS′<br>
+      　　S′→aS′|ε<br>
+      　　改写后的文法和原文法产生的语言句子集都为：｛ba<sup><font size="-2">n</font></sup>|n≥0｝。<br>
+      　　读者自己验证改写后的文法为LL(1)文法。<br>
+      　　一般情况下，假定关于A的全部产生式是：<br>
+      　　A→Aα<sub><font size="-2">1</font></sub>|Aα<sub><font size="-2">2</font></sub>|…|Aα<sub><font size="-2">m</font></sub>|β<sub><font size="-2">1</font></sub>|β<sub><font size="-2">2</font></sub>|…|β<sub><font size="-2">n</font></sub><br>
+      　　其中，αi(1≤i≤m)不等于ε,βj(1≤j≤n)不以A开头，消除直接左递归后改写为：<br>
+      　　A→β<sub><font size="-2">1</font></sub> A′|β<sub><font size="-2">2</font></sub> 
+      A′|…|β<sub><font size="-2">n</font></sub> A′<br>
+      　　A′→α<sub><font size="-2">1</font></sub> A′|α<sub><font size="-2">2</font></sub> 
+      A′|…|α<sub><font size="-2">m</font></sub> A′|ε<br>
+      　　b) 消除间接左递归。<br>
+      　　对于间接左递归的消除需先将间接左递归变为直接左递归，然后再按a)消除直接左递归。</td>
+  </tr>
+</table>
+</body>
+</html>

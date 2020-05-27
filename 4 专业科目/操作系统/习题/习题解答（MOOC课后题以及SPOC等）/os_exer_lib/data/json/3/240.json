@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"请求分页存储管理中，若把页面尺寸增加一倍，在程序顺序执行时，则一般缺页中断次数会_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.增加",
+        "B.减少",
+        "C.不变",
+        "D.可能增加也可能减少"
+    ],
+    "q_number":240
+}

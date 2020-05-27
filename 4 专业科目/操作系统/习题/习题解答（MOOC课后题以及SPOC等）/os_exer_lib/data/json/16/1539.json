@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"对于分属不同进程的线程A和线程B之间进行切换，必须要切换页表。",
+    "explain":"暂无",
+    "degree_of_difficulty":1,
+    "source":"2016年期末",
+    "answer":"A",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1540
+}

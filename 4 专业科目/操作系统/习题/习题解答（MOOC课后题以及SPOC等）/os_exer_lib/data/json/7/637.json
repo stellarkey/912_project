@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"每个吸烟者需要一个进程，分别和经销商进行同步\n互斥资源：桌子\nA,B,C,D四个进程，A表示烟草拥有者，B是纸拥有者，C火柴拥有者，D经销商\nS实现互斥，表示桌子上是否放有东西\nSad,Sbd,Scd分别表示进程AD,BD,CD之间的同步\n    ```\n     cobegin\n     经销商              烟草拥有者          纸拥有者              火柴拥有者\n       begin               begin               begin                 begin\n         P(s);               P(Sad);             P(Sbd);               P(Scd);\n         // 放原料；         // 取纸和火柴；     // 取烟草和火柴；     // 取纸和烟草；\n         if(纸和火柴)        V(s);               V(s);                 V(s);\n           V(Sad);           // 吸烟；           // 吸烟；             // 吸烟；\n         else              end                 end                    end\n           if(烟草和火柴)\n             V(Sbd);\n          else\n            V(Scd);\n         end\n     coend\n    ```\n\n",
+    "question":"三个吸烟者在一间房间内，还有一个香烟供应者。为了制造并抽掉香烟，每个吸烟者需要三\n样东西：烟草、纸和火柴。供应者有丰富的货物提供。三个吸烟者中，第一个有自己的烟草，\n第二个有自己的纸，第三个有自己的火柴。供应者将两样东西放在桌子上，允许一个吸烟者\n进行对健康不利的吸烟。当吸烟者完成吸烟后唤醒供应者，供应者再放两样东西（随机地） 在桌面上，然后唤醒另一个吸烟者。试为吸烟者和供应者编写程序解决问题。\n",
+    "source":"网络",
+    "answer":"每个吸烟者需要一个进程，分别和经销商进行同步\n互斥资源：桌子\nA,B,C,D四个进程，A表示烟草拥有者，B是纸拥有者，C火柴拥有者，D经销商\nS实现互斥，表示桌子上是否放有东西\nSad,Sbd,Scd分别表示进程AD,BD,CD之间的同步\n    ```\n     cobegin\n     经销商              烟草拥有者          纸拥有者              火柴拥有者\n       begin               begin               begin                 begin\n         P(s);               P(Sad);             P(Sbd);               P(Scd);\n         // 放原料；         // 取纸和火柴；     // 取烟草和火柴；     // 取纸和烟草；\n         if(纸和火柴)        V(s);               V(s);                 V(s);\n           V(Sad);           // 吸烟；           // 吸烟；             // 吸烟；\n         else              end                 end                    end\n           if(烟草和火柴)\n             V(Sbd);\n          else\n            V(Scd);\n         end\n     coend\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":637
+}

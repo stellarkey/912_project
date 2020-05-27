@@ -1,0 +1,268 @@
+<html>
+<head>
+<title>第二章 课后习题</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="css/text.css" type="text/css">
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<script language="JavaScript">
+function getresultcheck(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-select-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-select-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="radio")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+function getresultcheck1(form)
+{var mykeys=new Array();
+//  mykeys[0]="B";
+//czp-mulselect-answer
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=form.elements;
+
+<!--czp-mulselect-count-->
+for(var I=0;I<every.length;I++)
+{
+	if(every[I].type=="checkbox")
+	{
+		
+		if(every[I].checked)
+		{	
+	
+			var item=parseInt(every[I].name.substr(0));
+		
+			answer[item-1]+=every[I].value;
+		}
+	}				
+}
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font color=red>您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var I=0;I<answer.length;I++)
+{
+	if(answer[I]==mykeys[I])
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;//每题分数
+	}else
+	{
+		var rstr="<font size=2>第"+(I+1)+"题答案错误!正确答案为"+mykeys[I]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br>您的总成绩为:";
+newcount+=Math.ceil(totalscore);
+newcount+="分";
+newwin=window.open("","","height=200,width=300,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);}
+
+
+
+
+
+
+
+
+
+
+
+
+function check(){
+var mykeys=new Array();
+//czp-tiankong-answer
+//mykeys[0]="B";
+var answer=new Array();
+for(var I=0;I<mykeys.length;I++) answer[I]="";
+
+var every=zfl.elements;
+for(var I=0;I<every.length;I++)
+{
+if(every[I].type=="text")
+{
+ if(every[I].value!==null)
+ {
+ //var item=parseInt(every[I].name.substr(1))
+//  answer[item-1]+=every[I].value;
+  answer[I]+=every[I].value;
+  }
+ }
+}
+
+
+var newcount="<html><head><title>谢谢您!</title></head><body><center><h2><font face=\"隶书\" size=\"5\" color=\"#000099\">您的测试结果</font></h2></center>";
+var totalscore=0;
+for(var i=0;i<answer.length;i++)
+{
+	if(answer[i]==mykeys[i])
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案正确!</font><br>";
+		newcount+=rstr;
+		totalscore+=1/(answer.length)*100;
+	}else
+	{
+		var rstr="<font face=\"宋体\" size=2>第"+(i+1)+"个空答案错误!正确答案为"+mykeys[i]+"</font><br>";
+		newcount+=rstr;
+	}
+
+}
+
+newcount+="<br><font face=\"宋体\" size=3><b>您的总成绩为:</b></font><font face=\"宋体\" size=3 color=red>";
+newcount+=Math.ceil(totalscore);
+newcount+="分</font><br>";
+newwin=window.open("","","height=400,width=400,scrollbars=yes,resizable=no");
+newwin.document.write(newcount);
+}
+
+</script>
+<body bgcolor="#FFFFFF" text="#000000" topmargin=10 leftmargin="10">
+<center>
+  <br>
+  第二章 课后习题<br>
+  <br>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        
+ 
+        
+ 
+ 
+ 
+        
+          <form>
+          <p> 1、用回溯策略求解如下所示二阶梵塔问题，画出搜索过程的状态变化示意图。</p>
+          <p><img src="images/t1.gif" width="357" height="97"></p>
+          <p> 对每个状态规定的操作顺序为：先搬1柱的盘，放的顺序是先2柱后3柱；再搬2柱的盘，放的顺序是先3柱后1柱；最后搬3柱的盘，放的顺序是先1柱后2柱。 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            2、滑动积木块游戏的棋盘结构及某一种将牌的初始排列结构如下：</p>
+          <p> <img src="images/t2.gif" width="173" height="22"></p>
+          <p>其中B表示黑色将牌，W表示白色将牌，E表示空格。游戏的规定走法是： <br>
+            （1）任意一个将牌可以移入相邻的空格，规定其耗散值为1；<br>
+            （2）任意一个将牌可相隔1个或2个其他的将牌跳入空格，规定其耗散值等于跳过将牌的数目；游戏要达到的目标是使所有白将牌都处在黑将牌的左边（左边有无空格均可）。对这个问题，定义一个启发函数h(n)，并给出利用这个启发函数用算法A求解时所产生的搜索树。你能否辨别这个h(n)是否满足下界范围？在你的搜索树中，对所有的节点满足不满足单调限制？ 
+            <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            3、对1.4节中的旅行商问题，定义两个h函数（非零），并给出利用这两个启发函数用算法A求解1.4节中的五城市问题。讨论这两个函数是否都在h*的下界范围及求解结果。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            4、2.1节四皇后问题表述中，设应用每一条规则的耗散值均为1，试描述这个问题h*函数的一般特征。你是否认为任何h函数对引导搜索都是有用的？<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            5、对N＝5，k≤3的M－C问题，定义两个h函数（非零），并给出用这两个启发函数的A算法搜索图。讨论用这两个启发函数求解该问题时是否得到最佳解。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            6、证明OPEN表上具有f(n)＜f*(s)的任何节点n，最终都将被A*选择去扩展。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            7、如果算法A*从OPEN表中去掉任一节点n，对n有f(n)＞F（F＞f*(s)），试说明为什么算法A*仍然是可采纳的。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            8、用算法A逆向求解图2.7中的八数码问题，评价函数仍定义为f(n)=d(n)+w(n)。逆向搜索在什么地方和正向搜索相会。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            9、讨论一个h函数在搜索期间可以得到改善的几种方法。<br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            10、四个同心圆盘的扇区数字如图所示，每个圆盘可单独转动。问如何转动圆盘使得八个径向的4个数字和均为12。</p>
+          <p><img src="images/t2101.gif" width="221" height="214"></p>
+          <p> <br>
+            <textarea name=jianda cols=50 rows=5></textarea>
+            <br>
+            <br>
+            <br>
+            <br>
+            <input type=button name=Button value=答案 案 onClick="MM_openBrWindow('text/examination/exam01_pop2.htm','','width=471,height=384')" class=pbox>
+            <input type='reset' name='Submit3' value='重置' class=pbox>
+            <br>
+          </p>
+        </form>
+       
+      </td>
+  </tr>
+</table></center>
+
+</body>
+</html>

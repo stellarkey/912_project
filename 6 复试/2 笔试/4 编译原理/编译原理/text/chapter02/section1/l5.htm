@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>2.1.3 类pcode代码指令的结构 </b><br>
+      　　PL/0编译程序所产生的目标代码是一个假想栈式计算机的汇编语言，可称为类PCODE指令代码，它不依赖任何具体计算机，其指令集极为简单，指令格式也很单纯，其格式如下：<br>
+      <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+        <tr> 
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">f</font></td>
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">l</font></td>
+          <td align="center" width="30%"><font face="Arial, Helvetica, sans-serif">a</font></td>
+        </tr>
+      </table>
+      　　其中f代表功能码，l表示层次差，也就是变量或过程被引用的分程序与说明该变量或过程的分程序之间的层次差。a的含意对不同的指令有所区别，对存取指令表示位移量，而对其它的指令则分别有不同的含义，见下面对每条指令的解释说明。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"knowledge": "连续内存分配。\r\n", "question": "(20150309_操作系统试题_doc)分区存储管理中的最佳适应算法，要求把空闲区按照【 】的次序登记在空闲区表中。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.大小递减 \r\n B.大小递增 \r\n C.地址递减 \r\n D.地址递增\r\n"}

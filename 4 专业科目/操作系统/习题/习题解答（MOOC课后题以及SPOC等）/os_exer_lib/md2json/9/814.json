@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)当存储器采用段页式管理时，程序按逻辑被划分成﹎﹎﹎﹎。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.段 \r\n B.页 \r\n C.区域 \r\n D.块\r\n"}

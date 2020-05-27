@@ -1,0 +1,276 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          解：先构造NFA：<br>
+          <br>
+          <img src="../../images/img/img3_1.gif" width="356" height="54"> <br>
+          用子集法将NFA确定化 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+          </tr>
+          <tr> 
+            <td align="center">X</td>
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">A</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">A</td>
+            <td align="center">AB</td>
+          </tr>
+          <tr> 
+            <td align="center">AB</td>
+            <td align="center">AC</td>
+            <td align="center">AB</td>
+          </tr>
+          <tr> 
+            <td align="center">AC</td>
+            <td align="center">A</td>
+            <td align="center">ABY</td>
+          </tr>
+          <tr>
+            <td align="center">ABY</td>
+            <td align="center">AC</td>
+            <td align="center">AB</td>
+          </tr>
+        </table>
+        <br>
+        除X，A外，重新命名其他状态，令AB为B、AC为C、ABY为D，因为D含有Y（NFA的终态），所以D为终态。<br>
+        <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+          </tr>
+          <tr> 
+            <td align="center">X</td>
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">A</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">A</td>
+            <td align="center">B</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">C</td>
+            <td align="center">B</td>
+          </tr>
+          <tr> 
+            <td align="center">C</td>
+            <td align="center">A</td>
+            <td align="center">D</td>
+          </tr>
+          <tr> 
+            <td align="center">D</td>
+            <td align="center">C</td>
+            <td align="center">B</td>
+          </tr>
+        </table>
+        DFA的状态图：:<br>
+        <img src="../../images/img/img3_2.gif" width="337" height="76"> <b><br>
+        <br>
+        问答第2题</b><br>
+        解：<br>
+        用子集法将NFA确定化： 
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">VQ</td>
+            <td align="center">QU</td>
+          </tr>
+          <tr> 
+            <td align="center">VQ</td>
+            <td align="center">VZ</td>
+            <td align="center">QU</td>
+          </tr>
+          <tr> 
+            <td align="center">QU</td>
+            <td align="center">V</td>
+            <td align="center">QUZ</td>
+          </tr>
+          <tr> 
+            <td align="center">VZ</td>
+            <td align="center">Z</td>
+            <td align="center">Z</td>
+          </tr>
+          <tr> 
+            <td align="center">V</td>
+            <td align="center">Z</td>
+            <td align="center"><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">QUZ</td>
+            <td align="center">VZ</td>
+            <td align="center">QUZ</td>
+          </tr>
+          <tr> 
+            <td align="center">Z</td>
+            <td align="center">Z</td>
+            <td align="center">Z</td>
+          </tr>
+        </table>
+        <br>
+        重新命名状态子集，令VQ为A、QU为B、VZ为C、V为D、QUZ为E、Z为F。<br>
+        <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center"><font color="#FFFFFF">.</font></td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+          </tr>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">A</td>
+            <td align="center">B</td>
+          </tr>
+          <tr> 
+            <td align="center">A</td>
+            <td align="center">C</td>
+            <td align="center">B</td>
+          </tr>
+          <tr> 
+            <td align="center">B</td>
+            <td align="center">D</td>
+            <td align="center">E</td>
+          </tr>
+          <tr> 
+            <td align="center">C</td>
+            <td align="center">F</td>
+            <td align="center">F</td>
+          </tr>
+          <tr> 
+            <td align="center">D</td>
+            <td align="center">F</td>
+            <td align="center"><font color="#FFFFFF">.</font></td>
+          </tr>
+          <tr> 
+            <td align="center">E</td>
+            <td align="center">C</td>
+            <td align="center">E</td>
+          </tr>
+          <tr> 
+            <td align="center">F</td>
+            <td align="center">F</td>
+            <td align="center">F</td>
+          </tr>
+        </table>
+        DFA的状态图：<br>
+        <img src="../../images/img/img3_3.gif" width="311" height="181"> <br>
+        <br>
+        <b>问答第3题</b><br>
+        解： <br>
+        初始分划得<br>
+        Π0：终态组{0}，非终态组{1,2,3,4,5} <br>
+        　　对非终态组进行审查： <br>
+        　　{1,2,3,4,5}a <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{0,1,3,5}<br>
+        　　而{0,1,3,5}既不属于{0}，也不属于{1,2,3,4,5} <br>
+        　　∵{4} a <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{0}，所以得到新分划 
+        <br>
+        Π1：{0}，{4}，{1,2,3,5} <br>
+        　　对{1,2,3,5}进行审查：<br>
+        　　∵{1,5} b <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{4}<br>
+        　　{2,3} b <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{1,2,3,5}，故得到新分划 
+        <br>
+        Π2：{0}，{4}，{1, 5}，{2,3}<br>
+        　　{1, 5} a <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{1, 
+        5} <br>
+        　　{2,3} a <img src="../../images/img/symbol01.gif" width="9" height="7"><img src="../../images/img/1x1pixel.gif" width="1" height="16">{1,3}，故状态2和状态3不等价，得到新分划<br>
+        Π3：{0}，{2}，{3}，{4}，{1, 5} <br>
+        　　这是最后分划了<br>
+        最小DFA：<br>
+        <img src="../../images/img/img3_4.gif" width="291" height="113"><br>
+        <br>
+        <b>问答第4题</b><br>
+        解：按题意相应的正规表达式是(0*10)*0*，或0*(0 | 10)*0* 构造相应的DFA，首先构造NFA为<br>
+        <img src="../../images/img/img3_5.gif"> <br>
+        用子集法确定化：<br>
+        <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">I</td>
+            <td align="center">I0</td>
+            <td align="center">I1</td>
+          </tr>
+          <tr> 
+            <td align="center">{X,0,1,3,Y}<br>
+              {0,1,3,Y}<br>
+              {2}<br>
+              {1,3,Y}</td>
+            <td align="center">{0,1,3,Y}<br>
+              {0,1,3,Y}<br>
+              {1,3,Y}<br>
+              {1,3,Y}</td>
+            <td align="center">{2}<br>
+              {2}<br>
+              <br>
+              {2}</td>
+          </tr>
+        </table>
+        <br>
+        重新命名状态集：<br>
+        <br>
+        <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+          <tr> 
+            <td align="center">S</td>
+            <td align="center">0</td>
+            <td align="center">1</td>
+          </tr>
+          <tr> 
+            <td align="center">1<br>
+              2<br>
+              3<br>
+              4</td>
+            <td align="center">2<br>
+              2<br>
+              4<br>
+              4</td>
+            <td align="center">3<br>
+              3<br>
+              <br>
+              3 </td>
+          </tr>
+        </table>
+        DFA的状态图：<br>
+        <img src="../../images/img/img3_6.gif"> <br>
+        　　可将该DFA最小化：<br>
+        　　终态组为{1,2,4}，非终态组为{3}，{1,2,4}0 {1,2,4}，{1,2,4}1 {3}，所以1,2,4为等价状态，可合并。 
+        <br>
+        <img src="../../images/img/img3_7.gif" width="174" height="90"> <br>
+          <!--czp-wenda-daan-->
+         
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

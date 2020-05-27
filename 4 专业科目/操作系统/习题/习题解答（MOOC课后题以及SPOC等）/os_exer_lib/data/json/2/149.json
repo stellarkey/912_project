@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以下那种调度算法不可能是剥夺式的\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.先来先服务",
+        "B.最短ＣＰＵ执行期优先",
+        "C.最高优先权",
+        "D.轮转法"
+    ],
+    "q_number":149
+}

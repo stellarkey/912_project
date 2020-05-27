@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　b) <img src="../../../img/chap06/symbol01.gif" width="18" height="20">关系：对所给表达式文法中终结符在前非终结符在后的相邻符号对有：<br>
+      　　#E 则有：# <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      FIRSTVT( E)<br>
+      　　+T 则有：+ <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      FIRSTVT(T)<br>
+      　　*F 则有：* <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      FIRSTVT(F)<br>
+      　　↑F 则有：↑<img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      FIRSTVT(F) <br>
+      　　(E 则有：( <img src="../../../img/chap06/symbol01.gif" width="18" height="20">FIRSTVT(E)<br>
+      　　c) ·＞关系：对表达式文法中非终结符在前终结符在后的相邻符号对有：<br>
+      　　E# 则有：LASTVT(E) <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      #<br>
+      　　E+ 则有：LASTVT(E) <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      +<br>
+      　　T* 则有：LASTVT(T) <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      *<br>
+      　　P↑ 则有：LASTVT(P) <img src="../../../img/chap06/symbol02.gif" width="18" height="20">↑<br>
+      　　E) 则有：LASTVT(E) <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      )<br>
+      　　从而可以构造优先关系矩阵为表6.5。
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF">表6.5 表达式文法算符优先关系表</font> 
+          </td>
+        </tr>
+        <tr align="center"> 
+          <td valign="top"> 
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=table>
+              <tr> 
+                <td align="center"><img src="../../../img/index/1x1pixel.gif" width="1" height="1"></td>
+                <td align="center">+</td>
+                <td align="center">*</td>
+                <td align="center">↑</td>
+                <td align="center">i</td>
+                <td align="center">(</td>
+                <td align="center">)</td>
+                <td align="center">#</td>
+              </tr>
+              <tr> 
+                <td align="center" valign="top"><img src="../../../img/index/1x1pixel.gif" width="1" height="5"><br>
+                  +<br>
+                  *<br>
+                  ↑<br>
+                  i<br>
+                  (<br>
+                  )<br>
+                  #</td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <img src="../../../img/chap06/symbol01.gif" width="18" height="20"></td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol03.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font> </td>
+                <td align="center" valign="top"><img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <font color="#FFFFFF">.</font><br>
+                  <img src="../../../img/chap06/symbol02.gif" width="18" height="20"><br>
+                  <img src="../../../img/chap06/symbol03.gif" width="18" height="20"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "缺页中断"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"虚拟存储管理策略可以_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.扩大物理内存容量",
+        "B.扩大物理外存容量",
+        "C.扩大逻辑内存容量",
+        "D.扩大逻辑外存容量"
+    ],
+    "q_number":239
+}

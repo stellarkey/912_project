@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"Unix System\nV的外存采用的是混合分配方式，共有13个地址项，假定盘块的大小为4K。若其中有10个直接地址，则直接地址可表示的文件大小为______________\n；若再加上一次间接地址，则可表示的文件大小总共为______________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":524
+}

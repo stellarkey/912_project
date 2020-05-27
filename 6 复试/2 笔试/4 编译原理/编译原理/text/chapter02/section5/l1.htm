@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td><b>2.5 PL/0编译程序的目标代码结构和代码生成 </b><br>
+      　　编译程序的目标代码是在分析程序体时生成的，在处理说明部分时并不生成目标代码，而当分析程序体中的每个语句时，当语法正确则调用目标代码生成过程以生成与PL/0语句等价功能的目标代码，直到编译正常结束。<br>
+      　　PL/0语言的代码生成是由过程GEN完成的。GEN过程有三个参数，分别代表目标代码的功能码、层差和位移量(对不同的指令含意不同)。生成的代码顺序放在数组CODE中。CODE为一维数组，数组元素为记录型数据。每一个记录就是一条目标指令。CX为指令的指针，由0开始顺序增加。实际上目标代码的顺序是内层过程的排在前边，主程序的目标代码在最后。下面我们给出一个PL/0源程序和对应的目标程序的清单。</td>
+  </tr>
+</table>
+</body>
+</html>

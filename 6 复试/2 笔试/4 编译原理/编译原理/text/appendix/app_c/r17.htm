@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td valign="top"> 
+      <p> 　　lines : /* empty */<br>
+        　　　　　| lines line<br>
+        　　　　　;
+      <p>　　line: dexp ′\n′<br>
+        　　　　　　　{ printf(&quot;%15.8f\n&quot;,$1); }<br>
+        　　　　　| vexp ′\n′<br>
+        　　　　　　　{ printf(&quot;(%15.8f,%15.8f)\n&quot;,<br>
+        　　　　　　　　　$1.lo, $1.hi); }<br>
+        　　　　　| DREG ′=′ dexp ′\n′<br>
+        　　　　　　　{ dreg[$1]= $3; }<br>
+        　　　　　| VREG ′=′ vexp ′\n′<br>
+        　　　　　　　{ vreg[$1]= $3; }<br>
+        　　　　　| error ′\n′<br>
+        　　　　　　　{ yyerrok; }<br>
+        　　　　;</p>
+      <p>　　dexp: CONST<br>
+        　　　　| DREG<br>
+        　　　　　　　{ $$= dreg[$1]; }<br>
+        　　　　| dexp ′+′ dexp<br>
+        　　　　　　　{ $$= $1+$3;}<br>
+        　　　　| dexp ′-′ dexp<br>
+        　　　　　　　{ $$= $1-$3;}<br>
+        　　　　| dexp ′*′ dexp<br>
+        　　　　　　　{ $$= $1*$3;}<br>
+        　　　　| dexp ′/′ dexp<br>
+        　　　　　　　{ $$= $1/$3;}<br>
+        　　　　| ′-′ dexp%prec UMINUS<br>
+        　　　　　　　{ $$= -$2; }<br>
+        　　　　| ′(′ dexp ′)′<br>
+        　　　　　　　{ $$= $2; }<br>
+        　　　　;</p>
+      <p>　　vexp: dexp<br>
+        　　　　　　　{ $$.hi= $$.lo= $1; }<br>
+        　　　　| ′(′ dexp ′,′ dexp ′)′<br>
+        　　　　　　　{<br>
+        　　　　　　　　$$.lo= $2;<br>
+        　　　　　　　　$$.hi= $4;<br>
+        　　　　　　　　if ($$.lo &gt; $$.hi) {<br>
+        　　　　　　　　printf(&quot;interval out of order\n&quot;);<br>
+        　　　　　　　　YYERROR;<br>
+        　　　　　　　　　}<br>
+        　　　　　　　}<br>
+        　　　　| VREG<br>
+        　　　　　　　{ $$= vreg[$1]; }<br>
+        　　　　| vexp ′+′ vexp<br>
+        　　　　　　　{ $$.hi= $1.hi+$3.hi;<br>
+        　　　　　　　　$$.lo= $1.lo+$3.lo; }<br>
+        　　　　| dexp ′+′ vexp<br>
+        　　　　　　　{ $$.hi= $1+$3.hi;<br>
+        　　　　　　　　$$.lo= $1+$3.lo; }<br>
+        　　　　| vexp ′-′ vexp<br>
+        　　　　　　　{ $$.hi= $1.hi-$3.lo;<br>
+        　　　　　　　　$$.lo= $1.lo-$3.hi; }<br>
+        　　　　| dexp ′-′ vexp<br>
+        　　　　　　　{ $$.hi= $1-$3.lo;<br>
+        　　　　　　　　$$.lo= $1-$3.hi; }<br>
+        　　　　| vexp ′*′ vexp<br>
+        　　　　　　　{ $$= vmul($1.lo, $1.hi, $3); }<br>
+        　　　　| dexp ′*′ vexp<br>
+        　　　　　　　{ $$= vmul($1, $1, $3); }<br>
+        　　　　| vexp ′/′ vexp<br>
+        　　　　　　　{ if( dckeck($3) ) YYERROR;<br>
+        　　　　　　　　$$= vdiv($1.lo, $1.hi, $3); }<br>
+        　　　　| dexp ′/′ vexp<br>
+        　　　　　　　{ if( dckeck($3) ) YYERROR;<br>
+        　　　　　　　　$$= vdiv($1, $1, $3); }<br>
+        　　　　| ′-′ vexp%prec UMINUS<br>
+        　　　　　　　{ $$.hi= -$2.lo;<br>
+        　　　　　　　　$$.lo= -$2.hi; }<br>
+        　　　　| ′(′ vexp ′)′<br>
+        　　　　　　　{ $$ = $2; }<br>
+        　　　　;</p>
+      <p>　　%%</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"对磁盘进行移臂调度时，既考虑了减少寻找时间，又不频繁改变动臂的移动方向的调度算法是( )。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.先来先服务",
+        "B.最短寻找时间优先",
+        "C.电梯调度",
+        "D.优先级高者优先"
+    ],
+    "q_number":939
+}

@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "调查问卷"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"以前的学习情况？是否有课程进入前10%？如果有，是哪些课程？是否有课程不及格？如果有，是哪些课程？\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"question_answer",
+    "q_number":1141
+}

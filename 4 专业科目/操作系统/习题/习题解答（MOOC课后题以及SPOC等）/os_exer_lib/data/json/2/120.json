@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"以下那个不是程序顺序执行的特性\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.封闭性",
+        "B.顺序性",
+        "C.无关性",
+        "D.不可再现性"
+    ],
+    "q_number":120
+}

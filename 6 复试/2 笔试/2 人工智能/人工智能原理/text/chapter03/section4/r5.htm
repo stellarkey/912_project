@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class=text> 　　<font color="#0000FF">例题</font><br>
+      　　已知：f<sub><font size="-2">1</font></sub>(A<sub><font size="-2">1</font></sub>) 
+      = 0.40 ,f<sub><font size="-2">1</font></sub>(A<sub><font size="-2">2</font></sub>)=0.50,|U| 
+      = 20.<br>
+      　　　　　A<sub><font size="-2">1</font></sub>→B={b<sub><font size="-2">1</font></sub>,b<sub><font size="-2">2</font></sub>,b<sub><font size="-2">3</font></sub>}，(c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,c<sub><font size="-2">3</font></sub>)=(0.1,0.2,0.3)<br>
+      　　　　　A<sub><font size="-2">2</font></sub>→B={b<sub><font size="-2">1</font></sub>,b<sub><font size="-2">2</font></sub>,b<sub><font size="-2">3</font></sub>}，(c<sub><font size="-2">1</font></sub>,c<sub><font size="-2">2</font></sub>,c<sub><font size="-2">3</font></sub>)=(0.5,0.2,0.1)<br>
+      　　求：f<sub><font size="-2">1</font></sub>(B)<br>
+      　　<font color="#0000FF">解：</font><br>
+      　　（1） 先求：<br>
+      　　　　m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>},{b<sub><font size="-2">2</font></sub>},{b<sub><font size="-2">3</font></sub>})=(0.4*0.1,0.4*0.2,0.4*0.3)<br>
+      　　　　=(0.04,0.08,0.12);<br>
+      　　　　m<sub><font size="-2">1</font></sub>(U)=1- [m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>})+m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">2</font></sub>})+m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">3</font></sub>})]=0.76;<br>
+      　　　　m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>},{b<sub><font size="-2">2</font></sub>},{b<sub><font size="-2">3</font></sub>})=(0.5*0.5,0.5*0.2,0.5*0.1)<br>
+      　　　　=(0.25,0.10,0.05);<br>
+      　　　　m<sub><font size="-2">2</font></sub>(U)=1- [m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>})+m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">2</font></sub>})+m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">3</font></sub>})]=0.70;<br>
+      　　及m = m<sub><font size="-2">1</font></sub>⊙ m<sub><font size="-2">2</font></sub><br>
+      　　　　1/K=m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">2</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">2</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">2</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">3</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">3</font></sub>})+m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">3</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">2</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">3</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({U})<br>
+      　　　　=0.01+0.028+0.008+0.056+0.06+0.084+0.19+0.076+0.038+0.532<br>
+      　　　　=1.082<br>
+      　　（2）然后计算：<br>
+      　　　　m({b<sub><font size="-2">1</font></sub>})=K*( m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">1</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">1</font></sub>}))<br>
+      　　　　　　 　=1.082*(0.01+0.028+0.19)<br>
+      　　　　　　 　=0.247<br>
+      　　　　m({b<sub><font size="-2">2</font></sub>})=K*( m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">2</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">2</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">2</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">2</font></sub>}))<br>
+      　　　　　　 　=1.082*(0.008+0.056+0.076)<br>
+      　　　　　　 　=0.151<br>
+      　　　　m({b<sub><font size="-2">3</font></sub>})=K*( m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">3</font></sub>})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">3</font></sub>})+ 
+      m<sub><font size="-2">1</font></sub>({b<sub><font size="-2">3</font></sub>})*m<sub><font size="-2">2</font></sub>({U})+ 
+      m<sub><font size="-2">1</font></sub>({U})*m<sub><font size="-2">2</font></sub>({b<sub><font size="-2">3</font></sub>}))<br>
+      　　　　　　 　=1.082*(0.06+0.084+0.038)<br>
+      　　　　　　 　=0.138<br>
+      　　　　m(U)=1-[ m({b<sub><font size="-2">1</font></sub>})+ m({b<sub><font size="-2">2</font></sub>})+ 
+      m({b<sub><font size="-2">3</font></sub>})]=0.464<br>
+      　　最后：<br>
+      　　　　Bel（B）＝m({b<sub><font size="-2">1</font></sub>})+ m({b<sub><font size="-2">2</font></sub>})+ 
+      m({b<sub><font size="-2">3</font></sub>})＝0.536<br>
+      　　　　P1(B)＝1-Bel(~B)<br>
+      　　由于基本概率分配函数只定义在B集合和全集U之上，所以其它集合的分配函数值为0，即Bel(~B)=0<br>
+      　　所以，可得<br>
+      　　　　P1(B)＝1-Bel(~B)=1<br>
+      　　　　F<sub><font size="-2">1</font></sub>(B)=Bel(B)+(P1(B)-Bel(B))*|B|/|U|<br>
+      　　　　 　　=0.536+(1-0.536)*3/20<br>
+      　　　　　　 =0.606</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"联机命令、系统调用\n",
+    "question":"用户和操作系统之间的接口可分为＿＿和＿＿两类。\n",
+    "source":"网络",
+    "answer":"联机命令、系统调用\n",
+    "type":"fill_in_the_blank",
+    "q_number":459
+}

@@ -1,0 +1,402 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　多媒体计算机通过彩色扫描仪能够把各种印刷图像及彩色照片，数字化后送到计算机存储器中；通过视频信号数字化器能够把摄像机、录像机、激光视盘等。彩色全电视信号数字化存到计算机存储器中；还有计算机本身可以通过计算机图形学的方法编程，生成二维、三维彩色几何图形及三维动画，存在计算机存储器中。采用上述三种形式形成的数字化的图形、图像及视频信息，都以文件的形式存储到计算机的存储器，我们希望能够有国际标准的文件格式，但是目前流行大多数是工厂或企业的标准。下面将其分成两类，一类是静态图像文件格式；另一类是动态视频图像文件格式。对于静态图像文件格式，将讨论六种当前比较流行的图像格式：GIF、TIFF、TGA、BMP、PCX及MMP；对于动态视频图像文件格式，将简单介绍一下MPG、AVI等文件格式。<br>
+      　　目前世界上静态图像文件格式比较多，除了我们将介绍分析的比较流行的六种之外，还有Utah RLE，PICT Version 2 （Macintosh），IFF（Interchange 
+      file format），Sun Rasterfile，Cell array（GKS），Pixel array（CGI），CCITT Fax（T4）及RLE（Run-Length 
+      Encoding）等。下面将介绍比较流行的六种。<br>
+      <font color="#003399">　　图3.38　GIF图像文件格式结构原理图</font> <font color="#003399"><font color="#990000">（点击查看大图）</font></font><br>
+      　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap02/109.gif" width="290" height="668" border="0"></a><br>
+      <font color="#003399">　　1. GIF（Graphics Interchange Format）</font><a name="01"></a><br>
+      　　GIF文件格式是由Compu－Serve公司在1987年6月为了制定彩色图像传输协议而开发的，它支持64000像素的图像，256到16M颜色的调色板，单个文件中的多重图像，按行扫描的迅速解码，有效地压缩以及硬件无关性。<br>
+      　　该文件格式利用一些标识段，虽然文件的很多信息是存储在文件头的位置，但是这种格式倾向于多利用标识结构。在GIF中，标识块（标识段）也叫做扩展块，当前它支持两个扩展块。一个扩展块是关于图像的注释块，它包括图像的创造者，所使用的软件，扫描设备等。另一个扩展块是图像的控制命令，它规定了相对各种类型图像显示的附加的控制功能。 
+      <br>
+      　　图3.38给出了GIF文件格式的结构。扩展块可能放在图像数据的前边和后边。能够显示2～256种颜色或256级灰度（1到8bit/pixel）。图像数据用彩色编码形式存储，彩色编码可在彩色码表中找到相应的颜色。对于每种调色板（红、绿、蓝）彩色码表项用一个字节表示，它能够使调色板有16M输出。最后必须把彩色码表项转换成所用计算机可用的最近的彩色值。<br>
+      　　GIF文件可能有几种彩色映射关系，最有用的是全局映射关系（Global Map），除此之外还有局部映射关系。局部映射关系（Local Color 
+      Map）可以在光栅数据块中定义，而且只能在它所在数据块中使用，如果使用局部映射时，不能使用全局映射。GIF格式还可以和小系统中的图像变换联系起来，因为它是较大的最终用户格式，它支持隔行扫描特性。<br>
+      　　<font color="#003399">2. TIFF（Tag Image File Format）</font><a name="02"></a><br>
+      　　鉴于GIF文件格式，为了放弃一些过时的格式引进了标志域的方法，TIFF文件格式全部都是基于标志域的概念。Alaus和Microsoft公司为扫描仪和桌上出版系统研制开发了TIFF较为通用的图像文件格式，TIFF一出现就得到广泛的应用，这大大超过了设计者的想象，TIFF文件格式如图3.39所示。关于图像所有的信息都存储在标志域中，例如，它规定图像尺寸大小，规定所用计算机型号，制造商、图像的作者、说明、软件及数据。TIFF文件是一种极其灵活易变的格式，它支持多种压缩方法，特殊的图像控制函数以及许多其它的特性。因为TIFF文件比较大，为了研究开发它的复杂的实现技术，它需要扩展码。为了帮助编程人员详细了解它的复杂性，TIFF文件定义了四类不同的TIFF文件格式：TIFF-B适用于二值图像；TIFF-G适用于黑白灰度图像；TIFF-P适用于带调色板的彩色图像以及TIFF-R适用于RGB的彩色图像。TIFF-X是一种通用型，通过编程可以适用于上述所有四种类型。为了保证它们的兼容性，每类都有一个最小的域，编程时不需要使用其它的域。<br>
+      <font color="#003399">　　图3.39　TIFF图像文件格式结构原理图</font> <br>
+      　　<img src="../../../../images/chatp/chap02/110.gif"> <br>
+      　　TIFF文件格式的结构如图3.39所示，共有四部分组成：分别为文件头、文件目录、目录表项和点阵图像数据。文件头有8个字节，头两个字节定义了存储数据是由小到大，还是由大到小的顺序（Intel的格式，还是Motorola的格式）；下面两个字节定义TIFF文件版本号，图上给出的是42版本；最后四个字节是图像文件目录的指针，它指向图像文件目录（IFD-Image 
+      File Director）的首地址。图像文件目录（IFD）主要内容是当前文件的项目表。有用的图像数据以&quot;条状&quot;形式存储，可以通过图像文件目录中的登记项找到需要的图像数据。这些&quot;条&quot;可以有任意宽度，不正确的作法是一个图像文件为一&quot;条&quot;，但是为了简化缓存，文件格式推荐的&quot;条状&quot;缓存区的尺寸是8K字节。由于TIFF是基于指针的图像文件格式，所以它比GIF更复杂，它的好处是增加了灵活性，它的域数据可以任意顺序排列。 
+      <br>
+      　　像GIF文件一样，TIFF图像文件格式也支持多个图像，即在一个文件中包括多个图像，也称为子文件（Subfiles），不过在处理过程中不需要解码。IFD（图像文件目录）的最后一项可以是文件结束的0000，也可以是指向下一个子文件（Subfiles）的IFD的偏移量。<br>
+      　　TIFF有两种方法存储彩色图像数据：TIFF-P和GIF文件格式相似，在一个域中定义一幅图像的彩色映射（Color Map），存储彩色图像时就存储彩色映射的编码值，这种存储是有效的，但是存储的彩色图像的颜色只有256种；另一种方法是TIFF-R，它能够定义RGB全彩色的图像，每个像素可用3个8bit表示，它可以提供16M种颜色。<br>
+      　　图像域数据即目录表项（Directory Entry）有12个字节长，具体结构如下：2个字节的Tag，它说明这个域的特性；2个字节的Type（类型描述符），它说明数据类型ASCII，短，长，字节，有理数，以及IEEE浮点或双倍字长。）；4个字节的数据长度，它说明数据值的长度，数据类型值的长度；最后是4个字节域值的偏移量，它指向具体的图像数据值。<br>
+      　　TIFF可能是一种最复杂的图像文件格式，它支持多种编码方法：RLE（Run－Length Encoding）编码数据，LZE（Lempel－Ziv 
+      Encoding）编码数据，CCITT格式的数据以及RGB的数据。<br>
+      　　<font color="#003399">3. TGA（Targe Image Format）</font><a name="03"></a><br>
+      　　TGA图像文件格式是Truevision公司为Targe和Vista图像获取板设计的TIPS软件所使用的文件格式，Targa和Vista图像获取板插在PC机上得到了广泛的应用，因此，TGA图像文件格式的应用也变得越来越广泛。TGA图像文件格式结构比较简单，它由描述图像属性的文件头（Header）以及描述各点像素值的文件体（Body）组成，如图3.40所示。<br>
+      　　文件头共有18个字节，第一个字段是一个字节，它表示图像ID字段的尺寸。彩色映射类型字段（Color Map Type）是一个字节，它描述图像彩色映射类型，它的值对应如下的含义<br>
+      　　0：文件中没有图像数据<br>
+      　　1：有调色板非压缩类型<br>
+      　　2：真彩色非压缩类型<br>
+      　　3：黑白图非压缩类型<br>
+      　　9：有调色板用RLE压缩编码<br>
+      　　10：真彩色用RLE压缩编码<br>
+      　　11：黑白图压缩编码<br>
+      　　彩色映射规定映射的坐标和长度各为两字节，同时还规定了每个映射项的比特数。在Image Specs域中，Origin x，Origin y，Width，Height为两字节，其它均为一个字节。<br>
+      <font color="#003399">　　图3.40　TGA图像文件结构原理图</font><br>
+      　　<img src="../../../../images/chatp/chap02/111.gif" width="242" height="359"> 
+      <br>
+      　　文件体是由图像文件的标识符ID，图像文件的彩色映射（Color Map）关系以及图像像素数据组成。<br>
+      　　<font color="#003399">4. BMP（Bitmap）</font><a name="04"></a><br>
+      　　BMP是一种与设备无关的图像文件格式，它是Windows软件推荐使用的一种格式，随着Windows的普及，BMP的应用会越来越广泛。BMP是一种位映射的存储形式，其结构如图3.41所示。<br>
+      <font color="#003399">　　图3.41　BMP图像文件结构原理图</font> <br>
+      　　<img src="../../../../images/chatp/chap02/112.gif" width="333" height="396"><br>
+      　　BMP图像文件格式共分三个域：一是文件头，它又分成两个字段：一是BMP文件头，一是BMP信息头。在文件头中主要说明文件类型，实际图像数据长度，图像数据的起始位置；同时还说明图像分辨率，长、宽及调色板中用到的颜色数。第二个域是彩色映射（Color 
+      Map），最后一个域是图像数据，BMP文件存储数据时，图像的扫描方式是从左向右，从下而上。<br>
+      　　<font color="#003399">5. PCX</font><a name="05"></a><br>
+      　　PCX图像文件格式是Zsoft公司研制开发的，主要与商业性PC-Paint brush图像软件一起使用。PCX文件可以分成三类：各种单色PCX文件；不超过16种颜色的PCX文件；具有256颜色的PCX图像文件。PCX图像文件格式与特定图形显示硬件密切相关，其格式一般为256色和16色，不支持真彩色的图像存储，存储方式通常采用RLE压缩编码，读写PCX时需要一段RLE编码和解码程序。PCX图像文件格式结构如图3.42所示。<br>
+      <font color="#003399">　　图3.42　PCX图像文件结构原理图</font><br>
+      　　<img src="../../../../images/chatp/chap02/113.gif" width="269" height="363"> 
+      <br>
+      　　PCX图像文件结构分三个域：一是文件头，一是文件体，最后是256彩色映射部分。PCX文件均携带128字节的表头，用于定义图像的尺寸，彩色调色板及其它有关的图像数据。具体规定如下：PCX表头中的&quot;Manufacture&quot;字节始终保持为0x0a，这个值是PCX格式提供的唯一标志，使得读取PCX的软件可以识别它。&quot;Version&quot;字节说明PCX文件的版本：<br>
+      　　0：PC Paintbrush 2.5 版<br>
+      　　2：PC Paintbrush 2.8 版<br>
+      　　5：PC Paintbrush 3.0 版<br>
+      　　&quot;Encoding&quot;字节表示压缩编码方式，其值为1时表示采用RLE压缩编码的方法，Zsoft公司可以用不同的值表示不同的压缩编码方法。&quot;bits 
+      per Pixel&quot;说明每个像素的位数。&quot;Xmin，Ymin，Xmax及Ymax&quot;四个值定义文件的图像尺寸，图像的实际尺寸是&quot;max&quot;一值减去&quot;min&quot;值，在多数情况下&quot;min&quot;为零。&quot;hres&quot;和&quot;vres&quot;是文件中建立图像所用的水平和垂直分辨率。&quot;palette&quot;是彩色调色板，它的长度是48个字节，只适用16个颜色。&quot;byte 
+      per line&quot;代表每一行图像数据所需的字节数，可以省去程序中计算的麻烦。<br>
+      　　文件体中存放的是PCX图像文件中的图像数据，它采用了行程压缩编码技术，读取PCX文件时需要设计一段RLE解码程序。同样，将采集的一幅图像数据写成PCX文件格式时，需要设计一段RLE编码程序，将图像数据变成RLE码，写到PCX文件体中的图像数据中。最后一个域是&quot;256 
+      Color entry&quot;，一个256色的调色板要用3个字节描述一种颜色，因此，共需768个字节才能完整地描述256种颜色的调色板。尽管PCX原始文件格式在表头部分预留了一些空间，以便扩充存放调色板数据，但是256色PCX文件的调色板数据无法存入原始表头中，因此，只能把它放在文件的最后，形成最后一个域&quot;256 
+      Color Map&quot;。<br>
+      　　<font color="#003399">6. MMP</font><a name="06"></a><br>
+      　　MMP图像文件格式是Ani－Video公司以及清华大学计算机系，在他们设计制造的Ani－Video和TH－VideoⅠ、Ⅱ、Ⅲ视频信号采集板中采用的图像文件格式。根据最近几年新的发展趋势，为了使视频数据能和电视视频信号兼容，它的图像数据采用YUV的形式，这和计算机图形数据（RGB）有较大的不同，因此，它的通用性不如前面几种格式。具体结构如图3.43所示。<br>
+      <font color="#003399">　　图3.43　MMP图像文件结构原理图</font> <br>
+      　　<img src="../../../../images/chatp/chap02/114.gif" width="388" height="371"><br>
+      　　MMP图像文件格式分成两个域，一个是文件头，一个是文件体。文件头中有MMP文件标志，文件中图像的宽和高。在文件体中，图像数据采用8：2：2=Y：U：V存储方式，用6个字节存储4个像素，其中Y分量每个像素占一个字节，余下2个字节被U、V分量占用，像素的排列顺序为：<br>
+      　　UUVVYYYYYYYY<br>
+      　　多媒体计算机在处理图像信息时遇到的最大问题就是图像文件格式的多样性。目前世界上用的比较多的就有十几种，随着多媒体技术发展越来越快，图像文件格式的转换就显得很重要。<br>
+      　　虽然前面讨论的图像文件格式都互不兼容，但图像数据本身是通用的，所以在编制图像文件格式转换程序时，主要解决下述几个问题。 <br>
+      　　　(1) 识别文件头和产生文件头的程序；<br>
+      　　　(2) 文件体的解码和编程程序；<br>
+      　　　(3) 文件体的数据转换程序。<br>
+      　　在编制图像文件格式转换程序时，要考虑程序的通用性问题，对于一种输入格式需要转换成多种输出格式，所以程序满足的转换关系不是一对一的关系，而是一种多对多的网状关系。在编制程序时最好选用RGB原始格式作为理想的中间格式，这是因为很多格式中的图像数据都是以RGB的形式存放的，RGB形式到YUV的形式采用式（3.8）线性变换关系。RGB原始格式需要三个文件*R、*G、*B，它们分别存放像素的红、绿、蓝三个分量，此种格式文件没有头信息，有关属性信息需要外部表示，它存储的只是实际的图像数据转换网络，如下所示： 
+      <br>
+      　　输入格式 　　　　　中间格式 　　　　　输出格式<br>
+      　　　TGA　　　　 　　　　TGA<br>
+      　　　TIFF 　　　　　　　 TIFF<br>
+      　　　BMP 　　　　　　　　RGB 　　　　　　　BMP<br>
+      　　　PCX 　　　　　　　　PCX<br>
+      　　　MMP 　　　　　　　　MMP<br>
+      　　　IMY（IMU，IMV） 　　IMY（IMU，IMV）<br>
+      　　　CMY（CMU，CMV） 　　CMY（CMU，CMV）<br>
+      　　在编制图像文件格式转换时，除了通用性问题外，还要考虑执行速度问题。因为图像数据一般都很大，转换程序要对所有图像数据进行色度空间的转换，图像数据的编码和解码，图像数据的存储，时间消耗都很大，为了提高速度，可以采用技巧编程，例如选用合适的缓冲区、用不用长指针、块读取还是字符读取、对各种格式的头信息定义结构说明等，都可以想办法提高运行速度。<br>
+      　　关于动态图像的文件格式目前在多媒体计算机中常用的有：MPG、AVS及AVI等。MPG（MPEG）是ISO/IEC 1993年8月1日正式颁布的国际标准。MPG数据流结构分为六个层次：序列层（Sequence 
+      layer）、图像组层（Group of Picture）、图像层（Picture）、片层（Slice），宏块层（Macroblock）以及块层（Block 
+      layer）。<br>
+      　　(1) 序列层<br>
+      　　MPG序列文件头，在这里规定了MPEG解码器的运行状态，即所处理的图像信息以及一些重要的控制信息集，例如，图像的水平尺寸，图像的垂直尺寸，长宽比，帧速率，位速率，宏块总数，缓冲区大小以及运动补偿的范围等。<br>
+      　　(2) 图像组层<br>
+      　　一个MPEG图像序列分成若干个组，每组即为一个随机存取点，这样便可以实现对图像的随机存取，一个图像组可以单独地进行解码，于是，只要在压缩数据流中查找首部的信息便可实现随机存取。图像组第一帧为I图像，第一个图像组有7帧图像，跟着的图像组有9帧图像，一个图像组可以有任意长度，但是一个图像组必须包含一个或多个I图像。<br>
+      　　<font color="#003399">编码输入时（或显示时）：</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1" class="text">
+              <tr bgcolor="#FFFFFF"> 
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">1</div>
+                </td>
+                <td> 
+                  <div align="center">2</div>
+                </td>
+                <td> 
+                  <div align="center">3</div>
+                </td>
+                <td> 
+                  <div align="center">4</div>
+                </td>
+                <td> 
+                  <div align="center">5</div>
+                </td>
+                <td> 
+                  <div align="center">6</div>
+                </td>
+                <td> 
+                  <div align="center">7</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">8</div>
+                </td>
+                <td> 
+                  <div align="center">9</div>
+                </td>
+                <td> 
+                  <div align="center">10</div>
+                </td>
+                <td> 
+                  <div align="center">11</div>
+                </td>
+                <td> 
+                  <div align="center">12</div>
+                </td>
+                <td> 
+                  <div align="center">13</div>
+                </td>
+                <td> 
+                  <div align="center">14</div>
+                </td>
+                <td> 
+                  <div align="center">15</div>
+                </td>
+                <td> 
+                  <div align="center">`6</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">I</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">I</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　<font color="#003399">编码输出时（或存储数据流，或解码输入） <br>
+      </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr> 
+          <td> 
+            <table width="100%" border="0" cellspacing="1" cellpadding="1" class="text">
+              <tr bgcolor="#FFFFFF"> 
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">1</div>
+                </td>
+                <td> 
+                  <div align="center">4</div>
+                </td>
+                <td> 
+                  <div align="center">2</div>
+                </td>
+                <td> 
+                  <div align="center">3</div>
+                </td>
+                <td> 
+                  <div align="center">7</div>
+                </td>
+                <td> 
+                  <div align="center">5</div>
+                </td>
+                <td> 
+                  <div align="center">6</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">10</div>
+                </td>
+                <td> 
+                  <div align="center">8</div>
+                </td>
+                <td> 
+                  <div align="center">9</div>
+                </td>
+                <td> 
+                  <div align="center">13</div>
+                </td>
+                <td> 
+                  <div align="center">11</div>
+                </td>
+                <td> 
+                  <div align="center">12</div>
+                </td>
+                <td> 
+                  <div align="center">16</div>
+                </td>
+                <td> 
+                  <div align="center">14</div>
+                </td>
+                <td> 
+                  <div align="center">15</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">I</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+                <td> 
+                  <div align="center">I</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">P</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">B</div>
+                </td>
+                <td> 
+                  <div align="center">||</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　(3) 图像层<br>
+      　　一幅图像对应一帧，MPEG标准中定义了四种图像形式：I帧内图，P预测图，B双向预测图及D直流分量图。D图很少用到，I图信息量最多，是预测和运动补偿的基础，P图是经前面的I或P运动补偿后得到的，有一定的数据压缩，而B图是由前后的I，P图补偿后得到的，它的数据压缩率最大。<br>
+      　　(4) 片层<br>
+      　　设置片层主要是为容错考虑的，将一幅图划分若干片，每片中都存有解码所需的信息，这样，当图中某一片出错时，可以通过继续查找下一片的起始信息继续进行解码，而不会因为图像的某一部分出错导致整幅图的损坏。每个片至少包含一个宏块，在每帧图像片的位置可以不同。<br>
+      　　(5) 宏块层<br>
+      　　宏块层是一个16′16的样本块，它是运动补偿和更换量化级的单位，宏块由该样本块的4个亮度块（编号分别为1，2，3和4块）和2个色度块Cb和Cr（编号分别5和6块）构成，在其首部存放着量化级和运动补偿的信息。<br>
+      　　(6) 块层<br>
+      　　一个块是8′8的矩阵，它是编码的基本单元，DCT变换是对8′8的块进行处理的，对块的处理要运用高层中规定的各种控制信息。<br>
+      　　ISO/IEC 11172 MPEG数据文件结构如图3.44所示，这是一个限定系统的例子，数据流只有一视频和一个音频，它是按下述规定产生的；<br>
+      　　① 音频<br>
+      　　48kHz采样速率<br>
+      　　24000字节/秒每对立体声通道速率； <br>
+      　　1152样板/每个演示单元；<br>
+      　　567字节/每个存储单元。<br>
+      　　② 视频<br>
+      　　视频限定参数编码 150000字节/秒；<br>
+      　　帧速 25Hz；<br>
+      　　40′1024 字节视频缓冲区校验；<br>
+      　　在解码输入时图像的顺序是：<br>
+      　　1I 4P 2B 3B 7P 5B 6B 10P 8B 9B 13I 11B 12B 16P 14B 15B 19P 17B 18B 22P 
+      20B 21B 25I<br>
+      　　每个I图有19000字节；<br>
+      　　每个P图10000字节；<br>
+      　　每个B图2800或2900（平均2875）字节。<br>
+      <font color="#003399">　　图3.44　ISO/IEC 11172 MPEG数据文件结构原理图</font> <font color="#003399"><font color="#990000">（点击查看大图）</font></font><br>
+      <font color="#003399">　　<a href="t2.htm" target="_blank"><img src="../../../../images/chatp/chap02/115.gif" width="324" height="262" border="0"></a> 
+      　　 </font><br>
+      　　每个包头包含5到9个字节系统参考时钟（SCR－System Clock Reference）字段，在每个视频和音频包中，还包含演示时间戳（PTS－Presentation 
+      Time－Stamp）和解码时间戳（DTS－Decoding Time－Stamp）字段，它详细规定了延迟时间。<br>
+      　　AVS和AVI是Intel和IBM公司共同研制的DVI（Digital Video Interactive）系统动态图像文件格式，AVS文件格式只能在DVI系统硬件支撑下才能读写，这样系统的硬设备投资比较大，为了降低系统造价，Intel公司最近又推出了Indeo系统，它可以在Microsoft公司的Video 
+      for Windows支持下，用软件播放AVI文件。<br>
+      　　AVS文件格式比起图像文件格式能够提供较多的灵活性，它能够支持多个数据流同时操作。例如一个AVS文件可以包括一个视频和两个立体声音频数据流。更复杂的情况，一个AVS文件可以包括4个视频数据流和4个音频数据流，可以一个多窗口视听效果播放，或者是应用程序希望播放4个视频数据流中的一个，需要时立即切换到另一个。<br>
+      　　根据视频和音频数据流的类型，AVS文件又提供了三种附加数据流的类型：底层数据，数据和图像。底层数据是任意一种类型的数据，它必须同视频和音频信息一起实时提供，例如一种底层数据是时间码，它与AVS文件的每一帧数据一起存储。数据是由计算机常用的数据序列组成，直到全部数据存储到存储器之前应用程序不能使用该数据。图像流是由静止图像序列组成，可能是压缩编码数据，也可能不是压缩编码数据。DVI系统能够把AVS文件中的视频，音频和图像流转换成声音和图像。DVI系统允许应用程序使用底层数据，并为其提供方便，例如当底层数据到达时，存取底层数据；从数据流中收集底层数据并把它存到应用程序规定的缓冲区中；当底层数据到达时，通知应用程序。<br>
+      　　在DVI和Indeo系统中，保存AVS和AVI文件的介质，通常是CD-ROM，硬盘和RAM，只能使用二进制代码的单数据流，因此AVI和AVS文件中的多数据流只能采用图3.45所示方法，将多数据流定义变成单数据流文件，这是AVS和AVI的最基本格式，正因为如此，有些人把AVS或AVI文件格式称为视频和音频交替存放文件（Audio/Video 
+      Inter leaved）。<br>
+      　　<font color="#003399">图3.45　多数据流交叉变成单数据流文件 </font><br>
+      　　<img src="../../../../images/chatp/chap02/116.gif"> <br>
+      　　AVS文件的一帧可能没有固定的尺寸，特别是经过压缩编码的视频数据，某些帧可能比另外的一些帧多些或少些数据。播放时要保持一定的平均速率，对于慢速的存储设备，例如播放一个长序列数据必须克服CD-ROM较长的寻找时间（CD-ROM要引进几百毫秒的延迟），为了控制平均字节速率，AVS文件中常常增加一些缓冲衬垫数据，通常附加一些空位数据流与其它有用的数据流交织在一起。<br>
+      　　除了上述静态和动态图像文件格式之外，为了适用多媒体数据库系统以及多媒体通信系统的需要，IBM和Microsoft公司推荐了为多媒体资源文件而开发的一种带标记的文件结构，叫做RIFF文件范式，RIFF（Resource 
+      Interchange File Format）资源交换文件格式，实际上它不是一种文件格式，而是一种定义标准的范式。目前，很多多媒体资源文件都是按RIFF范示定义的，如多媒体影片文件（MMM）、波形音频文件（WAV）和位图文件（RDIB）。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>6.2.4 算符优先分析算法 </b><br>
+      　　上一节介绍了如何对已给定的文法按其产生式构造算符优先关系表，有了算符优先关系表并满足算符优先文法时，我们就可以对任意给定的符号串进行归约分析，进而判定输入串是否为该文法的句子。然而用算符优先分析法的归约过程与规范归约是不同的。<br>
+      (1) 算符优先分析句型的性质<br>
+      　　根据算符优先文法的定义 6.3 可知算符优先分析句型有如下性质：<br>
+      　　如果aNb(或ab)出现在句型r中，则a和b之间有且只有一种优先关系,即：<br>
+      　　若a <img src="../../../img/chap06/symbol01.gif" width="18" height="20"> 
+      b则在r中必含有b而不含a的短语存在。<br>
+      　　若a <img src="../../../img/chap06/symbol02.gif" width="18" height="20"> 
+      b则在r中必含有a而不含b的短语存在。<br>
+      　　若a <img src="../../../img/chap06/symbol03.gif" width="18" height="20"> 
+      b则在r中含有a的短语必含有b，反之亦然。</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"SPOOLing技术可以实现设备的分配_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.独占",
+        "B.共享",
+        "C.虚拟",
+        "D.物理"
+    ],
+    "q_number":226
+}

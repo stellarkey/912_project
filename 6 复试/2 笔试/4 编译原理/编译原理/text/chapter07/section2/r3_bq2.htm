@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF">图 7.4 识别活前缀的确定有限自动机</font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle3/p7_4-copy.gif" width="202" height="200"></td>
+        </tr>
+      </table>
+      　　将图7.3确定化并重新编号后变为图7.4。<br>
+      　　由例6.1文法对输入串ab<sup><font size="-1">i</font></sup>bcde#可以有如下推导：<br>
+      　　S′<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">S<br>
+      　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcBe<br>
+      　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAcde<br>
+      　<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aAbcde<br>
+      　　<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ab<sup><font size="-1">i</font></sup>bcde<br>
+      　　其中i为任意正整数。<br>
+      　　由此可见该文法所描述的语言可用正规式ab<sup><font size="-2">+</font></sup>cde表示。<br>
+      　　用有限自动机识别时每当识别完句柄，则状态应退回到去掉句柄所构成的串，例如在图7.4中若已识别到终态 ⑤ ，这时句柄已形成，而且句柄是Ab，则应用A→Ab归约，状态应退回到②，又因左部为A，所以，相当在状态②时又遇到A，这时应转向状态④。在状态④再遇输入串的一个b，又转到终态 
+      ⑤ ，重复上述过程。以上我们仅由对某些句子规范推导的逆过程直观地看出它的活前缀和可归前缀，然后构造其有限自动机。 </td>
+  </tr>
+</table>
+</body>
+</html>

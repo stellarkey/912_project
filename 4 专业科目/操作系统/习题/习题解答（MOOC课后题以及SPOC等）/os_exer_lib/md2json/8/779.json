@@ -1,0 +1,1 @@
+{"knowledge": "信号量。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)进程从阻塞状态进入就绪状态可能是由于﹎﹎﹎﹎.\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.现运行进程运行结束 \r\n B.现运行进程执行了P操作 \r\n C.现运行进程执行了V操作 \r\n D.现运行进程时间片用完\r\n"}

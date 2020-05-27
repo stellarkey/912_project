@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" height="594">
+  <tr> 
+    <td class="text"><b><font color="#003399">二、Commodore公司的Amiga系统</font></b><a name="02"></a><br>
+      　　Commodore公司在1985年率先在世界上推出了第一个多媒体计算机系统Amiga。在 1989年秋美国的Comdex博览会上，Commodore公司展示了Amiga系统一个完整的系列。到目前为止，该公司已推出Amiga 
+      500，1000，1500，2000，2500以及3000等型号的产品，它们可分别配置Motorola公司生产的68000，68020以及68030不同型号的CPU以及不同容量的RAM。为了提高视频和音响信息的处理速度，Commodore公司在Amiga系统中采用了三个专用芯片；Agnus（8370），Paula（8364）以及Denise（8362）。<br>
+      　　Amiga系统的结构与68000微机系统以及前面介绍的CD-I系统非常相似，只是在系统总线上连接了很有特色的三个专用芯片，下面重点介绍一下3个专用芯片的结构：<br>
+      　　（1）Agnus（8370）是专用的动画制作芯片，芯片中有5个DMA控制逻辑：视频DMA，音频DMA，位平面DAM，软盘和刷新电路DAM以及位映射控制部件的DMA控制逻辑线路及其需要的控制寄存器，它们通过内部总线与专用芯片内部的图形协处理器连在一起。因为在Agnus有较多的控制寄存器，所以有寄存器地址译码器以及寄存器地址存储器译码器，此外还有系统总线的接口电路；缓冲器、多路开关以及时钟发生器等。<br>
+      概括起来Agnus的功能是：<br>
+      　·用硬件显示移动数据，允许高速的动画制作； <br>
+      　·显示同步协处理器；<br>
+      　·控制25个通道的DMA，使CPU以最小的开销处理盘、声音和视频信息；<br>
+      　·从28MHz振荡器产生系统时钟；<br>
+      　·为视频RAM（VRAM）和扩展RAM卡提供所有的控制信号；<br>
+      　·为VRAM和扩展RAM提供地址。<br>
+      　　（2） Paula（8364）是专用音响处理及外设接口芯片，芯片中音响处理器、盘控制器、异步通信接口以及电位计通道接口都连接到内部总线的设备译码器上。音响处理器是由2路数据寄存器、两个音响控制计数器及4路D/A变换器组成。它可以通过DMA的方式和Amiga系统的存储器以及其他设备交换音响信息，在Paula的音响处理器中处理音响信息，最后经过D/A变换器，可把4路两对立体声信号输出到音响设备中。盘控制逻辑也通过DMA的方式将Amiga系统中存储的数据，通过盘控制器输出到盘上；反之可将盘上数据通过盘控制器读入到Amiga系统中。此外，还有异步通信接口和电位计通道控制逻辑，都以I/O方式进行数据传输。该芯片的主要功能是输出4路两个立体声道、9个八音阶，使用音频放大和频率调制，还有异步通信接口、盘控制器以及电位计通道接口。<br>
+      　　（3）Denise（8362）是专用的图形芯片，它有：位平面数据寄存器，位平面控制以及位平面串行输出器；硬件游标数据寄存器，硬件游标串行连续化器以及位置比较逻辑；碰撞控制逻辑、碰撞检测逻辑以及碰撞存储逻辑；优先排队控制逻辑以及位平面排队和控制寄存器；彩色选择译码器以及32位彩色输出寄存器；Mouse计数器。由上述可见，它就是多功能的彩色图形控制器，它可以控制不同分辩率的输出，从320×200到640×400；在电视机和RGB彩色监视器 
+      屏幕上可同时显示4096种颜色；有8个可重复使用的&quot;硬件游标&quot;控制器。<br>
+      较新的Amiga 3000型，采用了25MHz的68030作为CPU，配有协处理器，内存最大容量为16MB，9×100MB硬磁盘以及任选Ethernet，Novell 
+      Netware和Unix网络和软件。<br>
+      　　为了适应不同用户对多媒体技术的需要，Commodore公司提供一个多任务Amiga操作系统，它有上下拉的菜单，多窗口，图符（Icon）以及PM（Presentation 
+      Manager）等功能。同时，配备了大量应用软件，如能绘制动画，制作电视片头及作曲等专用软件。该公司还推出了一个Amiga Vision多媒体的著作系统，为用户提供一个完备的图符编程语言（A 
+      Complete Iconic Programming Language）。<br>
+      <font color="#003399"><b><br>
+      三、Apple公司的Hypercard</b></font><a name="03"></a><br>
+      　　Apple公司的Macintosh系统具有公认的良好的图形特性，它是桌上出版和桌上展示系统的先驱。Apple公司的多媒体系统也有人称之为桌上媒体，它实质上是把高质量的音响及活动的视频图像加到原来的Macintosh系统中，能够把上述特性连在一起的是HyperCard及其兼容软件。HyperCard是以卡片（Card）为节点的超级文本（Hypertext）系统，基本的信息单元是卡片或称节点，一个卡片可充满整个屏幕。一组卡片称为卡堆（Stack），可以认为卡堆是HyperCard中的文件，同类和相关的卡片可在一个卡堆内。每个卡片不仅是字符，还包括图形、图像和声音。HyperCard系统提供了许多命令或工具，通过鼠标器或键盘实现控制完成卡片的浏览、编辑、制作，信息的输入、修改、检索。它能把简单的数据库、复杂的文本程序、编程语言及著作系统组成一个快速灵活的软件包。HyperCard的数据库和所有的MAC的数据格式兼容，并开发有直接的连接电路、光扫描器以及CD-ROM驱动器连接。为了使HyperCard和这些外部设备相连接，Apple公司已经公布了一个多媒体协议和驱动程序标准集，叫做AMCA（Apple 
+      Media Control Architecture）。AMCA是系统级的结构，用来访问视频光盘、音频光盘以及录像带的信息，软件工作人员不用为多媒体外部设备写专门的驱动程序。<br>
+      　　Apple公司原来选用Mac SE和MacⅡ作为多媒体计算机的平台，现在选用了68030微处理器作为CPU，直接寻址最多可安装8MB内存，视频适配器板可在16M种不同颜色中同时显示其中256种颜色。音响媒体接口板和HyperCard软件兼容，能够提供良好的语音、音响效果，通过语音分析和识别能够代替键盘、鼠标以及操纵杆的功能。<br>
+      　　为了快速、实时地处理视频和语音信号，Apple公司正在和MIT的媒体实验室合作，组成新一代技术研究小组开发视频和音频信号压缩编码和解码技术。为了传输视频信号，他们提出了高速的宽带网以及对称的压缩编码和解码技术，并已研制出了这种样机。<br>
+      <br>
+      <font color="#003399"><b>四、Intel和IBM公司的DVI系统</b></font><a name="04"></a><br>
+      　　DVI技术（Digital Video Interactive）于1983年在RCA公司的戴维·沙诺夫研究中心（David Sanaoff 
+      Research Center in Princeton，New Jersey）开始了开发工作，在1987年3月第二次Microsoft CD-ROM会议上，首次公布了DVI技术的研究成果，1988年10月Intel公司从GE公司买来了DVI技术，1989年Intel和IBM公司在国际市场上推出了DVI技术第一代产品Action 
+      Media 750，1991年又在美国comdex展示会上推出了第二代的DVI技术的产品Action Media 750Ⅱ。<br>
+      　　DVI技术第一代的产品Action Media 750Ⅰ的结构图如图1-3所示，其核心是三块专用的DVI接口板：DVI视频板、DVI音频板以及DVI多功能板。IBM 
+      PC/AT，386，486或其兼容型计算机作为工作平台，同时配有CD-ROM驱动器，带有放大器和音响效果的RGB彩色监视器，组成了DVI用户系统。在此基础上再配置与多媒体有关的外设：视频信息数字化器（连接到DVI视频板上），音响信号数字化器（连接到DVI音响板上），扩展的视频RAM（连接到视频板上），大容量的光盘或硬盘、磁带机、录象机、音响设备、监视器以及摄像机或扫描仪等组成的DVI开发系统。<br>
+      　　DVI技术硬件的核心部件是Intel公司生产的专用芯片：VDP1（82750PA，82750PB）和VDP2（82750DA，82750DB），称之为视频像素处理器和视频显示处理器。A型提供12.5M/s操作速度，B型提供25M/s操作速度。82750PA/PB是像素处理器，采用微码编程，可以高速执行像素处理的各种算法，82750 
+      DA/DB是显示处理器，它可与82750PA/PB并行处理、显示处理好的帧存储器中的位映射图。它具有较强的图形功能，同时通过编程，适应不同分辩率、不同像素格式及不同同步格式的多种型号的显示器。<br>
+      　　<img src="../../../../images/chatp/chap01/006.gif"><br>
+      　　　　　　　　　　　　　　<font color="#003399">图1-3　DVI系统结构图</font> <br>
+      　　DVI技术软件的核心部件是AVSS（Audio/Video Sub System）和AVK（Audio Video Kernel）。AVSS是在DOS环境下，加上RTX（实时执行部件）、视频驱动器、音响驱动器，多功能驱动器以及驱动器接口模块，运行音响视频的子系统。AVK在Windows环境下运行，因此它就不局限在DOS操作系统环境，可以在其他种类的操作系统环境下运行。AVSS和AVK最主要的任务是：为音频和视频数据流相关同步提供需要的实时任务调度，实时的数据压缩和解压缩，实时地拷贝和改变比例尺，建立位映射，管理控制它们将其送至显示缓冲区等。<br>
+      　　Intel公司DVI产品发展情况如表1-4所示，1989年到1991年推出其第一代产品AM750Ⅰ，1991年到1993年推销第二代产品AM750Ⅱ，1992年到1995年推销第三代产品S3（性能指标详见表1-4）。第二代的产品性能指标比第一代产品提高了一倍，价格仅是原来的三分之一。Intel公司副总裁David 
+      House指出，1995年Intel公司要把DVI技术放到母板上，2000年时放在芯片里。House说：&quot;从71年Intel 4004问世以来，每18个月CPU中晶体管的数量增加一倍，到本世纪末CPU中晶体管的数目可达到0.5－1亿。&quot;他还说：&quot;在本世纪末，Intel公司生产的Intel786，运算速度可达2000MIPS，包括DVI运动视频，并和386结构兼容。&quot;<br>
+      <font color="#003399"><b>表1-4　Intel公司DVI产品发展情况</b></font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td bgcolor="#006699">
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%">&nbsp;</td>
+                <td class="text" width="24%">第一代产品<br>
+                  1989－1991</td>
+                <td class="text" width="36%">第二代产品<br>
+                  1991－1993</td>
+                <td class="text" width="27%">第三代产品<br>
+                  1992－1995</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%">专用芯片</td>
+                <td class="text" width="24%">i750A</td>
+                <td class="text" width="36%">i750B</td>
+                <td class="text" width="27%">V3</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%">硬件板</td>
+                <td class="text" width="24%">AM750<br>
+                  SeriesⅠ</td>
+                <td class="text" width="36%">AM750<br>
+                  Series Ⅱ</td>
+                <td class="text" width="27%">S3</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%">软件</td>
+                <td class="text" width="24%">AVSS-DOS<br>
+                  （2.13）</td>
+                <td class="text" width="36%">AVSS-DOS <br>
+                  AVK-Window(2.2)</td>
+                <td class="text" width="27%">AVK</td>
+              </tr>
+              <tr bgcolor="#FFFFFF">
+                <td class="text" width="13%">压缩算法</td>
+                <td class="text" width="24%">PLA 1.0/1.5<br>
+                  RTV1.5<br>
+                  PIC1.0</td>
+                <td class="text" width="36%">PLV2.0　PLV 2.0 <br>
+                  　　　　RTV2.<br>
+                  0PIC2.0 PIC 2.0<br>
+                  (JPEG) (JPEG)</td>
+                <td class="text" width="27%">MPEG<br>
+                  PX64<br>
+                  PIC3.0<br>
+                  (JPEG)PLV 3.0</td>
+              </tr>
+              <tr bgcolor="#FFFFFF">
+                <td class="text" width="13%">工具</td>
+                <td class="text" width="24%">MDT-Limited<br>
+                  MPT-Lumena<br>
+                  Authology</td>
+                <td class="text" width="36%">MDTLimited MDTLimited<br>
+                  　　　　　 Third Party <br>
+                  　　　　　 Tools</td>
+                <td class="text" width="27%">V3 Tools</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　DVI技术有丰富的软件支持，例如有工具软件、库函数。到91年底，全世界已有80多家厂商为DVI技术编制开发工具和各种应用软件。其中，美国有50多家，欧洲有10家，此外还有加拿大和日本。例如美国Time 
+      Arts公司编制的LUMENA图像编辑工具，以及很多著作语言都为用户提供了极大的方便。<br>
+      　　全世界还有很多厂商和公司正在从事多媒体计算机技术的研制、开发以及设计制造工作，最值得一提的是Next计算机公司，被称为&quot;计算机奇才&quot;的斯蒂夫·乔伯（Steve 
+      Jobs）是该公司的总裁，他设计的Next计算机从一开始就考虑了多媒体技术的需要，它设计思想是卓越的。该机利用PostSpript实现高级绘图功能，采用DSP进行高保真度声音信号处理，提供图像和声音的Nextmail邮件系统等。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

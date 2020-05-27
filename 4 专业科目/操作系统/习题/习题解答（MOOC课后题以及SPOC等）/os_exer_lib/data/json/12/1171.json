@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "实验环境准备"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"0x10002 https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab0/lab0_ex3.c\n",
+    "question":"对于如下的代码段，\n```\n#define SETGATE(gate, istrap, sel, off, dpl) {            \\\n    (gate).gd_off_15_0 = (uint32_t)(off) & 0xffff;        \\\n    (gate).gd_ss = (sel);                                \\\n    (gate).gd_args = 0;                                    \\\n    (gate).gd_rsv1 = 0;                                    \\\n    (gate).gd_type = (istrap) ? STS_TG32 : STS_IG32;    \\\n    (gate).gd_s = 0;                                    \\\n    (gate).gd_dpl = (dpl);                                \\\n    (gate).gd_p = 1;                                    \\\n    (gate).gd_off_31_16 = (uint32_t)(off) >> 16;        \\\n}\n```\n如果在其他代码段中有如下语句，\n```\nunsigned intr;\nintr=8;\nSETGATE(intr, 0,1,2,3);\n```\n请问执行上述指令后， intr的值是<input type=\"text\" width=\"10\">？\n",
+    "source":"网络",
+    "answer":"0x10002 https://github.com/chyyuu/ucore_lab/blob/master/related_info/lab0/lab0_ex3.c\n",
+    "type":"fill_in_the_blank",
+    "q_number":1171
+}

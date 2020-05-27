@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><b>2.2 图搜索策略</b></p>
+      <p>　　<font color="#000099">回溯搜索策略的一个特点就是只保留了从初始状态到当前状态的一条路径（无论是BACKTRACK还是BACKTRACK1都是如此），当回溯出现时，回溯点处进行的搜索将被算法&quot;忘记&quot;，其好处是节省了存储空间，而不足是这些被回溯掉的已经搜索过的部分，不能被以后使用。与此相对应的，将所有搜索过的状态都记录下来的搜索方法称为&quot;图搜索&quot;，搜索过的路径除了可以重复利用外，其最大的优点是可以更有效地利用与问题有关的一些知识，从而达到启发式搜索的目的。</font></p>
+      <p>　　产生式系统求解问题时，如果控制系统保留住所有规则应用后生成并链接起来的数据库（状态）记录图，则称工作在这种方式下的控制系统使用了图搜索策略。实际上图搜索策略是实现从一个隐含图中，生成出一部分确实含有一个目标节点的显式表示子图的搜索过程。图搜索策略在人工智能系统中广泛被使用，本节将对算法及涉及的基本理论问题作进一步讨论。<br>
+        首先回顾一下图论中几个术语的含义。<br>
+        <font color="#FF0000">节点深度</font>：根节点的深度为0，其他节点的深度规定为父节点深度加1，即dn+1＝dn＋1。<br>
+        <font color="#FF0000">路径</font>：设一节点序列为（<img src="../images/012.gif" width="146" height="12">），对i＝1，2，…，k，若任一节点ni-1都具有一个后继节点<img src="../images/013.gif" width="11" height="12" align="baseline">，则该节点序列称为从节点n0到节点nk长度为k的一条路径。<br>
+        <font color="#FF0000">路径耗散值</font>：令C（<img src="../images/013.gif" width="11" height="12">，<img src="../images/014.gif" width="11" height="12">）为节点ni到nj这段路径（或弧线）的耗散值，一条路径的耗散值等于连接这条路径各节点间所有弧线耗散值的总和。路径耗散值可按如下递归公式计算：<br>
+        C（<img src="../images/013.gif" width="11" height="12">，t）＝C（<img src="../images/013.gif" width="11" height="12">，nj）+C（<img src="../images/014.gif" width="11" height="12">，t）<br>
+        C（<img src="../images/014.gif" width="11" height="12">，t）为<img src="../images/013.gif" width="11" height="12">→t这条路径的耗散值。<br>
+        <font color="#FF0000">扩展一个节点</font>：后继节点操作符（相当于可应用规则）作用到节点（对应于某一状态描述）上，生成出其所有后继节点（新状态），并给出连接弧线的耗散值（相当于使用规则的代价），这个过程叫做扩展一个节点。扩展节点可使定义的隐含图生成为显式表示的状态空间图。<br>
+        下面首先给出一般的图搜索算法。<br>
+        一般图搜索算法<br>
+        ①G：＝<img src="../images/015.gif" width="15" height="14" align="top">（<img src="../images/015.gif" width="15" height="14" align="top">＝s），OPEN：＝（s）；G表示图，s为初始节点，设置OPEN表，最初只含初始节点。<br>
+        ②CLOSED：＝（ ）；设置CLOSED表，起始设置为空表。<br>
+        ③LOOP：IF OPEN＝（ ），THEN EXIT（FAIL）；<br>
+        ④n：＝FIRST（OPEN），REMOVE（n，OPEN），ADD（n，CLOSED）；称n为当前节点。<br>
+        ⑤IF GOAL（n），THEN EXIT（SUCCESS）；由n返回到s路径上的指针，可给出解路径。<br>
+        ⑥EXPAND（n）→{<img src="../images/016.gif" width="17" height="12" align="baseline">}，G：＝ADD（<img src="../images/016.gif" width="17" height="12" align="baseline">，G）；子节点集{<img src="../images/016.gif" width="17" height="12">}中不包含n的父辈节点。<br>
+        ⑦标记和修改指针<br>
+        ·ADD（<img src="../images/017.gif" width="15" height="13">，OPEN），并标记mj连接到n的指针；mj为OPEN和CLOSED中未出现过的子节点，{<img src="../images/016.gif" width="17" height="12">}＝{<img src="../images/017.gif" width="15" height="13">}∪{<img src="../images/019.gif" width="18" height="11">}∪{<img src="../images/018.gif" width="17" height="12">}。<br>
+        ·计算是否要修改<img src="../images/019.gif" width="18" height="11">，<img src="../images/018.gif" width="17" height="12">到n的指针；<img src="../images/019.gif" width="18" height="11">为已出现在OPEN中的子节点，<img src="../images/018.gif" width="17" height="12">为已出现在CLOSED中的子节点。<br>
+        ·计算是否要修改<img src="../images/018.gif" width="17" height="12">到其后继节点的指针；<br>
+        ⑧对OPEN中的节点按某种原则重新排序；<br>
+        ⑨GO LOOP；</p>
+      <p><font color="#000099">这里给出的是一个图搜索的一般框架，不是一个具体的算法，关键是算法的第8步，按不同的原则对OPEN表进行排序，将得到不同的图搜索算法。<br>
+        算法中有两个表：OPEN表和CLOSED表。其中OPEN表记录的是已经被生成出来，但还没有被扩展的节点；CLOSED表记录的是已经被扩展过的节点。</font><br>
+        <br>
+      </p>
+      <p > </p>
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

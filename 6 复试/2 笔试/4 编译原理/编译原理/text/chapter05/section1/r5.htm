@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例 5.3</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若有文法G3[S]:<br>
+            　　S → aA|d<br>
+            　　A →bAS|ε<br>
+            　　识别输入串w=abd是否是G3[S]的句子<br>
+            　　试探推导出abd的推导过程为：<br>
+            　　S<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">aA<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">abAS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">abS<img src="../../../img/chap04/symbol01.gif" width="15" height="9"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">abd<br>
+            　　试探推导成功。 </td>
+        </tr>
+      </table>
+      　　相应语法树为图5.3。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td align="center"><font color="#0000FF"> 图5.3 确定的自顶向下语法分析树(三) </font></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../../img/totle1/p5_3.gif" width="437" height="210"></td>
+        </tr>
+      </table>
+      　　从以上推导过程中我们可以看到在第2步到第3步的推导中，即abASTabS时，因当前面临输入符号为d，而最左非终结符A的产生式右部的开始符号集合都不包含d，但有ε，因此对于d 
+      的匹配自然认为只能依赖于在可能的推导过程中A的后面的符号，所以这时选用产生式A→ε往下推导，而当前A后面的符号为S，S产生式右部的开始符号集合包含了d，所以可匹配。</td>
+  </tr>
+</table>
+</body>
+</html>

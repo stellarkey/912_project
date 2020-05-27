@@ -1,0 +1,1 @@
+{"knowledge": "死锁。\r\n", "question": "对资源采用按序分配的策略可以使产生死锁的_____ 条件不成立。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.互斥使用资源 \r\n B.占有并等待资源 \r\n C.不可抢夺资源 \r\n D.循环等待资源\r\n"}

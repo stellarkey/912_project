@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#000099">　　（4）谓词函数<br>
+        </font> 　　所谓谓词函数就是其回送值取真或假的函数，在LISP中真用T表示，假用NIL表示，当函数的回送值为非NIL时，也表示为真。T和NIL是两个特殊的原子，（NIL比较特殊，它既是一个表（空表），又是一个原子），它们的值分别为其自己。<br>
+        ATOM函数是判断其参数是否为原子的谓词，当参数为原子时，返回值为T，否则为NIL。<br>
+        （ATOM 'a）==&gt;T<br>
+        （ATOM '（a b））==&gt;NIL<br>
+        （ATOM（CAR '（a b）））==&gt;T<br>
+        （SETQ L '（x y））<br>
+        （ATOM L）==&gt;NIL<br>
+        （ATOM 'L）==&gt;T<br>
+        LISTP函数在其参数为表时取T，否则取NIL<br>
+        （LISTP '（a b））==&gt;T<br>
+        （LISTP NIL）==&gt;T<br>
+        （LISTP 'a）==&gt;NIL<br>
+        （SETQ L '（x y））<br>
+        （LISTP L）==&gt;T<br>
+        （LISTP（CDR L））T<br>
+        NULL函数则用于判断其参数是否为空表。<br>
+        （NULL NIL）==&gt;T<br>
+        （NULL '（a b））==&gt;NIL<br>
+        （NULL（CDR '（a）））==&gt;T<br>
+        　　用于比较两个S－表达式是否相等的谓词有三个，它们既有相同之处，又各有区别，请注意它们的不同用法。<br>
+        　　<font color="#000099">EQ、EQL和EQUAL是三个判断相等的谓词函数，初学者不容易理解他们各自的功能和区别。首先，这三个谓词函数都是当两个S－表达式相等时为真，否则为假。其区别是判断相等的&quot;标准&quot;不一样。<br>
+        　　在EQ中，相等的标准指的是在内存中的地址，即指向这两个S－表达式的指针值。只有当两个S－表达式在内存中的地址相同时，EQ才为真，否则即便两个S－表达式在逻辑上相等，EQ也为假。<br>
+        　　EQL比EQ前进了一步。如果两个S－表达式EQ相等，则EQL也相等。所不同的是，如果两个S－表达式是数字，并且他们的存储结构是一致的，即同为整数，或者同为浮点数，则如果这两个数字在逻辑上是相等的时，EQL就为真，而不管他们是否是地址相等。<br>
+        　　EQUAL判断的最为彻底，不管两个S－表达式是什么类型的，其存储地址如何，只要他们逻辑上是相等的，就为真。</font><br>
+        　　EQ用来比较两个S－表达式是否相等，但其比较方法是通过判断指向两个S－表达式的指针是否相等来进行的，只有当指针相同时，EQ才为真。因此，当两个S－表达式逻辑上相等时，不一定EQ相等。在LISP中，文字原子的存储是唯一的，因此对于文字原子，其逻辑相等与EQ相等是等价的。<br>
+        　　<font color="#000099">由于在LISP语言中，文字原子是唯一存储的，即任何同名的文字原子，都存储在同一个位置，所以任何两个同名的文字原子，都是EQ相等的。</font><br>
+        （EQ 'a 'a）==&gt;T<br>
+        （EQ 'a（CAR '（a b）））==&gt;T<br>
+        <font color="#000099">分别建立的两个表，即便他们的内容是一样的，但存储的位置也是不同的，所以（EQ '（a b） '（a 
+        b））为假。</font><br>
+        （EQ '（a b） '（a b））==&gt;NIL<br>
+        <font color="#000099">在LISP语言中，表是以链表的形式存储的，将一个表赋值给一个文字原子，就是将该原子的值指向该表，所以通过赋值得到的两个表，其地址是一样的。因此在这里（EQ 
+        x y）为真。</font><br>
+        （SETQ x '（a b c））<br>
+        （SETQ y x）<br>
+        （EQ x y）==&gt;T</p>
+      <p>另一个相等谓词是EQL，对EQ相等的也一定是EQL相等。EQL比EQ多了一个功能，它可以判断两个数字原子是否相等。当两个数字原子逻辑上相等，且存储结构相同时，则EQL相等。<br>
+        <font color="#000099">EQ为真的，EQL都为真。</font><br>
+        （EQL 'a（CAR '（a b）））==&gt;T<br>
+        （EQL '（a b） '（a b））==&gt;NIL<br>
+        <font color="#000099">两个数字同为3，且都是整数，所以EQL为真。</font><br>
+        （EQL 3 3）==&gt;T<br>
+        <font color="#000099">两个数字同为3.3，且都是浮点数，所以EQL为真。</font><br>
+        （EQL 3.3 3.3）==&gt;T<br>
+        <font color="#000099">两个数字虽然都是3，但一个为整数，一个为浮点数，二值存储结构不一致，所以EQL为假。</font><br>
+        （EQL 3 3.0）==&gt;NIL</p>
+      <p><font color="#000099">EQUAL是最通用的相等谓词，只要逻辑相同的两个S－表达式，EQUAL都是为真的。</font><br>
+        最通用的相等谓词是EQUAL，只要它的两个参数在逻辑上相等，则EQUAL相等。<br>
+        （EQUAL 'a 'a）==&gt;T<br>
+        （EQUAL '（a b） '（a b））==&gt;T<br>
+        （EQUAL '（a b）（CONS 'a '（b）））==&gt;T<br>
+        MEMBER函数测试它的第一个参数是否是第二个参数（通常是一个表）的元素。当第一个参数是第二个参数的元素时，则MEMBER的返回值为从第二个参数中与第一个参数相同的那个元素开始的余下的部分，否则返回值为NIL。这里进行测试的默认函数为EQL。</p>
+      <p><font color="#000099">MEMBER函数测试相等的谓词默认为EQL，如果选择其他的相等谓词，需要加上测试说明。如：<br>
+        （MEMBER '（a b） '（（1 2）（a b）（c d）） ：test 'EQUAL）<br>
+        表示用EQUAL来测试两个S－表达式是否相等。同样也可以使用用户自己定义的测试函数，而不一定必须使用系统提供的基本谓词函数。</font></p>
+      <p>（MEMBER 'b '（a b c））==&gt;（b c）<br>
+        （MEMBER 'x '（a b c））==&gt;NIL<br>
+        （MEMBER '（a b） '（（1 2）（a b）（c d）））==&gt;NIL<br>
+        第三个例子之所以返回值为NIL，是由于默认的测试函数是EQL的原因。若希望用其它的函数进行测试，如使用EQUAL，则需要在调用MEMBER时，加上测试说明。<br>
+        （MEMBER '（a b） '（（1 2）（a b）（c d）） ：test 'EQUAL）==&gt;（（a b）（c d））<br>
+        函数NUMBERP测试其参数是否为一个数字。<br>
+        （NUMBERP 3）==&gt;T<br>
+        （NUMBERP 'a）==&gt;NIL<br>
+        （SETQ one 1）<br>
+        （NUMBERP one）==&gt;T<br>
+        函数＞和＜可以用来比较两个数的大小。<br>
+        （＞ 3 5）==&gt;NIL<br>
+        （＞ 4 2）==&gt;T<br>
+        （＜ 3 5）==&gt;T<br>
+        （＜ 4 2）==&gt;NIL<br>
+        ZEROP函数则要测试其参数是否为0。<br>
+        （ZEROP 0）==&gt;T<br>
+        （ZEROP 1）==&gt;NIL<br>
+        函数AND和OR被用作逻辑运算，它们均可以有任意多个参数。只有当所有参数均为非NIL时，AND返回最后一个参数的非NIL值，否则AND的值为NIL。只有当所有参数均为NIL时，OR返回NIL值，否则OR的值为第一个非NIL参数值。<br>
+        （AND T T NIL）==&gt;NIL<br>
+        （AND（CAR '（a b）（CDR '（x y）））==&gt;（y）<br>
+        （OR T T NIL）==&gt;T<br>
+        （OR（MEMBER） 'a '（x y））（CDR '（x）））==&gt;NIL<br>
+        （5）条件函数<br>
+        根据不同的条件，执行不同的操作，这就是条件函数的功能。在LISP中，最常用到的条件函数是COND。<br>
+        COND的一般调用形式如下：<br>
+        （COND（＜测试1＞…＜结果1＞）<br>
+        （＜测试2＞…＜结果2＞）<br>
+        ┆<br>
+        （＜测试i＞…＜结果i＞）<br>
+        ┆<br>
+        （＜测试n＞…＜结果n＞））<br>
+        COND函数含有n个测试条件和n个可能返回的结果。在调用执行时，COND首先从上到下依次对测试条件进行求值，直到找到一个非NIL的测试值，假定是＜测试i＞，然后依次对＜测试i＞后面的LISP式子进行求值，并将最后一个LISP式子---＜结果i＞的返回值做为COND函数的返回值。若没有一个测试的值为非NIL，则COND的返回值为NIL。<br>
+        （COND（（NULL x）0）<br>
+        （（ATOM x）1）<br>
+        （（LISTP x）（LENGTH x）））<br>
+        在该例中，若x的值为NIL，则COND的返回值为0；若x为原子，则COND的返回值为1；若x的值为表，则COND的返回值为表的长度。<br>
+        在使用COND时，最后一个测试经常使用T，由于T就是真，所以表示&quot;其他&quot;的含义。如：<br>
+        （COND（（NULL x）0）<br>
+        （（ATOM x）1）<br>
+        （T（LENGTH x）））
+      </p>
+     
+      </td>
+  </tr>
+</table>
+</body>
+</html>

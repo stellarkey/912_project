@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　<font color="#0000FF">证明：</font>根据归结原理<br>
+      　　将待证明公式转化成待归结命题公式：<br>
+      　　(P → Q) ∧～(～Q → ～P)<br>
+      　　分别将公式前项化为合取范式：<br>
+      　　P → Q ＝ ～P ∨ Q<br>
+      　　结论求～后的后项化为合取范式：<br>
+      　　～(～Q → ～P)＝ ～(Q∨～P) ＝ ～Q ∧ P<br>
+      　　两项合并后化为合取范式：<br>
+      　　（～P ∨ Q）∧～Q ∧ P<br>
+      　　则子句集为：<br>
+      　　{ ～P∨Q，～Q，P}<br>
+      　　对子句集中的子句进行归结可得：<br>
+      　　1. ～P∨Q<br>
+      　　2. ～Q<br>
+      　　3. P<br>
+      　　4. Q，（1，3归结）<br>
+      　　5. e，（2，4归结）<br>
+      　　由上可得原公式成立。 <br>
+      　　<b>谓词的归结：</b>除了有量词和函数以外，其余和命题归结过程一样。 <br>
+      　　<font color="#0000FF">教师提示：</font>命题逻辑基础是学习归结法的必要基础，应该在前序的课程中学习过。这里列出的只是一些简单的性质。如果大家对这些知识有什么疑惑的话，请参考数理逻辑的有关书籍。命题逻辑的归结法的逻辑基础是假言易位式和摩根律。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

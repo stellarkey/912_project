@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图8.11用数值表示布尔值的翻译方案 </font></td>
+        </tr>
+        <tr> 
+          <td>　　E→E<sup><font size="-2">1</font></sup> or E<sup><font size="-2">2</font></sup><br>
+            　　｛E．place∶=newtemp；<br>
+            　　emit（E．place′∶=′E<sup><font size="-2">1</font></sup>．place　′or′E<sup><font size="-2">2</font></sup>．place）｝<br>
+            　　E→E<sup><font size="-2">1</font></sup> and E<sup><font size="-2">2</font></sup><br>
+            　　｛E．place∶ =newtemp；<br>
+            　　emit（E．place′∶=′E<sup><font size="-2">1</font></sup>．place ′and′E<sup><font size="-2">2</font></sup>．place）｝<br>
+            　　E→not E<sup><font size="-2">1</font></sup><br>
+            　　｛E．place∶ =newtemp：；<br>
+            　　emit（E．place′∶=′not′E<sup><font size="-2">1</font></sup>．place）｝<br>
+            　　E→（E<sup><font size="-2">1</font></sup>）<br>
+            　　｛E．place∶=E<sup><font size="-2">1</font></sup>．place｝<br>
+            　　E→id<sub><font size="-2">1</font></sub> relop id<sub><font size="-2">2</font></sub><br>
+            　　{E．place∶=newtemp；<br>
+            　　emit（′if′id<sub><font size="-2">1</font></sub>．place relop id<sub><font size="-2">2</font></sub>．place′goto′　nextstat+3）；<br>
+            　　emit（E．place′∶=′′0′）；<br>
+            　　emit（′goto′nextstat+2）；<br>
+            　　emit（E．place′∶=′′1′）｝<br>
+            　　E→true<br>
+            　　｛E．place∶=newtemp；<br>
+            　　emit（E．place′∶=′′1′）｝<br>
+            　　E→false<br>
+            　　{E．place∶=newtemp； <br>
+            　　emit（E．place′∶=′′0′）｝ </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

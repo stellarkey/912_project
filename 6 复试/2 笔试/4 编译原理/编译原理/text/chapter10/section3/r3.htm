@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　1. 如实参是一个名字或是具有左值的表达式，则左值本身传递过去。<br>
+      　　2. 如实参是一表达式，比方a+b或2，而没有左值，则表达式先求值，并存入某一位置，然后该位置的地址传递过去。<br>
+      　　3. 被调过程中对形式参数的任何引用和赋值都通过传递到被调过程的指针被处理成间接访问。<br>
+      　　例如，在图10.20的程序中，若用实参i和a[i]对过程swap进行调用，即swap(i，a[i])，其效果如下步骤所述：<br>
+      　　1. 将i和a[i]的地址(左值)拷贝到被调过程的活动记录中，比如说分别对应形参x和y的单元arg1和arg2。<br>
+      　　2. 将局部变量temp设为由arg1所指单元的内容(即令temp等于i<sub><font size="-2">0</font></sub>，其中i<sub><font size="-2">0</font></sub>是i的初值)，这一步对应于swap定义中的第6行语句:temp∶ 
+      =x。<br>
+      　　3. 将arg1所指单元的内容设为arg2所指单元的值，即i∶=a[i<sub><font size="-2">0</font></sub>]，这一步对应swap中第7行的x∶=y。<br>
+      　　4. 将arg2所指单元的内容设为等于temp的值，即，设a[i<sub><font size="-2">0</font></sub>]=i，这一步对应y∶=temp。<br>
+      　　通过值调用的过程可以由非局部量或由指针而对调用过程发生影响。比如图10.21的C程序中，x和y声明为整型指针(在第2行)，第8行调用swap(&amp;a，&amp;b)中的&amp;操作符导致将指向a和b的指针传给过程swap。该程序的输出为： 
+      <br>
+      　　a is now 2， b is now 1<br>
+      　　该例中指针的使用恰好提示了一个编译程序怎样实现引用调用。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top"><font color="#0000FF"> 图 10.21在一个值调用过程中使用指针的C程序</font></td>
+        </tr>
+        <tr> 
+          <td valign="top">　　(1) swap(x,y) //定义swap过程<br>
+            　　(2) int *x,*y;<br>
+            　　(3) {　int temp; //swap的过程体<br>
+            　　(4)　　temp=x; x=y; y=temp;<br>
+            　　(5) }<br>
+            　　(6) main() //主程序 <br>
+            　　(7) {　int a=1, b=2;<br>
+            　　(8)　　swap(&amp;a, &amp;b); //调用swap,其实在参数是a和b的地址<br>
+            　　(9)　　printf(&quot;a is now%d,b is now%d\n&quot;, a, b);<br>
+            　　(10) }</td>
+        </tr>
+      </table>
+      　　C语言过程的参数只有值参，要实现传地址可采用传递指针型实参。<br>
+      　　除了传值和传地址两种参数传递方法之外，还有&quot;得结果&quot;(valueresult)，传名call by name等等。这里我们不予讨论。</td>
+  </tr>
+</table>
+</body>
+</html>

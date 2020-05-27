@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)执行解除挂起进程原语后，如挂起进程处于阻塞状态，则应转变为﹎﹎﹎﹎态。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.静止阻塞 \r\n B.活动阻塞 \r\n C.静止就绪 \r\n D.活动就绪 \r\n E.执行\r\n"}

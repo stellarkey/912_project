@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量与管程"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"2元信号量可以初始化为（） s2\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.0或1",
+        "B.0或-1",
+        "C.只能为1",
+        "D.任意值"
+    ],
+    "q_number":1454
+}

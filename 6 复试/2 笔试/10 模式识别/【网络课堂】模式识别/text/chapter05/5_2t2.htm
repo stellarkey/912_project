@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent"> 
+      </span> 
+      <p class="FCcontent"><strong>5.2.2.1 对称子集的形成</strong><a name="1"></a><br>
+        　　考虑到对称子集需同时满足(5-1)与(5-2)式，对称子集的形成过程可以分成两个步骤进行。<br>
+        　　第一步先将整个特征空间的数据集形成一个按分布概率下降的序列<br>
+        　　<img src="../../images/image_content/5/5_1012.gif" width="306" height="27" align="absmiddle">　　　　　(5-3)<br>
+        　　显然S序列是一个混排的序列，第二步骤是利用S是概率分布下降序列的性质，通过逐个序列数据的依次分析，形成对称子集。<br>
+        　　在形成对称子集之前，需要定义另一种序列，称为有序后选点序列<img src="../../images/image_content/5/5_1014.gif" width="20" height="26" align="absmiddle">，其定义为<br>
+        　　<img src="../../images/image_content/5/5_1013.gif" width="332" height="30" align="absmiddle"> 
+        (5-4)<br>
+        　　定义有序后选点序列<img src="../../images/image_content/5/5_1014.gif" width="20" height="26" align="absmiddle">的目的是为了将S序列分解成若干有序后选点序列，也就形成了若干对称子集。具体做法是：<br>
+        　　取S序列首项，由于它是下降序列首项，分布概率值为所有数据之最大值，产生第一个有序后选点序列<img src="../../images/image_content/5/5_1015.gif" width="20" height="28" align="absmiddle">。假设S序列的前r个元素已形成了i个有序后选点序列<img src="../../images/image_content/5/5_1016.gif" width="81" height="17" align="absmiddle">并将对应每个<img src="../../images/image_content/5/5_1017.gif" width="19" height="23" align="absmiddle">的集合定义为<img src="../../images/image_content/5/te.gif" width="15" height="27" align="absmiddle">，则S序列的(r+1)项元素按下列规则分配：<br>
+        　　1.若<img src="../../images/image_content/5/5_1019.gif" width="118" height="29" align="absmiddle">则<img src="../../images/image_content/5/5_1020.gif" width="26" height="19" align="absmiddle">开始一个新的序列<img src="../../images/image_content/5/5_1021.gif" width="32" height="23" align="absmiddle">,(此处<img src="../../images/image_content/5/5_1022.gif" width="18" height="29" align="absmiddle">表示<img src="../../images/image_content/5/5_1023.gif" width="18" height="26" align="absmiddle">中当前后选点，式中的＝号表示<img src="../../images/image_content/5/5_1020.gif" width="26" height="19" align="absmiddle">满足<img src="../../images/image_content/5/5_1023.gif" width="18" height="26" align="absmiddle">的定义要求)其相应的集合为<img src="../../images/image_content/5/5_1024.gif" width="22" height="25" align="texttop"><br>
+        　　2.若<img src="../../images/image_content/5/5_1025.gif" width="59" height="35" align="absmiddle">但<img src="../../images/image_content/5/5_1026.gif" width="97" height="29" align="absmiddle">则令<img src="../../images/image_content/5/5_1027.gif" width="61" height="28" align="absmiddle"><br>
+        　　3.如有不止一个序列都满足<img src="../../images/image_content/5/5_1028.gif" width="60" height="29" align="absmiddle">则将所有满足这个关系的序列<img src="../../images/image_content/5/5_1020.gif" width="26" height="19" align="absmiddle">编为一个子集I，并根据<br>
+        　　<img src="../../images/image_content/5/5_1029.gif" width="301" height="32" align="absmiddle">　　　　　(5-5)<br>
+        　　求出<img src="../../images/image_content/5/5_1030.gif" width="17" height="27" align="absmiddle">所属序列，把<img src="../../images/image_content/5/5_1020.gif" width="26" height="19" align="absmiddle">分配到该序列中，同时撤消子集I。<br>
+        <strong>5.2.2.2 对称子集的合并</strong><a name="2"></a><br>
+        　　如前所说所形成的对称子集并不一定与实际的单峰区域对应，需要判断所形成的每个对称子集的首项是否是原分布中的局部极值，并将是局部极大值的对称子集作为形成单峰子集的核<img src="../../images/image_content/5/5_1031.gif" width="94" height="27" align="absmiddle">。所剩下的那些对称子集<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">需要逐个地合并到这些核中去。具体做法是，如果<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">的概率密度函数值最大的点表示为<img src="../../images/image_content/5/5_1032.gif" width="43" height="30" align="absmiddle">是<img src="../../images/image_content/5/5_1033.gif" width="15" height="23" align="absmiddle">中的某个点，而<br>
+        　　<img src="../../images/image_content/5/5_1037.gif" width="246" height="39" align="absmiddle">　　　　　(5-6)<br>
+        　　则将<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">归并到<img src="../../images/image_content/5/5_1035.gif" width="17" height="24" align="absmiddle">中去。其中<img src="../../images/image_content/5/5_1036.gif" width="19" height="30" align="absmiddle">是已归至<img src="../../images/image_content/5/5_1035.gif" width="17" height="24" align="absmiddle">中的对称子集<img src="../../images/image_content/5/5_1034.gif" width="16" height="29" align="absmiddle">的并。<br>
+      </p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

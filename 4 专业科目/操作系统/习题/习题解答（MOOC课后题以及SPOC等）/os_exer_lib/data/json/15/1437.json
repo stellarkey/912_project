@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程和线程管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"最高响应比优先算法的特点是（） s3\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.有利于短作业但不利于长作业",
+        "B.有利于短作业又兼顾到长作业",
+        "C.不利于短作业也不利于长作业",
+        "D.不利于短作业但有利于长作业"
+    ],
+    "q_number":1437
+}

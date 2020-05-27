@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"为了实现设备的独立性、系统中的逻辑设备表必须包含：( )。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.逻辑设备名和物理设备名",
+        "B.逻辑设备名和驱动程序入口地址",
+        "C.物理设备名和驱动程序入口地址",
+        "D.逻辑、物理设备名和驱动程序入口地址"
+    ],
+    "q_number":923
+}

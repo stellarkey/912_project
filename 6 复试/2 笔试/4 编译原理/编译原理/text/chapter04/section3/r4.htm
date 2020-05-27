@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 表4.1 正规文法到正规式的转换规则</font></td>
+        </tr>
+        <tr> 
+          <td valign="top">
+            <table  width="100%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr bgcolor="#DAE1BB"> 
+                <td align="center"><font color="#FFFFFF">.</font></td>
+                <td align="center">文法产生式</td>
+                <td align="center">正规式</td>
+              </tr>
+              <tr> 
+                <td align="center">规则1<br>
+                  规则2<br>
+                  规则3</td>
+                <td align="center">A→xB 　B→y<br>
+                  A→xA|y<br>
+                  A→x　 A→y<br>
+                </td>
+                <td align="center">A=xy<br>
+                  A=x*y<br>
+                  A=x|y </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#0000FF"> </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr>
+          <td width="35"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td><font color="#0000FF">例4.10</font></td>
+        </tr>
+        <tr> 
+          <td width="35">&nbsp;</td>
+          <td>　　文法G[S]<br>
+            　　S→aA　　S→a　　A→aA　　A→dA　　A→a　　A→d<br>
+            　　先有：<br>
+            　　S=aA|a<br>
+            　　A=(aA|dA)|(a|d)<br>
+            　　再将A的正规式变换为A=(a|d)A|(a|d)，据表中规则2变换为：A=(a|d)<sup><font size="-2">*</font></sup>|(a|d)，再将A 
+            右端代入S的正规式得：S=a(a|d)<sup><font size="-2">*</font></sup>|a(a|d)|a<br>
+            　　再利用正规式的代数变换可依次得到<br>
+            　　S=a((a|d)<sup><font size="-2">*</font></sup>|(a|d)|ε)<br>
+            　　S=a(a|d)<sup><font size="-2">*</font></sup><br>
+            　　即a(a|d)<sup><font size="-2">*</font></sup>为所求。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

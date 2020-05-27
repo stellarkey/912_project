@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　在介绍CD-I基本系统的结构之前，需说明一点的是，在定义CD-I基本系统时充分考虑了允许所有CD-DA盘都能在CD-I系统中播放。这一点对理解CD-I系统是很有帮助的。<br>
+      　　CD-I基本系统的结构如图5-21所示。它由以下几部分组成：<br>
+      　　·光盘播放机；<br>
+      　　·CD-DA控制器/接口单元；<br>
+      　　·CD-I接口；<br>
+      　　·CD-I音频处理子系统；<br>
+      　　·CD-I视频处理子系统；<br>
+      　　·MPU（MicroProcessing Unit）；<br>
+      　　·DMA控制器；<br>
+      　　·RAM；<br>
+      　　·存取控制器；<br>
+      　　·NURAM；<br>
+      　　·CD-RTOS、CSD（见光盘实时操作系统一节）和字体模块ROM；<br>
+      　　·定位设备；<br>
+      　　·时钟/日历；<br>
+      　　·键盘（选件）。<br>
+      　　光盘播放放机可以在3秒钟之内读取CD-I或CD-DA光盘上任何部分的数据。播放机在程序控制下可以暂停、连续、停止、弹出光盘。<br>
+      　　从光盘读出的数据经过CIRC错误校正之后，由CD-DA控制器/接口单元把数据有选择地送到音频处理子系统（如果数据是16位PCM CD-DA数据）或CD-I接口(如果数据是CD-ROM或CD-I数据）。它也控制光盘播放机的运行。<br>
+      　　CD-I接口把来自MPU的控制信息送到CD-DA控制器/接口单元，也把经过筛选的数据送到系统母线。于是CD-I接口要分解来自光盘的交叉数据，产生中断信号并把整理的数据送到相应的处理单元。所有这些事情都是通过实时解释扇区细目（Subheader）中的信息来控制的。<br>
+      　　CD-I音频和视频处理子系统已在前面作了详细介绍。有一点要补充的是，视频子系统不能处理非隔行扫描的高分辨率图象。<br>
+      　　CD-I基本系统能够读和译CD-DA PCM数据，这种数据可以来自CD-I或CD-ROM光盘上的CD-DA光道，或者来自CD-DA光盘上的CD-DA光道。<br>
+      　　CD-I光盘上的程序代码必须是M68000可执行目标码，总的RAM至少为1M字节，并要组织为至少两个存储体，每个为512K字节。而NVRAM的容量至少要8K字节。<br>
+      　　CD-I基本系统至少要有一个x-y定位设备，它能够指定正常分辨率图象的每个象素。此外，它至少要有两个触发按钮。<br>
+      　　CD-I基本系统的时钟/日历可用电池作后备电源，至少要以秒做单位，除年、月、日、时、分、秒外，还能计算出闰年。　<br>
+      　　所有CD-I基本系统必须有默认的字符集，并且至少要有4种字体放在ROM中。ROM中还装有CD-RTOS和库模块。<br>
+      　　所有CD-I基本系统中的设备都是中断驱动的。<br>
+      <br>
+      <font color="#003399">　　CD-I基本系统<br>
+      　　在介绍CD-I基本系统的结构之前，需要说明一点的是，在定义CD-I基本系统时充分考虑了所有CD-DA盘都能在CD-I 系统中播放。这点对理解CD-I系统是很有帮助的。<br>
+      　　1．CD-I基本系统组成:如图5.21o光盘播放机<br>
+      　　·CD-DA控制器/接口单元<br>
+      　　·CD-I接口<br>
+      　　·CD-I音频处理子系统<br>
+      　　·CD-I视频处理子系统<br>
+      　　·MPU(Micro Processing Unit)<br>
+      　　·DMA控制器<br>
+      　　·RAM<br>
+      　　·存取控制器<br>
+      　　·NVRAM<br>
+      　　·CD-RTOS、CSD和字体模块RAM<br>
+      　　·定位设置<br>
+      　　·时钟/日历<br>
+      　　·键盘(选件)</font><br>
+      　　 <font color="#003399"><b>5-21　CD-I基本系统 
+      </b></font><br>
+      　 <img src="../../../../images/chatp/chap05/027.gif"><br>
+      <font color="#003399">　　CD-I基本系统的主要技术指标<br>
+      　　1. 播放时间<br>
+      　　理论值最长为74分33秒。<br>
+      　　实际播放时间：<br>
+      　　l 66分钟（CD-ROM和CD-I Form1）<br>
+      　　l 72分钟（CD-DA和CD-I Form2）<br>
+      　　2. 光盘数据率<br>
+      　　75扇区/秒<br>
+      　　150千字节/秒（CD-ROM和CD-I Form1用户数据）<br>
+      　　175千字节/秒（CD-I Form2的用户数据）<br>
+      　　3. 光盘容量<br>
+      　　理论值最大为335,475扇区。<br>
+      　　l 655兆字节（CD-ROM和CD-I用户数据）<br>
+      　　l 745兆字节（CD-I Form2用户数据）实际容量为324,000扇区<br>
+      　　l 580兆字节（CD-ROM和CD-I Form1用户数据）<br>
+      　　l 719兆字节（CD-I Form 2用户数据）<br>
+      　　4. 图象<br>
+      　　活动图象尺寸（525行扫描系统，正常分辨率，最长播放时间72分钟）：<br>
+      　　l DYUV图象132×88象素　占全屏幕的13.5%<br>
+      　　l CLUT8和CLUT7动画，全屏幕<br>
+      　　l RL7、RL3图象，全屏幕</font><br>
+      　　全屏幕加载时间：加载并显示84.4千字节的全屏幕图象约需0.495秒。<br>
+      　　以上简要介绍了家用交互多媒体系统CD-I的概貌。CD-I是出现最早的交互式数字多媒体技术，目标是瞄准家用市场。第一次发表是在1986年，正式的商业产品直到1991秋才出现，时经5年，这也反映了CD-I系统软硬件的复杂性。CD-I也将支持全屏幕全速的电视图象，支持MPEG（Moving 
+      Picture Experts Group）制定的动画图象和相关声音的编码标准。<br>
+      <br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

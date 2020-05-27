@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"“临界资源”是指：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.正在被占用的资源",
+        "B.不可共享的资源",
+        "C.一次只能被一个进程使用的资源",
+        "D.可同时使用的资源"
+    ],
+    "q_number":107
+}

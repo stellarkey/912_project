@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　例如，使用两个寄存器(R1和R2)，图1.8的中间代码可生成如图1.9的某汇编代码。 <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0"class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图 1.9目标代码 </font></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <table width="50%" border="0" cellspacing="0" cellpadding="0" class=text>
+              <tr> 
+                <td>(1)<br>
+                  (2)<br>
+                  (3)<br>
+                  (4)<br>
+                  (5) </td>
+                <td>MOVF<br>
+                  MOLF<br>
+                  MOVF<br>
+                  ADDF<br>
+                  MOV</td>
+                <td>id3<br>
+                  #10.0<br>
+                  id2<br>
+                  R1<br>
+                  R1</td>
+                <td>R2<br>
+                  R2<br>
+                  R1<br>
+                  R2<br>
+                  id1</td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+      </table>
+      　　第一条指令将id3的内容送至寄存器R2，第二条指令将其与实常数10.0相乘，这里用#表明10.0处理为常数，第三条指令将id2移至寄存器R1，第四条指令加上前面计算出的R2中的值，第五条指令将寄存器R1的值移到id1的地址中。这些代码实现了本节开头给的源程序片断的赋值。 
+      　 </td>
+  </tr>
+</table>
+</body>
+</html>

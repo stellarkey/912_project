@@ -1,0 +1,20 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)为了提高计算机的处理机和外部设备的利用率，把多个程序同时放入主存储器，在宏观上并行运行是﹎\n﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.分时操作系统",
+        "B.实时操作系统",
+        "C.批处理系统",
+        "D.多道程序设计",
+        "E.并发程序设计"
+    ],
+    "q_number":744
+}

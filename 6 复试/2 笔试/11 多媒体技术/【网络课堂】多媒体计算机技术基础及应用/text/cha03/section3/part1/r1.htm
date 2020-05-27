@@ -1,0 +1,293 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　国际电报电话咨询委员会（CCITT）和国际标准化组织（ISO）先后提出一系列有关音频编码的建议，表3.6 中列出了一些音频编码算法和国际标准。1992年首先制定了G.711 
+      64Kb/s （A）律PCM编码标准。1984年又公布了G.721标准（1986年修订）。它采用的是自适应差分脉冲编码（ADPCM），数据率为32Kb/s。以两个标准适用于200～3400Hz窄带话音信号，已用于公共电话网。针对宽带语音（50～7KHz），CCITT制定了C.722编码标准，它的数据率为64Kb/s。它可用于综合业务数据网（ISDN）的B通道上传输音频数据。之后公布的G.723建议中码率为40kb/s和24kb/s, 
+      G.726中码率为16kb/s。CCITT于1990年通过了16-40kb/s镶嵌式ADPCM标准G.727。低码率、短延时、高质量是人们期望的目标。在AT&amp; 
+      T Bell实验室，16Kb/s短延时码激励（LD-CELP）编码方案的基础上，经优化，CCITT在1992年和1993年分别公布了浮点和定点算法的G.728标准。该算法延时小于2ms。话音质量可达MOS4分以上。ISO的运动图像专家组在制定运动图像编码标准的同时，为图像伴音制定了20KHZ带宽的128Kb/s标准。1988年欧州数字移动通信GSM制定了泛美数字移动通信网的13Kb/s长时预测规则码激励（RPE-LTP）语音编码标准。　　1989年北美蜂窝电话工业组织（CTIA）公布了北美数字移动通信标准。它采用和时自适应码本激励。日本的数字移动通信标准是6.7Kb/s的VSELP（矢量和激励线性预测）。CCITT正在制定更低码率高质量短延时的音频编码标准。表3.8中列出一些编码标准和算法。本节重点介绍典型算法的基本原理。<br>
+      　<font color="#003399">表3.6 音频编码算法和标准</font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">算法</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">名称</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">数据率</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">标准</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">应用</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">质量</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" rowspan="5" width="7%"> 
+                  <div align="center">波<br>
+                    形<br>
+                    编<br>
+                    码</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">PCM</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">均匀量化</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" rowspan="5" width="13%"> 
+                  <div align="center">公共网<br>
+                    ISDN<br>
+                    配音</div>
+                </td>
+                <td class="text" rowspan="5" width="16%"> 
+                  <div align="center">4.0～4.5</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">μ(A)</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">μ(A)</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">64kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">G.711</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">APCM</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">自适应量化</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">DPCM</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">差值量化</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">32kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">G.721</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">ADPCM<br>
+                    SB-ADP<br>
+                    CM</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">自适应差值量化<br>
+                    子带－自适应<br>
+                    差值量化</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">64kb/s<br>
+                    5.3kb/s<br>
+                    6.3kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">G.722<br>
+                    <br>
+                    G.723</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center">参数<br>
+                    编码</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">LPC</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">线性预测编码</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">2.4kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">保密话声</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">2.5～3.5</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%" rowspan="5"> 
+                  <div align="center">混<br>
+                    合<br>
+                    编<br>
+                    码</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">CELPC</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">码激励LPC</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">4.8kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">移动通信</div>
+                </td>
+                <td class="text" width="16%" rowspan="4"> 
+                  <div align="center">4.0～3.7 </div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">VSELP</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">矢量和激励LPC</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">8kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">语音邮件</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">RPE-LTP</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">长时预测规则码激励</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">13.2kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">ISDN</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="13%"> 
+                  <div align="center">LD-CEL<br>
+                    PMPEG</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">低延时码激励LPC<br>
+                    多子带 感知编码</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">16kb/s<br>
+                    128kb/s</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">G.728<br>
+                    G.729</div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">CD</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">5.0</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">AC-3</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center">感知编码</div>
+                </td>
+                <td class="text" width="19%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text" width="13%"> 
+                  <div align="center">音响</div>
+                </td>
+                <td class="text" width="16%"> 
+                  <div align="center">5.0</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><br>
+      　　上述算法和标准广泛用于多媒体技术和通信中。如多媒体节目中音频编码、可视电话、语音电子邮件、语音信箱、电视会议系统中。<br>
+      　　下面简单介绍几种常用音频编码标准。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

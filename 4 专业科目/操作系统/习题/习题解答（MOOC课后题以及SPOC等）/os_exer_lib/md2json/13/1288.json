@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理: 连续内存分配。\r\n", "question": "操作系统中可采用的内存管理方式包括()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "ABCD", "type": "2\r\n", "options": " A.重定位(relocation)\r\n B.分段(segmentation\r\n C.分页(paging)\r\n D.段页式（segmentation+paging）\r\n"}

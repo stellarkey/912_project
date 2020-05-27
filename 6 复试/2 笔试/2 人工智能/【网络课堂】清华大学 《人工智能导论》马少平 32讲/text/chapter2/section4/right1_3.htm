@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="16" topmargin="10" marginwidth="16" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p ><font color="#CC0000">2．爬山法</font></p>
+      <p > 过程Hill-climbing<br>
+        ①n:=s；s为初始节点<br>
+        ②LOOP：IF GOAL（n）THEN EXIT (SUCCESS)；<br>
+        ③EXPAND（n）→{mi}，计算h(mi)，nextn:=m(min h(mi)的节点)；<br>
+        ④IF h(n)&lt;h(nextn) THEN EXIT(FAIL);<br>
+        ⑤n:=nextn；<br>
+        ⑥GO LOOP；<br>
+        显然如果将山顶作为目标，h(n)表示山顶与当前位置n之间高度之差，则该算法相当于总是登向山顶，在单峰的条件下，必能到达山峰。 </p>
+      <p ><font color="#CC0000">3．分支界限法</font></p>
+      <p>分支界限法是优先扩展当前具有最小耗散值分支路径的端节点n，其评价函数为f(n)=g(n)。该算法的基本思想很简单，实际上是建立一个局部路径（或分支）的队列表，每次都选耗散值最小的那个分支上的端节点来扩展，直到生成出含有目标节点的路径为止。<br>
+        过程Branch-Bound<br>
+        ①QUEUE:=(s-s)，g(s)=0;<br>
+        ②LOOP：IF QUEUE=( ) THEN EXIT(FAIL);<br>
+        ③PATH:=FIRST(QUEUE)，n:=LAST(PATH);<br>
+        ④IF GOAL(n) THEN EXIT(SUCCESS);<br>
+        ⑤EXPAND(n)→{mi}，计算g(mi)=g(n，mi)，REMOVE（s - n，QUEUE），ADD(s-mi，QUEUE);<br>
+        ⑥QUEUE中局部路径g值最小者排在前面；<br>
+        ⑦GO LOOP；</p>
+      <p>应用该算法求解图2.8的最短路径问题，其搜索图如图2.9所示，求解过程中QUEUE的结果简记如下（D(4)代表耗散值为4的s-D分支，其余类推）：<br>
+      </p>
+      <p align="center" ><img src="../images/rl2.8.gif" width="188" height="399"></p>
+      <p align="center" ><font color="#FF0000">图2.8 八城市地图示意图</font></p>
+      <p align="center" ><img src="../images/rl2.9.gif" width="395" height="366"></p>
+      <p align="center" ><font color="#FF0000">图2.9 分支界限搜索树</font></p>
+      <p >初始（s(0)）<br>
+        1.（A（3）D（4））<br>
+        2.（D（4）B（7）D（8））<br>
+        3.（E（6）B（7）D（8）A（9））<br>
+        4.（B（7）D（8）A（9）F（10）B（11））<br>
+        5.（D（8）A（9）F（10）B（11）C（11）E（12））<br>
+        6.（A（9）E（10）F（10）B（11）C（11）E（12））<br>
+        7.（E（10）F（10）B（11）C（11）E（12）B（13））<br>
+        8.（F（10）B（11）C（11）E（12）B（13）F（14）B（15））<br>
+        9.（B（11）C（11）E（12）t（13）B（13）F（14）B（15））<br>
+        10.（C（11）E（12）t（13）B（13）F（14）A（15）B（15）C（15））<br>
+        11.（E（12）t（13）B（13）F（14）A（15）B（15）C（15））<br>
+        12.（t（13）B（13）F（14）D（14）A（15）B（15）C（15）F（16））<br>
+        13.结束。</p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

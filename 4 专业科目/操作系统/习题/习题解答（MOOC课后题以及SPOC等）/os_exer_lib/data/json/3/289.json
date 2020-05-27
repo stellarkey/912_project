@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"操作系统中同时存在着多个进程，它们（　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.不能共享系统资源",
+        "B.不能调用同一段程序代码",
+        "C.可以共享所有的系统资源",
+        "D.可以共享允许共享的系统资源"
+    ],
+    "q_number":289
+}

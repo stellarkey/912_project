@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"进程\n",
+    "question":"死锁是指在系统中的多个_________无限期地等待永远不会发生的条件。\n",
+    "source":"网络",
+    "answer":"进程\n",
+    "type":"fill_in_the_blank",
+    "q_number":626
+}

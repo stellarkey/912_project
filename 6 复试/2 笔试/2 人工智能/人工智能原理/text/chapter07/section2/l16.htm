@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFDE5" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr> 
+    <td> 　　分析过程初始状态为((S) 1)，没有候补状态。<br>
+      　　1. 选择当前状态：从可能的状态列表中取出第一个状态，为C。如果可能的状态列表为空，则算法失败（即无法分析该句子的句法结构）。<br>
+      　　2. 如果C由一个空的符号串组成，并且当前位置为句子的结尾，则算法成功，结束！<br>
+      　　3. 否则，产生下一个可能的状态：<br>
+      　　　3.1. 如果C的第一个符号是词典中的类别并且句子的当前词属于该类别，则去掉第一个符号，位置加1，产生新的状态加入可能的状态列表。<br>
+      　　　3.2. 否则，使用语法中所有的能重写该符号的规则重写该符号，产生一系列新的状态，全部加入到可能的状态列表中。</td>
+  </tr>
+</table>
+</body>
+</html>

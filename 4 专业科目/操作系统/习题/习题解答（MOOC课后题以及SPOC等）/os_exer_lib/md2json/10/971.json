@@ -1,0 +1,1 @@
+{"knowledge": "文件系统。\r\n", "question": "用户请求使用一个已存在的文件时，其操作次序为( )\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.读／写→关闭 \r\n B. 打开→读／写 \r\n C.打开→读／写→关闭\r\n"}

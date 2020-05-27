@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"一个正在访问临界资源的进程由于申请等待I/O操作而被中断时\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.可以允许其他进程进入与该进程相关的临界区",
+        "B.不允许其他进程进入任何临界区",
+        "C.可以允许其他就绪进程抢占处理器，继续运行",
+        "D.不允许任何进程抢占处理器"
+    ],
+    "q_number":882
+}

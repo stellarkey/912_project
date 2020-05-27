@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"当中央处理器处于管态时，可以执行包括特权指令在内的一切面器指令，而在目态下工作时不允许执行特权指令。\n",
+    "question":"CPU在管态和目态下工作有何不同？\n",
+    "source":"网络",
+    "answer":"当中央处理器处于管态时，可以执行包括特权指令在内的一切面器指令，而在目态下工作时不允许执行特权指令。\n",
+    "type":"question_answer",
+    "q_number":568
+}

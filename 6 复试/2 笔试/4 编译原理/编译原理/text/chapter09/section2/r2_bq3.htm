@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　为了在函数中不但能看到float a而且也能看到int a，在C语言的最新文本中增加了一个语法记号∷，使得int a也可见。上例可改写如下：<br>
+      　　int a;<br>
+      　　int func (a, b)<br>
+      　　float a;<br>
+      　　int b;<br>
+      　　{<br>
+      　　　…<br>
+      　　　… a…//引用float a<br>
+      　　　…∷a…//引用int a<br>
+      　　}<br>
+      　　⑵　分程序（或复合语句）结构： 影响变量可视性的举例<br>
+      　　…<br>
+      　　｛int a； // 第一层头,定义的局部整型变量a<br>
+      　　…<br>
+      　　　　｛char a； // 第二层头,定义的局部字符型变量a<br>
+      　　　　…<br>
+      　　　　　　｛ // 第三层头<br>
+      　　　　　　…<br>
+      　　　　　　　｛float a； // 第四层头,定义的局部实型变量a<br>
+      　　　　　　　…<br>
+      　　　　　　　｝ // 第四层尾<br>
+      　　　　　　　…a… // 引用第二层定义的局部字符型变量a<br>
+      　　　　　　｝ // 第三层尾<br>
+      　　　　｝ // 第二层尾<br>
+      　　｝ // 第一层尾 <br>
+      　　 图中第三层所引用的a，既不是第四层的float a；也不是第一层int a；而是第二层char a；也就可以说从第三层向外，看到的第一个定义a的变量定义即char 
+      a。 <br>
+      　　为确立符号的作用域和可视性。符号表属性中除了需要符号的存储类别之外还需要表示该符号在程序结构上被定义的层次。符号表中设置一个表达符号所在层次的属性域，存放该符号的定义层次。无论是作为函数形参的定义也好或作为分程序中的局部定义也好，都可统一地用定义层次来区分。一般来说，若把外部变量视为0层的话，则函数内部作为第1层，依次向内嵌套定义的分程序分别为2，3，…层。在C语言程序中函数之间是并列定义的，因此每个函数内部都定义为第一层，而函数内的分程序也可以是并列定义的，对于并列定义的分程序当然具有相同的层次号。</td>
+  </tr>
+</table>
+</body>
+</html>

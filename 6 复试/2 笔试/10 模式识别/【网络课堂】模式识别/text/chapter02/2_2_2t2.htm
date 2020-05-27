@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="example">例2.2 <br>
+            　　在例2.1条件的基础上，并且已知λ<sub>11</sub>=0,(λ<sub>11</sub>表示λ(α<sub>1</sub>|ω<sub>1</sub>)的简写)，λ<sub>12</sub>=6,λ<sub>21</sub>=1，λ<sub>22</sub>=0，按最小风险贝叶斯决策进行分类。<br>
+            　　解：已知条件为<br>
+            　　P(ω<sub>1</sub>)＝0.9, P(ω<sub>12</sub>)＝0.1<br>
+            　　p(X|ω<sub>1</sub>)＝0.2, p(X|ω<sub>12</sub>)＝0.r<br>
+            　　λ<sub>11</sub>＝0, λ<sub>12</sub>＝6, λ<sub>21</sub>＝1, λ<sub>22</sub>＝0</font> 
+            </span>
+            <p><span class="example"> 根据2.1的计算结果可知后验概率为<br>
+              　　P(ω<sub>1</sub>|X)＝0.818, P(ω<sub>12</sub>|X)＝0.182<br>
+              　　再按式(2-14)计算出条件风险</font></span><span class="example"><br>
+              　　<img src="../../images/image_content/2/2_1_2r.gif" width="345" height="110" align="middle"><br>
+              </span><span class="example"><br>
+              　　由于R(α<sub>1</sub>|X)＞R(α<sub>2</sub>|X)<br>
+              　　即决策为ω<sub>12</sub>的条件风险小于决策为ω<sub>1</sub>的条件风险，因此应采取决策行动α<sub>2</sub>，即判待识别的细胞X为ω<sub>12</sub>类——异常细胞。</span><span class="FCcontent"></font></span></font><span class="FCcontent"><br>
+              　　</span><span class="spe">将本例与例2.1相对比，其分类结果正好相反，这是因为影响决策结果的因素又多了一个“损失”。由于两类错误决策所造成的损失相差很悬殊，因此“损失”在这里起了主导作用。<br>
+              　　从以上讨论可以看出，正确制订损失函数值，是基于最小风险的贝叶斯决策方法在实际中使用的一个关键问题。而实际中列出合适的决策表并不是一件容易的事，需根据所研究的具体问题，分析错误决策造成损失的严重程度，与有关专家共同商讨来确定。</span><span class="FCcontent"><br>
+              　　最后我们再讨论一下上面两种决策方法之间的关系，设损失函数为<br>
+              　　<img src="../../images/image_content/2/2_1_2s.gif" width="252" height="55" align="absmiddle">， 
+              (2-17)<br>
+              　　式中假定对C类只有C个决策，即不考虑“拒绝”等其它情况，(2-17)表明，当作出正确决策(即i=j)时没有损失，而对于任何错误决策，其损失均为1。这样定义的损失函数称为0—1损失函数。<br>
+              　　根据(2-14)式条件风险为<br>
+              　　<img src="../../images/image_content/2/2_1_2t.gif" width="333" height="55" align="absmiddle">(2-18)<br>
+              　　而<img src="../../images/image_content/2/2_1_2u.gif" width="86" height="46" align="absmiddle">也恰恰是将X判为ω<sub>1</sub>i时的错误概率。因此基于最小风险的贝叶斯决策结果，在0—1损失函数情况下，也就是基于最小错误概率的贝叶斯决策结果。由此可见，最小错误率贝叶斯决策就是在0—1损失函数条件下的最小风险贝叶斯决策。换句话说，前者是后者的特例。<br>
+              　　实际上<img src="../../images/image_content/2/2_1_2x.gif" width="175" height="51" align="absmiddle">，因此，当<img src="../../images/image_content/2/2_1_2z.gif" width="57" height="18" align="absmiddle"> 
+              最大时<img src="../../images/image_content/2/2_1_2y.gif" width="43" height="25" align="absmiddle"> 
+              最小。　　它与基于最小错误率的贝叶斯决策的判据是一样的。<br>
+              　　</span><span class="spe">如果我们只考虑两类别问题，并只有一维特征向量的情况，我们可以画出一张与图2.3类似的图2.4，用来表示最小风险贝叶斯决策方法的分类结果。与图2.3不同的是，R<sub>1</sub>与R<sub>2</sub>两个区域的分界线不再是t,而是向左移了一段距离，这是由于损失函数λ<sub>12</sub>比λ<sub>21</sub>大所造成(可以假设λ<sub>11</sub>＝λ<sub>22</sub>＝0)，在发生位移这一区域内，尽管P(x|ω<sub>1</sub>)P(ω<sub>1</sub>)&gt;P(x|ω<sub>12</sub>)P(ω<sub>12</sub>)，但是为了减少将ω<sub>12</sub>错判为ω<sub>1</sub>所带来的严重损失，在P(x|ω<sub>12</sub>)P(ω<sub>12</sub>)尚不很小的情况下，使将ω<sub>12</sub>类样本错判为ω<sub>1</sub>的可能性减小，以减小决策所承担的风险。当然平均错误率则明显增大了。</span><span class="FCcontent"><br>
+              </span> </p></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_1_2big.gif" width="400" height="285"></td>
+        </tr>
+        <tr>
+          <td><span class="FCcontent">　　</span><span class="example">图中绿线为分类线，左边被识别为第1类，右边为第2类，两条曲线为概率分布曲线，绿线左侧红线以下表示把第二类错分为第一类的可能性，另一块灰色区域含义类似。整个灰色区域加权后可以表示风险。可以考虑用applet实现交互演示，用户可以拖动分类面的位置，计算并显示风险大小，可以找到风险最小的分界面。 
+            </span>
+<p><span class="FCcontent">　　</span><span class="spe">(2-13)式定义了样本为X作出i决策时的期望风险，可以从两个方面理解。一种是由于样本存在分属各类的可能性，而对实属一类却决策成i类会造成程度不同的损失，因而期望损失应是风险系数 
+              <img src="../../images/image_content/2/2_1_2p.gif" width="25" height="30" align="middle">与<img src="../../images/image_content/2/2_1_2z1.gif" width="61" height="26" align="middle"> 
+              相乘之总和。另一种看法可以将损失看成是对后验概率的重要性作加权，<img src="../../images/image_content/2/2_1_2p.gif" width="25" height="30" align="middle">是对<img src="../../images/image_content/2/2_1_2z1.gif" width="61" height="26" align="middle"> 
+              的加权系数。因此只要 稍大一点，就会使风险明显增大。</span><span class="FCcontent"><br>
+              　　</span><span class="spe">公式(2-17)与(2-18)说明了基于最小错误率与基于最小风险两种Bayes决策的关系，结论是基于最小错误率的决策是基于最小风险决策的一个特例。这是因为后者多了一些系数允许调整，而按(2-17)式调整就将基于最小风险决策改成基于最小错误率决策，这种设置可调整参数集的情况比限定参数集的情况有更大自由度因此后者必定为前者的一个特定情况。</span><br>
+            </p></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

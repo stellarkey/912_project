@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "同步互斥"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"S：表示临界资源十字路口，S＝1\n    ```\n       int  S=1;\n       main()\n       { pew();  psn();}\n       pew()                                           psn()\n       {                                               {\n         p(s);     wait(s)                               p(s);\n         由东向西通过十字路口；                        由南向北通过十字路口；\n         v(s);    signal(s)                              v(s);\n       }                                               }\n    ```\n\n",
+    "question":"在一个只允许单向行驶的十字路口，分别有若干由东向西，由南向北的车辆在等待通过十字路口。为了安全，每次只允许一辆车通过。当有车辆通过时其它车辆必须等候，当无车\n辆在路口行驶时则允许一辆车通过。请用PV操作实现保证十字路口安全行驶的自动管理系统。\n",
+    "source":"网络",
+    "answer":"S：表示临界资源十字路口，S＝1\n    ```\n       int  S=1;\n       main()\n       { pew();  psn();}\n       pew()                                           psn()\n       {                                               {\n         p(s);     wait(s)                               p(s);\n         由东向西通过十字路口；                        由南向北通过十字路口；\n         v(s);    signal(s)                              v(s);\n       }                                               }\n    ```\n\n",
+    "type":"question_answer",
+    "q_number":1071
+}

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 3. 计算FOLLOW集<br>
+      　　① 根据定义计算<br>
+      　　对文法中每一 A∈V<sub><font size="-2">N</font></sub> 计算 FOLLOW(A)<br>
+      　　(a) 设S为文法中开始符号，把{#}加入FOLLOW(S)中(这里&quot;#&quot;为句子括号)。<br>
+      　　(b) 若A→αBβ是一个产生式，则把FIRST(β)的非空元素加入FOLLOW(B)中。<br>
+      　　如果β<img src="../../../img/chap04/symbol04.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">ε则把FOLLOW(A)也加入FOLLOW(B)中。<br>
+      　　(c) 反复使用(b)直到每个非终结符的FOLLOW集不再增大为止。<br>
+      　　现计算例5.5文法各非终结符的FOLLOW集。<br>
+      　　FOLLOW(S)={#}∪ FOLLOW(D)<br>
+      　　FOLLOW(A)=(FIRST(B) \{ε})∪ FOLLOW(S) ∪ FIRST(D)<br>
+      　　FOLLOW(B)=FOLLOW(S)<br>
+      　　FOLLOW(C)=FOLLOW(S)<br>
+      　　FOLLOW(D)=FOLLOW(B)∪FOLLOW(C)<br>
+      　　由以上最终计算结果得：<br>
+      　　FOLLOW(S)={#}<br>
+      　　FOLLOW(A)={a,#,c}<br>
+      　　FOLLOW(B)={#}<br>
+      　　FOLLOW(C)＝{#}<br>
+      　　FOLLOW(D)={#}</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1 @@
+{"knowledge": "置换算法。\r\n", "question": "\"某系统使用请求分页存储管理，若页在内存中，满足一个内存请求需要150ns。若缺页率是10%，为使有效访问时间达到0.5ms,求不在内存的页面的平均访问时间\r\n。\"\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "answer": "4.99865ms", "type": "4\r\n", "options": "  \r\n"}

@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　设有N个神经元互联，则它可用下述非线性微分方程描述：<br>
+      　　<img src="../../../img/chap06/pic37.gif" width="204" height="74"><br>
+      　　此公式其实是一个微分方程组，这些方程可以看成是神经动力学的经典的描述，并可由电子线路得到实现。<br>
+      　　定义上图系统的能量函数为：<br>
+      　　<img src="../../../img/chap06/pic38.gif" width="314" height="53"><br>
+      　　对于上图所示连续系统有如下定理，<br>
+      　　<b>定理</b>：对于上图所示系统，如果g<sup><font size="-2">-1</font></sup>为单调增且连续，C<sub>i</sub>&gt;0，T<sub>ij</sub>=T<sub>ji</sub>，则沿系统的运动轨迹有<img src="../../../img/chap06/pic39.gif" width="35" height="24">，当且仅当<img src="../../../img/chap06/pic40.gif" width="35" height="24">时，<img src="../../../img/chap06/pic41.gif" width="33" height="24">，i=1, 
+      2, 3, …, N。<br>
+      　　运动轨迹总是有<img src="../../../img/chap06/pic39.gif" width="35" height="24">，说明系统是在向能量递减的方向前进。当且仅当<img src="../../../img/chap06/pic40.gif" width="35" height="24"> 
+      时，<img src="../../../img/chap06/pic41.gif" width="33" height="24">，i=1, 
+      2, 3, …, N。则说明只有在所有神经元的输出都不变化时，系统的能量变化才停止。也就是说，系统的稳定是由系统所有单元的稳定情况唯一决定的。同时，各个神经元稳定时，系统的能量变化为零，也就是系统停在稳定点（极小点），保证了反馈系统不是在振荡。</td>
+  </tr>
+</table>
+</body>
+</html>

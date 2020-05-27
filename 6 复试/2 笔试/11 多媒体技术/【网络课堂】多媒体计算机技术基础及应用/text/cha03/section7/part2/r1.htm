@@ -1,0 +1,374 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text" bordercolor="#006699">　　描述声音的传统参数是：音高、音量、时长和音色(timbre)。前三个参数是心理感知参数，较易理解。并能用可测量的声学特性精确地模型化。而音色是一个很难定义的属性。它包含了区别音质的全部特性。音色主要是幅度包络、谐音和谱包络。音高的起始部分对标识音色是很重要的。把谱能量分布相似的声音看成感知也相似。研究还表明由于乐器音高的某个时变谱在整个音高或动态范围内变化太大，一般不能用来标识乐器指法(fingeprint)。许多研究者已探讨和研究了能从声音中抽取音频结构的算法。其目的是允许下述的查询：&quot;找到第一个升G调音符&quot;。这些算法适合于特定的音乐结构，还不适于所有的声音。另一些研究者集中在用神经网络来检索声音。尽管他们取得了某些成功，但还有不少问题。例如，当神经网络报告两个声音相似后，很难看到一个训练节点的内部。也很难确定怎样算训练好了?也不知两个声音哪些方面类似?这就使得用户难以指定哪些特性是重要的，哪些特性可以忽略。<br>
+      　　这里介绍能够实现基于内容检索的分析音频信号的通用示例和特定技术。实现基于内容检索就意味着：<br>
+      　　·用户能够在节录的声音数据库中按指定的精确序号检索声音。这是模拟文本信息的严格查找。<br>
+      　　·在较高层次的抽象中，检索应该是在给定的节录中匹配声音的内容，而忽略数据的采样率、量化精度、压缩等。这是模拟了文本信息的模糊查找。它能用相关技术实现。 
+      <br>
+      　　·进一步的层次查询可能包括直接测量和主观感知的声学特性。这些都表明，用户能够寻找语音或音乐内容。<br>
+      　　显然我们最关心第三层次的查询。为此，首先要测量声音的各种声特性，并将其表示为N维矢量。不同的感知特性与声学属性的关联方式也不同，有些感知特性，如音高、音量等与音频信号的可测量属性联系紧密，可以用这些声学属性精确的模型化，而有些感知特性与声学属性的联系则不那么直接，甚至因人而异，可以通过训练系统来确定这些感知特性与声学属性的关系，这样，对不同感知特性的查询可转化为对可测量声学属性的要求从而与具体声音相联系。<br>
+      　　过去在文本数据库中，通常查询是需要匹配和比较文本串。而在音频数据库中，应该匹配和比较上述的声学特性。如寻找与给定声音类似或大于(小于)某种给定特性的声音。为了使之成为可能，听觉特性不同的声音应映射到N维空间的不同范围。如果这点不满足，数据库就不能区别特性不同的声音。这种方法，类似于用于图像的基于内容检索中&quot;特征矢量&quot;法，只是实际特性不同。<br>
+      <b><font color="#003399">　　3.7.2.1 声学特性</font></b><a name="01"></a><br>
+      　　可以从以下几方面分析声音：音量、基频、亮度、带宽和谐音。<br>
+      　　·音量指的是用分贝表示的信号的均方根值(RMS)。首先取一系列窗，再计算样值平方和的均方根。<br>
+      　　·基频是采用一系列傅立叶谱来估计的。计算每一帧中峰值点的幅度和频率。采用加权最大公约算法估计基频。返回一个确切的基频值供以后的计算使用。可在50Hz-10KHz的范围内计算信号的基频。<br>
+      　　·亮度指的是短时傅立叶幅度谱的质心。它是出现率较高信号成分的度量。<br>
+      　　·带宽指的是频谱各分量与质心之差的加权平均值。单频正弦波的带宽为零，白噪声具有无限的带宽。<br>
+      　　·谐音区分谐音谱与非谐音谱、噪声谱，它是谐音谱和声音线性谱的差。 <br>
+      　　上述这些特性都是随时间变化的。在分析中，实时计算这些特性的轨迹，但不把它们存在数据库中。存储的是轨迹的特征，如平均值、轨迹的方差、短延时下的自相关。自相关表示了轨迹的平稳性。而且它能区分基频的滑落和宽范围的变化。这是简单的方差度量办不到的。<br>
+      　　平均值、方差和自相关的计算都用幅度的轨迹加权，这是为了强调声音感知的重要部分。除此之外还存储了声音的时长。图3.48表示了男笑声的参数图，表1给出分析结果。这些数据可用于基于内容分类和声音检索。由此可以看出声音的某些基本特性。 
+      <br>
+      　　图3.48男笑声的参数图<br>
+      　<font color="#003399">表3.16男笑声的分析结果 <br>
+      </font>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">特性</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">均值</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">方差</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">自相关</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音量</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-54.4112</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">221.451</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.938929</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音高</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4.21221</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.151228</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.524042</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">亮度</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">5.78007</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.0817046</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.690073</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">带宽</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.272099</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.0169697</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.519198</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <font color="#003399"><b>　　3.7.2.2 训练和检索</b></font><a name="02"></a><br>
+      <font color="#003399">　　（1） 连续特性系统</font><br>
+      　　* 系统训练<br>
+      　　为训练系统辨识连续特性，用户要选出一系列能反映该特性差别的声音，并按自己的感知为每个声音的这一特性赋一估计值，按大小排序，将其提交系统，显然，用户提交的例子中，该特性的取值范围越广，系统对其理解就越好。<br>
+      　　对每个声音s[j] (j=0~M-1),系统计算出代表其声学属性的N维向量a[j](M为待分析的声音的个数)。为了找到每个声音的感知特性p[j]与其声学属性向量a[j]的关系，我们应用含参数向量b的标准线性回归模型，即：<br>
+      　　p[j]=bTa[j]+e[j]，其中e代表模型的误差。<br>
+      　　在训练系统时，给定p[j]、a[j]，可计算出最佳参数b。b值显示出对于某一特性，N维向量a中哪些元素最为重要。<br>
+      　　* 检索声音<br>
+      　　一旦感知特性与声学属性间的关系建立起来，(即b值被确定)，就可将其应用到数据库中的每个声音上，这样该声音的记录中就会包含该特性的名称及值(value)，从而可以非常简单的进行有关特性的查询，如：<br>
+      　　·查询所有特性p0大于0.9且特性p1小于0.2的声音<br>
+      　　·查询所有在特性p0方面与例子相近的声音<br>
+      　　·按特性p0排序或按特性p0，p1进行分组 <br>
+      <font color="#003399">　　（2）二进制或离散特性</font><br>
+      　　* 系统训练<br>
+      　　这时可以直接指定声音服从于N维特性矢量的约束条件，例如用户能够要求声音的基频和亮度在某个范围内。也可能用一些实例来训练系统。在这种情况下，用户选一些能表示用户所需的特性(如&quot;沙沙噪声&quot;)的训练实例。<br>
+      　　对于进入数据库的每一个声音，需计算N维矢量 α。当用户提供一组实例来训练系统时，先计算每一类声音α的均值矢量μ和协方差矩阵：<br>
+      　　<img src="../../../../images/chatp/chap03/173.gif" width="101" height="47"><br>
+      　　<img src="../../../../images/chatp/chap03/174.gif" width="189" height="47"> 
+      <br>
+      　　其中M是声音的总个数。事实上，如果矢量元素是彼此独立的，R的对角线之外的元素可以忽略。这种简化能有效地节省计算时间。那么均值和协方差就成了用户训练声音感知特性的系统模型。
+      <br>
+      　　* 声音聚类<br>
+      　　当一个新的声音需要分类时，要计算新声音的α矢量与上述特征模型的距离。这里使用了L2加权或欧氏距离：<br>
+      　　<img src="../../../../images/chatp/chap03/175.gif" width="177" height="40"><br>
+      　　同样，为了加速计算，忽略R对角线之外的元素。可以用简化的权值L1 或曼哈顿(Manhattan)距离。聚类时，用这个距离与决定此声音在类内还是在类外的门槛值相比较。如果有几个相互交叠的类，那么就把这个声音放在与之最近的那一类，（即D值为最小的那一类）。若事先知道某些声学特性对这一类不重要，在计算D时，就可以忽略或给以较低的加权。例如按音色分类时，声音的基频和时长就可以忽略。<br>
+      　　还可基于正态分布定义似然值L：<br>
+      　　<img src="../../../../images/chatp/chap03/176.gif" width="107" height="23"><br>
+      　　这个值可以解释一个新的声音对于某一类所定义的特性&quot;如何相似&quot;。 
+      <br>
+      　　* 检索声音：<br>
+      　　我们可以利用距离度量，从数据库中选择、归类或分类一个声音。某些查询的例子如下：<br>
+      　　·检索&quot;Scratchy&quot;声音。也就是检索那些在&quot;Scratchy&quot;类中与之具有高相似性的声音。<br>
+      　　·检索20个幅度最大的&quot;Scratchy&quot;声音。<br>
+      　　·检索比给定值小的&quot;Scratchy&quot;声音。<br>
+      　　·用是怎样的&quot;Scratchy&quot;来分类给定的一组声音。<br>
+      　　对于大的数据库，计算距离、选择那些与期望相匹配的声音的代价是很大的。为了加速查找，可采用声学特性的索引技术。这样就能快速地检索落入所期望参数范围(超矩形-hyper-　rectangle)的声音。这个技术还可以在实际商业数据库中实现最有效的基于索引的查找算法。<br>
+      　　例如，从某一类检索M个声音。如果该类共有M<sub>0</sub>个声音。我们首先寻找在超级矩形中心周围均值为μ，幅度为V的声音：<img src="../../../../images/chatp/chap03/178.gif" width="81" height="31" align="absmiddle">，其中，V0 
+      是整个数据库中超级矩形边缘的值。<br>
+      　　根据此类在每一维上的标准方差的大小，按比例地扩展超级矩形。然后，计算所有声音的距离，并取回最接近M的声音，如果取回的声音不够预期的数量，再次按比率增加超级矩形的值。 
+      <br>
+      　　* 质量度量<br>
+      　　协方差矩阵R的量值是该类紧密程度的度量。这表明了分类的质量。如R的大小与数据库的大小类似，这个类作为分类结果是没什么用的，因为所有的声音都在其中。同样，系统也能检测训练中的歧义性，如歧义分类或类外。协方差矩阵每一维上的大小意味着该维对此类的重要性。如某训练组的声音具有非常类似的时长，分类处理将把这个特性排序在前，尽管它是不恰当的。但用户可以告诉系统忽略时长或给以不同的加权。 
+      <br>
+      <b><font color="#003399">　　3.7.2.3 性能</font></b><a name="03"></a><br>
+      　　上面讨论中每一个声音是一个单独的整体。如关门时的&quot;砰&quot;的一声；或具有相同特征的长的声音，如雨点落在水泥地的声音。那么在使用含有许多事件的录音之前需要对其进行分段。分段靠声学分析来实现，并寻找出过渡(特性突然变化)。过渡划定了信号的段落，然后就可以按各个独立的声音段去处理了，例如一个音乐会录音自动扫描&quot;鼓掌声&quot;，就可以区分不同乐章。同样，训练系统识别某些说话者，那么，录音就会被分成许多段落。系统扫描后，就可以知道该说话者何时在讲话。<br>
+      　　使用上述算法测试一个含有400个声音文件的数据库Mucle Fish。这些声音文件选自各种声音效果和乐器例音库。包括动物、机器、乐器、语音和大自然的声音，时长从1秒以下列15秒不等。<br>
+      　　在Muscle Fish中，按感知特性似然性分类。然后，对已分类的声音按它的在类内的似然性重新排序。下面讨论几个这种分类处理的结果。它们表明了处理的模糊检索的特性。<br>
+      　　例1--笑声。图3.49表示了在测试数据库中该类声音文件的似然性(Y轴)。沿X轴的每个小窄条是用户定义的类。类模型&quot;(Class 
+      Model)的计算如表3.17。似然性最高的声音是笑声，以及那两个不在训练组中的声音和一个动物的声音。动性的声音是鸡舍里的声音，这是因为它包含大量很强的爆发音。<br>
+      　　例2--音频电话拨号声。一组音频电话拨号声用于生成图3.50的那一类。图中表明此类声音明显区别于其它类。此类中有一个拨号声不在训练集内，但它还是有较高的似然值。研究发现，两个较低似然值的录音是7位电话号码。<br>
+      　<font color="#003399">表3.17 笑声的分类模型 </font><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center"><b>特性</b></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"><b>均值</b></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"><b>方差</b></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"><b>重要性</b></div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">时长</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.71982</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.191312</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6.21826</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音量：均值</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">-45.0014</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">18.9212</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">10.3455</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">方差</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">200.109</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1334.99</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">5.47681</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">自相关</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.955071</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7.71106e-05</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">108.762</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">亮度：均值</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6.16071</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.0204748</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">43.0547</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">方差</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0..288125</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.000113187</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">2.70821</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">自相关</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.715438</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.010 8014</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6.88386</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">带宽：均值</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.363269</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.000434929</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">17.4188</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">方差</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.00759914</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">3.57604e-05</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">1.27076</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">自相关</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.664325</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.0122108</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6.01186</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">音高：均值</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">4.48992</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.39131</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">7.17758</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">方差</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.207667</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.0443153</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.986485</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">自相关</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.562178</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">0.00857394</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">6.07133</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　图3.49 数据库中与笑声的似然性 
+      <p>　　图3.50数据库中与音频电话拨号声的似然性<br>
+      </p>
+      <br>
+</td>
+  </tr>
+</table>
+</body>
+</html>

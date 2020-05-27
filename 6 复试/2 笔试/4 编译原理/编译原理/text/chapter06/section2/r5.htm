@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由定义6.2和6.3很容易证明前面我们给的表达式文法。<br>
+      　　E→E+E|E*E|(E)|i 不是算符优先文法。<br>
+      　　因为对算符 +、* 来说，由 E→E+E 和 E <img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      E*E 可有 +<img src="../../../img/chap06/symbol01.gif" width="18" height="20">* 
+      ，这由语法子树图6.4(a)也可看出。又可由E→E*E 和 E <img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">E+E 
+      得 +<img src="../../../img/chap06/symbol02.gif" width="18" height="20">*，由语法子树表示为图6.4(b)。 
+      <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 6.4 二义性文法的语法树 
+            </font> </td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../../img/totle/p6_4%20copy.gif" width="253" height="144"></td>
+        </tr>
+      </table>
+      　　这样+、* 的优先关系不唯一，所以该表达式的文法仅是算符文法而不是算符优先文法。这里必须再次强调，两个终结符之间的优先关系是有序的，允许有 
+      a<img src="../../../img/chap06/symbol02.gif" width="18" height="20">b，b<img src="../../../img/chap06/symbol02.gif" width="18" height="20">a同时存在 
+      ，而不允许有 a<img src="../../../img/chap06/symbol02.gif" width="18" height="20">b，a<img src="../../../img/chap06/symbol01.gif" width="18" height="20">b，a<img src="../../../img/chap06/symbol03.gif" width="18" height="20">b 
+      三种情况中之两种同时存在。</td>
+  </tr>
+</table>
+</body>
+</html>

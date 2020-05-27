@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+
+
+<link rel="stylesheet" href="../../../css/type.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="20" topmargin="10" marginwidth="20" marginheight="10">
+<table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr> 
+    <td class="tt" align="left" valign="top"> 
+      <p align="center" ><img src="../images/rl4.18.gif" width="386" height="764"></p>
+      <p align="center" ><font color="#FF0000">图4.18 x非空时的修改证明树</font></p>
+      <p >目标公式为（<img src="../images/002.gif" width="8" height="12">y）R（nil， y），目标公式否定式~R（nil， 
+        y），在这种情况下，归结反演树如图4.17所示，由此可构造出修改证明树，从根部子句得到的回答是R（nil， nil），其意义是若表x的长度为0，则表y的长度也为0。<br>
+        ②x为非空表<br>
+        作归纳法假设：对任一非空表x，cdr（x）可以排序，即可以认为有某种排序函数&quot;Sort&quot;具有能够实现对小表排序的功能，这样可得归纳假设的子句形<br>
+        （6）R（cdr（x），Sort（cdr（x）））<br>
+        现在要证明（<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/002.gif" width="8" height="12">y）R（x，y），还要用到一个关系<br>
+        （<img src="../images/001.gif" width="11" height="12">x）（cons（car（x）），cdr（x））＝x）<br>
+        为了避免处理等值谓词带来的复杂性，可引入如下事实： <br>
+        （<img src="../images/001.gif" width="11" height="12">x）（<img src="../images/001.gif" width="11" height="12">y）（R（cons（car（x）， 
+        cdr（x））， y）→R（x， y）<br>
+        因此有<br>
+        （7）~R（cons（car（x）， cdr（x））， y）∨R（x， y）<br>
+        目标公式否定式为~R（a， y），其中a是Skolem常量，根据提取回答的过程可得修改证明树如图4.18所示，提取的回答语句为<br>
+        R（a， merge（car（a）， sort（cdr（a））））<br>
+        如将Skolem函数用新变量替代，则可改写成<br>
+        R（x， merge（car（x）， sort（cdr（a））））<br>
+        将以上两种情况的结果结合起来，最后可得递归程序<br>
+        <img src="../images/45001.gif" width="295" height="62"> </p>
+      
+      </td>
+  </tr>
+</table>
+</body>
+</html>

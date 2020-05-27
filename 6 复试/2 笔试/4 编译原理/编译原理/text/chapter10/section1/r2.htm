@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　因此运行时的存储区常常划分成：目标区、静态数据区、栈区和堆区，如图10.1就是一种典型划分，代码(code)区用以存放目标代码，这是固定长度的，即编译时能确定的；静态数据区(static 
+      data)用以存放编译时能确定所占用空间的数据；堆栈区(stack and heap)用于可变数据以及管理过程活动的控制信息。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图10.1 目标程序运行时存储区的典型划分</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center">
+            <table  width="60%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">code</td>
+              </tr>
+              <tr> 
+                <td align="center">static data</td>
+              </tr>
+              <tr> 
+                <td align="center">stack</td>
+              </tr>
+              <tr> 
+                <td align="center">↓<br>
+                  ↑ </td>
+              </tr>
+              <tr> 
+                <td align="center">heap</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　所谓数据空间的分配，本质上看，是将程序中的每个名字与一个存储位置关联起来，该存储位置用以容纳名字的值。编译程序分配目标程序运行时的数据空间的基本依据是程序语言设计时对程序运行中存储空间的使用和管理办法的规定。我们知道，即便有些名字在程序中只声明了一次，但该名字可能对应运行时不同的存储位置，比如，一个递归调用的过程，在执行时，其同一个局部名字应该对应不同的运行空间位置以容纳每次执行时的值。在程序设计语言语义学中，使用术语environment表示将一个名字映射到一个存储位置的函数，术语state表示存储位置到值的映射，使用术语<br>
+      　　environment函数表示<br>
+      　　env: N→S (N到S的映射)<br>
+      　　如图10.2所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图10.2 名字 到存储、到值的映射</font></td>
+        </tr>
+        <tr> 
+          <td valign="top" align="center"><img src="../../../img/totle/p10_2.gif" width="369" height="79"></td>
+        </tr>
+      </table>
+      　　编译程序分配目标程序运行时的数据空间的基本依据是程序语言设计时对程序运行中存储空间的使用和管理办法的规定。决定存储管理复杂程度的因素--源语言本身，比如源语言允许的数据类型有多少？语言中允许的数据项是静态确定还是动态确定？程序结构有什么特点，是段结构还是分程序结构？过程定义是否允许嵌套？等等。 
+      <br>
+      　　源语言的结构特点、源语言的数据类型、源语言中决定名字作用域的规则等因素影响存储空间的管理和组织的复杂程度，决定数据空间分配的基本策略。<br>
+      　　本章将介绍存储空间的使用管理方法，重点针对栈式动态存储分配的实现进行讨论。</td>
+  </tr>
+</table>
+</body>
+</html>

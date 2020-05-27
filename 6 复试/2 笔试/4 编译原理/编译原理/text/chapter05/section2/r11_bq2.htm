@@ -1,0 +1,58 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td>练习</td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td>　　若有文法G3的产生式为：<br>
+            　　(1) S→aSd<br>
+            　　(2) S→Ac<br>
+            　　(3) A→aS<br>
+            　　(4) A→b<br>
+            参考答案：<br>
+            　　用产生式(3)、(4)中右部替换产生式(2)中右部的A，文法变为：<br>
+            　　(1) S→aSd<br>
+            　　(2) S→aSc<br>
+            　　(3) S→bc<br>
+            　　(4) A→aS<br>
+            　　(5) A→b<br>
+            　　对(1)、(2)提取左公共因子得：<br>
+            　　S→aS(d|c)<br>
+            　　引入新非终结符A′后变为：<br>
+            　　(1) S→aSA′<br>
+            　　(2) S→bc<br>
+            　　(3) A′→d|c<br>
+            　　(4) A→aS<br>
+            　　(5) A→b<br>
+            　　显然，原文法G3中非终结符A变成不可到达的符号，产生式(4)、(5)也就变为无用产生式，所以应删除。<br>
+            　　此外也存在某些文法不能在有限步骤内提取完左公共因子。</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+</body>
+</html>

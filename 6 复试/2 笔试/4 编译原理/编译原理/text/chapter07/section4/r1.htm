@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　我们首先用S′→·S作为初态集的项目，然后用闭包函数和转换函数构造识别文法G′的识别活前缀的有限自动机DFA如图7.11所示，可以发现在项目集I<sub><font size="-2">5</font></sub>和I<sub><font size="-2">7</font></sub>中存在移进和归约冲突。<br>
+      　　I<sub><font size="-2">5</font></sub>：S→ae·c　　　　I<sub><font size="-2">7</font></sub>：S→be·d<br>
+      　　　　A→e·　　　　　　 A→e·<br>
+      　　而归约项目左部非终结符的FOLLOW(A)={c,d}<br>
+      　　在I<sub><font size="-2">5</font></sub>中，FOLLOW(A)∩{c}={c,d}∩{c}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　在I<sub><font size="-2">7</font></sub>中，FOLLOW(A) ∩{d}={c,d}∩{d}≠<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><br>
+      　　因此I<sub><font size="-2">5</font></sub>，I<sub><font size="-2">7</font></sub>中冲突不能用SLR(1)方法解决。只能考虑用下面将要介绍的LR(1)方法解决。 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 7.11 LR(0)识别G′的活前缀的DFA</font></td>
+        </tr>
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="300">
+              <param name=movie value="../../../flash/chap07/f7-4-1.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap07/f7-4-1.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="300">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　由于用SLR(1)方法解决动作冲突时，对于归约项目A→α·，只要当前面临输入符为a∈FOLLOW(A)时，就确定采用产生式A→α进行归约，但是如果栈中的符号串为βα，归约后变为βA，再移进当前符a，则栈里变为βAa，而实际上βAa未必为文法规范句型的活前缀。<br>
+      　　例如：在识别表达式文法的活前缀DFA中，(见图7.10)在项目集I<sub><font size="-2">2</font></sub>存在移进-归约冲突，即{E→T· 
+      T→T·*F}若栈顶状态为2，栈中符号为#T，当前输入符为')'，而')'属FOLLOW(E)中，这时按SLR(1)方法应用产生式E→T进行归约，归约后栈顶符号为#E，而再加当前符')'后，栈中为#E)不是表达式文法规范句型的活前缀。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center">　<font color="#0000FF">图 8.8 逆波兰表示</font></td>
+        </tr>
+        <tr>
+          <td align="center">
+            <table  width="95%" border="1" cellspacing="0" cellpadding="0" bordercolorlight="#666600" bordercolordark="#FFFFFF" class=text>
+              <tr> 
+                <td align="center">程序设计语言中的表示</td>
+                <td align="center">逆波兰表示</td>
+              </tr>
+              <tr> 
+                <td align="center">a+b<br>
+                  a+b*c<br>
+                  (a+b)*c<br>
+                  a;=b*c+b*d <br>
+                </td>
+                <td align="center">ab+<br>
+                  abc*+ <br>
+                  ab+c*<br>
+                  abc*bd*+:=</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　后缀表示法表示表达式，其最大的优点是易于计算机处理表达式。常用的算法是使用一个栈，自左至右扫描算术表达式（后缀表示），每扫描到运算对象，就把它推进栈；扫描到运算符，若该运算符是二目的，则对栈顶部的两个运算对象实施该运算，并将运算结果代替这两个运算对象而进栈；若是一目运算符，则对栈顶元素执行该运算，并以运算结果代替该元素进栈，最后的结果留在栈顶。<br>
+      　　例如 B@CD*+（它的中缀表示为－B+C*D，使用@表示一目减）的计值过程为：<br>
+      　　1. B进栈；<br>
+      　　2. 对栈顶元素施行一目减运算，并将结果代替栈顶，即－B置于栈顶；<br>
+      　　3. C进栈； <br>
+      　　4. D进栈；<br>
+      　　5. 栈顶两元素相乘，两元素退栈，相乘结果置栈顶；<br>
+      　　6. 栈顶两元素相加，两元素退栈，相加结果进栈，现在栈顶存放的是整个表达式的值。<br>
+      　　由于后缀式表示上的简洁和计值的方便，特别适用于解释执行的程序设计语言的中间表示，也方便具有堆栈体系的计算机的目标代码生成。<br>
+      　　逆波兰表示很容易扩充到表达式以外的范围。在图8.8中已见到了赋值语句的后缀表示的例子。只要遵守运算对象后直接紧跟它们的运算符的规则即可。比如把转语句GOTO 
+      L写为&quot;L jump&quot;，运算对象L为语句标号，运算符jump表示转到某个标号。再比如条件语句if E then S1 else 
+      S<sub><font size="-2">2</font></sub>可表示为：ES<sub><font size="-2">1</font></sub>S<sub><font size="-2">2</font></sub>￥，把if 
+      then else看成三目运算符，用￥来表示。又如数组元素A[〈下标表达式1〉，…〈下标表达式n〉]可表示为〈下标表达式1〉〈下标表达式2〉……〈下标表达式n〉A 
+      subs，运算符Subs表示求数组的下标。<br>
+      　　当然，这些扩充的后缀表示的计值远比后缀表达式的计值复杂得多，要注意对新添加的运算符的含义正确处理。以图8.8中的赋值语句为例，当计算到∶=时，执行的是将表达式B*C+B*D的值送到变量a，所以，而在执行完赋值后，栈中并不产生结果值，这与算术的二目运算符是不一样的，另外，因为需要的是a的地址，而不是a的值，这也必须注意到。</td>
+  </tr>
+</table>
+</body>
+</html>

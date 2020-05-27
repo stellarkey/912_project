@@ -1,0 +1,20 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"系统为用户提供“虚拟设备”后，能（　　　　　）\n",
+    "source":"网络",
+    "answer":"",
+    "type":"multi_answer",
+    "options":[
+        "A.提高独占设备的利用率",
+        "B.有利于多道程序设计",
+        "C.缩短作业的执行时间",
+        "D.充分利用外设与CPU并行工作能力",
+        "E.提高单位时间内处理作业的能力"
+    ],
+    "q_number":550
+}

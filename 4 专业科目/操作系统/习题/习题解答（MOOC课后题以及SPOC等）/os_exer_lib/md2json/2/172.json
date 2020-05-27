@@ -1,0 +1,1 @@
+{"knowledge": "进程状态与控制。\r\n", "question": "程序访问的局部性原理决定应使用_____ 。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.中断 \r\n B.DMA \r\n C.高速缓存 \r\n D.虚拟存储器\r\n"}

@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　比如源程序sum ∶= first+count*10可生成四元式序列，如图1.7所示，其中ti(i=1,2,3)是编译程序生成的临时名字，用于存放运算结果的。
+      　
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td align="center"><font color="#0000FF">图1.7 id1:= id2 + id3 * 10的四元式序列</font> 
+          </td>
+        </tr>
+        <tr>
+          <td align="center">
+            <table width="50%" border="0" cellspacing="0" cellpadding="0" class=text>
+              <tr>
+                <td width="14%">(1) <br>
+                  (2) <br>
+                  (3) <br>
+                  (4) </td>
+                <td width="40%">(inttoreal<br>
+                  *<br>
+                  +<br>
+                  := </td>
+                <td width="16%">10 <br>
+                  id3<br>
+                  id2<br>
+                  t3 </td>
+                <td width="15%">-<br>
+                  t1<br>
+                  t2<br>
+                  - <br>
+                </td>
+                <td width="15%">t1 )<br>
+                  t2 )<br>
+                  t3 )<br>
+                  id1 ) </td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+      </table>
+      　　四元式(运算符，运算对象1，运算对象2，结果)常写成赋值语句的形式(结果=运算对象1 运算符 运算对象2)，比如c语言的源程序a = b * 
+      c + b * d 的四元式序列为<br>
+      　　(1) t1 = b * c<br>
+      　　(2) t2 = b * d<br>
+      　　(3) t3 = t1 + t2<br>
+      　　(4) a = t3<br>
+      　　翻译分支，循环和函数调用等语句时，四元式的生成通常要比上述例子复杂些。比如源程序：<br>
+      　　if ( a <= b)<br>
+      　　a = a – c;<br>
+      　　c = b * c; <br>
+      　　翻译成的四元式: <br>
+      　　t1 = a &gt; b<br>
+      　　if t1 goto l<br>
+      　　t2 = a – c<br>
+      　　a = t2<br>
+      　　l : t3 = b * c<br>
+      　　c = t3 </td>
+  </tr>
+</table>
+</body>
+</html>

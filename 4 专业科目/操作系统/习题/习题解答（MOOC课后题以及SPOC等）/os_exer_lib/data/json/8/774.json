@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "信号量"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)设两个进程共用一个临界段的互斥信号量mutex，当mutex=-1时表示：﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.一个进程入了临界段，另一个进程等待",
+        "B.没有一个进程进入了临界段",
+        "C.只有一个进程进入了临界段",
+        "D.两个进程都在等待"
+    ],
+    "q_number":774
+}

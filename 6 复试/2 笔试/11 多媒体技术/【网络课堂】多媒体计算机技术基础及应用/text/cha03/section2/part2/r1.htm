@@ -1,0 +1,123 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text">　　数据的压缩必然引起音频质量的降低，那么如何评价编/解码器的优劣呢？一般来讲有以下几个因素：音频质量、数据率、 
+      编/解码延时和算法复杂度。如果作为一个产品，显然还应考虑其性能价格比。<br>
+      　　对于音频质量的评价分为客观评定的和主观评定。客观评定是通过测量某些特性来评价解码音频的质量。如测量信噪比、加权信噪比、平均分段信噪比等。这里测量的是信号方差与误差方差之比，其计算较为简单，但与人对音频的感知不完全一致。<br>
+      　　得到广泛使用的是主观评测方法。如以主观意见打分（Mean Opinion Score - MOS）来度量。它分为5（优）、4（良）、3（中）、2（差）、1（劣）五级。若觉察不到编码失真，可评为5分。对于高质量语音，达到长途电话网的质量要求，可评为4.0～4.5分。当话音质量有所下降，但不足以妨碍正常通信，可评为3.5分。<br>
+      　　对于语音来说，其质量是指可懂度、清晰度和自然度。目前已有&quot;汉语清晰度诊断押韵字测试（DRT）法&quot;国家标准（GB/T 13504-92）。标准中提供两张字表，各用108对押韵字。如&quot;辅－补，数－主&quot;。每一对为一测试项，两项为一组。听音人记录下所听的字。计算DRT清晰度的公式如下：<br>
+      　　<img src="../../../../images/chatp/chap03/012.gif" width="129" height="41"> 
+      <br>
+      　　其中 R 是正确回答数，W是错误回答数，T是总的测试项数。还可以计算区别特征得分，如计算某张记录表某个听音人某类特征的得分；某个听音人某类特征的平均得分；全体听音人得分的算术平均值。<br>
+      　　被测系统的DRT清晰度得分等级如下：<br>
+      　　DRT得分（%） 音质评价<br>
+      　　100 &gt; A 3 95 优(excellent)<br>
+      　　95 &gt; A 3 85 良好(good)<br>
+      　　85 &gt; A 3 75 中等(fair)<br>
+      　　75 &gt; A 3 65 差(poor)<br>
+      　　65 &gt; A 不可接受(unacceptable)<br>
+      　　数字音频的质量与采样频率(TS)和量化精度(每个样值的比特数)B有关.采样频率越高、B越大、数字音频的质量越高，但数据率（每秒比特数）越大。<br>
+      　　数字音频可分为以下几个质量等级： <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">信号类型</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">频率范围（HZ）</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">采样率（KHZ）</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">量化精度（位）</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">电话话音</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">200～3400</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">8</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">宽带音频</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">50～7000</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">16</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">16</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">调频广播</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">20～15K</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">37.8以上</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">16</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">高质量音频</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">20～20K</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">44.1</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">16</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><br>
+      　　从上表看出，未经压缩的音频数据率可达每秒几十千位或更高。我们期望通过编码，压缩音频数据。当前音频编码质量与数据率的关系、音频压缩的研究目标显示在图3.1中。 
+      <br>
+      <font color="#003399">　　图3.1　语音质量与数据率的关系</font> <br>
+      　　<img src="../../../../images/chatp/chap03/013.gif" width="276" height="190"><br>
+      　　选择压缩算法时要进行综合考虑：算法复杂度高，致使计算量大、缓存增加，速度减慢，或许还会造成硬件成本提高。因此在保证质量的前提减小算法复杂度也是很必要的。<br>
+      　　编码延时长，会影响通信质量。特别是在通信线路多次转接时，延时会造成回声。单次语音编码延时最好小于10ms。<br>
+      <br>
+      　　<font color="#003399">数据的压缩必然引起音频质量的降低，评价编/解码器的优劣一般来讲有以下几个因素：音频质量、数据率、编/解码延时和算法复杂度。如果作为一个产品，显然还应考虑其性能价格比。<br>
+      　　对于音频质量的评价，分为客观评定和主观评定。客观评定是通过测量某些特性来评价解码音频的质量。如测量信噪比、加权信噪比、平均分段信噪比等。这里测量的是信号方差与误差方差之比，其计算较为简单，但与人对音频的感知不完全一致。<br>
+      　　对于语音来说，其质量是指可懂度、清晰度和自然度。<br>
+      　　数字音频的质量与采样频率和量化精度有关。采样频率越高、量化精度越大，数字音频的质量越高，但数据率（每秒比特数）越大。<br>
+      　　选择压缩算法时要进行综合考虑：算法复杂度高，致使计算量大、缓存增加，速度减慢，或许还会造成硬件成本提高。因此在保证质量的前提减小算法复杂度也是很必要的。<br>
+      　　编码延时长，会影响通信质量。特别是在通信线路多次转接时，延时会造成回声。单次语音编码延时最好小于10ms。</font><br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

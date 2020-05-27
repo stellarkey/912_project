@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"(20150309_操作系统原理习题集及答案_笔试必需品_doc)一个进程释放一种资源将有可能导致一个或几个进程﹎﹎﹎﹎。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.由就绪变运行",
+        "B.由运行变就绪",
+        "C.由阻塞变运行",
+        "D.由阻塞变就绪"
+    ],
+    "q_number":767
+}

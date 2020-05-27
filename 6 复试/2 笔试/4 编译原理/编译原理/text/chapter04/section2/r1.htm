@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> <b>文法---是一个数学系统 <br>
+      </b>　　一个形式数学系统可由下列基本成分来刻画：一组基本符号，一组形成规则，一组公理，一组推理规则。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例4.1</font></td>
+        </tr>
+        <tr> 
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　　文法G=(V<sub><font size="-2">n</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)，其中V<sub><font size="-2">n</font></sub>={S}，V<sub><font size="-2">T</font></sub>={0，1}，P={S→0S1，S→01}。这里，非终结符集中只含一个元素S；终结符集由两个元素0和1组成；有两条产生式；开始符号是S。 
+          </td>
+        </tr>
+        <tr>
+          <td width="35" valign="top"><img src="../../../img/label/icon_lt.gif" width="36" height="36" alt="例题"></td>
+          <td class="text"><font color="#0000FF">例4.2</font></td>
+        </tr>
+        <tr>
+          <td width="35" valign="top">&nbsp;</td>
+          <td class="text">　　文法G=(V<sub><font size="-2">n</font></sub>，V<sub><font size="-2">T</font></sub>，P，S)<br>
+            　　其中V<sub><font size="-2">n</font></sub>={标识符，字母，数字}V<sub><font size="-2">T</font></sub>={a,b,c,…，x,y,z,0,1,…，9}<br>
+            　　P ={〈标识符〉→〈字母〉<br>
+            　　　〈标识符〉→〈标识符〉〈字母〉<br>
+            　　　〈标识符〉→〈标识符〉〈数字〉<br>
+            　　　〈字母〉→a<br>
+            　　　〈字母〉→b<br>
+            　　　…<br>
+            　　　〈字母〉→z<br>
+            　　　〈数字〉→0<br>
+            　　　〈数字〉→1<br>
+            　　　　…<br>
+            　　　〈数字〉→9}<br>
+            　　S =〈标识符〉<br>
+            　　这里，使用尖括号&quot;〈&quot;和&quot;〉&quot;括起非终结符。</td>
+        </tr>
+      </table>
+      　　很多时候，不用将文法G的四元组显式地表示出来，而只将产生式写出。一般约定，第一条产生式的左部是识别符号；用尖括号括起来的是非终结符号，不用尖括号括起来的是终结符号，或者用大写字母表示非终结符号，小写字母表示终结符号。另外也有一种习惯写法，将G写成G[S]，其中S是识别符号，例4.1还可以写成：<br>
+      　　G：S→0S1<br>
+      　　　 S→01<br>
+      　　或G[S]：S→0S1<br>
+      　　　　　　S→01<br>
+      　　有时，为书写简洁，常把相同左部的产生式，形如<br>
+      　　A→α<sub><font size="-2">1</font></sub><br>
+      　　A→α<sub><font size="-2">2</font></sub><br>
+      　　…<br>
+      　　A→α<sub><font size="-2">n</font></sub><br>
+      　　缩写为：<br>
+      　　A→α<sub><font size="-2">1</font></sub>|α<sub><font size="-2">2</font></sub>|…|α<sub><font size="-2">n</font></sub><br>
+      　　这里的元符号&quot;|&quot;读做&quot;或&quot;。<br>
+      <br>
+      　　一个文法的几种写法<br>
+      　　① G=({S,A}，{a,b}，P，S)<br>
+      　　　 其中P：S→aAb <br>
+      　　 　 　　　A→ab <br>
+      　　　　　　　A→aAb <br>
+      　　　　　　　A→ε<br>
+      　　 ② G：S→aAb <br>
+      　　 　 　 A→ab <br>
+      　　　　　 A→aAb <br>
+      　　　　　 A→ε<br>
+      　　 ③ G[S]： A→ab A→aAb A→ε S →aAb<br>
+      　　 ④ G[S]： A→ab |aAb |ε S→aAb</td>
+  </tr>
+</table>
+</body>
+</html>

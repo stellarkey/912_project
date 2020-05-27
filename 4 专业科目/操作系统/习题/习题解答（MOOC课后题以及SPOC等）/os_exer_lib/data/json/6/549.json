@@ -1,0 +1,20 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"文件的逻辑结构有（　　　　　）类型\n",
+    "source":"网络",
+    "answer":"",
+    "type":"multi_answer",
+    "options":[
+        "A.顺序式",
+        "B.流式",
+        "C.链接式",
+        "D.记录式",
+        "E.索引式"
+    ],
+    "q_number":549
+}

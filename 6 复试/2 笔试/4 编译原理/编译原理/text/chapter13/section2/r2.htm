@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p>　　如果我们把L不只分出一个核心L<sub><font size="-2">1</font></sub>，而是分出<img src="../../../img/index/1x1pixel.gif" width="1" height="20">L<sub><font size="-2">1</font></sub>,L<sub><font size="-2">2</font></sub>，即L<sub><font size="-2">2</font></sub>为L<sub><font size="-2">1</font></sub>的扩充，那么实现的步骤可以是先由A书写L<sub><font size="-2">1</font></sub>得<img src="../../../img/chap13/pic02.gif" width="23" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，再由L<sub><font size="-2">1</font></sub>书写L<sub><font size="-2">2</font></sub>表示为<img src="../../../img/chap13/pic05.gif" width="27" height="14">，将<sub><font size="-2" face="Arial, Helvetica, sans-serif">L1</font></sub><font face="Arial, Helvetica, sans-serif"><sup><font size="-2">L2A</font></sup></font>经过<img src="../../../img/chap13/pic02.gif" width="23" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">编译得<img src="../../../img/chap13/pic06.gif" width="27" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="20">，最后用L<sub><font size="-2">2</font></sub>书写L为<img src="../../../img/chap13/pic07.gif" width="21" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，再用<img src="../../../img/chap13/pic06.gif" width="27" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">对<img src="../../../img/chap13/pic07.gif" width="21" height="14">进行编译最终得到我<img src="../../../img/index/1x1pixel.gif" width="1" height="20">们所需要的<img src="../../../img/chap13/pic04.gif" width="21" height="14"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">。这个过程用三层结合的<img src="../../../img/index/1x1pixel.gif" width="1" height="20">T型图表示如图13.6。 
+        <img src="../../../img/index/1x1pixel.gif" width="1" height="20">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.6 <img src="../../../img/chap13/pic04.gif" width="21" height="14"> 
+            <img src="../../../img/index/1x1pixel.gif" width="1" height="20">的三层结合T型图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p13_6.gif" width="430" height="165"></td>
+        </tr>
+      </table>
+      <font color="#0000FF">　　</font>依此类推，L可以分成核心L<sub><font size="-2">1</font></sub>,L<sub><font size="-2">2</font></sub>,…,L<sub><font size="-2">n</font></sub>都为L<sub><font size="-2">1</font></sub>的逐步扩充，使得L=L<sub><font size="-2">n</font></sub>,其自展<img src="../../../img/index/1x1pixel.gif" width="1" height="20">的示意图如图13.7所示。<br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" height="9" align="center"><font color="#0000FF"> 图 
+            13.7 编译程序的自展示意图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" height="9" align="center"><img src="../../../img/totle3/p13_7.gif" width="208" height="207"></td>
+        </tr>
+      </table>
+      思考问题<br>
+        　　① 如何用T型图 表示一个编译程序的实现？<br>
+      　　② 如何用自展方式在PC机上实现C语言的编译程序？（请用T型图表示）</td>
+  </tr>
+</table>
+</body>
+</html>

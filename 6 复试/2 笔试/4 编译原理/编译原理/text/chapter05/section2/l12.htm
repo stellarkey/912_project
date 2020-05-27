@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　由上面练习所举例子可以说明以下问题：<br>
+      　　① 不一定每个文法的左公共因子都能在有限的步骤内替换成无左公共因子的文法，上面文法G4就是如此。<br>
+      　　② 一个文法提取了左公共因子后，只解决了相同左部产生式右部的FIRST集不相交问题，当改写后的文法不含空产生式，且无左递归时，则改写后的文法是LL(1)文法，否则还需用LL(1)文法的判别方式进行判断才能确定是否为LL(1)文法。 
+      <br>
+      <b>2. 消除左递归</b><br>
+      　　设一个文法含有下列形式的产生式。<br>
+      　　1)A→Aβ A∈V<sub><font size="-2">N</font></sub>，β∈V<sup><font size="-2">*</font></sup><br>
+      　　2)A→Bβ<br>
+      　　B→Aα A,B∈V<sub><font size="-2">N</font></sub>, α,β∈V<sup><font size="-2">*</font></sup><br>
+      　　可称含1)中产生式的文法为含有左递归的规则或称直接左递归的。含2)中产生式的文法有A<img src="../../../img/chap04/symbol03.gif" width="15" height="15"><img src="../../../img/index/1x1pixel.gif" width="1" height="16"> 
+      A … 则称文法中含有左递归或间接左递归，文法中只要含有1)或含有2)的产生式或二者皆有均认为文法是左递归的，然而，一个文法是左递归时不能采用自顶向下分析法。</td>
+  </tr>
+</table>
+</body>
+</html>

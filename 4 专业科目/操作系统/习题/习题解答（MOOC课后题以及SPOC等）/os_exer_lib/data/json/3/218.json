@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程状态与控制"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"某进程由于需要从磁盘上读入数据而处于阻塞状态。当系统完成了所需的读盘操作后，此时该进程的状态将_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.从就绪变为运行",
+        "B.从运行变为就绪",
+        "C.从运行变为阻塞",
+        "D.从阻塞变为就绪"
+    ],
+    "q_number":218
+}

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① <b>收集符号属性</b> 编译程序扫描说明部分收集有关标识符的属性，并在符号表中建立符号的相应属性信息。例如，编译程序分析到下述两个说明语句<br>
+      　　int A;<br>
+      　　float B[5];<br>
+      　　则在符号表中收集到关于符号A的属性是一个整型变量，关于符号B的属性是具有5个浮点型元素的一维数组。<br>
+      　　② <b>上下文语义的合法性检查的依据</b> 同一个标识符可能在程序的不同地方出现，而有关该符号的属性是在这些不同情况下收集的。特别是在多趟编译及程序分段编译（在PASCAL及C中以文件为单位）的情况下，更需检查标识符属性在上下文中的一致性和合法性。通过符号表中属性记录可进行相应上下文的语义检查。<br>
+      　　例如，在一个C语言程序中出现<br>
+      　　…<br>
+      　　int i [3,5]; //定义整型数组i<br>
+      　　…<br>
+      　　float i[4,2]; //定义实型数组i,重定义冲突<br>
+      　　…<br>
+      　　int i [3,5]; //定义整型数组i,重定义冲突 <br>
+      　　…<br>
+      　　编译过程首先在符号表中记录了标识符i的属性是3×5个整型元素的数组，而后在分析第二、第三这两个定义说明时编译系统可通过符号表检查出标识符i的二次重定义冲突错误。本例还可以看到不论在后二句中i的其它属性与前一句是否完全相同，只要标识符名重定义，就将产生重定义冲突的语义错误。<br>
+      　　③ <b>作为目标代码生成阶段地址分配的依据</b> 每个符号变量在目标代码生成时需要确定其在存储分配的位置（主要是相对位置）。语言程序中的符号变量由它被定义的存储类别（如在C、FORTRAN语言中）或被定义的位置（如分程序结构的位置）来确定。首先要确定其被分配的区域。例如，在C语言中首先要确定该符号变量是分配在公共区（extern）、文件静态区（extern 
+      static）、函数静态区（函数中static）、还是函数运行时的动态区（auto）等。其次是根据变量出现的次序，（一般来说）决定该变量在某个区中所处的具体位置，这通常使用在该区域中相对区头的相对位置确定。而有关区域的标志及相对位置都是作为该变量的语义信息被收集在该变量的符号表属性中。</td>
+  </tr>
+</table>
+</body>
+</html>

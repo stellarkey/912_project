@@ -1,0 +1,1 @@
+{"knowledge": "虚拟内存管理。\r\n", "question": "物理页帧数量为5，虚拟页访问序列为 4,3,0,2,2,3,1,2,4,2,4,0,3，请问采用缺页率置换算法（窗口T=2）的缺页次数为（） s6\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.2\r\n B.3\r\n C.4\r\n D.5\r\n"}

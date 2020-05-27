@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"D\n",
+    "question":"使用编制的程序与实际使用的物理设备无关是由( )功能实现的。\n",
+    "source":"网络",
+    "answer":"D",
+    "type":"single_answer",
+    "options":[
+        "A.设备分配",
+        "B.设备驱动",
+        "C.虚拟设备",
+        "D.设备独立性"
+    ],
+    "q_number":924
+}

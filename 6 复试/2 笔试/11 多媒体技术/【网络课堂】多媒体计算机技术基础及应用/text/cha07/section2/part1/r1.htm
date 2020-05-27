@@ -1,0 +1,324 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="3" cellpadding="3">
+  <tr> 
+    <td class="text"> 　　高级的多媒体系统的特征是，它集成了计算机控制的、相互独立的、与时间相关和与时间无关的媒体的生成、存储、通信、操作和演示，而集成的关键问题是各种各样的媒体和数据之间的同步。因此，同步（Synchronization）问题被认为是多媒体系统的一个重要特征。<br>
+      <br>
+      　　<font color="#003399">什么是多媒体同步？<br>
+      　　协调媒体流的实时演示以及维持媒体间的时序关系，称为多媒体同步。<br>
+      　　同步一般指多媒体系统中媒体对象内部和对象间的时间关系，更广泛的概念则包含内容、空间和时间的关系。</font><br>
+      　　同步一般指多媒体系统中媒体对象间的时间关系，更广泛的概念则包括内容、空间和时间的关系。媒体对象包括时间相关的媒体（如音频、视频）和时间无关的媒体（例如文本、图像）。媒体对象间的同步由时间相关的媒体对象和时间无关的媒体对象之间的关系组成，这里有两个常见的例子，一个是电视中视觉和听觉信息间的同步关系，这是典型的连续媒体间的同步；另一个是幻灯演示中画面显示与音频流之间的时间关系，是典型的时间相关的媒体和时间无关的媒体之间的同步关系。 
+      <br>
+      <br>
+      　　<font color="#003399">在多种媒体中，那些是时间相关的媒体？哪些是时间无关的媒体？<br>
+      　　·时间相关的媒体：视频、音频、动画；<br>
+      　　·时间无关的媒体：文本、图形、图像 </font> 
+      <p>　　在多媒体系统的许多系统部件上都存在并应支持多媒体同步，如操作系统、通信系统、数据库、文档，以及应用程序等各个层次上。 <br>
+        　　时间关系的定义可以是隐式的，即在采集媒体对象时就定义了，如果演示的目的就是以采集时同样的方式显示出来的话（如音频/视频的录放）；也可以是显式定义的，即演示是由独立采集或生成的媒体对象构成的。<br>
+        　　这里的多媒体系统特别指在媒体数量、媒体类型（时间相关、时间无关）、媒体集成度三个测度标准上都有充分体现的系统。<br>
+        　　下文将详述同步的基本概念和定义方法。<br>
+        <br>
+        　　<b><font color="#003399">1）同步的范畴</font></b><a name="01"></a><br>
+        　　我们首先讨论一下同步问题的范畴。如前文所述，同步一般指多媒体系统中媒体对象间的时间关系，而更广泛的概念则包括内容、空间和时间的关系。<br>
+        　　内容关系是指从某种数据定义媒体对象的相关性。例如，电子表格中的数据表可以显示为表格或图形，文本可以显示为格式文本或以文语转换的形式读出。其特点是相同的数据以不同的形式显示出来，这样可以使系统能够自动地升级相同数据的不同视图（view）。<br>
+        　　多媒体系统中内容关系的实现原理是，使用统一的、用来以不同的媒体显示对象的数据结构或对象接口。<br>
+        　　空间关系是指空间关系指多媒体演示中某一时间点上对象在输出设备上的布局关系。在三维输出设备上，对于通常的窗口系统，第三维只用来表达叠加窗口；对于立体声音频输出设备则指演示中音频源的定位（如在视频会议中产生临场感，有位置次序感）。 
+        <br>
+        　　时间关系不仅指基本的反映媒体对象之间简单的出现顺序的&quot;时序关系&quot;，还应包括由活动的媒体对象间通过消息传递或状态访问产生进一步动作的&quot;制约关系&quot;，并考虑在多媒体演示过程中，&quot;用户交互&quot;对媒体对象活动的影响。制约关系的一个例子是，两个运动的小球 
+        、 和一段小球碰撞的声音 ， 和 按自己的运动轨迹运动，当它们相碰时， 、 要根据自己和对方的速度、运动方向改变自己的运动轨迹，同时 播放碰撞声音。在此情况下， 
+        、 要相互读取对方的状态， 和 、 之间可以通过消息传递来决定何时播放声音。用户交互的一个例子是，用户的按钮选择或键盘输入会结束一组对象的活动、唤醒另外一组对象的活动或改变再一组对象的显示等。<br>
+        　　在一个集成的数字多媒体系统中，这三种类型的同步关系都很重要。在数据库、电子表格、图形工具和字处理系统中前两者都有充分体现，由集成了时间相关对象而引起的时间关系则是多媒体系统的关键方面。<br>
+        <br>
+        　　<font color="#003399">同步的范畴<br>
+        　　多媒体同步一般指多媒体对象内部和对象间的时间关系，而更广泛的概念则包括内容、空间和时间的关系。其中： <br>
+        　　·内容关系是指从某种数据定义媒体对象的相关性；<br>
+        　　·空间关系是指多媒体演示中某一时间点上对象在输出设备上的布局关系；<br>
+        　　·时间关系不仅指媒体对象出现顺序的时序关系，还应包括媒体对象间通过消息传递或状态访问产生进一步动作的&quot;制约关系&quot;，同时还应考虑多媒体演示过程中，&quot;用户交互&quot;对媒体对象活动的影响。</font><br>
+        <br>
+        　　<b><font color="#003399">2）对象内和对象间同步</font></b><a name="02"></a><br>
+        　　我们在概念上还应当区别一个时间相关媒体对象内的时间关系（即对象内同步）和媒体对象间的时间关系（即对象间同步）。<br>
+        　　对象内同步指一个时间相关媒体对象的各种演示单元间的时间关系。时间相关媒体对象通常由一系列信息单元组成，称为LDU（逻辑数据单元）。<br>
+        　　LDU，对数字视频指帧（frame）；音频流的一个采样太小，LDU通常指一个固定的时间片上的一块采样；LDU也可以根据用户定义的速率决定，如动画的帧；另外，LDU的周期也可以是可变的，例如将用户的交互记录下来作为一个流看待的时候。<br>
+        　　图7-3是一个跳动的小球的一段视频序列的示意图，这段视频的速率是每秒25帧，故每帧要显示40ms。<br>
+        <b><font color="#003399">　　 7-3 
+        视频序列的帧之间的对象内同步</font></b> <br>
+        　　<img src="../../../../images/chatp/chap07/004.gif" width="315" height="66"> 
+        <br>
+        　　图7-4表示的是Intel/IBM的DVI数字视频技术中AVS文件（音频/视频文件）的结构。AVS文件中的数据可根据其性质不同分为两类：AV信息（主要是音频/视频信息，是文件的主体部分）和描述信息。描述信息说明AV信息的存储、定义AV信息的各种参数，在文件中占有相当重要的位置。<br>
+        　　AV信息在AVS文件中的存储是以流（stream）为线索、以帧为单位的。每种AV信息称为一个流，每个流按时间划分为多个帧，称为流帧（stream 
+        frame）；根据流之间的相互关系（主要为时间关系）将各个流的帧组合在一起，形成文件帧（file frame），这就是AVS的存储单位。这样，流在文件中的存储是按流帧交叉进行的。一个文件帧最多包含每个流的一个帧，各个流的帧可具有不同的长度，每个流的各帧长度也可以不同，这样，文件帧也可以有不同的长度。 
+        <br>
+        　　DVI的音频视频按帧同步的原理是这样的，DVI的硬件是通过DMA和中断方式传送数据的，一个重要的中断是垂直消隐中断，该中断在每个显示帧出现一次，以保证视频数据流和音频数据流的同步。<br>
+        <b><font color="#003399">　　 7-4 
+        AVS文件结构示意图</font></b> <font color="#990000">（点击查看大图）</font><br>
+        　　<a href="t1.htm" target="_blank"><img src="../../../../images/chatp/chap07/005.gif" width="287" height="210" border="0"></a><br>
+        　　<b>对象间同步</b>指媒体对象之间的同步，后文讨论的同步方法主要是针对对象间同步的。图7-5是一个多媒体演示中时间关系的例子，开始是一段音频/视频序列，然后是几张图片，其后又是一段有音频注释的动画。<br>
+        <b><font color="#003399">　　 7-5 
+        一个对象间同步的例子</font></b><br>
+        　　<img src="../../../../images/chatp/chap07/006.gif" width="337" height="120"> 
+        <br>
+        <font color="#003399">　　对象内和对象间的同步<br>
+        　　对象内同步，指一个时间相关媒体对象的各种演示单元间的时间关系；<br>
+        　　对象间的同步，指媒体对象之间的同步，媒体同步的定义和实现方法多数是解决对象间的同步。 </font> <br>
+        <br>
+        　　<b><font color="#003399">3）现场同步和合成同步</font></b><a name="03"></a><br>
+        　　这是因时间关系定义的类型不同而区别的两个概念。<br>
+        　　在现场同步（live synchronization）中，同步的目的是准确再现一个演示中在采集过程就存在的时间关系。例如，在两个人进行讨论的一个计算机会议中，现场同步包括音频/视频的唇同步，以及屏幕显示中鼠标指针的移动与讲话的同步。在目的端要同样再现源端的信号关系。其根本要求是根据在媒体对象的采集阶段就存在的时间关系显示数据。<br>
+        　　而在合成同步（synthetic synchronization）中，每个对象数据都是独立生成的，时间关系是人工定义的。合成同步通常用在演示和用来生成新的复合多媒体对象的系统中，它强调的是支持媒体对象间灵活的同步关系。合成同步有两个阶段：定义阶段要有合适的方法充分定义对象间的时间关系，演示阶段是在运行时保证以同步的模式显示数据。 
+        <br>
+        <br>
+        　　现场同步和合成同步<br>
+        　　现场同步(Live Synchronization)，同步的目的是准确再现一个演示中在采集过程中就存在的时间关系。<br>
+        　　合成同步（Synthetic Synchronization），每个对象数据都是独立生成的，时间关系是人工定义的。<br>
+        <br>
+        　　<b><font color="#003399">4）同步的服务质量</font></b><a name="04"></a><br>
+        　　还有一个基本问题是，&quot;同步&quot;是否有一个客观的度量标准？尽管从人的主观感觉的角度很难提出一个客观的同步度量标准，我们按照演示的需求，根据与心理学相关的一些领域的实验结果，给出下面两个同步服务质量（QoS, 
+        Quality of Service）的表格，对对象内同步，表7-1反映一个时间相关的媒体对象需要满足的LDU间时间关系的精确度；对对象间同步，表7-2反映两个媒体对象的并行演示中的精确度。<br>
+        <b><font color="#003399">　　 7-1 
+        一个媒体对象演示的一些QoS参数</font></b><br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">媒体</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">图像</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">视频</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">音频</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">QoS</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">颜色深度</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">颜色深度</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">线性或逻辑采样</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">分辩率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">分辩率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">采样大小</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">帧率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">采样率</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">抖动</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">抖动</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center"></div>
+                </td>
+                <td class="text"> 
+                  <div align="center">错误率</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">错误率</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <br>
+      　　表中前两行表示的质量与时间无关；第三行的质量与时间相关，但该质量依赖采集时选择的质量，所以对演示系统的影响有限，而通常只有经由演示系统的质量退化才是可能的；下面两行才是完全在演示环境控制下的与时间相关的质量参数。 
+      <br>
+      <b><font color="#003399">　　 7-2 
+      两个媒体对象间同步的服务质量</font></b> <br>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#006699">
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" colspan="2"> 
+                  <div align="center">媒体</div>
+                </td>
+                <td class="text" width="65%"> 
+                  <div align="center">模式，应用</div>
+                </td>
+                <td class="text" width="18%"> 
+                  <div align="center">QoS</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="7%" rowspan="6" valign="top"> 
+                  <div align="center">视频 </div>
+                </td>
+                <td class="text" width="10%"> 
+                  <div align="center">动画</div>
+                </td>
+                <td class="text" width="65%">内容相关 </td>
+                <td class="text" width="18%">+/-120ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%" valign="top"> 
+                  <div align="center">音频</div>
+                </td>
+                <td class="text" width="65%">唇同步；特指人讲话的场景中音频视频的同步，QoS参数与讲话人显示的身体部位相关，头部像要比全身像的参数要求高。</td>
+                <td class="text" width="18%" valign="top">+/-80ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%" rowspan="2" valign="top"> 
+                  <div align="center">图像</div>
+                </td>
+                <td class="text" width="65%">相覆盖；该模式下图像是视频内容的附加描述，两者的同步显示对于观众正确理解演示内容很是重要。</td>
+                <td class="text" width="18%" valign="top">+/-240ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="65%">不覆盖；该模式下两类媒体在不同的窗口显示，观众的视线在两个窗口间切换，一般在图像上的停留时间为1秒，因此保持+/-500ms的偏差余量对此类应用是足够的。</td>
+                <td class="text" width="18%" valign="top">+/-500ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="10%" rowspan="2" valign="top"> 
+                  <div align="center">文本</div>
+                </td>
+                <td class="text" width="65%">相覆盖；（应用模式同图像）</td>
+                <td class="text" width="18%">+/-240ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="65%">不覆盖；（应用模式同图像）</td>
+                <td class="text" width="18%">+/-500ms</td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" valign="top" rowspan="8"> 
+                  <div align="center">音频 </div>
+                  <div align="center"></div>
+                </td>
+                <td class="text" valign="top"> 
+                  <div align="center">动画</div>
+                </td>
+                <td class="text" width="65%"> 
+                  <div align="left">事件相关；例如，演示舞蹈中舞步的动画序列与伴奏音乐的配合是很重要的。</div>
+                </td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-80ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" valign="top" rowspan="3"> 
+                  <div align="center">音频</div>
+                </td>
+                <td class="text" width="65%">紧耦合；例如，两个立体声声道间的配合偏差要在+/-11ms以内（对采样率44kHz而言）。 
+                </td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-11ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="65%">松偶合；有多个人参加的对话情形，可容忍的偏差是120ms。</td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-120ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="65%">松耦合；多个音频声道中一个是讲话者、其他是背景音乐的情况下可容忍的同步偏差是500ms。</td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-500ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" valign="top" rowspan="2"> 
+                  <div align="center">图像</div>
+                </td>
+                <td class="text" width="65%">紧耦合；例如，在音乐教学中，音乐的演奏与音符的显示间的配合是一种很严格的紧密偶合。 
+                </td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-5ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" width="65%">松耦合；像在幻灯显示这类应用中，幻灯片的切换需要1秒左右的时间，演示过程中人还可以不时地插话，这种配合要求并不严格。</td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-500ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" valign="top"> 
+                  <div align="center">文本</div>
+                </td>
+                <td class="text" width="65%"> 
+                  <div align="left">文本注释或音频注释；两者内容的表示要配合一致。</div>
+                </td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">+/-240ms</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text" valign="top"> 
+                  <div align="center">指针</div>
+                </td>
+                <td class="text" width="65%"> 
+                  <div align="left">音频与指针所指的项目相关；计算机会议中屏幕显示中鼠标指针的移动与讲话的同步。</div>
+                </td>
+                <td class="text" width="18%" valign="top"> 
+                  <div align="left">-500ms, <br>
+                    +750ms</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　<font color="#003399">同步的服务质量<br>
+      　　根据心理学和大量实验数据结果，国际标准中给出各种媒体内和媒体间的时间数量关系，例如唇同步，声音和画面之间的差为±80ns，紧耦合的左右立体声道的时差为±11 
+      ns，在这个时差内为满足服务质量（QoS-Quality of Service），在这个时差以外为不满足服务质量要求。</font><br>
+      <br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

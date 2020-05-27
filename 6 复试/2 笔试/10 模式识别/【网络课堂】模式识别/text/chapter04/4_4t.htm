@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><span class="FCcontent">　　上一节讨论的是样本在特征空间的分布距离作为特征提取的依据。该种原理直观，计算简便。但是这种原理没有考虑概率分布，因此当不同类样本中有部分在特征空间中交迭分布时，简单地按距离划分，无法表明与错误概率之间的联系。基于概率分布的可分性判据则依据如下观察到的现象。<br>
+            　　如果我们不考虑各类的先验概率，或假设两类样本的先验概率相等，那末从两类条件概率分布可以看出，如果两类条件概率分布互不交迭，即对p(X|ω<sub>2</sub>)≠0处都有p(X|ω<sub>1</sub>)＝0，如图4.1(a)所示，则这两类就完全可分；另一种极端情况是对所有X都有p(X|ω<sub>1</sub>)＝p(X|ω<sub>2</sub>)，如图4.1(b)所示，则两类就完全不可分。因此人们设计出与概率分布交迭程度有关的距离度量方法，这些距离J<sub>p</sub>有以下几个共同点：<br>
+            　　1.J<sub>p</sub>是非负，即J<sub>p</sub>≥0<br>
+            　　2.当两类完全不交迭时J<sub>p</sub>达到其最大值<br>
+            　　3.当两类分布密度相同时，J<sub>p</sub>＝0<br>
+            这种函数的一般式可表示为：<img src="../../images/image_content/4/4_5F4007.gif" width="261" height="33" align="absmiddle"></span></td>
+        </tr>
+        <tr> 
+          <td align="center"><img src="../../images/image_content/4/4_5F4008.gif" width="480" height="203"><br>
+            <span class="FCcontent">图 4.1</span> </td>
+        </tr>
+        <tr>
+          <td><span class="FCcontent">　　下面我们列出一些常用的概率距离度量。<br>
+            　　<font color="#800040">(一) Bhattacharyya距离和Chernoff界限</font><br>
+            　　Bhattacharyya距离的定义用下式表示<br>
+            　　<img src="../../images/image_content/4/4_5F4009.gif" width="250" height="35" align="absmiddle">　　　　　(4-27)<br>
+            　　显然，当p(X|ω<sub>1</sub>)＝p(X|ω<sub>2</sub>)对所有X值成立时J<sub>B</sub>＝0，而当两者完全不交迭时J<sub>B</sub>为无穷大。<br>
+            　　Chernoff界限的定义与其相似，为<br>
+            　　<img src="../../images/image_content/4/4_5F4011.gif" width="263" height="40" align="absmiddle">　　　　　(4-28)<br>
+            　　其中S取[0，1]区间的一个参数，显然(4-28)在S＝0 5时就变为(4-27)式，因此J<sub>B</sub>是JC的一个特例。<br>
+            Bhattacharyya距离与错误率的上界有直接关系，这一点曾在第二章的2 4 1中提到，并用(2-76)式给出J<sub>B</sub>与错误率上界之间的关系。因此Bhattacharyya距离不仅用来对特征空间进行降维优化，而且也用来对分类器的错误率作出估计。<br>
+            　　<font color="#800040">(二) 散度</font><br>
+            　　另一种常用的基于概率距离度量的判据是利用似然比或对数似然比。对两类问题，其对数似然比为<br>
+            　　<img src="../../images/image_content/4/4_5F4012.gif" width="123" height="65" align="absmiddle">　　　　　(4-29)<br>
+            　　如果对某个X，<img src="../../images/image_content/4/4_5F4013.gif" width="145" height="38" align="absmiddle">，则<img src="../../images/image_content/4/4_5F4014.gif" width="42" height="29" align="absmiddle"> 
+            ,反之若两者差异越大，则<img src="../../images/image_content/4/4_5F4015.gif" width="18" height="28" align="absmiddle">的绝对值也大。以上只是对某一X值而言，为了对整个特征空间概率分布的差异程度作出评价，将对w<sub>i</sub>类及对w<sub>j</sub> 
+            的可分性信息分别定义为<br>
+            　　<img src="../../images/image_content/4/4_5F4016.gif" width="291" height="58" align="absmiddle"><br>
+            　　与 <img src="../../images/image_content/4/4_5F4017.gif" width="305" height="57" align="absmiddle"><br>
+            　　而总的平均可分信息则可表示成<br>
+            　　<img src="../../images/image_content/4/4_5F4018.gif" width="383" height="58" align="absmiddle">　　　　　(4-30)<br>
+            　　被称为散度。散度的含意将结合正态分布的例子说明。<br>
+            　　<font color="#800040">(三) 正态分布时基于概率分布距离度量</font><br>
+            　　显然在一般情况下由于概率分布本身的复杂形式，以上这些基于概率分布的距离相当复杂。这些判据在概率分布具有某种参数形式，尤其是正态分布时可以得到进一步简化。下面讨论两类别正态分布时散度判据的表达式。<br>
+            　　设两类别分别表示为<img src="../../images/image_content/4/4_5F4019.gif" width="211" height="41" align="absmiddle"> 
+            则<br>
+            　　 <img src="../../images/image_content/4/4_5F4020.gif" width="388" height="41" align="absmiddle"><br>
+            　　<img src="../../images/image_content/4/4_5F4021.gif" width="401" height="46" align="absmiddle"> 
+            <br>
+            　　对数似然比<br>
+            　　<img src="../../images/image_content/4/4_5F4022.gif" width="269" height="90" align="absmiddle"><br>
+            　　利用矩阵迹的性质A<sup>T</sup>B=tr(BA<sup>T</sup>)，其中A、B表示向量，上式可改写成<br>
+            　　<img src="../../images/image_content/4/4_5F4023.gif" width="304" height="100" align="absmiddle">　　　　　(4-31)<br>
+            　　将其代入I<sub>ij</sub>的计算公式，并化简得<br>
+            　　　<img src="../../images/image_content/4/4_5F4024.gif" width="238" height="101" align="absmiddle">　　　　(4-32)<br>
+            　　由J<sub>D</sub>的定义<img src="../../images/image_content/4/4_5F4025.gif" width="73" height="30" align="absmiddle">得<br>
+            　　<img src="../../images/image_content/4/4_5F4026.gif" width="256" height="79" align="absmiddle">　　　　　(4-33)<br>
+            <br>
+            　　显然，如果两类协方差矩阵相等，即<img src="../../images/image_content/4/4_5F4027.gif" width="91" height="28" align="absmiddle">，则<br>
+            　　<img src="../../images/image_content/4/4_5F4028.gif" width="199" height="40" align="absmiddle">　　　　　(4-34)<br>
+            　　上式右部称为Mahalanobis距离的平方。从该式中可以看出在协方差矩阵相等条件下散度与4.3.1中定义的J<sub>D</sub>很相似，它们都是对样本在特征空间分散程度的描述，只是J<sub>D</sub>是用欧氏距离度量，而J<sub>D</sub>在协方差矩阵相等的条件下是用Mahalanobis距离度量。<br>
+            在正态分布时Bhattacharyya距离J<sub>B</sub>可表示成：<br>
+            　　<img src="../../images/image_content/4/4_5F4029.gif" width="259" height="120" align="absmiddle">　　　　　(3-35)<br>
+            　　当<img src="../../images/image_content/4/4_5F4027.gif" width="91" height="28" align="absmiddle">时，<br>
+            　　<img src="../../images/image_content/4/4_5F4030.gif" width="212" height="42" align="absmiddle">　　　　　(3-36)<br>
+            　　它与散度J<sub>D</sub>的表达式只差一个常系数。</span></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

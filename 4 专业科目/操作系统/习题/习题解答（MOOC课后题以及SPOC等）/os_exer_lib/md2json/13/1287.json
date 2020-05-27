@@ -1,0 +1,1 @@
+{"knowledge": "物理内存管理: 连续内存分配。\r\n", "question": "在使能分页机制的情况下，更合适的外碎片整理方法是()\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.紧凑(compaction)\r\n B.分区对换(Swapping in/out)\r\n C.都不是\r\n"}

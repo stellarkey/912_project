@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　① M的状态集S由K的一些子集组成（k的子集构造算法见下页）。用[S<sub><font size="-2">1</font></sub> 
+      S<sub><font size="-2">2</font></sub>... S<sub><font size="-2">j</font></sub>]表示S的元素，其中S<sub><font size="-2">1</font></sub>, 
+      S<sub><font size="-2">2</font></sub>,,... S<sub><font size="-2">j</font></sub>是K的状态。并且约定，状态S<sub><font size="-2">1</font></sub>, 
+      S<sub><font size="-2">2</font></sub>,,... S<sub><font size="-2">j</font></sub>是按某种规则排列的，即对于子集{S<sub><font size="-2">1</font></sub>, 
+      S<sub><font size="-2">2</font></sub>}={ S<sub><font size="-2">2</font></sub>, 
+      S<sub><font size="-2">1</font></sub>,}来说，S的状态就是[S<sub><font size="-2">1</font></sub> 
+      S<sub><font size="-2">2</font></sub>]；<br>
+      　　② M和N的输入字母表是相同的，即是∑；<br>
+      　　③ 转换函数是这样定义的：<br>
+      　　d([S<sub><font size="-2">1</font></sub> S<sub><font size="-2">2</font></sub>,... 
+      S<sub><font size="-2">j</font></sub>],a)= [R<sub><font size="-2">1</font></sub>R<sub><font size="-2">2</font></sub>... 
+      R<sub><font size="-2">t</font></sub>] 其中 {R<sub><font size="-2">1</font></sub>,R<sub><font size="-2">2</font></sub>,... 
+      , R<sub><font size="-2">t</font></sub>} = e-closure(move({S<sub><font size="-2">1</font></sub>, 
+      S<sub><font size="-2">2</font></sub>,,... S<sub><font size="-2">j</font></sub>},a)) 
+      <br>
+      　　④ S<sub><font size="-2">0</font></sub>=e-closure(K<sub><font size="-2">0</font></sub>)为M的开始状态；<br>
+      　　⑤ S<sub><font size="-2">t</font></sub>={[S<sub><font size="-2">i</font></sub> 
+      S<sub><font size="-2">k</font></sub>... S<sub><font size="-2">e</font></sub>]，其中[S<sub><font size="-2">i</font></sub> 
+      S<sub><font size="-2">k</font></sub>... S<sub><font size="-2">e</font></sub>]∈S且{S<sub><font size="-2">i</font></sub> 
+      , S<sub><font size="-2">k</font></sub>,,... S<sub><font size="-2">e</font></sub>}∩K<sub><font size="-2">t</font></sub>≠φ}</td>
+  </tr>
+</table>
+</body>
+</html>

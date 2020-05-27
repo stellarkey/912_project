@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "非连续内存分配"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"\n",
+    "question":"(20150309_操作系统试题_doc)什么是页式管理？静态页式管理可以实现虚存吗？  \n",
+    "source":"网络",
+    "answer":"\n",
+    "type":"question_answer",
+    "q_number":729
+}

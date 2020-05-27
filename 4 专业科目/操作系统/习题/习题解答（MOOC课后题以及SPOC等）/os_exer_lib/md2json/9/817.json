@@ -1,0 +1,1 @@
+{"knowledge": "非连续内存分配。\r\n", "question": "(20150309_操作系统原理习题集及答案_笔试必需品_doc)在分段式存储管理系统中时，每次从主存中取指令或取操作数，至少要访问﹎﹎﹎﹎主存。\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.1次 \r\n B.2次 \r\n C.3次 \r\n D.4次 \r\n E.0次\r\n"}

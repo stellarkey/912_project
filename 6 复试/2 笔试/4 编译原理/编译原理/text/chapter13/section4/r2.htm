@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="text">
+        <tr> 
+          <td valign="top" align="center"><font color="#0000FF"> 图 13.17 LEX功能示意图</font></td>
+        </tr>
+        <tr>
+          <td valign="top" align="center"><img src="../../../img/totle1/p13_17.gif" width="353" height="150"></td>
+        </tr>
+      </table>
+      
+        　　正像YACC那样，LEX也可以借助宿主语言C或RATFOR描述动作，LEX自动地把表示输入串词法结构的正规式及相应的动作转换成一个宿主语言的程序，即词法分析程序。它有一个固定的名字为yylex，yylex是一个C语言(或RATFOR语言)程序。经C语言编译程序编译后可运行，它的功能就是对输入串识别出单词符号，并可做相应的动作。<br>
+        　　例如，把输入串的小写字母转换成相应的大写字母，可有如下的LEX源程序。<br>
+        　　%%<br>
+        　　[a-z] printf(&quot;%c&quot;， yytext[0]+'A'-'a')；<br>
+        　　其中%%是分界符，表示识别规则的开始，[a-z]是识别小写字母的规则，printf()是识别出小写字母时采取的动作，即将小写字母变换成相应的大写字母。yytext[0]是工作单元，是用以存放yylex识别的字符或字符串自身的值。<br>
+        　　LEX的工作原理是将LEX源程序中的正规式转换成相应的确定有限自动机,将其动作插入到yylex中适当的地方。控制流是由确定的有限自动机的解释器完成，解释器是LEX的构成部分，像YACC中的驱动程序一样，它对不同的输入源程序来说解释器是相同的。对于LEX的详细说明，请参阅附录[B]。<br>
+        考虑问题：<br>
+        　　① 编译程序的实现应考虑的问题有那些？<br>
+      　　② 编译程序的实现途径有那些？</td>
+  </tr>
+</table>
+</body>
+</html>

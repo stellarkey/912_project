@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"A\n",
+    "question":"操作系统为保证未经文件拥有者授权，任何其它用户不能使用该文件所提供的解决方法 是( ).\n",
+    "source":"网络",
+    "answer":"A",
+    "type":"single_answer",
+    "options":[
+        "A.文件保护",
+        "B.文件保密",
+        "C.文件转储",
+        "D.文件共享"
+    ],
+    "q_number":968
+}

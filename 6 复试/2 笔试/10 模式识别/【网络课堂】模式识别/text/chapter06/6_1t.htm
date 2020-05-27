@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="FCcontent">　　人工神经元网络的组成包括两个基本组成部分，一是结点、二是网络、也就是结点之间的连接。作为人工神经元网络的结点是仿照生物细胞结构而造出的。典型的结点模型实际上还是1940年提出的McCulloch-Pitts模型。它的结构如图6-1所示。其中X<sub>1</sub>~X<sub>n</sub>是模型的输入端，接受外界来的信息。这些信息经过加权，在求和器中实现线性加权组合。求和器的输出被送往一个非线性的映射单元，在该模型中使用的是阈值单元，其阈值函数可表示成<br>
+                  　　<img src="../../images/image_content/6/6_1002.gif" width="184" height="64" align="absmiddle">　　　　(6-1)<br></td>
+              </tr>
+              <tr>
+                <td align="center" class="FCcontent"><img src="../../images/image_content/6/6_1003.gif" width="400" height="235"><br>
+                  图6-1 McCulloch-Pitts模型 </td>
+              </tr>
+              <tr> 
+                <td class="FCcontent">　　其中y是输出，h是该阈值单元的输入，也就是求和器的输出。因此整个模型的输入输出关系可表示成<br>
+                  　　<img src="../../images/image_content/6/6_1004.gif" width="139" height="49" align="absmiddle">　　　　(6-2)<br>
+                  　　不难看出，这种模型所实现的功能正是在第三章提到的线性分类器。<br>
+                  　　<span class="spe">我们可以回顾一下用线性分类器实现两类样本的分类所使用的公式。所使用的判别函数的通用式子是：<br>
+                  　　<img src="../../images/image_content/6/6_1005.gif" width="284" height="33" align="absmiddle"><br>
+                  　　而分类的原则则是依据判别函数值是否大于零或小于零。由此我们可以看出对一个样本进行分类所要的计算共分两个部分，一个是计算一个样本各分量的加权和运算，得到g(X)的值。另一个是对该函数值作一个判断，是大于零还是小于零，如果将这个计算表示成一个框图的话，就与图6-1中表示的一样，因此设计一个线性分类器，实际上就是设计一个McCulloch-Pitts模型中的参数。<br>
+                  　　可以说我们曾讨论过的方法，如Fisher准则方法、支持向量机方法与感知准则函数方法都可用来设计McCulloch-Pitts模型的参数。然而从人工神经元网络这个体系来看，是在感知准则函数这个学习方法的基础上发展起来的，它特别强调感知准则函数这种自学习能力，即利用训练样本集中的数据，逐步修正当前参数，使参数得以优化的方法，这是学习本章要充分理解的，这是学习人工神经元网络的一个基本点。</span><br>
+                  　　几十年来人工神经元网络这门学科有了很大的发展，但是就这结点模型来说，与McCulloch-Pitts模型没有太大变化。主要的变化是所使用的非线性映射函数，如S型，高斯型等。<br>
+                  　　<span class="spe">在人工神经元网络中使用的结点类型除了McCulloch-Pitts外，常用的有S型与高斯型等。它们与McCulloch-Pitts模型的不同点主要是将判别函数，又称阈值函数，改成其它非线性函数，也就是说神经元网络的输出值Y不再只是(6-1)式中的0或1，可以是0－1之间的任何实数值，该值是h的函数。在数学上将只能取0或1两种值的情况写成<img src="../../images/image_content/6/6_1006.gif" width="47" height="25" align="absmiddle">，而对在0－1之间(包含0与1的情况)可取任意值则写成<img src="../../images/image_content/6/6_1007.gif" width="90" height="24" align="absmiddle">。</span><br>
+                  　　<span class="spe">具体来说常用的S型函数是：<br>
+                  　　 <img src="../../images/image_content/6/6_1008.gif" width="106" height="39"><br>
+                  　　从中可以看出，y的值是h的值的函数，它随h值变化在(0,1)之间变化，有时也可用<br>
+                  　　<img src="../../images/image_content/6/6_1009.gif" width="164" height="50" align="absmiddle"><br>
+                  　　则此时，y的值将随h值在(-1,1)之间变化。<br>
+                  　　使用S型函数之后，神经元的输入与输出之间就可以实现一种连续的变化，而使用McCulloch-Pitts模型只能实现二值的映射，这是一种特殊的非线性映射，成为阈值函数映射。使用哪一种非线性函数取决于具体的网络结构及应用。</span><br>
+                  　　人工神经元网络之所以能有许多复杂的功能，主要体现在将这些结点组合成网络。将执行最简单计算的结点组合起来，实现复杂的运算，这就是人工神经元网络最根本的特点。而之所以能将简单的运算组合成复杂的运算，最主要是一条是结点的运算中具有的非线性映射。有了结点运算的非线性映射，才使得人工神经元网络作为一个整体能实现复杂的非线性映射功能。<br>
+                  　　除了将简单运算组合成复杂运算这一特点之外，人工神经元网络的成功体现在通过学习机制确定参数这一点。在第三章中曾提到Rosenblatt提出用感知准则函数方法设计线性分类器的问题。其特点是利用监督学习方法的原理，利用错分类信息产生对参数进行自修正的机制。<br>
+                  　　实际上感知准则函数方法在人工神经元网络中就是单层感知器。而通过学习确定网络各参数则成为人工神经元网络确定参数的最基本方法。<br>
+                  　　<span class="spe">人工神经元网络实现各种不同的功能与网络的结构有很密切的关系。下一节中讨论的Hopfield模型是一种全互联的结构(图6-2(a))。其中每个结点接受来自网内其余所有结点的信号，同时它又把自己的输出传送到所有其它结点上去。6.4节中讨论的网络是另一种典型结构(图6-9)，在这种结构中，结点是分层的，信息也只由较低层向较高层传递。不同的结构实现不同的功能，也有自身相应的学习机制与学习方法。理解这些网络的基本工作方式与其学习机制是本章的主要内容。</span></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　我们可以直接构造它的LR(1)项目集如下：<br>
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" class=text>
+        <tr>
+          <td>　　I<sub><font size="-2">0</font></sub>： S′→·S ,#<br>
+            　　　　 S→·aAd ,#<br>
+            　　　 　S→·bBd ,#<br>
+            　　　 　S→·aBe ,# <br>
+            　　　 　S→·bAe ,#<br>
+            　　I<sub><font size="-2">1</font></sub>： S′→S·,#<br>
+            　　I<sub><font size="-2">2</font></sub>： S→a·Ad ,#<br>
+            　　　 　S→a·Be ,#<br>
+            　　　 　A→·c ,d<br>
+            　　　 　B→·c ,e<br>
+            　　I<sub><font size="-2">3</font></sub>： S→b·Bd ,#<br>
+            　　　　 S→b·Ae ,#<br>
+            　　　　 B→·c ,d<br>
+            　　　　 A→·c ,e<br>
+          </td>
+          <td valign="top">I<sub><font size="-2">4</font></sub>： S→aA·d ,#<br>
+            I<sub><font size="-2">5</font></sub>： S→aB·e ,# <br>
+            I<sub><font size="-2">6</font></sub>： A→c·,d <br>
+            　 　B→c·,e<br>
+            I<sub><font size="-2">7</font></sub>： S→bB·d ,# <br>
+            I<sub><font size="-2">8</font></sub>： S→bA·e ,# <br>
+            I<sub><font size="-2">9</font></sub>： A→c·,e <br>
+            　 　B→c·,d <br>
+            I<sub><font size="-2">10</font></sub>：S→aAd·,# <br>
+            I<sub><font size="-2">11</font></sub>：S→aBe·,# <br>
+            I<sub><font size="-2">13</font></sub>：S→bBd·,# <br>
+            I<sub><font size="-2">14</font></sub>：S→bAe·,# <br>
+          </td>
+        </tr>
+      </table>
+      　　检查每个项目集I<sub><font size="-2">i</font></sub>可知，在任一项目集中都不含移进-归约冲突或归约-归约冲突。因此文法是LR(1)的，进一步察看项目集可发现I<sub><font size="-2">6</font></sub>和I<sub><font size="-2">9</font></sub>是同心集：<br>
+      　　I<sub><font size="-2">6</font></sub>： A→c·,d 　　　I<sub><font size="-2">9</font></sub>： 
+      A→c·,e<br>
+      　　　　 B→c·,e 　　　　　 B→c·,d<br>
+      　　若合并后则变为：<br>
+      　　I<sub><font size="-2">6,9</font></sub>：A→c·,d/e<br>
+      　　　　 B→c·,e/d<br>
+      　　这样就出现了新的归约-归约冲突，因为不管当前符号是d或e既可用产生式A→c归约也可用产生式B→c归约，因而该文法不是LALR(1)文法。当然也不可能是SLR(1)和LR(0)文法。<br>
+      　　<font color="#0000FF">LALR(1)文法小结：</font><br>
+      　　·一个LR(1)文法项目集的同心集合并后心仍相同，只是超前搜索符集合为各同心集超前搜索符的和集，合并同心集后转换函数自动合并。<br>
+      　　·一个LR(1)文法合并同心集后只可能出现归约-归约冲突，而没有移进-归约冲突。 <br>
+      　　·合并同心集后，对错误的输入串分析可能会推迟发现错误的时间，但错误出现的位置仍是准确的。</td>
+  </tr>
+</table>
+</body>
+</html>

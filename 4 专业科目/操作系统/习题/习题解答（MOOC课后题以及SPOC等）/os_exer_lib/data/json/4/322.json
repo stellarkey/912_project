@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"假设一个系统中的就绪进程情况如右表所示（按照到达顺序），分别计算不同调度策略下的平均周转时间。FCFS：_________\n；HPF（优先级大者优先）：_________ ；SCBF：_________ 。\n    ```\n\t    进程 执行期 优先级\n\t    === ==== =====\n\t    P1 5 2\n\t    P2 6 5\n\t    P3 3 4\n\t    P4 2 3\n\t    ```\n    \n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":322
+}

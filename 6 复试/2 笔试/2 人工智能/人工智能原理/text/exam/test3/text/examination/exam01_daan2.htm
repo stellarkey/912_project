@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="../../../../../img/pop/new_bg.jpg">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b> 问答题答案</b></p>
+        <p><b>第1题</b><br>
+          解： 从R4得到： <br>
+          　　CF（E1）＝CF（E<sub>1</sub>，E<sub>4</sub>∧(E<sub>5</sub>∨E<sub>6</sub>)）*max（0，CF（E<sub>4</sub>∧(E<sub>5</sub>∨E<sub>6</sub>)）） 
+          <br>
+          　　　　　　＝0.9×max（0，min（CF（E<sub>4</sub>），CF（E<sub>5</sub>∨E<sub>6</sub>））） 
+          <br>
+          　　　　　　＝0.9×max（0，min（CF（E<sub>4</sub>）,max(CF(E<sub>5</sub>),CF(E<sub>6</sub>))））<br>
+          　　　　　　＝0.9×max（0，0.5）＝0.45<br>
+          　　依规则R<sub>1</sub>， CF（H|E<sub>1</sub>）＝CF（H）＋CF（H，E<sub>1</sub>）CH(E<sub>1</sub>)（1－CF（H））＝0.405，<br>
+          　　即更新后CF（H）＝0.405<br>
+          　　　依规则R<sub>2</sub>： CF（H|E<sub>2</sub>）＝CF（H）＋CF（H，E<sub>2</sub>）CH(E<sub>2</sub>)（1－CF（H））＝0.6906 
+          <br>
+          　　更新后CF（B<sub>1</sub>）＝0.6906 <br>
+          　　　依R<sub>3</sub>，先计算 <br>
+          　　　CF（H| E<sub>3</sub>）= CF（H）+ CF（E<sub>3</sub>）×CF(H,E<sub>3</sub>) 
+          = 0.39<br>
+          　　答：更新后的可信度分别是：CF（H）＝0.39 <br>
+          <br>
+          <b>第2题</b><br>
+          解： 先求K： <br>
+          　　<img src="../../img/formula01.gif" width="352" height="171"><br>
+          　　K = 1.64<br>
+          　　同理可得：<br>
+          　　m({b})=0.43<br>
+          　　m({a,b})=0.03<br>
+          　　于是：<br>
+          　　m（{},{a},{b},{a,b}）＝（0,0.54,0.43,0.03）<br>
+          <!--czp-wenda-daan-->
+        </p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

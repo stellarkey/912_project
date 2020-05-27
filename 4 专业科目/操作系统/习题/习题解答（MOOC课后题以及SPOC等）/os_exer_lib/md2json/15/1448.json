@@ -1,0 +1,1 @@
+{"knowledge": "同步互斥。\r\n", "question": "操作系统中，两个或多个并发进程各自占有某种资源而又都等待别的进程释放它们所占有的资源的现象叫做什么（） s２\r\n\r\n", "degree_of_difficulty": "1\r\n", "source": "网络\r\n", "type": "1\r\n", "options": " A.饥饿\r\n B.死锁\r\n C.死机\r\n D.死循环\r\n"}

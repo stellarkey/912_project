@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"静态重定位；动态重定位\n",
+    "question":"重定位的方式有_______和______两种。\n",
+    "source":"网络",
+    "answer":"静态重定位；动态重定位\n",
+    "type":"fill_in_the_blank",
+    "q_number":629
+}

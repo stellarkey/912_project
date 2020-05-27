@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"C\n",
+    "question":"通道是一种( )。\n",
+    "source":"网络",
+    "answer":"C",
+    "type":"single_answer",
+    "options":[
+        "A.I/O设备",
+        "B.设备控制器",
+        "C.I/O处理机",
+        "D.I/O控制器"
+    ],
+    "q_number":916
+}

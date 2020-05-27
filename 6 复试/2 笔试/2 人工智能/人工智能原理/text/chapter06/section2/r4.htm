@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="../../../../../../../../download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="400" height="200">
+              <param name=movie value="../../../flash/chap06/6-10.swf">
+              <param name=quality value=high>
+              <embed src="../../../flash/chap06/6-10.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="400" height="200">
+              </embed> 
+            </object></td>
+        </tr>
+      </table>
+      　　这里给出的是单层网络（没有中间层）的学习算法。为方便起见，将阈值θ（它也同样需要学习）并入权重矩阵W中，令w<sub>0</sub>=θ，X向量也相应的增加一个分量x<sub>0</sub>=-1，这样网络的输出Y由下列公式表示：<br>
+      　　<img src="../../../img/chap06/pic10.gif" width="119" height="47"><br>
+      具体学习算法如下：<br>
+      1). 给定初始值：赋给w<sub>i</sub>(0)各一个较小的随机非零值，这里w<sub>i</sub>(t)为t时刻第i个输入上的权值(1≤i≤n)，w<sub>0</sub>(t)为t时刻的阈值；<br>
+      2). 输入一样本X=(-1， x<sub>1</sub>, x<sub>2</sub>,…,x<sub>n</sub>,)和它的希望输出D;<br>
+      3). 计算实际输出<br>
+      　　<img src="../../../img/chap06/pic11.gif" width="163" height="51"><br>
+      4). 修正权重W <br>
+      　　<img src="../../../img/chap06/pic12.gif" width="362" height="28"><br>
+      其中0&lt;η≤1用于控制修正速度。 <br>
+      　　通常η不能太大，因为太大会影响wi(t)的稳定，η也不能太小，因为太小会使wi(t)的收敛速度太慢。若实际输出与期望的输出值相同时，wi(t)不变；<br>
+      5). 转到2)直到W对一切样本均稳定不变为止。<br>
+      　　一般神经网络的学习是在学习样本的指导下进行的。不同的学习方法对学习样本有不同的要求。在感知器学习算法中，要求每个学习样本要有已知的标准答案，也称作教师信号。而参数（权值）的修正是根据实际输出值与理想输出值（由教师信号决定）的差值进行。系统参数变化趋于稳定标志着学习进程的收敛。</td>
+  </tr>
+</table>
+</body>
+</html>

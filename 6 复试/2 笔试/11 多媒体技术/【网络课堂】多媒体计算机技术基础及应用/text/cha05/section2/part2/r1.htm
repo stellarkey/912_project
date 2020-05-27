@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><font color="#003399">　　一、CD-I光盘的数据格式</font><a name="01"></a><br>
+      　　从系统结构出发，扼要回顾一下CD-I光盘的数据格式，对于理解CD-I系统的软硬件结构及系统设计原理是非常必要的。<br>
+      　　CD-I光盘的数据格式是从CD-DA和CD-ROM光盘格式演变而来的。<br>
+      　　它和CD-DA光盘、CD-ROM光盘都有三个区：导入区（Lead-in Area）、节目区（Program Area）和导出区（Lead-out 
+      Area），如图5-3所示。CD盘上的信息均采<br>
+      　　  
+      <b><font color="#003399"> 5-3　CD盘结构</font></b><br>
+      播<img src="../../../../images/chatp/chap05/008.gif" width="379" height="143"><br>
+      　　用EFM（Eight to Fourteen Modulation）记录方式进行记录。由于光盘原始误码率较高，所以都采用能纠突发错误的CIRC（Cross-Interleaved 
+      Reed-Solomon Code）码。<br>
+      　　CD-I光盘的导入区是由若干个空扇区组成的，这样做的目的是使识别节目区变得容易。<br>
+      　　CD-I光盘的节目区如图5-4和图5-5所示。图5-4表示只有CD-I盘结构，而图5-5表示CD-I光盘可以含有CD-DA光道的CD-I盘结构，这是为了和早期出现的CD-DA光盘格式兼容而设置的。CD-I光盘和CD-DA光盘一样，可以有多到99条光道，从1－99。对于包含有CD-DA光道的CD-I光盘，其第一条光道必须是CD-I光道，而且任何一条CD-I光盘上的CD-DA光道，最多不超过98条。而一条光道的长度可以是300个扇区（相当于4秒）和325，000个扇区（相当于最长的超级HiFi播放时间72分钟）之间的数。<br>
+      <b><font color="#003399">　　 仅有CD-I光道的CD-I盘结构</font></b> 
+      <br>
+      　<img src="../../../../images/chatp/chap05/009.gif" width="373" height="169"> 
+      <br>
+      　　CD-I光盘的导出区或者是空扇区（最后一条光道是CD-I光道时）或者是无声的帧（Frame）（最后一条光道是CD-DA光道）。<br>
+      　　现在再到节目区。节目的开头，也就是光道1的开始部分有166个信息扇区（Message Sector），它仅含有CD-DA信息。2250个信息扇区（相当于播放时间30秒）记录有敬告用户的一段话。当CD-I光盘在早期的CD-DA播放机上开始播放时能听到敬告用户的话，而在CD-I系统中则跳过这一段。<br>
+      　　当CD-I光盘放到CD-I系统中播放时，系统首先读的扇区是光盘的标号（Disc Label）扇区。这个扇区包含CD-I盘上所有文件描述符、内容、大小、创作者等，必须加载到系统中软件模块的位置以及存取这些文件的路径表。光盘标号有三个记录组成：文件结构卷描述符（File 
+      Structure Volume Descriptor）、引导记录（Boot Record）和终结记录（Terminator Record）。<br>
+      　　CD数据可以两种方式存放于盘上，这两种方式是Model 1和Mode 2。CD-I在Mode 2中定义两种专门的数据格式：Form 1和Form 
+      2，两者的差别详见下节。所有CD-I的数据都是用Mode 2记录。而光盘标号中的数据则是用Mode 2中的Form 1来记录。因为它有EDC（Error 
+      Detection Code）和ECC（Error Correction Code）码，CD-I系统利用它们可以获得误码率小于10-13的数据。<br>
+
+      　　<b><font color="#003399"> 5-5　有CD-I和CD-DA光道的CD-I盘结构<br>
+      　</font></b><img src="../../../../images/chatp/chap05/010.gif" width="373" height="179"><br>
+      　　<font color="#003399">二、CD-I扇区格式</font><a name="02"></a><br>
+      　　CD-I数据分成离散的数据单元称为扇区，其结构类似于CD-ROM的Mode 2，但和它不一致。这些扇区包含有音频、视频、计算机数据以及需要系统实时处理的重要信息。一个CD-I扇区相当CD-DA中的一帧，系统以每秒75扇区的速度读CD-I盘。<br>
+      　　每个扇区有2352个字节，由三个基本部分组成：Header、Subheader和Data Area，如图5-7所示。Header有12个同步（SYNC）字节；以时、分、秒作地址的3个地址字节；以及一个Mode字节，其值总是为2。<br>
+      　　Subheader有8个字节，它进一步说明该扇区的用户数据：<br>
+      　　·数据类型：音频、视频或计算机数据等<br>
+      　　·格式的型式：Form 1或Form 2。<br>
+      　　·触发位：记录开始、文件结束、实时性等。<br>
+      　　·数据的编码信息：如ADPCM（Adaptive Delta Pulse Code Modulation），CLUT（Color Look 
+      Up Table），DYUV等。<br>
+      　　数据区的结构有两种：Form 1和Form 2。Form 1不仅有EDC码而且还有ECC码，用来存放应用程序、控制数据、文字等要求不允许出差错的数据。Form 
+      2只有EDC字节用于存放误码率要求不太苛刻的数据，如音频和视频数据。利用Form 2来存放这类数据，其目的是充分利用光盘的存储空间。<br>
+      <br>
+      <font color="#003399">　　要学习CD-I，首先学习有关CD的知识。<br>
+      　　一、 CD系列标准<br>
+      　　（1） Red Book (红皮书)--激光唱盘CD-DA<br>
+      　　采样频率44.1KHz ，每个样本16bit<br>
+      　　·CD的尺寸、物理特性、编码、错误校正。<br>
+      　　（2） Yellow Book (黄皮书)--CD-ROM<br>
+      　　·CD-ROM 1985 CD-ROM XA 1988<br>
+      　　·ISO-9660 1988.4 文件系统制定的标准目录结构<br>
+      　　·ISO/IEC 10149 数据交换, 1989年制定。 <br>
+      　　（3） Green Book (绿皮书)<br>
+      　　Philips、Sony公司定义了CD-I(Compact Disc- Interaction)数据结构。<br>
+      　　（4） Blue Book (蓝皮书)<br>
+      　　激光视盘(Video Disc) 1986<br>
+      　　（5） Orange Book (橙皮书)--CD-R (Compact Disc Recordable System)<br>
+      　　可读写光盘系统。<br>
+      　　BOOK I CD-MD <br>
+      　　CD-R 1992<br>
+      　　BOOK II CD-WO<br>
+      　　·CD-MD (Compact Disc Magnets-Optical)可擦除重写的磁光盘。<br>
+      　　·CD-WO (Compact Disc Write Once)<br>
+      　　·CD-WORM (Compact Disc Write Once Read Many Time ) 定义可写一次而能读出光盘系统。<br>
+      　　二、CD-DA格式<br>
+      　　CD-DA格式如下图所示：<br>
+      　　33×98=3234个字节</font><br>
+      　　<b><font color="#003399"> 5.2.-6 
+      CD-DA格式</font></b> <br>
+      　<img src="../../../../images/chatp/chap05/012.gif"> <br>
+      　　<font color="#003399">三、CD-ROM格式</font><a name="03"></a><br>
+      　　下面我们讲一下CD-ROM格式。上面我们已经讲过黄皮书标准，已经知道了黄皮书标准是Philips和Sony公司为CD-ROM定义的标准，是在红皮书的CD-DA光道基础上增加了CD-ROM 
+      Mode1和CD-ROM Mode2，因此CD-ROM格式共有三种类型，总结如下：<br>
+      　　CD-ROM格式共有三种类型<br>
+      　　（1）CD-DA光道，用于存储声音数据。<br>
+      　　（2）CD-ROM Mode1，用于存储计算机数据。<br>
+      　　（3）CD-ROM Mode2，用于存储声音数据、静态图像或电视图像数据。<br>
+      　　CD-ROM Mode1和 CD-ROM Mode2的结构如图5.2.1--7所示：<br>
+      　　CD-ROM Mode1和 CD-ROM Mode2将2352个字节的用户数据重新定义。 <br>
+      　　其中：CD-ROM Mode1为；<br>
+      　　（1） 同步字节：12（1+10+1）个字节，用于同步。<br>
+      　　（2） 扇区地址：4个字节，定义扇区的地址（分、秒、分秒、方式）<br>
+      　　（3） 用户数据：2048个字节，用于存放用户数据。<br>
+      　　（4） EDC： 4个字节，用于错误检测。如果检测结果无差错，就不执行这一层的错误校正。<br>
+      　　（5） SPACE： 8个字节，未用。<br>
+      　　（6） ECC： 276个字节，错误检测和校正码。 
+      <br>
+　　Header/ID Mode1<br>
+      　　<b><font color="#003399"> 5.2-7 
+      CD-ROM格式</font></b><br>
+      　<img src="../../../../images/chatp/chap05/013.gif" width="390" height="266"><br>
+      　　4个字节的扇区也称为HEADER，其格式定义如下：<br>
+      　　
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td bgcolor="#006699">
+            <table width="100%" border="0" cellspacing="1" cellpadding="1">
+              <tr bgcolor="#FFFFFF"> 
+                <td colspan="4" class="text"> 
+                  <div align="center">4个字节的扇区地址</div>
+                </td>
+              </tr>
+              <tr bgcolor="#FFFFFF"> 
+                <td class="text"> 
+                  <div align="center">MIN（分）1个字节0~74</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">SEC（秒）1个字节0~59</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">FRAC（分秒）1字节0~74</div>
+                </td>
+                <td class="text"> 
+                  <div align="center">Mode（方式）1字节01</div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      　　一个扇区中有98个帧，1帧有24个字节：<br>
+      　　一个扇区 98 ×24=2352字节<br>
+      　　一帧中的位数：24+3+ ( 14+3)×33=588通道位<br>
+      　　2352字节=6 ×2（左右） ×2 ×98<br>
+      　　立体声采样频率44.1KHZ ×16 ×2/8=176.4K Bytes<br>
+      　　176400 /2352=75扇区 一秒钟读75个扇区<br>
+      　　一小时 60 × 60 × 176.4≈635M Bytes =270000扇区<br>
+      　　所以：Mode 1 2048×75=153.6 千字节/秒<br>
+      　　（用户数据有2048个字节，也就是一个扇区有2048个字节的数据）<br>
+      　　那么：Mode 2 2336×75=175.2千字节/秒<br>
+      　　两种格式的原则都是后面校验，<br>
+      　　¨Mode 2 CIRC Cross Interleave Read- soloman 校验<br>
+      　　10-9 对声音、图形、图像可以够用，但不能满足计算机10-12要求。<br>
+      　　¨Mode 1 后面还有进一步校验码：4个字节 EDC (Error Detection Code)，采用CRC的循环冗余校验码。<br>
+      　　EDC码 误差检测码Error Detection Code。<br>
+      　　RCR码 循环冗余校验码Cyclic Redundancy Code，记录的数据可以看成，用一个质数的多项式，除多项式，余数是唯一的，将余数记录，它是CRC码；读数时，用除法器除，和余数比较。可以检查是否有错。如果有错，可以用ECC 
+      ( Error correction Code )码。<br>
+      　　ECC（276个字节）是Read-solomon的两维数据项，用迭带算法可以校正一个扇区2340中各个字节错误。<br>
+      　　2048+4个地址位=2052个字节<br>
+      　　2064字节=4个地址+2048用户+4EDC CRC码+8个字节的空格<br>
+      　　=1032个×16位字<br>
+      　　=24行 × 43列<br>
+      　　<b><font color="#003399"> 5.2-9 
+      ECC码</font></b><br>
+      　　<img src="../../../../images/chatp/chap05/014.gif" width="297" height="198"> 
+      <br>
+      　　43×2×2=172字节 列方向 称为P校验<br>
+      　　26×2×2=104字节 行方向 称为Q校验 
+      <br>
+      　　<font color="#003399">四、CD-I格式</font><a name="04"></a><br>
+        　　在学习了CD-DA和CD-ROM光盘格式后，再学习CD-I光盘格式就容易一些，它和CD-DA光盘、CD-ROM光盘都有三个区：导入区（Lead-in 
+        Area）、节目区（Program Area）和导出区（Lead-out Area），如图5-3所示。<br>
+        　　1．CD-I光盘格式有三个区：<br>
+        　　导入区（Lead-in Area）<br>
+        　　节目区（Program Area）<br>
+        　　导出区（Lead-out Area）<br>
+        　　<b><font color="#003399"> 5.2-10 
+        CD-I光盘格式 <br>
+      　　<img src="../../../../images/chatp/chap05/015.gif" width="309" height="146"> 
+      　　 </font></b><br>
+      　　导入区：由若干个空扇区组成的，使识别节目区变得容易。<br>
+      　　节目区：有166个信息扇区、盘标记、2250个信息扇区、CD-I数据等组成，如图5-4和图5-5所示。<br>
+      　　图5-4表示只有CD-I盘结构，而图5-5表示CD-I光盘可以含有CD-DA光道的CD-I盘结构，这是为了和早期出现的CD-DA光盘格式兼容而设置的。CD-I光盘和CD-DA光盘一样，可以有多到99条光道，从1－99。对于包含有CD-DA光道的CD-I光盘，其第一条光道必须是CD-I光道，而且任何一条CD-I光盘上的CD-DA光道，最多不超过98条。而一条光道的长度可以是300个扇区（相当于4秒）和325，000个扇区（相当于最长的超级HiFi播放时间72分钟）之间的数。<br>
+      　　导出区：或者是空扇区（最后一条光道是CD-I光道时）或者是无声的帧（Frame）（最后一条光道是CD-DA光道）。<br>
+      　　CD盘上的信息均采用EFM（Eight to Fourteen Modulation）记录方式进行记录。由于光盘原始误码率较高，所以都采用能纠突发错误的CIRC（Cross-Interleaved 
+      Reed-Solomon Code）码。<br>
+      　　2．信息记录方式：<br>
+      　　采用EFM（Eight to Fourteen Modulation）记录方式<br>
+      　　3．纠错方式<br>
+      　　采用能纠突发错误的CIRC（Cross-Interleaved Reed-Solomon Code）码。<br>
+      　　4．CD-I扇区格式<br>
+      　　CD-I数据分成离散的数据单元称为扇区，其结构类似于CD-ROM的Mode 2，但和它不一致。这些扇区包含有音频、视频、计算机数据以及需要系统实时处理的重要信息。一个CD-I扇区相当CD-DA中的一帧，系统以每秒75扇区的速度读CD-I盘。<br>
+      　　每个扇区有2352个字节，由三个基本部分组成：Header、Subheader和Data Area，如图5-7所示。Header有12个同步（SYNC）字节；以时、分、秒作地址的3个地址字节；以及一个Mode字节，其值总是为2。数据区的结构有两种：Form 
+      1和Form 2。Form 1不仅有EDC码而且还有ECC码，用来存放应用程序、控制数据、文字等要求不允许出差错的数据。Form 2只有EDC字节用于存放误码率要求不太苛刻的数据，如音频和视频数据。利用Form 
+      2来存放这类数据，其目的是充分利用光盘的存储空间。<br>
+      　　CD-I与CD-ROM相似，如图5.2--11所示。<br>
+      　　　<b><font color="#003399"> CD-I扇区格式</font></b><br>
+      　<img src="../../../../images/chatp/chap05/011.gif" width="293" height="211">　　<br>
+      　　应当说明的一点是：CD-I把CD-ROM中的8个00字节放到了&quot;细目&quot;中，主要说明用户数据。<br>
+      　　Subheader有8个字节，它进一步说明该扇区的用户数据：<br>
+      　　·数据类型：音频、视频或计算机数据等<br>
+      　　·格式的型式：Form 1或Form 2。<br>
+      　　·触发位：记录开始、文件结束、实时性等。<br>
+      　　·数据的编码信息：如ADPCM（Adaptive Delta Pulse Code Modulation），CLUT（Color Look 
+      Up Table），DYUV等。<br>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "进程间通信"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"进程向一个中间实体发送消息，等待另一进程异步地接收，这种通信方式属于：\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.共享存储区",
+        "B.消息缓冲",
+        "C.信箱方式",
+        "D.共享文件"
+    ],
+    "q_number":109
+}

@@ -1,0 +1,50 @@
+<html>
+<head>
+<Script language="JavaScript">
+	function ShowItem(Obj)
+	{
+		if (Obj.style.display != "inline") {
+			Obj.style.visibility="visible";
+			Obj.style.display="inline";
+			Obj.className="Notice";
+		}
+		else{
+			Obj.style.display="none";
+			Obj.style.visibility="hidden";
+		}
+		
+	}
+	</Script>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5" marginwidth="5" marginheight="5">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td class="text"><a href="#nowhere" onClick="ShowItem(hide01Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+ <div id="hide01Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;">　　行程编码(Run 
+        Length Code)，也称行程长度编码。行程编码是无失真压缩编码方法。计算机多媒体静止图像数据压缩标准算法中就采用了行程编码方法。<br>
+        　　行程编码的基本原理是建筑在图像的统计特性基础上的。对于黑、白二值图像，由于图像的相关性，每一行扫描线总是由若干段连续的黑像素点和连续出现的白像素点构成。黑（白）像素点连续出现的像素点数称行程长度，简称长度。黑像素点的长度和白像素点的长度总是在交替发生，交替发生变化的频度与图的复杂度有关。现在我们把灰度1（黑）和1的行程长度；或0（白）和0的行程长度组合，构成编码输入码元而进行编码，并按其出现的概率，分配以不同码长的码字。大概率以短码；小概率以长码。<br>
+        　　行程编码分为：一维行程编码和二维行程编码。</div>
+      <br>
+      <br>
+      <span class="zhongdian"><font color="#003399">　　</font>1、一维行程编码<br>
+      　　设像素的一个扫描行是由整数序列x1,x2,……,xN(x表示像素)构成，其对应灰度为，g1,g2,……,gN ，在一维行程编码中，将x序列映射成整数对(gk·Lk)的序列，其中gk表示像素xk的灰度， 
+      Lk表示具有gk灰度像素点的连续像素点数， 即行程长度。 <br>
+      　　例如：一个黑白图像的一行像素的情况入下：“.”代表黑像素，“。”代表白像素。设黑素的灰度值为“1”，白像素的灰度值为“0”。<br>
+      　　<img src="../../../../images/chatp/chap04/image070.gif" width="390" height="35"> 
+      <br>
+      </span> <span class="zhongdian">　　其行程编码为：（0，100），（1，240），（0，160），（1，140）。</span><br>
+      <a href="#nowhere" onClick="ShowItem(hide02Notice)"><img src="../../../../images/html/dropdown.gif" alt="单击这里展开或折叠" width="14" height="10" border="0"></a><br>
+
+      <div id="hide02Notice" name"hide01Notice" class="Notice" style="visibility:hidden;display:none;"><br>
+        　　　　<img src="../../../../images/chatp/chap04/image035.jpg"><br>
+        　　计算机多媒体静图像数据压缩标准JPEG中, 采用行程编码技术是对8×8子块离散余弦变换系数点陈进行行程编码, 如图4.3-20所示。图中示出JPEG标准行程编码时的扫描方式, 
+        它考虑了图像离散余弦变换系数的分布特点, 左上角(0,0)坐标处为直流分量DC, 其余为交流系数AC共63个, 大多数为零。离开(0,0)坐标距离远的交流系数衰减快。其行程编码行程扫描开始点为AC01(第零行第1列), 
+        然后向斜下方沿“Z”字形路径扫描, 到AC77(第7行第7列)扫描结束。扫描结束后的统计结果用两个字节表示, 如图4.3-21所示。 </div></td>
+  </tr>
+</table>
+</body>
+</html>

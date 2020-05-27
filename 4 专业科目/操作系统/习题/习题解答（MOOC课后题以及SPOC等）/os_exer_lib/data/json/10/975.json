@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "死锁"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"进程 Allocation Need Availabe Avelable+ Allocation No A B C D A B C D A B C D A\nB C D P0 0 0 3 2 0 0 1 2 1 6 2 2 1 6 5 4 1 P1 1 0 0 0 1 7 5 0 1 9 8 6 2 9 8 6\n3 P2 1 3 5 4 2 3 5 6 2 9 8 6 3 12 13 10 4 P3 0 3 3 2 0 6 5 2 1 6 5 4 1 9 8 6 2\nP4 0 0 1 4 0 6 5 6 3 12 13 10 3 12 14 14 5 可以找到一个安全序列{P0、P3、P1、P2、P4}，系统是安全的。\n进程P2此时提出资源申请（1，2，2，2）,\n如系统实施此次分配使系统可用资源减到（0，4，0，0），再也无法满足各进程对资源的需求，系统进入一个不安全状态，系统不能将资源分配给进程P2。 进程\nAllocation Need Availabe Avelable+ Allocation No A B C D A B C D A B C D A B C\nD P0 0 0 3 2 0 0 1 2 0 4 0 0 P1 1 0 0 0 1 7 5 0 P2 2 5 7 6 1 1 3 4 P3 0 3 3 2\n0 6 5 2 P4 0 0 1 4 0 6 5 6\n",
+    "question":"\"试描述避免死锁的银行家算法，若系统运行中出现下述资源分配情况 进程 ALLOCATION NEED AVAILABLE A B C D A B C D A\nB C D P0 0 0 3 2 0 0 1 2 1 6 2 2 P1 1 0 0 0 1 7 5 0 P2 1 3 5 4 2 3 5 6 P3 0 3\n3 2 0 6 5 2 P4 0 0 1 4 0 6 5 6\n该系统是否安全？如果进程P2此时提出资源申请（1，2，2，2），系统能否将资源分配给它？为什么？ \"\n",
+    "source":"网络",
+    "answer":"进程 Allocation Need Availabe Avelable+ Allocation No A B C D A B C D A B C D A\nB C D P0 0 0 3 2 0 0 1 2 1 6 2 2 1 6 5 4 1 P1 1 0 0 0 1 7 5 0 1 9 8 6 2 9 8 6\n3 P2 1 3 5 4 2 3 5 6 2 9 8 6 3 12 13 10 4 P3 0 3 3 2 0 6 5 2 1 6 5 4 1 9 8 6 2\nP4 0 0 1 4 0 6 5 6 3 12 13 10 3 12 14 14 5 可以找到一个安全序列{P0、P3、P1、P2、P4}，系统是安全的。\n进程P2此时提出资源申请（1，2，2，2）,\n如系统实施此次分配使系统可用资源减到（0，4，0，0），再也无法满足各进程对资源的需求，系统进入一个不安全状态，系统不能将资源分配给进程P2。 进程\nAllocation Need Availabe Avelable+ Allocation No A B C D A B C D A B C D A B C\nD P0 0 0 3 2 0 0 1 2 0 4 0 0 P1 1 0 0 0 1 7 5 0 P2 2 5 7 6 1 1 3 4 P3 0 3 3 2\n0 6 5 2 P4 0 0 1 4 0 6 5 6\n",
+    "type":"question_answer",
+    "q_number":975
+}

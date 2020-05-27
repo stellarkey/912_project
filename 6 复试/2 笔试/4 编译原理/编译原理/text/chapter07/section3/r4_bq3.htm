@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　不难看出在I<sub><font size="-2">1</font></sub>，I<sub><font size="-2">2</font></sub>，I<sub><font size="-2">9</font></sub>中存在移进-归约冲突，因而这个表达式文法不是LR(0)文法，也就不能构造LR(0)分析表，现在分别考查这三个项目集(状态)中的冲突是否能用SLR(1)方法解决。<br>
+      　　在I<sub><font size="-2">1</font></sub>中：S′→E·<br>
+      　　　　　　E →E·+T<br>
+      　　由于FOLLOW(S′)={#},而S′→E·是唯一的接受项目，所以当且仅当遇到句子的结束符&quot;#&quot;号时才被接受。又因{#}∩{+}＝<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，因此I<sub><font size="-2">1</font></sub>中的冲突可解决。<br>
+      　　在I<sub><font size="-2">2</font></sub>中： E→T·<br>
+      　　　　　 　T→T·*F<br>
+      　　我们可计算非终结符E的FOLLOW集为：<br>
+      　　FOLLOW(E)={+,),#}<br>
+      　　所以FOLLOW(E)∩{*}={+,),#}∩{*}＝<img src="../../../img/chap05/symbol01.gif" width="12" height="11"><img src="../../../img/index/1x1pixel.gif" width="1" height="16">，因此面临输入符为'+'，')'或'#'号时，则用产生式E→T进行归约。当面临输入符为'*'号时，则移进，其它情况则报错。<br>
+      　　在I<sub><font size="-2">9</font></sub>中： E→E+T·<br>
+      　　　　　　 T→T·*F<br>
+      　　与I<sub><font size="-2">2</font></sub>中的情况类似因归约项目的左部非终结符E的后跟符集合FOLLOW(E)={+,),#}与移进项目圆点后终结符不相交，所以冲突可以用SLR(1)方法解决，与I<sub><font size="-2">2</font></sub>不同的只是在面临输入符为'+'，')'或'#'号时用产生式E→E+T归约。</td>
+  </tr>
+</table>
+</body>
+</html>

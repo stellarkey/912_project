@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" -->
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td class="FCcontent">　　最小错误率是在统计的意义上说的，请注意其含义。<br>
+            　　<span class="spe">在这里要弄清楚条件概率这个概念。P(*|#)是条件概率的通用符号，在“|”后边出现的#为条件，之前的*为某个事件，即在某条件#下出现某个事件*的概率。P(ω<sub>K</sub>|X)是表示在X出现条件下，样本为ω<sub>K</sub>类的概率。<br>
+            　　一个事物在某条件下出现的概率P(*|#)与该事件在不带任何条件下出现的概率(写成P(*))是不相同的。例如全世界人口有60亿。因此你见到一个人在不带任何条件下，有20%的可能性是中国人P(*)=0.2，但是如果你在中国，或香港、台湾，那么中国、香港、台湾都是指一种条件(#)，这种地理条件下，你所见到的某一个人是中国人(*)的概率就要大得多，此时P(*|#)就应该大于20%,甚至更多了。</span><br>
+            　　下面先讨论一个例子——癌细胞的识别，以此说明解决问题的过程。假设每个要识别的细胞已作过预处理，并抽取出了d个特征描述量，用一个d维的特征向量X表示，识别的目的是要依据该X向量将细胞划分为正常细胞或者异常细胞。这里我们用ω<sub>１</sub>表示是正常细胞，而ω<sub>２</sub>则属于异常细胞。<br>
+            　　<span class="spe">类别的状态是一个随机变量，而某种状态出现的概率是可以估计的。概率的估计包含两层含义，一是由统计资料表明，正常细胞与异常细胞在统计意义上的比例，这称为先验概率P(ω<sub>1</sub>)及P(ω<sub>2</sub>)，另一种则分别表示所检查细胞呈现出不同属性的概率密度函数P(x|ω<sub>1</sub>)和P(x|ω<sub>2</sub>)，显然在一般情况下正常细胞占比例大，即P(ω<sub>1</sub>)&gt;P(ω<sub>2</sub>)，因此如果我们不对具体的细胞化验值作仔细观察，我们作出该细胞是正常细胞的判决，在统计的意义上来说，也就是平均意义上说，错判可能性比判为异常细胞时小。但是仅按先验概率来决策，就会把所有细胞都划归为正常细胞，并没有达到将正常细胞与异常细胞区分开的目的。这表明由先验概率所提供的信息太少。</span><br>
+            　　为此我们还必须利用对细胞作病理分析所观测到的信息，也就是所抽取到的d维观测向量。为简单起见，我们假定只用其一个特征进行分类，即d=1，并已知这两类的类条件概率密度函数分布已知，如图2.1所示，其中P(x|ω<sub>1</sub>)是正常细胞的属性分布，P(x|ω<sub>2</sub>)是异常细胞的属性分布。那末，当观测向量为X值时，它属于各类的概率又是多少呢?为此我们可以利用贝叶斯公式, 
+            来计算这种条件概率，称之为状态的后验概率P(ω<sub>i</sub>|X)。<br></td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_1_1b.gif" width="354" height="322"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　<span class="spe">Bayes(贝叶斯)公式是根据联合概率这一概念推出的，同时出现两个事件X及ω<sub>i</sub>的概率为P(x,ω<sub>i</sub>)。它是某个条件出现的概率(如P(ω<sub>i</sub>)),以及在此条件下某事件出现概率(P(x|ω<sub>i</sub>))的乘积，在此写为：<br>
+            　　P(x,ω<sub>i</sub>)=P(x|ω<sub>i</sub>)P(ω<sub>i</sub>)=P(ω<sub>i</sub>|x)P(x) 
+            。先验概率是针对ω<sub>i</sub>，I＝1,2,…,c,这c个事件出现的可能性而言的，不考虑其它任何条件。例如世界上有60亿人口，而中国人口12亿，因此不管其它条件，应有20％的可能是中国人。<br>
+            　　类条件概率密度函数P(x|ω<sub>i</sub>)是指ω<sub>i</sub>条件下在一个连续的函数空间出现X的概率密度，在我们这里指第ω<sub>i</sub>类样本他的属性X是如何分布的。</span><br>
+            　　(2-1)式表明，在得到一个待识别量的观测状态X后，我们可以通过先验概率P(ω<sub>i</sub>)及类别条件概率密度函数P(x|ω<sub>i</sub>)，得到呈现状态X时，该样本分属各类别的概率，显然这个概率值可以作为我们识别对象判属的依据。上例中图2.1表示的类条件概率可用式(2-1)换算成如图2.2所示的后验概率分布。可以看出，在X值小时，细胞被判为正常是比较合理的，判断错误的可能性小。基于最小错误概率的贝叶斯决策理论就是按后验概率的大小作判决的。这个规则又可以写成如下几种等价形式：<br>
+            　　(1) 如果<img src="../../images/image_content/2/2_1_1c.gif" width="167" height="32" align="absmiddle"> 
+            ,则<img src="../../images/image_content/2/2_1_1f.gif" width="52" height="25" align="absmiddle"> 
+            (2-2)<br>
+            　　(2) 如用先验概率及类条件概率密度函数表示，则有：</td>
+        </tr>
+        <tr>
+          <td align="center"><img src="../../images/image_content/2/2_1_1d.gif" width="400" height="237"></td>
+        </tr>
+        <tr>
+          <td class="FCcontent">　　如果<img src="../../images/image_content/2/2_1_1e.gif" width="254" height="34" align="absmiddle"> 
+            , 则<img src="../../images/image_content/2/2_1_1f.gif" width="52" height="25" align="absmiddle"> 
+            (2-3)<br>
+            　　(3) 以比值的方式表示，<br>
+            　　如果<img src="../../images/image_content/2/2_1_1g.gif" width="165" height="53" align="absmiddle"> 
+            ，则<img src="../../images/image_content/2/2_1_1k.gif" width="51" height="25" align="absmiddle"> 
+            ，否则<img src="../../images/image_content/2/2_1_1h.gif" width="57" height="27" align="absmiddle"> 
+            (2-4)<br>
+            　　(4) (2-4)式还可改写成为对数形式，若<br>
+            　　<img src="../../images/image_content/2/2_1_1i.gif" width="397" height="51" align="absmiddle"><br>
+            ,<br>
+            　　则 <img src="../../images/image_content/2/2_1_1k.gif" width="51" height="25" align="absmiddle">，否则<img src="../../images/image_content/2/2_1_1h.gif" width="57" height="27" align="absmiddle"> 
+            (2-5)<br>
+            　　<span class="spe">其中(2-4)式中的l(x)在统计学中称为似然比，而<img src="../../images/image_content/2/2_1_1j.gif" width="47" height="47" align="absmiddle">称为似然比阈值。而式(2-5)中h(x)是似然比写成相应的负对数形式。它的好处是，与利用(2-4)式本身相比较，进行计算更为方便。</span><br></td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

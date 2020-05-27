@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/text_r4_c2.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td>　　PL/0编译程序的目标代码生成是由GEN过程完成的 ，当语法分析正确则调用目标代码生成过程以生成与PL/0语句等价功能的目标代码，直到编译正常结束。 
+      除了过程说明部分外，变量和常量的说明都不产生目标代码。在block入口处生成一条(jmp,0,0)指令，作为过程体入口指令，该指令的第3区域的'0'需分析到过程体入口时才返填。目标代码生成时所用到的变量地址和层差等信息是由名字表table提供的，而名字表的信息是在说明时填写的。在代码生成时查名字表，这就是表格管理的作用。这些信息之间的连接关系学员必须弄清。下面对一些重要程序段给予扼要的解释。（gen过程的实现很简单不再解释）</td>
+  </tr>
+</table>
+</body>
+</html>

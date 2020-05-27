@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "中断、异常与系统调用"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"利用系统调用命令\n",
+    "question":"用户程序调用操作系统有关功能的途径是 。\n",
+    "source":"网络",
+    "answer":"利用系统调用命令\n",
+    "type":"fill_in_the_blank",
+    "q_number":991
+}

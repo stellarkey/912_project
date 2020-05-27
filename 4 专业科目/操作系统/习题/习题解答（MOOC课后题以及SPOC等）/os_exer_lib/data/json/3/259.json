@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"所谓设备独立性是指，用户在编程时要给出_____ 。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.设备逻辑名",
+        "B.设备物理名",
+        "C.设备启动地址",
+        "D.设备卡地址"
+    ],
+    "q_number":259
+}

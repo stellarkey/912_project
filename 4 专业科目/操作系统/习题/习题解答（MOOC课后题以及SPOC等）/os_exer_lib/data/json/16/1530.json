@@ -1,0 +1,13 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"2）系统物理内存有6个物理页帧，进程访问的逻辑（虚拟）地址空间占序号为0至5的页面。初始状态是所有页面都不在物理内存中，使用缺页率算法时的算法参数“缺页时间间隔”为2。请下面存储访问序列“2 0 3 2 3 2 1 2 3 5 2”的缺页次数是多少？每次访问后系统中在物理内存中的虚内页号是哪些？请给出计算过程。",
+    "explain":"MacBookPro-2:缺页率算法 xyongcn$ ./a.out \nNo. 0: access Page 2, Add 2 into set.\nNo. 1: access Page 0, Add 0 into set.\nNo. 2: access Page 3, Add 3 into set.\nNo. 3: access Page 2, Access page 2.\nNo. 4: access Page 3, Access page 3.\nNo. 5: access Page 2, Access page 2.\nNo. 6: access Page 1, page replaced, page 0 1 2 3 are in memory.\nNo. 7: access Page 2, Access page 2.\nNo. 8: access Page 3, Access page 3.\nNo. 9: access Page 5, page 0 1 replaced, page 2 3 5 are in memory.\nNo. 10: access Page 2, Access page 2.\n",
+    "degree_of_difficulty":1,
+    "source":"2016春期中",
+    "answer":"MacBookPro-2:缺页率算法 xyongcn$ ./a.out \nNo. 0: access Page 2, Add 2 into set.\nNo. 1: access Page 0, Add 0 into set.\nNo. 2: access Page 3, Add 3 into set.\nNo. 3: access Page 2, Access page 2.\nNo. 4: access Page 3, Access page 3.\nNo. 5: access Page 2, Access page 2.\nNo. 6: access Page 1, page replaced, page 0 1 2 3 are in memory.\nNo. 7: access Page 2, Access page 2.\nNo. 8: access Page 3, Access page 3.\nNo. 9: access Page 5, page 0 1 replaced, page 2 3 5 are in memory.\nNo. 10: access Page 2, Access page 2.\n",
+    "type":"question_answer",
+    "q_number":1530
+}

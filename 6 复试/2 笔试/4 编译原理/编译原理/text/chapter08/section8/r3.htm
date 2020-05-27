@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 
+      <p> 　　P → DS {$2.dl=$1.dl}<br>
+        　　D<sup><font size="-2">1</font></sup> → var V； D{$$.dl=addlist($2.name，$4.dl)}<br>
+        　　　　　|ε 　　{$$.dl=null}<br>
+        　　S<sup><font size="-2">1</font></sup> → V:=e； S{check($1.name，$$.dl)；<br>
+        　　　　　　　　　 $5.dl=$$.dl}<br>
+        　　　　　|ε<br>
+        　　V → x {$$.name='x'}<br>
+        　　　　|y {$$.name='y'}<br>
+        　　　　|z {$$.name='z'}<br>
+        　　如果采用下面的数据结构attribute定义属性name和dl，可以具体化为：<br>
+        　　type struct_attribute {<br>
+        　　　char *name；<br>
+        　　　struct_attribute *list；<br>
+        　　} attribute；<br>
+        　　P → DS {$2.list=$1.list}<br>
+        　　D<sup><font size="-2">1</font></sup> → var V； D{$$.list=add_to_list($2.name，$4.list)}<br>
+        　　　　　|ε 　　 {$$.list=null}<br>
+        　　S<sup><font size="-2">1</font></sup> → V:=e； S{check($1.name，$$.list)；<br>
+        　　　　　　　　　 $5.list=$$.list}<br>
+        　　　　　|ε <br>
+        　　V → x {$$.name='x'}<br>
+        　　　　|y {$$.name='y'}<br>
+        　　　　|z {$$.name='z'}<br>
+        　　我们这里只把Yacc的原理做了介绍，有关Yacc的使用方法详见讲义（教科书）附录C </p>
+      </td>
+  </tr>
+</table>
+</body>
+</html>

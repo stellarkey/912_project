@@ -1,0 +1,17 @@
+{
+    "status":"ok",
+    "knowledge":[
+        ""
+    ],
+    "question":"当设置好GDT（全局描述符表）的内容；然后CPU执行“lgdt”指令加载GDT；接着立刻执行“incl 0x80”指令时，CPU将查找GDT并完成虚拟地址0x80到线性地址的转换。",
+    "explain":"CPU执行“lgdt”指令加载GDT之后，接着马上执行“incl 0x80”指令时，CPU将查找GDT（全局描述符表）完成虚拟地址0x80到线性地址的转换。",
+    "degree_of_difficulty":1,
+    "source":"2016期末",
+    "answer":"B",
+    "type":"true_false",
+    "options":[
+        "A.对",
+        "B.错"
+    ],
+    "q_number":1545
+}

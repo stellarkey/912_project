@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 
+      <p>　　下面是在活跃弧扩展算法。<br>
+        　　1 分析位置p<sub>1</sub>和p<sub>2</sub>之间的词类C；<br>
+        　　2 对于任何一条p<sub>0</sub>到p<sub>1</sub>之间的形式为 X→X<sub>1</sub>…·C…X<sub>n</sub> 
+        活跃弧，产生一条新的p<sub>0</sub>到p<sub>2</sub>之间的活跃弧 X→X<sub>1</sub>…C·…X<sub>n</sub>；<br>
+        　　3 对于任何一条p<sub>0</sub>到p<sub>1</sub>之间的形式为 X→X<sub>1</sub>…X<sub>n</sub>·C的活跃弧，生成一个新的从p<sub>0</sub>到p<sub>2</sub>之间的词类X。<br>
+        　　自底向上图表分析算法如下所示：<br>
+        　　1. 如果词类序列为空，则读入下一个词，并且把该词可能所属的类别加入到词类序列中；<br>
+        　　2. 从词类序列中选择一个词类（称之为p<sub>1</sub>到p<sub>2</sub>之间的词类C）；<br>
+        　　3. 对于语法中形如X→C X<sub>1</sub>…X<sub>n</sub>的规则，生成从p<sub>1</sub>到p<sub>2</sub>的活跃弧X→·C 
+        X<sub>1</sub>…X<sub>n</sub>；<br>
+        　　4. 进行活跃弧的扩展。 
+    </td>
+  </tr>
+</table>
+</body>
+</html>

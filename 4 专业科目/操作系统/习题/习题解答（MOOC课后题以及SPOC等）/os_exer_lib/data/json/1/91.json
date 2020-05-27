@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"Windows 属于下列哪一类操作系统？\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.单用户单任务",
+        "B.单用户多任务",
+        "C.多用户",
+        "D.批处理"
+    ],
+    "q_number":91
+}

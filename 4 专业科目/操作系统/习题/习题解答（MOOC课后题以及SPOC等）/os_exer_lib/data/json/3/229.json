@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "I/O子系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"设备的打开、关闭、读、写等操作是由_____ 完成的。\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.用户程序",
+        "B.编译程序",
+        "C.设备分配程序",
+        "D.设备驱动程序"
+    ],
+    "q_number":229
+}

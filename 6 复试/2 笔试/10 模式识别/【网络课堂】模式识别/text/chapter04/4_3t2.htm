@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><!-- InstanceBegin template="/Templates/frame_content.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable --> 
+<link href="../../css/fc.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.bg {
+	background-image: url(../../images/images/main__11.gif);
+	background-position: right bottom;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+-->
+</style>
+</head>
+
+<body >
+<table width="100%" height="100%" border="0" cellpadding="4" cellspacing="0">
+  <tr>
+    <td valign="top"><!-- InstanceBeginEditable name="text" --><span class="FCcontent"> 
+      　　</span><span class="spe">基于距离可分性判据的特征优化过程是通过一个线性变换实现的。设在原特征空间一个样本向量表示成Y(D维)而在优化以及的特征空间中，样本向量表示成X(d维)而X与Y之间的关系是：<br>
+      　　<img src="../../images/image_content/4/4_3021.gif" width="77" height="30" align="absmiddle"><br>
+      　　其中W是一个D×d维矩阵，现在的问题是要利用判据找出一种线性变换，利用这种变换，实现这种判据的极值化。例如使上一节定义的判据J<sub>2</sub>(x)达到极值。<br>
+      　　这一节的思路是这样的：首先说明J<sub>2</sub>(x)等这些判据在不降维的线性变换条件下是不能体现优化的，然而说明如何找到使判据优化的降维线性变换。在不降维条件下，因为变换前的<img src="../../images/image_content/4/4_3022.gif" width="120" height="26" align="absmiddle">，则变换后的离散矩阵<img src="../../images/image_content/4/4_3023.gif" width="99" height="35" align="absmiddle">而<img src="../../images/image_content/4/4_3024.gif" width="92" height="33" align="absmiddle">，因此有<br>
+      　　<img src="../../images/image_content/4/4_3025.gif" width="184" height="38" align="absmiddle">　　　　　(4-18)<br>
+      　　由于J<sub>2</sub>(x)左式括弧中的矩阵与J<sub>2</sub>'(x)式右项括弧中的矩阵是相似关系，也就是说S<img src="../../images/image_content/4/4_3026.gif" width="52" height="34" align="absmiddle">与<img src="../../images/image_content/4/4_3027.gif" width="43" height="30" align="absmiddle"> 
+      是相似关系，因此它们的特征值都是一样的。<br>
+      　　而由于矩阵的迹是所有特征值之和(见4-19)，因此J<sub>2</sub>(x)=J<sub>2</sub>'(x)判据值不会改变。这就是说，对于任何一个不降维的线性变换(W是D×D矩阵)J<sub>2</sub>判据的值都是一样的。另一个结论是在降维条件下，即使用任何一个非奇异线性变换矩阵(D×d)进行降维，则所得<img src="../../images/image_content/4/4_3026.gif" width="52" height="34" align="absmiddle">的迹也必然小于原<img src="../../images/image_content/4/4_3026.gif" width="52" height="34" align="absmiddle">的迹。经过推导可以证明，只要对<img src="../../images/image_content/4/4_3026.gif" width="52" height="34" align="absmiddle">作特征值分解，并将特征值按降序排列，则取前d项特征值对应的特征向量构成的线性变换矩阵W，能使降维后的特征空间使J<sub>2</sub>(x)判据值为最大。</span><span class="FCcontent"><br>
+      　　前面已说明特征提取在这里的意义是指对原始的D维特征空间进行一个降维的变换，从而使用维数减少后的特征空间。因此特征提取在这里意味着找到一个变换W，对原始特征向量<img src="../../images/image_content/4/4_3032.gif" width="122" height="18" align="absmiddle">实行映射变换W： 
+      Y→X，得到维数减少的向量<img src="../../images/image_content/4/4_3034.gif" width="124" height="34" align="absmiddle">，即<br>
+      　　<img src="../../images/image_content/4/4_3035.gif" width="49" height="22" align="absmiddle">　　　　　(4-16)<br>
+      　　W为D×d矩阵，并希望变换后的特征向量能满足使某个准则函数达到极值的要求。在这一节中讨论按欧氏距离度量的准则，它们列举在上一小节中。<br>
+      　　值得注意的是上面列出的准则中，如果对特征空间实行一个D×D矩阵的非奇异线性变换，J<sub>2</sub>，J<sub>3</sub>与 都保持不变。例如若对原特征空间实行一D×D线性变换A，则离散度矩阵Sb与SW变为Sb＝ASbAT及SW＝ASWAT，而映射变换后的J<sub>2</sub>(X)有：<br>
+      <br>
+      　　因而以下讨论的特征提取变换，只考虑是降维的，即用D×d矩阵(d＜D)进行变换。其目的是在维数d的条件下，使相应的判据为最大。<br>
+      在使用J<sub>2</sub>判据的情况下，可以将J=判据表示成变换W的函数，有<br>
+      　　(4-17)<br>
+      　　求使J<sub>2</sub>(W)最大的W解可利用特征值方法。前面曾提到如果W是一个D×D的线性变换，则J<sub>2</sub>是不变的，而此时(4-17)可进一步表示成<br>
+      　　(4-18)<br>
+      　　其中用WD代替(4-17)中的W，以强调是D×D变换。如果 是 的各特征值对应的特征向量所组成的矩阵，则由(4-18)式可得：<br>
+      　　(4-19)<br>
+      　　其中λi表示 的各特征值。(4-19)式表明D维特征空间中，J<sub>2</sub>判据的值是 矩阵的全部特征值之和。那么由对应于d个最大的特征值的特征向量所组成的矩阵W(D×d)，就能使所得到的d维特征满足J<sub>2</sub>判据最大的要求。<br>
+      　　虽然J<sub>2</sub>，J3，J<sub>5</sub>乃至J<sub>4</sub>所采用的计算方法各不相同，但都得到一个同样的结论，如果矩阵 
+      的特征值λ1，λ=，…λD按大小顺序列为：<br>
+      　　λ1≥λ2≥λ3≥…≥λD<br>
+      　　则选择前d个特征值所对应的特征向量组成变换矩阵W，都可使这些判据达到最大值。<br>
+      　　基于距离可分性判据的特征优化过程是通过一个线性变换实现的。设在原特征空间一个样本向量表示成Y(D维)而在优化以及的特征空间中，样本向量表示成X(d维)而X与Y之间的关系是：<br>
+      <br>
+      　　其中W是一个D×d维矩阵，现在的问题是要利用判据找出一种线性变换，利用这种变换，实现这种判据的极值化。例如使上一节定义的判据J<sub>2</sub>(x)达到极值。<br>
+      　　这一节的思路是这样的：首先说明J<sub>2</sub>(x)等这些判据在不降维的线性变换条件下是不能体现优化的，然而说明如何找到使判据优化的降维线性变换。在不降维条件下，因为变换前的 
+      ，则变换后的离散矩阵 而 因此有<br>
+      　　(4-18)<br>
+      　　由于J<sub>2</sub>(x)左式括弧中的矩阵与J<sub>2</sub>′(x)式右项括弧中的矩阵是相似关系，也就是说S 与 是相似关系，因此它们的特征值都是一样的。<br>
+      　　而由于矩阵的迹是所有特征值之和(见4-19)，因此J<sub>2</sub>(x)=J<sub>2</sub>’(x)判据值不会改变。这就是说，对于任何一个不降维的线性变换(W是D×D矩阵)J<sub>2</sub>判据的值都是一样的。另一个结论是在降维条件下，即使用任何一个非奇异线性变换矩阵(D×d)进行降维，则所得 
+      的迹也必然小于原 的迹。经过推导可以证明，只要对 作特征值分解，并将特征值按降序排列，则取前d项特征值对应的特征向量构成的线性变换矩阵W，能使降维后的特征空间使J<sub>2</sub>(x)判据值为最大。<br>
+      前面已说明特征提取在这里的意义是指对原始的D维特征空间进行一个降维的变换，从而使用维数减少后的特征空间。因此特征提取在这里意味着找到一个变换W，对原始特征向量Y＝［y1，…，yD］T实行映射变换W： 
+      Y→X，得到维数减少的向量X＝［x=，…，xd］T，即<br>
+      　　X＝WTY (4-16)<br>
+      　　W为D×d矩阵，并希望变换后的特征向量能满足使某个准则函数达到极值的要求。在这一节中讨论按欧氏距离度量的准则，它们列举在上一小节中。<br>
+      　　值得注意的是上面列出的准则中，如果对特征空间实行一个D×D矩阵的非奇异线性变换，J<sub>2</sub>，J<sub>3</sub>与 都保持不变。例如若对原特征空间实行一D×D线性变换A，则离散度矩阵<img src="../../images/image_content/4/4_3036.gif" width="205" height="24" align="absmiddle">，而映射变换后的J<sub>2</sub>(X)有：<br>
+      　　<img src="../../images/image_content/4/4_3037.gif" width="220" height="106"><br>
+      　　因而以下讨论的特征提取变换，只考虑是降维的，即用D×d矩阵(d＜D)进行变换。其目的是在维数d的条件下，使相应的判据为最大。<br>
+      　　在使用J<sub>2</sub>判据的情况下，可以将J=判据表示成变换W的函数，有<br>
+      　　<img src="../../images/image_content/4/4_3038.gif" width="229" height="33" align="absmiddle">　　　　　(4-17)<br>
+      　　求使J<sub>2</sub>(W)最大的W解可利用特征值方法。前面曾提到如果W是一个D×D的线性变换，则J<sub>2</sub>是不变的，而此时(4-17)可进一步表示成<br>
+      　　<img src="../../images/image_content/4/4_3039.gif" width="187" height="37" align="absmiddle">　　　　　(4-18)<br>
+      　　其中用W<sub>D</sub>代替(4-17)中的W，以强调是D×D变换。如果 <img src="../../images/image_content/4/4_3040.gif" width="28" height="30" align="absmiddle">是<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">的各特征值对应的特征向量所组成的矩阵，则由(4-18)式可得：<br>
+      　　<img src="../../images/image_content/4/4_3042.gif" width="119" height="52" align="absmiddle">　　　　(4-19)<br>
+      　　其中λi表示<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">的各特征值。(4-19)式表明D维特征空间中，J<sub>2</sub>判据的值是<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">矩阵的全部特征值之和。那么由对应于d个最大的特征值的特征向量所组成的矩阵W(D×d)，就能使所得到的d维特征满足J<sub>2</sub>判据最大的要求。<br>
+      　　虽然J<sub>2</sub>，J3，J<sub>5</sub>乃至J<sub>4</sub>所采用的计算方法各不相同，但都得到一个同样的结论，如果矩阵<img src="../../images/image_content/4/4_3041.gif" width="44" height="32" align="absmiddle">的特征值<img src="../../images/image_content/4/4_3047.gif" width="104" height="28" align="absmiddle">按大小顺序列为：<br>
+      　　<img src="../../images/image_content/4/4_3048.gif" width="160" height="28" align="absmiddle"><br>
+      　　则选择前d个特征值所对应的特征向量组成变换矩阵W，都可使这些判据达到最大值。</span><br>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

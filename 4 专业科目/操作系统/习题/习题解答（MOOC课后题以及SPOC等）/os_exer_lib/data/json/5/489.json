@@ -1,0 +1,13 @@
+{
+    "status":"error",
+    "knowledge":[
+        "处理机调度"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"处理机调度可分为三级，它们是_______________ ,________________ 和______________\n；在一般操作系统中，必须具备的调度是_____________________ 。\n",
+    "source":"网络",
+    "answer":"解释\n",
+    "type":"fill_in_the_blank",
+    "q_number":489
+}

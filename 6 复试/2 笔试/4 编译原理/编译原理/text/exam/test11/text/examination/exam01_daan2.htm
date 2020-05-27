@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:     url(../../../../../img/pop/bg_center.gif);
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<center><table width="95%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+      <td class=text> 
+        <p><b>一、 问答题答案</b></p>
+        <p><b>问答第1题</b><br>
+          解答：<br>
+          （1） 基本块 <br>
+          　　<img src="../../../test10/images/img/10_1a.gif" width="114" height="289">　　<br>
+          　　<img src="../../../test10/images/img/10_1b.gif" width="115" height="193"><br>
+          流图<br>
+          　　<img src="../../../test10/images/img/10_2.gif" width="150" height="287"><br>
+          （2）<br>
+          　　B5中（14）和（16）是公共子表达式、（17）和（20）是公共子表达式，B5变为<br>
+          　　（14） t<sub>6</sub>:=4*I<br>
+          　　（15）<br>
+          　　（16） t<sub>7</sub>:=t<sub>6</sub><br>
+          　　（17） t<sub>8</sub>:=4*J<br>
+          　　…<br>
+          　　（20） t<sub>10</sub>:=t<sub>8</sub><br>
+          　　（21）<br>
+          　　（22）<br>
+          　　B6中（23）和（25）是公共子表达式、（26）和（29）是公共子表达式，B6变为<br>
+          　　（23） t<sub>11</sub>:=4*I<br>
+          　　（24）<br>
+          　　（25） t<sub>12</sub>:=t<sub>11</sub><br>
+          　　（26） t<sub>13</sub>:=4*n<br>
+          　　…<br>
+          　　（29） t<sub>15</sub>:=t<sub>13</sub><br>
+          （3）<br>
+          　　循环<br>
+          　　① {B2}<br>
+          　　② {B3}<br>
+          　　③ {B2，B3，B4，B5} <b><br>
+          <br>
+          问答第2题</b><br>
+          解答：不能。因为B3不是循环出口B4的必经结点。<br>
+          <br>
+          <b>问答第3题</b><br>
+          解答：<br>
+          　　（1）<br>
+          　　D(1)={1}<br>
+          　　D(2)={1,2} <br>
+          　　D(3)={1,2,3} <br>
+          　　D(4)={1,2,3,4}<br>
+          　　D(5)={1,2,3,5} <br>
+          　　D(6)={1,2,3,6} <br>
+          　　D(7)={1,2,7} <br>
+          　　D(8)={1,2,7,8} <br>
+          　　（2）回边 7 2 <br>
+          　　（3）循环 {2，3，4，5，6，7}<br>
+          <!--czp-wenda-daan-->
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

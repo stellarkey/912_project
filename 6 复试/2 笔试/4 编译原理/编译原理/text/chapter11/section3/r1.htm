@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>编译原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+<STYLE TYPE="text/css">
+<!--
+BODY {background-image:   url(../../../img/index/bg1.gif);
+background-position: right;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}
+-->
+</STYLE>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" >
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class=text>
+  <tr>
+    <td> 　　我们可以把一个控制流程图表示成一个三元组G＝（N，E，n<sub><font size="-2">0</font></sub>），其中，N代表图中所有结点集，E代表图中所有有向边集，n<sub><font size="-2">0</font></sub>代表首结点。以下把控制流程图简称为<b>流图</b>。<br>
+      　　一个程序可用一个流图来表示。流图中的有限结点集N就是程序的基本块集，流图中的结点就是程序中的基本块。流图的首结点就是包含程序第一个语句的基本块。<br>
+      　　程序流图中的有向边集E是这样构成的：<br>
+      　　假设流图中结点i和结点j分别对应于程序的基本块i和基本块j，则当下述条件1)或2)有一个成立时，从结点i有一有向边引向结点j：<br>
+      　　1). 基本块j在程序中的位置紧跟在基本块i之后，并且基本块的出口语句不是无条件转移语句goto（s）或停语句。<br>
+      　　2). 基本块i的出口语句是goto（s）或if…goto（s），并且（s）是基本块j的入口语句。<br>
+      　　在以后的讨论中，我们所涉及的流图都是程序流图。</td>
+  </tr>
+</table>
+</body>
+</html>

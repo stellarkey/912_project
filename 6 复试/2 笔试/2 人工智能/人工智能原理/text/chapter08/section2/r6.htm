@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>人工智能原理</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../../css/text.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" class="bg">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class=text> 　　例如，Sam(一个智能体)知道积木A在B的上面，可表达为：<br>
+      　　　Κ(Sam, On(A,B))<br>
+      　　由Κ和术语Sam以及公式On(A,B)组合形成了一个新公式，其所表达的含义是：Sam知道积木A在B的上面。<br>
+      　　我们还可以用缩写Κα(φ)，来代替Κ(α,φ)，α表示一个智能体，φ表示一个公式。 <br>
+      　　使用算子Κ的语言称为一种一阶模式语言。这个语言中的公式句法如下：<br>
+      　　1． 所有的普通一阶谓词演算公式子句也是模式语言的子句<br>
+      　　2． 如果φ是模式语言的一个封闭子句（没有未量化的自由变量集，即没有x、y等变量），α是一个基本项，那么Κ(α,φ)是模式语言的一个子句。<br>
+      　　3． 同样地，如果φ和ψ是子句，那么由φ和ψ通过常用的命题连接词构造的任何表达式也是子句。<br>
+      如下是一些子句的例子：<br>
+      　　·Κ[Agent1, Κ(Agent2, On(A, B))]，<br>
+      　　表示Agent1知道Agent2知道A在B上。<br>
+      　　·Κ(Agent1, On(A, B )∨Κ(Agent1, On(A, C)))， <br>
+      　　表示Agent1知道A在B上，或者Agent1知道A在C上。<br>
+      　　·Κ[Agent1, On(A,B)∨On(A,C)]，<br>
+      　　表示Agent1知道A在B上或者A在C上。<br>
+      　　·Κ(Agent1, On(A,B)∨Κ(Agent1, ～On(A,B))，<br>
+      　　表示Agent1知道A是否在B上。<br>
+      　　·～Κ(Agent1, On(A,B))，<br>
+      　　表示Agent1不知道A在B上。 <br>
+      　　<font color="#0000FF">注意</font>：根据上述句法，表达式(<img src="../../../img/chap08/symbol01.gif" width="12" height="16">x) 
+      Κ(Agent1, On(x,B))不是一个合法的子句。表达式On(x,B)在模式算子内是不封闭的，它包含一个在模式算子外量化的自由变量x。</td>
+  </tr>
+</table>
+
+</body>
+</html>

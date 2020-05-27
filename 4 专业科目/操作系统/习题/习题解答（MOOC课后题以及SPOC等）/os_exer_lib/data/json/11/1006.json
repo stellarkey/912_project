@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "操作系统概述"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"B\n",
+    "question":"在分时系统中，时间片一定时， ，响应时间越长。\n",
+    "source":"网络",
+    "answer":"B",
+    "type":"single_answer",
+    "options":[
+        "A.内存越多",
+        "B.用户数越多",
+        "C.内存越少",
+        "D.用户数越少"
+    ],
+    "q_number":1006
+}

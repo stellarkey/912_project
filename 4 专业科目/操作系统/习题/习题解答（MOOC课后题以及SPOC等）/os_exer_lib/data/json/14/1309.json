@@ -1,0 +1,19 @@
+{
+    "status":"ok",
+    "knowledge":[
+        "物理内存管理"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"ABCD\n",
+    "question":"页表项标志位包括() s4\n",
+    "source":"网络",
+    "answer":"ABCD",
+    "type":"multi_answer",
+    "options":[
+        "A.存在位(resident bit)",
+        "B.修改位(dirty bit)",
+        "C.引用位(clock/reference bit)",
+        "D.只读位(read only OR read/write bit)"
+    ],
+    "q_number":1309
+}

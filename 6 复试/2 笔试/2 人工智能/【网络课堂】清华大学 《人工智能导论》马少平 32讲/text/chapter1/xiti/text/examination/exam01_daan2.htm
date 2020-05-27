@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../../css/text.css" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" leftmargin="5" topmargin="5">
+<center>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class=text> 
+        <p align="center"><b> 第一章课后习题答案</b></p>
+        <p><font color="#0033CC">说明：由于人工智能的很多题目都很灵活，以下解答仅供参考。</font></p>
+        <p><font color="#FF0000">第1题</font><br>
+          　　答： 1，综合数据库<br>
+          定义三元组：（m, c, b） <br>
+          其中：<img src="../../images/x1.gif" width="63" height="14">，表示传教士在河左岸的人数。<br>
+          　　　<img src="../../images/x2.gif" width="59" height="14">，表示野人在河左岸的认输。<br>
+          　　　<img src="../../images/x3.gif" width="56" height="20">，b=1，表示船在左岸，b=0，表示船在右岸。<br>
+          2，规则集 <br>
+          规则集可以用两种方式表示，两种方法均可。<br>
+          第一种方法： 按每次渡河的人数分别写出每一个规则，共(3 0)、(0 3)、(2 1)、(1 1)、(1 0)、(0 1)、(2 0)、(0 
+          2)八种渡河的可能（其中(x y)表示x个传教士和y个野人上船渡河），因此共有16个规则（从左岸到右岸、右岸到左岸各八个）。注意：这里没有(1 
+          2)，因为该组合在船上的传教士人数少于野人人数。<br>
+          规则集如下：<br>
+          r1：IF (m, c, 1) THEN (m-3, c, 0)<br>
+          r2：IF (m, c, 1) THEN (m, c-3, 0)<br>
+          r3：IF (m, c, 1) THEN (m-2, c-1, 0)<br>
+          r4：IF (m, c, 1) THEN (m-1, c-1, 0)<br>
+          r5：IF (m, c, 1) THEN (m-1, c, 0) <br>
+          r6：IF (m, c, 1) THEN (m, c-1, 0)<br>
+          r7：IF (m, c, 1) THEN (m-2, c, 0)<br>
+          r8：IF (m, c, 1) THEN (m, c-2, 0)</p>
+        <p> r9 ：IF (m, c, 0) THEN (m+3, c, 1)<br>
+          r10：IF (m, c, 0) THEN (m, c+3, 1) <br>
+          r11：IF (m, c, 0) THEN (m+2, c+1, 1) <br>
+          r12：IF (m, c, 0) THEN (m+1, c+1, 1)<br>
+          r13：IF (m, c, 0) THEN (m+1, c, 1)<br>
+          r14：IF (m, c, 0) THEN (m, c+1, 1)<br>
+          r15：IF (m, c, 0) THEN (m+2, c, 1)<br>
+          r16：IF (m, c, 0) THEN (m, c+2, 1) </p>
+        <p>第二种方法： 将规则集综合在一起，简化表示。规则集如下：<br>
+          r1：IF (m, c, 1) and 0< i+j〈=3 and (i>= j or i=0) THEN (m-i, c-j, 0)<br>
+          r2：IF (m, c, 0) and 0< i+j〈=3 and (i>= j or i=0) THEN (m+i, c+j, 1) 
+        </p>
+        <p>3，初始状态：(5, 5, 1)<br>
+          4，结束状态：(0, 0, 0) <br>
+          <br>
+          <font color="#FF0000">第2题</font><br>
+          答： 1，综合数据库<br>
+          定义两元组：（L5, L2）<br>
+          其中：0<=L5<=5，表示容量为5升的壶的当前水量。<br>
+          　　　0<=L2<=2，表示容量为2升的壶的当前水量。<br>
+          2，规则集<br>
+          r1：IF (L5, L2) THEN (5, L2) /* 将L5灌满水 */ <br>
+          r2：IF (L5, L2) THEN (L5, 2) /* 将L2灌满水 */<br>
+          r3：IF (L5, L2) THEN (0, L2) /* 将L5水到光 */<br>
+          r4：IF (L5, L2) THEN (L5, 0) /* 将L2水到光 */ <br>
+          r5：IF (L5, L2) and L5+L2<=5 THEN (L5+L2, 0) /* L2到入L5中 */<br>
+          r6：IF (L5, L2) and L5+L2>5 THEN (5, L5+L2-5) /* L2到入L5中 */ <br>
+          r7：IF (L5, L2) and L5+L2<=2 THEN (0, L5+L2) /* L5到入L2中 */ <br>
+          r8：IF (L5, L2) and L5+L2>5 THEN (L5+L2-2, 2) /* L5到入L2中 */</p>
+        <p> 3，初始状态：(5, 0) <br>
+          4，结束条件：(x, 1)，其中x表示不定。当然结束条件也可以写成：(0, 1) <br>
+          <br>
+          <font color="#FF0000">第3题</font><br>
+          答： 1，综合数据库<br>
+          定义三元组：(A, B, C) <br>
+          其中A, B, C分别表示三根立柱，均为表，表的元素为1～N之间的整数，表示N个不同大小的盘子，数值小的数表示小盘子，数值大的数表示大盘子。表的第一个元素表示立柱最上面的柱子，其余类推。<br>
+          2，规则集<br>
+          为了方便表示规则集，引入以下几个函数：<br>
+          first(L)：取表的第一个元素，对于空表，first得到一个很大的大于N的数值。<br>
+          tail(L)：取表除了第一个元素以外，其余元素组成的表。<br>
+          cons(x, L)：将x加入到表L的最前面。<br>
+          规则集：<br>
+          r1: IF (A, B, C) and (first(A) < first(B)) THEN (tail(A), cons(first(A), 
+          B), C)<br>
+          r2: IF (A, B, C) and (first(A) < first(C)) THEN (tail(A), B, cons(first(A), 
+          C)) <br>
+          r3: IF (A, B, C) and (first(B) < first(C)) THEN (A, tail(B), cons(first(B), 
+          C))<br>
+          r4: IF (A, B, C) and (first(B) < first(A)) THEN (cons(first(B), A), 
+          tail(B), C)<br>
+          r5: IF (A, B, C) and (first(C) < first(A)) THEN (cons(first(C), A), 
+          B, tail(C))<br>
+          r6: IF (A, B, C) and (first(C) < first(B)) THEN (A, cons(first(C), B), 
+          tail(C)) </p>
+        <p>3，初始状态：（（1，2，...，N），（），（））<br>
+          4，结束状态：（（），（），（1，2，...，N））<br>
+          问题的状态规模： 每一个盘子都有三中选择：在A上、或者在B上、或者在C上，共N个盘子，所以共有<img src="../../images/x4.gif" width="19" height="18">种可能。即问题的状态规模为<img src="../../images/x4.gif" width="19" height="18">。 
+          <br>
+          <br>
+          <font color="#FF0000">第4题</font><br>
+          答： 1，综合数据库<br>
+          定义5元组：（M, B, Box, On, H）<br>
+          其中：<br>
+          　M：猴子的位置 <br>
+          　B：香蕉的位置<br>
+          　Box：箱子的位置<br>
+          　On=0：猴子在地板上 <br>
+          　On=1：猴子在箱子上 <br>
+          　H=0：猴子没有抓到香蕉 <br>
+          　H=1：猴子抓到了香蕉 <br>
+          2，规则集<br>
+          r1: IF (x, y, z, 0, 0) THEN (w, y, z, 0, 0) 猴子从x处走到w处<br>
+          r2: IF (x, y, x, 0, 0) THEN (z, y, z, 0, 0) 如果猴子和箱子在一起，猴子将箱子推到z处<br>
+          r3: IF (x, y, x, 0, 0) THEN (x, y, x, 1, 0) 如果猴子和箱子在一起，猴子爬到箱子上 <br>
+          r4: IF (x, y, x, 1, 0) THEN (x, y, x, 0, 0) 如果猴子在箱子上，猴子从箱子上下来<br>
+          r5: IF (x, x, x, 1, 0) THEN (x, x, x, 1, 1) 如果箱子在香蕉处，猴子在箱子上，猴子摘到香蕉 <br>
+          其中x, y, z, w为变量<br>
+          3，初始状态 （c, a, b, 0, 0）<br>
+          4，结束状态 （x1, x2, x3, x4, 1） 其中x1～x4为变量。<br>
+          <br>
+          <font color="#FF0000">第5题</font><br>
+          答： 1，综合数据库<br>
+          定义四元组：（x, y, z, n） <br>
+          其中x,y,x∈[0,1]，1表示钱币为正面，0表示钱币为方面。n=0,1,2,3，表示当前状态是经过n次翻钱币得到的。<br>
+          2，规则库<br>
+          r1: IF (x, y, z, n) THEN (~x, y, z, n+1)<br>
+          r2: IF (x, y, z, n) THEN (x, ~y, z, n+1)<br>
+          r3: IF (x, y, z, n) THEN (x, y, ~z, n+1) <br>
+          其中~x表示对x取反。<br>
+          3，初始状态 (1, 1, 0, 0)<br>
+          4，结束状态 (1, 1, 1, 3) 或者(0, 0, 0, 3) <br>
+          <br>
+          <font color="#FF0000">第6题</font><br>
+          提示：将十进制数分为整数部分和小数部分两部分。用四元组(a, b, c, d)表示综合数据库，其中a, b表示到目前为止还没有转换的十进制数的整数部分和小数部分，c, 
+          d表示已经转换得到的二进制数的整数部分和小数部分。然后根据十进制数转换二进制数的原理，分别定义整数的转换规则和小数的转换规则，一次规则的执行，转换得到二进制数的一位。<br>
+          <br>
+          <font color="#FF0000">第7题</font><br>
+          答： 设规则R的逆用R'表示。由题意有R应用于D后，得到数据库D'，由可交换系统的性质，<br>
+          有： rule(D)<img src="../../images/x5.gif" width="14" height="11">rule(D')<br>
+          其中rule(D)表示可应用于D的规则集合。<br>
+          由于R'是R'的逆，所以R'应用于D'后，得到数据库D。同样由可交换系统的性质，<br>
+          有： rule(D')<img src="../../images/x5.gif" width="14" height="11">rule(D)<br>
+          综合上述两个式子，有rule(D')＝rule(D)。 <br>
+          <br>
+          <font color="#FF0000">第8题</font><br>
+          答： 说明一个产生式系统是可交换的，就是要证明该产生式系统满足可交换产生式系统的三条性质。</p>
+        <p> （1）该产生式系统以整数的集合为综合数据库，其规则是将集合中的两个整数相乘后加入到数据库中。由于原来数据库是新数据库的子集，所以原来的规则在新数据库中均可以使用。所以满足可交换产生式系统的第一条性质。</p>
+        <p> （2）该产生式系统以某个整数的子集的出现为目标条件，由于规则执行的结果只是向数据库中添加数据，如果原数据库中已经满足目标了，即出现了所需要的整数子集，规则的执行结果不会破坏该整数子集的出现，因此新的数据库仍然会满足目标条件。满足可交换产生式系统的第二个性质。 
+        </p>
+        <p>（3）设D是该产生式系统的一个综合数据库。对D施以一个规则序列后，得到一个新的数据库D'。该规则序列中的有些规则有些是可以应用于D的，这些规则用R1表示。有些规则是不能应用于D的，这些规则用R2表示。由于R1中的规则可以直接应用与D，所以R1中规则的应用与R2中规则的执行结果无关，也与Ｒ1中其他的规则的执行无关。所以可以认为，先将R1中所有的规则对D应用，然后再按照原来的次序应用R2中的规则。因此对于本题的情况，这样得到的综合数据库与D'是相同的。而由于R1中一条规则的执行与其他的规则无关，所以R1中规则的执行顺序不会影响到最终的结果。因此满足可交换产生式系统的第三个条件。<br>
+          　　因此这样一个产生式系统是一个可交换的产生式系统。<br>
+          <br>
+          <br>
+          　</p>
+      </td>
+  </tr>
+</table>
+  </center>
+
+</body>
+</html>

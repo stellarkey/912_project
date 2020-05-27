@@ -1,0 +1,19 @@
+{
+    "status":"error",
+    "knowledge":[
+        "文件系统"
+    ],
+    "degree_of_difficulty":1,
+    "explain":"解释\n",
+    "question":"设文件索引节点中有7个地址项，其中4个地址为直接地址索引，1个地址项是二级间接地址索引，每个地址项的大小为4字节，若磁盘索引块和磁盘数据块大小均为256字节\n，则可表示的单个文件最大长度是\n",
+    "source":"网络",
+    "answer":"",
+    "type":"single_answer",
+    "options":[
+        "A.33KB",
+        "B.519KB",
+        "C.1057KB",
+        "D.16513KB"
+    ],
+    "q_number":669
+}
