@@ -24,6 +24,8 @@
 
 [从关山口到五道口（2019年清华计算机考研全程回顾+经验+总结）](https://blog.csdn.net/zee_chao/article/details/88909444)
 
+[关于清华计算机专业基础综合（912）的复习](https://xuanxuanblingbling.github.io/life/study/2018/12/29/912/)
+
 # 2018
 
 # 2017
