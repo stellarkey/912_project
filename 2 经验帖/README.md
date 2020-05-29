@@ -22,6 +22,8 @@
 
 # 2019
 
+[从关山口到五道口（2019年清华计算机考研全程回顾+经验+总结）](https://blog.csdn.net/zee_chao/article/details/88909444)
+
 # 2018
 
 # 2017
