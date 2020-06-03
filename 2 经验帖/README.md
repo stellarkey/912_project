@@ -10,8 +10,6 @@
 
 > [2020清华912复试经验](http://www.cskaoyan.com/forum.php?mod=viewthread&tid=659735&fromuid=424920)
 
-[清华2020年统考学硕经验分享](http://www.cskaoyan.com/thread-659653-1-1.html) 412，总分第一，一战，（疑似科班）
-
 [我是怎样在工作两年后跨考清华计算机学硕一战上岸？](http://www.cskaoyan.com/forum.php?mod=viewthread&tid=659760&fromuid=424920)
 
 ----
