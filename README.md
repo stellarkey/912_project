@@ -75,3 +75,39 @@
 其他部分的版权归属于其各自的作者。资料仅供参考，请自己判断其适用性。
 
 **<font color=red>若此项目有任何<font color=blue>侵权行为</font>，请联系项目发起人，会立刻彻底清除相关内容。给您带来的困扰敬请谅解！</font>**
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+## 关于项目维护
+
+[**912_project**](https://github.com/stellarkey/912_project)长期欢迎同学参与维护（短期/长期）。
+
+> 长期参与者需要抽出一定精力维护包括：撰写习题/真题解析，收集整理最新资讯/资料，管理和维护项目等。
+>
+> 愿意长期参与或者有突出贡献者可以向`stellarkey`索要`Margin Note 3`笔记。（[Detail](https://www.zhihu.com/question/41059945/answer/1271758495)）
+
+有意向者可以发送邮件至：[velocfc@gmail.com](mailto:velocfc@gmail.com)。
