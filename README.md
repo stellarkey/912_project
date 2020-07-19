@@ -109,6 +109,6 @@
 > 长期参与者需要抽出一定精力维护包括：撰写习题/真题解析，收集整理最新资讯/资料，管理和维护项目等。
 > 短期参与者有突出贡献以高质量PR（Pull Request）为准。
 >
-> 愿意长期参与或者有突出贡献者可以向`stellarkey`索要`Margin Note 3`笔记。（[Detail](https://www.zhihu.com/question/41059945/answer/1271758495)）
+> 愿意长期参与或者有突出贡献者可以向`stellarkey`索要`Margin Note 3`笔记；并提供答疑。（[Detail](https://www.zhihu.com/question/41059945/answer/1271758495)）
 
 有意向者可以发送邮件至：[velocfc@gmail.com](mailto:velocfc@gmail.com)。
