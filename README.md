@@ -110,5 +110,6 @@
 > 短期参与者有突出贡献以高质量PR（Pull Request）为准。
 >
 > 愿意长期参与或者有突出贡献者可以向`stellarkey`索要`Margin Note 3`笔记；并提供答疑。（[Detail](https://www.zhihu.com/question/41059945/answer/1271758495)）
+> 也提供购买笔记的方式：请查看：Here。
 
 有意向者可以发送邮件至：[velocfc@gmail.com](mailto:velocfc@gmail.com)。
