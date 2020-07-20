@@ -110,6 +110,6 @@
 > 短期参与者有突出贡献以高质量PR（Pull Request）为准。
 >
 > 愿意长期参与或者有突出贡献者可以向`stellarkey`索要`Margin Note 3`笔记；并提供答疑。（[Detail](https://www.zhihu.com/question/41059945/answer/1271758495)）
-> 也提供购买笔记的方式：请查看：Here。
+> 也提供购买笔记的方式：笔记内容预览以及详情请查看：[Here](https://github.com/stellarkey/912_project/blob/master/2%20%E7%BB%8F%E9%AA%8C%E5%B8%96/%E7%AC%94%E8%AE%B0/iPad%20Margin%20Note%203%E7%AC%94%E8%AE%B0%E8%AF%B4%E6%98%8E.md)。
 
 有意向者可以发送邮件至：[velocfc@gmail.com](mailto:velocfc@gmail.com)。
