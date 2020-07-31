@@ -75,33 +75,3 @@
 其他部分的版权归属于其各自的作者。资料仅供参考，请自己判断其适用性。
 
 **<font color=red>若此项目有任何<font color=blue>侵权行为</font>，请联系项目发起人，会立刻彻底清除相关内容。给您带来的困扰敬请谅解！</font>**
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
----
-
-## 关于项目维护
-
-[`912_project`](https://github.com/stellarkey/912_project) 长期欢迎同学参与维护。有意向者可以发送邮件至：[velocfc@gmail.com](mailto:velocfc@gmail.com)。
