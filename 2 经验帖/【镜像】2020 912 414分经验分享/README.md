@@ -1,1 +1,0 @@
-[三战清华贵系！2020年清华大学计算机系考研414分（总分第一）经验分享](https://mp.weixin.qq.com/s?__biz=MzI1NTU4MDcwMg==&mid=2247484060&idx=1&sn=4d40d58d5b656ed90f15914aebafb1b4&chksm=ea328deddd4504fb5949325b5dd89e6f0a3fe58e8b1f421036daaeb20b50614cca4d4312ccd0&mpshare=1&scene=23&srcid=&sharer_sharetime=1590319846225&sharer_shareid=b22253840790fe3acaa36c8c426b6120#rd)
