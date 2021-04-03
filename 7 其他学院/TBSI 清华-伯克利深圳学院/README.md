@@ -8,3 +8,5 @@ TBSI官方微信公众号：tbsi2014
 [清华伯克利深圳学院宣传片](https://www.bilibili.com/video/BV1Wx411E7gJ)
 
 2020学长邮箱：514636586@qq.com
+
+2021学长邮箱：755494709@qq.com, angel19961@qq.com

@@ -8,5 +8,5 @@
 
 > 数据结构在线演示：https://dsa.cs.tsinghua.edu.cn/~deng/ds/demo/index.htm
 
-# 前人经验
+
 

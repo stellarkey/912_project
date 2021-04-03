@@ -1533,7 +1533,7 @@ $$
 $$
 S(n)= \sum_{i=0}^{m} b_{i} \times T(i,k) = \sum_{i=0}^{m} b_{i}\times \sum_{k=0}^{n} a^{k}  k^{i}
 $$
-现在要进行矩阵化更加困难了，新的计算对象是$T(i) = \sum_{k=0}^{n} a^{k} t(i,k)= \sum_{k=0}^{n} a^{k}  k^{i}$，
+现在要进行矩阵化更加困难了，新的计算对象是$T(i) = \sum_{k=0}^{n}  t(i,k)= \sum_{k=0}^{n} a^{k}  k^{i}$，
 $$
 \begin{align}
 t(i+1,k) &=  a^{k}  {(k)}^{i+1} =  k\times t(i.k)\\

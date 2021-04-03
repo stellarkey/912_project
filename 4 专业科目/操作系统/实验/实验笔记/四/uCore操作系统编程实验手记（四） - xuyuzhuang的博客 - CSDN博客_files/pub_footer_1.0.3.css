@@ -1,0 +1,214 @@
+.right_box{
+	width:100%;
+	background:#fff;
+	-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,0.05);
+	box-shadow:0 2px 4px 0 rgba(0,0,0,0.05);
+	padding:16px;
+	margin-top:10px;
+	font-size: 14px;
+}
+.footer_box{
+	font-family: PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Verdana,Roboto,Noto,Helvetica Neue,sans-serif !important;
+}
+.footer_box h3.feed_new_tit {
+	font-size: 16px;
+	color: #4f4f4f;
+	height: 28px;
+	margin-bottom: 7px;
+}
+
+.footer_box h3.feed_new_tit .line {
+	display: block;
+	float: left;
+	width: 3px;
+	height: 15px;
+	background: #cf2730;
+	overflow: hidden;
+	margin: 0 5px 0 0
+}
+.footer_box h3.feed_new_tit .txt {
+	display: block;
+	float: left;
+	font-size: 16px;
+	color: #2c3033
+}
+.footer_box .contact-box,.footer_box .app-box{
+	position: relative;
+	font-weight: 400;
+	overflow: hidden;
+	width: 228px;
+	margin:0 auto;
+    padding-bottom: 6px;
+}
+
+.footer_box .contact-box .img-box,.footer_box .app-box .img-box {
+	float: left;
+	position: relative;
+	text-align: center;
+	color:#5c5c5c;
+	line-height: 18px;
+}
+.fr{
+	float: right!important;
+}
+.footer_box .contact-box .img-box img {
+	display: block;
+	width: 98px;
+	height: 98px;
+	border: 1px solid #ddd;
+	margin-bottom: 4px;
+}
+.footer_box .app-box .img-box img {
+	display: block;
+	width: 98px;
+	height: 98px;
+	padding: 5px;
+	border: 1px solid #ddd;
+}
+.footer_box .contact-info p{
+	overflow: hidden;
+}
+.footer_box .contact-info{
+	border-top: 1px solid #e0e0e0;
+	padding-top: 6px;
+}
+.footer_box .contact-info,.contact-info p a  {
+	font-size: 14px;
+	color: #5C5C5C!important;
+	line-height: 20px;
+}
+
+
+.footer_box .contact-info h4 {
+	margin-bottom: 12px;
+	font-size: 12px;
+	color: #b3b3b3;
+	line-height: 16px
+}
+.footer_box .contact-info p svg,.contact-info p a,.contact-info p span{
+	display:inline-block;
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+.footer_box .contact-info p i.icon {
+	font-size: 12px;
+	color: #b3b3b3;
+	margin-right:5px;
+}
+
+.footer_box .contact-info p a:hover {
+
+	color:#4f4f4f;
+}
+
+.footer_box .bg-gray .feed_copyright {
+	clear: both;
+	overflow: hidden;
+	text-align: left;
+	font-size: 14px;
+	color: #999;
+	margin-top: 7px;
+    border-top: 1px solid #e0e0e0;
+	padding-top: 4px;
+	border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 6px;
+    margin-bottom: 2px;
+}
+
+.footer_box .bg-gray .feed_copyright img {
+	width: 51px;
+	height: 12px
+}
+
+.footer_box .bg-gray .feed_copyright p {
+	overflow: hidden;
+	color:#999;
+	font-weight: 400;
+	line-height: 21px;
+}
+
+.footer_box .bg-gray .feed_copyright p.fz12 {
+	font-size: 12px;
+	text-align:left;
+	line-height:20px;
+}
+.footer_box .bg-gray .feed_copyright p.fz12 a.ml14{
+	color:#999;
+}
+
+.footer_box .bg-gray .feed_copyright p a {
+	margin: 0;
+	line-height: 24px;
+}
+
+.footer_box .bg-gray .feed_copyright p a.ml14 {
+	margin-left: 0
+}
+
+.footer_box .bg-gray .feed_copyright p a.right-dotte::after {
+	content: '';
+	display: inline-block;
+	margin: 0 10px;
+	width: 1px;
+	height: 14px;
+	background-color: #e0e0e0;
+	vertical-align: sub
+}
+
+.footer_box .bg-gray .feed_copyright p a:link,.bg-gray .feed_copyright p a:visited {
+	color: #3D3D3D;
+	font-weight: bold;
+}
+.footer_box .bg-gray .feed_copyright p a:hover{
+	color:#CA0C16;
+}
+.footer_box .bg-gray .feed_copyright p.fz12_baidu svg,.footer_box .bg-gray .feed_copyright p.fz12_baidu em{
+	display:inline-block;
+	font-style:normal;
+}
+.footer_box .bg-gray .feed_copyright p.fz12_baidu svg{
+	margin-right: 4px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+.footer_box .bg-gray .feed_copyright p.fz12_baidu a,.footer_box .bg-gray .feed_copyright p.fz12_baidu a:visited {
+	color: #999!important;
+	font-weight: 400;
+}
+
+/*.footer_box .bg-gray .feed_copyright p .footer_baidu svg,.bg-gray .feed_copyright p .footer_baidu svg em{
+	display:inline-block;
+	vertical-align: middle;
+}
+.footer_box .bg-gray .feed_copyright p .footer_baidu svg{
+	margin-bottom:4px;
+}*/
+
+.footer_box .allow-info-box{
+	padding: 5px 0 2px;
+	color: #5c5c5c;
+}
+.footer_box .allow-info-box p{
+	line-height: 18px;
+	overflow: hidden;
+	margin-bottom: 4px;
+}
+.footer_box .allow-info-box a {
+	color: #5c5c5c;
+}
+
+.footer_box .bg-gray .allow-info-box a:hover {
+	font-size: 12px;
+	color: #4f4f4f;
+}
+
+.footer_box .right_extension {
+	clear: both;
+	overflow: hidden;
+}
+.footer_box .width126{
+	float: left;
+	width: 126px;
+	font-style: normal;
+}
