@@ -6,10 +6,8 @@
 #include <math.h>
 #include <vector>
 #include <algorithm>
-// #define int long long
 using namespace std;
 typedef long long ll;
-typedef __int128 lll;
 // FFT Solver : use for multiple case
 namespace FFT_Solver
 {
@@ -49,7 +47,7 @@ namespace FFT_Solver
     {
         // length is adjustable
         initializer() { init(19); }
-    } fft_init;
+    }; //fft_init;
 
     void fft(complex a[], int lgn, int flag)
     {
@@ -97,6 +95,7 @@ namespace FFT_Solver
         // FFT
         else
         {
+            init(19);
             assert(initialized);
             int lgk = 0, k = 1, len = n + m;
             while ((1 << lgk) <= len)
@@ -141,8 +140,6 @@ namespace FFT_Solver
 // 262144 * 262144 * 100 <= 7 * 10^12
 namespace FWT_Solver
 {
-    const ll mod = 39582418599937ll; // 998244353
-    const ll inv2 = (mod + 1) >> 1;
     const int M = (1 << 19) | 3;
     const int OR = 0, AND = 1, XOR = 2;
     ll P1[M], P2[M];
@@ -157,11 +154,11 @@ namespace FWT_Solver
         {
             ll x = a[i], y = a[i + m];
             if (flag == OR)
-                a[i] = x, a[i + m] = (x + y) % mod;
+                a[i] = x, a[i + m] = x + y;
             if (flag == AND)
-                a[i] = (x + y) % mod, a[i + m] = y;
+                a[i] = x + y, a[i + m] = y;
             if (flag == XOR)
-                a[i] = (x + y) % mod, a[i + m] = (x - y + mod) % mod;
+                a[i] = x + y, a[i + m] = x - y;
         }
     }
     void iwt(ll *a, int n, int flag = XOR)
@@ -175,12 +172,12 @@ namespace FWT_Solver
         {
             ll x = a[i], y = a[i + m];
             if (flag == OR)
-                a[i] = x, a[i + m] = (y - x + mod) % mod;
+                a[i] = x, a[i + m] = y - x;
             if (flag == AND)
-                a[i] = (x - y + mod) % mod, a[i + m] = y;
+                a[i] = x - y, a[i + m] = y;
             if (flag == XOR)
-                a[i] = (lll)(x + y) * inv2 % mod,
-                a[i + m] = (lll)(x - y + mod) * inv2 % mod; // replace inv2 by >>1 if not required
+                a[i] = (x + y) >> 1,
+                a[i + m] = (x - y) >> 1;
         }
     }
     vector<ll> multiply(int n, vector<int> A, vector<int> B, int flag = XOR)
@@ -195,7 +192,7 @@ namespace FWT_Solver
         wt(P1, n, flag);
         wt(P2, n, flag);
         for (int i = 0; i < n; i++)
-            P1[i] = (lll)P1[i] * P2[i] % mod;
+            P1[i] = P1[i] * P2[i];
         iwt(P1, n, flag);
         return vector<ll>(P1, P1 + n);
     }
@@ -261,7 +258,7 @@ namespace PreSuffixSum_Solver
         ans.resize((n + 1) << 1);
         for (int i = 2; i <= n; ++i)
             sa[i] = sa[i - 1] + a[i];
-        for (int i = n + 1; i < ans.size(); ++i)
+        for (size_t i = n + 1; i < ans.size(); ++i)
             sa[i] = sa[i - 1];
         for (int j = 1; j <= n; ++j)
         {
@@ -282,16 +279,15 @@ namespace Euler_Sqrt_Solver
     const int N = (1 << 19) | 3;
     void solve_3(const vector<int> &a, const vector<int> &b, int n)
     {
-        // get_prime(n);
         vector<ll> ans;
-        vector<vector<int>> divisor(n + 1);
+        vector<vector<int> > divisor(n + 1);
         ans.resize(n + 1);
         for (int i = 1; i <= n; ++i)
             for (int j = 1; j <= n / i; ++j)
                 divisor[i * j].push_back(i);
         for (ll i = 1; i <= n; ++i)
         {
-            for (int j = 0; j < (divisor[i].size() >> 1); ++j)
+            for (size_t j = 0; j < (divisor[i].size() >> 1); ++j)
                 ans[i] += 1ll * a[divisor[i][j]] * b[divisor[i][divisor[i].size() - 1 - j]] + 1ll * a[divisor[i][divisor[i].size() - 1 - j]] * b[divisor[i][j]];
             if (divisor[i].size() & 1)
                 ans[i] += 1ll * a[divisor[i][divisor[i].size() >> 1]] * b[divisor[i][divisor[i].size() >> 1]];
@@ -317,7 +313,7 @@ namespace Euler_Sqrt_Solver
 }
 int n, p;
 vector<int> a, b;
-signed main()
+int main()
 {
     scanf("%d%d", &n, &p);
     a.resize(n + 1), b.resize(n + 1);
