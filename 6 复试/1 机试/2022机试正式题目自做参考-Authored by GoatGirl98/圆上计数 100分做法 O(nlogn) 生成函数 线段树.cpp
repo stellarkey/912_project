@@ -1,4 +1,5 @@
 // 计数容斥之后，利用线段树维护区间生成函数乘法
+// 时间复杂度 $O(n\log n)$ 本题数据范围是 $n\le 10^5$ 所以开O2之后可过，变成 $n\le 10^6$ 就过不去了
 #include <stdio.h>
 #include <string.h>
 #include <vector>
