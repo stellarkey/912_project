@@ -28,7 +28,7 @@ int main()
         scanf("%s%d%d", op, &t, &x);
         query[i] = {op[0] == 'W', t + 1, x};
     }
-    sort(query, query + m);
+    stable_sort(query, query + m);
 
     for (int i = 0; i < m; i++)
     {
@@ -54,7 +54,7 @@ int main()
         {
             cnt++;
             if (!end_time)
-                end_time = t >= max_lim ? t : max_lim;
+                end_time = t >= max_lim ? t : max_lim + 1;
             end_time += d;
         }
     }
